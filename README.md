@@ -20,3 +20,11 @@ HDD: 2 GB¹
 - PyQt 6
 - PySide 6
 - QEMU
+
+## Contributing
+
+There are several ways to contribute, including:
+- Programming (bugfixes, new features etc.)
+- Testing (operating systems, the program itself etc.)
+- Translation into foreign languages like German or French
+- Documentation
