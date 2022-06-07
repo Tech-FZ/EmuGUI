@@ -15,4 +15,4 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 | Operating system                          | Architecture | Working   | Notes                         |
 | ----------------------------------------- | ------------ | --------- | ----------------------------- |
-| Ubuntu 12.04 LTS                          | PowerPC      | Partially | Mouse is not working properly |
+| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Partially | Mouse is not working properly |
