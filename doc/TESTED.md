@@ -14,6 +14,8 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 ## Linux operating systems
 
+### Ubuntu-based distributions
+
 | Operating system                          | Architecture | Working             | Notes                                     |
 | ----------------------------------------- | ------------ | ------------------- | ----------------------------------------- |
 | Ubuntu Desktop 12.04 LTS                  | PowerPC      | Partially           | Mouse is not working properly             |
