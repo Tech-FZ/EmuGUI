@@ -21,6 +21,14 @@ HDD: 2 GB¹
 - PySide 6
 - QEMU
 
+## Installation
+
+1. Get QEMU at https://qemu.weilnetz.de/w64/ and install it
+2. Get EmuGUI and extract it
+3. Run main.exe in the EmuGUI directory.
+4. Set the QEMU paths at the Settings/QEMU tab.
+5. Create a new virtual machine and start it.
+
 ## Contributing
 
 There are several ways to contribute, including:
