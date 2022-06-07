@@ -2,7 +2,7 @@
 What should I say? I didn't like the existing QEMU interfaces for Windows, so I made my own.
 
 ## System requirements
-OS: Windows 8.1 or later (x64), Debian 11, Ubuntu 18.04 LTS, Fedora 34, RHEL 7, openSUSE Leap 15.3, Arch or equivalent Linux systems (x64)
+OS: Windows 8.1, Windows Server 2012 R2 or later (x64)
 
 Python: 3.6 or newer
 
