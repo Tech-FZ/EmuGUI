@@ -1,5 +1,7 @@
 # Compatible guests list
 
+Such a program needs tests in its lifetime. That's why I make this compatibility test. Feel free to grab your old installation disc and test it out.
+
 ## Microsoft operating systems
 
 | Operating system                          | Architecture | Working   | Notes                         |
