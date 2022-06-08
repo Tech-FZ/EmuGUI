@@ -1,6 +1,8 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.1
 
 - added TESTED.md
+- added building instructions for Windows
+- fixed the VM creation/editing bug
 
 # EmuGUI v0.0.1
 

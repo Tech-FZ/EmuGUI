@@ -353,3 +353,5 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+        self.close()
