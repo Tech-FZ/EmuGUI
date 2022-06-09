@@ -1,3 +1,7 @@
+# EmuGUI (insert version here)
+
+- Updated README.md so terminal commands are formatted like such
+
 # EmuGUI v0.1
 
 - added TESTED.md
