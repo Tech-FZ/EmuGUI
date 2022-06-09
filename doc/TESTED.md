@@ -10,7 +10,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Windows 98 Second Edition                 | i386         | Yes       | Prepare to boot Safe Mode with VirtualBox               |
 | Windows 2000 Professional Service Pack 4  | i386         | No        |                                                         |
 | Windows XP Home Edition Service Pack 3    | i386         | No        |                                                         |
-| Windows Vista Ultimate Service Pack 2     | i386         | Yes       | No VGA drivers, no Aero                                 |
+| Windows Vista Ultimate Service Pack 2     | i386         | Yes       | Aero not available despite drivers being available      |
 | Windows 7 Ultimate Service Pack 1         | x86_64       | Yes       | No VGA drivers, no Aero                                 |
 
 ## Linux operating systems
