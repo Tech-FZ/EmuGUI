@@ -16,6 +16,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.connectSignalsSlots()
         self.vmSpecs = self.readTempVmFile()
         print(self.vmSpecs)
+        self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -99,28 +100,28 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         print(dateTimeForVM)
 
         try:
-            if self.vmSpecs[0] == "i386":
+            if self.vmSpecs[1] == "i386":
                 cursor.execute(qemu_i386_bin)
                 connection.commit()
                 result = cursor.fetchall()
 
                 print(result)
 
-            elif self.vmSpecs[0] == "x86_64":
+            elif self.vmSpecs[1] == "x86_64":
                 cursor.execute(qemu_x86_64_bin)
                 connection.commit()
                 result = cursor.fetchall()
 
                 print(result)
 
-            elif self.vmSpecs[0] == "ppc":
+            elif self.vmSpecs[1] == "ppc":
                 cursor.execute(qemu_ppc_bin)
                 connection.commit()
                 result = cursor.fetchall()
 
                 print(result)
             
-            elif self.vmSpecs[0] == "mips64el":
+            elif self.vmSpecs[1] == "mips64el":
                 cursor.execute(qemu_mips64el_bin)
                 connection.commit()
                 result = cursor.fetchall()
@@ -128,23 +129,23 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 print(result)
 
             qemu_to_execute = result[0][0]
-            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[3]} -hda \"{self.vmSpecs[4]}\" -rtc base=\"{dateTimeForVM}\",clock=vm"
-
-            if self.vmSpecs[1] != "Let QEMU decide":
-                qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[1]}"
+            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -hda \"{self.vmSpecs[5]}\" -rtc base=\"{dateTimeForVM}\",clock=vm"
 
             if self.vmSpecs[2] != "Let QEMU decide":
-                qemu_cmd = qemu_cmd + f" -cpu {self.vmSpecs[2]}"
+                qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
 
-            if self.vmSpecs[5] != "Let QEMU decide":
-                qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[5]}"
+            if self.vmSpecs[3] != "Let QEMU decide":
+                qemu_cmd = qemu_cmd + f" -cpu {self.vmSpecs[3]}"
 
-            if self.vmSpecs[6] != "none":
-                if self.vmSpecs[0] == "i386" or self.vmSpecs[0] == "x86_64":
-                    qemu_cmd = qemu_cmd + f" -net nic,model={self.vmSpecs[6]} -net user"
+            if self.vmSpecs[6] != "Let QEMU decide":
+                qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
 
-                elif self.vmSpecs[0] == "mips64el":
-                    qemu_cmd = qemu_cmd + f" -nic user,model={self.vmSpecs[6]}"
+            if self.vmSpecs[7] != "none":
+                if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc":
+                    qemu_cmd = qemu_cmd + f" -net nic,model={self.vmSpecs[7]} -net user"
+
+                elif self.vmSpecs[1] == "mips64el":
+                    qemu_cmd = qemu_cmd + f" -nic user,model={self.vmSpecs[7]}"
             
             if self.vmSpecs[7] == "1":
                 qemu_cmd = qemu_cmd + " -usbdevice tablet"
@@ -167,11 +168,26 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             elif bootfrom == "d" and cdrom_file != "":
                 qemu_cmd = qemu_cmd + " -boot d"
 
-            if self.vmSpecs[9] != "":
-                qemu_cmd = qemu_cmd + f" -L \"{self.vmSpecs[9]}\""
-
             if self.vmSpecs[10] != "":
-                qemu_cmd = qemu_cmd + f" {self.vmSpecs[10]}"
+                qemu_cmd = qemu_cmd + f" -L {self.vmSpecs[10]}"
+
+            if self.vmSpecs[12] != "none":
+                qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[12]}"
+
+                if self.vmSpecs[12] == "intel-hda":
+                    qemu_cmd = qemu_cmd + f" -device hda-duplex"
+
+            if self.vmSpecs[13] != "":
+                qemu_cmd = qemu_cmd + f" -kernel \"{self.vmSpecs[13]}\""
+
+            if self.vmSpecs[14] != "":
+                qemu_cmd = qemu_cmd + f" -initrid \"{self.vmSpecs[14]}\""
+
+            if self.vmSpecs[15] != "":
+                qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""
+
+            if self.vmSpecs[11] != "":
+                qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"
             
             subprocess.Popen(qemu_cmd)
 

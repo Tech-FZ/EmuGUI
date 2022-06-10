@@ -3,10 +3,10 @@ import sys
 from PySide6.QtWidgets import *
 from PySide6 import QtGui
 from PySide6.QtCore import QTimer
-from uiScripts.ui_Main import Ui_MainWindow
 import platform
 import platformSpecific.windowsSpecific
 import platformSpecific.unixSpecific
+from uiScripts.ui_Main import Ui_MainWindow
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from uiScripts.ui_SettingsPending1 import Ui_Dialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
@@ -19,7 +19,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.1")
+        self.label_8.setText("EmuGUI v0.2")
+        self.setWindowTitle("EmuGUI")
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -65,8 +66,36 @@ class Window(QMainWindow, Ui_MainWindow):
             usbtablet INTEGER NOT NULL,
             win2k INTEGER NOT NULL,
             dirbios TEXT,
-            additionalargs TEXT
+            additionalargs TEXT,
+            sound TEXT NOT NULL,
+            linuxkernel TEXT NOT NULL,
+            linuxinitrid TEXT NOT NULL,
+            linuxcmd TEXT NOT NULL
         );
+        """
+
+        select02ColumnsVM = """
+        SELECT sound, linuxkernel, linuxinitrid, linuxcmd FROM virtualmachines;
+        """
+
+        insertSoundColVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN sound TEXT DEFAULT "none" NOT NULL;
+        """
+
+        insertLinuxKernelColVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN linuxkernel TEXT DEFAULT "" NOT NULL;
+        """
+
+        insertLinuxInitridColVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN linuxinitrid TEXT DEFAULT "" NOT NULL;
+        """
+
+        insertLinuxCmdColVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN linuxcmd TEXT DEFAULT "" NOT NULL;
         """
 
         insert_qemu_img = """
@@ -247,6 +276,36 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
         try:
+            cursor.execute(select02ColumnsVM)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                print("The query was executed successfully. The v0.2 feature columns already are in the VM table.")
+
+            except:
+                pass
+        
+        except sqlite3.Error as e:
+            try:
+                cursor.execute(insertSoundColVM)
+                connection.commit()
+
+                cursor.execute(insertLinuxKernelColVM)
+                connection.commit()
+
+                cursor.execute(insertLinuxInitridColVM)
+                connection.commit()
+
+                cursor.execute(insertLinuxCmdColVM)
+                connection.commit()
+                print("The queries were executed successfully. The missing features have been added to the database.")
+            
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+        try:
             cursor.execute(debug_db_settings)
             connection.commit()
             print(cursor.fetchall())
@@ -305,7 +364,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 print(selectedVM)
 
                 get_vm_to_start = f"""
-                SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs FROM virtualmachines
+                SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel, linuxinitrid, linuxcmd FROM virtualmachines
                 WHERE name = '{selectedVM}'
                 """
 
@@ -327,6 +386,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     os_is_win2k = result[0][8]
                     dir_bios = result[0][9]
                     additional_arguments = result[0][10]
+                    sound_card = result[0][11]
+                    linux_kernel = result[0][12]
+                    linux_initrid = result[0][13]
+                    linux_cmd = result[0][14]
 
                 except sqlite3.Error as e:
                     print(f"The SQLite module encountered an error: {e}.")
@@ -338,6 +401,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
                 
                 with open(tempVmDef, "w+") as tempVmDefFile:
+                    tempVmDefFile.write(selectedVM + "\n")
                     tempVmDefFile.write(architecture_of_vm + "\n")
                     tempVmDefFile.write(machine_of_vm + "\n")
                     tempVmDefFile.write(cpu_of_vm + "\n")
@@ -349,6 +413,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(str(os_is_win2k) + "\n")
                     tempVmDefFile.write(dir_bios + "\n")
                     tempVmDefFile.write(additional_arguments + "\n")
+                    tempVmDefFile.write(sound_card + "\n")
+                    tempVmDefFile.write(linux_kernel + "\n")
+                    tempVmDefFile.write(linux_initrid + "\n")
+                    tempVmDefFile.write(linux_cmd + "\n")
 
                 dialog = StartVirtualMachineDialog(self)
                 dialog.exec()
@@ -380,7 +448,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 print(selectedVM)
 
                 get_vm_to_start = f"""
-                SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs FROM virtualmachines
+                SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel, linuxinitrid, linuxcmd FROM virtualmachines
                 WHERE name = '{selectedVM}'
                 """
 
@@ -402,6 +470,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     os_is_win2k = result[0][8]
                     dir_bios = result[0][9]
                     additional_arguments = result[0][10]
+                    sound_card = result[0][11]
+                    linux_kernel = result[0][12]
+                    linux_initrid = result[0][13]
+                    linux_cmd = result[0][14]
 
                 except sqlite3.Error as e:
                     print(f"The SQLite module encountered an error: {e}.")
@@ -425,6 +497,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(str(os_is_win2k) + "\n")
                     tempVmDefFile.write(dir_bios + "\n")
                     tempVmDefFile.write(additional_arguments + "\n")
+                    tempVmDefFile.write(sound_card + "\n")
+                    tempVmDefFile.write(linux_kernel + "\n")
+                    tempVmDefFile.write(linux_initrid + "\n")
+                    tempVmDefFile.write(linux_cmd + "\n")
 
                 dialog = EditVirtualMachineDialog(self)
                 dialog.exec()
@@ -608,6 +684,7 @@ class SettingsPending1Dialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.setWindowTitle("EmuGUI - Settings pending")
         self.connectSignalsSlots()
 
     def connectSignalsSlots(self):

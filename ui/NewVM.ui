@@ -468,6 +468,16 @@
         </item>
         <item>
          <property name="text">
+          <string>mac99,via=pmu</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mac99,via=pmu-adb</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>none</string>
          </property>
         </item>
@@ -1637,13 +1647,6 @@
       <item row="0" column="1">
        <widget class="QLineEdit" name="lineEdit_3"/>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Browse</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="2">
        <widget class="QPushButton" name="pushButton_23">
         <property name="text">
@@ -1696,6 +1699,183 @@
          </widget>
         </item>
        </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_9">
+    <widget class="QWidget" name="gridLayoutWidget_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9">
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton_26">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButton_27">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_28">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_23">
+        <property name="text">
+         <string>Sound card</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_12">
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sb16</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>pcspk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>intel-hda</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>gus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ES1370</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cs4231a</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>adlib</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>AC97</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_10">
+    <widget class="QWidget" name="gridLayoutWidget_10">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>383</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_10">
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_30">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_25">
+        <property name="text">
+         <string>Linux initrid image</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_5"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_4"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton_32">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>Linux kernel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_29">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_31">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_26">
+        <property name="text">
+         <string>Linux cmd args</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_7"/>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_27">
+        <property name="text">
+         <string>Leave empty if these aren't necessary</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

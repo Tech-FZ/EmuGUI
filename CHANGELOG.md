@@ -1,8 +1,14 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.2
 
 - Updated README.md so terminal commands are formatted like such
 - Updated TESTED.md
 - Added Doumentation info in README.md
+- Removed Reset button from the QEMU settings
+- Removed Browse button from the BIOS location part of VM creating/editing feature
+- Removed quotes from BIOS location addition line in starting VM
+- Added experimental sound card support
+- Added experimental Linux parameter support (kernel, intrid, cmd arguments)
+- Windows binaries now use Python 3.9.13 instead of Python 3.9.12
 
 # EmuGUI v0.1
 

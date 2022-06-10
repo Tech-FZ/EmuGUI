@@ -49,36 +49,39 @@
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
-           <widget class="QListView" name="listView"/>
-          </item>
           <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_11">
-            <property name="text">
-             <string>Delete Selected Virtual Machine</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
            <widget class="QPushButton" name="pushButton_10">
             <property name="text">
              <string>Edit Selected Virtual Machine</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item row="1" column="1">
+           <widget class="QPushButton" name="pushButton_9">
+            <property name="text">
+             <string>Start Selected Virtual Machine</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QPushButton" name="pushButton_11">
+            <property name="text">
+             <string>Delete Selected Virtual Machine</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
            <widget class="QPushButton" name="pushButton_8">
             <property name="text">
              <string>New Virtual Machine</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_9">
-            <property name="text">
-             <string>Start Selected Virtual Machine</string>
-            </property>
-           </widget>
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="gridLayout_5"/>
+          </item>
+          <item row="0" column="1">
+           <widget class="QListView" name="listView"/>
           </item>
          </layout>
         </widget>
@@ -116,82 +119,6 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="6" column="1">
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>qemu-system-mips64el path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_2">
-              <property name="text">
-               <string>qemu-system-i386 path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2">
-             <widget class="QLineEdit" name="lineEdit_3"/>
-            </item>
-            <item row="3" column="4">
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
-               <string>qemu-system-x86_64 path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="4">
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="4">
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item>
-               <widget class="QPushButton" name="pushButton_7">
-                <property name="text">
-                 <string>Reset</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="6" column="2">
-             <widget class="QLineEdit" name="lineEdit"/>
-            </item>
-            <item row="3" column="1">
-             <widget class="QLabel" name="label_4">
-              <property name="text">
-               <string>qemu-system-ppc path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <widget class="QLineEdit" name="lineEdit_4"/>
-            </item>
-            <item row="0" column="4">
-             <widget class="QPushButton" name="pushButton">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4">
-             <widget class="QPushButton" name="pushButton_3">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QLabel" name="label">
               <property name="text">
@@ -202,15 +129,80 @@
             <item row="3" column="2">
              <widget class="QLineEdit" name="lineEdit_2"/>
             </item>
-            <item row="0" column="2">
-             <widget class="QLineEdit" name="lineEdit_5"/>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>qemu-system-ppc path</string>
+              </property>
+             </widget>
             </item>
-            <item row="6" column="4">
+            <item row="6" column="2">
+             <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>qemu-system-i386 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>qemu-system-mips64el path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>qemu-system-x86_64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLineEdit" name="lineEdit_4"/>
+            </item>
+            <item row="6" column="3">
              <widget class="QPushButton" name="pushButton_5">
               <property name="text">
                <string>Browse</string>
               </property>
              </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLineEdit" name="lineEdit_5"/>
             </item>
             <item row="7" column="3">
              <widget class="QPushButton" name="pushButton_6">

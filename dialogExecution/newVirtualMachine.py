@@ -6,11 +6,13 @@ import platformSpecific.windowsSpecific
 import platformSpecific.unixSpecific
 import subprocess
 from dialogExecution.vhdExistsDialog import VhdAlreadyExists
+from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.setWindowTitle("EmuGUI - Create new VM")
         self.connectSignalsSlots()
 
         if platform.system() == "Windows":
@@ -33,6 +35,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_19.clicked.connect(self.close)
         self.pushButton_21.clicked.connect(self.close)
         self.pushButton_23.clicked.connect(self.close)
+        self.pushButton_26.clicked.connect(self.close)
 
         self.pushButton_3.clicked.connect(self.archSystem)
 
@@ -51,30 +54,63 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_18.clicked.connect(self.vhdMenu)
 
         self.pushButton_17.clicked.connect(self.extBios)
-        self.pushButton_25.clicked.connect(self.extBios)
+        self.pushButton_25.clicked.connect(self.vgaNetworkMenu)
 
-        self.pushButton_24.clicked.connect(self.win2kHacker)
+        self.pushButton_24.clicked.connect(self.soundCard)
+        self.pushButton_28.clicked.connect(self.extBios)
 
-        self.pushButton_22.clicked.connect(self.extBios)
+        self.pushButton_22.clicked.connect(self.linuxVMSpecific)
+        self.pushButton_27.clicked.connect(self.linuxVMSpecific)
+
+        self.pushButton.clicked.connect(self.linuxKernelBrowseLocation)
+
+        self.pushButton_32.clicked.connect(self.linuxInitridBrowseLocation)
 
         self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
 
+        self.pushButton_30.clicked.connect(self.win2kHacker)
+
         self.pushButton_20.clicked.connect(self.finishCreation)
 
-        self.pushButton.clicked.connect(self.biosBrowseLocation)
-
     def archSystem(self):
-        if self.comboBox.currentText() == "i386":
-            self.stackedWidget.setCurrentIndex(1)
-
-        elif self.comboBox.currentText() == "x86_64":
-            self.stackedWidget.setCurrentIndex(1)
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
-        elif self.comboBox.currentText() == "ppc":
-            self.stackedWidget.setCurrentIndex(2)
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
 
-        elif self.comboBox.currentText() == "mips64el":
-            self.stackedWidget.setCurrentIndex(3)
+        cursor = connection.cursor()
+
+        check_vm_name = f"""
+        SELECT name FROM virtualmachines
+        WHERE name = "{self.lineEdit.text()}";
+        """
+
+        try:
+            cursor.execute(check_vm_name)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                dialog2 = VmAlreadyExistsDialog(self)
+                dialog2.exec()
+
+            except:
+                if self.comboBox.currentText() == "i386":
+                    self.stackedWidget.setCurrentIndex(1)
+
+                elif self.comboBox.currentText() == "x86_64":
+                    self.stackedWidget.setCurrentIndex(1)
+        
+                elif self.comboBox.currentText() == "ppc":
+                    self.stackedWidget.setCurrentIndex(2)
+
+                elif self.comboBox.currentText() == "mips64el":
+                    self.stackedWidget.setCurrentIndex(3)
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
 
     def vhdMenu(self):
         self.stackedWidget.setCurrentIndex(4)
@@ -103,14 +139,44 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def extBios(self):
         self.stackedWidget.setCurrentIndex(6)
 
-    def biosBrowseLocation(self):
-        filename = QFileDialog.getExistingDirectory(parent=self, caption='Select the location of the desired external BIOS', dir='.')
+    def soundCard(self):
+        self.stackedWidget.setCurrentIndex(7)
+
+    def linuxVMSpecific(self):
+        self.stackedWidget.setCurrentIndex(8)
+
+    def linuxKernelBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
 
         if filename:
-            self.lineEdit_3.setText(filename)
+            self.lineEdit_4.setText(filename)
+            
+            try:
+                file = open(filename, "r")
+                file.close()
+                dialog = VhdAlreadyExists(self)
+                dialog.exec()
+            
+            except:
+                pass
+
+    def linuxInitridBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux initrid image', dir='.', filter='IMG files (*.img);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_5.setText(filename)
+            
+            try:
+                file = open(filename, "r")
+                file.close()
+                dialog = VhdAlreadyExists(self)
+                dialog.exec()
+            
+            except:
+                pass
 
     def win2kHacker(self):
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(9)
 
     def finishCreation(self):
         if platform.system() == "Windows":
@@ -222,7 +288,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             usbtablet,
             win2k,
             dirbios,
-            additionalargs
+            additionalargs,
+            sound,
+            linuxkernel,
+            linuxinitrid,
+            linuxcmd
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -235,7 +305,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             {usbtablet},
             {win2k},
             "{ext_bios_dir}",
-            "{add_args}"
+            "{add_args}",
+            "{self.comboBox_12.currentText()}",
+            "{self.lineEdit_4.text()}",
+            "{self.lineEdit_5.text()}",
+            "{self.lineEdit_7.text()}"
         );
         """
 

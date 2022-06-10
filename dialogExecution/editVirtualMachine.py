@@ -6,6 +6,7 @@ import platformSpecific.windowsSpecific
 import platformSpecific.unixSpecific
 import subprocess
 from dialogExecution.vhdExistsDialog import VhdAlreadyExists
+from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 
 class EditVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -13,6 +14,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         self.vmSpecs = self.readTempVmFile()
+        self.setWindowTitle(f"EmuGUI - Edit {self.vmSpecs[0]}")
 
         if platform.system() == "Windows":
             tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
@@ -34,6 +36,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_19.clicked.connect(self.close)
         self.pushButton_21.clicked.connect(self.close)
         self.pushButton_23.clicked.connect(self.close)
+        self.pushButton_26.clicked.connect(self.close)
 
         self.pushButton_3.clicked.connect(self.archSystem)
 
@@ -52,17 +55,23 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_18.clicked.connect(self.vhdMenu)
 
         self.pushButton_17.clicked.connect(self.extBios)
-        self.pushButton_25.clicked.connect(self.extBios)
+        self.pushButton_25.clicked.connect(self.vgaNetworkMenu)
 
-        self.pushButton_24.clicked.connect(self.win2kHacker)
+        self.pushButton_24.clicked.connect(self.soundCard)
+        self.pushButton_28.clicked.connect(self.extBios)
 
-        self.pushButton_22.clicked.connect(self.extBios)
+        self.pushButton_22.clicked.connect(self.linuxVMSpecific)
+        self.pushButton_27.clicked.connect(self.linuxVMSpecific)
+
+        self.pushButton.clicked.connect(self.linuxKernelBrowseLocation)
+
+        self.pushButton_32.clicked.connect(self.linuxInitridBrowseLocation)
 
         self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
 
-        self.pushButton_20.clicked.connect(self.finishCreation)
+        self.pushButton_30.clicked.connect(self.win2kHacker)
 
-        self.pushButton.clicked.connect(self.biosBrowseLocation)
+        self.pushButton_20.clicked.connect(self.finishCreation)
 
     def machineCpuI386Amd64(self, machine, cpu):
         i = 0
@@ -190,20 +199,75 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
         self.lineEdit_2.setText(vmSpecs[11])
 
+        i = 0
+
+        while i < self.comboBox_12.count():
+            if self.comboBox_12.itemText(i) == vmSpecs[12]:
+                self.comboBox_12.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        self.lineEdit_4.setText(vmSpecs[13])
+        self.lineEdit_5.setText(vmSpecs[14])
+        self.lineEdit_7.setText(vmSpecs[15])
+
         return vmSpecs
 
     def archSystem(self):
-        if self.comboBox.currentText() == "i386":
-            self.stackedWidget.setCurrentIndex(1)
-
-        elif self.comboBox.currentText() == "x86_64":
-            self.stackedWidget.setCurrentIndex(1)
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
-        elif self.comboBox.currentText() == "ppc":
-            self.stackedWidget.setCurrentIndex(2)
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
 
-        elif self.comboBox.currentText() == "mips64el":
-            self.stackedWidget.setCurrentIndex(3)
+        cursor = connection.cursor()
+
+        check_vm_name = f"""
+        SELECT name FROM virtualmachines
+        WHERE name = "{self.lineEdit.text()}";
+        """
+
+        try:
+            cursor.execute(check_vm_name)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+
+                if self.lineEdit.text() != self.vmSpecs[0]:
+                    dialog2 = VmAlreadyExistsDialog(self)
+                    dialog2.exec()
+
+                else:
+                    if self.comboBox.currentText() == "i386":
+                        self.stackedWidget.setCurrentIndex(1)
+
+                    elif self.comboBox.currentText() == "x86_64":
+                        self.stackedWidget.setCurrentIndex(1)
+        
+                    elif self.comboBox.currentText() == "ppc":
+                        self.stackedWidget.setCurrentIndex(2)
+
+                    elif self.comboBox.currentText() == "mips64el":
+                        self.stackedWidget.setCurrentIndex(3)
+
+            except:
+                if self.comboBox.currentText() == "i386":
+                    self.stackedWidget.setCurrentIndex(1)
+
+                elif self.comboBox.currentText() == "x86_64":
+                    self.stackedWidget.setCurrentIndex(1)
+        
+                elif self.comboBox.currentText() == "ppc":
+                    self.stackedWidget.setCurrentIndex(2)
+
+                elif self.comboBox.currentText() == "mips64el":
+                    self.stackedWidget.setCurrentIndex(3)
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
 
     def vhdMenu(self):
         self.stackedWidget.setCurrentIndex(4)
@@ -232,14 +296,44 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
     def extBios(self):
         self.stackedWidget.setCurrentIndex(6)
 
-    def biosBrowseLocation(self):
-        filename = QFileDialog.getExistingDirectory(parent=self, caption='Select the location of the desired external BIOS', dir='.')
+    def soundCard(self):
+        self.stackedWidget.setCurrentIndex(7)
+
+    def linuxVMSpecific(self):
+        self.stackedWidget.setCurrentIndex(8)
+
+    def linuxKernelBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
 
         if filename:
-            self.lineEdit_3.setText(filename)
+            self.lineEdit_4.setText(filename)
+            
+            try:
+                file = open(filename, "r")
+                file.close()
+                dialog = VhdAlreadyExists(self)
+                dialog.exec()
+            
+            except:
+                pass
+
+    def linuxInitridBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux initrid image', dir='.', filter='IMG files (*.img);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_5.setText(filename)
+            
+            try:
+                file = open(filename, "r")
+                file.close()
+                dialog = VhdAlreadyExists(self)
+                dialog.exec()
+            
+            except:
+                pass
 
     def win2kHacker(self):
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(9)
 
     def finishCreation(self):
         if platform.system() == "Windows":
@@ -340,7 +434,10 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         
         insert_into_vm_database = f"""
         UPDATE virtualmachines
-        SET name = "{self.lineEdit.text()}", architecture = "{self.comboBox.currentText()}", machine = "{machine}", cpu = "{cpu}", ram = {ram}, hda = "{vhd}", vga = "{self.comboBox_10.currentText()}", net = "{networkAdapter}", usbtablet = {usbtablet}, win2k = {win2k}, dirbios = "{ext_bios_dir}", additionalargs = "{add_args}"
+        SET name = "{self.lineEdit.text()}", architecture = "{self.comboBox.currentText()}", machine = "{machine}", cpu = "{cpu}",
+        ram = {ram}, hda = "{vhd}", vga = "{self.comboBox_10.currentText()}", net = "{networkAdapter}", usbtablet = {usbtablet},
+        win2k = {win2k}, dirbios = "{ext_bios_dir}", additionalargs = "{add_args}", sound = "{self.comboBox_12.currentText()}",
+        linuxkernel = "{self.lineEdit_4.text()}", linuxinitrid = "{self.lineEdit_5.text()}", linuxcmd = "{self.lineEdit_7.text()}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 
