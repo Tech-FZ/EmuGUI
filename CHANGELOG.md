@@ -9,6 +9,7 @@
 - Added experimental sound card support
 - Added experimental Linux parameter support (kernel, intrid, cmd arguments)
 - Windows binaries now use Python 3.9.13 instead of Python 3.9.12
+- In the PowerPC machines there is some compatibility stuff now.
 
 # EmuGUI v0.1
 
