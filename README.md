@@ -48,6 +48,10 @@ HDD: 2 GB¹
 15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 16. If it works, have fun! If not, try to start again from number 9.
 
+## Documentation
+
+A documentation of EmuGUI can be found at: https://tech-fz.github.io/EmuGUI-doc/
+
 ## Contributing
 
 There are several ways to contribute, including:
