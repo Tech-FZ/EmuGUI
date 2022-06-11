@@ -278,7 +278,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         else:
             win2k = 0
 
-        ext_bios_dir = self.lineEdit_2.text()
+        ext_bios_dir = self.lineEdit_3.text()
 
         add_args = self.lineEdit_2.text()
         

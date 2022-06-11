@@ -1,3 +1,8 @@
+# EmuGUI v0.2.2
+
+- (Hopefully) fixed a bug that caused additional arguments to be saved in the external BIOS variables as well
+- With that, Windows NT 4.0 MIPS should also work again.
+
 # EmuGUI v0.2.1
 
 - Updated TESTED.md

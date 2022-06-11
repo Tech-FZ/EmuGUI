@@ -19,7 +19,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.2.1")
+        self.label_8.setText("EmuGUI v0.2.2")
         self.setWindowTitle("EmuGUI")
 
         if platform.system() == "Windows":
