@@ -1,6 +1,8 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.2.1
 
 - Updated TESTED.md
+- Fixed an issue causing some "Previous" buttons in the VM creation/editing dialog to no longer work
+- Added update documentation to README.md.
 
 # EmuGUI v0.2
 

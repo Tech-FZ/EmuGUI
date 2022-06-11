@@ -28,50 +28,57 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.firstStage()
 
     def connectSignalsSlots(self):
-        self.pushButton_2.clicked.connect(self.close)
-        self.pushButton_6.clicked.connect(self.close)
-        self.pushButton_9.clicked.connect(self.close)
-        self.pushButton_12.clicked.connect(self.close)
-        self.pushButton_15.clicked.connect(self.close)
-        self.pushButton_19.clicked.connect(self.close)
-        self.pushButton_21.clicked.connect(self.close)
-        self.pushButton_23.clicked.connect(self.close)
-        self.pushButton_26.clicked.connect(self.close)
-
+        # Page 1 (Architecture selection)
         self.pushButton_3.clicked.connect(self.archSystem)
+        self.pushButton_2.clicked.connect(self.close)
 
-        self.pushButton_4.clicked.connect(self.vhdMenu)
-        self.pushButton_8.clicked.connect(self.vhdMenu)
-        self.pushButton_11.clicked.connect(self.vhdMenu)
-
+        # Page 2.1 (i386/x86_64 machine preparation)
         self.pushButton_5.clicked.connect(self.firstStage)
+        self.pushButton_4.clicked.connect(self.vhdMenu)
+        self.pushButton_6.clicked.connect(self.close)
+
+        # Page 2.2 (ppc machine preparation)
         self.pushButton_7.clicked.connect(self.firstStage)
+        self.pushButton_8.clicked.connect(self.vhdMenu)
+        self.pushButton_9.clicked.connect(self.close)
+
+        # Page 2.3 (mips64el machine preparation)
         self.pushButton_10.clicked.connect(self.firstStage)
+        self.pushButton_11.clicked.connect(self.vhdMenu)
+        self.pushButton_12.clicked.connect(self.close)
 
+        # Page 3 (VHD creation)
+        self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
         self.pushButton_16.clicked.connect(self.archSystem)
-
         self.pushButton_14.clicked.connect(self.vgaNetworkMenu)
+        self.pushButton_15.clicked.connect(self.close)
 
+        # Page 4 (VGA and network)
         self.pushButton_18.clicked.connect(self.vhdMenu)
-
+        self.pushButton_19.clicked.connect(self.close)
         self.pushButton_17.clicked.connect(self.extBios)
+
+        # Page 5 (External BIOS)
         self.pushButton_25.clicked.connect(self.vgaNetworkMenu)
-
+        self.pushButton_23.clicked.connect(self.close)
         self.pushButton_24.clicked.connect(self.soundCard)
-        self.pushButton_28.clicked.connect(self.extBios)
 
-        self.pushButton_22.clicked.connect(self.linuxVMSpecific)
+        # Page 6 (Sound card)
+        self.pushButton_28.clicked.connect(self.extBios)
+        self.pushButton_26.clicked.connect(self.close)
         self.pushButton_27.clicked.connect(self.linuxVMSpecific)
 
+        # Page 7 (Linux-specific options)
         self.pushButton.clicked.connect(self.linuxKernelBrowseLocation)
-
         self.pushButton_32.clicked.connect(self.linuxInitridBrowseLocation)
-
-        self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
-
+        self.pushButton_31.clicked.connect(self.soundCard)
+        self.pushButton_29.clicked.connect(self.close)
         self.pushButton_30.clicked.connect(self.win2kHacker)
 
+        # Page 8 (Additional arguments)
+        self.pushButton_22.clicked.connect(self.linuxVMSpecific)
         self.pushButton_20.clicked.connect(self.finishCreation)
+        self.pushButton_21.clicked.connect(self.close)
 
     def machineCpuI386Amd64(self, machine, cpu):
         i = 0

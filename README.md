@@ -29,6 +29,14 @@ HDD: 2 GB¹
 4. Set the QEMU paths at the Settings/QEMU tab.
 5. Create a new virtual machine and start it.
 
+## Updating EmuGUI
+
+1. Close out of EmuGUI before updating.
+2. Open your internet browser of choice and go to the EmuGUI repository.
+3. If the most recent version of EmuGUI is newer than the one you're currently running, download and extract the EmuGUI zip file.
+4. If you have external BIOS files in the root directory of your old EmuGUI installation, copy these into the root directory of the new one.
+5. Start the new EmuGUI installation. You might need to reinstall some virtual machines.
+
 ## Building on Windows
 
 1. Install Python. You can get it from https://www.python.org/
