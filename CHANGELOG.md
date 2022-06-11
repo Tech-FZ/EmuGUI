@@ -1,3 +1,7 @@
+# EmuGUI (insert version here)
+
+- Updated TESTED.md
+
 # EmuGUI v0.2
 
 - Updated README.md so terminal commands are formatted like such
