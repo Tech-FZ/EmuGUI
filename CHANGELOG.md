@@ -1,3 +1,7 @@
+# EmuGUI (insert version here)
+
+- Updated TESTED.md
+
 # EmuGUI v0.2.2
 
 - (Hopefully) fixed a bug that caused additional arguments to be saved in the external BIOS variables as well
