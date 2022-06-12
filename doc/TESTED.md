@@ -19,4 +19,4 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 | Operating system                          | Architecture | Working   | Notes                                                                          |
 | ----------------------------------------- | ------------ | --------- | ------------------------------------------------------------------------------ |
-| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Partially | Live CD works but installer needs further investigation                        |
+| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Partially | Live environment only due to EmuGUI issues                                     |
