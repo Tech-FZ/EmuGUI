@@ -157,30 +157,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         if filename:
             self.lineEdit_4.setText(filename)
-            
-            try:
-                file = open(filename, "r")
-                file.close()
-                dialog = VhdAlreadyExists(self)
-                dialog.exec()
-            
-            except:
-                pass
 
     def linuxInitridBrowseLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux initrid image', dir='.', filter='IMG files (*.img);;All files (*.*)')
 
         if filename:
             self.lineEdit_5.setText(filename)
-            
-            try:
-                file = open(filename, "r")
-                file.close()
-                dialog = VhdAlreadyExists(self)
-                dialog.exec()
-            
-            except:
-                pass
 
     def win2kHacker(self):
         self.stackedWidget.setCurrentIndex(9)

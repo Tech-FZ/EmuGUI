@@ -40,7 +40,7 @@ HDD: 2 GB¹
 ## Building on Windows
 
 1. Install Python. You can get it from https://www.python.org/
-2. Get QEMU at https://qemu.weilnetz.de/w64/ and install it
+2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
 3. Install Git. You can get it from https://git-scm.com/downloads
 4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
 5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`

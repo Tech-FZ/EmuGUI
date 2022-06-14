@@ -88,6 +88,11 @@
         <string>d</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>Let QEMU decide</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item row="2" column="0">

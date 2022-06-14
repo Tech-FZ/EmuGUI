@@ -168,6 +168,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             elif bootfrom == "d" and cdrom_file != "":
                 qemu_cmd = qemu_cmd + " -boot d"
 
+            elif bootfrom == "Let QEMU decide":
+                pass
+
             if self.vmSpecs[10] != "":
                 qemu_cmd = qemu_cmd + f" -L {self.vmSpecs[10]}"
 
@@ -181,7 +184,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + f" -kernel \"{self.vmSpecs[13]}\""
 
             if self.vmSpecs[14] != "":
-                qemu_cmd = qemu_cmd + f" -initrid \"{self.vmSpecs[14]}\""
+                qemu_cmd = qemu_cmd + f" -initrd \"{self.vmSpecs[14]}\""
 
             if self.vmSpecs[15] != "":
                 qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""

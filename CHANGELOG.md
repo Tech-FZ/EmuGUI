@@ -1,6 +1,12 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.2.3
 
 - Updated TESTED.md
+- (Hopefully) fixed the Linux-specific argument issue by...
+- ...adding an option to let QEMU decide where to boot from
+- ...correcting "initrid" to "initrd" in the start VM code
+- Corrected a grammar issue in README.md
+- Corrected a spelling mistake of "initrd" in the VM creation/editing dialog
+- Corrected an issue which caused the VHD exists dialog to appear when you selected the Linux kernel and initrd files
 
 # EmuGUI v0.2.2
 

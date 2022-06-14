@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewVMkZEAMe.ui'
+## Form generated from reading UI file 'NewVMsIjfwq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -1104,7 +1104,7 @@ class Ui_Dialog(object):
         self.comboBox_12.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
 
         self.pushButton_30.setText(QCoreApplication.translate("Dialog", u"Next >", None))
-        self.label_25.setText(QCoreApplication.translate("Dialog", u"Linux initrid image", None))
+        self.label_25.setText(QCoreApplication.translate("Dialog", u"Linux initrd image", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Browse", None))
         self.pushButton_32.setText(QCoreApplication.translate("Dialog", u"Browse", None))
         self.label_24.setText(QCoreApplication.translate("Dialog", u"Linux kernel", None))

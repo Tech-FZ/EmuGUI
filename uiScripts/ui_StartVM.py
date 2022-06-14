@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'StartVMoXqAdp.ui'
+## Form generated from reading UI file 'StartVMWCDGFN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -64,6 +64,7 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
         self.gridLayout.addWidget(self.comboBox, 4, 1, 1, 1)
@@ -110,6 +111,7 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"c", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"a", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"d", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
 
         self.label_2.setText(QCoreApplication.translate("Dialog", u"cdrom", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Date & Time", None))
