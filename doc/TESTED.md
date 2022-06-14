@@ -17,6 +17,6 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 ### Ubuntu-based distributions
 
-| Operating system                          | Architecture | Working   | Notes                                                                          |
-| ----------------------------------------- | ------------ | --------- | ------------------------------------------------------------------------------ |
-| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Partially | Live environment only due to EmuGUI issues                                     |
+| Operating system                          | Architecture | Working   | Notes                                                                            |
+| ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
+| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Yes       | Leave USB Device Tablet unchecked, set `-usbdevice mouse` as additional argument |
