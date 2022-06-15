@@ -25,7 +25,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 | Operating system                          | Architecture | Working   | Notes                                                                            |
 | ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
-| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Yes       | Leave USB Device Tablet unchecked, set `-usbdevice mouse` as additional argument |
+| Ubuntu Desktop 12.04 LTS                  | PowerPC      | Yes       | Severe mouse issues, never ever use any GUI on this distribution at anytime      |
 
 ## SUSE-based distributions
 
