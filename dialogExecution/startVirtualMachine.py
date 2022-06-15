@@ -7,6 +7,7 @@ import platformSpecific.unixSpecific
 import sqlite3
 import subprocess
 from PySide6.QtCore import QDateTime
+from random import randint
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
@@ -86,6 +87,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         WHERE name = 'qemu-system-mips64el';
         """
 
+        qemu_aarch64_bin = """
+        SELECT value FROM settings
+        WHERE name = 'qemu-system-aarch64';
+        """
+
         connection = self.connection
         cursor = connection.cursor()
 
@@ -128,8 +134,15 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 print(result)
 
+            elif self.vmSpecs[1] == "aarch64":
+                cursor.execute(qemu_aarch64_bin)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
+
             qemu_to_execute = result[0][0]
-            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -hda \"{self.vmSpecs[5]}\" -rtc base=\"{dateTimeForVM}\",clock=vm"
+            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -hda \"{self.vmSpecs[5]}\" -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]}"
 
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
@@ -138,7 +151,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + f" -cpu {self.vmSpecs[3]}"
 
             if self.vmSpecs[6] != "Let QEMU decide":
-                qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
+                if self.vmSpecs[1] == "aarch64":
+                    qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]} -display gtk"
+
+                else:
+                    qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
 
             if self.vmSpecs[7] != "none":
                 if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc":
@@ -146,6 +163,117 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 elif self.vmSpecs[1] == "mips64el":
                     qemu_cmd = qemu_cmd + f" -nic user,model={self.vmSpecs[7]}"
+
+                elif self.vmSpecs[1] == "aarch64":
+                    mac_gen = []
+                    i = 0
+
+                    while i < 6:
+                        firstLetter = randint(0, 15)
+                        secondLetter = randint(0, 15)
+
+                        if firstLetter == 0:
+                            firstLetter = "0"
+
+                        elif firstLetter == 1:
+                            firstLetter = "1"
+
+                        elif firstLetter == 2:
+                            firstLetter = "2"
+
+                        elif firstLetter == 3:
+                            firstLetter = "3"
+
+                        elif firstLetter == 4:
+                            firstLetter = "4"
+
+                        elif firstLetter == 5:
+                            firstLetter = "5"
+
+                        elif firstLetter == 6:
+                            firstLetter = "6"
+
+                        elif firstLetter == 7:
+                            firstLetter = "7"
+
+                        elif firstLetter == 8:
+                            firstLetter = "8"
+
+                        elif firstLetter == 9:
+                            firstLetter = "9"
+
+                        elif firstLetter == 10:
+                            firstLetter = "a"
+
+                        elif firstLetter == 11:
+                            firstLetter = "b"
+
+                        elif firstLetter == 12:
+                            firstLetter = "c"
+
+                        elif firstLetter == 13:
+                            firstLetter = "d"
+
+                        elif firstLetter == 14:
+                            firstLetter = "e"
+
+                        elif firstLetter == 15:
+                            firstLetter = "f"
+
+                        if secondLetter == 0:
+                            secondLetter = "0"
+
+                        elif secondLetter == 1:
+                            secondLetter = "1"
+
+                        elif secondLetter == 2:
+                            secondLetter = "2"
+
+                        elif secondLetter == 3:
+                            secondLetter = "3"
+
+                        elif secondLetter == 4:
+                            secondLetter = "4"
+
+                        elif secondLetter == 5:
+                            secondLetter = "5"
+
+                        elif secondLetter == 6:
+                            secondLetter = "6"
+
+                        elif secondLetter == 7:
+                            secondLetter = "7"
+
+                        elif secondLetter == 8:
+                            secondLetter = "8"
+
+                        elif secondLetter == 9:
+                            secondLetter = "9"
+
+                        elif secondLetter == 10:
+                            secondLetter = "a"
+
+                        elif secondLetter == 11:
+                            secondLetter = "b"
+
+                        elif secondLetter == 12:
+                            secondLetter = "c"
+
+                        elif secondLetter == 13:
+                            secondLetter = "d"
+
+                        elif secondLetter == 14:
+                            secondLetter = "e"
+
+                        elif secondLetter == 15:
+                            secondLetter = "f"
+
+                        mac_part = firstLetter + secondLetter
+                        mac_gen.append(mac_part)
+                        i += 1
+
+                    mac_to_use = f"{mac_gen[0]}:{mac_gen[1]}:{mac_gen[2]}:{mac_gen[3]}:{mac_gen[4]}:{mac_gen[5]}"
+                    qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[7]},netdev=hostnet0,mac={mac_to_use} -netdev user,id=hostnet0"
             
             if self.vmSpecs[7] == "1":
                 qemu_cmd = qemu_cmd + " -usbdevice tablet"
@@ -178,7 +306,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[12]}"
 
                 if self.vmSpecs[12] == "intel-hda":
-                    qemu_cmd = qemu_cmd + f" -device hda-duplex"
+                    qemu_cmd = qemu_cmd + " -device hda-duplex"
 
             if self.vmSpecs[13] != "":
                 qemu_cmd = qemu_cmd + f" -kernel \"{self.vmSpecs[13]}\""
@@ -188,6 +316,15 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             if self.vmSpecs[15] != "":
                 qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""
+
+            if self.vmSpecs[16] == "USB Mouse" and self.vmSpecs[7] == "0":
+                qemu_cmd = qemu_cmd + " -usbdevice mouse"
+
+            if self.vmSpecs[16] == "USB Tablet Device" and self.vmSpecs[7] == "1":
+                qemu_cmd = qemu_cmd + " -usbdevice tablet"
+
+            if self.vmSpecs[18] != "" and self.vmSpecs[18] != None and self.vmSpecs[18] != "None":
+                qemu_cmd = qemu_cmd + f" -bios \"{self.vmSpecs[18]}\""
 
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"

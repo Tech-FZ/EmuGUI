@@ -1,6 +1,10 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.3
 
 - Updated TESTED.md
+- Added extended mouse support (experimental)
+- Added support for aarch64 virtual machines
+- Added support for multiple cores
+- Added some legal stuff
 
 # EmuGUI v0.2.3
 

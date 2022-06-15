@@ -46,6 +46,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_11.clicked.connect(self.vhdMenu)
         self.pushButton_12.clicked.connect(self.close)
 
+        # Page 2.4 (aarch64 machine preparation)
+        self.pushButton_33.clicked.connect(self.firstStage)
+        self.pushButton_34.clicked.connect(self.vhdMenu)
+        self.pushButton_35.clicked.connect(self.close)
+
         # Page 3 (VHD creation)
         self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
         self.pushButton_16.clicked.connect(self.archSystem)
@@ -61,6 +66,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_25.clicked.connect(self.vgaNetworkMenu)
         self.pushButton_23.clicked.connect(self.close)
         self.pushButton_24.clicked.connect(self.soundCard)
+        self.pushButton_36.clicked.connect(self.extBiosFileLocation)
 
         # Page 6 (Sound card)
         self.pushButton_28.clicked.connect(self.extBios)
@@ -115,12 +121,15 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 elif self.comboBox.currentText() == "mips64el":
                     self.stackedWidget.setCurrentIndex(3)
+                
+                elif self.comboBox.currentText() == "aarch64":
+                    self.stackedWidget.setCurrentIndex(4)
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
     def vhdMenu(self):
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(5)
 
     def vhdBrowseLocation(self):
         filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
@@ -141,16 +150,22 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(0)
 
     def vgaNetworkMenu(self):
-        self.stackedWidget.setCurrentIndex(5)
-
-    def extBios(self):
         self.stackedWidget.setCurrentIndex(6)
 
-    def soundCard(self):
+    def extBios(self):
         self.stackedWidget.setCurrentIndex(7)
 
-    def linuxVMSpecific(self):
+    def extBiosFileLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_8.setText(filename)
+
+    def soundCard(self):
         self.stackedWidget.setCurrentIndex(8)
+
+    def linuxVMSpecific(self):
+        self.stackedWidget.setCurrentIndex(9)
 
     def linuxKernelBrowseLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
@@ -165,7 +180,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.lineEdit_5.setText(filename)
 
     def win2kHacker(self):
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(10)
 
     def finishCreation(self):
         if platform.system() == "Windows":
@@ -190,6 +205,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             machine = self.comboBox_6.currentText()
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()
+
+        elif self.comboBox.currentText() == "aarch64":
+            machine = self.comboBox_14.currentText()
+            cpu = self.comboBox_15.currentText()
+            ram = self.spinBox_5.value()
 
         if self.lineEdit_6.text() == "":
             vhd = "NULL"
@@ -281,7 +301,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             sound,
             linuxkernel,
             linuxinitrid,
-            linuxcmd
+            linuxcmd,
+            mousetype,
+            cores,
+            filebios
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -298,7 +321,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{self.comboBox_12.currentText()}",
             "{self.lineEdit_4.text()}",
             "{self.lineEdit_5.text()}",
-            "{self.lineEdit_7.text()}"
+            "{self.lineEdit_7.text()}",
+            "{self.comboBox_13.currentText()}",
+            {self.spinBox_6.value()},
+            "{self.lineEdit_8.text()}"
         );
         """
 

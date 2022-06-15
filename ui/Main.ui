@@ -119,51 +119,17 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="0" column="1">
-             <widget class="QLabel" name="label">
+            <item row="6" column="3">
+             <widget class="QPushButton" name="pushButton_5">
               <property name="text">
-               <string>qemu-img Path</string>
+               <string>Browse</string>
               </property>
              </widget>
-            </item>
-            <item row="3" column="2">
-             <widget class="QLineEdit" name="lineEdit_2"/>
-            </item>
-            <item row="3" column="1">
-             <widget class="QLabel" name="label_4">
-              <property name="text">
-               <string>qemu-system-ppc path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="2">
-             <widget class="QLineEdit" name="lineEdit"/>
             </item>
             <item row="1" column="1">
              <widget class="QLabel" name="label_2">
               <property name="text">
                <string>qemu-system-i386 path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3">
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="3">
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="1">
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>qemu-system-mips64el path</string>
               </property>
              </widget>
             </item>
@@ -174,21 +140,45 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="2">
-             <widget class="QLineEdit" name="lineEdit_4"/>
+            <item row="6" column="1">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>qemu-system-mips64el path</string>
+              </property>
+             </widget>
             </item>
-            <item row="6" column="3">
-             <widget class="QPushButton" name="pushButton_5">
+            <item row="0" column="2">
+             <widget class="QLineEdit" name="lineEdit_5"/>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_2">
               <property name="text">
                <string>Browse</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="2">
-             <widget class="QLineEdit" name="lineEdit_3"/>
+            <item row="6" column="2">
+             <widget class="QLineEdit" name="lineEdit"/>
             </item>
             <item row="0" column="3">
              <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLineEdit" name="lineEdit_4"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>qemu-system-ppc path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="pushButton_4">
               <property name="text">
                <string>Browse</string>
               </property>
@@ -201,13 +191,40 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="2">
-             <widget class="QLineEdit" name="lineEdit_5"/>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>qemu-img Path</string>
+              </property>
+             </widget>
             </item>
-            <item row="7" column="3">
+            <item row="3" column="2">
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="8" column="3">
              <widget class="QPushButton" name="pushButton_6">
               <property name="text">
                <string>Apply</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>qemu-system-aarch64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="2">
+             <widget class="QLineEdit" name="lineEdit_6"/>
+            </item>
+            <item row="7" column="3">
+             <widget class="QPushButton" name="pushButton_7">
+              <property name="text">
+               <string>Browse</string>
               </property>
              </widget>
             </item>
@@ -252,7 +269,17 @@
             <item row="1" column="0">
              <widget class="QLabel" name="label_7">
               <property name="text">
-               <string>Built on Python and PyQt technology</string>
+               <string>Built on Python and PyQt technology, licensed under GNU General Public License 3.0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>

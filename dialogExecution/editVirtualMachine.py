@@ -47,6 +47,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_11.clicked.connect(self.vhdMenu)
         self.pushButton_12.clicked.connect(self.close)
 
+        # Page 2.4 (aarch64 machine preparation)
+        self.pushButton_33.clicked.connect(self.firstStage)
+        self.pushButton_34.clicked.connect(self.vhdMenu)
+        self.pushButton_35.clicked.connect(self.close)
+
         # Page 3 (VHD creation)
         self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
         self.pushButton_16.clicked.connect(self.archSystem)
@@ -62,6 +67,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_25.clicked.connect(self.vgaNetworkMenu)
         self.pushButton_23.clicked.connect(self.close)
         self.pushButton_24.clicked.connect(self.soundCard)
+        self.pushButton_36.clicked.connect(self.extBiosFileLocation)
 
         # Page 6 (Sound card)
         self.pushButton_28.clicked.connect(self.extBios)
@@ -137,6 +143,25 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
             i += 1
 
+    def machineCpuAarch64(self, machine, cpu):
+        i = 0
+
+        while i < self.comboBox_14.count():
+            if self.comboBox_14.itemText(i) == machine:
+                self.comboBox_14.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.comboBox_15.count():
+            if self.comboBox_15.itemText(i) == cpu:
+                self.comboBox_15.setCurrentIndex(i)
+                break
+
+            i += 1
+
     def readTempVmFile(self):
         # Searching temporary files
         if platform.system() == "Windows":
@@ -175,6 +200,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.comboBox.setCurrentIndex(3)
             self.machineCpuPpc(vmSpecs[2], vmSpecs[3])
             self.spinBox_2.setValue(int(vmSpecs[4]))
+
+        elif vmSpecs[1] == "aarch64":
+            self.comboBox.setCurrentIndex(4)
+            self.machineCpuAarch64(vmSpecs[2], vmSpecs[3])
+            self.spinBox_5.setValue(int(vmSpecs[4]))
 
         self.lineEdit_6.setText(vmSpecs[5])
 
@@ -219,6 +249,18 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.lineEdit_5.setText(vmSpecs[14])
         self.lineEdit_7.setText(vmSpecs[15])
 
+        i = 0
+
+        while i < self.comboBox_13.count():
+            if self.comboBox_13.itemText(i) == vmSpecs[16]:
+                self.comboBox_13.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        self.lineEdit_8.setText(vmSpecs[18])
+        self.spinBox_6.setValue(int(vmSpecs[17]))
+
         return vmSpecs
 
     def archSystem(self):
@@ -260,6 +302,9 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     elif self.comboBox.currentText() == "mips64el":
                         self.stackedWidget.setCurrentIndex(3)
 
+                    elif self.comboBox.currentText() == "aarch64":
+                        self.stackedWidget.setCurrentIndex(4)
+
             except:
                 if self.comboBox.currentText() == "i386":
                     self.stackedWidget.setCurrentIndex(1)
@@ -272,12 +317,15 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 elif self.comboBox.currentText() == "mips64el":
                     self.stackedWidget.setCurrentIndex(3)
+
+                elif self.comboBox.currentText() == "aarch64":
+                    self.stackedWidget.setCurrentIndex(4)
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
     def vhdMenu(self):
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(5)
 
     def vhdBrowseLocation(self):
         filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
@@ -298,16 +346,22 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(0)
 
     def vgaNetworkMenu(self):
-        self.stackedWidget.setCurrentIndex(5)
-
-    def extBios(self):
         self.stackedWidget.setCurrentIndex(6)
 
-    def soundCard(self):
+    def extBios(self):
         self.stackedWidget.setCurrentIndex(7)
 
-    def linuxVMSpecific(self):
+    def extBiosFileLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_8.setText(filename)
+
+    def soundCard(self):
         self.stackedWidget.setCurrentIndex(8)
+
+    def linuxVMSpecific(self):
+        self.stackedWidget.setCurrentIndex(9)
 
     def linuxKernelBrowseLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
@@ -322,7 +376,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.lineEdit_5.setText(filename)
 
     def win2kHacker(self):
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(10)
 
     def finishCreation(self):
         if platform.system() == "Windows":
@@ -347,6 +401,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             machine = self.comboBox_6.currentText()
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()
+
+        elif self.comboBox.currentText() == "aarch64":
+            machine = self.comboBox_14.currentText()
+            cpu = self.comboBox_15.currentText()
+            ram = self.spinBox_5.value()
 
         if self.lineEdit_6.text() == "":
             vhd = "NULL"
@@ -426,7 +485,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         SET name = "{self.lineEdit.text()}", architecture = "{self.comboBox.currentText()}", machine = "{machine}", cpu = "{cpu}",
         ram = {ram}, hda = "{vhd}", vga = "{self.comboBox_10.currentText()}", net = "{networkAdapter}", usbtablet = {usbtablet},
         win2k = {win2k}, dirbios = "{ext_bios_dir}", additionalargs = "{add_args}", sound = "{self.comboBox_12.currentText()}",
-        linuxkernel = "{self.lineEdit_4.text()}", linuxinitrid = "{self.lineEdit_5.text()}", linuxcmd = "{self.lineEdit_7.text()}"
+        linuxkernel = "{self.lineEdit_4.text()}", linuxinitrid = "{self.lineEdit_5.text()}", linuxcmd = "{self.lineEdit_7.text()}",
+        mousetype = "{self.comboBox_13.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_8.text()}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 
