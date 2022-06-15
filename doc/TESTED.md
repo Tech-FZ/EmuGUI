@@ -26,3 +26,9 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Operating system                          | Architecture | Working   | Notes                                                                            |
 | ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
 | Ubuntu Desktop 12.04 LTS                  | PowerPC      | Yes       | Leave USB Device Tablet unchecked, set `-usbdevice mouse` as additional argument |
+
+## SUSE-based distributions
+
+| Operating system                          | Architecture | Working   | Notes                                                                            |
+| ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
+| openSUSE Leap 15.4                        | Aarch64      | No        | Only tested it with one core, testing with two might solve this                  |
