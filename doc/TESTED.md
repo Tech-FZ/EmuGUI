@@ -13,6 +13,12 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Windows Vista Ultimate Service Pack 2     | i386         | Yes       | Aero not available despite drivers being available                             |
 | Windows 7 Ultimate Service Pack 1         | x86_64       | Yes       | No VGA drivers, no Aero                                                        |
 
+## Mac operating systems
+
+| Operating system                          | Architecture | Working   | Notes                                                                          |
+| ----------------------------------------- | ------------ | --------- | ------------------------------------------------------------------------------ |
+| Mac OS X 10.5.6 Snow Leopard              | PowerPC      | No        | To be honest, the installer suggested something I haven't tried yet.           |
+
 ## Linux operating systems
 
 ### Ubuntu-based distributions
