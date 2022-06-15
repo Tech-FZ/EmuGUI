@@ -6,6 +6,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 | Operating system                           | Architecture | Working   | Notes                                                                          |
 | ------------------------------------------ | ------------ | --------- | ------------------------------------------------------------------------------ |
+| Windows 95 C                               | i386         | Yes       |                                                                                |
 | Windows NT 4.0 Workstation Service Pack 1  | MIPS64el     | Yes       | Needs external BIOS                                                            |
 | Windows NT 4.0 Workstation Service Pack 1  | i386         | Yes       | Use only 256 colors and 800x600 pixels or else there are mouse problems        |
 | Windows NT 4.0 Workstation Service Pack 6a | i386         | Yes       | Use only 256 colors and 800x600 pixels or else there are mouse problems        |
