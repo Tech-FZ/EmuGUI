@@ -7,6 +7,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Operating system                          | Architecture | Working   | Notes                                                                          |
 | ----------------------------------------- | ------------ | --------- | ------------------------------------------------------------------------------ |
 | Windows NT 4.0 Workstation Service Pack 1 | MIPS64el     | Yes       | Needs external BIOS                                                            |
+| Windows NT 4.0 Workstation Service Pack 1 | i386         | Yes       | Use only 256 colors and 800x600 pixels or else there are mouse problems        |
 | Windows 98 Second Edition                 | i386         | Partially | Prepare to boot Safe Mode with VBox; don't add sound card to installed systems |
 | Windows 2000 Professional Service Pack 4  | i386         | No        |                                                                                |
 | Windows XP Home Edition Service Pack 3    | i386         | Yes       |                                                                                |
