@@ -27,7 +27,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
 | Ubuntu Desktop 12.04 LTS                  | PowerPC      | Partially | Severe mouse issues, never ever use any GUI on this distribution at anytime      |
 
-## SUSE-based distributions
+### SUSE-based distributions
 
 | Operating system                          | Architecture | Working   | Notes                                                                            |
 | ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
