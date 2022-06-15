@@ -31,4 +31,5 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 | Operating system                          | Architecture | Working   | Notes                                                                            |
 | ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
-| openSUSE Leap 15.4                        | Aarch64      | No        | Only tested it with one core, testing with two might solve this                  |
+| openSUSE Leap 15.4                        | Aarch64      | No        | Installation is impossible                                                       |
+| openSUSE Tumbleweed                       | Aarch64      | Yes       | For networking, please take the preinstalled Xfce image                          |
