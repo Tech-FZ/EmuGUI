@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewVMsMwrqL.ui'
+## Form generated from reading UI file 'NewVMmVZzdp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -56,6 +56,7 @@ class Ui_Dialog(object):
         self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 1)
 
         self.comboBox = QComboBox(self.gridLayoutWidget)
+        self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -780,12 +781,7 @@ class Ui_Dialog(object):
         self.pushButton_26 = QPushButton(self.gridLayoutWidget_9)
         self.pushButton_26.setObjectName(u"pushButton_26")
 
-        self.gridLayout_9.addWidget(self.pushButton_26, 2, 2, 1, 1)
-
-        self.pushButton_28 = QPushButton(self.gridLayoutWidget_9)
-        self.pushButton_28.setObjectName(u"pushButton_28")
-
-        self.gridLayout_9.addWidget(self.pushButton_28, 2, 0, 1, 1)
+        self.gridLayout_9.addWidget(self.pushButton_26, 3, 2, 1, 1)
 
         self.comboBox_12 = QComboBox(self.gridLayoutWidget_9)
         self.comboBox_12.addItem("")
@@ -800,11 +796,6 @@ class Ui_Dialog(object):
         self.comboBox_12.setObjectName(u"comboBox_12")
 
         self.gridLayout_9.addWidget(self.comboBox_12, 0, 1, 1, 1)
-
-        self.pushButton_27 = QPushButton(self.gridLayoutWidget_9)
-        self.pushButton_27.setObjectName(u"pushButton_27")
-
-        self.gridLayout_9.addWidget(self.pushButton_27, 2, 1, 1, 1)
 
         self.label_23 = QLabel(self.gridLayoutWidget_9)
         self.label_23.setObjectName(u"label_23")
@@ -822,6 +813,28 @@ class Ui_Dialog(object):
         self.spinBox_6.setMaximum(8)
 
         self.gridLayout_9.addWidget(self.spinBox_6, 1, 1, 1, 1)
+
+        self.pushButton_27 = QPushButton(self.gridLayoutWidget_9)
+        self.pushButton_27.setObjectName(u"pushButton_27")
+
+        self.gridLayout_9.addWidget(self.pushButton_27, 3, 1, 1, 1)
+
+        self.pushButton_28 = QPushButton(self.gridLayoutWidget_9)
+        self.pushButton_28.setObjectName(u"pushButton_28")
+
+        self.gridLayout_9.addWidget(self.pushButton_28, 3, 0, 1, 1)
+
+        self.label_34 = QLabel(self.gridLayoutWidget_9)
+        self.label_34.setObjectName(u"label_34")
+
+        self.gridLayout_9.addWidget(self.label_34, 2, 0, 1, 1)
+
+        self.comboBox_16 = QComboBox(self.gridLayoutWidget_9)
+        self.comboBox_16.addItem("")
+        self.comboBox_16.addItem("")
+        self.comboBox_16.setObjectName(u"comboBox_16")
+
+        self.gridLayout_9.addWidget(self.comboBox_16, 2, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.page_9)
         self.page_10 = QWidget()
@@ -931,6 +944,11 @@ class Ui_Dialog(object):
 
         self.gridLayout_7.addWidget(self.lineEdit_2, 2, 1, 1, 1)
 
+        self.checkBox_3 = QCheckBox(self.gridLayoutWidget_7)
+        self.checkBox_3.setObjectName(u"checkBox_3")
+
+        self.gridLayout_7.addWidget(self.checkBox_3, 1, 1, 1, 1)
+
         self.stackedWidget.addWidget(self.page_7)
 
         self.retranslateUi(Dialog)
@@ -952,6 +970,7 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"mips64el", None))
         self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"ppc", None))
         self.comboBox.setItemText(4, QCoreApplication.translate("Dialog", u"aarch64", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("Dialog", u"arm", None))
 
         self.comboBox.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
@@ -1263,7 +1282,7 @@ class Ui_Dialog(object):
         self.comboBox_10.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a graphics adapter)", None))
         self.label_17.setText(QCoreApplication.translate("Dialog", u"Network", None))
         self.pushButton_18.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Yes, I want it", None))
+        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Yes, I want it (depreciated)", None))
         self.comboBox_11.setItemText(0, QCoreApplication.translate("Dialog", u"e1000", None))
         self.comboBox_11.setItemText(1, QCoreApplication.translate("Dialog", u"e1000-82544gc", None))
         self.comboBox_11.setItemText(2, QCoreApplication.translate("Dialog", u"e1000-82545em", None))
@@ -1310,7 +1329,6 @@ class Ui_Dialog(object):
         self.label_32.setText(QCoreApplication.translate("Dialog", u"External BIOS file", None))
         self.pushButton_36.setText(QCoreApplication.translate("Dialog", u"Browse", None))
         self.pushButton_26.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
-        self.pushButton_28.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.comboBox_12.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_12.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
         self.comboBox_12.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
@@ -1321,9 +1339,14 @@ class Ui_Dialog(object):
         self.comboBox_12.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
         self.comboBox_12.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
 
-        self.pushButton_27.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.label_23.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
         self.label_33.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
+        self.pushButton_27.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_28.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.label_34.setText(QCoreApplication.translate("Dialog", u"Keyboard", None))
+        self.comboBox_16.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
+        self.comboBox_16.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
+
         self.pushButton_30.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.label_25.setText(QCoreApplication.translate("Dialog", u"Linux initrd image", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Browse", None))
@@ -1338,5 +1361,6 @@ class Ui_Dialog(object):
         self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000", None))
         self.pushButton_22.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if needed)", None))
+        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
     # retranslateUi
 

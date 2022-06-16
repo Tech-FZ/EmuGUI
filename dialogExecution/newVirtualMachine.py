@@ -10,6 +10,8 @@ from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
+        # Initializing the dialog for creating the VM.
+
         super().__init__(parent)
         self.setupUi(self)
         self.setWindowTitle("EmuGUI - Create new VM")
@@ -46,7 +48,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_11.clicked.connect(self.vhdMenu)
         self.pushButton_12.clicked.connect(self.close)
 
-        # Page 2.4 (aarch64 machine preparation)
+        # Page 2.4 (aarch64/arm machine preparation)
         self.pushButton_33.clicked.connect(self.firstStage)
         self.pushButton_34.clicked.connect(self.vhdMenu)
         self.pushButton_35.clicked.connect(self.close)
@@ -86,6 +88,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_21.clicked.connect(self.close)
 
     def archSystem(self):
+        # Here, it checks the name first, than the architecture.
+
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
@@ -122,7 +126,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif self.comboBox.currentText() == "mips64el":
                     self.stackedWidget.setCurrentIndex(3)
                 
-                elif self.comboBox.currentText() == "aarch64":
+                elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                     self.stackedWidget.setCurrentIndex(4)
         
         except sqlite3.Error as e:
@@ -132,6 +136,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(5)
 
     def vhdBrowseLocation(self):
+        # This code makes it possible to search a location for your VHD.
+
         filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
 
         if filename:
@@ -183,6 +189,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(10)
 
     def finishCreation(self):
+        # This creates your VM in the first place
+
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
@@ -206,7 +214,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()
 
-        elif self.comboBox.currentText() == "aarch64":
+        elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
             machine = self.comboBox_14.currentText()
             cpu = self.comboBox_15.currentText()
             ram = self.spinBox_5.value()
@@ -283,6 +291,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         ext_bios_dir = self.lineEdit_3.text()
 
         add_args = self.lineEdit_2.text()
+
+        if self.checkBox_3.isChecked():
+            usb_support = 1
+
+        else:
+            usb_support = 0
         
         insert_into_vm_database = f"""
         INSERT INTO virtualmachines (
@@ -304,7 +318,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             linuxcmd,
             mousetype,
             cores,
-            filebios
+            filebios,
+            keyboardtype,
+            usbsupport
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -324,7 +340,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{self.lineEdit_7.text()}",
             "{self.comboBox_13.currentText()}",
             {self.spinBox_6.value()},
-            "{self.lineEdit_8.text()}"
+            "{self.lineEdit_8.text()}",
+            "{self.comboBox_16.currentText()}",
+            {usb_support}
         );
         """
 

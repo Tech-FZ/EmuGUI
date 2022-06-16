@@ -1,6 +1,13 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.4
 
 - Updated TESTED.md
+- Commented the code
+- Fixed a raw issue
+- Added USB support
+- The USB Tablet checkbox is now depreciated and will be removed in a future update.
+- Added USB keyboard support
+- Added experimental ARM support
+- Added python-magic instructions to README.md
 
 # EmuGUI v0.3
 

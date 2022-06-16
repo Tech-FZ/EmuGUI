@@ -1,3 +1,4 @@
+# Importing required modules
 import sqlite3
 import sys
 from PySide6.QtWidgets import *
@@ -14,12 +15,13 @@ from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
+        # This function initializes and runs EmuGUI
         super().__init__(parent)
         self.setupUi(self)
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.3")
+        self.label_8.setText("EmuGUI v0.4")
         self.setWindowTitle("EmuGUI")
 
         if platform.system() == "Windows":
@@ -32,6 +34,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.updateVmList()
 
     def connectSignalsSlots(self):
+        # These buttons are connected to their incorporate functions
         self.pushButton_8.clicked.connect(self.createNewVM)
         self.pushButton.clicked.connect(self.set_qemu_img_path)
         self.pushButton_2.clicked.connect(self.set_qemu_i386_path)
@@ -43,8 +46,10 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_11.clicked.connect(self.deleteVM)
         self.pushButton_10.clicked.connect(self.editVM)
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
+        self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
 
     def prepareDatabase(self, connection):
+        # Some SQL statements to initialize EmuGUI
         create_settings_table = """
         CREATE TABLE IF NOT EXISTS settings (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -74,20 +79,29 @@ class Window(QMainWindow, Ui_MainWindow):
             linuxcmd TEXT NOT NULL,
             mousetype TEXT NOT NULL,
             cores INT DEFAULT 1 NOT NULL,
-            filebios TEXT DEFAULT "" NOT NULL
+            filebios TEXT DEFAULT "" NOT NULL,
+            keyboardtype TEXT NOT NULL,
+            usbsupport INT DEFAULT 0 NOT NULL
         );
         """
 
+        # The v0.2 feature set
         select02ColumnsVM = """
         SELECT sound, linuxkernel, linuxinitrid, linuxcmd FROM virtualmachines;
         """
 
+        # The v0.3 feature set
         select03ColumnsVM = """
         SELECT mousetype FROM virtualmachines;
         """
 
         select03ColumnsVM2 = """
         SELECT cores, filebios FROM virtualmachines;
+        """
+
+        # The v0.4 feature set
+        select04ColumnsVM = """
+        SELECT keyboardtype, usbsupport FROM virtualmachines;
         """
 
         insertSoundColVM = """
@@ -123,6 +137,16 @@ class Window(QMainWindow, Ui_MainWindow):
         insertBiosFileVM = """
         ALTER TABLE virtualmachines
         ADD COLUMN filebios TEXT DEFAULT "" NOT NULL;
+        """
+
+        insertKeyboardTypeVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN keyboardtype TEXT DEFAULT "PS/2 Keyboard" NOT NULL;
+        """
+
+        insertUsbSupportVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN usbsupport INT DEFAULT 0 NOT NULL;
         """
 
         insert_qemu_img = """
@@ -173,6 +197,14 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        insert_qemu_arm = """
+        INSERT INTO settings (
+            name
+        ) VALUES (
+            "qemu-system-arm"
+        );
+        """
+
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -207,7 +239,14 @@ class Window(QMainWindow, Ui_MainWindow):
         WHERE name = "qemu-system-aarch64";
         """
 
+        select_qemu_arm = """
+        SELECT name, value FROM settings
+        WHERE name = "qemu-system-arm";
+        """
+
         cursor = connection.cursor()
+
+        # If they don't exist yet, the settings and VM tables are created.
 
         try:
             cursor.execute(create_settings_table)
@@ -224,6 +263,8 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+        # Then, the tables will be checked for completeness.
 
         try:
             cursor.execute(select_qemu_img)
@@ -334,6 +375,24 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
         try:
+            cursor.execute(select_qemu_arm)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                self.lineEdit_7.setText(result[0][1])
+                print("The query was executed successfully. The qemu-system-arm slot already is in the database.")
+
+            except:
+                cursor.execute(insert_qemu_arm)
+                connection.commit()
+                print("The query was executed successfully. The qemu-system-arm slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
             cursor.execute(select02ColumnsVM)
             connection.commit()
             result = cursor.fetchall()
@@ -409,6 +468,30 @@ class Window(QMainWindow, Ui_MainWindow):
                 print(f"The SQLite module encountered an error: {e}.")
 
         try:
+            cursor.execute(select04ColumnsVM)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                print("The query was executed successfully. The v0.4 feature columns already are in the VM table.")
+
+            except:
+                pass
+        
+        except sqlite3.Error as e:
+            try:
+                cursor.execute(insertKeyboardTypeVM)
+                connection.commit()
+
+                cursor.execute(insertUsbSupportVM)
+                connection.commit()
+                print("The queries were executed successfully. The missing features have been added to the database.")
+            
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+        try:
             cursor.execute(debug_db_settings)
             connection.commit()
             print(cursor.fetchall())
@@ -418,6 +501,7 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def createNewVM(self):
+        # This is the code that launches the dialog for creating a VM.
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -432,7 +516,11 @@ class Window(QMainWindow, Ui_MainWindow):
 
             print(result)
 
-            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None or result[5][1] == None:
+            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
+                dialog2 = SettingsPending1Dialog(self)
+                dialog2.exec()
+
+            elif result[5][1] == None or result[6][1] == None:
                 dialog2 = SettingsPending1Dialog(self)
                 dialog2.exec()
 
@@ -444,6 +532,8 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def startVM(self):
+        # This is the code that lets you power your virtual machines in the first place.
+
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -458,7 +548,11 @@ class Window(QMainWindow, Ui_MainWindow):
 
             print(result)
 
-            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None or result[5][1] == None:
+            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
+                dialog2 = SettingsPending1Dialog(self)
+                dialog2.exec()
+
+            elif result[5][1] == None or result[6][1] == None:
                 dialog2 = SettingsPending1Dialog(self)
                 dialog2.exec()
 
@@ -468,7 +562,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 get_vm_to_start = f"""
                 SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-                linuxinitrid, linuxcmd, mousetype, cores, filebios FROM virtualmachines
+                linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport FROM virtualmachines
                 WHERE name = '{selectedVM}'
                 """
 
@@ -497,6 +591,8 @@ class Window(QMainWindow, Ui_MainWindow):
                     mouse_type = result[0][15]
                     cpu_cores = result[0][16]
                     file_bios = result[0][17]
+                    kbd_type = result[0][18]
+                    usb_support = result[0][19]
 
                 except sqlite3.Error as e:
                     print(f"The SQLite module encountered an error: {e}.")
@@ -527,6 +623,8 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(mouse_type + "\n")
                     tempVmDefFile.write(str(cpu_cores) + "\n")
                     tempVmDefFile.write(str(file_bios) + "\n")
+                    tempVmDefFile.write(kbd_type + "\n")
+                    tempVmDefFile.write(str(usb_support) + "\n")
 
                 dialog = StartVirtualMachineDialog(self)
                 dialog.exec()
@@ -535,6 +633,8 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def editVM(self):
+        # Of course, this code prepares the dialog for editing VMs.
+
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -549,7 +649,11 @@ class Window(QMainWindow, Ui_MainWindow):
 
             print(result)
 
-            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None or result[5][1] == None:
+            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
+                dialog2 = SettingsPending1Dialog(self)
+                dialog2.exec()
+
+            elif result[5][1] == None or result[6][1] == None:
                 dialog2 = SettingsPending1Dialog(self)
                 dialog2.exec()
 
@@ -559,7 +663,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 get_vm_to_start = f"""
                 SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-                linuxinitrid, linuxcmd, mousetype, cores, filebios FROM virtualmachines
+                linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport FROM virtualmachines
                 WHERE name = '{selectedVM}'
                 """
 
@@ -588,6 +692,8 @@ class Window(QMainWindow, Ui_MainWindow):
                     mouse_type = result[0][15]
                     cpu_cores = result[0][16]
                     file_bios = result[0][17]
+                    kbd_type = result[0][18]
+                    usb_support = result[0][19]
 
                 except sqlite3.Error as e:
                     print(f"The SQLite module encountered an error: {e}.")
@@ -618,12 +724,16 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(mouse_type + "\n")
                     tempVmDefFile.write(str(cpu_cores) + "\n")
                     tempVmDefFile.write(file_bios + "\n")
+                    tempVmDefFile.write(kbd_type + "\n")
+                    tempVmDefFile.write(str(usb_support) + "\n")
 
                 dialog = EditVirtualMachineDialog(self)
                 dialog.exec()
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+    # These functions are for setting the QEMU paths.
 
     def set_qemu_img_path(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-img executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
@@ -661,6 +771,12 @@ class Window(QMainWindow, Ui_MainWindow):
         if filename:
             self.lineEdit_6.setText(filename)
 
+    def set_qemu_arm_path(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-arm executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_7.setText(filename)
+
     def applyChangesQemu(self):
         pathQemuImg = self.lineEdit_5.text()
         pathQemuI386 = self.lineEdit_4.text()
@@ -668,6 +784,7 @@ class Window(QMainWindow, Ui_MainWindow):
         pathQemuPpc = self.lineEdit_2.text()
         pathQemuMips64El = self.lineEdit.text()
         pathQemuAarch64 = self.lineEdit_6.text()
+        pathQemuArm = self.lineEdit_7.text()
 
         qemu_img_update = f"""
         UPDATE settings
@@ -703,6 +820,12 @@ class Window(QMainWindow, Ui_MainWindow):
         UPDATE settings
         SET value = '{pathQemuAarch64}'
         WHERE name = 'qemu-system-aarch64';
+        """
+
+        qemu_arm_update = f"""
+        UPDATE settings
+        SET value = '{pathQemuArm}'
+        WHERE name = 'qemu-system-arm';
         """
 
         connection = self.connection
@@ -756,6 +879,16 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+        try:
+            cursor.execute(qemu_arm_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    # Your VM list will be updated every 10 seconds.
+
     def updateVmList(self):
         try:
             self.timer.stop()
@@ -799,6 +932,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.timer.start(10000)
 
     def deleteVM(self):
+        # This code wipes your obsolete VM from the list.
+
         connection = self.connection
         cursor = connection.cursor()
         selectedVM = self.listView.currentIndex().data()
@@ -819,6 +954,8 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
 class SettingsPending1Dialog(QDialog, Ui_Dialog):
+    # This comes up if you didn't setup the QEMU paths.
+
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)

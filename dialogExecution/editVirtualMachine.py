@@ -10,6 +10,7 @@ from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 
 class EditVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
+        # This is preparing the dialog required.
         super().__init__(parent)
         self.setupUi(self)
         self.connectSignalsSlots()
@@ -47,7 +48,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_11.clicked.connect(self.vhdMenu)
         self.pushButton_12.clicked.connect(self.close)
 
-        # Page 2.4 (aarch64 machine preparation)
+        # Page 2.4 (aarch64/arm machine preparation)
         self.pushButton_33.clicked.connect(self.firstStage)
         self.pushButton_34.clicked.connect(self.vhdMenu)
         self.pushButton_35.clicked.connect(self.close)
@@ -85,6 +86,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_22.clicked.connect(self.linuxVMSpecific)
         self.pushButton_20.clicked.connect(self.finishCreation)
         self.pushButton_21.clicked.connect(self.close)
+
+    # First, it will check the architecture of your VM.
 
     def machineCpuI386Amd64(self, machine, cpu):
         i = 0
@@ -179,6 +182,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             vmSpecNew = vmSpec.replace("\n", "")
             vmSpecs.append(vmSpecNew)
 
+        # Setting VM variables
+
         self.lineEdit.setText(vmSpecs[0])
 
         if vmSpecs[1] == "i386":
@@ -201,7 +206,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.machineCpuPpc(vmSpecs[2], vmSpecs[3])
             self.spinBox_2.setValue(int(vmSpecs[4]))
 
-        elif vmSpecs[1] == "aarch64":
+        elif vmSpecs[1] == "aarch64" or self.comboBox.currentText() == "arm":
             self.comboBox.setCurrentIndex(4)
             self.machineCpuAarch64(vmSpecs[2], vmSpecs[3])
             self.spinBox_5.setValue(int(vmSpecs[4]))
@@ -261,9 +266,23 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.lineEdit_8.setText(vmSpecs[18])
         self.spinBox_6.setValue(int(vmSpecs[17]))
 
+        i = 0
+
+        while i < self.comboBox_16.count():
+            if self.comboBox_16.itemText(i) == vmSpecs[19]:
+                self.comboBox_16.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        if vmSpecs[20] == "1":
+            self.checkBox_3.setChecked(True)
+
         return vmSpecs
 
     def archSystem(self):
+        # It checks name and architecture.
+
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
@@ -302,7 +321,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     elif self.comboBox.currentText() == "mips64el":
                         self.stackedWidget.setCurrentIndex(3)
 
-                    elif self.comboBox.currentText() == "aarch64":
+                    elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                         self.stackedWidget.setCurrentIndex(4)
 
             except:
@@ -318,7 +337,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif self.comboBox.currentText() == "mips64el":
                     self.stackedWidget.setCurrentIndex(3)
 
-                elif self.comboBox.currentText() == "aarch64":
+                elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                     self.stackedWidget.setCurrentIndex(4)
         
         except sqlite3.Error as e:
@@ -328,6 +347,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(5)
 
     def vhdBrowseLocation(self):
+        # This code lets you browse the VHD location.
+
         filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
 
         if filename:
@@ -379,6 +400,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(10)
 
     def finishCreation(self):
+        # This applies the changes to your VM.
+        
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
@@ -402,7 +425,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()
 
-        elif self.comboBox.currentText() == "aarch64":
+        elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
             machine = self.comboBox_14.currentText()
             cpu = self.comboBox_15.currentText()
             ram = self.spinBox_5.value()
@@ -479,6 +502,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         ext_bios_dir = self.lineEdit_3.text()
 
         add_args = self.lineEdit_2.text()
+
+        if self.checkBox_3.isChecked():
+            usb_support = 1
+
+        else:
+            usb_support = 0
         
         insert_into_vm_database = f"""
         UPDATE virtualmachines
@@ -486,7 +515,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         ram = {ram}, hda = "{vhd}", vga = "{self.comboBox_10.currentText()}", net = "{networkAdapter}", usbtablet = {usbtablet},
         win2k = {win2k}, dirbios = "{ext_bios_dir}", additionalargs = "{add_args}", sound = "{self.comboBox_12.currentText()}",
         linuxkernel = "{self.lineEdit_4.text()}", linuxinitrid = "{self.lineEdit_5.text()}", linuxcmd = "{self.lineEdit_7.text()}",
-        mousetype = "{self.comboBox_13.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_8.text()}"
+        mousetype = "{self.comboBox_13.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_8.text()}",
+        keyboardtype = "{self.comboBox_16.currentText()}", usbsupport = {usb_support}
         WHERE name = "{self.vmSpecs[0]}";
         """
 

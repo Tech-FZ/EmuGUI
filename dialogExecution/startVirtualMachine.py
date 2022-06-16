@@ -8,6 +8,7 @@ import sqlite3
 import subprocess
 from PySide6.QtCore import QDateTime
 from random import randint
+import magic
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
@@ -26,6 +27,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             self.connection = platformSpecific.unixSpecific.setupUnixBackend()
 
     def connectSignalsSlots(self):
+        # This code connects the buttons to their functions
         self.pushButton.clicked.connect(self.set_fda_path)
         self.pushButton_2.clicked.connect(self.set_cdrom_path)
         self.pushButton_3.clicked.connect(self.start_virtual_machine)
@@ -51,6 +53,8 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
         return vmSpecs
 
+    # These are asked every time you want to run the VMs.
+
     def set_fda_path(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select floppy disk', dir='.', filter='Floppy image (*.img);;Floppy file (*.flp);;Floppy image (*.ima);;All files (*.*)')
 
@@ -65,6 +69,8 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
     def set_date_to_system(self):
         self.dateTimeEdit.setDateTime(QDateTime.currentDateTime())
+
+    # Here, it chooses the architecture for your VM and starts the right thing.
 
     def start_virtual_machine(self):
         qemu_i386_bin = """
@@ -90,6 +96,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         qemu_aarch64_bin = """
         SELECT value FROM settings
         WHERE name = 'qemu-system-aarch64';
+        """
+
+        qemu_arm_bin = """
+        SELECT value FROM settings
+        WHERE name = 'qemu-system-arm';
         """
 
         connection = self.connection
@@ -141,8 +152,21 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 print(result)
 
+            elif self.vmSpecs[1] == "arm":
+                cursor.execute(qemu_arm_bin)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
+
             qemu_to_execute = result[0][0]
-            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -hda \"{self.vmSpecs[5]}\" -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]}"
+            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]}"
+
+            if magic.from_file(self.vmSpecs[5]) == "block special":
+                qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{self.vmSpecs[5]}\""
+
+            else:
+                qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
 
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
@@ -151,7 +175,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + f" -cpu {self.vmSpecs[3]}"
 
             if self.vmSpecs[6] != "Let QEMU decide":
-                if self.vmSpecs[1] == "aarch64":
+                if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
                     qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]} -display gtk"
 
                 else:
@@ -164,7 +188,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif self.vmSpecs[1] == "mips64el":
                     qemu_cmd = qemu_cmd + f" -nic user,model={self.vmSpecs[7]}"
 
-                elif self.vmSpecs[1] == "aarch64":
+                elif self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
+                    # Due to the circumstances here, for the VM, a random MAC address is
+                    # generated at runtime. Due to that, the MAC changes every time you
+                    # start your virtual machine.
+
                     mac_gen = []
                     i = 0
 
@@ -276,6 +304,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[7]},netdev=hostnet0,mac={mac_to_use} -netdev user,id=hostnet0"
             
             if self.vmSpecs[7] == "1":
+                print("WARNING: Using the checkbox for the USB tablet is depreciated.")
+                print("This feature is going to be removed in an future update.")
+                print("Please use the combo box for this task instead.")
                 qemu_cmd = qemu_cmd + " -usbdevice tablet"
 
             if self.vmSpecs[8] == "1" and self.vmSpecs[0] == "i386":
@@ -296,9 +327,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             elif bootfrom == "d" and cdrom_file != "":
                 qemu_cmd = qemu_cmd + " -boot d"
 
-            elif bootfrom == "Let QEMU decide":
-                pass
-
             if self.vmSpecs[10] != "":
                 qemu_cmd = qemu_cmd + f" -L {self.vmSpecs[10]}"
 
@@ -318,13 +346,27 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""
 
             if self.vmSpecs[16] == "USB Mouse" and self.vmSpecs[7] == "0":
-                qemu_cmd = qemu_cmd + " -usbdevice mouse"
+                if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
+                    qemu_cmd = qemu_cmd + " -device usb-mouse"
 
-            if self.vmSpecs[16] == "USB Tablet Device" and self.vmSpecs[7] == "1":
-                qemu_cmd = qemu_cmd + " -usbdevice tablet"
+                else:
+                    qemu_cmd = qemu_cmd + " -usbdevice mouse"
+
+            if self.vmSpecs[16] == "USB Tablet Device" and self.vmSpecs[7] == "0":
+                if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
+                    qemu_cmd = qemu_cmd + " -device usb-tablet"
+
+                else:
+                    qemu_cmd = qemu_cmd + " -usbdevice tablet"
 
             if self.vmSpecs[18] != "" and self.vmSpecs[18] != None and self.vmSpecs[18] != "None":
                 qemu_cmd = qemu_cmd + f" -bios \"{self.vmSpecs[18]}\""
+
+            if self.vmSpecs[19] == "USB Keyboard":
+                qemu_cmd = qemu_cmd + " -device usb-kbd"
+
+            if self.vmSpecs[20] == "1":
+                qemu_cmd = qemu_cmd + " -usb"
 
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"

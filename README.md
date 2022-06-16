@@ -49,7 +49,7 @@ HDD: 2 GB¹
 8. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
 9. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6`
+11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic-bin`
 12. After this is done, run the main.py script.
 13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile .\main.py`
 14. After that is finished, copy the code into the dist folder PyInstaller created.
