@@ -1,3 +1,11 @@
+# EmuGUI v0.4.1
+
+- Fixed an issue which caused USB input devices on ARM machines not to be accepted because USB support was being initialized too late.
+- To do that, I had to specify an USB 1.1 controller in the VM bootcode.
+- Also, to make it easier, USB support is enabled automatically if you decide to use an USB device.
+- With that, a network issue has been caused on ARM emulator instances. That has been fixed by adding the virtio-net-device.
+- Updated TESTED.md
+
 # EmuGUI v0.4
 
 - Updated TESTED.md

@@ -302,6 +302,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     mac_to_use = f"{mac_gen[0]}:{mac_gen[1]}:{mac_gen[2]}:{mac_gen[3]}:{mac_gen[4]}:{mac_gen[5]}"
                     qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[7]},netdev=hostnet0,mac={mac_to_use} -netdev user,id=hostnet0"
+
+            if self.vmSpecs[20] == "1":
+                qemu_cmd = qemu_cmd + " -usb -device pci-ohci"
             
             if self.vmSpecs[7] == "1":
                 print("WARNING: Using the checkbox for the USB tablet is depreciated.")
@@ -364,9 +367,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             if self.vmSpecs[19] == "USB Keyboard":
                 qemu_cmd = qemu_cmd + " -device usb-kbd"
-
-            if self.vmSpecs[20] == "1":
-                qemu_cmd = qemu_cmd + " -usb"
 
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"

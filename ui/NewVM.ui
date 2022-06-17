@@ -1945,6 +1945,11 @@
         </item>
         <item>
          <property name="text">
+          <string>virtio-net-device</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>virtio-net-pci</string>
          </property>
         </item>

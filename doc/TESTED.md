@@ -35,4 +35,4 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Operating system                          | Architecture | Working   | Notes                                                                            |
 | ----------------------------------------- | ------------ | --------- | -------------------------------------------------------------------------------- |
 | openSUSE Leap 15.4                        | Aarch64      | No        | Installation is impossible                                                       |
-| openSUSE Tumbleweed                       | Aarch64      | Partially | For networking, please take the preinstalled Xfce image. Terminal only.          |
+| openSUSE Tumbleweed                       | Aarch64      | Partially | For networking, please take the preinstalled Xfce image. There are mouse issues. |

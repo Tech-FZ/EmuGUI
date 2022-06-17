@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewVMmVZzdp.ui'
+## Form generated from reading UI file 'NewVMkMXHZw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -678,6 +678,7 @@ class Ui_Dialog(object):
         self.comboBox_11.addItem("")
         self.comboBox_11.addItem("")
         self.comboBox_11.addItem("")
+        self.comboBox_11.addItem("")
         self.comboBox_11.setObjectName(u"comboBox_11")
 
         self.gridLayout_6.addWidget(self.comboBox_11, 1, 1, 1, 1)
@@ -1305,12 +1306,13 @@ class Ui_Dialog(object):
         self.comboBox_11.setItemText(19, QCoreApplication.translate("Dialog", u"rtl8139", None))
         self.comboBox_11.setItemText(20, QCoreApplication.translate("Dialog", u"tulip", None))
         self.comboBox_11.setItemText(21, QCoreApplication.translate("Dialog", u"virtio-net", None))
-        self.comboBox_11.setItemText(22, QCoreApplication.translate("Dialog", u"virtio-net-pci", None))
-        self.comboBox_11.setItemText(23, QCoreApplication.translate("Dialog", u"virtio-net-pci-non-transitional", None))
-        self.comboBox_11.setItemText(24, QCoreApplication.translate("Dialog", u"virtio-net-pci-transitional", None))
-        self.comboBox_11.setItemText(25, QCoreApplication.translate("Dialog", u"vmxnet3", None))
-        self.comboBox_11.setItemText(26, QCoreApplication.translate("Dialog", u"dp83932", None))
-        self.comboBox_11.setItemText(27, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_11.setItemText(22, QCoreApplication.translate("Dialog", u"virtio-net-device", None))
+        self.comboBox_11.setItemText(23, QCoreApplication.translate("Dialog", u"virtio-net-pci", None))
+        self.comboBox_11.setItemText(24, QCoreApplication.translate("Dialog", u"virtio-net-pci-non-transitional", None))
+        self.comboBox_11.setItemText(25, QCoreApplication.translate("Dialog", u"virtio-net-pci-transitional", None))
+        self.comboBox_11.setItemText(26, QCoreApplication.translate("Dialog", u"vmxnet3", None))
+        self.comboBox_11.setItemText(27, QCoreApplication.translate("Dialog", u"dp83932", None))
+        self.comboBox_11.setItemText(28, QCoreApplication.translate("Dialog", u"none", None))
 
         self.comboBox_11.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a network adapter)", None))
         self.pushButton_19.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
