@@ -37,7 +37,7 @@ HDD: 2 GB¹
 4. If you have external BIOS files in the root directory of your old EmuGUI installation, copy these into the root directory of the new one.
 5. Start the new EmuGUI installation. You might need to reinstall some virtual machines.
 
-## Building on Windows
+## Building on Windows (Python Venv)
 
 1. Install Python. You can get it from https://www.python.org/
 2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
@@ -55,6 +55,24 @@ HDD: 2 GB¹
 14. After that is finished, copy the code into the dist folder PyInstaller created.
 15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 16. If it works, have fun! If not, try to start again from number 9.
+
+## Building on Windows (Anaconda)
+
+1. Install Anaconda. You can get it from here: https://www.anaconda.com/
+2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
+3. Install Git. You can get it from https://git-scm.com/downloads
+4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
+5. Install Qt. You can get it from here: https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5
+6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
+7. Open Visual Studio Code in that folder.
+8. Open Anaconda Navigator and create a new virtual environment.
+9. Open the venv in VS Code and try to run a Python script with it.
+10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6`
+11. After this is done, run the main.py script.
+12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile .\main.py`
+13. After that is finished, copy the code into the dist folder PyInstaller created.
+14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+15. If it works, have fun! If not, try to start again from number 9.
 
 ## Documentation
 

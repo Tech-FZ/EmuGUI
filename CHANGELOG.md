@@ -1,3 +1,8 @@
+# EmuGUI v0.4.2
+
+- Upgraded binaries to Python 3.10.4
+- Added compiling instructions for Anaconda to README.md
+
 # EmuGUI v0.4.1
 
 - Fixed an issue which caused USB input devices on ARM machines not to be accepted because USB support was being initialized too late.
