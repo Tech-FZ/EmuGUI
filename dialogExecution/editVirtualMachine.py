@@ -503,7 +503,10 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
         add_args = self.lineEdit_2.text()
 
-        if self.checkBox_3.isChecked():
+        if self.checkBox_3.isChecked() or self.checkBox.isChecked() or self.comboBox_13.currentText() == "USB Mouse":
+            usb_support = 1
+
+        elif self.comboBox_13.currentText() == "USB Tablet Device" or self.comboBox_16.currentText() == "USB Keyboard":
             usb_support = 1
 
         else:

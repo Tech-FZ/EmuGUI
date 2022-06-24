@@ -1,7 +1,7 @@
 # EmuGUI v0.4.2
 
-- Upgraded binaries to Python 3.10.4
 - Added compiling instructions for Anaconda to README.md
+- Resolved an issue which caused some virtual machines to be impossible to create
 
 # EmuGUI v0.4.1
 
