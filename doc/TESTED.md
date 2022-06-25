@@ -20,7 +20,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 
 | Operating system                          | Architecture | Working   | Notes                                                                          |
 | ----------------------------------------- | ------------ | --------- | ------------------------------------------------------------------------------ |
-| Mac OS X 10.5.6 Snow Leopard              | PowerPC      | No        | To be honest, the installer suggested something I haven't tried yet.           |
+| Mac OS X 10.5.6 Snow Leopard              | PowerPC      | No        | If someone knows how to deal with this, please let me know.                    |
 
 ## Linux operating systems
 
