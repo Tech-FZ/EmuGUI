@@ -1,3 +1,7 @@
+# EmuGUI (insert version here)
+
+- Updated TESTED.md
+
 # EmuGUI v0.4.2
 
 - Added compiling instructions for Anaconda to README.md
