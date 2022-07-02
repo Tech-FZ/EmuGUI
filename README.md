@@ -7,7 +7,7 @@ This project is currently hosted on GitHub.  This is not ideal; GitHub is a
 proprietary, trade-secret system that is not Free and Open Souce Software
 (FOSS).  We are deeply concerned about using a proprietary system like GitHub
 to develop our FOSS project.  We have an
-[open issue](https://github.com/Tech-FZ/Bomb-Quest/issues/8) where the
+[open issue](https://github.com/Tech-FZ/EmuGUI/issues/24) where the
 project contributors are actively discussing how we can move away from GitHub
 in the long term.  We urge you to read about the
 [Give up GitHub](https://GiveUpGitHub.org) campaign from
