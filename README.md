@@ -69,7 +69,7 @@ HDD: 2 GB¹
 2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
 3. Install Git. You can get it from https://git-scm.com/downloads
 4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
-5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
+5. Open a terminal and type: `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
 6. Open Visual Studio Code in that folder.
 7. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
 8. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
@@ -89,7 +89,7 @@ HDD: 2 GB¹
 3. Install Git. You can get it from https://git-scm.com/downloads
 4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
 5. Install Qt. You can get it from here: https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5
-6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
+6. Open a terminal and type: `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
 7. Open Visual Studio Code in that folder.
 8. Open Anaconda Navigator and create a new virtual environment.
 9. Open the venv in VS Code and try to run a Python script with it.
