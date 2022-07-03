@@ -1,6 +1,10 @@
 # EmuGUI
 What should I say? I didn't like the existing QEMU interfaces for Windows, so I made my own.
 
+## New experimental mirror on Codeberg
+
+This is an experimental mirror of EmuGUI which is also hosted on GitHub. If you still prefer the GitHub mirror, you can check here: https://github.com/Tech-FZ/EmuGUI
+
 ## We're Using GitHub Under Protest
 
 This project is currently hosted on GitHub.  This is not ideal; GitHub is a
