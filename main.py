@@ -12,6 +12,7 @@ from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from uiScripts.ui_SettingsPending1 import Ui_Dialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
+import datetime
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -21,7 +22,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.4.2")
+        self.label_8.setText("EmuGUI v0.5.0.1 (Pre-release)")
         self.setWindowTitle("EmuGUI")
 
         if platform.system() == "Windows":
@@ -47,6 +48,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_10.clicked.connect(self.editVM)
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
+        self.pushButton_14.clicked.connect(self.applyChangesUpdate)
+        self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
 
     def prepareDatabase(self, connection):
         # Some SQL statements to initialize EmuGUI
@@ -82,6 +85,14 @@ class Window(QMainWindow, Ui_MainWindow):
             filebios TEXT DEFAULT "" NOT NULL,
             keyboardtype TEXT NOT NULL,
             usbsupport INT DEFAULT 0 NOT NULL
+        );
+        """
+
+        create_update_table = """
+        CREATE TABLE IF NOT EXISTS update (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            value TEXT NOT NULL
         );
         """
 
@@ -205,6 +216,49 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        insert_update_mirror = """
+        INSERT INTO update (
+            name, value
+        ) VALUES (
+            "updatemirror", "GitHub"
+        );
+        """
+
+        # For the frequency, it's as follows:
+        # boot = Everytime I run this program
+        # daily = Every day
+        # weekly = Every week
+        # monthly = Every month
+        # never = Never
+        insert_update_freq = """
+        INSERT INTO update (
+            name, value
+        ) VALUES (
+            "updatefreq", "boot"
+        );
+        """
+
+        # For the appointment, it's as follows:
+        # boot = Do it as soon as it starts, no matter what
+        # A specific date, e.g. 2022-07-09
+        # never = Never update automatically
+        insert_next_update = """
+        INSERT INTO update (
+            name, value
+        ) VALUES (
+            "updateappointment", "boot"
+        );
+        """
+
+        # stable and pre-release are available
+        insert_update_channel = """
+        INSERT INTO update (
+            name, value
+        ) VALUES (
+            "updatechannel", "stable"
+        );
+        """
+
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -244,6 +298,26 @@ class Window(QMainWindow, Ui_MainWindow):
         WHERE name = "qemu-system-arm";
         """
 
+        select_update_mirror = """
+        SELECT name, value FROM update
+        WHERE name = "updatemirror";
+        """
+
+        select_update_freq = """
+        SELECT name, value FROM update
+        WHERE name = "updatefreq";
+        """
+
+        select_next_update = """
+        SELECT name, value FROM update
+        WHERE name = "updateappointment";
+        """
+
+        select_update_channel = """
+        SELECT name, value FROM update
+        WHERE name = "updatechannel";
+        """
+
         cursor = connection.cursor()
 
         # If they don't exist yet, the settings and VM tables are created.
@@ -258,6 +332,14 @@ class Window(QMainWindow, Ui_MainWindow):
 
         try:
             cursor.execute(create_vm_table)
+            connection.commit()
+            print("The query was executed successfully.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(create_update_table)
             connection.commit()
             print("The query was executed successfully.")
         
@@ -388,6 +470,118 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(insert_qemu_arm)
                 connection.commit()
                 print("The query was executed successfully. The qemu-system-arm slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_update_mirror)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                
+                i = 0
+
+                while i < self.comboBox.count():
+                    if self.comboBox.itemText(i) == result[0][1]:
+                        self.comboBox.setCurrentIndex(i)
+                        break
+
+                    i += 1
+
+                print("The query was executed successfully. The update mirror slot already is in the database.")
+
+            except:
+                cursor.execute(insert_update_mirror)
+                connection.commit()
+                print("The query was executed successfully. The update mirror slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_update_freq)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                
+                if result[0][1] == "boot":
+                    self.comboBox_2.setCurrentIndex(0)
+
+                elif result[0][1] == "daily":
+                    self.comboBox_2.setCurrentIndex(1)
+
+                elif result[0][1] == "weekly":
+                    self.comboBox_2.setCurrentIndex(2)
+
+                elif result[0][1] == "monthly":
+                    self.comboBox_2.setCurrentIndex(3)
+
+                elif result[0][1] == "never":
+                    self.comboBox_2.setCurrentIndex(4)
+
+                print("The query was executed successfully. The update mirror slot already is in the database.")
+
+            except:
+                cursor.execute(insert_update_freq)
+                connection.commit()
+                print("The query was executed successfully. The update mirror slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_next_update)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                
+                if result[0][1] == "boot":
+                    pass
+
+                else:
+                    date_splitter = str(result[0][1]).split("-")
+                    print(date_splitter)
+
+                print("The query was executed successfully. The update mirror slot already is in the database.")
+
+            except:
+                cursor.execute(insert_next_update)
+                connection.commit()
+                print("The query was executed successfully. The update mirror slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_update_channel)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                
+                i = 0
+
+                while i < self.comboBox_3.count():
+                    if self.comboBox_3.itemText(i) == result[0][1]:
+                        self.comboBox_3.setCurrentIndex(i)
+                        break
+
+                    i += 1
+
+                print("The query was executed successfully. The update mirror slot already is in the database.")
+
+            except:
+                cursor.execute(insert_update_channel)
+                connection.commit()
+                print("The query was executed successfully. The update mirror slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -881,6 +1075,90 @@ class Window(QMainWindow, Ui_MainWindow):
 
         try:
             cursor.execute(qemu_arm_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def applyChangesUpdate(self):
+        updateMirror = self.comboBox.currentText()
+
+        if self.comboBox_2.currentText() == "Everytime I run this program":
+            updateNotifyFreq = "boot"
+
+        elif self.comboBox_2.currentText() == "Every day":
+            updateNotifyFreq = "daily"
+
+        elif self.comboBox_2.currentText() == "Every week":
+            updateNotifyFreq = "weekly"
+
+        elif self.comboBox_2.currentText() == "Every month":
+            updateNotifyFreq = "monthly"
+
+        elif self.comboBox_2.currentText() == "Never":
+            updateNotifyFreq = "never"
+
+        updateChannel = self.comboBox_3.currentText()
+
+        mirror_update = f"""
+        UPDATE update
+        SET value = '{updateMirror}'
+        WHERE name = 'updatemirror';
+        """
+
+        freq_update = f"""
+        UPDATE update
+        SET value = '{updateNotifyFreq}'
+        WHERE name = 'updatefreq';
+        """
+
+        channel_update = f"""
+        UPDATE settings
+        SET value = '{updateChannel}'
+        WHERE name = 'updatechannel';
+        """
+
+        today = datetime.date.today()
+        
+        if updateNotifyFreq == "boot":
+            next_update_day = f"""
+            UPDATE settings
+            SET value = 'boot'
+            WHERE name = 'updateappointment';
+            """
+
+        elif updateNotifyFreq == "daily" or updateNotifyFreq == "weekly" or updateNotifyFreq == "monthly":
+            if updateNotifyFreq == "daily":
+                #next_update_notify_day = 
+
+                next_update_day = f"""
+                UPDATE settings
+                SET value = 'boot'
+                WHERE name = 'updateappointment';
+                """
+
+        connection = self.connection
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(mirror_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(freq_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(channel_update)
             connection.commit()
             print("The query was executed successfully.")
 

@@ -248,6 +248,115 @@
            </layout>
           </widget>
          </widget>
+         <widget class="QWidget" name="tab_5">
+          <attribute name="title">
+           <string>Update</string>
+          </attribute>
+          <widget class="QWidget" name="gridLayoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>1</x>
+             <y>0</y>
+             <width>781</width>
+             <height>501</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="3" column="0">
+             <widget class="QPushButton" name="pushButton_13">
+              <property name="text">
+               <string>Check for updates</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboBox">
+              <item>
+               <property name="text">
+                <string>GitHub</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Codeberg</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="comboBox_2">
+              <item>
+               <property name="text">
+                <string>Everytime I run this program</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Every day</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Every week</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Every month</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Never</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Update notify frequency</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_14">
+              <property name="text">
+               <string>Apply</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>Update mirror</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>Update channel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="comboBox_3">
+              <item>
+               <property name="text">
+                <string>stable</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>pre-release</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
          <widget class="QWidget" name="tab_4">
           <attribute name="title">
            <string>About</string>
@@ -262,27 +371,6 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="font">
-               <font>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="layoutDirection">
-               <enum>Qt::LeftToRight</enum>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="text">
-               <string>EmuGUI</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignHCenter|Qt::AlignTop</set>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_7">
               <property name="text">
@@ -297,6 +385,21 @@
              <widget class="QLabel" name="label_10">
               <property name="text">
                <string>WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <pointsize>21</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>EmuGUI</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>

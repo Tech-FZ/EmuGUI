@@ -1,6 +1,7 @@
-# EmuGUI (insert version here)
+# EmuGUI v0.5
 
 - Updated TESTED.md
+- Updated README.md
 
 # EmuGUI v0.4.2
 
