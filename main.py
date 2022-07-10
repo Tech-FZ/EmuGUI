@@ -12,7 +12,10 @@ from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from uiScripts.ui_SettingsPending1 import Ui_Dialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
+from dialogExecution.noUpdateAvailable import NoUpdateAvailable
+from dialogExecution.updateAvailable import UpdateAvailable
 import datetime
+import requests
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -24,6 +27,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.updateVmList)
         self.label_8.setText("EmuGUI v0.5.0.1 (Pre-release)")
         self.setWindowTitle("EmuGUI")
+        self.versionCode = 5001
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -49,6 +53,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
         self.pushButton_14.clicked.connect(self.applyChangesUpdate)
+        self.pushButton_13.clicked.connect(self.checkForUpdatesManually)
         self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
 
     def prepareDatabase(self, connection):
@@ -216,6 +221,7 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        # The mirrors are GitHub and Codeberg
         insert_update_mirror = """
         INSERT INTO updater (
             name, value
@@ -1218,6 +1224,111 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+    def checkForUpdatesManually(self):
+        manually = True
+        self.checkForUpdates(manually)
+
+    def checkForUpdates(self, manually):
+        try:
+            if platform.system() == "Windows":
+                connection = platformSpecific.windowsSpecific.setupWindowsBackend()
+        
+            else:
+                connection = platformSpecific.unixSpecific.setupUnixBackend()
+
+            select_update_mirror = """
+            SELECT name, value FROM updater
+            WHERE name = "updatemirror";
+            """
+
+            select_update_channel = """
+            SELECT name, value FROM updater
+            WHERE name = "updatechannel";
+            """
+
+            cursor = connection.cursor()
+
+            try:
+                cursor.execute(select_update_mirror)
+                connection.commit()
+                result = cursor.fetchall()
+
+                try:
+                    qemu_img_slot = str(result[0])
+                
+                    if result[0][1] == "GitHub":
+                        url = "https://raw.githubusercontent.com/Tech-FZ/EmuGUI/main/update.txt"
+                
+                    elif result[0][1] == "Codeberg":
+                        url = "https://codeberg.org/lucien-rowan/EmuGUI/raw/branch/main/update.txt"
+
+                    print("The query was executed successfully. The update mirror slot already is in the database.")
+
+                except:
+                    print("The query was executed successfully but the mirror couldn't be retrieved. Please check one of the following mirrors:")
+                    print("https://github.com/Tech-FZ/EmuGUI or")
+                    print("https://codeberg.org/lucien-rowan/EmuGUI")
+        
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            
+            rq = requests.get(url, allow_redirects=True)
+            newVer = open("update.txt", "wb+")
+            newVer.write(rq.content)
+            newVer.close()
+            latest_versions = []
+
+            newVer = open("update.txt", "r+")
+            newVerContent = newVer.readlines()
+
+            for line in newVerContent:
+                line = line.replace("\n", "")
+                latest_version = line.split(" = ")
+                latest_versions.append(latest_version)
+
+            print(latest_versions)
+
+            try:
+                cursor.execute(select_update_channel)
+                connection.commit()
+                result = cursor.fetchall()
+
+                try:
+                    qemu_img_slot = str(result[0])
+                
+                    if result[0][1] == "pre-release":
+                        channel = "pre_release"
+                    
+                    else:
+                        channel = "stable"
+
+                    print("The query was executed successfully. The update mirror slot already is in the database.")
+
+                except:
+                    print("Using stable channel as desired channel couldn't be determined.")
+        
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            for latest_version in latest_versions:
+                if latest_version[0] == channel:
+                    if int(latest_version[1]) > self.versionCode:
+                        dialog = UpdateAvailable(self)
+                        dialog.exec()
+
+                    elif manually == True:
+                        dialog = NoUpdateAvailable(self)
+                        dialog.exec()
+
+            self.applyChangesUpdate()
+            newVer.close()
+
+        except:
+            if manually == True:
+                dialog = NoUpdateAvailable(self)
+                dialog.exec()
 
     # Your VM list will be updated every 10 seconds.
 
