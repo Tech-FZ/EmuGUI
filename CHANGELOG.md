@@ -2,6 +2,7 @@
 
 - Updated TESTED.md
 - Updated README.md
+- An update checker has been added
 
 # EmuGUI v0.4.2
 
