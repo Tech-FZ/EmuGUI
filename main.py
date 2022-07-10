@@ -89,7 +89,7 @@ class Window(QMainWindow, Ui_MainWindow):
         """
 
         create_update_table = """
-        CREATE TABLE IF NOT EXISTS update (
+        CREATE TABLE IF NOT EXISTS updater (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             value TEXT NOT NULL
@@ -217,7 +217,7 @@ class Window(QMainWindow, Ui_MainWindow):
         """
 
         insert_update_mirror = """
-        INSERT INTO update (
+        INSERT INTO updater (
             name, value
         ) VALUES (
             "updatemirror", "GitHub"
@@ -231,7 +231,7 @@ class Window(QMainWindow, Ui_MainWindow):
         # monthly = Every month
         # never = Never
         insert_update_freq = """
-        INSERT INTO update (
+        INSERT INTO updater (
             name, value
         ) VALUES (
             "updatefreq", "boot"
@@ -243,7 +243,7 @@ class Window(QMainWindow, Ui_MainWindow):
         # A specific date, e.g. 2022-07-09
         # never = Never update automatically
         insert_next_update = """
-        INSERT INTO update (
+        INSERT INTO updater (
             name, value
         ) VALUES (
             "updateappointment", "boot"
@@ -252,7 +252,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
         # stable and pre-release are available
         insert_update_channel = """
-        INSERT INTO update (
+        INSERT INTO updater (
             name, value
         ) VALUES (
             "updatechannel", "stable"
@@ -299,22 +299,22 @@ class Window(QMainWindow, Ui_MainWindow):
         """
 
         select_update_mirror = """
-        SELECT name, value FROM update
+        SELECT name, value FROM updater
         WHERE name = "updatemirror";
         """
 
         select_update_freq = """
-        SELECT name, value FROM update
+        SELECT name, value FROM updater
         WHERE name = "updatefreq";
         """
 
         select_next_update = """
-        SELECT name, value FROM update
+        SELECT name, value FROM updater
         WHERE name = "updateappointment";
         """
 
         select_update_channel = """
-        SELECT name, value FROM update
+        SELECT name, value FROM updater
         WHERE name = "updatechannel";
         """
 
@@ -1102,41 +1102,87 @@ class Window(QMainWindow, Ui_MainWindow):
         updateChannel = self.comboBox_3.currentText()
 
         mirror_update = f"""
-        UPDATE update
+        UPDATE updater
         SET value = '{updateMirror}'
         WHERE name = 'updatemirror';
         """
 
         freq_update = f"""
-        UPDATE update
+        UPDATE updater
         SET value = '{updateNotifyFreq}'
         WHERE name = 'updatefreq';
         """
 
         channel_update = f"""
-        UPDATE settings
+        UPDATE updater
         SET value = '{updateChannel}'
         WHERE name = 'updatechannel';
         """
 
         today = datetime.date.today()
+        today_format = datetime.datetime.strptime(str(today), "%Y-%m-%d")
         
         if updateNotifyFreq == "boot":
             next_update_day = f"""
-            UPDATE settings
+            UPDATE updater
             SET value = 'boot'
             WHERE name = 'updateappointment';
             """
 
         elif updateNotifyFreq == "daily" or updateNotifyFreq == "weekly" or updateNotifyFreq == "monthly":
             if updateNotifyFreq == "daily":
-                #next_update_notify_day = 
+                next_update_notify_day = today_format + datetime.timedelta(days=1)
+
+                next_update_notify_day_only = datetime.date(
+                    day=next_update_notify_day.day,
+                    month=next_update_notify_day.month,
+                    year=next_update_notify_day.year
+                    )
+
+                print(next_update_notify_day_only)
 
                 next_update_day = f"""
-                UPDATE settings
-                SET value = 'boot'
+                UPDATE updater
+                SET value = '{next_update_notify_day_only}'
                 WHERE name = 'updateappointment';
                 """
+            
+            elif updateNotifyFreq == "weekly":
+                next_update_notify_day = today_format + datetime.timedelta(weeks=1)
+
+                next_update_notify_day_only = datetime.date(
+                    day=next_update_notify_day.day,
+                    month=next_update_notify_day.month,
+                    year=next_update_notify_day.year
+                    )
+
+                next_update_day = f"""
+                UPDATE updater
+                SET value = '{next_update_notify_day_only}'
+                WHERE name = 'updateappointment';
+                """
+
+            elif updateNotifyFreq == "monthly":
+                next_update_notify_day = today_format + datetime.timedelta(weeks=4)
+
+                next_update_notify_day_only = datetime.date(
+                    day=next_update_notify_day.day,
+                    month=next_update_notify_day.month,
+                    year=next_update_notify_day.year
+                    )
+
+                next_update_day = f"""
+                UPDATE updater
+                SET value = '{next_update_notify_day_only}'
+                WHERE name = 'updateappointment';
+                """
+            
+        else:
+            next_update_day = f"""
+            UPDATE updater
+            SET value = 'never'
+            WHERE name = 'updateappointment';
+            """
 
         connection = self.connection
         cursor = connection.cursor()
@@ -1159,6 +1205,14 @@ class Window(QMainWindow, Ui_MainWindow):
 
         try:
             cursor.execute(channel_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(next_update_day)
             connection.commit()
             print("The query was executed successfully.")
 
