@@ -14,7 +14,6 @@ from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
 from dialogExecution.noUpdateAvailable import NoUpdateAvailable
 from dialogExecution.updateAvailable import UpdateAvailable
-import datetime
 import requests
 
 class Window(QMainWindow, Ui_MainWindow):
@@ -25,9 +24,9 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.5.0.1 (Pre-release)")
+        self.label_8.setText("EmuGUI v0.5.0.2 (Pre-release)")
         self.setWindowTitle("EmuGUI")
-        self.versionCode = 5001
+        self.versionCode = 5002
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -232,27 +231,12 @@ class Window(QMainWindow, Ui_MainWindow):
 
         # For the frequency, it's as follows:
         # boot = Everytime I run this program
-        # daily = Every day
-        # weekly = Every week
-        # monthly = Every month
         # never = Never
         insert_update_freq = """
         INSERT INTO updater (
             name, value
         ) VALUES (
             "updatefreq", "boot"
-        );
-        """
-
-        # For the appointment, it's as follows:
-        # boot = Do it as soon as it starts, no matter what
-        # A specific date, e.g. 2022-07-09
-        # never = Never update automatically
-        insert_next_update = """
-        INSERT INTO updater (
-            name, value
-        ) VALUES (
-            "updateappointment", "boot"
         );
         """
 
@@ -312,11 +296,6 @@ class Window(QMainWindow, Ui_MainWindow):
         select_update_freq = """
         SELECT name, value FROM updater
         WHERE name = "updatefreq";
-        """
-
-        select_next_update = """
-        SELECT name, value FROM updater
-        WHERE name = "updateappointment";
         """
 
         select_update_channel = """
@@ -514,51 +493,19 @@ class Window(QMainWindow, Ui_MainWindow):
 
             try:
                 qemu_img_slot = str(result[0])
+                print(result)
                 
                 if result[0][1] == "boot":
                     self.comboBox_2.setCurrentIndex(0)
-
-                elif result[0][1] == "daily":
-                    self.comboBox_2.setCurrentIndex(1)
-
-                elif result[0][1] == "weekly":
-                    self.comboBox_2.setCurrentIndex(2)
-
-                elif result[0][1] == "monthly":
-                    self.comboBox_2.setCurrentIndex(3)
+                    self.checkForUpdates(False)
 
                 elif result[0][1] == "never":
-                    self.comboBox_2.setCurrentIndex(4)
+                    self.comboBox_2.setCurrentIndex(1)
 
                 print("The query was executed successfully. The update mirror slot already is in the database.")
 
             except:
                 cursor.execute(insert_update_freq)
-                connection.commit()
-                print("The query was executed successfully. The update mirror slot has been created.")
-        
-        except sqlite3.Error as e:
-            print(f"The SQLite module encountered an error: {e}.")
-
-        try:
-            cursor.execute(select_next_update)
-            connection.commit()
-            result = cursor.fetchall()
-
-            try:
-                qemu_img_slot = str(result[0])
-                
-                if result[0][1] == "boot":
-                    pass
-
-                else:
-                    date_splitter = str(result[0][1]).split("-")
-                    print(date_splitter)
-
-                print("The query was executed successfully. The update mirror slot already is in the database.")
-
-            except:
-                cursor.execute(insert_next_update)
                 connection.commit()
                 print("The query was executed successfully. The update mirror slot has been created.")
         
@@ -1093,15 +1040,6 @@ class Window(QMainWindow, Ui_MainWindow):
         if self.comboBox_2.currentText() == "Everytime I run this program":
             updateNotifyFreq = "boot"
 
-        elif self.comboBox_2.currentText() == "Every day":
-            updateNotifyFreq = "daily"
-
-        elif self.comboBox_2.currentText() == "Every week":
-            updateNotifyFreq = "weekly"
-
-        elif self.comboBox_2.currentText() == "Every month":
-            updateNotifyFreq = "monthly"
-
         elif self.comboBox_2.currentText() == "Never":
             updateNotifyFreq = "never"
 
@@ -1125,71 +1063,6 @@ class Window(QMainWindow, Ui_MainWindow):
         WHERE name = 'updatechannel';
         """
 
-        today = datetime.date.today()
-        today_format = datetime.datetime.strptime(str(today), "%Y-%m-%d")
-        
-        if updateNotifyFreq == "boot":
-            next_update_day = f"""
-            UPDATE updater
-            SET value = 'boot'
-            WHERE name = 'updateappointment';
-            """
-
-        elif updateNotifyFreq == "daily" or updateNotifyFreq == "weekly" or updateNotifyFreq == "monthly":
-            if updateNotifyFreq == "daily":
-                next_update_notify_day = today_format + datetime.timedelta(days=1)
-
-                next_update_notify_day_only = datetime.date(
-                    day=next_update_notify_day.day,
-                    month=next_update_notify_day.month,
-                    year=next_update_notify_day.year
-                    )
-
-                print(next_update_notify_day_only)
-
-                next_update_day = f"""
-                UPDATE updater
-                SET value = '{next_update_notify_day_only}'
-                WHERE name = 'updateappointment';
-                """
-            
-            elif updateNotifyFreq == "weekly":
-                next_update_notify_day = today_format + datetime.timedelta(weeks=1)
-
-                next_update_notify_day_only = datetime.date(
-                    day=next_update_notify_day.day,
-                    month=next_update_notify_day.month,
-                    year=next_update_notify_day.year
-                    )
-
-                next_update_day = f"""
-                UPDATE updater
-                SET value = '{next_update_notify_day_only}'
-                WHERE name = 'updateappointment';
-                """
-
-            elif updateNotifyFreq == "monthly":
-                next_update_notify_day = today_format + datetime.timedelta(weeks=4)
-
-                next_update_notify_day_only = datetime.date(
-                    day=next_update_notify_day.day,
-                    month=next_update_notify_day.month,
-                    year=next_update_notify_day.year
-                    )
-
-                next_update_day = f"""
-                UPDATE updater
-                SET value = '{next_update_notify_day_only}'
-                WHERE name = 'updateappointment';
-                """
-            
-        else:
-            next_update_day = f"""
-            UPDATE updater
-            SET value = 'never'
-            WHERE name = 'updateappointment';
-            """
-
         connection = self.connection
         cursor = connection.cursor()
 
@@ -1211,14 +1084,6 @@ class Window(QMainWindow, Ui_MainWindow):
 
         try:
             cursor.execute(channel_update)
-            connection.commit()
-            print("The query was executed successfully.")
-
-        except sqlite3.Error as e:
-            print(f"The SQLite module encountered an error: {e}.")
-
-        try:
-            cursor.execute(next_update_day)
             connection.commit()
             print("The query was executed successfully.")
 

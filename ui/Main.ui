@@ -292,21 +292,6 @@
               </item>
               <item>
                <property name="text">
-                <string>Every day</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Every week</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Every month</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
                 <string>Never</string>
                </property>
               </item>

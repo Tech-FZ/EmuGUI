@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainXNiQKG.ui'
+## Form generated from reading UI file 'MainVuYROm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -217,9 +217,6 @@ class Ui_MainWindow(object):
         self.comboBox_2 = QComboBox(self.gridLayoutWidget_5)
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
         self.comboBox_2.setObjectName(u"comboBox_2")
 
         self.gridLayout_6.addWidget(self.comboBox_2, 1, 1, 1, 1)
@@ -335,10 +332,7 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Codeberg", None))
 
         self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Everytime I run this program", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Every day", None))
-        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Every week", None))
-        self.comboBox_2.setItemText(3, QCoreApplication.translate("MainWindow", u"Every month", None))
-        self.comboBox_2.setItemText(4, QCoreApplication.translate("MainWindow", u"Never", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Never", None))
 
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Update notify frequency", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
