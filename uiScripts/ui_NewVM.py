@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewVMkMXHZw.ui'
+## Form generated from reading UI file 'NewVMrixptX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -915,15 +915,15 @@ class Ui_Dialog(object):
         self.gridLayout_7 = QGridLayout(self.gridLayoutWidget_7)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_21 = QPushButton(self.gridLayoutWidget_7)
-        self.pushButton_21.setObjectName(u"pushButton_21")
-
-        self.gridLayout_7.addWidget(self.pushButton_21, 4, 1, 1, 1)
-
         self.pushButton_20 = QPushButton(self.gridLayoutWidget_7)
         self.pushButton_20.setObjectName(u"pushButton_20")
 
-        self.gridLayout_7.addWidget(self.pushButton_20, 3, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.pushButton_20, 4, 1, 1, 1)
+
+        self.pushButton_21 = QPushButton(self.gridLayoutWidget_7)
+        self.pushButton_21.setObjectName(u"pushButton_21")
+
+        self.gridLayout_7.addWidget(self.pushButton_21, 5, 1, 1, 1)
 
         self.checkBox_2 = QCheckBox(self.gridLayoutWidget_7)
         self.checkBox_2.setObjectName(u"checkBox_2")
@@ -933,22 +933,31 @@ class Ui_Dialog(object):
         self.pushButton_22 = QPushButton(self.gridLayoutWidget_7)
         self.pushButton_22.setObjectName(u"pushButton_22")
 
-        self.gridLayout_7.addWidget(self.pushButton_22, 3, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.pushButton_22, 4, 0, 1, 1)
 
         self.label_2 = QLabel(self.gridLayoutWidget_7)
         self.label_2.setObjectName(u"label_2")
 
-        self.gridLayout_7.addWidget(self.label_2, 2, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.label_2, 3, 0, 1, 1)
 
         self.lineEdit_2 = QLineEdit(self.gridLayoutWidget_7)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
 
-        self.gridLayout_7.addWidget(self.lineEdit_2, 2, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.lineEdit_2, 3, 1, 1, 1)
+
+        self.comboBox_17 = QComboBox(self.gridLayoutWidget_7)
+        self.comboBox_17.addItem("")
+        self.comboBox_17.addItem("")
+        self.comboBox_17.addItem("")
+        self.comboBox_17.addItem("")
+        self.comboBox_17.setObjectName(u"comboBox_17")
+
+        self.gridLayout_7.addWidget(self.comboBox_17, 2, 1, 1, 1)
 
         self.checkBox_3 = QCheckBox(self.gridLayoutWidget_7)
         self.checkBox_3.setObjectName(u"checkBox_3")
 
-        self.gridLayout_7.addWidget(self.checkBox_3, 1, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.checkBox_3, 2, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.page_7)
 
@@ -1358,11 +1367,16 @@ class Ui_Dialog(object):
         self.pushButton_31.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.label_26.setText(QCoreApplication.translate("Dialog", u"Linux cmd args", None))
         self.label_27.setText(QCoreApplication.translate("Dialog", u"Leave empty if these aren't necessary", None))
-        self.pushButton_21.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_20.setText(QCoreApplication.translate("Dialog", u"Finish", None))
+        self.pushButton_21.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000", None))
         self.pushButton_22.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if needed)", None))
+        self.comboBox_17.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))
+        self.comboBox_17.setItemText(1, QCoreApplication.translate("Dialog", u"piix3-usb-uhci", None))
+        self.comboBox_17.setItemText(2, QCoreApplication.translate("Dialog", u"qemu-xhci", None))
+        self.comboBox_17.setItemText(3, QCoreApplication.translate("Dialog", u"usb-ehci", None))
+
         self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
     # retranslateUi
 

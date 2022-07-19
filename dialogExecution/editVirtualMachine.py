@@ -278,6 +278,18 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         if vmSpecs[20] == "1":
             self.checkBox_3.setChecked(True)
 
+        i = 0
+
+        while i < self.comboBox_17.count():
+            if self.comboBox_17.itemText(i) == vmSpecs[21]:
+                self.comboBox_17.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        if vmSpecs[20] == "1":
+            self.checkBox_3.setChecked(True)
+
         return vmSpecs
 
     def archSystem(self):
@@ -519,7 +531,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         win2k = {win2k}, dirbios = "{ext_bios_dir}", additionalargs = "{add_args}", sound = "{self.comboBox_12.currentText()}",
         linuxkernel = "{self.lineEdit_4.text()}", linuxinitrid = "{self.lineEdit_5.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_13.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_8.text()}",
-        keyboardtype = "{self.comboBox_16.currentText()}", usbsupport = {usb_support}
+        keyboardtype = "{self.comboBox_16.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_17.currentText()}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

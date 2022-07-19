@@ -323,7 +323,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             cores,
             filebios,
             keyboardtype,
-            usbsupport
+            usbsupport,
+            usbcontroller
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -345,7 +346,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             {self.spinBox_6.value()},
             "{self.lineEdit_8.text()}",
             "{self.comboBox_16.currentText()}",
-            {usb_support}
+            {usb_support},
+            "{self.comboBox_17.currentText()}"
         );
         """
 

@@ -3,6 +3,8 @@
 - Updated TESTED.md
 - Updated README.md
 - An update checker has been added
+- ARM-based VMs can now run with standard VGA
+- You can now select between several USB controllers.
 
 # EmuGUI v0.4.2
 

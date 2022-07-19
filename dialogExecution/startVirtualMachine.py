@@ -176,7 +176,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             if self.vmSpecs[6] != "Let QEMU decide":
                 if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
-                    qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]} -display gtk"
+                    if self.vmSpecs[6] == "std":
+                        qemu_cmd = qemu_cmd + f" -device VGA -display gtk"
+                    
+                    else:
+                        qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]} -display gtk"
 
                 else:
                     qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
@@ -304,11 +308,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[7]},netdev=hostnet0,mac={mac_to_use} -netdev user,id=hostnet0"
 
             if self.vmSpecs[20] == "1":
-                qemu_cmd = qemu_cmd + " -usb -device pci-ohci"
+                qemu_cmd = qemu_cmd + f" -usb -device {self.vmSpecs[21]}"
             
             if self.vmSpecs[7] == "1":
                 print("WARNING: Using the checkbox for the USB tablet is depreciated.")
-                print("This feature is going to be removed in an future update.")
+                print("This feature is going to be removed in a future update.")
                 print("Please use the combo box for this task instead.")
                 qemu_cmd = qemu_cmd + " -usbdevice tablet"
 
