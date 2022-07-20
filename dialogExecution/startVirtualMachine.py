@@ -116,6 +116,8 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         print(bootfrom)
         print(dateTimeForVM)
 
+        qemu_cmd = ""
+
         try:
             if self.vmSpecs[1] == "i386":
                 cursor.execute(qemu_i386_bin)
@@ -160,13 +162,26 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 print(result)
 
             qemu_to_execute = result[0][0]
-            qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]}"
 
-            if magic.from_file(self.vmSpecs[5]) == "block special":
-                qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{self.vmSpecs[5]}\""
+            if platform.system() == "Windows":
+                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]}"
 
             else:
-                qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
+                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base={dateTimeForVM},clock=vm -smp {self.vmSpecs[17]}"
+
+            if magic.from_file(self.vmSpecs[5]) == "block special":
+                if platform.system() == "Windows":
+                    qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{self.vmSpecs[5]}\""
+                
+                else:
+                    qemu_cmd = qemu_cmd + f" -drive format=raw,file={self.vmSpecs[5]}"
+
+            else:
+                if platform.system() == "Windows":
+                    qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
+
+                else:
+                    qemu_cmd = qemu_cmd + f" -hda {self.vmSpecs[5]}"
 
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
@@ -381,6 +396,13 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             print(f"The SQLite module encountered an error: {e}.")
         
         except:
-            print("Qemu couldn't be executed. Please check the settings.")
+            print("Qemu couldn't be executed. Trying subprocess.run")
+
+            try:
+                qemu_cmd_split = qemu_cmd.split(" ")
+                subprocess.run(qemu_cmd_split)
+            
+            except:
+                print("Qemu couldn't be executed. Please check if the settings of your VM and/or the QEMU paths are correct.")
         
         self.close()

@@ -26,24 +26,10 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="2">
-     <widget class="QPushButton" name="pushButton_2">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Browse</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Boot from</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>Cancel</string>
+       <string>cdrom</string>
       </property>
      </widget>
     </item>
@@ -51,23 +37,6 @@
      <widget class="QLabel" name="label">
       <property name="text">
        <string>fda</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Browse</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="lineEdit_2"/>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>Start VM</string>
       </property>
      </widget>
     </item>
@@ -95,20 +64,38 @@
       </item>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_2">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>cdrom</string>
+       <string>Browse</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_4">
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButton_2">
       <property name="text">
-       <string>Date &amp; Time</string>
+       <string>Browse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>Start VM</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="text">
+       <string>Set to system</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="text">
+       <string>Cancel</string>
       </property>
      </widget>
     </item>
@@ -119,10 +106,33 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="pushButton_5">
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>Set to system</string>
+       <string>Boot from</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit_2"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Date &amp; Time</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit"/>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </item>

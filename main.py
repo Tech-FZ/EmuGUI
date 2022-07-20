@@ -1,12 +1,12 @@
 # Importing required modules
+import platform
+import platformSpecific.windowsSpecific
+import platformSpecific.unixSpecific
 import sqlite3
 import sys
 from PySide6.QtWidgets import *
 from PySide6 import QtGui
 from PySide6.QtCore import QTimer
-import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
 from uiScripts.ui_Main import Ui_MainWindow
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from uiScripts.ui_SettingsPending1 import Ui_Dialog
@@ -14,6 +14,7 @@ from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
 from dialogExecution.noUpdateAvailable import NoUpdateAvailable
 from dialogExecution.updateAvailable import UpdateAvailable
+from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
 import requests
 
 class Window(QMainWindow, Ui_MainWindow):
@@ -24,9 +25,9 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.5.0.3 (Pre-release)")
+        self.label_8.setText("EmuGUI v0.5.0.4 (Pre-release)")
         self.setWindowTitle("EmuGUI")
-        self.versionCode = 5003
+        self.versionCode = 5004
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -773,6 +774,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     kbd_type = result[0][18]
                     usb_support = result[0][19]
                     usb_controller = result[0][20]
+
+                    if usbtablet_wanted == 1:
+                        dialog3 = UsbTabletDepreciated(self)
+                        dialog3.exec()
 
                 except sqlite3.Error as e:
                     print(f"The SQLite module encountered an error: {e}.")

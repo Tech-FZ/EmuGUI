@@ -5,6 +5,11 @@
 - An update checker has been added
 - ARM-based VMs can now run with standard VGA
 - You can now select between several USB controllers.
+- This script can now be run on Linux.
+- TESTED.md has been updated.
+- Installation and building instructions for Linux have been added to README.md.
+- If you start a virtual machine, there is now a message at the bottom of the window which could be helpful when debugging.
+- There is now a window which warns you if your VM uses the depreciated USB checkbox.
 
 # EmuGUI v0.4.2
 

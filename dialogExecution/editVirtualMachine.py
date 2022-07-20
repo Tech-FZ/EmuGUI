@@ -464,6 +464,8 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             WHERE name = "qemu-img"
             """
 
+            vhd_cmd = ""
+
             try:
                 cursor.execute(get_qemu_img_bin)
                 connection.commit()
@@ -482,8 +484,14 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 print(vhd_size_in_b)
 
+                if platform.system() == "Windows":
+                    vhd_cmd = f"{qemu_binary} create -f {self.comboBox_8.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
+
+                else:
+                    vhd_cmd = f"{qemu_binary} create -f {self.comboBox_8.currentText()} {vhd} {str(vhd_size_in_b)}"
+
                 if vhdAction.startswith("overwrite"):
-                    subprocess.Popen(f"{qemu_binary} create -f {self.comboBox_8.currentText()} \"{vhd}\" {str(vhd_size_in_b)}")
+                    subprocess.Popen(vhd_cmd)
 
                 print("The query was executed and the virtual disk created successfully.")
         
@@ -491,7 +499,14 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                 print(f"The SQLite module encountered an error: {e}.")
 
             except:
-                print(f"The query was executed successfully, but the virtual disk couldn't be created.")
+                print(f"The query was executed successfully, but the virtual disk couldn't be created. Trying to use subprocess.run")
+
+                try:
+                    vhd_cmd_split = vhd_cmd.split(" ")
+                    subprocess.run(vhd_cmd_split)
+                
+                except:
+                    print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")
 
         if self.comboBox_11.currentText() == "none":
             networkAdapter = "none"
