@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import *
+from PySide6 import QtGui
 from uiScripts.ui_VhdExists import Ui_Dialog
 import platform
 import platformSpecific.windowsSpecific
@@ -8,6 +9,14 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.setWindowTitle("EmuGUI - This virtual hard disk exists")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+        
         self.connectSignalsSlots()
 
     def connectSignalsSlots(self):

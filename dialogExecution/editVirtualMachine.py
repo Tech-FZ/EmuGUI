@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import *
+from PySide6 import QtGui
 from uiScripts.ui_NewVM import Ui_Dialog
 import sqlite3
 import platform
@@ -15,7 +16,14 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         self.vmSpecs = self.readTempVmFile()
-        self.setWindowTitle(f"EmuGUI - Edit {self.vmSpecs[0]}")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+        
+        self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
 
         if platform.system() == "Windows":
             tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
@@ -503,7 +511,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 try:
                     vhd_cmd_split = vhd_cmd.split(" ")
-                    subprocess.run(vhd_cmd_split)
+
+                    if vhdAction.startswith("overwrite"):
+                        subprocess.run(vhd_cmd_split)
+
+                    print("The query was executed and the virtual disk created successfully.")
                 
                 except:
                     print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")

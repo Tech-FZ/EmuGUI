@@ -1,5 +1,6 @@
 from uiScripts.ui_USBTabletCheckboxDepreciated import Ui_Dialog
 from PySide6.QtWidgets import *
+from PySide6 import QtGui
 import platform
 import platformSpecific.windowsSpecific
 import platformSpecific.unixSpecific
@@ -10,6 +11,13 @@ class UsbTabletDepreciated(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.vmSpecs = self.readTempVmFile()
         self.setWindowTitle(f"EmuGUI - {self.vmSpecs[0]} uses a depreciated feature")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+        
         self.connectSignalsSlots()
 
     def connectSignalsSlots(self):

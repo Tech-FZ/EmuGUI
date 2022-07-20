@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import *
+from PySide6 import QtGui
 from uiScripts.ui_Update import Ui_Dialog
 import webbrowser
 import platform
@@ -10,6 +11,14 @@ class UpdateAvailable(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.setWindowTitle("EmuGUI Update")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+        
         self.connectSignalsSlots()
 
     def connectSignalsSlots(self):

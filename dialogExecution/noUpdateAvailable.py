@@ -1,10 +1,19 @@
 from PySide6.QtWidgets import *
+from PySide6 import QtGui
 from uiScripts.ui_NoUpdate import Ui_Dialog
 
 class NoUpdateAvailable(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.setWindowTitle("EmuGUI Update")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+
         self.connectSignalsSlots()
 
     def connectSignalsSlots(self):

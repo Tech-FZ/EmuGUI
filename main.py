@@ -27,6 +27,13 @@ class Window(QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.updateVmList)
         self.label_8.setText("EmuGUI v0.5.0.4 (Pre-release)")
         self.setWindowTitle("EmuGUI")
+
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+
         self.versionCode = 5004
 
         if platform.system() == "Windows":
@@ -775,10 +782,6 @@ class Window(QMainWindow, Ui_MainWindow):
                     usb_support = result[0][19]
                     usb_controller = result[0][20]
 
-                    if usbtablet_wanted == 1:
-                        dialog3 = UsbTabletDepreciated(self)
-                        dialog3.exec()
-
                 except sqlite3.Error as e:
                     print(f"The SQLite module encountered an error: {e}.")
 
@@ -812,6 +815,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(str(usb_support) + "\n")
                     tempVmDefFile.write(usb_controller + "\n")
 
+                if usbtablet_wanted == 1:
+                    dialog3 = UsbTabletDepreciated(self)
+                    dialog3.exec()
+                
                 dialog = StartVirtualMachineDialog(self)
                 dialog.exec()
         
@@ -1309,6 +1316,13 @@ class SettingsPending1Dialog(QDialog, Ui_Dialog):
         super().__init__(parent)
         self.setupUi(self)
         self.setWindowTitle("EmuGUI - Settings pending")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
+        
         self.connectSignalsSlots()
 
     def connectSignalsSlots(self):

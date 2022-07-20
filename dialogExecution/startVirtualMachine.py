@@ -1,5 +1,6 @@
 # Importing required modules (PySide 6, platform, sqlite3, subprocess, internal program files)
 from PySide6.QtWidgets import *
+from PySide6 import QtGui
 from uiScripts.ui_StartVM import Ui_Dialog
 import platform
 import platformSpecific.windowsSpecific
@@ -19,6 +20,12 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.vmSpecs = self.readTempVmFile()
         print(self.vmSpecs)
         self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
+        
+        try:
+            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+
+        except:
+            pass
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
