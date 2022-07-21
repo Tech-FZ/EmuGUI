@@ -30,7 +30,7 @@ code in Copilot.
 ![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
 
 ## System requirements
-OS: Windows 8.1, Windows Server 2012 R2 or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.3, openSUSE Tumbleweed, Fedora 35, RHEL 7, Arch Linux or distributions based on those (x64)
+OS: Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.3, openSUSE Tumbleweed, Fedora 35, RHEL 7, Arch Linux or distributions based on those (x64)
 
 Python: 3.6 or newer
 
@@ -41,6 +41,8 @@ RAM: 6 GB¹
 HDD: 2 GB¹
 
 ¹ This is the absolute minimum, the required performance depends on the operating system system you want to run.
+
+² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023.
 
 ## Dependencies
 

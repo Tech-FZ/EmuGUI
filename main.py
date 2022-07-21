@@ -15,6 +15,7 @@ from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
 from dialogExecution.noUpdateAvailable import NoUpdateAvailable
 from dialogExecution.updateAvailable import UpdateAvailable
 from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
+from dialogExecution.win81NearEOS import Win812012R2NearEOS
 import requests
 
 class Window(QMainWindow, Ui_MainWindow):
@@ -25,7 +26,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.5")
+        self.label_8.setText("EmuGUI v0.5.1")
         self.setWindowTitle("EmuGUI")
 
         try:
@@ -34,7 +35,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5005
+        self.versionCode = 5006
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -44,6 +45,13 @@ class Window(QMainWindow, Ui_MainWindow):
         
         self.prepareDatabase(self.connection)
         self.updateVmList()
+
+        if platform.system() == "Windows":
+            winvers = sys.getwindowsversion()
+
+            if winvers.major <= 6 and winvers.minor <= 3:
+                dialog = Win812012R2NearEOS(self)
+                dialog.exec()
 
     def connectSignalsSlots(self):
         # These buttons are connected to their incorporate functions

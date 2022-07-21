@@ -1,3 +1,8 @@
+# EmuGUI v0.5.1
+
+- Windows 8.1 and Windows Server 2012 R2 users are now notified about end of support for EmuGUI.
+- README.md has been updated as such.
+
 # EmuGUI v0.5
 
 - Updated TESTED.md
