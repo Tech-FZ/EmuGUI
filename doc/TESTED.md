@@ -14,6 +14,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Windows 2000 Professional Service Pack 4   | i386         | No        |                                                                                |
 | Windows Millenium Edition                  | i386         | Yes       | If the bootscreen hangs, just close the VM and reopen it again                 |
 | Windows XP Home Edition Service Pack 3     | i386         | Yes       |                                                                                |
+| Windows Server 2003 R2 Standard SP2        | i386         | Yes       |                                                                                |
 | Windows Vista Ultimate Service Pack 2      | i386         | Yes       | Aero not available despite drivers being available                             |
 | Windows 7 Ultimate Service Pack 1          | x86_64       | Yes       | No VGA drivers, no Aero                                                        |
 | Windows 8.1                                | x86_64       | No        | This Windows version will corrupt the VHD upon first boot                      |
