@@ -49,6 +49,7 @@ HDD: 2 GB¹
 - PySide 6
 - QEMU
 - Python Magic
+- requests
 
 ## Installation (Windows)
 
@@ -78,9 +79,11 @@ HDD: 2 GB¹
 - (open-)SUSE: `sudo zypper install qemu`
 
 3. Get EmuGUI from this website and extract it.
-4. Run main in the EmuGUI directory.
+4. Run main in the EmuGUI directory (if it fails from file manager, open a terminal inside the directory and type `./main`).
 5. Set the QEMU paths at the Settings/QEMU tab (either `/usr/bin/qemu-system-*` or just `qemu-system-*`).
 6. Create a new virtual machine and start it.
+
+Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additional arguments), you must open a terminal inside the directory and type: `sudo ./main`.
 
 ## Updating EmuGUI
 
