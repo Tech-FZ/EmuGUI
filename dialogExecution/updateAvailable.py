@@ -53,7 +53,8 @@ class UpdateAvailable(QDialog, Ui_Dialog):
                 elif result[0][1] == "Codeberg":
                     webbrowser.open("https://codeberg.org/lucien-rowan/EmuGUI")
 
-                print("The query was executed successfully. The update mirror slot already is in the database.")
+                print("The query was executed successfully.")
+                self.close()
 
             except:
                 print("The query was executed successfully but the mirror couldn't be retrieved. Please check one of the following mirrors:")

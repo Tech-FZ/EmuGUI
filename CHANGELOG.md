@@ -1,3 +1,7 @@
+# EmuGUI v0.5.2
+
+- The updater also closes now when clicking "Yes".
+
 # EmuGUI v0.5.1
 
 - Windows 8.1 and Windows Server 2012 R2 users are now notified about end of support for EmuGUI.
