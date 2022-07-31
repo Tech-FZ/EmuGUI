@@ -1,2 +1,2 @@
-stable = 5006
-pre_release = 5006
+stable = 5007
+pre_release = 5007

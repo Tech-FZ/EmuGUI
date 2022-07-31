@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainVuYROm.ui'
+## Form generated from reading UI file 'MainDkAvFu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -75,6 +75,34 @@ class Ui_MainWindow(object):
         self.tabWidget_2 = QTabWidget(self.tab_2)
         self.tabWidget_2.setObjectName(u"tabWidget_2")
         self.tabWidget_2.setGeometry(QRect(0, 0, 791, 521))
+        self.tab_6 = QWidget()
+        self.tab_6.setObjectName(u"tab_6")
+        self.gridLayoutWidget_6 = QWidget(self.tab_6)
+        self.gridLayoutWidget_6.setObjectName(u"gridLayoutWidget_6")
+        self.gridLayoutWidget_6.setGeometry(QRect(0, 0, 781, 491))
+        self.gridLayout_7 = QGridLayout(self.gridLayoutWidget_6)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.comboBox_4 = QComboBox(self.gridLayoutWidget_6)
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.setObjectName(u"comboBox_4")
+
+        self.gridLayout_7.addWidget(self.comboBox_4, 0, 1, 1, 1)
+
+        self.label_15 = QLabel(self.gridLayoutWidget_6)
+        self.label_15.setObjectName(u"label_15")
+
+        self.gridLayout_7.addWidget(self.label_15, 0, 0, 1, 1)
+
+        self.pushButton_15 = QPushButton(self.gridLayoutWidget_6)
+        self.pushButton_15.setObjectName(u"pushButton_15")
+
+        self.gridLayout_7.addWidget(self.pushButton_15, 1, 1, 1, 1)
+
+        self.tabWidget_2.addTab(self.tab_6, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
         self.gridLayoutWidget_2 = QWidget(self.tab_3)
@@ -311,6 +339,14 @@ class Ui_MainWindow(object):
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"New Virtual Machine", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
+        self.comboBox_4.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
+        self.comboBox_4.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
+        self.comboBox_4.setItemText(2, QCoreApplication.translate("MainWindow", u"Deutsch", None))
+        self.comboBox_4.setItemText(3, QCoreApplication.translate("MainWindow", u"\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430", None))
+
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Language", None))
+        self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
+        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"General", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"qemu-img Path", None))

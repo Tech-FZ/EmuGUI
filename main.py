@@ -16,7 +16,12 @@ from dialogExecution.noUpdateAvailable import NoUpdateAvailable
 from dialogExecution.updateAvailable import UpdateAvailable
 from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
+from dialogExecution.vmTooNew import VmIsMadeWithTooYoungEmuGUI
+import translations.de
+import translations.uk
+import translations.en
 import requests
+import locale
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -26,7 +31,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.5.2")
+        #self.setLanguage()
+        self.label_8.setText("EmuGUI v0.6.0.1 (pre-release)")
         self.setWindowTitle("EmuGUI")
 
         try:
@@ -35,7 +41,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5007
+        self.versionCode = 5010
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -69,7 +75,24 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
         self.pushButton_14.clicked.connect(self.applyChangesUpdate)
         self.pushButton_13.clicked.connect(self.checkForUpdatesManually)
+        self.pushButton_15.clicked.connect(self.applyGeneric)
         self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
+
+    def setLanguage(self, langmode):
+        if langmode == "system":
+            languageToUse = locale.getlocale()[0]
+
+        else:
+            languageToUse = langmode
+
+        if languageToUse.startswith("de"):
+            translations.de.translateMainDE(self)
+
+        elif languageToUse.startswith("uk"):
+            translations.uk.translateMainUK(self)
+
+        else:
+            translations.en.translateMainEN(self)
 
     def prepareDatabase(self, connection):
         # Some SQL statements to initialize EmuGUI
@@ -247,6 +270,19 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        # Language codes:
+        # default: same language as system (English if not present)
+        # en: English
+        # de: German
+        # uk: Ukranian
+        insert_language = """
+        INSERT INTO settings (
+            name, value
+        ) VALUES (
+            "lang", "default"
+        );
+        """
+
         # The mirrors are GitHub and Codeberg
         insert_update_mirror = """
         INSERT INTO updater (
@@ -313,6 +349,11 @@ class Window(QMainWindow, Ui_MainWindow):
         select_qemu_arm = """
         SELECT name, value FROM settings
         WHERE name = "qemu-system-arm";
+        """
+
+        select_language = """
+        SELECT name, value FROM settings
+        WHERE name = "lang";
         """
 
         select_update_mirror = """
@@ -482,6 +523,73 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(insert_qemu_arm)
                 connection.commit()
                 print("The query was executed successfully. The qemu-system-arm slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_language)
+            connection.commit()
+            result = cursor.fetchall()
+
+            # Language modes
+            # system: language of OS
+            # en: English
+            # de: German
+            langmode = "system"
+
+            try:
+                qemu_img_slot = str(result[0])
+
+                i = 0
+                
+                if result[0][1] == "default":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "System default":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1                    
+
+                elif result[0][1] == "en":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "English":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "en"
+
+                elif result[0][1] == "de":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Deutsch":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "de"
+
+                elif result[0][1] == "uk":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Українська":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "uk"
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot already is in the database.")
+
+            except:
+                cursor.execute(insert_language)
+                connection.commit()
+                langmode = "system"
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -827,8 +935,17 @@ class Window(QMainWindow, Ui_MainWindow):
                     dialog3 = UsbTabletDepreciated(self)
                     dialog3.exec()
                 
-                dialog = StartVirtualMachineDialog(self)
-                dialog.exec()
+                if architecture_of_vm == "i386" or architecture_of_vm == "x86_64" or architecture_of_vm == "mips64el":
+                    dialog = StartVirtualMachineDialog(self)
+                    dialog.exec()
+
+                elif architecture_of_vm == "ppc" or architecture_of_vm == "aarch64" or architecture_of_vm == "arm":
+                    dialog = StartVirtualMachineDialog(self)
+                    dialog.exec()
+                
+                else:
+                    dialog = VmIsMadeWithTooYoungEmuGUI(self)
+                    dialog.exec()
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -1145,6 +1262,78 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+    def applyGeneric(self):
+        language_system = f"""
+        UPDATE settings
+        SET value = 'default'
+        WHERE name = 'lang';
+        """
+
+        language_en = f"""
+        UPDATE settings
+        SET value = 'en'
+        WHERE name = 'lang';
+        """
+
+        language_de = f"""
+        UPDATE settings
+        SET value = 'de'
+        WHERE name = 'lang';
+        """
+
+        language_uk = f"""
+        UPDATE settings
+        SET value = 'uk'
+        WHERE name = 'lang';
+        """
+
+        connection = self.connection
+        cursor = connection.cursor()
+
+        if self.comboBox_4.currentText() == "System default":
+            try:
+                cursor.execute(language_system)
+                connection.commit()
+                langmode = "system"
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+        elif self.comboBox_4.currentText() == "English":
+            try:
+                cursor.execute(language_en)
+                connection.commit()
+                langmode = "en"
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+        elif self.comboBox_4.currentText() == "Deutsch":
+            try:
+                cursor.execute(language_de)
+                connection.commit()
+                langmode = "de"
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+        elif self.comboBox_4.currentText() == "Українська":
+            try:
+                cursor.execute(language_uk)
+                connection.commit()
+                langmode = "uk"
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
 
     def checkForUpdatesManually(self):
         manually = True
