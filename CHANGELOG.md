@@ -1,7 +1,7 @@
 # EmuGUI v0.6
 
 - A dialog for VMs which are created with a version of EmuGUI too new has been added.
-- The main file is now translated into English, German, and also, English with parts of Ukrainian is supported
+- The main and new/edit VM files are now translated into English, German, and also, English with parts of Ukrainian is supported
 
 # EmuGUI v0.5.2
 

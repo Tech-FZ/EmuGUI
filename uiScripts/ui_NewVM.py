@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewVMrixptX.ui'
+## Form generated from reading UI file 'NewVMsuTOVJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -710,31 +710,6 @@ class Ui_Dialog(object):
         self.gridLayout_8 = QGridLayout(self.gridLayoutWidget_8)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.gridLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label_19 = QLabel(self.gridLayoutWidget_8)
-        self.label_19.setObjectName(u"label_19")
-
-        self.verticalLayout.addWidget(self.label_19)
-
-        self.label_20 = QLabel(self.gridLayoutWidget_8)
-        self.label_20.setObjectName(u"label_20")
-
-        self.verticalLayout.addWidget(self.label_20)
-
-        self.label_21 = QLabel(self.gridLayoutWidget_8)
-        self.label_21.setObjectName(u"label_21")
-
-        self.verticalLayout.addWidget(self.label_21)
-
-        self.label_22 = QLabel(self.gridLayoutWidget_8)
-        self.label_22.setObjectName(u"label_22")
-
-        self.verticalLayout.addWidget(self.label_22)
-
-
-        self.gridLayout_8.addLayout(self.verticalLayout, 0, 0, 1, 1)
-
         self.pushButton_23 = QPushButton(self.gridLayoutWidget_8)
         self.pushButton_23.setObjectName(u"pushButton_23")
 
@@ -769,6 +744,12 @@ class Ui_Dialog(object):
         self.pushButton_36.setObjectName(u"pushButton_36")
 
         self.gridLayout_8.addWidget(self.pushButton_36, 1, 2, 1, 1)
+
+        self.label_19 = QLabel(self.gridLayoutWidget_8)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setWordWrap(True)
+
+        self.gridLayout_8.addWidget(self.label_19, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.page_8)
         self.page_9 = QWidget()
@@ -963,7 +944,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -1330,15 +1311,15 @@ class Ui_Dialog(object):
         self.comboBox_13.setItemText(1, QCoreApplication.translate("Dialog", u"USB Mouse", None))
         self.comboBox_13.setItemText(2, QCoreApplication.translate("Dialog", u"USB Tablet Device", None))
 
-        self.label_19.setText(QCoreApplication.translate("Dialog", u"Location of external", None))
-        self.label_20.setText(QCoreApplication.translate("Dialog", u"BIOS file", None))
-        self.label_21.setText(QCoreApplication.translate("Dialog", u"(Leave empty to use", None))
-        self.label_22.setText(QCoreApplication.translate("Dialog", u"the default BIOS)", None))
         self.pushButton_23.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_24.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.pushButton_25.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.label_32.setText(QCoreApplication.translate("Dialog", u"External BIOS file", None))
         self.pushButton_36.setText(QCoreApplication.translate("Dialog", u"Browse", None))
+        self.label_19.setText(QCoreApplication.translate("Dialog", u"Location of external\n"
+"BIOS file (Leave\n"
+"empty to use the\n"
+"default BIOS)", None))
         self.pushButton_26.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_12.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_12.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))

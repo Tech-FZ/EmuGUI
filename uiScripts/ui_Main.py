@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainDkAvFu.ui'
+## Form generated from reading UI file 'MainTGPnsb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -288,12 +288,14 @@ class Ui_MainWindow(object):
         self.label_7 = QLabel(self.gridLayoutWidget_3)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setAlignment(Qt.AlignCenter)
+        self.label_7.setWordWrap(True)
 
         self.gridLayout_3.addWidget(self.label_7, 1, 0, 1, 1)
 
         self.label_10 = QLabel(self.gridLayoutWidget_3)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setAlignment(Qt.AlignCenter)
+        self.label_10.setWordWrap(True)
 
         self.gridLayout_3.addWidget(self.label_10, 2, 0, 1, 1)
 

@@ -8,6 +8,10 @@ import platformSpecific.unixSpecific
 import subprocess
 from dialogExecution.vhdExistsDialog import VhdAlreadyExists
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
+import translations.de
+import translations.uk
+import translations.en
+import locale
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -15,6 +19,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         super().__init__(parent)
         self.setupUi(self)
+        self.langDetect()
         self.setWindowTitle("EmuGUI - Create new VM")
         
         try:
@@ -94,6 +99,101 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_22.clicked.connect(self.linuxVMSpecific)
         self.pushButton_20.clicked.connect(self.finishCreation)
         self.pushButton_21.clicked.connect(self.close)
+
+    def langDetect(self):
+        select_language = """
+        SELECT name, value FROM settings
+        WHERE name = "lang";
+        """
+
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
+        
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
+
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(select_language)
+            connection.commit()
+            result = cursor.fetchall()
+
+            # Language modes
+            # system: language of OS
+            # en: English
+            # de: German
+            langmode = "system"
+
+            try:
+                qemu_img_slot = str(result[0])
+
+                i = 0
+                
+                if result[0][1] == "default":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "System default":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1                    
+
+                elif result[0][1] == "en":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "English":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "en"
+
+                elif result[0][1] == "de":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Deutsch":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "de"
+
+                elif result[0][1] == "uk":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Українська":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "uk"
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot already is in the database.")
+
+            except:
+                langmode = "system"
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def setLanguage(self, langmode):
+        if langmode == "system":
+            languageToUse = locale.getlocale()[0]
+
+        else:
+            languageToUse = langmode
+
+        if languageToUse.startswith("de"):
+            translations.de.translateNewVmDE(self)
+
+        elif languageToUse.startswith("uk"):
+            translations.uk.translateNewVmUK(self)
+
+        else:
+            translations.en.translateNewVmEN(self)
 
     def archSystem(self):
         # Here, it checks the name first, than the architecture.

@@ -51,3 +51,123 @@ def translateMainUK(window):
         WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.
         """
         )
+
+def translateNewVmUK(window):
+    # First page
+    window.label.setText("Name")
+    window.label_3.setText("Architecture")
+    window.comboBox.setPlaceholderText("Please choose an architecture")
+
+    window.pushButton_3.setText("Next >")
+    window.pushButton_2.setText("Cancel")
+
+    # Second page (i386/x64 machines)
+    window.label_4.setText("Machine")
+    window.label_5.setText("CPU")
+    window.label_6.setText("RAM in MB")
+
+    window.comboBox_2.setPlaceholderText("Please select a machine")
+    window.comboBox_3.setPlaceholderText("Please select a processor")
+
+    window.pushButton_5.setText("< Previous")
+    window.pushButton_4.setText("Next >")
+    window.pushButton_6.setText("Cancel")
+
+    # Second page (PowerPC machines)
+    window.label_9.setText("Machine")
+    window.label_8.setText("CPU")
+    window.label_7.setText("RAM in MB")
+
+    window.comboBox_4.setPlaceholderText("Please select a machine")
+    window.comboBox_5.setPlaceholderText("Please select a processor")
+
+    window.pushButton_7.setText("< Previous")
+    window.pushButton_8.setText("Next >")
+    window.pushButton_9.setText("Cancel")
+
+    # Second page (MIPSel machines)
+    window.label_12.setText("Machine")
+    window.label_11.setText("CPU")
+    window.label_10.setText("RAM in MB")
+
+    window.comboBox_6.setPlaceholderText("Please select a machine")
+    window.comboBox_7.setPlaceholderText("Please select a processor")
+
+    window.pushButton_10.setText("< Previous")
+    window.pushButton_11.setText("Next >")
+    window.pushButton_12.setText("Cancel")
+
+    # Second page (ARM machines)
+    window.label_31.setText("Machine")
+    window.label_30.setText("CPU")
+    window.label_29.setText("RAM in MB")
+
+    window.comboBox_14.setPlaceholderText("Please select a machine")
+    window.comboBox_15.setPlaceholderText("Please select a processor")
+
+    window.pushButton_33.setText("< Previous")
+    window.pushButton_34.setText("Next >")
+    window.pushButton_35.setText("Cancel")
+
+    # Third page
+    window.label_13.setText("VHD path")
+    window.label_14.setText("VHD file format")
+    window.label_15.setText("Maximum size")
+
+    window.comboBox_8.setPlaceholderText("(Please select a file format)")
+
+    window.pushButton_13.setText("Browse")
+    window.pushButton_16.setText("< Previous")
+    window.pushButton_14.setText("Next >")
+    window.pushButton_15.setText("Cancel")
+
+    # Fourth page
+    window.label_16.setText("VGA")
+    window.label_17.setText("Network")
+    window.label_28.setText("Mouse")
+
+    window.comboBox_10.setPlaceholderText("(Please select a graphics adapter)")
+    window.comboBox_11.setPlaceholderText("(Please select a network adapter)")
+
+    window.pushButton_18.setText("< Previous")
+    window.pushButton_17.setText("Next >")
+    window.pushButton_19.setText("Cancel")
+
+    # Fifth page
+    window.label_19.setText("Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)")
+    window.label_32.setText("External BIOS file")
+
+    window.pushButton_36.setText("Browse")
+    window.pushButton_25.setText("< Previous")
+    window.pushButton_24.setText("Next >")
+    window.pushButton_23.setText("Cancel")
+
+    # Sixth page
+    window.label_23.setText("Sound card")
+    window.label_33.setText("CPU cores")
+    window.label_34.setText("Keyboard")
+
+    window.pushButton_28.setText("< Previous")
+    window.pushButton_27.setText("Next >")
+    window.pushButton_26.setText("Cancel")
+
+    # Seventh page
+    window.label_24.setText("Linux kernel")
+    window.label_25.setText("Linux initrd image")
+    window.label_26.setText("Linux cmd args")
+
+    window.pushButton.setText("Browse")
+    window.pushButton_32.setText("Browse")
+    window.pushButton_31.setText("< Previous")
+    window.pushButton_30.setText("Next >")
+    window.pushButton_29.setText("Cancel")
+
+    # Eighth page
+    window.label_2.setText("Additional arguments (if needed)")
+
+    window.checkBox_2.setText("I want to install Windows 2000")
+    window.checkBox_3.setText("Add USB support")
+
+    window.pushButton_22.setText("< Previous")
+    window.pushButton_20.setText("Finish")
+    window.pushButton_21.setText("Cancel")
