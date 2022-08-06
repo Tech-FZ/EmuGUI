@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>75</height>
+    <width>482</width>
+    <height>218</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,8 +21,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>378</width>
-     <height>56</height>
+     <width>461</width>
+     <height>191</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -30,6 +30,9 @@
      <widget class="QLabel" name="label_2">
       <property name="text">
        <string>Do you want to keep or overwrite it?</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -44,6 +47,9 @@
      <widget class="QLabel" name="label">
       <property name="text">
        <string>Sorry, but the disk you want to create is already existant.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </item>

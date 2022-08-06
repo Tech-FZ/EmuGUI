@@ -1,7 +1,9 @@
 # EmuGUI v0.6
 
 - A dialog for VMs which are created with a version of EmuGUI too new has been added.
-- The main and new/edit VM files are now translated into English, German, and also, English with parts of Ukrainian is supported
+- The most of EmuGUI is now translated into English, German, and also, English with parts of Ukrainian is supported
+- Added a section for Windows users who can't install Qt via pip.
+- Also, a note about the update checker has been added to README.md.
 
 # EmuGUI v0.5.2
 

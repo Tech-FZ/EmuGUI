@@ -10,6 +10,10 @@ import subprocess
 from PySide6.QtCore import QDateTime
 from random import randint
 import magic
+import translations.de
+import translations.uk
+import translations.en
+import locale
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
@@ -17,6 +21,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         super().__init__(parent)
         self.setupUi(self)
         self.connectSignalsSlots()
+        self.langDetect()
         self.vmSpecs = self.readTempVmFile()
         print(self.vmSpecs)
         self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
@@ -40,6 +45,70 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_3.clicked.connect(self.start_virtual_machine)
         self.pushButton_4.clicked.connect(self.close)
         self.pushButton_5.clicked.connect(self.set_date_to_system)
+
+    def langDetect(self):
+        select_language = """
+        SELECT name, value FROM settings
+        WHERE name = "lang";
+        """
+
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
+        
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
+
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(select_language)
+            connection.commit()
+            result = cursor.fetchall()
+
+            # Language modes
+            # system: language of OS
+            # en: English
+            # de: German
+            langmode = "system"
+
+            try:
+                qemu_img_slot = str(result[0])               
+
+                if result[0][1] == "en":
+                    langmode = "en"
+
+                elif result[0][1] == "de":
+                    langmode = "de"
+
+                elif result[0][1] == "uk":
+                    langmode = "uk"
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot already is in the database.")
+
+            except:
+                langmode = "system"
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def setLanguage(self, langmode):
+        if langmode == "system":
+            languageToUse = locale.getlocale()[0]
+
+        else:
+            languageToUse = langmode
+
+        if languageToUse.startswith("de"):
+            translations.de.translateStartVmDE(self)
+
+        elif languageToUse.startswith("uk"):
+            translations.uk.translateStartVmUK(self)
+
+        else:
+            translations.en.translateStartVmEN(self)
 
     def readTempVmFile(self):
         # Searching temporary files

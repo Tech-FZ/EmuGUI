@@ -1,6 +1,10 @@
 # EmuGUI
 What should I say? I didn't like the existing QEMU interfaces for Windows, so I made my own.
 
+## Important note about update check
+
+EmuGUI automatically checks for updates by default. No personal data is being shared while doing so. If you don't want this, you can disable it in settings.
+
 ## Mirrors
 
 GitHub: https://github.com/Tech-FZ/EmuGUI
@@ -95,7 +99,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 4. If you have external BIOS files in the root directory of your old EmuGUI installation, copy these into the root directory of the new one.
 5. Start the new EmuGUI installation. You might need to reinstall some virtual machines.
 
-## Building on Windows (Python Venv)
+## Building on Windows (Python Venv, Qt installed via Python)
 
 1. Install Python. You can get it from https://www.python.org/
 2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
@@ -113,6 +117,27 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 14. After that is finished, copy the code into the dist folder PyInstaller created.
 15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 16. If it works, have fun! If not, try to start again from number 9.
+
+## Building on Windows (Python Venv, Qt installed via official installer)
+
+1. Install Python. You can get it from https://www.python.org/
+2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
+3. Install Git. You can get it from https://git-scm.com/downloads
+4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
+5. Install Qt from the following site (you need a Qt account for that): https://www.qt.io/download-open-source?__hstc=152220518.4df0e407aa37c96fa5547ca135b274e3.1659787309440.1659787309440.1659787309440.1&__hssc=152220518.1.1659787309441&__hsfp=1951994995&hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5
+6. You only need the Qt Creator.
+7. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
+8. Open Visual Studio Code in that folder.
+9. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
+10. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
+11. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
+12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
+13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic-bin`
+14. After this is done, run the main.py script.
+15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
+16. After that is finished, copy the code into the dist folder PyInstaller created.
+17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+18. If it works, have fun! If not, try to start again from number 9.
 
 ## Building on Windows (Anaconda)
 

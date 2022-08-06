@@ -171,3 +171,53 @@ def translateNewVmUK(window):
     window.pushButton_22.setText("< Previous")
     window.pushButton_20.setText("Finish")
     window.pushButton_21.setText("Cancel")
+
+def translateStartVmUK(window):
+    window.label_4.setText("Date & Time")
+    window.label_3.setText("Boot from")
+    
+    window.label_5.setText("""
+    Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
+    """)
+
+    window.pushButton.setText("Browse")
+    window.pushButton_2.setText("Browse")
+    window.pushButton_5.setText("Set to system")
+    window.pushButton_3.setText("Start VM")
+    window.pushButton_4.setText("Cancel")
+
+def translateVmExistsUK(window):
+    window.label.setText("Sorry, but a VM with this name already exists.")
+    window.label_2.setText("Please consider either deleting that VM or thinking of a new name.")
+
+    window.pushButton.setText("OK")
+
+def translateVhdExistsUK(window):
+    window.label.setText("Sorry, but the disk you want to create is already existant.")
+    window.label_2.setText("Do you want to keep or overwrite it?")
+
+    window.pushButton.setText("Overwrite")
+    window.pushButton_2.setText("Keep")
+
+def translateUpdateAvailableUK(window):
+    window.label.setText("An update is available! Do you want to be redirected to download?")
+
+    window.pushButton.setText("Так")
+    window.pushButton_2.setText("Ні")
+
+def translateNoUpdateAvailableUK(window):
+    window.label.setText("You are already running the latest version of EmuGUI.")
+    window.label_2.setText("...or don't have an internet connection.")
+
+    window.pushButton.setText("OK")
+
+def translateSettingsPendingUK(window):
+    window.label.setText("You didn't setup the QEMU paths.")
+    window.label_2.setText("Please go to settings to do that and try again afterwards.")
+
+    window.pushButton.setText("OK")
+
+def translateVmTooNewUK(window):
+    window.label.setText("This VM is made with a version of EmuGUI that is too new. Please use a later version!")
+
+    window.pushButton.setText("OK")

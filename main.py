@@ -31,7 +31,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.6.0.2 (pre-release)")
+        self.label_8.setText("EmuGUI v0.6.0.3 (pre-release)")
         self.setWindowTitle("EmuGUI")
 
         try:
@@ -40,7 +40,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5011
+        self.versionCode = 5012
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1512,6 +1512,7 @@ class SettingsPending1Dialog(QDialog, Ui_Dialog):
         super().__init__(parent)
         self.setupUi(self)
         self.setWindowTitle("EmuGUI - Settings pending")
+        self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -1523,6 +1524,72 @@ class SettingsPending1Dialog(QDialog, Ui_Dialog):
 
     def connectSignalsSlots(self):
         self.pushButton.clicked.connect(self.close)
+
+    def langDetect(self):
+        select_language = """
+        SELECT name, value FROM settings
+        WHERE name = "lang";
+        """
+
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
+        
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
+
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(select_language)
+            connection.commit()
+            result = cursor.fetchall()
+
+            # Language modes
+            # system: language of OS
+            # en: English
+            # de: German
+            langmode = "system"
+
+            try:
+                qemu_img_slot = str(result[0])
+
+                i = 0
+                
+                if result[0][1] == "en":
+                    langmode = "en"
+
+                elif result[0][1] == "de":
+                    langmode = "de"
+
+                elif result[0][1] == "uk":
+                    langmode = "uk"
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot already is in the database.")
+
+            except:
+                langmode = "system"
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def setLanguage(self, langmode):
+        if langmode == "system":
+            languageToUse = locale.getlocale()[0]
+
+        else:
+            languageToUse = langmode
+
+        if languageToUse.startswith("de"):
+            translations.de.translateSettingsPendingDE(self)
+
+        elif languageToUse.startswith("uk"):
+            translations.uk.translateSettingsPendingUK(self)
+
+        else:
+            translations.en.translateSettingsPendingEN(self)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

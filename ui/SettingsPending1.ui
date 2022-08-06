@@ -28,6 +28,9 @@
    <property name="text">
     <string>You didn't setup the QEMU paths.</string>
    </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -40,6 +43,9 @@
    </property>
    <property name="text">
     <string>Please go to settings to do that and try again afterwards.</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">

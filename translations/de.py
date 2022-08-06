@@ -171,3 +171,53 @@ def translateNewVmDE(window):
     window.pushButton_22.setText("< Zurück")
     window.pushButton_20.setText("Abschließen")
     window.pushButton_21.setText("Abbrechen")
+
+def translateStartVmDE(window):
+    window.label_4.setText("Datum & Zeit")
+    window.label_3.setText("Booten von")
+    
+    window.label_5.setText("""
+    Notiz: Sollte die VM innerhalb fünf Minuten nicht starten, sollten Sie die Einstellungen von VM und QEMU überprüfen.
+    """)
+
+    window.pushButton.setText("Durchsuchen")
+    window.pushButton_2.setText("Durchsuchen")
+    window.pushButton_5.setText("Auf Systemzeit setzen")
+    window.pushButton_3.setText("VM starten")
+    window.pushButton_4.setText("Abbrechen")
+
+def translateVmExistsDE(window):
+    window.label.setText("Tut mir leid, jedoch trägt bereits eine andere VM diesen Namen.")
+    window.label_2.setText("Bitte löschen Sie die entsprechende VM oder geben Sie dieser einen neuen Namen.")
+
+    window.pushButton.setText("OK")
+
+def translateVhdExistsDE(window):
+    window.label.setText("Sorry, but the disk you want to create is already existant.")
+    window.label_2.setText("Do you want to keep or overwrite it?")
+
+    window.pushButton.setText("Overwrite")
+    window.pushButton_2.setText("Keep")
+
+def translateUpdateAvailableDE(window):
+    window.label.setText("Es ist ein Update verfügbar! Möchten Sie für den Download weitergeleitet werden?")
+
+    window.pushButton.setText("Ja")
+    window.pushButton_2.setText("Nein")
+
+def translateNoUpdateAvailableDE(window):
+    window.label.setText("Sie nutzen bereits die neueste Version von EmuGUI.")
+    window.label_2.setText("...oder es stimmt etwas mit Ihrer Internetverbindung nicht.")
+
+    window.pushButton.setText("OK")
+
+def translateSettingsPendingDE(window):
+    window.label.setText("Sie haben die QEMU-Pfade noch nicht eingestellt.")
+    window.label_2.setText("Bitte gehen Sie in die Einstellungen, um dies zu beheben und versuchen Sie es danach nochmal.")
+
+    window.pushButton.setText("OK")
+
+def translateVmTooNewDE(window):
+    window.label.setText("Diese VM wurde mit einer zu neuen Version von EmuGUI erstellt. Bitte verwenden Sie eine neuere Version!")
+
+    window.pushButton.setText("OK")
