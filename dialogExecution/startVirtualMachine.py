@@ -164,9 +164,19 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         WHERE name = 'qemu-system-ppc';
         """
 
+        qemu_ppc64_bin = """
+        SELECT value FROM settings
+        WHERE name = 'qemu-system-ppc64';
+        """
+
         qemu_mips64el_bin = """
         SELECT value FROM settings
         WHERE name = 'qemu-system-mips64el';
+        """
+
+        qemu_mipsel_bin = """
+        SELECT value FROM settings
+        WHERE name = 'qemu-system-mipsel';
         """
 
         qemu_aarch64_bin = """
@@ -215,9 +225,23 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 result = cursor.fetchall()
 
                 print(result)
+
+            elif self.vmSpecs[1] == "ppc64":
+                cursor.execute(qemu_ppc64_bin)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
             
             elif self.vmSpecs[1] == "mips64el":
                 cursor.execute(qemu_mips64el_bin)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
+
+            elif self.vmSpecs[1] == "mipsel":
+                cursor.execute(qemu_mipsel_bin)
                 connection.commit()
                 result = cursor.fetchall()
 
@@ -277,10 +301,10 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
 
             if self.vmSpecs[7] != "none":
-                if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc":
+                if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc" or self.vmSpecs[1] == "ppc64":
                     qemu_cmd = qemu_cmd + f" -net nic,model={self.vmSpecs[7]} -net user"
 
-                elif self.vmSpecs[1] == "mips64el":
+                elif self.vmSpecs[1] == "mips64el" or self.vmSpecs[1] == "mipsel":
                     qemu_cmd = qemu_cmd + f" -nic user,model={self.vmSpecs[7]}"
 
                 elif self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":

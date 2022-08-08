@@ -11,7 +11,7 @@ def translateMainEN(window):
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "General")
-    window.tabWidget_2.setTabText(3, "About")
+    window.tabWidget_2.setTabText(3, "About EmuGUI")
 
     # General tab
     window.label_15.setText("Language")
@@ -25,6 +25,8 @@ def translateMainEN(window):
     window.label_5.setText("qemu-system-mips64el Path")
     window.label_9.setText("qemu-system-aarch64 Path")
     window.label_11.setText("qemu-system-arm Path")
+    window.label_16.setText("qemu-system-ppc64 Path")
+    window.label_17.setText("qemu-system-mipsel Path")
 
     window.pushButton.setText("Browse")
     window.pushButton_2.setText("Browse")
@@ -33,6 +35,8 @@ def translateMainEN(window):
     window.pushButton_5.setText("Browse")
     window.pushButton_7.setText("Browse")
     window.pushButton_12.setText("Browse")
+    window.pushButton_16.setText("Browse")
+    window.pushButton_17.setText("Browse")
     window.pushButton_6.setText("Apply")
 
     # Update tab

@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewVMsuTOVJ.ui'
+## Form generated from reading UI file 'NewVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.1.0
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
+    QGridLayout, QLabel, QLineEdit, QPushButton,
+    QSizePolicy, QSpinBox, QStackedWidget, QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -56,6 +62,8 @@ class Ui_Dialog(object):
         self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 1)
 
         self.comboBox = QComboBox(self.gridLayoutWidget)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -944,7 +952,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -959,9 +967,11 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"i386", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"x86_64", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"mips64el", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"ppc", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("Dialog", u"aarch64", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("Dialog", u"arm", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"mipsel", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("Dialog", u"ppc", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("Dialog", u"ppc64", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("Dialog", u"aarch64", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("Dialog", u"arm", None))
 
         self.comboBox.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))

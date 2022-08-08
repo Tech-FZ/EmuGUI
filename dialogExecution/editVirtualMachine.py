@@ -305,12 +305,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
             self.spinBox.setValue(int(vmSpecs[4]))
 
-        elif vmSpecs[1] == "mips64el":
+        elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel":
             self.comboBox.setCurrentIndex(2)
             self.machineCpuMips64el(vmSpecs[2], vmSpecs[3])
             self.spinBox_3.setValue(int(vmSpecs[4]))
 
-        elif vmSpecs[1] == "ppc":
+        elif vmSpecs[1] == "ppc" or vmSpecs[1] == "ppc64":
             self.comboBox.setCurrentIndex(3)
             self.machineCpuPpc(vmSpecs[2], vmSpecs[3])
             self.spinBox_2.setValue(int(vmSpecs[4]))
@@ -436,10 +436,10 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     elif self.comboBox.currentText() == "x86_64":
                         self.stackedWidget.setCurrentIndex(1)
         
-                    elif self.comboBox.currentText() == "ppc":
+                    elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
                         self.stackedWidget.setCurrentIndex(2)
 
-                    elif self.comboBox.currentText() == "mips64el":
+                    elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
                         self.stackedWidget.setCurrentIndex(3)
 
                     elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
@@ -452,10 +452,10 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif self.comboBox.currentText() == "x86_64":
                     self.stackedWidget.setCurrentIndex(1)
         
-                elif self.comboBox.currentText() == "ppc":
+                elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
                     self.stackedWidget.setCurrentIndex(2)
 
-                elif self.comboBox.currentText() == "mips64el":
+                elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
                     self.stackedWidget.setCurrentIndex(3)
 
                 elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
@@ -536,12 +536,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = self.comboBox_3.currentText()
             ram = self.spinBox.value()
         
-        elif self.comboBox.currentText() == "ppc":
+        elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
             machine = self.comboBox_4.currentText()
             cpu = self.comboBox_5.currentText()
             ram = self.spinBox_2.value()
 
-        elif self.comboBox.currentText() == "mips64el":
+        elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
             machine = self.comboBox_6.currentText()
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()

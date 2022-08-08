@@ -4,6 +4,8 @@
 - The most of EmuGUI is now translated into English, German, and also, English with parts of Ukrainian is supported
 - Added a section for Windows users who can't install Qt via pip.
 - Also, a note about the update checker has been added to README.md.
+- To make translating a bit easier, "About" has been changed to "About EmuGUI"
+- PowerPC 64-bit and MIPSel 32-bit architectures have been added.
 
 # EmuGUI v0.5.2
 
