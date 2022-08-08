@@ -543,7 +543,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             try:
                 qemu_img_slot = str(result[0])
-                self.lineEdit.setText(result[0][1])
+                self.lineEdit_9.setText(result[0][1])
                 print("The query was executed successfully. The qemu-system-mips64el slot already is in the database.")
 
             except:
