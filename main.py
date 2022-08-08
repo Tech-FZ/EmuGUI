@@ -1227,7 +1227,7 @@ class Window(QMainWindow, Ui_MainWindow):
         qemu_mipsel_update = f"""
         UPDATE settings
         SET value = '{pathQemuMipsEl}'
-        WHERE name = 'qemu-system-mips64el';
+        WHERE name = 'qemu-system-mipsel';
         """
 
         qemu_aarch64_update = f"""
