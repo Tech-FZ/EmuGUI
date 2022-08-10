@@ -44,7 +44,7 @@ RAM: 6 GB¹
 
 HDD: 2 GB¹
 
-¹ This is the absolute minimum, the required performance depends on the operating system system you want to run.
+¹ This is the absolute minimum, the required performance depends on the operating system you want to run.
 
 ² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023.
 
