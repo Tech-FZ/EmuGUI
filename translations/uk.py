@@ -1,6 +1,6 @@
 def translateMainUK(window):
     # Tab group 1
-    window.tabWidget.setTabText(0, "Головний меню")
+    window.tabWidget.setTabText(0, "Головниє меню")
     window.tabWidget.setTabText(1, "Налаштування")
 
     # Main tab

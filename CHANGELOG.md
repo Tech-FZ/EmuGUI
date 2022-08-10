@@ -6,6 +6,8 @@
 - Also, a note about the update checker has been added to README.md.
 - To make translating a bit easier, "About" has been changed to "About EmuGUI"
 - PowerPC 64-bit and MIPSel 32-bit architectures have been added.
+- Thanks to BasDeGamer for fixing the spelling mistake on README.md. Credits to him or her go to CONTRIBUTORS.md.
+- Also, I fear that I violated an Ukrainian grammar rule in the main menu tab (hopefully fixed).
 
 # EmuGUI v0.5.2
 
