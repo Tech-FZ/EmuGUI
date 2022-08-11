@@ -1,6 +1,7 @@
 # EmuGUI v0.6.1
 
 - A spacing mistake has been fixed.
+- The editing VM dialog had a bug which sometimes didn't apply the actual architecture of the VM.
 
 # EmuGUI v0.6
 

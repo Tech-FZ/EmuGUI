@@ -295,28 +295,28 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         self.lineEdit.setText(vmSpecs[0])
         self.setWindowTitle(f"EmuGUI - Edit {vmSpecs[0]}")
 
-        if vmSpecs[1] == "i386":
-            self.comboBox.setCurrentIndex(0)
-            self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
-            self.spinBox.setValue(int(vmSpecs[4]))
+        i = 0
 
-        elif vmSpecs[1] == "x86_64":
-            self.comboBox.setCurrentIndex(1)
+        while i < self.comboBox.count():
+            if self.comboBox.itemText(i) == vmSpecs[1]:
+                self.comboBox.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        if vmSpecs[1] == "i386" or vmSpecs[1] == "x86_64":
             self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
             self.spinBox.setValue(int(vmSpecs[4]))
 
         elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel":
-            self.comboBox.setCurrentIndex(2)
             self.machineCpuMips64el(vmSpecs[2], vmSpecs[3])
             self.spinBox_3.setValue(int(vmSpecs[4]))
 
         elif vmSpecs[1] == "ppc" or vmSpecs[1] == "ppc64":
-            self.comboBox.setCurrentIndex(3)
             self.machineCpuPpc(vmSpecs[2], vmSpecs[3])
             self.spinBox_2.setValue(int(vmSpecs[4]))
 
-        elif vmSpecs[1] == "aarch64" or self.comboBox.currentText() == "arm":
-            self.comboBox.setCurrentIndex(4)
+        elif vmSpecs[1] == "aarch64" or vmSpecs[1] == "arm":
             self.machineCpuAarch64(vmSpecs[2], vmSpecs[3])
             self.spinBox_5.setValue(int(vmSpecs[4]))
 
