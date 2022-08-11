@@ -1,3 +1,7 @@
+# EmuGUI v0.6.1
+
+- A spacing mistake has been fixed.
+
 # EmuGUI v0.6
 
 - A dialog for VMs which are created with a version of EmuGUI too new has been added.
