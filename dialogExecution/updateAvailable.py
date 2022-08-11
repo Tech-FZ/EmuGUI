@@ -120,7 +120,7 @@ class UpdateAvailable(QDialog, Ui_Dialog):
             print(f"The SQLite module encountered an error: {e}.")
 
     def setLanguage(self, langmode):
-        if langmode == "system":
+        if langmode == "system" or langmode == None:
             languageToUse = locale.getlocale()[0]
 
         else:

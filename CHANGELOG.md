@@ -2,6 +2,7 @@
 
 - A spacing mistake has been fixed.
 - The editing VM dialog had a bug which sometimes didn't apply the actual architecture of the VM.
+- I tried to fix a language bug but it failed. For now, if the editing VM dialog doesn't open, restart EmuGUI.
 
 # EmuGUI v0.6
 

@@ -126,46 +126,15 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             langmode = "system"
 
             try:
-                qemu_img_slot = str(result[0])
+                qemu_img_slot = str(result[0])                 
 
-                i = 0
-                
-                if result[0][1] == "default":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "System default":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1                    
-
-                elif result[0][1] == "en":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "English":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
+                if result[0][1] == "en":
                     langmode = "en"
 
                 elif result[0][1] == "de":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Deutsch":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
                     langmode = "de"
 
                 elif result[0][1] == "uk":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Українська":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
                     langmode = "uk"
 
                 self.setLanguage(langmode)
@@ -180,7 +149,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             print(f"The SQLite module encountered an error: {e}.")
 
     def setLanguage(self, langmode):
-        if langmode == "system":
+        if langmode == "system" or langmode == None:
             languageToUse = locale.getlocale()[0]
 
         else:

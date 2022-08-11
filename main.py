@@ -80,7 +80,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
 
     def setLanguage(self, langmode):
-        if langmode == "system":
+        if langmode == "system" or langmode == None:
             languageToUse = locale.getlocale()[0]
 
         else:
