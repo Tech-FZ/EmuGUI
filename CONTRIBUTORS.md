@@ -1,5 +1,4 @@
 # EmuGUI Contributors
 
-Nicolas Lucien/Tech-FZ
-
+Nicolas Lucien/Tech-FZ 
 BasDeGamer
