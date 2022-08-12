@@ -53,3 +53,14 @@ def unixTempVmStarterFile():
         fileName = f"/home/{userName}/EmuGUI/vmstart.txt"
 
     return fileName
+
+def unixLanguageFile():
+    userName = os.getlogin()
+
+    if userName == "root":
+        fileName = f"/{userName}/EmuGUI/lang.txt"
+
+    else:
+        fileName = f"/home/{userName}/EmuGUI/lang.txt"
+        
+    return fileName

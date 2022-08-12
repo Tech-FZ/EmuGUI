@@ -83,6 +83,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "uk":
                     langmode = "uk"
 
+                elif result[0][1] == "system":
+                    langmode = "system"
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot already is in the database.")
 
@@ -101,14 +104,41 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         else:
             languageToUse = langmode
 
-        if languageToUse.startswith("de"):
-            translations.de.translateStartVmDE(self)
+        if languageToUse != None:
+            if languageToUse.startswith("de"):
+                translations.de.translateStartVmDE(self)
 
-        elif languageToUse.startswith("uk"):
-            translations.uk.translateStartVmUK(self)
+            elif languageToUse.startswith("uk"):
+                translations.uk.translateStartVmUK(self)
 
+            else:
+                translations.en.translateStartVmEN(self)
+        
         else:
-            translations.en.translateStartVmEN(self)
+            if platform.system() == "Windows":
+                langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+            
+            else:
+                langfile = platformSpecific.unixSpecific.unixLanguageFile()
+            
+            try:
+                with open(langfile, "r+") as language:
+                    languageContent = language.readlines()
+                    languageToUse = languageContent[0].replace("\n", "")
+                
+                if languageToUse != None:
+                    if languageToUse.startswith("de"):
+                        translations.de.translateStartVmDE(self)
+
+                    elif languageToUse.startswith("uk"):
+                        translations.uk.translateStartVmUK(self)
+
+                    else:
+                        translations.en.translateStartVmEN(self)
+            
+            except:
+                print("Translation can't be figured out. Using English language.")
+                translations.en.translateStartVmEN(self)
 
     def readTempVmFile(self):
         # Searching temporary files

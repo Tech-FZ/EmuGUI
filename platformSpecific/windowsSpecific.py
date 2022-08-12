@@ -33,3 +33,8 @@ def windowsTempVmStarterFile():
     userName = os.getlogin()
     fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\vmstart.txt"
     return fileName
+
+def windowsLanguageFile():
+    userName = os.getlogin()
+    fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\lang.txt"
+    return fileName

@@ -644,13 +644,57 @@ class Window(QMainWindow, Ui_MainWindow):
 
                     langmode = "uk"
 
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
                 self.setLanguage(langmode)
+
                 print("The query was executed successfully. The language slot already is in the database.")
 
             except:
                 cursor.execute(insert_language)
                 connection.commit()
                 langmode = "system"
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+                    
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot has been created.")
         
@@ -1406,6 +1450,28 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(language_system)
                 connection.commit()
                 langmode = "system"
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
@@ -1417,6 +1483,28 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(language_en)
                 connection.commit()
                 langmode = "en"
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
@@ -1428,6 +1516,28 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(language_de)
                 connection.commit()
                 langmode = "de"
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
@@ -1439,6 +1549,28 @@ class Window(QMainWindow, Ui_MainWindow):
                 cursor.execute(language_uk)
                 connection.commit()
                 langmode = "uk"
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 

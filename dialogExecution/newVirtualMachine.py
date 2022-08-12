@@ -128,45 +128,17 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             try:
                 qemu_img_slot = str(result[0])
 
-                i = 0
-                
-                if result[0][1] == "default":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "System default":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1                    
-
-                elif result[0][1] == "en":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "English":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
+                if result[0][1] == "en":
                     langmode = "en"
 
                 elif result[0][1] == "de":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Deutsch":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
                     langmode = "de"
 
                 elif result[0][1] == "uk":
-                    while i < self.comboBox_4.count():
-                        if self.comboBox_4.itemText(i) == "Українська":
-                            self.comboBox_4.setCurrentIndex(i)
-                            break
-
-                        i += 1
-
                     langmode = "uk"
+
+                elif result[0][1] == "system":
+                    langmode = "system"
 
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot already is in the database.")
@@ -186,14 +158,41 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         else:
             languageToUse = langmode
 
-        if languageToUse.startswith("de"):
-            translations.de.translateNewVmDE(self)
+        if languageToUse != None:
+            if languageToUse.startswith("de"):
+                translations.de.translateNewVmDE(self)
 
-        elif languageToUse.startswith("uk"):
-            translations.uk.translateNewVmUK(self)
+            elif languageToUse.startswith("uk"):
+                translations.uk.translateNewVmUK(self)
 
+            else:
+                translations.en.translateNewVmEN(self)
+        
         else:
-            translations.en.translateNewVmEN(self)
+            if platform.system() == "Windows":
+                langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+            
+            else:
+                langfile = platformSpecific.unixSpecific.unixLanguageFile()
+            
+            try:
+                with open(langfile, "r+") as language:
+                    languageContent = language.readlines()
+                    languageToUse = languageContent[0].replace("\n", "")
+                
+                if languageToUse != None:
+                    if languageToUse.startswith("de"):
+                        translations.de.translateNewVmDE(self)
+
+                    elif languageToUse.startswith("uk"):
+                        translations.uk.translateNewVmUK(self)
+
+                    else:
+                        translations.en.translateNewVmEN(self)
+            
+            except:
+                print("Translation can't be figured out. Using English language.")
+                translations.en.translateNewVmEN(self)
 
     def archSystem(self):
         # Here, it checks the name first, than the architecture.

@@ -108,6 +108,9 @@ class UpdateAvailable(QDialog, Ui_Dialog):
                 elif result[0][1] == "uk":
                     langmode = "uk"
 
+                elif result[0][1] == "system":
+                    langmode = "system"
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot already is in the database.")
 
@@ -126,11 +129,38 @@ class UpdateAvailable(QDialog, Ui_Dialog):
         else:
             languageToUse = langmode
 
-        if languageToUse.startswith("de"):
-            translations.de.translateUpdateAvailableDE(self)
+        if languageToUse != None:
+            if languageToUse.startswith("de"):
+                translations.de.translateUpdateAvailableDE(self)
 
-        elif languageToUse.startswith("uk"):
-            translations.uk.translateUpdateAvailableUK(self)
+            elif languageToUse.startswith("uk"):
+                translations.uk.translateUpdateAvailableUK(self)
 
+            else:
+                translations.en.translateUpdateAvailableEN(self)
+        
         else:
-            translations.en.translateUpdateAvailableEN(self)
+            if platform.system() == "Windows":
+                langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+            
+            else:
+                langfile = platformSpecific.unixSpecific.unixLanguageFile()
+            
+            try:
+                with open(langfile, "r+") as language:
+                    languageContent = language.readlines()
+                    languageToUse = languageContent[0].replace("\n", "")
+                
+                if languageToUse != None:
+                    if languageToUse.startswith("de"):
+                        translations.de.translateUpdateAvailableDE(self)
+
+                    elif languageToUse.startswith("uk"):
+                        translations.uk.translateUpdateAvailableUK(self)
+
+                    else:
+                        translations.en.translateUpdateAvailableEN(self)
+            
+            except:
+                print("Translation can't be figured out. Using English language.")
+                translations.en.translateUpdateAvailableEN(self)
