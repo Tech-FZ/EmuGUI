@@ -435,10 +435,19 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + " -win2k-hack"
 
             if fda_file != "":
-                qemu_cmd = qemu_cmd + f" -fda \"{fda_file}\""
+                print(magic.from_file(fda_file))
+                if platform.system() == "Windows":
+                    qemu_cmd = qemu_cmd + f" -fda \"{fda_file}\""
+
+                else:
+                    qemu_cmd = qemu_cmd + f" -fda {fda_file}"
 
             if cdrom_file != "":
-                qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file}\""
+                if platform.system() == "Windows":
+                    qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file}\""
+
+                else:
+                    qemu_cmd = qemu_cmd + f" -cdrom {cdrom_file}"
 
             if bootfrom == "c" or bootfrom == "a" and fda_file == "" or bootfrom == "d" and cdrom_file == "":
                 qemu_cmd = qemu_cmd + " -boot c"
