@@ -1,6 +1,7 @@
 # EmuGUI v0.6.2
 
 - Floppy & CD code for Linux has been added, what I forgot with the 0.5 lineup.
+- Altered the floppy code so QEMU doesn't complain anymore.
 
 # EmuGUI v0.6.1
 

@@ -435,12 +435,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + " -win2k-hack"
 
             if fda_file != "":
-                print(magic.from_file(fda_file))
                 if platform.system() == "Windows":
-                    qemu_cmd = qemu_cmd + f" -fda \"{fda_file}\""
+                    qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{fda_file}\",index=0,if=floppy"
 
                 else:
-                    qemu_cmd = qemu_cmd + f" -fda {fda_file}"
+                    qemu_cmd = qemu_cmd + f" -drive format=raw,file={fda_file},index=0,if=floppy"
 
             if cdrom_file != "":
                 if platform.system() == "Windows":
