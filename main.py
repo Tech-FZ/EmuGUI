@@ -17,6 +17,7 @@ from dialogExecution.updateAvailable import UpdateAvailable
 from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.vmTooNew import VmIsMadeWithTooYoungEmuGUI
+from dialogExecution.settingsRequireRestart import SettingsRequireEmuGUIReboot
 import translations.de
 import translations.uk
 import translations.en
@@ -31,8 +32,9 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.6.2")
+        self.label_8.setText("EmuGUI v0.6.3")
         self.setWindowTitle("EmuGUI")
+        self.languageInUse = "system"
 
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -40,7 +42,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5016
+        self.versionCode = 5017
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -82,6 +84,7 @@ class Window(QMainWindow, Ui_MainWindow):
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:
             languageToUse = locale.getlocale()[0]
+            self.languageInUse = "system"
 
         else:
             languageToUse = langmode
@@ -89,11 +92,20 @@ class Window(QMainWindow, Ui_MainWindow):
         if languageToUse.startswith("de"):
             translations.de.translateMainDE(self)
 
+            if langmode != "system":
+                self.languageInUse = "de"
+
         elif languageToUse.startswith("uk"):
             translations.uk.translateMainUK(self)
 
+            if langmode != "system":
+                self.languageInUse = "uk"
+
         else:
             translations.en.translateMainEN(self)
+
+            if langmode != "system":
+                self.languageInUse = "en"
 
     def prepareDatabase(self, connection):
         # Some SQL statements to initialize EmuGUI
@@ -1446,10 +1458,12 @@ class Window(QMainWindow, Ui_MainWindow):
         cursor = connection.cursor()
 
         if self.comboBox_4.currentText() == "System default":
+            langmode = "system"
+
             try:
                 cursor.execute(language_system)
                 connection.commit()
-                langmode = "system"
+                
 
                 if platform.system() == "Windows":
                     langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
@@ -1478,11 +1492,15 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+            dialog = SettingsRequireEmuGUIReboot(self)
+            dialog.exec()
+
         elif self.comboBox_4.currentText() == "English":
+            langmode = "en"
+
             try:
                 cursor.execute(language_en)
                 connection.commit()
-                langmode = "en"
 
                 if platform.system() == "Windows":
                     langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
@@ -1511,11 +1529,15 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+            dialog = SettingsRequireEmuGUIReboot(self)
+            dialog.exec()
+
         elif self.comboBox_4.currentText() == "Deutsch":
+            langmode = "de"
+
             try:
                 cursor.execute(language_de)
                 connection.commit()
-                langmode = "de"
 
                 if platform.system() == "Windows":
                     langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
@@ -1544,11 +1566,15 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+            dialog = SettingsRequireEmuGUIReboot(self)
+            dialog.exec()
+
         elif self.comboBox_4.currentText() == "Українська":
+            langmode = "uk"
+
             try:
                 cursor.execute(language_uk)
                 connection.commit()
-                langmode = "uk"
 
                 if platform.system() == "Windows":
                     langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
@@ -1576,6 +1602,9 @@ class Window(QMainWindow, Ui_MainWindow):
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+            dialog = SettingsRequireEmuGUIReboot(self)
+            dialog.exec()
 
     def checkForUpdatesManually(self):
         manually = True

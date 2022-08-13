@@ -1,3 +1,7 @@
+# EmuGUI v0.6.3
+
+- Added a restart dialog for general settings
+
 # EmuGUI v0.6.2
 
 - Floppy & CD code for Linux has been added, what I forgot with the 0.5 lineup.
