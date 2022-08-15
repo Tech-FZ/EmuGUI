@@ -1,3 +1,7 @@
+# EmuGUI v0.6.4
+
+- Reduced the number of required restarts by putting the incorporate code into a seperate except clause for every language block.
+
 # EmuGUI v0.6.3
 
 - Added a restart dialog for general settings

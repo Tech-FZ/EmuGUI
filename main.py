@@ -32,7 +32,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.6.3")
+        self.label_8.setText("EmuGUI v0.6.4")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -42,7 +42,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5017
+        self.versionCode = 5018
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1492,8 +1492,9 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
-            dialog = SettingsRequireEmuGUIReboot(self)
-            dialog.exec()
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
 
         elif self.comboBox_4.currentText() == "English":
             langmode = "en"
@@ -1529,8 +1530,9 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
-            dialog = SettingsRequireEmuGUIReboot(self)
-            dialog.exec()
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
 
         elif self.comboBox_4.currentText() == "Deutsch":
             langmode = "de"
@@ -1566,8 +1568,9 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
-            dialog = SettingsRequireEmuGUIReboot(self)
-            dialog.exec()
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
 
         elif self.comboBox_4.currentText() == "Українська":
             langmode = "uk"
@@ -1603,8 +1606,9 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
-            dialog = SettingsRequireEmuGUIReboot(self)
-            dialog.exec()
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
 
     def checkForUpdatesManually(self):
         manually = True
