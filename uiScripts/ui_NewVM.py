@@ -1360,7 +1360,8 @@ class Ui_Dialog(object):
         self.label_27.setText(QCoreApplication.translate("Dialog", u"Leave empty if these aren't necessary", None))
         self.pushButton_20.setText(QCoreApplication.translate("Dialog", u"Finish", None))
         self.pushButton_21.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
-        self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000", None))
+        self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000\n"
+"(depreciated)", None))
         self.pushButton_22.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if needed)", None))
         self.comboBox_17.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))

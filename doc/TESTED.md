@@ -11,7 +11,7 @@ Such a program needs tests in its lifetime. That's why I make this compatibility
 | Windows NT 4.0 Workstation Service Pack 1  | i386         | Yes       | Use only 256 colours and 800x600 pixels or else there are mouse problems       |
 | Windows NT 4.0 Workstation Service Pack 6a | i386         | Yes       | Use only 256 colours and 800x600 pixels or else there are mouse problems       |
 | Windows 98 Second Edition                  | i386         | Partially | Prepare to boot Safe Mode with VBox; don't add sound card to installed systems |
-| Windows 2000 Professional Service Pack 4   | i386         | No        |                                                                                |
+| Windows 2000 Professional Service Pack 4   | i386         | Yes        | The Windows 2000 checkbox may NOT be checked. |
 | Windows Millenium Edition                  | i386         | Yes       | If the bootscreen hangs, just close the VM and reopen it again                 |
 | Windows XP Home Edition Service Pack 3     | i386         | Yes       |                                                                                |
 | Windows Server 2003 R2 Standard SP2        | i386         | Yes       |                                                                                |

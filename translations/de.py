@@ -169,7 +169,7 @@ def translateNewVmDE(window):
     # Eighth page
     window.label_2.setText("Zusätzliche Argumente (sofern nötig)")
 
-    window.checkBox_2.setText("Ich will Windows 2000 installieren")
+    window.checkBox_2.setText("Ich will Windows 2000 installieren\n(überholt)")
     window.checkBox_3.setText("USB-Support hinzufügen")
 
     window.pushButton_22.setText("< Zurück")

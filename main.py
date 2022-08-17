@@ -18,6 +18,7 @@ from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.vmTooNew import VmIsMadeWithTooYoungEmuGUI
 from dialogExecution.settingsRequireRestart import SettingsRequireEmuGUIReboot
+from dialogExecution.win2kDepreciation import Win2KDepreciated
 import translations.de
 import translations.uk
 import translations.en
@@ -32,7 +33,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.6.4")
+        self.label_8.setText("EmuGUI v0.6.5")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -42,7 +43,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5018
+        self.versionCode = 5019
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1052,6 +1053,10 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 if usbtablet_wanted == 1:
                     dialog3 = UsbTabletDepreciated(self)
+                    dialog3.exec()
+
+                if os_is_win2k == 1:
+                    dialog3 = Win2KDepreciated(self)
                     dialog3.exec()
                 
                 if architecture_of_vm == "i386" or architecture_of_vm == "x86_64" or architecture_of_vm == "mips64el":

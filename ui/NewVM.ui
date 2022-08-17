@@ -2337,7 +2337,8 @@ default BIOS)</string>
       <item row="1" column="0">
        <widget class="QCheckBox" name="checkBox_2">
         <property name="text">
-         <string>I want to install Windows 2000</string>
+         <string>I want to install Windows 2000
+(depreciated)</string>
         </property>
        </widget>
       </item>

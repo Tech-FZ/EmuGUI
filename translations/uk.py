@@ -169,7 +169,7 @@ def translateNewVmUK(window):
     # Eighth page
     window.label_2.setText("Additional arguments (if needed)")
 
-    window.checkBox_2.setText("I want to install Windows 2000")
+    window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)")
     window.checkBox_3.setText("Add USB support")
 
     window.pushButton_22.setText("< Попередній")
