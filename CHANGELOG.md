@@ -2,6 +2,7 @@
 
 - The Windows 2000 checkbox is now depreciated and is going to be removed in a future update.
 - TESTED.md has been updated as such.
+- A new file, OLD_FEATURES.md, has been added.
 
 # EmuGUI v0.6.4
 
