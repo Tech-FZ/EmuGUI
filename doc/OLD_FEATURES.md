@@ -11,6 +11,7 @@ EmuGUI's depreciation policy for built-in features is as follows: When one featu
 ### Features to be removed
 
 | Feature | State | Depreciated/Removed since | Minimum number of feature levels left | Reason for depreciation |
+| ------- | ----- | ------------------------- | ------------------------------------- | ----------------------- |
 | USB Tablet checkbox | Depreciated | 0.4 | 8 | A combobox with more possibilities has been created |
 | Windows 2000 checkbox | Depreciated | 0.6.5 | 10 | Rather prevents you from installing the OS in question then helping you |
 
@@ -25,6 +26,7 @@ This is only for orientation and may not apply because of technical problems. Ge
 Microsoft normally supports Windows versions until five to ten years and while doing so, releases security updates every month. As such, I try to support a version of Windows one month after the end of its general Extended Support (ESU doesn't count). However, it might not be possible for some reason (which is the case on Windows Server 2012).
 
 | Operating system | Estimated end of EmuGUI's host support |
+| ---------------- | -------------------------------------- |
 | Windows 8.1 and Server 2012 R2 | 14th February, 2023 |
 | Windows 10 Enterprise LTSB 2015, Windows 10, Version 1507 and 1511 | 11th November, 2025 |
 | Windows 10 Enterprise LTSB 2016, Windows 10, Version 1607-1803, Windows Server 2016, Windows Server, Version 1803 | 16th February, 2027 |
@@ -36,6 +38,7 @@ Microsoft normally supports Windows versions until five to ten years and while d
 On Linux, this does get more complicated as there are so many distributions out there which are abandoned faster. Generally, EmuGUI support ends if a distro goes End of Life.
 
 | Operating system | Estimated end of EmuGUI's host support |
+| ---------------- | -------------------------------------- |
 | Fedora 35 | 31st November, 2022 |
 | Debian 11 | 31st July, 2024 |
 | Ubuntu 20.04 | 31st April, 2025 |
