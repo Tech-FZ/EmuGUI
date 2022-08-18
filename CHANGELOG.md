@@ -1,3 +1,7 @@
+# EmuGUI v0.6.6
+
+- Some formatting issues have been corrected
+
 # EmuGUI v0.6.5
 
 - The Windows 2000 checkbox is now depreciated and is going to be removed in a future update.
