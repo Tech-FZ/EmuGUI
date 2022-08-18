@@ -54,7 +54,8 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"An update is available! Do you want to be redirected to download?", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"An update is available! Do you want to be redirected to download?\n"
+"Note: If you check for pre-release updates, you will be redirected to the pre-release repository on Codeberg regardless of your preferred update mirror.", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Yes", None))
         self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"No", None))
     # retranslateUi

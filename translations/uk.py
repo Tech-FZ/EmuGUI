@@ -204,7 +204,9 @@ def translateVhdExistsUK(window):
     window.pushButton_2.setText("Keep")
 
 def translateUpdateAvailableUK(window):
-    window.label.setText("An update is available! Do you want to be redirected to download?")
+    window.label.setText(
+        "An update is available! Do you want to be redirected to download?\nNote: If you check for pre-release updates, you will be redirected to the pre-release repository on Codeberg regardless of your preferred update mirror."
+    )
 
     window.pushButton.setText("Так")
     window.pushButton_2.setText("Ні")

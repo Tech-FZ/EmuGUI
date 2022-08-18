@@ -29,7 +29,8 @@
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>An update is available! Do you want to be redirected to download?</string>
+       <string>An update is available! Do you want to be redirected to download?
+Note: If you check for pre-release updates, you will be redirected to the pre-release repository on Codeberg regardless of your preferred update mirror.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>

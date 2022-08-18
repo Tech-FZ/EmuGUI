@@ -1,6 +1,7 @@
 # EmuGUI v0.6.6
 
-- Some formatting issues have been corrected
+- Some formatting issues have been corrected.
+- The update checker has been prepared for future development of feature updates.
 
 # EmuGUI v0.6.5
 

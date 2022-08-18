@@ -42,21 +42,50 @@ class UpdateAvailable(QDialog, Ui_Dialog):
         WHERE name = "updatemirror";
         """
 
+        select_update_channel = """
+        SELECT name, value FROM updater
+        WHERE name = "updatechannel";
+        """
+
         cursor = connection.cursor()
 
         try:
-            cursor.execute(select_update_mirror)
+            cursor.execute(select_update_channel)
             connection.commit()
             result = cursor.fetchall()
 
             try:
                 qemu_img_slot = str(result[0])
                 
-                if result[0][1] == "GitHub":
-                    webbrowser.open("https://github.com/Tech-FZ/EmuGUI")
+                if result[0][1] == "stable":
+                    try:
+                        cursor.execute(select_update_mirror)
+                        connection.commit()
+                        result = cursor.fetchall()
+
+                        try:
+                            qemu_img_slot = str(result[0])
                 
-                elif result[0][1] == "Codeberg":
-                    webbrowser.open("https://codeberg.org/lucien-rowan/EmuGUI")
+                            if result[0][1] == "GitHub":
+                                webbrowser.open("https://github.com/Tech-FZ/EmuGUI")
+                
+                            elif result[0][1] == "Codeberg":
+                                webbrowser.open("https://codeberg.org/lucien-rowan/EmuGUI")
+
+                            print("The query was executed successfully.")
+                            self.close()
+
+                        except:
+                            print("The query was executed successfully but the mirror couldn't be retrieved. Please check one of the following mirrors:")
+                            print("https://github.com/Tech-FZ/EmuGUI")
+                            print("https://codeberg.org/lucien-rowan/EmuGUI or")
+                            print("https://codeberg.org/lucien-rowan/EmuGUI-PreRelease")
+        
+                    except sqlite3.Error as e:
+                        print(f"The SQLite module encountered an error: {e}.")
+                
+                elif result[0][1] == "pre-release":
+                    webbrowser.open("https://codeberg.org/lucien-rowan/EmuGUI-PreRelease")
 
                 print("The query was executed successfully.")
                 self.close()

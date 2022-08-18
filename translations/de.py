@@ -204,7 +204,9 @@ def translateVhdExistsDE(window):
     window.pushButton_2.setText("Keep")
 
 def translateUpdateAvailableDE(window):
-    window.label.setText("Es ist ein Update verfügbar! Möchten Sie für den Download weitergeleitet werden?")
+    window.label.setText(
+        "Es ist ein Update verfügbar! Möchten Sie für den Download weitergeleitet werden?\nHinweis: Wollen Sie Pre-Release-Updates haben, werden Sie unabhängig vom bevorzugten Update-Spiegel zum Pre-Release-Repository auf Codeberg weitergeleitet."
+        )
 
     window.pushButton.setText("Ja")
     window.pushButton_2.setText("Nein")
