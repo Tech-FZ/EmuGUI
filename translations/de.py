@@ -197,11 +197,11 @@ def translateVmExistsDE(window):
     window.pushButton.setText("OK")
 
 def translateVhdExistsDE(window):
-    window.label.setText("Sorry, but the disk you want to create is already existant.")
-    window.label_2.setText("Do you want to keep or overwrite it?")
+    window.label.setText("Es tut mir leid, aber die Platte, die Sie erstellen wollen, existiert bereits.")
+    window.label_2.setText("Wollen Sie dieses behalten oder überschreiben?")
 
-    window.pushButton.setText("Overwrite")
-    window.pushButton_2.setText("Keep")
+    window.pushButton.setText("Überschreiben")
+    window.pushButton_2.setText("Behalten")
 
 def translateUpdateAvailableDE(window):
     window.label.setText(

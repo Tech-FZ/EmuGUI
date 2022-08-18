@@ -3,6 +3,7 @@
 - Some formatting issues have been corrected.
 - The update checker has been prepared for future development of feature updates.
 - The pre-release mirror has been added to README.md.
+- Translated the VHD exists dialog into German.
 
 # EmuGUI v0.6.5
 
