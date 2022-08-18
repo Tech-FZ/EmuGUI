@@ -11,6 +11,8 @@ GitHub: https://github.com/Tech-FZ/EmuGUI
 
 Codeberg: https://codeberg.org/lucien-rowan/EmuGUI
 
+Pre-releases: https://codeberg.org/lucien-rowan/EmuGUI-PreRelease
+
 ## We're Using GitHub Under Protest
 
 This project is currently hosted on GitHub.  This is not ideal; GitHub is a
