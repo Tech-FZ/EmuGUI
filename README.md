@@ -13,6 +13,30 @@ Codeberg: https://codeberg.org/lucien-rowan/EmuGUI
 
 Pre-releases: https://codeberg.org/lucien-rowan/EmuGUI-PreRelease
 
+## Versioning
+
+Last update: 21st August, 2022 with 0.7.0.5100_dev
+
+### Version number
+
+Starting with 0.7, the versioning scheme looks like this:
+
+Major: increments with every first feature update in a year
+Minor: becomes 0 when major increments, else it increments with every feature update within a year
+Micro: becomes 0 with every feature update, else increments by 1 with every bugfix update
+Nano: is the build number
+
+If "_dev" is added, it's a pre-release not meant for production.
+
+### Version code
+
+For the update checker, a version code is being used instead of the number. Here's how it increments:
+
+| Update type | Next version code |
+| Preview update | current version code + 1 |
+| Bugfix/minor update | current version code + 1|
+| Feature update | current version code rounded up to the next hundred (e. g. 4237 becomes 4300) |
+
 ## We're Using GitHub Under Protest
 
 This project is currently hosted on GitHub.  This is not ideal; GitHub is a
