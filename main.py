@@ -1384,7 +1384,10 @@ class Window(QMainWindow, Ui_MainWindow):
         if self.comboBox_2.currentText() == "Everytime I run this program":
             updateNotifyFreq = "boot"
 
-        elif self.comboBox_2.currentText() == "Never":
+        elif self.comboBox_2.currentText() == "Jedes Mal, wenn ich dieses Programm ausführe":
+            updateNotifyFreq = "boot"
+
+        elif self.comboBox_2.currentText() == "Never" or self.comboBox_2.currentText() == "Nie":
             updateNotifyFreq = "never"
 
         updateChannel = self.comboBox_3.currentText()
@@ -1462,7 +1465,7 @@ class Window(QMainWindow, Ui_MainWindow):
         connection = self.connection
         cursor = connection.cursor()
 
-        if self.comboBox_4.currentText() == "System default":
+        if self.comboBox_4.currentText() == "System default" or self.comboBox_4.currentText() == "Systemstandard":
             langmode = "system"
 
             try:

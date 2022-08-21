@@ -1,7 +1,8 @@
 # EmuGUI v0.7.0.5100_dev
 
 - A fixed versioning scheme is on README.md.
-- Fixed a spelling mistake on doc/OLD_FEATURES.md
+- Fixed a spelling mistake on doc/OLD_FEATURES.md.
+- The combo boxes in the settings can now be translated.
 
 # EmuGUI v0.6.6
 

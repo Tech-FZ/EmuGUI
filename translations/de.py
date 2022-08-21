@@ -17,6 +17,16 @@ def translateMainDE(window):
     window.label_15.setText("Sprache")
     window.pushButton_15.setText("Übernehmen")
 
+    # Combo box for languages
+    i = 0
+
+    while i < window.comboBox_4.count():
+        if window.comboBox_4.itemText(i) == "System default" or window.comboBox_4.itemText(i) == "Systemstandard":
+            window.comboBox_4.setItemText(i, "Systemstandard")
+            break
+
+        i += 1
+
     # QEMU tab
     window.label.setText("qemu-img-Pfad")
     window.label_2.setText("qemu-system-i386-Pfad")
@@ -46,6 +56,29 @@ def translateMainDE(window):
 
     window.pushButton_13.setText("Nach Updates suchen")
     window.pushButton_14.setText("Übernehmen")
+
+    # Combo box for update frequencies
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Everytime I run this program":
+            window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe")
+            break
+
+        elif window.comboBox_2.itemText(i) == "Jedes Mal, wenn ich dieses Programm ausführe":
+            window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie":
+            window.comboBox_2.setItemText(i, "Nie")
+            break
+
+        i += 1
 
     # About tab
     window.label_7.setText("Basierend auf Python- und PyQt-Technologien, lizenziert unter GNU General Public License 3.0")
