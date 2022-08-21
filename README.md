@@ -22,8 +22,11 @@ Last update: 21st August, 2022 with 0.7.0.5100_dev
 Starting with 0.7, the versioning scheme looks like this:
 
 Major: increments with every first feature update in a year
+
 Minor: becomes 0 when major increments, else it increments with every feature update within a year
+
 Micro: becomes 0 with every feature update, else increments by 1 with every bugfix update
+
 Nano: is the build number
 
 If "_dev" is added, it's a pre-release not meant for production.
