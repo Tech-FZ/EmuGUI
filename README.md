@@ -33,6 +33,7 @@ If "_dev" is added, it's a pre-release not meant for production.
 For the update checker, a version code is being used instead of the number. Here's how it increments:
 
 | Update type | Next version code |
+| ----------- | ----------------- |
 | Preview update | current version code + 1 |
 | Bugfix/minor update | current version code + 1|
 | Feature update | current version code rounded up to the next hundred (e. g. 4237 becomes 4300) |
