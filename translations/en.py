@@ -110,6 +110,25 @@ def translateNewVmEN(window):
     window.pushButton_4.setText("Next >")
     window.pushButton_6.setText("Cancel")
 
+    # Combo boxes on i386/x64 page
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Let QEMU decide" or window.comboBox_2.itemText(i) == "QEMU überlassen":
+            window.comboBox_2.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_3.count():
+        if window.comboBox_3.itemText(i) == "Let QEMU decide" or window.comboBox_3.itemText(i) == "QEMU überlassen":
+            window.comboBox_3.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
+
     # Second page (PowerPC machines)
     window.label_9.setText("Machine")
     window.label_8.setText("CPU")
@@ -121,6 +140,25 @@ def translateNewVmEN(window):
     window.pushButton_7.setText("< Previous")
     window.pushButton_8.setText("Next >")
     window.pushButton_9.setText("Cancel")
+
+    # Combo boxes on PPC page
+    i = 0
+
+    while i < window.comboBox_4.count():
+        if window.comboBox_4.itemText(i) == "Let QEMU decide" or window.comboBox_4.itemText(i) == "QEMU überlassen":
+            window.comboBox_4.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_5.count():
+        if window.comboBox_5.itemText(i) == "Let QEMU decide" or window.comboBox_5.itemText(i) == "QEMU überlassen":
+            window.comboBox_5.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
 
     # Second page (MIPSel machines)
     window.label_12.setText("Machine")
@@ -134,6 +172,25 @@ def translateNewVmEN(window):
     window.pushButton_11.setText("Next >")
     window.pushButton_12.setText("Cancel")
 
+    # Combo boxes on MIPSel page
+    i = 0
+
+    while i < window.comboBox_6.count():
+        if window.comboBox_6.itemText(i) == "Let QEMU decide" or window.comboBox_6.itemText(i) == "QEMU überlassen":
+            window.comboBox_6.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_7.count():
+        if window.comboBox_7.itemText(i) == "Let QEMU decide" or window.comboBox_7.itemText(i) == "QEMU überlassen":
+            window.comboBox_7.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
+
     # Second page (ARM machines)
     window.label_31.setText("Machine")
     window.label_30.setText("CPU")
@@ -145,6 +202,25 @@ def translateNewVmEN(window):
     window.pushButton_33.setText("< Previous")
     window.pushButton_34.setText("Next >")
     window.pushButton_35.setText("Cancel")
+
+    # Combo boxes on ARM page
+    i = 0
+
+    while i < window.comboBox_14.count():
+        if window.comboBox_14.itemText(i) == "Let QEMU decide" or window.comboBox_14.itemText(i) == "QEMU überlassen":
+            window.comboBox_14.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_15.count():
+        if window.comboBox_15.itemText(i) == "Let QEMU decide" or window.comboBox_15.itemText(i) == "QEMU überlassen":
+            window.comboBox_15.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
 
     # Third page
     window.label_13.setText("VHD path")
@@ -222,6 +298,16 @@ def translateStartVmEN(window):
     window.pushButton_5.setText("Set to system")
     window.pushButton_3.setText("Start VM")
     window.pushButton_4.setText("Cancel")
+
+    # Combo box for boot
+    i = 0
+
+    while i < window.comboBox.count():
+        if window.comboBox.itemText(i) == "Let QEMU decide" or window.comboBox.itemText(i) == "QEMU überlassen":
+            window.comboBox.setItemText(i, "Let QEMU decide")
+            break
+
+        i += 1
 
 def translateVmExistsEN(window):
     window.label.setText("Sorry, but a VM with this name already exists.")

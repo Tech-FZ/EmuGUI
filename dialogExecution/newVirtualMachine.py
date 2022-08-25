@@ -326,6 +326,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = self.comboBox_15.currentText()
             ram = self.spinBox_5.value()
 
+        if machine == "Let QEMU decide" or machine == "QEMU überlassen":
+            machine = "Let QEMU decide"
+
+        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen":
+            cpu = "Let QEMU decide"
+
         if self.lineEdit_6.text() == "":
             vhd = "NULL"
         
@@ -394,6 +400,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 except:
                     print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")
 
+        if self.comboBox_10.currentText() == "Let QEMU decide" or self.comboBox_10.currentText() == "QEMU überlassen":
+            vga = "Let QEMU decide"
+        
+        else:
+            vga = self.comboBox_10.currentText()
+
         if self.comboBox_11.currentText() == "none":
             networkAdapter = "none"
         
@@ -456,7 +468,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{cpu}",
             {ram},
             "{vhd}",
-            "{self.comboBox_10.currentText()}",
+            "{vga}",
             "{networkAdapter}",
             {usbtablet},
             {win2k},

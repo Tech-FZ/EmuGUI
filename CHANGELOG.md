@@ -1,6 +1,7 @@
 # EmuGUI v0.7.0.5101_dev (based on v0.7.0.5100_dev)
 
 - The formatting issues on README.md have been fixed.
+- Also, "Let QEMU decide" has been translated into German in the entire program.
 
 # EmuGUI v0.7.0.5100_dev
 

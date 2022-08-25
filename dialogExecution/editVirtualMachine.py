@@ -202,7 +202,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_2.count():
-            if self.comboBox_2.itemText(i) == machine:
+            if self.comboBox_2.itemText(i) == "Let QEMU decide" or self.comboBox_2.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_2.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_2.itemText(i) == machine:
                 self.comboBox_2.setCurrentIndex(i)
                 break
 
@@ -211,6 +216,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_3.count():
+            if self.comboBox_3.itemText(i) == "Let QEMU decide" or self.comboBox_3.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_3.setCurrentIndex(i)
+                    break
+
             if self.comboBox_3.itemText(i) == cpu:
                 self.comboBox_3.setCurrentIndex(i)
                 break
@@ -221,7 +231,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_4.count():
-            if self.comboBox_4.itemText(i) == machine:
+            if self.comboBox_4.itemText(i) == "Let QEMU decide" or self.comboBox_4.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_4.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_4.itemText(i) == machine:
                 self.comboBox_4.setCurrentIndex(i)
                 break
 
@@ -230,6 +245,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_5.count():
+            if self.comboBox_5.itemText(i) == "Let QEMU decide" or self.comboBox_5.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_5.setCurrentIndex(i)
+                    break
+
             if self.comboBox_5.itemText(i) == cpu:
                 self.comboBox_5.setCurrentIndex(i)
                 break
@@ -240,7 +260,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_6.count():
-            if self.comboBox_6.itemText(i) == machine:
+            if self.comboBox_6.itemText(i) == "Let QEMU decide" or self.comboBox_6.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_6.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_6.itemText(i) == machine:
                 self.comboBox_6.setCurrentIndex(i)
                 break
 
@@ -249,7 +274,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_7.count():
-            if self.comboBox_7.itemText(i) == cpu:
+            if self.comboBox_7.itemText(i) == "Let QEMU decide" or self.comboBox_7.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_7.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_7.itemText(i) == cpu:
                 self.comboBox_7.setCurrentIndex(i)
                 break
 
@@ -259,7 +289,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_14.count():
-            if self.comboBox_14.itemText(i) == machine:
+            if self.comboBox_14.itemText(i) == "Let QEMU decide" or self.comboBox_14.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_14.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_14.itemText(i) == machine:
                 self.comboBox_14.setCurrentIndex(i)
                 break
 
@@ -268,7 +303,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_15.count():
-            if self.comboBox_15.itemText(i) == cpu:
+            if self.comboBox_15.itemText(i) == "Let QEMU decide" or self.comboBox_15.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_15.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_15.itemText(i) == cpu:
                 self.comboBox_15.setCurrentIndex(i)
                 break
 
@@ -326,7 +366,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_10.count():
-            if self.comboBox_10.itemText(i) == vmSpecs[6]:
+            if self.comboBox_10.itemText(i) == "Let QEMU decide" or self.comboBox_10.itemText(i) == "QEMU überlassen":
+                if vmSpecs[6] == "Let QEMU decide":
+                    self.comboBox_10.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_10.itemText(i) == vmSpecs[6]:
                 self.comboBox_10.setCurrentIndex(i)
                 break
 
@@ -552,6 +597,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = self.comboBox_15.currentText()
             ram = self.spinBox_5.value()
 
+        if machine == "Let QEMU decide" or machine == "QEMU überlassen":
+            machine = "Let QEMU decide"
+
+        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen":
+            cpu = "Let QEMU decide"
+
         if self.lineEdit_6.text() == "":
             vhd = "NULL"
         
@@ -622,6 +673,12 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                 except:
                     print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")
 
+        if self.comboBox_10.currentText() == "Let QEMU decide" or self.comboBox_10.currentText() == "QEMU überlassen":
+            vga = "Let QEMU decide"
+        
+        else:
+            vga = self.comboBox_10.currentText()
+
         if self.comboBox_11.currentText() == "none":
             networkAdapter = "none"
         
@@ -656,7 +713,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         insert_into_vm_database = f"""
         UPDATE virtualmachines
         SET name = "{self.lineEdit.text()}", architecture = "{self.comboBox.currentText()}", machine = "{machine}", cpu = "{cpu}",
-        ram = {ram}, hda = "{vhd}", vga = "{self.comboBox_10.currentText()}", net = "{networkAdapter}", usbtablet = {usbtablet},
+        ram = {ram}, hda = "{vhd}", vga = "{vga}", net = "{networkAdapter}", usbtablet = {usbtablet},
         win2k = {win2k}, dirbios = "{ext_bios_dir}", additionalargs = "{add_args}", sound = "{self.comboBox_12.currentText()}",
         linuxkernel = "{self.lineEdit_4.text()}", linuxinitrid = "{self.lineEdit_5.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_13.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_8.text()}",
