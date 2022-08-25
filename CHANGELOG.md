@@ -1,3 +1,7 @@
+# EmuGUI v0.7.0.5101_dev (based on v0.7.0.5100_dev)
+
+- The formatting issues on README.md have been fixed.
+
 # EmuGUI v0.7.0.5100_dev
 
 - A fixed versioning scheme is on README.md.
