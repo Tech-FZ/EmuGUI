@@ -19,6 +19,8 @@ from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.vmTooNew import VmIsMadeWithTooYoungEmuGUI
 from dialogExecution.settingsRequireRestart import SettingsRequireEmuGUIReboot
 from dialogExecution.win2kDepreciation import Win2KDepreciated
+from dialogExecution.qemuImgError import QemuImgMissing
+from dialogExecution.qemuSysError import QemuSysMissing
 import translations.de
 import translations.uk
 import translations.en
@@ -33,7 +35,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.7.0.5101_dev (pre-release build, not meant for production use)")
+        self.label_8.setText("EmuGUI v0.7.0.5102_dev (pre-release build, not meant for production use)")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -43,7 +45,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5101
+        self.versionCode = 5102
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -939,17 +941,29 @@ class Window(QMainWindow, Ui_MainWindow):
 
             print(result)
 
-            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
-                dialog2 = SettingsPending1Dialog(self)
-                dialog2.exec()
+            #if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
+            #    dialog2 = SettingsPending1Dialog(self)
+            #    dialog2.exec()
 
-            elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
-                dialog2 = SettingsPending1Dialog(self)
-                dialog2.exec()
+            #elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
+            #    dialog2 = SettingsPending1Dialog(self)
+            #    dialog2.exec()
 
-            else:
-                dialog = NewVirtualMachineDialog(self)
-                dialog.exec()
+            i = 0
+
+            while i < len(result):
+                if result[i][0] == "qemu-img":
+                    if result[i][1] == "":
+                        dialog = QemuImgMissing(self)
+                        dialog.exec()
+
+                    else:
+                        dialog = NewVirtualMachineDialog(self)
+                        dialog.exec()
+                
+                    break
+
+                i += 1
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -967,113 +981,159 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(debug_db_settings)
             connection.commit()
-            result = cursor.fetchall()
+            result_settings = cursor.fetchall()
 
-            print(result)
+            print(result_settings)
 
-            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
-                dialog2 = SettingsPending1Dialog(self)
-                dialog2.exec()
+            #if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
+            #    dialog2 = SettingsPending1Dialog(self)
+            #    dialog2.exec()
 
-            elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
-                dialog2 = SettingsPending1Dialog(self)
-                dialog2.exec()
+            #elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
+            #    dialog2 = SettingsPending1Dialog(self)
+            #    dialog2.exec()
 
-            else:
-                selectedVM = self.listView.currentIndex().data()
-                print(selectedVM)
+            #else:
+            selectedVM = self.listView.currentIndex().data()
+            print(selectedVM)
 
-                get_vm_to_start = f"""
-                SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-                linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller FROM virtualmachines
-                WHERE name = '{selectedVM}'
-                """
+            get_vm_to_start = f"""
+            SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller FROM virtualmachines
+            WHERE name = '{selectedVM}'
+            """
 
-                try:
-                    cursor.execute(get_vm_to_start)
-                    connection.commit()
-                    result = cursor.fetchall()
+            try:
+                cursor.execute(get_vm_to_start)
+                connection.commit()
+                result = cursor.fetchall()
 
-                    print(result)
+                print(result)
 
-                    architecture_of_vm = result[0][0]
-                    machine_of_vm = result[0][1]
-                    cpu_of_vm = result[0][2]
-                    ram_of_vm = result[0][3]
-                    hda_of_vm = result[0][4]
-                    vga_of_vm = result[0][5]
-                    net_of_vm = result[0][6]
-                    usbtablet_wanted = result[0][7]
-                    os_is_win2k = result[0][8]
-                    dir_bios = result[0][9]
-                    additional_arguments = result[0][10]
-                    sound_card = result[0][11]
-                    linux_kernel = result[0][12]
-                    linux_initrid = result[0][13]
-                    linux_cmd = result[0][14]
-                    mouse_type = result[0][15]
-                    cpu_cores = result[0][16]
-                    file_bios = result[0][17]
-                    kbd_type = result[0][18]
-                    usb_support = result[0][19]
-                    usb_controller = result[0][20]
+                architecture_of_vm = result[0][0]
+                machine_of_vm = result[0][1]
+                cpu_of_vm = result[0][2]
+                ram_of_vm = result[0][3]
+                hda_of_vm = result[0][4]
+                vga_of_vm = result[0][5]
+                net_of_vm = result[0][6]
+                usbtablet_wanted = result[0][7]
+                os_is_win2k = result[0][8]
+                dir_bios = result[0][9]
+                additional_arguments = result[0][10]
+                sound_card = result[0][11]
+                linux_kernel = result[0][12]
+                linux_initrid = result[0][13]
+                linux_cmd = result[0][14]
+                mouse_type = result[0][15]
+                cpu_cores = result[0][16]
+                file_bios = result[0][17]
+                kbd_type = result[0][18]
+                usb_support = result[0][19]
+                usb_controller = result[0][20]
 
-                except sqlite3.Error as e:
-                    print(f"The SQLite module encountered an error: {e}.")
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
 
-                if platform.system() == "Windows":
-                    tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
+            if platform.system() == "Windows":
+                tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
         
-                else:
-                    tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
+            else:
+                tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
                 
-                with open(tempVmDef, "w+") as tempVmDefFile:
-                    tempVmDefFile.write(selectedVM + "\n")
-                    tempVmDefFile.write(architecture_of_vm + "\n")
-                    tempVmDefFile.write(machine_of_vm + "\n")
-                    tempVmDefFile.write(cpu_of_vm + "\n")
-                    tempVmDefFile.write(str(ram_of_vm) + "\n")
-                    tempVmDefFile.write(hda_of_vm + "\n")
-                    tempVmDefFile.write(vga_of_vm + "\n")
-                    tempVmDefFile.write(net_of_vm + "\n")
-                    tempVmDefFile.write(str(usbtablet_wanted) + "\n")
-                    tempVmDefFile.write(str(os_is_win2k) + "\n")
-                    tempVmDefFile.write(dir_bios + "\n")
-                    tempVmDefFile.write(additional_arguments + "\n")
-                    tempVmDefFile.write(sound_card + "\n")
-                    tempVmDefFile.write(linux_kernel + "\n")
-                    tempVmDefFile.write(linux_initrid + "\n")
-                    tempVmDefFile.write(linux_cmd + "\n")
-                    tempVmDefFile.write(mouse_type + "\n")
-                    tempVmDefFile.write(str(cpu_cores) + "\n")
-                    tempVmDefFile.write(str(file_bios) + "\n")
-                    tempVmDefFile.write(kbd_type + "\n")
-                    tempVmDefFile.write(str(usb_support) + "\n")
-                    tempVmDefFile.write(usb_controller + "\n")
+            with open(tempVmDef, "w+") as tempVmDefFile:
+                tempVmDefFile.write(selectedVM + "\n")
+                tempVmDefFile.write(architecture_of_vm + "\n")
+                tempVmDefFile.write(machine_of_vm + "\n")
+                tempVmDefFile.write(cpu_of_vm + "\n")
+                tempVmDefFile.write(str(ram_of_vm) + "\n")
+                tempVmDefFile.write(hda_of_vm + "\n")
+                tempVmDefFile.write(vga_of_vm + "\n")
+                tempVmDefFile.write(net_of_vm + "\n")
+                tempVmDefFile.write(str(usbtablet_wanted) + "\n")
+                tempVmDefFile.write(str(os_is_win2k) + "\n")
+                tempVmDefFile.write(dir_bios + "\n")
+                tempVmDefFile.write(additional_arguments + "\n")
+                tempVmDefFile.write(sound_card + "\n")
+                tempVmDefFile.write(linux_kernel + "\n")
+                tempVmDefFile.write(linux_initrid + "\n")
+                tempVmDefFile.write(linux_cmd + "\n")
+                tempVmDefFile.write(mouse_type + "\n")
+                tempVmDefFile.write(str(cpu_cores) + "\n")
+                tempVmDefFile.write(str(file_bios) + "\n")
+                tempVmDefFile.write(kbd_type + "\n")
+                tempVmDefFile.write(str(usb_support) + "\n")
+                tempVmDefFile.write(usb_controller + "\n")
 
-                if usbtablet_wanted == 1:
-                    dialog3 = UsbTabletDepreciated(self)
-                    dialog3.exec()
+            if usbtablet_wanted == 1:
+                dialog3 = UsbTabletDepreciated(self)
+                dialog3.exec()
 
-                if os_is_win2k == 1:
-                    dialog3 = Win2KDepreciated(self)
-                    dialog3.exec()
-                
+            if os_is_win2k == 1:
+                dialog3 = Win2KDepreciated(self)
+                dialog3.exec()
+
+            i = 0
+
+            while i < len(result_settings):
                 if architecture_of_vm == "i386" or architecture_of_vm == "x86_64" or architecture_of_vm == "mips64el":
-                    dialog = StartVirtualMachineDialog(self)
-                    dialog.exec()
+                    if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
+                        if result_settings[i][1] != "":
+                            dialog = StartVirtualMachineDialog(self)
+                            dialog.exec()
+                            break
+
+                        else:
+                            dialog = QemuSysMissing(self)
+                            dialog.exec()
+                            break
 
                 elif architecture_of_vm == "ppc" or architecture_of_vm == "aarch64" or architecture_of_vm == "arm":
-                    dialog = StartVirtualMachineDialog(self)
-                    dialog.exec()
+                    if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
+                        if result_settings[i][1] == "":
+                            dialog = QemuSysMissing(self)
+                            dialog.exec()
+                            break
+
+                        else:
+                            dialog = StartVirtualMachineDialog(self)
+                            dialog.exec()
+                            break
 
                 elif architecture_of_vm == "ppc64" or architecture_of_vm == "mipsel":
-                    dialog = StartVirtualMachineDialog(self)
-                    dialog.exec()
-                
+                    if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
+                        if result_settings[i][1] == "":
+                            dialog = QemuSysMissing(self)
+                            dialog.exec()
+                            break
+
+                        else:
+                            dialog = StartVirtualMachineDialog(self)
+                            dialog.exec()
+                            break
+
                 else:
                     dialog = VmIsMadeWithTooYoungEmuGUI(self)
                     dialog.exec()
+                    break
+
+                i += 1
+                
+            #if architecture_of_vm == "i386" or architecture_of_vm == "x86_64" or architecture_of_vm == "mips64el":
+            #    dialog = StartVirtualMachineDialog(self)
+            #    dialog.exec()
+
+            #elif architecture_of_vm == "ppc" or architecture_of_vm == "aarch64" or architecture_of_vm == "arm":
+            #    dialog = StartVirtualMachineDialog(self)
+            #    dialog.exec()
+
+            #elif architecture_of_vm == "ppc64" or architecture_of_vm == "mipsel":
+            #    dialog = StartVirtualMachineDialog(self)
+            #    dialog.exec()
+                
+            #else:
+            #    dialog = VmIsMadeWithTooYoungEmuGUI(self)
+            #    dialog.exec()
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -1091,92 +1151,107 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(debug_db_settings)
             connection.commit()
-            result = cursor.fetchall()
+            result_settings = cursor.fetchall()
 
-            print(result)
+            print(result_settings)
 
-            if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
-                dialog2 = SettingsPending1Dialog(self)
-                dialog2.exec()
+            #if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
+            #    dialog2 = SettingsPending1Dialog(self)
+            #    dialog2.exec()
 
-            elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
-                dialog2 = SettingsPending1Dialog(self)
-                dialog2.exec()
+            #elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
+            #    dialog2 = SettingsPending1Dialog(self)
+            #    dialog2.exec()
 
-            else:
-                selectedVM = self.listView.currentIndex().data()
-                print(selectedVM)
+            selectedVM = self.listView.currentIndex().data()
+            print(selectedVM)
 
-                get_vm_to_start = f"""
-                SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-                linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller FROM virtualmachines
-                WHERE name = '{selectedVM}'
-                """
+            get_vm_to_start = f"""
+            SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller FROM virtualmachines
+            WHERE name = '{selectedVM}'
+            """
 
-                try:
-                    cursor.execute(get_vm_to_start)
-                    connection.commit()
-                    result = cursor.fetchall()
+            try:
+                cursor.execute(get_vm_to_start)
+                connection.commit()
+                result = cursor.fetchall()
 
-                    print(result)
+                print(result)
 
-                    architecture_of_vm = result[0][0]
-                    machine_of_vm = result[0][1]
-                    cpu_of_vm = result[0][2]
-                    ram_of_vm = result[0][3]
-                    hda_of_vm = result[0][4]
-                    vga_of_vm = result[0][5]
-                    net_of_vm = result[0][6]
-                    usbtablet_wanted = result[0][7]
-                    os_is_win2k = result[0][8]
-                    dir_bios = result[0][9]
-                    additional_arguments = result[0][10]
-                    sound_card = result[0][11]
-                    linux_kernel = result[0][12]
-                    linux_initrid = result[0][13]
-                    linux_cmd = result[0][14]
-                    mouse_type = result[0][15]
-                    cpu_cores = result[0][16]
-                    file_bios = result[0][17]
-                    kbd_type = result[0][18]
-                    usb_support = result[0][19]
-                    usb_controller = result[0][20]
+                architecture_of_vm = result[0][0]
+                machine_of_vm = result[0][1]
+                cpu_of_vm = result[0][2]
+                ram_of_vm = result[0][3]
+                hda_of_vm = result[0][4]
+                vga_of_vm = result[0][5]
+                net_of_vm = result[0][6]
+                usbtablet_wanted = result[0][7]
+                os_is_win2k = result[0][8]
+                dir_bios = result[0][9]
+                additional_arguments = result[0][10]
+                sound_card = result[0][11]
+                linux_kernel = result[0][12]
+                linux_initrid = result[0][13]
+                linux_cmd = result[0][14]
+                mouse_type = result[0][15]
+                cpu_cores = result[0][16]
+                file_bios = result[0][17]
+                kbd_type = result[0][18]
+                usb_support = result[0][19]
+                usb_controller = result[0][20]
 
-                except sqlite3.Error as e:
-                    print(f"The SQLite module encountered an error: {e}.")
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
 
-                if platform.system() == "Windows":
-                    tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
+            if platform.system() == "Windows":
+                tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
         
-                else:
-                    tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
+            else:
+                tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
                 
-                with open(tempVmDef, "w+") as tempVmDefFile:
-                    tempVmDefFile.write(selectedVM + "\n")
-                    tempVmDefFile.write(architecture_of_vm + "\n")
-                    tempVmDefFile.write(machine_of_vm + "\n")
-                    tempVmDefFile.write(cpu_of_vm + "\n")
-                    tempVmDefFile.write(str(ram_of_vm) + "\n")
-                    tempVmDefFile.write(hda_of_vm + "\n")
-                    tempVmDefFile.write(vga_of_vm + "\n")
-                    tempVmDefFile.write(net_of_vm + "\n")
-                    tempVmDefFile.write(str(usbtablet_wanted) + "\n")
-                    tempVmDefFile.write(str(os_is_win2k) + "\n")
-                    tempVmDefFile.write(dir_bios + "\n")
-                    tempVmDefFile.write(additional_arguments + "\n")
-                    tempVmDefFile.write(sound_card + "\n")
-                    tempVmDefFile.write(linux_kernel + "\n")
-                    tempVmDefFile.write(linux_initrid + "\n")
-                    tempVmDefFile.write(linux_cmd + "\n")
-                    tempVmDefFile.write(mouse_type + "\n")
-                    tempVmDefFile.write(str(cpu_cores) + "\n")
-                    tempVmDefFile.write(file_bios + "\n")
-                    tempVmDefFile.write(kbd_type + "\n")
-                    tempVmDefFile.write(str(usb_support) + "\n")
-                    tempVmDefFile.write(usb_controller + "\n")
+            with open(tempVmDef, "w+") as tempVmDefFile:
+                tempVmDefFile.write(selectedVM + "\n")
+                tempVmDefFile.write(architecture_of_vm + "\n")
+                tempVmDefFile.write(machine_of_vm + "\n")
+                tempVmDefFile.write(cpu_of_vm + "\n")
+                tempVmDefFile.write(str(ram_of_vm) + "\n")
+                tempVmDefFile.write(hda_of_vm + "\n")
+                tempVmDefFile.write(vga_of_vm + "\n")
+                tempVmDefFile.write(net_of_vm + "\n")
+                tempVmDefFile.write(str(usbtablet_wanted) + "\n")
+                tempVmDefFile.write(str(os_is_win2k) + "\n")
+                tempVmDefFile.write(dir_bios + "\n")
+                tempVmDefFile.write(additional_arguments + "\n")
+                tempVmDefFile.write(sound_card + "\n")
+                tempVmDefFile.write(linux_kernel + "\n")
+                tempVmDefFile.write(linux_initrid + "\n")
+                tempVmDefFile.write(linux_cmd + "\n")
+                tempVmDefFile.write(mouse_type + "\n")
+                tempVmDefFile.write(str(cpu_cores) + "\n")
+                tempVmDefFile.write(file_bios + "\n")
+                tempVmDefFile.write(kbd_type + "\n")
+                tempVmDefFile.write(str(usb_support) + "\n")
+                tempVmDefFile.write(usb_controller + "\n")
 
-                dialog = EditVirtualMachineDialog(self)
-                dialog.exec()
+            i = 0
+
+            while i < len(result_settings):
+                if result_settings[i][0] == "qemu-img":
+                    if result_settings[i][1] == "":
+                        dialog = QemuImgMissing(self)
+                        dialog.exec()
+
+                    else:
+                        dialog = EditVirtualMachineDialog(self)
+                        dialog.exec()
+                
+                    break
+
+                i += 1
+
+            #dialog = EditVirtualMachineDialog(self)
+            #dialog.exec()
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")

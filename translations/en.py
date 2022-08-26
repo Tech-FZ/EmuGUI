@@ -346,3 +346,17 @@ def translateVmTooNewEN(window):
     window.label.setText("This VM is made with a version of EmuGUI that is too new. Please use a later version!")
 
     window.pushButton.setText("OK")
+
+def translateQemuSysMissingEN(window, arch):
+    window.label.setText(
+        f"Sorry but EmuGUI is not configured for using \"qemu-system-{arch}\" yet.\nThis component however is necessary to start this virtual machine.\nPlease go to Settings/QEMU to solve this issue."
+        )
+
+    window.pushButton.setText("OK")
+
+def translateQemuImgMissingEN(window):
+    window.label.setText(
+        "Sorry but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Settings/QEMU to solve this issue."
+        )
+
+    window.pushButton.setText("OK")

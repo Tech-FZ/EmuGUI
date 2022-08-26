@@ -1,3 +1,7 @@
+# EmuGUI v0.7.0.5102_dev (based on v0.7.0.5101_dev)
+
+- Worrying that you have to install too much? No longer necessary, because you no longer need everything from QEMU to use EmuGUI.
+
 # EmuGUI v0.7.0.5101_dev (based on v0.7.0.5100_dev)
 
 - The formatting issues on README.md have been fixed.
