@@ -1,6 +1,7 @@
 # EmuGUI v0.7.0.5103_dev (based on v0.7.0.5102_dev)
 
 - Removed the old component dependency code which was commented out in the previous build.
+- Fixing a VHD problem which prevents you from booting VMs without a hard drive.
 
 # EmuGUI v0.7.0.5102_dev (based on v0.7.0.5101_dev)
 
