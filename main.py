@@ -35,7 +35,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.7.0.5102_dev (pre-release build, not meant for production use)")
+        self.label_8.setText("EmuGUI v0.7.0.5103_dev (pre-release build, not meant for production use)")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -45,7 +45,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5102
+        self.versionCode = 5103
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -941,14 +941,6 @@ class Window(QMainWindow, Ui_MainWindow):
 
             print(result)
 
-            #if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
-            #    dialog2 = SettingsPending1Dialog(self)
-            #    dialog2.exec()
-
-            #elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
-            #    dialog2 = SettingsPending1Dialog(self)
-            #    dialog2.exec()
-
             i = 0
 
             while i < len(result):
@@ -985,15 +977,6 @@ class Window(QMainWindow, Ui_MainWindow):
 
             print(result_settings)
 
-            #if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
-            #    dialog2 = SettingsPending1Dialog(self)
-            #    dialog2.exec()
-
-            #elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
-            #    dialog2 = SettingsPending1Dialog(self)
-            #    dialog2.exec()
-
-            #else:
             selectedVM = self.listView.currentIndex().data()
             print(selectedVM)
 
@@ -1118,22 +1101,6 @@ class Window(QMainWindow, Ui_MainWindow):
                     break
 
                 i += 1
-                
-            #if architecture_of_vm == "i386" or architecture_of_vm == "x86_64" or architecture_of_vm == "mips64el":
-            #    dialog = StartVirtualMachineDialog(self)
-            #    dialog.exec()
-
-            #elif architecture_of_vm == "ppc" or architecture_of_vm == "aarch64" or architecture_of_vm == "arm":
-            #    dialog = StartVirtualMachineDialog(self)
-            #    dialog.exec()
-
-            #elif architecture_of_vm == "ppc64" or architecture_of_vm == "mipsel":
-            #    dialog = StartVirtualMachineDialog(self)
-            #    dialog.exec()
-                
-            #else:
-            #    dialog = VmIsMadeWithTooYoungEmuGUI(self)
-            #    dialog.exec()
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -1154,14 +1121,6 @@ class Window(QMainWindow, Ui_MainWindow):
             result_settings = cursor.fetchall()
 
             print(result_settings)
-
-            #if result[0][1] == None or result[1][1] == None or result[2][1] == None or result[3][1] == None or result[4][1] == None:
-            #    dialog2 = SettingsPending1Dialog(self)
-            #    dialog2.exec()
-
-            #elif result[5][1] == None or result[6][1] == None or result[7][1] == None or result[8][1] == None:
-            #    dialog2 = SettingsPending1Dialog(self)
-            #    dialog2.exec()
 
             selectedVM = self.listView.currentIndex().data()
             print(selectedVM)
@@ -1249,9 +1208,6 @@ class Window(QMainWindow, Ui_MainWindow):
                     break
 
                 i += 1
-
-            #dialog = EditVirtualMachineDialog(self)
-            #dialog.exec()
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")

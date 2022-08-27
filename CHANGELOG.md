@@ -1,3 +1,7 @@
+# EmuGUI v0.7.0.5103_dev (based on v0.7.0.5102_dev)
+
+- Removed the old component dependency code which was commented out in the previous build.
+
 # EmuGUI v0.7.0.5102_dev (based on v0.7.0.5101_dev)
 
 - Worrying that you have to install too much? No longer necessary, because you no longer need everything from QEMU to use EmuGUI.
