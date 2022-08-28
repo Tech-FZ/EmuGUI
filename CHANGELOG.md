@@ -1,3 +1,7 @@
+# EmuGUI v0.6.7
+
+- You can now boot virtual machines without VHDs (backported from v0.7.0.5103)
+
 # EmuGUI v0.6.6
 
 - Some formatting issues have been corrected.
