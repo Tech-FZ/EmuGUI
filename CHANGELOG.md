@@ -1,3 +1,7 @@
+# EmuGUI v0.7.0.5104_dev (based on v0.7.0.5103_dev)
+
+- Changed documentation to EmuGUI wiki.
+
 # EmuGUI v0.7.0.5103_dev (based on v0.7.0.5102_dev)
 
 - Removed the old component dependency code which was commented out in the previous build.

@@ -204,7 +204,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 
 ## Documentation
 
-A documentation of EmuGUI can be found at: https://tech-fz.github.io/EmuGUI-doc/
+A documentation of EmuGUI can be found at: https://codeberg.org/lucien-rowan/EmuGUI/wiki
 
 ## Contributing
 
