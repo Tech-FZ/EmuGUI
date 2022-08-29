@@ -1,6 +1,7 @@
 # EmuGUI v0.7.0.5104_dev (based on v0.7.0.5103_dev)
 
 - Changed documentation to EmuGUI wiki.
+- Added a basic contribution guide.
 
 # EmuGUI v0.7.0.5103_dev (based on v0.7.0.5102_dev)
 
