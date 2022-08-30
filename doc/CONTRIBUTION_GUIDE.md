@@ -55,3 +55,30 @@ If you follow these rules (which are quite nice in my opinion), your translation
 | Ukrainian | Only single words have been translated |
 
 There are still a lot of languages that are not available in EmuGUI. If you feel like you can at least start to translate EmuGUI to your desired language, copy the English translation, rename that copy to the short form of your desired language and start translating.
+
+## Adding stuff to the EmuGUI wiki
+
+For EmuGUI, a wiki is hosted on a stable repository on Codeberg: https://codeberg.org/lucien-rowan/EmuGUI/wiki
+
+Basically, if you know how to write Markdown, you know how to contribute to these wikis.
+
+### Ways to contribute to the wiki
+
+Not everyone can do everything for the wiki but you don't have to be able to do everything for the wiki! Here are the things how you can contribute.
+
+#### Making new articles
+
+Managed to install an operating system which is not mentioned in the EmuGUI wiki? Go ahead, write a tutorial about this! I'm pretty sure there are some users who struggle to install it.
+
+However, there are some rules:
+- New articles must be written in English - they can be translated into other languages afterwards.
+- Pictures of the operating system are recommended, but not required as you will have to host them on an external site or repository.
+- Due to copyright, not every download link is allowed. General rule: Linux/BSD/FOSS distributions and (probably) free-to-distribute BIOSes are allowed while paid software is not.
+
+#### Updating existing articles
+
+Some articles are outdated or not correct? Updating these will help users to install their desired operating system. The rules from above apply.
+
+#### Translating existing articles
+
+The article is not available in your language or not fully translated yet? I've got an idea: Make or complete the translation! The translation rules from above apply.
