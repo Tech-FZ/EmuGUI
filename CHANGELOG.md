@@ -18,11 +18,15 @@
 - The formatting issues on README.md have been fixed.
 - Also, "Let QEMU decide" has been translated into German in the entire program.
 
-# EmuGUI v0.7.0.5100_dev
+# EmuGUI v0.7.0.5100_dev (based on v0.6.6)
 
 - A fixed versioning scheme is on README.md.
 - Fixed a spelling mistake on doc/OLD_FEATURES.md.
 - The combo boxes in the settings can now be translated.
+
+# EmuGUI v0.6.7 (based on v0.6.6)
+
+- You can now boot virtual machines without VHDs (backported from v0.7.0.5103)
 
 # EmuGUI v0.6.6
 
