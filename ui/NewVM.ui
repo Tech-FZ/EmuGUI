@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -1597,7 +1597,88 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_5">
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_16">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_6"/>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="spinBox_4">
+        <property name="maximum">
+         <number>214748368</number>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>VHD path</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>Maximum size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton_13">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QComboBox" name="comboBox_9">
+        <item>
+         <property name="text">
+          <string>KB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GB</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_14">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>VHD file format</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
        <widget class="QComboBox" name="comboBox_8">
         <property name="placeholderText">
          <string>(Please select a file format)</string>
@@ -1649,85 +1730,30 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_16">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_15">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="label_20">
         <property name="text">
-         <string>VHD path</string>
+         <string>VHD usage</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_6"/>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_13">
-        <property name="text">
-         <string>Browse</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_14">
-        <property name="text">
-         <string>VHD file format</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_14">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_15">
-        <property name="text">
-         <string>Maximum size</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QComboBox" name="comboBox_9">
+       <widget class="QComboBox" name="comboBox_18">
         <item>
          <property name="text">
-          <string>KB</string>
+          <string>Create a new virtual hard drive</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>MB</string>
+          <string>Add an existing virtual hard drive</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>GB</string>
+          <string>Don't add a virtual hard drive</string>
          </property>
         </item>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QSpinBox" name="spinBox_4">
-        <property name="maximum">
-         <number>214748368</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
        </widget>
       </item>
      </layout>

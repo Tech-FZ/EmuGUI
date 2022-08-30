@@ -1,3 +1,4 @@
+from gc import isenabled
 from PySide6.QtWidgets import *
 from PySide6 import QtGui
 from uiScripts.ui_NewVM import Ui_Dialog
@@ -39,7 +40,17 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         with open(tempVmDef, "w+") as tempVmDefFile:
             tempVmDefFile.write("overwrite")
 
+        i = 0
+
+        while i < self.comboBox_18.count():
+            if self.comboBox_18.itemText(i) == "Create a new virtual hard drive":
+                self.comboBox_18.setCurrentIndex(i)
+                break
+
+            i += 1
+
         self.firstStage()
+        self.vhdAddingChange()
 
     def connectSignalsSlots(self):
         # Page 1 (Architecture selection)
@@ -76,6 +87,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_18.clicked.connect(self.vhdMenu)
         self.pushButton_19.clicked.connect(self.close)
         self.pushButton_17.clicked.connect(self.extBios)
+        self.comboBox_18.currentTextChanged.connect(self.vhdAddingChange)
 
         # Page 5 (External BIOS)
         self.pushButton_25.clicked.connect(self.vgaNetworkMenu)
@@ -242,6 +254,37 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def vhdMenu(self):
         self.stackedWidget.setCurrentIndex(5)
 
+    def vhdAddingChange(self):
+        if self.comboBox_18.currentText() == "Create a new virtual hard drive":
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(True)
+            self.spinBox_4.setEnabled(True)
+            self.comboBox_9.setEnabled(True)
+
+        elif self.comboBox_18.currentText() == "Add an existing virtual hard drive":
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        elif self.comboBox_18.currentText() == "Don't add a virtual hard drive":
+            # For new and existing
+            self.lineEdit_6.setEnabled(False)
+            self.pushButton_13.setEnabled(False)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
     def vhdBrowseLocation(self):
         # This code makes it possible to search a location for your VHD.
 
@@ -250,14 +293,14 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         if filename:
             self.lineEdit_6.setText(filename)
             
-            try:
-                file = open(filename, "r")
-                file.close()
-                dialog = VhdAlreadyExists(self)
-                dialog.exec()
+            #try:
+            #    file = open(filename, "r")
+            #    file.close()
+            #    dialog = VhdAlreadyExists(self)
+            #    dialog.exec()
             
-            except:
-                pass
+            #except:
+            #    pass
 
     def firstStage(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -332,7 +375,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         if cpu == "Let QEMU decide" or cpu == "QEMU überlassen":
             cpu = "Let QEMU decide"
 
-        if self.lineEdit_6.text() == "":
+        if self.lineEdit_6.text() == "" or self.lineEdit_6.isEnabled() == False:
             vhd = "NULL"
         
         else:
@@ -348,6 +391,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 vmSpecsRaw = tempVmDefFile.readlines()
 
             vhdAction = vmSpecsRaw[0]
+
+            if self.comboBox_8.isenabled():
+                vhdAction = "overwrite"
+
+            else:
+                vhdAction = "keep"
 
             get_qemu_img_bin = """
             SELECT value FROM settings

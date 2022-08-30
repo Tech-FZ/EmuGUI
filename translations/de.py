@@ -223,6 +223,7 @@ def translateNewVmDE(window):
         i += 1
 
     # Third page
+    window.label_20.setText("VHD-Nutzung")
     window.label_13.setText("VHD-Ort")
     window.label_14.setText("VHD-Dateiformat")
     window.label_15.setText("Maximale Größe")

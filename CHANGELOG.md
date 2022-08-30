@@ -2,6 +2,7 @@
 
 - Changed documentation to EmuGUI wiki.
 - Added a basic contribution guide.
+- Good news: You will now tell EmuGUI if and how to handle VHDs beforehand (instead of after selecting it).
 
 # EmuGUI v0.7.0.5103_dev (based on v0.7.0.5102_dev)
 

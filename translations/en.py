@@ -223,6 +223,7 @@ def translateNewVmEN(window):
         i += 1
 
     # Third page
+    window.label_20.setText("VHD usage")
     window.label_13.setText("VHD path")
     window.label_14.setText("VHD file format")
     window.label_15.setText("Maximum size")
