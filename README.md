@@ -30,6 +30,7 @@ Micro: becomes 0 with every feature update, else increments by 1 with every bugf
 Nano: is the build number
 
 If "_dev" is added, it's a pre-release not meant for production.
+
 If "_rc" and a number are added, the release is meant to be focused solely on stability and completeness, but still not for productive use.
 
 ### Version code
