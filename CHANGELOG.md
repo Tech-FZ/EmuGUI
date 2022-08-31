@@ -1,6 +1,8 @@
 # EmuGUI v0.7.0.5105_rc1 (based on v0.7.0.5104_dev)
 
 - The versioning scheme has been updated again.
+- The combobox on the VHD usage has been translated into German.
+- I also corrected the upper-/lowercase where the VHD mode should be added. (isEnabled instead of isenabled)
 
 # EmuGUI v0.7.0.5104_dev (based on v0.7.0.5103_dev)
 

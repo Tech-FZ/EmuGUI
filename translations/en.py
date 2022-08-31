@@ -224,6 +224,47 @@ def translateNewVmEN(window):
 
     # Third page
     window.label_20.setText("VHD usage")
+
+    # Combobox for VHD usage
+    i = 0
+
+    while i < window.comboBox_18.count():
+        if window.comboBox_18.itemText(i) == "Create a new virtual hard drive":
+            window.comboBox_18.setItemText(i, "Create a new virtual hard drive")
+            break
+
+        elif window.comboBox_18.itemText(i) == "Neue virtuelle Festplatte erstellen":
+            window.comboBox_18.setItemText(i, "Create a new virtual hard drive")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_18.count():
+        if window.comboBox_18.itemText(i) == "Add an existing virtual hard drive":
+            window.comboBox_18.setItemText(i, "Add an existing virtual hard drive")
+            break
+
+        elif window.comboBox_18.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+            window.comboBox_18.setItemText(i, "Add an existing virtual hard drive")
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_18.count():
+        if window.comboBox_18.itemText(i) == "Don't add a virtual hard drive":
+            window.comboBox_18.setItemText(i, "Don't add a virtual hard drive")
+            break
+
+        elif window.comboBox_18.itemText(i) == "Keine virtuelle Festplatte anfügen":
+            window.comboBox_18.setItemText(i, "Don't add a virtual hard drive")
+            break
+
+        i += 1
+
     window.label_13.setText("VHD path")
     window.label_14.setText("VHD file format")
     window.label_15.setText("Maximum size")

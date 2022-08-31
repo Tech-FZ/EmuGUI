@@ -535,6 +535,16 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.spinBox_4.setEnabled(True)
             self.comboBox_9.setEnabled(True)
 
+        elif self.comboBox_18.currentText() == "Neue virtuelle Festplatte erstellen":
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(True)
+            self.spinBox_4.setEnabled(True)
+            self.comboBox_9.setEnabled(True)
+
         elif self.comboBox_18.currentText() == "Add an existing virtual hard drive":
             # For new and existing
             self.lineEdit_6.setEnabled(True)
@@ -545,7 +555,27 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.spinBox_4.setEnabled(False)
             self.comboBox_9.setEnabled(False)
 
+        elif self.comboBox_18.currentText() == "Existierende virtuelle Festplatte anfügen":
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
         elif self.comboBox_18.currentText() == "Don't add a virtual hard drive":
+            # For new and existing
+            self.lineEdit_6.setEnabled(False)
+            self.pushButton_13.setEnabled(False)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        elif self.comboBox_18.currentText() == "Keine virtuelle Festplatte anfügen":
             # For new and existing
             self.lineEdit_6.setEnabled(False)
             self.pushButton_13.setEnabled(False)
@@ -662,7 +692,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
             vhdAction = vmSpecsRaw[0]
 
-            if self.comboBox_8.isenabled():
+            if self.comboBox_8.isEnabled():
                 vhdAction = "overwrite"
 
             else:
