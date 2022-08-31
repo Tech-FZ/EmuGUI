@@ -1,3 +1,7 @@
+# EmuGUI v0.7.0.5105_rc1 (based on v0.7.0.5104_dev)
+
+- The versioning scheme has been updated again.
+
 # EmuGUI v0.7.0.5104_dev (based on v0.7.0.5103_dev)
 
 - Changed documentation to EmuGUI wiki.

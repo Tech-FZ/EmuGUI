@@ -15,7 +15,7 @@ Pre-releases: https://codeberg.org/lucien-rowan/EmuGUI-PreRelease
 
 ## Versioning
 
-Last update: 21st August, 2022 with 0.7.0.5100_dev
+Last update: 31st August, 2022 with 0.7.0.5105_rc1
 
 ### Version number
 
@@ -30,6 +30,7 @@ Micro: becomes 0 with every feature update, else increments by 1 with every bugf
 Nano: is the build number
 
 If "_dev" is added, it's a pre-release not meant for production.
+If "_rc" and a number are added, the release is meant to be focused solely on stability and completeness, but still not for productive use.
 
 ### Version code
 
