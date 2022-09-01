@@ -35,7 +35,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.7.0.5105_rc1 (Release Candidate 1, not meant for production use)")
+        self.label_8.setText("EmuGUI v0.7.0.5106")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -45,7 +45,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5105
+        self.versionCode = 5106
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1055,6 +1055,11 @@ class Window(QMainWindow, Ui_MainWindow):
             if os_is_win2k == 1:
                 dialog3 = Win2KDepreciated(self)
                 dialog3.exec()
+
+            if selectedVM == "Tic Tac Py":
+                print("Let's respect Tic Tac Py, the first program released to the public by Nicolas Lucien.")
+                print("RIP Tic Tac Py")
+                print("2021-2022")
 
             i = 0
 

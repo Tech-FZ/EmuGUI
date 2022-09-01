@@ -1,3 +1,17 @@
+# EmuGUI v0.7.0.5106 ("The comfort update", based on v0.7.0.5105_rc1)
+
+## Changes compared to 0.6.7
+
+- A fixed versioning scheme is on README.md.
+- Fixed a spelling mistake on doc/OLD_FEATURES.md.
+- The combo boxes can now be translated for the most part.
+- Changed documentation to EmuGUI wiki.
+- Added a basic contribution guide.
+- Good news: You will now tell EmuGUI if and how to handle VHDs beforehand (instead of after selecting it).
+- The formatting issues on README.md have been fixed.
+- Also, "Let QEMU decide" has been translated into German in the entire program.
+- I also made a small easteregg. Let's see if you can find it.
+
 # EmuGUI v0.7.0.5105_rc1 (based on v0.7.0.5104_dev)
 
 - The versioning scheme has been updated again.
