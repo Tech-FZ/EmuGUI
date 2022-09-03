@@ -1,3 +1,9 @@
+# EmuGUI v0.7.1.5107 (based on v0.7.0.5106)
+
+## Changes compared to 0.7.0.5106
+
+- Worked on the Ukrainian translation again
+
 # EmuGUI v0.7.0.5106 ("The comfort update", based on v0.7.0.5105_rc1)
 
 ## Changes compared to 0.6.7

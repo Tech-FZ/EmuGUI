@@ -4,10 +4,10 @@ def translateMainUK(window):
     window.tabWidget.setTabText(1, "Налаштування")
 
     # Main tab
-    window.pushButton_8.setText("New virtual machine")
-    window.pushButton_9.setText("Start virtual machine")
-    window.pushButton_10.setText("Edit selected virtual machine")
-    window.pushButton_11.setText("Delete selected virtual machine")
+    window.pushButton_8.setText("Новий віртуальний комп’ютер")
+    window.pushButton_9.setText("Запустіть віртуальний комп’ютер")
+    window.pushButton_10.setText("Редагувати високоякісний виртзальний комп’ютер")
+    window.pushButton_11.setText("Видалити високоякісний виртзальний комп’ютер")
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Загальний")
