@@ -338,7 +338,7 @@ def translateStartVmUK(window):
     window.pushButton.setText("Переглядати")
     window.pushButton_2.setText("Переглядати")
     window.pushButton_5.setText("Set to system")
-    window.pushButton_3.setText("Start VM")
+    window.pushButton_3.setText("Запустіть VM")
     window.pushButton_4.setText("Скасувати")
 
     # Combo box for boot

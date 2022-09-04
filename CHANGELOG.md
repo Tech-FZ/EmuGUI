@@ -4,6 +4,7 @@
 
 - I forgot to update OLD_FEATURES.md with 0.7.0.5106 - now I did it.
 - And when we are already there, the TESTED.md file inside the doc folder has been depreciated in favour of the EmuGUI wiki on the stable repository on Codeberg.
+- Also, I translated the "Start VM" button into Ukrainian as well.
 
 # EmuGUI v0.7.1.5107 (based on v0.7.0.5106)
 
