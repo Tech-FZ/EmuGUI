@@ -1,3 +1,9 @@
+# EmuGUI v0.7.2.5108 (based on v0.7.1.5107)
+
+## Changes compared to 0.7.1.5107
+
+- I forgot to update OLD_FEATURES.md with 0.7.0.5106 - now I did it.
+
 # EmuGUI v0.7.1.5107 (based on v0.7.0.5106)
 
 ## Changes compared to 0.7.0.5106

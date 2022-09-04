@@ -12,8 +12,8 @@ EmuGUI's depreciation policy for built-in features is as follows: When one featu
 
 | Feature | State | Depreciated/Removed since | Minimum number of feature levels left | Reason for depreciation |
 | ------- | ----- | ------------------------- | ------------------------------------- | ----------------------- |
-| USB Tablet checkbox | Depreciated | 0.4 | 8 | A combobox with more possibilities has been created |
-| Windows 2000 checkbox | Depreciated | 0.6.5 | 10 | Rather prevents you from installing the OS in question than helping you |
+| USB Tablet checkbox | Depreciated | 0.4 | 7 | A combobox with more possibilities has been created |
+| Windows 2000 checkbox | Depreciated | 0.6.5 | 9 | Rather prevents you from installing the OS in question than helping you |
 
 ## Supported host operating systems
 
