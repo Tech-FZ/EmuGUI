@@ -14,6 +14,7 @@ EmuGUI's depreciation policy for built-in features is as follows: When one featu
 | ------- | ----- | ------------------------- | ------------------------------------- | ----------------------- |
 | USB Tablet checkbox | Depreciated | 0.4 | 7 | A combobox with more possibilities has been created |
 | Windows 2000 checkbox | Depreciated | 0.6.5 | 9 | Rather prevents you from installing the OS in question than helping you |
+| doc/TESTED.md compatibility list | Depreciated | 0.7.2.5108 | 10 | It's not very productive to use two versions of the same file. Please visit the EmuGUI wiki on the stable repository on Codeberg instead. |
 
 ## Supported host operating systems
 

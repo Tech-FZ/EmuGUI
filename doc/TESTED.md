@@ -1,5 +1,9 @@
 # Compatible guests list
 
+## THIS DOCUMENT IS DEPRECIATED
+
+This list has been depreciated and will no longer be updated. Please go to https://codeberg.org/lucien-rowan/EmuGUI/wiki/Compatibility-list instead.
+
 Such a program needs tests in its lifetime. That's why I make this compatibility list. Feel free to grab your old installation disc and test it out.
 
 ## Microsoft operating systems
