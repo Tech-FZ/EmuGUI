@@ -4,6 +4,7 @@
 
 - I removed the OS support tables from OLD_FEATURES.md.
 - In the main code, there was a bug which caused some Linux configurations to crash. This has been fixed with a try-catch block although an additional platform check must now be performed in the imports.
+- Never has been translated into Ukrainian.
 
 # EmuGUI v0.7.2.5108 (based on v0.7.1.5107)
 
