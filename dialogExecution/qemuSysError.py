@@ -2,8 +2,13 @@ from uiScripts.ui_QemuI386NotInstalled import Ui_Dialog
 from PySide6.QtWidgets import *
 from PySide6 import QtGui
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
+
 import translations.de
 import translations.uk
 import translations.en

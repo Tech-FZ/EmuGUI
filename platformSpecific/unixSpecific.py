@@ -1,8 +1,14 @@
 import os
+import pwd
 import sqlite3
 
 def setupUnixBackend():
-    userName = os.getlogin()
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())
+    
     connection = None
 
     try:
@@ -44,7 +50,11 @@ def setupUnixBackend():
     return connection
 
 def unixTempVmStarterFile():
-    userName = os.getlogin()
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())
 
     if userName == "root":
         fileName = f"/{userName}/EmuGUI/vmstart.txt"
@@ -55,7 +65,11 @@ def unixTempVmStarterFile():
     return fileName
 
 def unixLanguageFile():
-    userName = os.getlogin()
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())
 
     if userName == "root":
         fileName = f"/{userName}/EmuGUI/lang.txt"

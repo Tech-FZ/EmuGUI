@@ -3,8 +3,13 @@ from PySide6.QtWidgets import *
 from PySide6 import QtGui
 from uiScripts.ui_StartVM import Ui_Dialog
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
+    
 import sqlite3
 import subprocess
 from PySide6.QtCore import QDateTime

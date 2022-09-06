@@ -3,8 +3,13 @@ from PySide6 import QtGui
 from uiScripts.ui_NewVM import Ui_Dialog
 import sqlite3
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
+    
 import subprocess
 from dialogExecution.vhdExistsDialog import VhdAlreadyExists
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog

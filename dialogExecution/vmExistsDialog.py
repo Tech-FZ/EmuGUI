@@ -3,8 +3,13 @@ from PySide6.QtWidgets import *
 from PySide6 import QtGui
 import sqlite3
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
+    
 import translations.de
 import translations.uk
 import translations.en

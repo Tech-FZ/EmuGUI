@@ -2,8 +2,12 @@ from uiScripts.ui_Win2KCheckboxDepreciated import Ui_Dialog
 from PySide6.QtWidgets import *
 from PySide6 import QtGui
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
 
 class Win2KDepreciated(QDialog, Ui_Dialog):
     def __init__(self, parent = None):

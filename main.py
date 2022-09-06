@@ -1,7 +1,12 @@
 # Importing required modules
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
+
 import sqlite3
 import sys
 from PySide6.QtWidgets import *

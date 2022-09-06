@@ -3,8 +3,13 @@ from PySide6 import QtGui
 from uiScripts.ui_Update import Ui_Dialog
 import webbrowser
 import platform
-import platformSpecific.windowsSpecific
-import platformSpecific.unixSpecific
+
+if platform.system() == "Windows":
+    import platformSpecific.windowsSpecific
+
+else:
+    import platformSpecific.unixSpecific
+    
 import sqlite3
 import translations.de
 import translations.uk
