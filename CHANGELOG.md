@@ -1,3 +1,9 @@
+# EmuGUI v0.7.3.5109 (based on v0.7.2.5108)
+
+## Changes compared to 0.7.2.5108
+
+- I removed the OS support tables from OLD_FEATURES.md.
+
 # EmuGUI v0.7.2.5108 (based on v0.7.1.5107)
 
 ## Changes compared to 0.7.1.5107
