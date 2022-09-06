@@ -1428,7 +1428,7 @@ class Window(QMainWindow, Ui_MainWindow):
         elif self.comboBox_2.currentText() == "Jedes Mal, wenn ich dieses Programm ausführe":
             updateNotifyFreq = "boot"
 
-        elif self.comboBox_2.currentText() == "Never" or self.comboBox_2.currentText() == "Nie":
+        elif self.comboBox_2.currentText() == "Never" or self.comboBox_2.currentText() == "Nie" or self.comboBox_2.currentText() == "Ніколи":
             updateNotifyFreq = "never"
 
         updateChannel = self.comboBox_3.currentText()

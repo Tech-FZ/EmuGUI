@@ -74,7 +74,7 @@ def translateMainEN(window):
     i = 0
 
     while i < window.comboBox_2.count():
-        if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie":
+        if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie" or window.comboBox_2.itemText(i) == "Ніколи":
             window.comboBox_2.setItemText(i, "Never")
             break
 
