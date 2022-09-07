@@ -7,7 +7,7 @@ def setupUnixBackend():
         userName = os.getlogin()
     
     except:
-        userName = pwd.getpwuid(os.getuid())
+        userName = pwd.getpwuid(os.getuid())[0]
     
     connection = None
 
@@ -54,7 +54,7 @@ def unixTempVmStarterFile():
         userName = os.getlogin()
     
     except:
-        userName = pwd.getpwuid(os.getuid())
+        userName = pwd.getpwuid(os.getuid())[0]
 
     if userName == "root":
         fileName = f"/{userName}/EmuGUI/vmstart.txt"
@@ -69,7 +69,7 @@ def unixLanguageFile():
         userName = os.getlogin()
     
     except:
-        userName = pwd.getpwuid(os.getuid())
+        userName = pwd.getpwuid(os.getuid())[0]
 
     if userName == "root":
         fileName = f"/{userName}/EmuGUI/lang.txt"
