@@ -3,6 +3,7 @@
 ## Changes compared to 0.7.3.5109
 
 - On some Linux configurations, the main branch was prone to crash. While the fix was exclusive to the Linux binaries in the previous two updates, the main code should also be fixed now.
+- Also, some more phrases and words have been (partially) translated into Ukrainian.
 
 # EmuGUI v0.7.3.5109 (based on v0.7.2.5108)
 

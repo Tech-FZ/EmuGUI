@@ -328,7 +328,7 @@ def translateNewVmUK(window):
     window.pushButton_21.setText("Скасувати")
 
 def translateStartVmUK(window):
-    window.label_4.setText("Date & Time")
+    window.label_4.setText("Дата і час")
     window.label_3.setText("Boot from")
     
     window.label_5.setText("""
@@ -352,17 +352,17 @@ def translateStartVmUK(window):
         i += 1
 
 def translateVmExistsUK(window):
-    window.label.setText("Sorry, but a VM with this name already exists.")
+    window.label.setText("Вибачте, but a VM with this name already exists.")
     window.label_2.setText("Please consider either deleting that VM or thinking of a new name.")
 
     window.pushButton.setText("OK")
 
 def translateVhdExistsUK(window):
-    window.label.setText("Sorry, but the disk you want to create is already existant.")
-    window.label_2.setText("Do you want to keep or overwrite it?")
+    window.label.setText("Вибачте, but the disk you want to create is already existant.")
+    window.label_2.setText("Do you want to keep (Залишити) or overwrite (Переписати) it?")
 
-    window.pushButton.setText("Overwrite")
-    window.pushButton_2.setText("Keep")
+    window.pushButton.setText("Переписати")
+    window.pushButton_2.setText("Залишити")
 
 def translateUpdateAvailableUK(window):
     window.label.setText(
@@ -391,14 +391,14 @@ def translateVmTooNewUK(window):
 
 def translateQemuSysMissingUK(window, arch):
     window.label.setText(
-        f"Sorry, but EmuGUI is not configured for using \"qemu-system-{arch}\" yet.\nThis component however is necessary to start this virtual machine.\nPlease go to Налаштування/QEMU to solve this issue."
+        f"Вибачте, but EmuGUI is not configured for using \"qemu-system-{arch}\" yet.\nThis component however is necessary to start this virtual machine.\nPlease go to Налаштування/QEMU to solve this issue."
         )
 
     window.pushButton.setText("OK")
 
 def translateQemuImgMissingUK(window):
     window.label.setText(
-        "Sorry but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Налаштування/QEMU to solve this issue."
+        "Вибачте, but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Налаштування/QEMU to solve this issue."
         )
 
     window.pushButton.setText("OK")
