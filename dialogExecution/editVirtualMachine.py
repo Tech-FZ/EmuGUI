@@ -11,7 +11,6 @@ else:
     import platformSpecific.unixSpecific
     
 import subprocess
-from dialogExecution.vhdExistsDialog import VhdAlreadyExists
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 import translations.de
 import translations.uk
@@ -597,15 +596,6 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
         if filename:
             self.lineEdit_6.setText(filename)
-            
-            #try:
-            #    file = open(filename, "r")
-            #    file.close()
-            #    dialog = VhdAlreadyExists(self)
-            #    dialog.exec()
-            
-            #except:
-            #    pass
 
     def firstStage(self):
         self.stackedWidget.setCurrentIndex(0)

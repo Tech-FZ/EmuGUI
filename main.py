@@ -14,7 +14,7 @@ from PySide6 import QtGui
 from PySide6.QtCore import QTimer
 from uiScripts.ui_Main import Ui_MainWindow
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
-from uiScripts.ui_SettingsPending1 import Ui_Dialog
+#from uiScripts.ui_SettingsPending1 import Ui_Dialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
 from dialogExecution.noUpdateAvailable import NoUpdateAvailable
@@ -1830,6 +1830,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+"""
 class SettingsPending1Dialog(QDialog, Ui_Dialog):
     # This comes up if you didn't setup the QEMU paths.
 
@@ -1851,10 +1852,10 @@ class SettingsPending1Dialog(QDialog, Ui_Dialog):
         self.pushButton.clicked.connect(self.close)
 
     def langDetect(self):
-        select_language = """
+        select_language = \"""
         SELECT name, value FROM settings
         WHERE name = "lang";
-        """
+        \"""
 
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1915,6 +1916,7 @@ class SettingsPending1Dialog(QDialog, Ui_Dialog):
 
         else:
             translations.en.translateSettingsPendingEN(self)
+"""
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
