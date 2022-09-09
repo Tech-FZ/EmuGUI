@@ -1,3 +1,10 @@
+# EmuGUI v0.7.5.5111 (based on v0.7.4.5110)
+
+## Changes compared to 0.7.4.5110
+
+- The Windows binaries are now compiled with Python 3.10.7 instead of Python 3.10.6.
+- Obsolete code which was commented out is now completely removed.
+
 # EmuGUI v0.7.4.5110 (based on v0.7.3.5109)
 
 ## Changes compared to 0.7.3.5109
