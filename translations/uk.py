@@ -302,7 +302,7 @@ def translateNewVmUK(window):
     window.pushButton_23.setText("Скасувати") # Cancel
 
     # Sixth page
-    window.label_23.setText("Sound card") # Sound card
+    window.label_23.setText("Звукова карта") # Sound card
     window.label_33.setText("CPU cores") # CPU cores
     window.label_34.setText("Клавіатура") # Keyboard
 
@@ -311,8 +311,8 @@ def translateNewVmUK(window):
     window.pushButton_26.setText("Скасувати") # Cancel
 
     # Seventh page
-    window.label_24.setText("Linux kernel") # Linux kernel
-    window.label_25.setText("Linux initrd image") # Linux initrd image
+    window.label_24.setText("Linux ядро") # Linux kernel
+    window.label_25.setText("Linux initrd імідж") # Linux initrd image
     window.label_26.setText("Linux cmd args") # Linux cmd args
 
     window.pushButton.setText("Переглядати") # Browse

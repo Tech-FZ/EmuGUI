@@ -4,6 +4,7 @@
 
 - The Windows binaries are now compiled with Python 3.10.7 instead of Python 3.10.6.
 - Obsolete code which was commented out is now completely removed.
+- Some more words have been translated into Ukrainian.
 
 # EmuGUI v0.7.4.5110 (based on v0.7.3.5109)
 
