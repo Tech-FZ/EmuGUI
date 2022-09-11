@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -93,6 +93,16 @@
         <item>
          <property name="text">
           <string>mipsel</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mips</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mips64</string>
          </property>
         </item>
         <item>

@@ -37,6 +37,8 @@ def translateMainDE(window):
     window.label_11.setText("qemu-system-arm-Pfad") # qemu-system-arm Path
     window.label_16.setText("qemu-system-ppc64-Pfad") # qemu-system-ppc64 Path
     window.label_17.setText("qemu-system-mipsel-Pfad") # qemu-system-mipsel Path
+    window.label_18.setText("qemu-system-mips-Pfad") # qemu-system-mips Path
+    window.label_19.setText("qemu-system-mips64-Pfad") # qemu-system-mips64 Path
 
     window.pushButton.setText("Durchsuchen") # Browse
     window.pushButton_2.setText("Durchsuchen") # Browse
@@ -47,6 +49,8 @@ def translateMainDE(window):
     window.pushButton_12.setText("Durchsuchen") # Browse
     window.pushButton_16.setText("Durchsuchen") # Browse
     window.pushButton_17.setText("Durchsuchen") # Browse
+    window.pushButton_18.setText("Durchsuchen") # Browse
+    window.pushButton_19.setText("Durchsuchen") # Browse
     window.pushButton_6.setText("Übernehmen") # Apply
 
     # Update tab

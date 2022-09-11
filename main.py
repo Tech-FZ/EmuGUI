@@ -39,7 +39,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.7.5.5111")
+        self.label_8.setText("EmuGUI v0.8.0.5200_dev - This preview is not meant for productive use.")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -49,7 +49,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5111
+        self.versionCode = 5200
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -76,6 +76,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_4.clicked.connect(self.set_qemu_ppc_path)
         self.pushButton_5.clicked.connect(self.set_qemu_mips64el_path)
         self.pushButton_17.clicked.connect(self.set_qemu_mipsel_path)
+        self.pushButton_19.clicked.connect(self.set_qemu_mips64_path)
+        self.pushButton_18.clicked.connect(self.set_qemu_mips_path)
         self.pushButton_16.clicked.connect(self.set_qemu_ppc64_path)
         self.pushButton_6.clicked.connect(self.applyChangesQemu)
         self.pushButton_9.clicked.connect(self.startVM)
@@ -290,6 +292,22 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        insert_qemu_mips64 = """
+        INSERT INTO settings (
+            name
+        ) VALUES (
+            "qemu-system-mips64"
+        );
+        """
+
+        insert_qemu_mips = """
+        INSERT INTO settings (
+            name
+        ) VALUES (
+            "qemu-system-mips"
+        );
+        """
+
         insert_qemu_aarch64 = """
         INSERT INTO settings (
             name
@@ -385,6 +403,16 @@ class Window(QMainWindow, Ui_MainWindow):
         select_qemu_mipsel = """
         SELECT name, value FROM settings
         WHERE name = "qemu-system-mipsel";
+        """
+
+        select_qemu_mips64 = """
+        SELECT name, value FROM settings
+        WHERE name = "qemu-system-mips64";
+        """
+
+        select_qemu_mips = """
+        SELECT name, value FROM settings
+        WHERE name = "qemu-system-mips";
         """
 
         select_qemu_aarch64 = """
@@ -556,6 +584,24 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
         try:
+            cursor.execute(select_qemu_mips64)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                self.lineEdit_11.setText(result[0][1])
+                print("The query was executed successfully. The qemu-system-mips64el slot already is in the database.")
+
+            except:
+                cursor.execute(insert_qemu_mips64)
+                connection.commit()
+                print("The query was executed successfully. The qemu-system-mips64el slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
             cursor.execute(select_qemu_mipsel)
             connection.commit()
             result = cursor.fetchall()
@@ -567,6 +613,24 @@ class Window(QMainWindow, Ui_MainWindow):
 
             except:
                 cursor.execute(insert_qemu_mipsel)
+                connection.commit()
+                print("The query was executed successfully. The qemu-system-mips64el slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_qemu_mips)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                self.lineEdit_10.setText(result[0][1])
+                print("The query was executed successfully. The qemu-system-mips64el slot already is in the database.")
+
+            except:
+                cursor.execute(insert_qemu_mips)
                 connection.commit()
                 print("The query was executed successfully. The qemu-system-mips64el slot has been created.")
         
@@ -1092,7 +1156,19 @@ class Window(QMainWindow, Ui_MainWindow):
                             dialog.exec()
                             break
 
-                elif architecture_of_vm == "ppc64" or architecture_of_vm == "mipsel":
+                elif architecture_of_vm == "ppc64" or architecture_of_vm == "mipsel" or architecture_of_vm == "mips":
+                    if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
+                        if result_settings[i][1] == "":
+                            dialog = QemuSysMissing(self)
+                            dialog.exec()
+                            break
+
+                        else:
+                            dialog = StartVirtualMachineDialog(self)
+                            dialog.exec()
+                            break
+
+                elif architecture_of_vm == "mips64":
                     if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
                         if result_settings[i][1] == "":
                             dialog = QemuSysMissing(self)
@@ -1266,6 +1342,18 @@ class Window(QMainWindow, Ui_MainWindow):
         if filename:
             self.lineEdit_9.setText(filename)
 
+    def set_qemu_mips64_path(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-mips64 executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_11.setText(filename)
+
+    def set_qemu_mips_path(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-mips executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_10.setText(filename)
+
     def set_qemu_aarch64_path(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-aarch64 executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
 
@@ -1286,6 +1374,8 @@ class Window(QMainWindow, Ui_MainWindow):
         pathQemuPpc64 = self.lineEdit_8.text()
         pathQemuMips64El = self.lineEdit.text()
         pathQemuMipsEl = self.lineEdit_9.text()
+        pathQemuMips64 = self.lineEdit_11.text()
+        pathQemuMips = self.lineEdit_10.text()
         pathQemuAarch64 = self.lineEdit_6.text()
         pathQemuArm = self.lineEdit_7.text()
 
@@ -1329,6 +1419,18 @@ class Window(QMainWindow, Ui_MainWindow):
         UPDATE settings
         SET value = '{pathQemuMipsEl}'
         WHERE name = 'qemu-system-mipsel';
+        """
+
+        qemu_mips64_update = f"""
+        UPDATE settings
+        SET value = '{pathQemuMips64}'
+        WHERE name = 'qemu-system-mips64';
+        """
+
+        qemu_mips_update = f"""
+        UPDATE settings
+        SET value = '{pathQemuMips}'
+        WHERE name = 'qemu-system-mips';
         """
 
         qemu_aarch64_update = f"""
@@ -1396,6 +1498,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         try:
             cursor.execute(qemu_mipsel_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(qemu_mips64_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(qemu_mips_update)
             connection.commit()
             print("The query was executed successfully.")
 

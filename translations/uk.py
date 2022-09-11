@@ -37,6 +37,8 @@ def translateMainUK(window):
     window.label_11.setText("qemu-system-arm Path") # qemu-system-arm Path
     window.label_16.setText("qemu-system-ppc64 Path") # qemu-system-ppc64 Path
     window.label_17.setText("qemu-system-mipsel Path") # qemu-system-mipsel Path
+    window.label_18.setText("qemu-system-mips Path") # qemu-system-mips Path
+    window.label_19.setText("qemu-system-mips64 Path") # qemu-system-mips64 Path
 
     window.pushButton.setText("Переглядати") # Browse
     window.pushButton_2.setText("Переглядати") # Browse
@@ -47,6 +49,8 @@ def translateMainUK(window):
     window.pushButton_12.setText("Переглядати") # Browse
     window.pushButton_16.setText("Переглядати") # Browse
     window.pushButton_17.setText("Переглядати") # Browse
+    window.pushButton_18.setText("Переглядати") # Browse
+    window.pushButton_19.setText("Переглядати") # Browse
     window.pushButton_6.setText("Застосувати") # Apply
 
     # Update tab

@@ -247,6 +247,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
                     self.stackedWidget.setCurrentIndex(3)
+
+                elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
+                    self.stackedWidget.setCurrentIndex(3)
                 
                 elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                     self.stackedWidget.setCurrentIndex(4)
@@ -384,6 +387,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             ram = self.spinBox_2.value()
 
         elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
+            machine = self.comboBox_6.currentText()
+            cpu = self.comboBox_7.currentText()
+            ram = self.spinBox_3.value()
+
+        elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
             machine = self.comboBox_6.currentText()
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()

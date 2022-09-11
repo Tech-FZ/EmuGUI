@@ -364,7 +364,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
             self.spinBox.setValue(int(vmSpecs[4]))
 
-        elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel":
+        elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel" or vmSpecs[1] == "mips64" or vmSpecs[1] == "mips":
             self.machineCpuMips64el(vmSpecs[2], vmSpecs[3])
             self.spinBox_3.setValue(int(vmSpecs[4]))
 
@@ -503,6 +503,9 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
                         self.stackedWidget.setCurrentIndex(3)
 
+                    elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
+                        self.stackedWidget.setCurrentIndex(3)
+
                     elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                         self.stackedWidget.setCurrentIndex(4)
 
@@ -517,6 +520,9 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     self.stackedWidget.setCurrentIndex(2)
 
                 elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
+                    self.stackedWidget.setCurrentIndex(3)
+
+                elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
                     self.stackedWidget.setCurrentIndex(3)
 
                 elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
@@ -655,6 +661,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             ram = self.spinBox_2.value()
 
         elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
+            machine = self.comboBox_6.currentText()
+            cpu = self.comboBox_7.currentText()
+            ram = self.spinBox_3.value()
+
+        elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
             machine = self.comboBox_6.currentText()
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()
