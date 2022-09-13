@@ -1,3 +1,11 @@
+# EmuGUI v0.8.0.5201_dev (based on v0.8.0.5200_dev)
+
+## Changes compared to v0.7.5.5111
+
+- Support for the MIPS and MIPS64 big-endian architectures has been added.
+- We began to work on a better dialog for editing existing virtual machines.
+- The .gitignore file also experienced a change: The ./ suffix is no longer present - that's how the file works.
+
 # EmuGUI v0.8.0.5200_dev (based on v0.7.5.5111)
 
 ## Changes compared to v0.7.5.5111
