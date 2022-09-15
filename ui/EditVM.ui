@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -128,6 +128,9 @@
        <width>801</width>
        <height>391</height>
       </rect>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QWidget" name="gridLayoutWidget_7">
@@ -388,12 +391,602 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QComboBox" name="comboBox_12"/>
+         <widget class="QComboBox" name="comboBox_12">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>microvm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>q35</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>isapc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
         </item>
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="page_2"/>
+     <widget class="QWidget" name="page_2">
+      <widget class="QWidget" name="gridLayoutWidget_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>781</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_22">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox_13">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>604</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7v</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7v1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7v2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7t</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>740</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>740e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>745</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>755</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cxe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cxr</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cl</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750l</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>604e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>604r</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7400</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>g2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc603</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>g2hip3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8343</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8349a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e300c1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8343a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347ea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347ap</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8349ea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8343e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e300</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8379e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8377e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8377</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8378</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8378e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8379</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>740p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>460ex</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>x2vp7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>x2vp20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>405gp</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>405gpe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>405</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>440ep</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750fx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750gx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7450</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7451</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7441</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7455</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7445</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7447</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7457</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7457a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7447a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7448</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7410</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8541</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8541e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8540</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e500v1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8555</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8555e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8545e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8560</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_3">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBox_14">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>40p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>bamboo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>g3beige</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mac99</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mac99,via=pmu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mac99,via=pmu-adb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8544ds</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pegasos2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ppce500</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ref405ep</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sam460ex</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>taihu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtex-ml507</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <widget class="QWidget" name="gridLayoutWidget_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>781</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_24">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_25">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox_15">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_4">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBox_16">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
