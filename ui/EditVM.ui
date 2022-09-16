@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -130,7 +130,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QWidget" name="gridLayoutWidget_7">
@@ -966,6 +966,161 @@
             <string>Let QEMU decide</string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>4Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4Km</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEcR1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEmR1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24KEc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>34Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>74Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>M14K</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>M14Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>P5600</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mips32r6-generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>I7200</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>R4000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>VR5432</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MIPS64R2-generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5KEc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5KEf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>I6400</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>I6500</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-2E</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-2F</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-3A1000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-3A4000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mips64dspr2</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item row="1" column="1">
@@ -980,6 +1135,351 @@
           <item>
            <property name="text">
             <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>boston</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>fuulong2e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>loongson3-virt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>magnum</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>malta</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mipssim</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pica61</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QWidget" name="gridLayoutWidget_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>781</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_26">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_27">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_28">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox_17">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a57</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>a64fx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1026</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1136</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1136-r2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1176</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm11mpcore</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm926</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm946</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a72</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m33</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m55</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-r5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-r5f</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>max</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa250</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa255</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa260</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa261</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa262</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa270</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sa1100</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sa1110</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ti925t</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_5">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBox_18">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>akita</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ast2500-evb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>borzoi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>canon-a1100</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cheetah</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>collie</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>connex</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cubieboard</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>highbank</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>imx25-pdk</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>integratorcp</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>kzm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lm3s6965evb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lm3s811evb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>raspi2</string>
            </property>
           </item>
          </widget>
