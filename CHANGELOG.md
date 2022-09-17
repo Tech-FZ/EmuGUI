@@ -1,3 +1,9 @@
+# EmuGUI v0.7.6.5112 (based on v0.7.5.5111)
+
+## Changes compared to v0.7.5.5111
+
+- The ./ prefix in .gitignore has been removed from every single line there.
+
 # EmuGUI v0.7.5.5111 (based on v0.7.4.5110)
 
 ## Changes compared to 0.7.4.5110
