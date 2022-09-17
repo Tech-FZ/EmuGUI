@@ -4,6 +4,7 @@
 
 - The ./ prefix in .gitignore has been removed from every single line there.
 - The Icelake-Client x86/x64 CPU, which has been removed from QEMU 7.1, is depreciated on EmuGUI now. Please change the CPU on affected VMs as soon as possible.
+- The editing VM dialog might have crashed if your installation didn't contain the EmuGUI.png icon. That is now fixed.
 
 # EmuGUI v0.7.5.5111 (based on v0.7.4.5110)
 

@@ -31,8 +31,6 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
         except:
             pass
-        
-        self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
 
         if platform.system() == "Windows":
             tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
@@ -655,7 +653,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
             if cpu.startswith("Icelake-Client"):
                 cpu = "Icelake-Client"
-                
+
             ram = self.spinBox.value()
         
         elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
