@@ -236,6 +236,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     self.comboBox_3.setCurrentIndex(i)
                     break
 
+            if self.comboBox_3.itemText(i) == "Icelake-Client (depreciated)":
+                if cpu == "Icelake-Client":
+                    self.comboBox_3.setCurrentIndex(i)
+                    break
+
             if self.comboBox_3.itemText(i) == cpu:
                 self.comboBox_3.setCurrentIndex(i)
                 break
@@ -647,6 +652,10 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "x86_64":
             machine = self.comboBox_2.currentText()
             cpu = self.comboBox_3.currentText()
+
+            if cpu.startswith("Icelake-Client"):
+                cpu = "Icelake-Client"
+                
             ram = self.spinBox.value()
         
         elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":

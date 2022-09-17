@@ -25,6 +25,7 @@ from dialogExecution.settingsRequireRestart import SettingsRequireEmuGUIReboot
 from dialogExecution.win2kDepreciation import Win2KDepreciated
 from dialogExecution.qemuImgError import QemuImgMissing
 from dialogExecution.qemuSysError import QemuSysMissing
+from dialogExecution.icelakeClientDepreciation import IcelakeClientCPUDepreciation
 import translations.de
 import translations.uk
 import translations.en
@@ -1058,6 +1059,10 @@ class Window(QMainWindow, Ui_MainWindow):
 
             if os_is_win2k == 1:
                 dialog3 = Win2KDepreciated(self)
+                dialog3.exec()
+
+            if cpu_of_vm == "Icelake-Client":
+                dialog3 = IcelakeClientCPUDepreciation(self)
                 dialog3.exec()
 
             if selectedVM == "Tic Tac Py":

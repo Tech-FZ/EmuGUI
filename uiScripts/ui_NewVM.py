@@ -965,7 +965,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -1010,7 +1010,7 @@ class Ui_Dialog(object):
         self.comboBox_3.setItemText(9, QCoreApplication.translate("Dialog", u"EPYC-Milan", None))
         self.comboBox_3.setItemText(10, QCoreApplication.translate("Dialog", u"EPYC-Rome", None))
         self.comboBox_3.setItemText(11, QCoreApplication.translate("Dialog", u"Haswell", None))
-        self.comboBox_3.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client", None))
+        self.comboBox_3.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client (depreciated)", None))
         self.comboBox_3.setItemText(13, QCoreApplication.translate("Dialog", u"Icelake-Server", None))
         self.comboBox_3.setItemText(14, QCoreApplication.translate("Dialog", u"IvyBridge", None))
         self.comboBox_3.setItemText(15, QCoreApplication.translate("Dialog", u"KnightsMill", None))

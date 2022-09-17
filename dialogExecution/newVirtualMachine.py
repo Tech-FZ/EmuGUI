@@ -376,6 +376,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "x86_64":
             machine = self.comboBox_2.currentText()
             cpu = self.comboBox_3.currentText()
+
+            if cpu.startswith("Icelake-Client"):
+                cpu = "Icelake-Client"
+
             ram = self.spinBox.value()
         
         elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
