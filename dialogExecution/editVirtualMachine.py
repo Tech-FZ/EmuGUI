@@ -31,8 +31,6 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
 
         except:
             pass
-        
-        self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
 
         if platform.system() == "Windows":
             tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
@@ -236,6 +234,11 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     self.comboBox_3.setCurrentIndex(i)
                     break
 
+            if self.comboBox_3.itemText(i) == "Icelake-Client (depreciated)":
+                if cpu == "Icelake-Client":
+                    self.comboBox_3.setCurrentIndex(i)
+                    break
+
             if self.comboBox_3.itemText(i) == cpu:
                 self.comboBox_3.setCurrentIndex(i)
                 break
@@ -364,7 +367,7 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
             self.spinBox.setValue(int(vmSpecs[4]))
 
-        elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel" or vmSpecs[1] == "mips64" or vmSpecs[1] == "mips":
+        elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel":
             self.machineCpuMips64el(vmSpecs[2], vmSpecs[3])
             self.spinBox_3.setValue(int(vmSpecs[4]))
 
@@ -503,9 +506,6 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
                         self.stackedWidget.setCurrentIndex(3)
 
-                    elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
-                        self.stackedWidget.setCurrentIndex(3)
-
                     elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                         self.stackedWidget.setCurrentIndex(4)
 
@@ -520,9 +520,6 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
                     self.stackedWidget.setCurrentIndex(2)
 
                 elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
-                    self.stackedWidget.setCurrentIndex(3)
-
-                elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
                     self.stackedWidget.setCurrentIndex(3)
 
                 elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
@@ -653,6 +650,10 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
         if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "x86_64":
             machine = self.comboBox_2.currentText()
             cpu = self.comboBox_3.currentText()
+
+            if cpu.startswith("Icelake-Client"):
+                cpu = "Icelake-Client"
+
             ram = self.spinBox.value()
         
         elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
@@ -661,11 +662,6 @@ class EditVirtualMachineDialog(QDialog, Ui_Dialog):
             ram = self.spinBox_2.value()
 
         elif self.comboBox.currentText() == "mips64el" or self.comboBox.currentText() == "mipsel":
-            machine = self.comboBox_6.currentText()
-            cpu = self.comboBox_7.currentText()
-            ram = self.spinBox_3.value()
-
-        elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips":
             machine = self.comboBox_6.currentText()
             cpu = self.comboBox_7.currentText()
             ram = self.spinBox_3.value()

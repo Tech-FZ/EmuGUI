@@ -70,8 +70,6 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
         self.gridLayout.addWidget(self.comboBox, 1, 1, 1, 1)
@@ -967,7 +965,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -983,12 +981,10 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"x86_64", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"mips64el", None))
         self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"mipsel", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("Dialog", u"mips", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("Dialog", u"mips64", None))
-        self.comboBox.setItemText(6, QCoreApplication.translate("Dialog", u"ppc", None))
-        self.comboBox.setItemText(7, QCoreApplication.translate("Dialog", u"ppc64", None))
-        self.comboBox.setItemText(8, QCoreApplication.translate("Dialog", u"aarch64", None))
-        self.comboBox.setItemText(9, QCoreApplication.translate("Dialog", u"arm", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("Dialog", u"ppc", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("Dialog", u"ppc64", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("Dialog", u"aarch64", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("Dialog", u"arm", None))
 
         self.comboBox.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
@@ -1014,7 +1010,7 @@ class Ui_Dialog(object):
         self.comboBox_3.setItemText(9, QCoreApplication.translate("Dialog", u"EPYC-Milan", None))
         self.comboBox_3.setItemText(10, QCoreApplication.translate("Dialog", u"EPYC-Rome", None))
         self.comboBox_3.setItemText(11, QCoreApplication.translate("Dialog", u"Haswell", None))
-        self.comboBox_3.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client", None))
+        self.comboBox_3.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client (depreciated)", None))
         self.comboBox_3.setItemText(13, QCoreApplication.translate("Dialog", u"Icelake-Server", None))
         self.comboBox_3.setItemText(14, QCoreApplication.translate("Dialog", u"IvyBridge", None))
         self.comboBox_3.setItemText(15, QCoreApplication.translate("Dialog", u"KnightsMill", None))

@@ -5,12 +5,22 @@
 - Support for the MIPS and MIPS64 big-endian architectures has been added.
 - We began to work on a better dialog for editing existing virtual machines.
 - The .gitignore file also experienced a change: The ./ suffix is no longer present - that's how the file works.
+- The Icelake-Client x86/x64 CPU, which has been removed from QEMU 7.1, is depreciated on EmuGUI now. Please change the CPU on affected VMs as soon as possible. This measure is already present in 0.7.6.5112, but it had to be written into this version as well.
+- The old editing VM dialog might have crashed if your installation didn't contain the EmuGUI.png icon. That is now fixed in both 0.7 and 0.8.
 
 # EmuGUI v0.8.0.5200_dev (based on v0.7.5.5111)
 
 ## Changes compared to v0.7.5.5111
 
 - Support for the MIPS and MIPS64 big-endian architectures has been added.
+
+# EmuGUI v0.7.6.5112 (based on v0.7.5.5111)
+
+## Changes compared to v0.7.5.5111
+
+- The ./ prefix in .gitignore has been removed from every single line there.
+- The Icelake-Client x86/x64 CPU, which has been removed from QEMU 7.1, is depreciated on EmuGUI now. Please change the CPU on affected VMs as soon as possible.
+- The editing VM dialog might have crashed if your installation didn't contain the EmuGUI.png icon. That is now fixed.
 
 # EmuGUI v0.7.5.5111 (based on v0.7.4.5110)
 
