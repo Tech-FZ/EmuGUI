@@ -803,8 +803,8 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.tabWidget.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -841,7 +841,7 @@ class Ui_Dialog(object):
         self.comboBox_11.setItemText(9, QCoreApplication.translate("Dialog", u"EPYC-Milan", None))
         self.comboBox_11.setItemText(10, QCoreApplication.translate("Dialog", u"EPYC-Rome", None))
         self.comboBox_11.setItemText(11, QCoreApplication.translate("Dialog", u"Haswell", None))
-        self.comboBox_11.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client", None))
+        self.comboBox_11.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client (depreciated)", None))
         self.comboBox_11.setItemText(13, QCoreApplication.translate("Dialog", u"Icelake-Server", None))
         self.comboBox_11.setItemText(14, QCoreApplication.translate("Dialog", u"IvyBridge", None))
         self.comboBox_11.setItemText(15, QCoreApplication.translate("Dialog", u"KnightsMill", None))
@@ -1087,9 +1087,9 @@ class Ui_Dialog(object):
         self.comboBox_4.setItemText(1, QCoreApplication.translate("Dialog", u"MB", None))
         self.comboBox_4.setItemText(2, QCoreApplication.translate("Dialog", u"GB", None))
 
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Add an existing virtual hard disk", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("Dialog", u"Create a new virtual hard disk", None))
-        self.comboBox_2.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard disk", None))
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
+        self.comboBox_2.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
 
         self.comboBox_3.setItemText(0, QCoreApplication.translate("Dialog", u"qcow2", None))
         self.comboBox_3.setItemText(1, QCoreApplication.translate("Dialog", u"qcow", None))

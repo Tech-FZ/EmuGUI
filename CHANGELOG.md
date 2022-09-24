@@ -1,3 +1,10 @@
+# EmuGUI v0.8.0.5202_dev (based on v0.8.0.5201_dev)
+
+## Changes compared to v0.7.6.5112
+
+- Support for the MIPS and MIPS64 big-endian architectures has been added.
+- With a new dialog, editing VMs has been made more convenient than it was before.
+
 # EmuGUI v0.8.0.5201_dev (based on v0.8.0.5200_dev)
 
 ## Changes compared to v0.7.5.5111

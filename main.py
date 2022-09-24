@@ -16,6 +16,7 @@ from uiScripts.ui_Main import Ui_MainWindow
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVirtualMachine import EditVirtualMachineDialog
+from dialogExecution.editVMNew import EditVMNewDialog
 from dialogExecution.noUpdateAvailable import NoUpdateAvailable
 from dialogExecution.updateAvailable import UpdateAvailable
 from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
@@ -40,7 +41,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.8.0.5201_dev - This preview is not meant for productive use.")
+        self.label_8.setText("EmuGUI v0.8.0.5202_dev - This preview is not meant for productive use.")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -50,7 +51,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5201
+        self.versionCode = 5202
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1292,7 +1293,7 @@ class Window(QMainWindow, Ui_MainWindow):
                         dialog.exec()
 
                     else:
-                        dialog = EditVirtualMachineDialog(self)
+                        dialog = EditVMNewDialog(self)
                         dialog.exec()
                 
                     break

@@ -18,7 +18,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         super().__init__(parent)
         self.setupUi(self)
         self.connectSignalsSlots()
-        self.langDetect()
+        self.tabWidget.setCurrentIndex(0)
         self.vmSpecs = self.readTempVmFile()
         
         try:
@@ -28,7 +28,256 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             pass
 
     def connectSignalsSlots(self):
-        self.pushButton.clicked.connect(self.close())
+        self.pushButton.clicked.connect(self.close)
+        self.pushButton_2.clicked.connect(self.finishCreation)
+        self.comboBox_2.currentTextChanged.connect(self.vhdAddingChange)
+        self.comboBox.currentTextChanged.connect(self.archChanged)
+        self.pushButton_3.clicked.connect(self.vhdBrowseLocation)
+        self.pushButton_4.clicked.connect(self.extBiosFileLocation)
+        self.pushButton_5.clicked.connect(self.linuxKernelBrowseLocation)
+        self.pushButton_6.clicked.connect(self.linuxInitridBrowseLocation)
+
+    def machineCpuI386Amd64(self, machine, cpu):
+        i = 0
+
+        while i < self.comboBox_12.count():
+            if self.comboBox_12.itemText(i) == "Let QEMU decide" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_12.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_12.itemText(i) == machine:
+                self.comboBox_12.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.comboBox_11.count():
+            if self.comboBox_11.itemText(i) == "Let QEMU decide" or self.comboBox_11.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_11.setCurrentIndex(i)
+                    break
+
+            if self.comboBox_11.itemText(i) == "Icelake-Client (depreciated)":
+                if cpu == "Icelake-Client":
+                    self.comboBox_11.setCurrentIndex(i)
+                    break
+
+            if self.comboBox_11.itemText(i) == cpu:
+                self.comboBox_11.setCurrentIndex(i)
+                break
+
+            i += 1
+
+    def machineCpuPpc(self, machine, cpu):
+        i = 0
+
+        while i < self.comboBox_14.count():
+            if self.comboBox_14.itemText(i) == "Let QEMU decide" or self.comboBox_14.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_14.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_14.itemText(i) == machine:
+                self.comboBox_14.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.comboBox_13.count():
+            if self.comboBox_13.itemText(i) == "Let QEMU decide" or self.comboBox_13.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_13.setCurrentIndex(i)
+                    break
+
+            if self.comboBox_13.itemText(i) == cpu:
+                self.comboBox_13.setCurrentIndex(i)
+                break
+
+            i += 1
+
+    def machineCpuMips64el(self, machine, cpu):
+        i = 0
+
+        while i < self.comboBox_16.count():
+            if self.comboBox_16.itemText(i) == "Let QEMU decide" or self.comboBox_16.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_16.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_16.itemText(i) == machine:
+                self.comboBox_16.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.comboBox_15.count():
+            if self.comboBox_15.itemText(i) == "Let QEMU decide" or self.comboBox_15.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_15.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_15.itemText(i) == cpu:
+                self.comboBox_15.setCurrentIndex(i)
+                break
+
+            i += 1
+
+    def machineCpuAarch64(self, machine, cpu):
+        i = 0
+
+        while i < self.comboBox_17.count():
+            if self.comboBox_17.itemText(i) == "Let QEMU decide" or self.comboBox_17.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_17.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_17.itemText(i) == machine:
+                self.comboBox_17.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.comboBox_18.count():
+            if self.comboBox_18.itemText(i) == "Let QEMU decide" or self.comboBox_18.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_18.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_18.itemText(i) == cpu:
+                self.comboBox_18.setCurrentIndex(i)
+                break
+
+            i += 1
+
+    def vhdAddingChange(self):
+        if self.comboBox_2.currentText() == "Create a new virtual hard drive":
+            # For new and existing
+            self.lineEdit_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
+
+            # For new
+            self.comboBox_3.setEnabled(True)
+            self.spinBox.setEnabled(True)
+            self.comboBox_4.setEnabled(True)
+
+        elif self.comboBox_2.currentText() == "Neue virtuelle Festplatte erstellen":
+            # For new and existing
+            self.lineEdit_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
+
+            # For new
+            self.comboBox_3.setEnabled(True)
+            self.spinBox.setEnabled(True)
+            self.comboBox_4.setEnabled(True)
+
+        elif self.comboBox_2.currentText() == "Add an existing virtual hard drive":
+            # For new and existing
+            self.lineEdit_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
+
+            # For new
+            self.comboBox_3.setEnabled(False)
+            self.spinBox.setEnabled(False)
+            self.comboBox_4.setEnabled(False)
+
+        elif self.comboBox_2.currentText() == "Existierende virtuelle Festplatte anfügen":
+            # For new and existing
+            self.lineEdit_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
+
+            # For new
+            self.comboBox_3.setEnabled(False)
+            self.spinBox.setEnabled(False)
+            self.comboBox_4.setEnabled(False)
+
+        elif self.comboBox_2.currentText() == "Don't add a virtual hard drive":
+            # For new and existing
+            self.lineEdit_2.setEnabled(False)
+            self.pushButton_3.setEnabled(False)
+
+            # For new
+            self.comboBox_3.setEnabled(False)
+            self.spinBox.setEnabled(False)
+            self.comboBox_4.setEnabled(False)
+
+        elif self.comboBox_2.currentText() == "Keine virtuelle Festplatte anfügen":
+            # For new and existing
+            self.lineEdit_2.setEnabled(False)
+            self.pushButton_3.setEnabled(False)
+
+            # For new
+            self.comboBox_3.setEnabled(False)
+            self.spinBox.setEnabled(False)
+            self.comboBox_4.setEnabled(False)
+
+    def vhdBrowseLocation(self):
+        # This code lets you browse the VHD location.
+        if self.comboBox_2.currentText() == "Create a new virtual hard drive":
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
+        elif self.comboBox_2.currentText() == "Neue virtuelle Festplatte erstellen":
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='VHD-Datei speichern', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
+        elif self.comboBox_2.currentText() == "Add an existing virtual hard drive":
+            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
+        elif self.comboBox_2.currentText() == "Existierende virtuelle Festplatte anfügen":
+            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='VHD-Datei öffnen', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
+    def archChanged(self):
+        if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "amd64":
+            self.stackedWidget.setCurrentIndex(0)
+
+        elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
+            self.stackedWidget.setCurrentIndex(1)
+
+        elif self.comboBox.currentText() == "mips" or self.comboBox.currentText() == "mipsel":
+            self.stackedWidget.setCurrentIndex(2)
+        
+        elif self.comboBox.currentText() == "mips64" or self.comboBox.currentText() == "mips64el":
+            self.stackedWidget.setCurrentIndex(2)
+
+        elif self.comboBox.currentText() == "arm" or self.comboBox.currentText() == "aarch64":
+            self.stackedWidget.setCurrentIndex(3)
+
+    def extBiosFileLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_4.setText(filename)
+
+    def linuxKernelBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
+
+        if filename:
+            self.lineEdit_5.setText(filename)
+
+    def linuxInitridBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux initrid image', dir='.', filter='IMG files (*.img);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_6.setText(filename)
 
     def readTempVmFile(self):
         # Searching temporary files
@@ -61,105 +310,128 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             i += 1
 
+        self.archChanged()
+
         if vmSpecs[1] == "i386" or vmSpecs[1] == "x86_64":
             self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
-            self.spinBox.setValue(int(vmSpecs[4]))
+            self.spinBox_2.setValue(int(vmSpecs[4]))
 
         elif vmSpecs[1] == "mips64el" or vmSpecs[1] == "mipsel" or vmSpecs[1] == "mips64" or vmSpecs[1] == "mips":
             self.machineCpuMips64el(vmSpecs[2], vmSpecs[3])
-            self.spinBox_3.setValue(int(vmSpecs[4]))
+            self.spinBox_4.setValue(int(vmSpecs[4]))
 
         elif vmSpecs[1] == "ppc" or vmSpecs[1] == "ppc64":
             self.machineCpuPpc(vmSpecs[2], vmSpecs[3])
-            self.spinBox_2.setValue(int(vmSpecs[4]))
+            self.spinBox_3.setValue(int(vmSpecs[4]))
 
         elif vmSpecs[1] == "aarch64" or vmSpecs[1] == "arm":
             self.machineCpuAarch64(vmSpecs[2], vmSpecs[3])
             self.spinBox_5.setValue(int(vmSpecs[4]))
 
-        self.lineEdit_6.setText(vmSpecs[5])
+        if vmSpecs[5] != "NULL":
+            self.lineEdit_2.setText(vmSpecs[5])
+            i = 0
+
+            while i < self.comboBox_2.count():
+                if self.comboBox_2.itemText(i) == "Add existing virtual hard drive" or self.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+                    self.comboBox_2.setCurrentIndex(i)
+                    break
+
+                i += 1
+
+        else:
+            i = 0
+
+            while i < self.comboBox_2.count():
+                if self.comboBox_2.itemText(i) == "Don't add a virtual hard drive" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+                    self.comboBox_2.setCurrentIndex(i)
+                    break
+
+                i += 1
+
+        self.vhdAddingChange()
 
         i = 0
 
-        while i < self.comboBox_10.count():
-            if self.comboBox_10.itemText(i) == "Let QEMU decide" or self.comboBox_10.itemText(i) == "QEMU überlassen":
+        while i < self.comboBox_7.count():
+            if self.comboBox_7.itemText(i) == "Let QEMU decide" or self.comboBox_7.itemText(i) == "QEMU überlassen":
                 if vmSpecs[6] == "Let QEMU decide":
-                    self.comboBox_10.setCurrentIndex(i)
+                    self.comboBox_7.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_10.itemText(i) == vmSpecs[6]:
-                self.comboBox_10.setCurrentIndex(i)
+            elif self.comboBox_7.itemText(i) == vmSpecs[6]:
+                self.comboBox_7.setCurrentIndex(i)
                 break
 
             i += 1
 
         i = 0
 
-        while i < self.comboBox_11.count():
-            if self.comboBox_11.itemText(i) == vmSpecs[7]:
-                self.comboBox_11.setCurrentIndex(i)
+        while i < self.comboBox_8.count():
+            if self.comboBox_8.itemText(i) == vmSpecs[7]:
+                self.comboBox_8.setCurrentIndex(i)
                 break
 
             i += 1
 
         if vmSpecs[8] == "1":
-            self.checkBox.setChecked(True)
+            self.checkBox_2.setChecked(True)
 
         self.lineEdit_3.setText(vmSpecs[10])
 
         if vmSpecs[9] == "1":
-            self.checkBox_2.setChecked(True)
+            self.checkBox_3.setChecked(True)
 
-        self.lineEdit_2.setText(vmSpecs[11])
+        self.lineEdit_8.setText(vmSpecs[11])
 
         i = 0
 
-        while i < self.comboBox_12.count():
-            if self.comboBox_12.itemText(i) == vmSpecs[12]:
-                self.comboBox_12.setCurrentIndex(i)
+        while i < self.comboBox_10.count():
+            if self.comboBox_10.itemText(i) == vmSpecs[12]:
+                self.comboBox_10.setCurrentIndex(i)
                 break
 
             i += 1
 
-        self.lineEdit_4.setText(vmSpecs[13])
-        self.lineEdit_5.setText(vmSpecs[14])
+        self.lineEdit_5.setText(vmSpecs[13])
+        self.lineEdit_6.setText(vmSpecs[14])
         self.lineEdit_7.setText(vmSpecs[15])
 
         i = 0
 
-        while i < self.comboBox_13.count():
-            if self.comboBox_13.itemText(i) == vmSpecs[16]:
-                self.comboBox_13.setCurrentIndex(i)
+        while i < self.comboBox_5.count():
+            if self.comboBox_5.itemText(i) == vmSpecs[16]:
+                self.comboBox_5.setCurrentIndex(i)
                 break
 
             i += 1
 
-        self.lineEdit_8.setText(vmSpecs[18])
+        self.lineEdit_4.setText(vmSpecs[18])
         self.spinBox_6.setValue(int(vmSpecs[17]))
 
         i = 0
 
-        while i < self.comboBox_16.count():
-            if self.comboBox_16.itemText(i) == vmSpecs[19]:
-                self.comboBox_16.setCurrentIndex(i)
+        while i < self.comboBox_6.count():
+            if self.comboBox_6.itemText(i) == vmSpecs[19]:
+                self.comboBox_6.setCurrentIndex(i)
                 break
 
             i += 1
 
         if vmSpecs[20] == "1":
-            self.checkBox_3.setChecked(True)
+            self.checkBox.setChecked(True)
 
         i = 0
 
-        while i < self.comboBox_17.count():
-            if self.comboBox_17.itemText(i) == vmSpecs[21]:
-                self.comboBox_17.setCurrentIndex(i)
+        while i < self.comboBox_9.count():
+            if self.comboBox_9.itemText(i) == vmSpecs[21]:
+                self.comboBox_9.setCurrentIndex(i)
                 break
 
             i += 1
 
         if vmSpecs[20] == "1":
-            self.checkBox_3.setChecked(True)
+            self.checkBox.setChecked(True)
 
         return vmSpecs
 
@@ -177,6 +449,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "x86_64":
             machine = self.comboBox_12.currentText()
             cpu = self.comboBox_11.currentText()
+
+            if cpu.startswith("Icelake-Client"):
+                cpu = "Icelake-Client"
+
             ram = self.spinBox_2.value()
         
         elif self.comboBox.currentText() == "ppc" or self.comboBox.currentText() == "ppc64":
