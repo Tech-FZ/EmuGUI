@@ -12,6 +12,10 @@ else:
     
 import subprocess
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
+import translations.de
+import translations.uk
+import translations.en
+import locale
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -19,6 +23,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         self.tabWidget.setCurrentIndex(0)
+        self.langDetect()
         self.vmSpecs = self.readTempVmFile()
         
         try:
@@ -36,6 +41,102 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.pushButton_4.clicked.connect(self.extBiosFileLocation)
         self.pushButton_5.clicked.connect(self.linuxKernelBrowseLocation)
         self.pushButton_6.clicked.connect(self.linuxInitridBrowseLocation)
+    
+    def langDetect(self):
+        select_language = """
+        SELECT name, value FROM settings
+        WHERE name = "lang";
+        """
+
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
+        
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
+
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(select_language)
+            connection.commit()
+            result = cursor.fetchall()
+
+            # Language modes
+            # system: language of OS
+            # en: English
+            # de: German
+            langmode = "system"
+
+            try:
+                qemu_img_slot = str(result[0])                 
+
+                if result[0][1] == "en":
+                    langmode = "en"
+
+                elif result[0][1] == "de":
+                    langmode = "de"
+
+                elif result[0][1] == "uk":
+                    langmode = "uk"
+
+                elif result[0][1] == "system":
+                    langmode = "system"
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot already is in the database.")
+
+            except:
+                langmode = "system"
+                self.setLanguage(langmode)
+                print("The query was executed successfully. The language slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def setLanguage(self, langmode):
+        if langmode == "system" or langmode == None:
+            languageToUse = locale.getlocale()[0]
+
+        else:
+            languageToUse = langmode
+
+        print(languageToUse)
+
+        if languageToUse != None:
+            if languageToUse.startswith("de"):
+                translations.de.translateEditVMDE(self)
+
+            elif languageToUse.startswith("uk"):
+                translations.uk.translateEditVMUK(self)
+
+            else:
+                translations.en.translateEditVMEN(self)
+        
+        else:
+            if platform.system() == "Windows":
+                langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+            
+            else:
+                langfile = platformSpecific.unixSpecific.unixLanguageFile()
+            
+            try:
+                with open(langfile, "r+") as language:
+                    languageContent = language.readlines()
+                    languageToUse = languageContent[0].replace("\n", "")
+                
+                if languageToUse != None:
+                    if languageToUse.startswith("de"):
+                        translations.de.translateEditVMDE(self)
+
+                    elif languageToUse.startswith("uk"):
+                        translations.uk.translateEditVMUK(self)
+
+                    else:
+                        translations.en.translateEditVMEN(self)
+            
+            except:
+                print("Translation can't be figured out. Using English language.")
+                translations.en.translateEditVMEN(self)
 
     def machineCpuI386Amd64(self, machine, cpu):
         i = 0

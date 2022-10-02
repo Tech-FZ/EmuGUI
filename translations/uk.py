@@ -40,17 +40,17 @@ def translateMainUK(window):
     window.label_18.setText("qemu-system-mips Path") # qemu-system-mips Path
     window.label_19.setText("qemu-system-mips64 Path") # qemu-system-mips64 Path
 
-    window.pushButton.setText("Переглядати") # Browse
-    window.pushButton_2.setText("Переглядати") # Browse
-    window.pushButton_3.setText("Переглядати") # Browse
-    window.pushButton_4.setText("Переглядати") # Browse
-    window.pushButton_5.setText("Переглядати") # Browse
-    window.pushButton_7.setText("Переглядати") # Browse
-    window.pushButton_12.setText("Переглядати") # Browse
-    window.pushButton_16.setText("Переглядати") # Browse
-    window.pushButton_17.setText("Переглядати") # Browse
-    window.pushButton_18.setText("Переглядати") # Browse
-    window.pushButton_19.setText("Переглядати") # Browse
+    window.pushButton.setText("Огляд") # Browse
+    window.pushButton_2.setText("Огляд") # Browse
+    window.pushButton_3.setText("Огляд") # Browse
+    window.pushButton_4.setText("Огляд") # Browse
+    window.pushButton_5.setText("Огляд") # Browse
+    window.pushButton_7.setText("Огляд") # Browse
+    window.pushButton_12.setText("Огляд") # Browse
+    window.pushButton_16.setText("Огляд") # Browse
+    window.pushButton_17.setText("Огляд") # Browse
+    window.pushButton_18.setText("Огляд") # Browse
+    window.pushButton_19.setText("Огляд") # Browse
     window.pushButton_6.setText("Застосувати") # Apply
 
     # Update tab
@@ -96,7 +96,7 @@ def translateMainUK(window):
 
 def translateNewVmUK(window):
     # First page
-    window.label.setText("Назва") # Name
+    window.label.setText("Звати") # Name
     window.label_3.setText("Архітектура") # Architecture
     window.comboBox.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
@@ -276,7 +276,7 @@ def translateNewVmUK(window):
 
     window.comboBox_8.setPlaceholderText("(Please select a file format)") # (Please select a file format)
 
-    window.pushButton_13.setText("Переглядати") # Browse
+    window.pushButton_13.setText("Огляд") # Browse
     window.pushButton_16.setText("< Попередній") # < Previous
     window.pushButton_14.setText("Наступний >") # Next >
     window.pushButton_15.setText("Скасувати") # Cancel
@@ -300,7 +300,7 @@ def translateNewVmUK(window):
 
     window.label_32.setText("External BIOS file") # External BIOS file
 
-    window.pushButton_36.setText("Переглядати") # Browse
+    window.pushButton_36.setText("Огляд") # Browse
     window.pushButton_25.setText("< Попередній") # < Previous
     window.pushButton_24.setText("Наступний >") # Next >
     window.pushButton_23.setText("Скасувати") # Cancel
@@ -319,8 +319,8 @@ def translateNewVmUK(window):
     window.label_25.setText("Linux initrd імідж") # Linux initrd image
     window.label_26.setText("Linux cmd args") # Linux cmd args
 
-    window.pushButton.setText("Переглядати") # Browse
-    window.pushButton_32.setText("Переглядати") # Browse
+    window.pushButton.setText("Огляд") # Browse
+    window.pushButton_32.setText("Огляд") # Browse
     window.pushButton_31.setText("< Попередній") # < Previous
     window.pushButton_30.setText("Наступний >") # Next >
     window.pushButton_29.setText("Скасувати") # Cancel
@@ -343,8 +343,8 @@ def translateStartVmUK(window):
     Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
     """) # Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
 
-    window.pushButton.setText("Переглядати") # Browse
-    window.pushButton_2.setText("Переглядати") # Browse
+    window.pushButton.setText("Огляд") # Browse
+    window.pushButton_2.setText("Огляд") # Browse
     window.pushButton_5.setText("Set to system") # Set to system
     window.pushButton_3.setText("Запустіть VM") # Start VM
     window.pushButton_4.setText("Скасувати") # Cancel
@@ -422,3 +422,186 @@ def translateQemuImgMissingUK(window):
         ) # Sorry but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Settings/QEMU to solve this issue.
 
     window.pushButton.setText("OK") # OK
+
+def translateEditVMUK(window):
+    # Buttons on all tabs
+    window.pushButton.setText("Скасувати") # Cancel
+    window.pushButton.setText("OK") # OK
+
+    # Tab names
+    window.tabWidget.setTabText(0, "Загальний") # General
+    window.tabWidget.setTabText(1, "Машина") # Machine
+    window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
+    window.tabWidget.setTabText(3, "Периферійний") # Peripherals
+    window.tabWidget.setTabText(4, "BIOS") # BIOS
+    window.tabWidget.setTabText(6, "Additional components") # Additional components
+
+    # Translations for General tab
+    window.label.setText("Звати") # Name
+    window.label_2.setText("Архітектура") # Architecture
+
+    # Translations for Machine tab
+
+    # i386 and x64
+    window.label_17.setText("Процесор") # CPU
+    window.label_18.setText("Машина") # Machine
+    window.label_19.setText("RAM у MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_11.count():
+        if window.comboBox_11.itemText(i) == "Let QEMU decide" or window.comboBox_11.itemText(i) == "QEMU überlassen":
+            window.comboBox_11.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_12.count():
+        if window.comboBox_12.itemText(i) == "Let QEMU decide" or window.comboBox_12.itemText(i) == "QEMU überlassen":
+            window.comboBox_12.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # PowerPC
+    window.label_20.setText("Процесор") # CPU
+    window.label_22.setText("Машина") # Machine
+    window.label_21.setText("RAM у MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_13.count():
+        if window.comboBox_13.itemText(i) == "Let QEMU decide" or window.comboBox_13.itemText(i) == "QEMU überlassen":
+            window.comboBox_13.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_14.count():
+        if window.comboBox_14.itemText(i) == "Let QEMU decide" or window.comboBox_14.itemText(i) == "QEMU überlassen":
+            window.comboBox_14.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # MIPS
+    window.label_23.setText("Процесор") # CPU
+    window.label_25.setText("Машина") # Machine
+    window.label_24.setText("RAM у MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_15.count():
+        if window.comboBox_15.itemText(i) == "Let QEMU decide" or window.comboBox_15.itemText(i) == "QEMU überlassen":
+            window.comboBox_15.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_16.count():
+        if window.comboBox_16.itemText(i) == "Let QEMU decide" or window.comboBox_16.itemText(i) == "QEMU überlassen":
+            window.comboBox_16.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # ARM
+    window.label_26.setText("Процесор") # CPU
+    window.label_28.setText("Машина") # Machine
+    window.label_27.setText("RAM у MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_17.count():
+        if window.comboBox_17.itemText(i) == "Let QEMU decide" or window.comboBox_17.itemText(i) == "QEMU überlassen":
+            window.comboBox_17.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_18.count():
+        if window.comboBox_18.itemText(i) == "Let QEMU decide" or window.comboBox_18.itemText(i) == "QEMU überlassen":
+            window.comboBox_18.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # Translations for VHD tab
+    window.label_3.setText("VHD usage") # VHD usage
+    window.label_4.setText("VHD path") # VHD path
+    window.label_5.setText("VHD фаіл формат") # VHD file format
+    window.label_6.setText("Maximum size") # Maximum size
+    window.pushButton_3.setText("Огляд") # Browse
+    
+    # Combobox for VHD usage
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Create a new virtual hard drive":
+            window.comboBox_2.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Neue virtuelle Festplatte erstellen":
+            window.comboBox_2.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Add an existing virtual hard drive":
+            window.comboBox_2.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+            window.comboBox_2.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Don't add a virtual hard drive":
+            window.comboBox_2.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+            window.comboBox_2.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        i += 1
+
+    # Translations for Peripherals tab
+    window.label_7.setText("Mouse type") # Mouse type
+    window.label_8.setText("Keyboard type") # Keyboard type
+    
+    # Translations for BIOS tab
+    # Location of external BIOS file (Leave empty to use the default BIOS)
+    window.label_11.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
+    window.label_12.setText("External BIOS file") # External BIOS file
+    window.pushButton_4.setText("Огляд") # Browse
+
+    # Translations for Linux tab
+    window.label_13.setText("Linux kernel") # Linux kernel
+    window.label_14.setText("Linux initrd image") # Linux initrd image
+    window.label_15.setText("Linux cmd arguments") # Linux cmd arguments
+    window.pushButton_5.setText("Огляд") # Browse
+    window.pushButton_6.setText("Огляд") # Browse
+
+    # Translations for Additional components tab
+    window.label_9.setText("VGA") # VGA
+    window.label_10.setText("Network adapter") # Network adapter
+    window.label_16.setText("Sound card") # Sound card
+    window.label_29.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
+    window.label_30.setText("CPU cores") # CPU cores
+    window.checkBox.setText("Add USB support") # Add USB support

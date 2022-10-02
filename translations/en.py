@@ -422,3 +422,186 @@ def translateQemuImgMissingEN(window):
         ) # Sorry but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Settings/QEMU to solve this issue.
 
     window.pushButton.setText("OK") # OK
+
+def translateEditVMEN(window):
+    # Buttons on all tabs
+    window.pushButton.setText("Cancel") # Cancel
+    window.pushButton.setText("OK") # OK
+
+    # Tab names
+    window.tabWidget.setTabText(0, "General") # General
+    window.tabWidget.setTabText(1, "Machine") # Machine
+    window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
+    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(4, "BIOS") # BIOS
+    window.tabWidget.setTabText(6, "Additional components") # Additional components
+
+    # Translations for General tab
+    window.label.setText("Name") # Name
+    window.label_2.setText("Architecture") # Architecture
+
+    # Translations for Machine tab
+
+    # i386 and x64
+    window.label_17.setText("CPU") # CPU
+    window.label_18.setText("Machine") # Machine
+    window.label_19.setText("RAM in MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_11.count():
+        if window.comboBox_11.itemText(i) == "Let QEMU decide" or window.comboBox_11.itemText(i) == "QEMU überlassen":
+            window.comboBox_11.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_12.count():
+        if window.comboBox_12.itemText(i) == "Let QEMU decide" or window.comboBox_12.itemText(i) == "QEMU überlassen":
+            window.comboBox_12.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # PowerPC
+    window.label_20.setText("CPU") # CPU
+    window.label_22.setText("Machine") # Machine
+    window.label_21.setText("RAM in MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_13.count():
+        if window.comboBox_13.itemText(i) == "Let QEMU decide" or window.comboBox_13.itemText(i) == "QEMU überlassen":
+            window.comboBox_13.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_14.count():
+        if window.comboBox_14.itemText(i) == "Let QEMU decide" or window.comboBox_14.itemText(i) == "QEMU überlassen":
+            window.comboBox_14.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # MIPS
+    window.label_23.setText("CPU") # CPU
+    window.label_25.setText("Machine") # Machine
+    window.label_24.setText("RAM in MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_15.count():
+        if window.comboBox_15.itemText(i) == "Let QEMU decide" or window.comboBox_15.itemText(i) == "QEMU überlassen":
+            window.comboBox_15.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_16.count():
+        if window.comboBox_16.itemText(i) == "Let QEMU decide" or window.comboBox_16.itemText(i) == "QEMU überlassen":
+            window.comboBox_16.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # ARM
+    window.label_26.setText("CPU") # CPU
+    window.label_28.setText("Machine") # Machine
+    window.label_27.setText("RAM in MB") # RAM in MB
+
+    i = 0
+
+    while i < window.comboBox_17.count():
+        if window.comboBox_17.itemText(i) == "Let QEMU decide" or window.comboBox_17.itemText(i) == "QEMU überlassen":
+            window.comboBox_17.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_18.count():
+        if window.comboBox_18.itemText(i) == "Let QEMU decide" or window.comboBox_18.itemText(i) == "QEMU überlassen":
+            window.comboBox_18.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # Translations for VHD tab
+    window.label_3.setText("VHD usage") # VHD usage
+    window.label_4.setText("VHD path") # VHD path
+    window.label_5.setText("VHD file format") # VHD file format
+    window.label_6.setText("Maximum size") # Maximum size
+    window.pushButton_3.setText("Browse") # Browse
+    
+    # Combobox for VHD usage
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Create a new virtual hard drive":
+            window.comboBox_2.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Neue virtuelle Festplatte erstellen":
+            window.comboBox_2.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Add an existing virtual hard drive":
+            window.comboBox_2.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+            window.comboBox_2.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_2.count():
+        if window.comboBox_2.itemText(i) == "Don't add a virtual hard drive":
+            window.comboBox_2.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+            window.comboBox_2.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        i += 1
+
+    # Translations for Peripherals tab
+    window.label_7.setText("Mouse type") # Mouse type
+    window.label_8.setText("Keyboard type") # Keyboard type
+    
+    # Translations for BIOS tab
+    # Location of external BIOS file (Leave empty to use the default BIOS)
+    window.label_11.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
+    window.label_12.setText("External BIOS file") # External BIOS file
+    window.pushButton_4.setText("Browse") # Browse
+
+    # Translations for Linux tab
+    window.label_13.setText("Linux kernel") # Linux kernel
+    window.label_14.setText("Linux initrd image") # Linux initrd image
+    window.label_15.setText("Linux cmd arguments") # Linux cmd arguments
+    window.pushButton_5.setText("Browse") # Browse
+    window.pushButton_6.setText("Browse") # Browse
+
+    # Translations for Additional components tab
+    window.label_9.setText("VGA") # VGA
+    window.label_10.setText("Network adapter") # Network adapter
+    window.label_16.setText("Sound card") # Sound card
+    window.label_29.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
+    window.label_30.setText("CPU cores") # CPU cores
+    window.checkBox.setText("Add USB support") # Add USB support
