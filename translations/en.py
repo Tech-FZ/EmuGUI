@@ -27,6 +27,16 @@ def translateMainEN(window):
 
         i += 1
 
+    # Combo box for themes
+    i = 0
+
+    while i < window.comboBox_5.count():
+        if window.comboBox_5.itemText(i) == "System default" or window.comboBox_5.itemText(i) == "Systemstandard":
+            window.comboBox_5.setItemText(i, "System default") # System default
+            break
+
+        i += 1
+
     # QEMU tab
     window.label.setText("qemu-img Path") # qemu-img Path
     window.label_2.setText("qemu-system-i386 Path") # qemu-system-i386 Path
@@ -426,7 +436,7 @@ def translateQemuImgMissingEN(window):
 def translateEditVMEN(window):
     # Buttons on all tabs
     window.pushButton.setText("Cancel") # Cancel
-    window.pushButton.setText("OK") # OK
+    window.pushButton_2.setText("OK") # OK
 
     # Tab names
     window.tabWidget.setTabText(0, "General") # General

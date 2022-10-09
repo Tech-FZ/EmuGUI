@@ -99,15 +99,26 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.comboBox_4, 0, 1, 1, 1)
 
+        self.pushButton_15 = QPushButton(self.gridLayoutWidget_6)
+        self.pushButton_15.setObjectName(u"pushButton_15")
+
+        self.gridLayout_7.addWidget(self.pushButton_15, 2, 1, 1, 1)
+
         self.label_15 = QLabel(self.gridLayoutWidget_6)
         self.label_15.setObjectName(u"label_15")
 
         self.gridLayout_7.addWidget(self.label_15, 0, 0, 1, 1)
 
-        self.pushButton_15 = QPushButton(self.gridLayoutWidget_6)
-        self.pushButton_15.setObjectName(u"pushButton_15")
+        self.label_20 = QLabel(self.gridLayoutWidget_6)
+        self.label_20.setObjectName(u"label_20")
 
-        self.gridLayout_7.addWidget(self.pushButton_15, 1, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.label_20, 1, 0, 1, 1)
+
+        self.comboBox_5 = QComboBox(self.gridLayoutWidget_6)
+        self.comboBox_5.addItem("")
+        self.comboBox_5.setObjectName(u"comboBox_5")
+
+        self.gridLayout_7.addWidget(self.comboBox_5, 1, 1, 1, 1)
 
         self.tabWidget_2.addTab(self.tab_6, "")
         self.tab_3 = QWidget()
@@ -413,8 +424,11 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(2, QCoreApplication.translate("MainWindow", u"Deutsch", None))
         self.comboBox_4.setItemText(3, QCoreApplication.translate("MainWindow", u"\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430", None))
 
-        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Language", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Language", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Theme", None))
+        self.comboBox_5.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
+
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"General", None))
         self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
         self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"Browse", None))

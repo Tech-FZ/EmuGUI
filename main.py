@@ -41,7 +41,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.8.0.5203_dev - This preview is not meant for productive use.")
+        self.label_8.setText("EmuGUI v0.8.0.5204_dev - This preview is not meant for productive use.")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -51,13 +51,21 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5203
+        self.versionCode = 5204
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
         
         else:
             self.connection = platformSpecific.unixSpecific.setupUnixBackend()
+
+        self.defaultTheme = self.style().objectName()
+        self.osThemes = QStyleFactory.keys()
+        print(self.osThemes)
+
+        for osTheme in self.osThemes:
+            self.comboBox_5.addItem(osTheme)
+            print(osTheme)
         
         self.prepareDatabase(self.connection)
         self.updateVmList()
@@ -339,6 +347,15 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        # Theme support
+        insert_theme = """
+        INSERT INTO settings (
+            name, value
+        ) VALUES (
+            "theme", "default"
+        );
+        """
+
         # The mirrors are GitHub and Codeberg
         insert_update_mirror = """
         INSERT INTO updater (
@@ -430,6 +447,11 @@ class Window(QMainWindow, Ui_MainWindow):
         select_language = """
         SELECT name, value FROM settings
         WHERE name = "lang";
+        """
+
+        select_theme = """
+        SELECT name, value FROM settings
+        WHERE name = "theme";
         """
 
         select_update_mirror = """
@@ -782,6 +804,54 @@ class Window(QMainWindow, Ui_MainWindow):
                     
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_theme)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                print("The query was executed successfully. The theme slot already is in the database.")
+                print(result[0][1])
+
+                if result[0][1] != "default":
+                    for osTheme in self.osThemes:
+                        if result[0][1].__contains__(osTheme):
+                            try:
+                                print(osTheme)
+                                app.setStyle(osTheme)
+
+                                i = 0
+                                while i < self.comboBox_5.count():
+                                    if self.comboBox_5.itemText(i) == osTheme:
+                                        self.comboBox_5.setCurrentIndex(i)
+                                        break
+
+                                    i += 1
+                            except:
+                                print("Style couldn't be applied.")
+                
+                else:
+                    i = 0
+                    while i < self.comboBox_5.count():
+                        if self.comboBox_5.itemText(i) == "System default":
+                            self.comboBox_5.setCurrentIndex(i)
+                            break
+
+                        elif self.comboBox_5.itemText(i) == "Systemstandard":
+                            self.comboBox_5.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+            except:
+                cursor.execute(insert_theme)
+                connection.commit()
+                print("The query was executed successfully. The theme slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -1626,6 +1696,18 @@ class Window(QMainWindow, Ui_MainWindow):
         WHERE name = 'lang';
         """
 
+        theme_default = f"""
+        UPDATE settings
+        SET value = 'default'
+        WHERE name = 'theme';
+        """
+
+        theme_custom = f"""
+        UPDATE settings
+        SET value = '{self.comboBox_5.currentText()}'
+        WHERE name = 'theme';
+        """
+
         connection = self.connection
         cursor = connection.cursor()
 
@@ -1773,6 +1855,40 @@ class Window(QMainWindow, Ui_MainWindow):
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
                 self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
+        if self.comboBox_5.currentText() == "System default" or self.comboBox_5.currentText() == "Systemstandard":
+            try:
+                cursor.execute(theme_default)
+                connection.commit()
+                
+                app.setStyle(self.defaultTheme)
+
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+        
+        else:
+            try:
+                cursor.execute(theme_custom)
+                connection.commit()
+                
+                for osTheme in self.osThemes:
+                    if self.comboBox_5.currentText() == osTheme:
+                        app.setStyle(self.comboBox_5.currentText())
+
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:

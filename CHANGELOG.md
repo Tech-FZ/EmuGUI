@@ -1,3 +1,18 @@
+# EmuGUI v0.8.0.5204_dev (based on v0.8.0.5203_dev)
+
+## Changes compared to v0.7.6.5112
+
+- Support for the MIPS and MIPS64 big-endian architectures has been added.
+- With a new dialog, editing VMs has been made more convenient than it was before.
+- The edit VM dialog has been translated into the currently supported languages.
+- "Переглядати" in Ukrainian has been changed to "Огляд" in the entire program.
+- Same applies with "Назва", which is now "Звати".
+- You can now choose a specific theme for EmuGUI. The number of themes included by default depends on your operating system.
+
+## Changes made within development of this feature level
+
+- An issue which translated both buttons at the bottom of the edit VM dialog to "OK" has been corrected.
+
 # EmuGUI v0.8.0.5203_dev (based on v0.8.0.5202_dev)
 
 ## Changes compared to v0.7.6.5112
