@@ -32,6 +32,7 @@ import translations.uk
 import translations.en
 import requests
 import locale
+import glob
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -66,6 +67,21 @@ class Window(QMainWindow, Ui_MainWindow):
         for osTheme in self.osThemes:
             self.comboBox_5.addItem(osTheme)
             print(osTheme)
+
+        self.userThemeFileList = glob.glob("themes/*.qss")
+        self.userThemeList = []
+        
+        for userThemeFile in self.userThemeFileList:
+            userTheme = userThemeFile.replace(".qss", "")
+            
+            if platform.system() == "Windows":
+                userTheme = userTheme.replace("themes\\", "")
+            
+            else:
+                userTheme = userTheme.replace("themes/", "")
+            
+            self.comboBox_5.addItem(userTheme)
+            self.userThemeList.append(userTheme)
         
         self.prepareDatabase(self.connection)
         self.updateVmList()
@@ -828,6 +844,26 @@ class Window(QMainWindow, Ui_MainWindow):
                                 i = 0
                                 while i < self.comboBox_5.count():
                                     if self.comboBox_5.itemText(i) == osTheme:
+                                        self.comboBox_5.setCurrentIndex(i)
+                                        break
+
+                                    i += 1
+                            except:
+                                print("Style couldn't be applied.")
+                    
+                    for userTheme in self.userThemeList:
+                        if result[0][1].__contains__(userTheme):
+                            try:
+                                print(userTheme)
+                                userThemeFile = "themes/" + userTheme + ".qss"
+
+                                with open(userThemeFile, "r") as themeFile:
+                                    style = themeFile.read()
+                                    app.setStyleSheet(style)
+
+                                i = 0
+                                while i < self.comboBox_5.count():
+                                    if self.comboBox_5.itemText(i) == userTheme:
                                         self.comboBox_5.setCurrentIndex(i)
                                         break
 
@@ -1873,6 +1909,9 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 print("The query was executed successfully.")
 
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
@@ -1888,6 +1927,18 @@ class Window(QMainWindow, Ui_MainWindow):
                 for osTheme in self.osThemes:
                     if self.comboBox_5.currentText() == osTheme:
                         app.setStyle(self.comboBox_5.currentText())
+
+                        dialog = SettingsRequireEmuGUIReboot(self)
+                        dialog.exec()
+
+                for userTheme in self.userThemeList:
+                    if self.comboBox_5.currentText() == userTheme:
+                        print(userTheme)
+                        userThemeFile = "themes/" + userTheme + ".qss"
+
+                        with open(userThemeFile, "r") as themeFile:
+                            style = themeFile.read()
+                            app.setStyleSheet(style)
 
                 print("The query was executed successfully.")
 

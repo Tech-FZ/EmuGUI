@@ -1,0 +1,50 @@
+QMainWindow {
+    background-color: #47B5FF;
+}
+
+QTabBar::tab {
+    background-color: #47B5FF;
+    border: 1px solid black;
+    padding: 3px;
+}
+
+QTabBar::tab:selected { 
+  background: #2192FF; 
+  margin-bottom: -1px; 
+}
+
+QWidget {
+    background-color: #47B5FF;
+}
+
+QListView {
+    background-color: #3B9AE1;
+}
+
+QListView::item:hover {
+    background-color: #2192FF;
+    color: black;
+}
+
+QListView::item:selected {
+    background-color: #083AA9;
+    color: white;
+}
+
+QPushButton {
+    background-color: #083AA9;
+    color: white;
+}
+
+QPushButton::hover {
+    background-color: #2192FF;
+    color: black;
+}
+
+QCheckBox::indicator {
+    background-color: red;
+}
+
+QCheckBox::indicator:checked {
+    background-color: green;
+}
