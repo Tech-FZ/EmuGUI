@@ -143,7 +143,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 8. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
 9. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic-bin`
+11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic-bin requests`
 12. After this is done, run the main.py script.
 13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
 14. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -164,7 +164,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 10. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
 11. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic-bin`
+13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic-bin requests`
 14. After this is done, run the main.py script.
 15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
 16. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -182,7 +182,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 7. Open Visual Studio Code in that folder.
 8. Open Anaconda Navigator and create a new virtual environment.
 9. Open the venv in VS Code and try to run a Python script with it.
-10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6`
+10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6 requests`
 11. After this is done, run the main.py script.
 12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
 13. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -197,7 +197,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
 5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
 6. Open Visual Studio Code in that folder.
-7. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic`. You can try getting a VENV working but I personally have problems with using Python virtual environments on Linux.
+7. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic requests`. You can try getting a VENV working but I personally have problems with using Python virtual environments on Linux.
 8. After this is done, run the main.py script.
 9. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile main.py` (for those who can get a VENV to work) or `python3 -m PyInstaller --onefile main.py`
 10. After that is finished, copy the code into the dist folder PyInstaller created.

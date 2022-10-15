@@ -1,3 +1,16 @@
+# EmuGUI v0.8.0.5205_dev (based on v0.8.0.5204_dev)
+
+## Changes compared to v0.7.6.5112
+
+- Support for the MIPS and MIPS64 big-endian architectures has been added.
+- With a new dialog, editing VMs has been made more convenient than it was before.
+- The edit VM dialog has been translated into the currently supported languages.
+- "Переглядати" in Ukrainian has been changed to "Огляд" in the entire program.
+- Same applies with "Назва", which is now "Звати".
+- You can now choose a specific theme for EmuGUI. The number of themes included by default depends on your operating system.
+- The requests module is now included into the default pip command of README.md.
+- The Windows binaries will be made with Python 3.10.8 instead of 3.10.7.
+
 # EmuGUI v0.8.0.5204_dev (based on v0.8.0.5203_dev)
 
 ## Changes compared to v0.7.6.5112
