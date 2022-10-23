@@ -338,8 +338,8 @@ def translateNewVmUK(window):
     # Eighth page
     window.label_2.setText("Additional arguments (if needed)") # Additional arguments (if needed)
 
-    window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
-    window.checkBox_3.setText("Add USB support") # Add USB support
+    window.checkBox_2.setText("Я хочу установити Windows 2000\n(Знецінений)") # I want to install Windows 2000\n(depreciated)
+    window.checkBox_3.setText("Добавити USB пітримка") # Add USB support
 
     window.pushButton_22.setText("< Попередній") # < Previous
     window.pushButton_20.setText("Закінчити") # Finish
@@ -602,8 +602,8 @@ def translateEditVMUK(window):
     window.pushButton_4.setText("Огляд") # Browse
 
     # Translations for Linux tab
-    window.label_13.setText("Linux kernel") # Linux kernel
-    window.label_14.setText("Linux initrd image") # Linux initrd image
+    window.label_13.setText("Linux ядро") # Linux kernel
+    window.label_14.setText("Linux initrd імідж") # Linux initrd image
     window.label_15.setText("Linux cmd arguments") # Linux cmd arguments
     window.pushButton_5.setText("Огляд") # Browse
     window.pushButton_6.setText("Огляд") # Browse
@@ -614,4 +614,4 @@ def translateEditVMUK(window):
     window.label_16.setText("Sound card") # Sound card
     window.label_29.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
     window.label_30.setText("CPU cores") # CPU cores
-    window.checkBox.setText("Add USB support") # Add USB support
+    window.checkBox.setText("Добавити USB пітримка") # Add USB support
