@@ -78,3 +78,18 @@ def unixLanguageFile():
         fileName = f"/home/{userName}/EmuGUI/lang.txt"
         
     return fileName
+
+def unixUpdateFile():
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())[0]
+
+    if userName == "root":
+        fileName = f"/{userName}/EmuGUI/update.txt"
+
+    else:
+        fileName = f"/home/{userName}/EmuGUI/update.txt"
+
+    return fileName

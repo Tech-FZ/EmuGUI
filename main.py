@@ -42,7 +42,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v0.8.0.5206")
+        self.label_8.setText("EmuGUI v0.9.0.5300")
         self.setWindowTitle("EmuGUI")
         self.languageInUse = "system"
 
@@ -52,7 +52,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5206
+        self.versionCode = 5300
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1999,12 +1999,23 @@ class Window(QMainWindow, Ui_MainWindow):
 
             
             rq = requests.get(url, allow_redirects=True)
-            newVer = open("update.txt", "wb+")
+
+            if platform.system() == "Windows":
+                newVer = open(platformSpecific.windowsSpecific.windowsUpdateFile(), "wb+")
+
+            else:
+                newVer = open(platformSpecific.unixSpecific.unixUpdateFile(), "wb+")
+            
             newVer.write(rq.content)
             newVer.close()
             latest_versions = []
 
-            newVer = open("update.txt", "r+")
+            if platform.system() == "Windows":
+                newVer = open(platformSpecific.windowsSpecific.windowsUpdateFile(), "wb+")
+
+            else:
+                newVer = open(platformSpecific.unixSpecific.unixUpdateFile(), "wb+")
+                
             newVerContent = newVer.readlines()
 
             for line in newVerContent:

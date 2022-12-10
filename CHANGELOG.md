@@ -1,3 +1,10 @@
+# EmuGUI v0.9.0.5300_dev (based on v0.8.0.5206)
+
+## Changes compared to v0.8.0.5206
+
+- The old feature list has been updated beforehand.
+- Also, the update file will now be created in your user directory (instead of in the root).
+
 # EmuGUI v0.8.0.5206 (based on v0.8.0.5205_dev)
 
 ## Changes compared to v0.7.6.5112

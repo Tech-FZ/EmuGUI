@@ -38,3 +38,8 @@ def windowsLanguageFile():
     userName = os.getlogin()
     fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\lang.txt"
     return fileName
+
+def windowsUpdateFile():
+    userName = os.getlogin()
+    fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\update.txt"
+    return fileName
