@@ -1,3 +1,12 @@
+# EmuGUI v0.9.0.5301_dev (based on v0.9.0.5300_dev)
+
+## Changes compared to v0.8.0.5206
+
+- The old feature list has been updated beforehand.
+- Also, the update file will now be created in your user directory (instead of in the root).
+- The database now supports the keyboard layout selection, which hasn't been implemented as of yet.
+- Also, this is the first release which is hosted on GitLab as well as Codeberg is not accessable in Belarus.
+
 # EmuGUI v0.9.0.5300_dev (based on v0.8.0.5206)
 
 ## Changes compared to v0.8.0.5206

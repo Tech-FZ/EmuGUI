@@ -299,10 +299,10 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             qemu_to_execute = result[0][0]
 
             if platform.system() == "Windows":
-                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]}"
+                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base=\"{dateTimeForVM}\",clock=vm -smp {self.vmSpecs[17]} -k {self.vmSpecs[21]}"
 
             else:
-                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base={dateTimeForVM},clock=vm -smp {self.vmSpecs[17]}"
+                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -rtc base={dateTimeForVM},clock=vm -smp {self.vmSpecs[17]} -k {self.vmSpecs[21]}"
 
             if self.vmSpecs[5] != "NULL":
                 if magic.from_file(self.vmSpecs[5]) == "block special":
