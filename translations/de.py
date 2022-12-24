@@ -393,7 +393,7 @@ def translateVhdExistsDE(window):
 
 def translateUpdateAvailableDE(window):
     window.label.setText(
-        "Es ist ein Update verfügbar! Möchten Sie für den Download weitergeleitet werden?\nHinweis: Wollen Sie Pre-Release-Updates haben, werden Sie unabhängig vom bevorzugten Update-Spiegel zum Pre-Release-Repository auf Codeberg weitergeleitet."
+        "Es ist ein Update verfügbar! Möchten Sie für den Download weitergeleitet werden?\nHinweis: Wollen Sie Pre-Release-Updates haben, werden Sie unabhängig vom bevorzugten Update-Spiegel zum Pre-Release-Repository auf Codeberg weitergeleitet.\n\nThe \"I want to download a pre-release from GitLab!\" button is only here temporarily as the stable repository hasn't been hosted on there yet at the time this pre-release version has been worked on."
         ) # An update is available! Do you want to be redirected to download?\nNote: If you check for pre-release updates, you will be redirected to the pre-release repository on Codeberg regardless of your preferred update mirror.
 
     window.pushButton.setText("Ja") # Yes

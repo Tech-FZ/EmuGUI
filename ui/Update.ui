@@ -26,14 +26,10 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="pushButton_2">
       <property name="text">
-       <string>An update is available! Do you want to be redirected to download?
-Note: If you check for pre-release updates, you will be redirected to the pre-release repository on Codeberg regardless of your preferred update mirror.</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
+       <string>No</string>
       </property>
      </widget>
     </item>
@@ -44,10 +40,23 @@ Note: If you check for pre-release updates, you will be redirected to the pre-re
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>No</string>
+       <string>An update is available! Do you want to be redirected to download?
+Note: If you check for pre-release updates, you will be redirected to the pre-release repository on Codeberg regardless of your preferred update mirror.
+
+The &quot;I want to download a pre-release from GitLab!&quot; button is only here temporarily as the stable repository hasn't been hosted on there yet at the time this pre-release version has been worked on.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>I want to download a pre-release from GitLab!</string>
       </property>
      </widget>
     </item>

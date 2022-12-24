@@ -11,7 +11,9 @@ GitHub: https://github.com/Tech-FZ/EmuGUI
 
 Codeberg: https://codeberg.org/lucien-rowan/EmuGUI
 
-Pre-releases: https://codeberg.org/lucien-rowan/EmuGUI-PreRelease
+Pre-releases (Codeberg): https://codeberg.org/lucien-rowan/EmuGUI-PreRelease
+
+Pre-releases (GitLab): https://gitlab.com/Tech-FZ/emugui-prerelease
 
 ## Versioning
 
@@ -40,7 +42,7 @@ For the update checker, a version code is being used instead of the number. Here
 | Update type | Next version code |
 | ----------- | ----------------- |
 | Preview update | current version code + 1 |
-| Bugfix/minor update | current version code + 1|
+| Bugfix/minor update | current version code + 1 |
 | Feature update | current version code rounded up to the next hundred (e. g. 4237 becomes 4300) |
 
 ## We're Using GitHub Under Protest

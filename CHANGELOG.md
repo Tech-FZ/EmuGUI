@@ -1,3 +1,13 @@
+# EmuGUI v0.9.0.5302_dev (based on v0.9.0.5301_dev)
+
+## Changes compared to v0.8.0.5206
+
+- The old feature list has been updated beforehand.
+- Also, the update file will now be created in your user directory (instead of in the root).
+- The database now supports the keyboard layout selection, which hasn't been implemented as of yet.
+- This release is only put in place to ensure you can be directly redirected to GitLab as well. Please note that this is only a temporary action while we prepare to mirror the entirety of EmuGUI on GitLab.
+- Also, the GitLab mirror has been added to the Readme.
+
 # EmuGUI v0.9.0.5301_dev (based on v0.9.0.5300_dev)
 
 ## Changes compared to v0.8.0.5206

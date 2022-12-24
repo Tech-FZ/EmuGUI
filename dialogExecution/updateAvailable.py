@@ -34,7 +34,14 @@ class UpdateAvailable(QDialog, Ui_Dialog):
     def connectSignalsSlots(self):
         self.pushButton.clicked.connect(self.redirectToWebsite)
         self.pushButton_2.clicked.connect(self.close)
+        self.pushButton_3.clicked.connect(self.tempRedirectToGitLab) # temporary line of code
 
+    # Temporary
+    def tempRedirectToGitLab(self):
+        webbrowser.open("https://gitlab.com/Tech-FZ/emugui-prerelease")
+        self.close()
+
+    # This is the main code again.
     def redirectToWebsite(self):
         if platform.system() == "Windows":
             connection = platformSpecific.windowsSpecific.setupWindowsBackend()
