@@ -64,35 +64,35 @@ def translateMainDE(window):
     window.pushButton_6.setText("Übernehmen") # Apply
 
     # Update tab
-    window.label_12.setText("Update-Spiegel") # Update mirror
-    window.label_13.setText("Häufigkeit der Update-Benachrichtigungen") # Update notify frequency
-    window.label_14.setText("Update-Kanal") # Update channel
+    #window.label_12.setText("Update-Spiegel") # Update mirror
+    #window.label_13.setText("Häufigkeit der Update-Benachrichtigungen") # Update notify frequency
+    #window.label_14.setText("Update-Kanal") # Update channel
 
-    window.pushButton_13.setText("Nach Updates suchen") # Check for updates
-    window.pushButton_14.setText("Übernehmen") # Apply
+    #window.pushButton_13.setText("Nach Updates suchen") # Check for updates
+    #window.pushButton_14.setText("Übernehmen") # Apply
 
     # Combo box for update frequencies
-    i = 0
+    #i = 0
 
-    while i < window.comboBox_2.count():
-        if window.comboBox_2.itemText(i) == "Everytime I run this program":
-            window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe") # Everytime I run this program
-            break
+    #while i < window.comboBox_2.count():
+    #    if window.comboBox_2.itemText(i) == "Everytime I run this program":
+    #        window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe") # Everytime I run this program
+    #        break
 
-        elif window.comboBox_2.itemText(i) == "Jedes Mal, wenn ich dieses Programm ausführe":
-            window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe") # Everytime I run this program
-            break
+    #    elif window.comboBox_2.itemText(i) == "Jedes Mal, wenn ich dieses Programm ausführe":
+    #        window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe") # Everytime I run this program
+    #        break
 
-        i += 1
+    #    i += 1
 
-    i = 0
+    #i = 0
 
-    while i < window.comboBox_2.count():
-        if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie" or window.comboBox_2.itemText(i) == "Ніколи":
-            window.comboBox_2.setItemText(i, "Nie") # Never
-            break
+    #while i < window.comboBox_2.count():
+    #    if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie" or window.comboBox_2.itemText(i) == "Ніколи":
+    #        window.comboBox_2.setItemText(i, "Nie") # Never
+    #        break
 
-        i += 1
+    #    i += 1
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
@@ -391,6 +391,7 @@ def translateVhdExistsDE(window):
     window.pushButton.setText("Überschreiben") # Overwrite
     window.pushButton_2.setText("Behalten") # Keep
 
+"""
 def translateUpdateAvailableDE(window):
     window.label.setText(
         "Es ist ein Update verfügbar! Möchten Sie für den Download weitergeleitet werden?\nHinweis: Wollen Sie Pre-Release-Updates haben, werden Sie unabhängig vom bevorzugten Update-Spiegel zum Pre-Release-Repository auf Codeberg weitergeleitet.\n\nThe \"I want to download a pre-release from GitLab!\" button is only here temporarily as the stable repository hasn't been hosted on there yet at the time this pre-release version has been worked on."
@@ -404,6 +405,7 @@ def translateNoUpdateAvailableDE(window):
     window.label_2.setText("...oder es stimmt etwas mit Ihrer Internetverbindung nicht.") # ...or don't have an internet connection.
 
     window.pushButton.setText("OK") # OK
+"""
 
 def translateSettingsPendingDE(window):
     # The dialog which used to use this translation function is no longer in use.

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -300,61 +300,6 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.lineEdit_11, 12, 2, 1, 1)
 
         self.tabWidget_2.addTab(self.tab_3, "")
-        self.tab_5 = QWidget()
-        self.tab_5.setObjectName(u"tab_5")
-        self.gridLayoutWidget_5 = QWidget(self.tab_5)
-        self.gridLayoutWidget_5.setObjectName(u"gridLayoutWidget_5")
-        self.gridLayoutWidget_5.setGeometry(QRect(1, 0, 781, 501))
-        self.gridLayout_6 = QGridLayout(self.gridLayoutWidget_5)
-        self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_13 = QPushButton(self.gridLayoutWidget_5)
-        self.pushButton_13.setObjectName(u"pushButton_13")
-
-        self.gridLayout_6.addWidget(self.pushButton_13, 3, 0, 1, 1)
-
-        self.comboBox = QComboBox(self.gridLayoutWidget_5)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-
-        self.gridLayout_6.addWidget(self.comboBox, 0, 1, 1, 1)
-
-        self.comboBox_2 = QComboBox(self.gridLayoutWidget_5)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-
-        self.gridLayout_6.addWidget(self.comboBox_2, 1, 1, 1, 1)
-
-        self.label_13 = QLabel(self.gridLayoutWidget_5)
-        self.label_13.setObjectName(u"label_13")
-
-        self.gridLayout_6.addWidget(self.label_13, 1, 0, 1, 1)
-
-        self.pushButton_14 = QPushButton(self.gridLayoutWidget_5)
-        self.pushButton_14.setObjectName(u"pushButton_14")
-
-        self.gridLayout_6.addWidget(self.pushButton_14, 3, 1, 1, 1)
-
-        self.label_12 = QLabel(self.gridLayoutWidget_5)
-        self.label_12.setObjectName(u"label_12")
-
-        self.gridLayout_6.addWidget(self.label_12, 0, 0, 1, 1)
-
-        self.label_14 = QLabel(self.gridLayoutWidget_5)
-        self.label_14.setObjectName(u"label_14")
-
-        self.gridLayout_6.addWidget(self.label_14, 2, 0, 1, 1)
-
-        self.comboBox_3 = QComboBox(self.gridLayoutWidget_5)
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.setObjectName(u"comboBox_3")
-
-        self.gridLayout_6.addWidget(self.comboBox_3, 2, 1, 1, 1)
-
-        self.tabWidget_2.addTab(self.tab_5, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayoutWidget_3 = QWidget(self.tab_4)
@@ -454,21 +399,6 @@ class Ui_MainWindow(object):
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"qemu-system-mips64 path", None))
         self.pushButton_19.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"QEMU", None))
-        self.pushButton_13.setText(QCoreApplication.translate("MainWindow", u"Check for updates", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"GitHub", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Codeberg", None))
-
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Everytime I run this program", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Never", None))
-
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Update notify frequency", None))
-        self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Update mirror", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Update channel", None))
-        self.comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"stable", None))
-        self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"pre-release", None))
-
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Update", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"EmuGUI", None))

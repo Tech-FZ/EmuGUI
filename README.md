@@ -5,16 +5,6 @@ What should I say? I didn't like the existing QEMU interfaces for Windows, so I 
 
 EmuGUI automatically checks for updates by default. No personal data is being shared while doing so. If you don't want this, you can disable it in settings.
 
-## Mirrors
-
-GitHub: https://github.com/Tech-FZ/EmuGUI
-
-Codeberg: https://codeberg.org/lucien-rowan/EmuGUI
-
-Pre-releases (Codeberg): https://codeberg.org/lucien-rowan/EmuGUI-PreRelease
-
-Pre-releases (GitLab): https://gitlab.com/Tech-FZ/emugui-prerelease
-
 ## Versioning
 
 Last update: 31st August, 2022 with 0.7.0.5105_rc1
@@ -44,28 +34,6 @@ For the update checker, a version code is being used instead of the number. Here
 | Preview update | current version code + 1 |
 | Bugfix/minor update | current version code + 1 |
 | Feature update | current version code rounded up to the next hundred (e. g. 4237 becomes 4300) |
-
-## We're Using GitHub Under Protest
-
-This project is currently hosted on GitHub.  This is not ideal; GitHub is a
-proprietary, trade-secret system that is not Free and Open Souce Software
-(FOSS).  We are deeply concerned about using a proprietary system like GitHub
-to develop our FOSS project.  We have an
-[open issue](https://github.com/Tech-FZ/EmuGUI/issues/24) where the
-project contributors are actively discussing how we can move away from GitHub
-in the long term.  We urge you to read about the
-[Give up GitHub](https://GiveUpGitHub.org) campaign from
-[the Software Freedom Conservancy](https://sfconservancy.org) to understand
-some of the reasons why GitHub is not a good place to host FOSS projects.
-
-If you are a contributor who personally has already quit using GitHub, please 
-contact me at lucien-rowan#1916 on Discord so we can find a solution together.
-
-Any use of this project's code by GitHub Copilot, past or present, is done
-without our permission.  We do not consent to GitHub's use of this project's
-code in Copilot.
-
-![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
 
 ## System requirements
 OS: Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.3, openSUSE Tumbleweed, Fedora 35, RHEL 7, Arch Linux or distributions based on those (x64)

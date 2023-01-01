@@ -1,3 +1,12 @@
+# EmuGUI v1.0.0.5303_dev (based on v0.9.0.5302_dev)
+
+## Changes compared to v0.8.0.5206
+
+- The old feature list has been updated beforehand.
+- The updater has been removed due to some unexpected complications.
+- The database now supports the keyboard layout selection, which hasn't been implemented as of yet.
+- This release is now GitHub-only due to some unexpected complications.
+
 # EmuGUI v0.9.0.5302_dev (based on v0.9.0.5301_dev)
 
 ## Changes compared to v0.8.0.5206
