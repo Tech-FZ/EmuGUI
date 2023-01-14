@@ -11,13 +11,11 @@ import sqlite3
 import sys
 from PySide6.QtWidgets import *
 from PySide6 import QtGui
-from PySide6.QtCore import QTimer
+from PySide6.QtCore import QTimer, QSize
 from uiScripts.ui_Main import Ui_MainWindow
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVMNew import EditVMNewDialog
-#from dialogExecution.noUpdateAvailable import NoUpdateAvailable
-#from dialogExecution.updateAvailable import UpdateAvailable
 from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.vmTooNew import VmIsMadeWithTooYoungEmuGUI
@@ -41,8 +39,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.0.0.5303_dev (pre-release, not for production)")
-        self.setWindowTitle("EmuGUI")
+        self.label_8.setText("EmuGUI v1.0.0.5304_dev (pre-release, not for production)\nCodename 'Adèle Angela'")
+        self.setWindowTitle("EmuGUI v1.0.0.5304_dev (Development Release)")
         self.languageInUse = "system"
 
         try:
@@ -51,7 +49,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5303
+        self.versionCode = 5304
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -92,6 +90,21 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog = Win812012R2NearEOS(self)
                 dialog.exec()
 
+    
+    def resizeEvent(self, event: QtGui.QResizeEvent):
+        super().resizeEvent(event)
+
+        self.gridLayoutWidget.resize(event.size())
+        self.tabWidget.resize(event.size())
+        self.gridLayoutWidget_4.resize(QSize(event.size().width() - 9, event.size().height() - 66))
+        self.tabWidget_2.resize(QSize(event.size().width() - 9, event.size().height() - 56))
+        self.gridLayoutWidget_2.resize(QSize(event.size().width() - 19, event.size().height() - 86))
+        self.gridLayoutWidget_3.resize(QSize(event.size().width() - 19, event.size().height() - 86))
+        self.gridLayoutWidget_6.resize(QSize(event.size().width() - 19, event.size().height() - 86))
+        
+        self.centralwidget.resize(event.size())
+    
+
     def connectSignalsSlots(self):
         # These buttons are connected to their incorporate functions
         self.pushButton_8.clicked.connect(self.createNewVM)
@@ -110,8 +123,6 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_10.clicked.connect(self.editVM)
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
-        #self.pushButton_14.clicked.connect(self.applyChangesUpdate)
-        #self.pushButton_13.clicked.connect(self.checkForUpdatesManually)
         self.pushButton_15.clicked.connect(self.applyGeneric)
         self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
 

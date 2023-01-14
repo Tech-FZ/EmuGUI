@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>629</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,39 +49,36 @@
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_10">
-            <property name="text">
-             <string>Edit Selected Virtual Machine</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
+          <item row="1" column="0">
            <widget class="QPushButton" name="pushButton_9">
             <property name="text">
              <string>Start Selected Virtual Machine</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="2">
+          <item row="2" column="1">
            <widget class="QPushButton" name="pushButton_11">
             <property name="text">
              <string>Delete Selected Virtual Machine</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
+          <item row="2" column="0">
+           <widget class="QPushButton" name="pushButton_10">
+            <property name="text">
+             <string>Edit Selected Virtual Machine</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QListView" name="listView"/>
+          </item>
+          <item row="0" column="1">
            <widget class="QPushButton" name="pushButton_8">
             <property name="text">
              <string>New Virtual Machine</string>
             </property>
            </widget>
-          </item>
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="gridLayout_5"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="QListView" name="listView"/>
           </item>
          </layout>
         </widget>
@@ -183,10 +180,10 @@
           <widget class="QWidget" name="gridLayoutWidget_2">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>10</y>
-             <width>761</width>
-             <height>481</height>
+             <x>0</x>
+             <y>0</y>
+             <width>781</width>
+             <height>491</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -401,20 +398,7 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_7">
-              <property name="text">
-               <string>Built on Python and PyQt technology, licensed under GNU General Public License 3.0</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
+            <item row="3" column="0">
              <widget class="QLabel" name="label_10">
               <property name="text">
                <string>WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.</string>
@@ -442,6 +426,29 @@
               </property>
              </widget>
             </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Built on Python and PyQt technology, licensed under GNU General Public License 3.0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>EmuGUI v0.0.1</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </widget>
@@ -450,19 +457,6 @@
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>560</y>
-      <width>781</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>EmuGUI v0.0.1</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

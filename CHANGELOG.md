@@ -1,3 +1,18 @@
+# EmuGUI v1.0.0.5304_dev "Adèle Angela"  (based on v1.0.0.5303_dev)
+
+## Changes compared to v0.8.0.5206
+
+- The old feature list has been updated beforehand.
+- The updater has been removed due to some unexpected complications.
+- The database now supports the keyboard layout selection, which hasn't been implemented as of yet.
+- This release is now GitHub-only due to some unexpected complications.
+- You can now select different keyboard layouts.
+- The version string has been moved to the About section and is also shown in the title of the main window.
+- The main window now scales its content when resized.
+- The codename will be shown in the About section as well.
+- The license file has been updated with the copyright information.
+- The readme has been updated so it fits the current circumstances.
+
 # EmuGUI v1.0.0.5303_dev (based on v0.9.0.5302_dev)
 
 ## Changes compared to v0.8.0.5206

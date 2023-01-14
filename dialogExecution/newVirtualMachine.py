@@ -513,6 +513,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         else:
             usb_support = 0
+
+        if self.comboBox_19.currentText() == "System default":
+            kbdlayout = "en-us"
+
+        else:
+            kbdlayout = self.comboBox_19.currentText()
         
         insert_into_vm_database = f"""
         INSERT INTO virtualmachines (
@@ -562,7 +568,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{self.comboBox_16.currentText()}",
             {usb_support},
             "{self.comboBox_17.currentText()}",
-            "en-us"
+            "{kbdlayout}"
         );
         """
 

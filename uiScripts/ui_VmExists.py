@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'VmExists.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,6 +23,8 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(440, 170)
+        Dialog.setMinimumSize(QSize(440, 170))
+        Dialog.setMaximumSize(QSize(440, 170))
         Dialog.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.gridLayoutWidget = QWidget(Dialog)
         self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")

@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 629)
+        MainWindow.resize(800, 598)
         MainWindow.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -45,35 +45,30 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-
-        self.gridLayout_4.addWidget(self.pushButton_10, 2, 1, 1, 1)
-
         self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_9.setObjectName(u"pushButton_9")
 
-        self.gridLayout_4.addWidget(self.pushButton_9, 1, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.pushButton_9, 1, 0, 1, 1)
 
         self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_11.setObjectName(u"pushButton_11")
 
-        self.gridLayout_4.addWidget(self.pushButton_11, 2, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.pushButton_11, 2, 1, 1, 1)
 
-        self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_10.setObjectName(u"pushButton_10")
 
-        self.gridLayout_4.addWidget(self.pushButton_8, 0, 2, 1, 1)
-
-        self.gridLayout_5 = QGridLayout()
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-
-        self.gridLayout_4.addLayout(self.gridLayout_5, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.pushButton_10, 2, 0, 1, 1)
 
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
 
-        self.gridLayout_4.addWidget(self.listView, 0, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.listView, 0, 0, 1, 1)
+
+        self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+
+        self.gridLayout_4.addWidget(self.pushButton_8, 0, 1, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -125,7 +120,7 @@ class Ui_MainWindow(object):
         self.tab_3.setObjectName(u"tab_3")
         self.gridLayoutWidget_2 = QWidget(self.tab_3)
         self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(10, 10, 761, 481))
+        self.gridLayoutWidget_2.setGeometry(QRect(0, 0, 781, 491))
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -308,19 +303,12 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_7 = QLabel(self.gridLayoutWidget_3)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setAlignment(Qt.AlignCenter)
-        self.label_7.setWordWrap(True)
-
-        self.gridLayout_3.addWidget(self.label_7, 1, 0, 1, 1)
-
         self.label_10 = QLabel(self.gridLayoutWidget_3)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setAlignment(Qt.AlignCenter)
         self.label_10.setWordWrap(True)
 
-        self.gridLayout_3.addWidget(self.label_10, 2, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.label_10, 3, 0, 1, 1)
 
         self.label_6 = QLabel(self.gridLayoutWidget_3)
         self.label_6.setObjectName(u"label_6")
@@ -331,14 +319,24 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_6, 0, 0, 1, 1)
 
+        self.label_7 = QLabel(self.gridLayoutWidget_3)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setAlignment(Qt.AlignCenter)
+        self.label_7.setWordWrap(True)
+
+        self.gridLayout_3.addWidget(self.label_7, 2, 0, 1, 1)
+
+        self.label_8 = QLabel(self.gridLayoutWidget_3)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.label_8, 1, 0, 1, 1)
+
         self.tabWidget_2.addTab(self.tab_4, "")
         self.tabWidget.addTab(self.tab_2, "")
 
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
-        self.label_8 = QLabel(self.centralwidget)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(10, 560, 781, 16))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -359,9 +357,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Start Selected Virtual Machine", None))
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"New Virtual Machine", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
@@ -399,11 +397,11 @@ class Ui_MainWindow(object):
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"qemu-system-mips64 path", None))
         self.pushButton_19.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"QEMU", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"EmuGUI", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"EmuGUI v0.0.1", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"About EmuGUI", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"EmuGUI v0.0.1", None))
     # retranslateUi
 

@@ -534,6 +534,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         if vmSpecs[20] == "1":
             self.checkBox.setChecked(True)
 
+        i = 0
+
+        while i < self.comboBox_19.count():
+            if self.comboBox_19.itemText(i) == vmSpecs[22]:
+                self.comboBox_19.setCurrentIndex(i)
+                break
+
+            i += 1
+
         return vmSpecs
 
     def finishCreation(self):
@@ -694,6 +703,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         else:
             usb_support = 0
+
+        if self.comboBox_19.currentText() == "System default":
+            kbdlayout = "en-us"
+
+        else:
+            kbdlayout = self.comboBox_19.currentText()
         
         insert_into_vm_database = f"""
         UPDATE virtualmachines
@@ -703,7 +718,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         linuxkernel = "{self.lineEdit_5.text()}", linuxinitrid = "{self.lineEdit_6.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
-        kbdtype = "en-us"
+        kbdtype = "{kbdlayout}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

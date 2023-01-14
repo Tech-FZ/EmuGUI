@@ -1,9 +1,11 @@
 # EmuGUI
 What should I say? I didn't like the existing QEMU interfaces for Windows, so I made my own.
 
-## Important note about update check
+## Mirrors
 
-EmuGUI automatically checks for updates by default. No personal data is being shared while doing so. If you don't want this, you can disable it in settings.
+Stable: https://github.com/Tech-FZ/EmuGUI
+
+Pre-releases: https://github.com/Tech-FZ/EmuGUI-PreRelease
 
 ## Versioning
 
@@ -36,7 +38,7 @@ For the update checker, a version code is being used instead of the number. Here
 | Feature update | current version code rounded up to the next hundred (e. g. 4237 becomes 4300) |
 
 ## System requirements
-OS: Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.3, openSUSE Tumbleweed, Fedora 35, RHEL 7, Arch Linux or distributions based on those (x64)
+OS: Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.4, openSUSE Tumbleweed, Fedora 36, RHEL 7, Arch Linux or distributions based on those (x64)
 
 Python: 3.6 or newer
 
@@ -48,7 +50,7 @@ HDD: 2 GB¹
 
 ¹ This is the absolute minimum, the required performance depends on the operating system you want to run.
 
-² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023.
+² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023. However, contributors are already required to use Windows 10/Server 2016 or later due to Qt Creator not being available on those.
 
 ## Dependencies
 
@@ -148,7 +150,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 3. Install Git. You can get it from https://git-scm.com/downloads
 4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
 5. Install Qt. You can get it from here: https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5
-6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
+6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
 7. Open Visual Studio Code in that folder.
 8. Open Anaconda Navigator and create a new virtual environment.
 9. Open the venv in VS Code and try to run a Python script with it.
@@ -165,7 +167,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 2. Install QEMU using one of the commands listed on Installation (Linux).
 3. Install Git using the install command of your distribution.
 4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
-5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
+5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
 6. Open Visual Studio Code in that folder.
 7. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic requests`. You can try getting a VENV working but I personally have problems with using Python virtual environments on Linux.
 8. After this is done, run the main.py script.
