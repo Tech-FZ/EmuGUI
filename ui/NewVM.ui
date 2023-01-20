@@ -133,6 +133,11 @@
           <string>arm</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>sparc</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
@@ -1604,6 +1609,121 @@
      </layout>
     </widget>
    </widget>
+   <widget class="QWidget" name="page_12">
+    <widget class="QWidget" name="gridLayoutWidget_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_12">
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_38">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_20">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SPARCClassic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SPARCbook</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SS-10</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SS-20</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SS-4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SS-5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SS-600MP</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Voyager</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>leon3_generic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="spinBox_7">
+        <property name="maximum">
+         <number>32768</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_37">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_39">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
    <widget class="QWidget" name="page_5">
     <widget class="QWidget" name="gridLayoutWidget_5">
      <property name="geometry">
@@ -1859,6 +1979,11 @@
           <string>cirrus</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>cg3</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="1" column="0">
@@ -2025,6 +2150,11 @@
         <item>
          <property name="text">
           <string>dp83932</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>lance</string>
          </property>
         </item>
         <item>

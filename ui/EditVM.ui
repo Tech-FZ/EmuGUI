@@ -129,6 +129,11 @@
           <string>aarch64</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>sparc</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
@@ -148,7 +153,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QWidget" name="gridLayoutWidget_7">
@@ -1505,6 +1510,100 @@
        </layout>
       </widget>
      </widget>
+     <widget class="QWidget" name="page_5">
+      <widget class="QWidget" name="gridLayoutWidget_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>781</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_33">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="spinBox_7">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_32">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBox_20">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SPARCClassic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SPARCbook</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-600MP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Voyager</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>leon3_generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
@@ -2086,6 +2185,11 @@
         </item>
         <item>
          <property name="text">
+          <string>lance</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>none</string>
          </property>
         </item>
@@ -2225,6 +2329,11 @@
         <item>
          <property name="text">
           <string>cirrus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cg3</string>
          </property>
         </item>
        </widget>

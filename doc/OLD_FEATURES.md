@@ -14,7 +14,7 @@ EmuGUI's depreciation policy for built-in features is as follows: When one featu
 | ------- | ----- | ------------------------- | ------------------------------------- | ----------------------- |
 | USB Tablet checkbox | Depreciated | 0.4 | 5 | A combobox with more possibilities has been created |
 | Windows 2000 checkbox | Depreciated | 0.6.5 | 7 | Rather prevents you from installing the OS in question than helping you |
-| doc/TESTED.md compatibility list | Depreciated | 0.7.2.5108 | 8 | It's not very productive to use two versions of the same file. Please visit the EmuGUI wiki on the stable repository on Codeberg instead. |
+| doc/TESTED.md compatibility list | Depreciated | 0.7.2.5108 | 8 | It's not very productive to use two versions of the same file. Please visit the EmuGUI wiki on the stable repository on GitHub instead. |
 | Icelake-Client x86 CPU | Depreciated | 0.7.6.5112 | 8 | This CPU has been removed from QEMU 7.1 already, although EmuGUI is going to keep it for compatibility reasons (for now). Please change the CPU as soon as possible. |
 
 ## Supported host operating systems

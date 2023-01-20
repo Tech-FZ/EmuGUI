@@ -224,6 +224,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         WHERE name = 'qemu-system-arm';
         """
 
+        qemu_sparc_bin = """
+        SELECT value FROM settings
+        WHERE name = 'qemu-system-sparc';
+        """
+
         connection = self.connection
         cursor = connection.cursor()
 
@@ -296,6 +301,13 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 print(result)
 
+            elif self.vmSpecs[1] == "sparc":
+                cursor.execute(qemu_sparc_bin)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
+
             qemu_to_execute = result[0][0]
 
             if platform.system() == "Windows":
@@ -337,7 +349,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}"
 
             if self.vmSpecs[7] != "none":
-                if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc" or self.vmSpecs[1] == "ppc64":
+                if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc" or self.vmSpecs[1] == "ppc64" or self.vmSpecs[1] == "sparc":
                     qemu_cmd = qemu_cmd + f" -net nic,model={self.vmSpecs[7]} -net user"
 
                 elif self.vmSpecs[1] == "mips64el" or self.vmSpecs[1] == "mipsel":

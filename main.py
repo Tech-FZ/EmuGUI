@@ -39,8 +39,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.0.0.5304_dev (pre-release, not for production)\nCodename 'Adèle Angela'")
-        self.setWindowTitle("EmuGUI v1.0.0.5304_dev (Development Release)")
+        self.label_8.setText("EmuGUI v1.0.0.5305_dev (pre-release, not for production)\nCodename 'Adèle Angela'")
+        self.setWindowTitle("EmuGUI v1.0.0.5305_dev (Development Release)")
         self.languageInUse = "system"
 
         try:
@@ -49,7 +49,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5304
+        self.versionCode = 5305
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -124,6 +124,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
         self.pushButton_15.clicked.connect(self.applyGeneric)
+        self.pushButton_13.clicked.connect(self.set_qemu_sparc_path)
         self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
 
     def setLanguage(self, langmode):
@@ -371,6 +372,14 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
+        insert_qemu_sparc = """
+        INSERT INTO settings (
+            name
+        ) VALUES (
+            "qemu-system-sparc"
+        );
+        """
+
         # Language codes:
         # default: same language as system (English if not present)
         # en: English
@@ -479,6 +488,11 @@ class Window(QMainWindow, Ui_MainWindow):
         select_qemu_arm = """
         SELECT name, value FROM settings
         WHERE name = "qemu-system-arm";
+        """
+
+        select_qemu_sparc = """
+        SELECT name, value FROM settings
+        WHERE name = "qemu-system-sparc";
         """
 
         select_language = """
@@ -728,6 +742,24 @@ class Window(QMainWindow, Ui_MainWindow):
 
             except:
                 cursor.execute(insert_qemu_arm)
+                connection.commit()
+                print("The query was executed successfully. The qemu-system-arm slot has been created.")
+        
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(select_qemu_sparc)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                self.lineEdit_7.setText(result[0][1])
+                print("The query was executed successfully. The qemu-system-arm slot already is in the database.")
+
+            except:
+                cursor.execute(insert_qemu_sparc)
                 connection.commit()
                 print("The query was executed successfully. The qemu-system-arm slot has been created.")
         
@@ -1324,7 +1356,7 @@ class Window(QMainWindow, Ui_MainWindow):
                             dialog.exec()
                             break
 
-                elif architecture_of_vm == "mips64":
+                elif architecture_of_vm == "mips64" or architecture_of_vm == "sparc":
                     if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
                         if result_settings[i][1] == "":
                             dialog = QemuSysMissing(self)
@@ -1524,6 +1556,12 @@ class Window(QMainWindow, Ui_MainWindow):
         if filename:
             self.lineEdit_7.setText(filename)
 
+    def set_qemu_sparc_path(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-sparc executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_12.setText(filename)
+
     def applyChangesQemu(self):
         pathQemuImg = self.lineEdit_5.text()
         pathQemuI386 = self.lineEdit_4.text()
@@ -1536,6 +1574,7 @@ class Window(QMainWindow, Ui_MainWindow):
         pathQemuMips = self.lineEdit_10.text()
         pathQemuAarch64 = self.lineEdit_6.text()
         pathQemuArm = self.lineEdit_7.text()
+        pathQemuSparc = self.lineEdit_12.text()
 
         qemu_img_update = f"""
         UPDATE settings
@@ -1601,6 +1640,12 @@ class Window(QMainWindow, Ui_MainWindow):
         UPDATE settings
         SET value = '{pathQemuArm}'
         WHERE name = 'qemu-system-arm';
+        """
+
+        qemu_sparc_update = f"""
+        UPDATE settings
+        SET value = '{pathQemuSparc}'
+        WHERE name = 'qemu-system-sparc';
         """
 
         connection = self.connection
@@ -1688,6 +1733,14 @@ class Window(QMainWindow, Ui_MainWindow):
 
         try:
             cursor.execute(qemu_arm_update)
+            connection.commit()
+            print("The query was executed successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+        try:
+            cursor.execute(qemu_sparc_update)
             connection.commit()
             print("The query was executed successfully.")
 

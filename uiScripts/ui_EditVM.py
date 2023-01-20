@@ -70,6 +70,7 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
         self.gridLayout.addWidget(self.comboBox, 1, 1, 1, 1)
@@ -471,6 +472,47 @@ class Ui_Dialog(object):
         self.gridLayout_10.addWidget(self.comboBox_18, 2, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.page_4)
+        self.page_5 = QWidget()
+        self.page_5.setObjectName(u"page_5")
+        self.gridLayoutWidget_11 = QWidget(self.page_5)
+        self.gridLayoutWidget_11.setObjectName(u"gridLayoutWidget_11")
+        self.gridLayoutWidget_11.setGeometry(QRect(10, 10, 781, 371))
+        self.gridLayout_11 = QGridLayout(self.gridLayoutWidget_11)
+        self.gridLayout_11.setObjectName(u"gridLayout_11")
+        self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_33 = QLabel(self.gridLayoutWidget_11)
+        self.label_33.setObjectName(u"label_33")
+
+        self.gridLayout_11.addWidget(self.label_33, 0, 0, 1, 1)
+
+        self.spinBox_7 = QSpinBox(self.gridLayoutWidget_11)
+        self.spinBox_7.setObjectName(u"spinBox_7")
+        self.spinBox_7.setMaximum(32768)
+
+        self.gridLayout_11.addWidget(self.spinBox_7, 0, 1, 1, 1)
+
+        self.label_32 = QLabel(self.gridLayoutWidget_11)
+        self.label_32.setObjectName(u"label_32")
+
+        self.gridLayout_11.addWidget(self.label_32, 1, 0, 1, 1)
+
+        self.comboBox_20 = QComboBox(self.gridLayoutWidget_11)
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.setObjectName(u"comboBox_20")
+
+        self.gridLayout_11.addWidget(self.comboBox_20, 1, 1, 1, 1)
+
+        self.stackedWidget.addWidget(self.page_5)
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
@@ -750,6 +792,7 @@ class Ui_Dialog(object):
         self.comboBox_8.addItem("")
         self.comboBox_8.addItem("")
         self.comboBox_8.addItem("")
+        self.comboBox_8.addItem("")
         self.comboBox_8.setObjectName(u"comboBox_8")
 
         self.gridLayout_4.addWidget(self.comboBox_8, 1, 1, 1, 1)
@@ -801,6 +844,7 @@ class Ui_Dialog(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
+        self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
 
         self.gridLayout_4.addWidget(self.comboBox_7, 0, 1, 1, 1)
@@ -833,7 +877,7 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
 
         self.tabWidget.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -853,6 +897,7 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(7, QCoreApplication.translate("Dialog", u"ppc64", None))
         self.comboBox.setItemText(8, QCoreApplication.translate("Dialog", u"arm", None))
         self.comboBox.setItemText(9, QCoreApplication.translate("Dialog", u"aarch64", None))
+        self.comboBox.setItemText(10, QCoreApplication.translate("Dialog", u"sparc", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Dialog", u"General", None))
         self.label_17.setText(QCoreApplication.translate("Dialog", u"CPU", None))
@@ -1106,6 +1151,20 @@ class Ui_Dialog(object):
         self.comboBox_18.setItemText(16, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_18.setItemText(17, QCoreApplication.translate("Dialog", u"raspi2", None))
 
+        self.label_33.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_32.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.comboBox_20.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_20.setItemText(1, QCoreApplication.translate("Dialog", u"SPARCClassic", None))
+        self.comboBox_20.setItemText(2, QCoreApplication.translate("Dialog", u"SPARCbook", None))
+        self.comboBox_20.setItemText(3, QCoreApplication.translate("Dialog", u"SS-10", None))
+        self.comboBox_20.setItemText(4, QCoreApplication.translate("Dialog", u"SS-20", None))
+        self.comboBox_20.setItemText(5, QCoreApplication.translate("Dialog", u"SS-4", None))
+        self.comboBox_20.setItemText(6, QCoreApplication.translate("Dialog", u"SS-5", None))
+        self.comboBox_20.setItemText(7, QCoreApplication.translate("Dialog", u"SS-600MP", None))
+        self.comboBox_20.setItemText(8, QCoreApplication.translate("Dialog", u"Voyager", None))
+        self.comboBox_20.setItemText(9, QCoreApplication.translate("Dialog", u"leon3_generic", None))
+        self.comboBox_20.setItemText(10, QCoreApplication.translate("Dialog", u"none", None))
+
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Dialog", u"Machine", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
         self.label_3.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
@@ -1196,7 +1255,8 @@ class Ui_Dialog(object):
         self.comboBox_8.setItemText(24, QCoreApplication.translate("Dialog", u"virtio-net-pci-transitional", None))
         self.comboBox_8.setItemText(25, QCoreApplication.translate("Dialog", u"vmxnet3", None))
         self.comboBox_8.setItemText(26, QCoreApplication.translate("Dialog", u"dp83932", None))
-        self.comboBox_8.setItemText(27, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_8.setItemText(27, QCoreApplication.translate("Dialog", u"lance", None))
+        self.comboBox_8.setItemText(28, QCoreApplication.translate("Dialog", u"none", None))
 
         self.label_9.setText(QCoreApplication.translate("Dialog", u"VGA", None))
         self.label_10.setText(QCoreApplication.translate("Dialog", u"Network adapter", None))
@@ -1224,6 +1284,7 @@ class Ui_Dialog(object):
         self.comboBox_7.setItemText(5, QCoreApplication.translate("Dialog", u"xenfb", None))
         self.comboBox_7.setItemText(6, QCoreApplication.translate("Dialog", u"qxl", None))
         self.comboBox_7.setItemText(7, QCoreApplication.translate("Dialog", u"cirrus", None))
+        self.comboBox_7.setItemText(8, QCoreApplication.translate("Dialog", u"cg3", None))
 
         self.label_30.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Dialog", u"Additional components", None))

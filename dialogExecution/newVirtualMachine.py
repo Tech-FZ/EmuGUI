@@ -80,6 +80,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_34.clicked.connect(self.vhdMenu)
         self.pushButton_35.clicked.connect(self.close)
 
+        # Page 2.5 (sparc machine preparation)
+        self.pushButton_37.clicked.connect(self.firstStage)
+        self.pushButton_38.clicked.connect(self.vhdMenu)
+        self.pushButton_39.clicked.connect(self.close)
+
         # Page 3 (VHD creation)
         self.pushButton_13.clicked.connect(self.vhdBrowseLocation)
         self.pushButton_16.clicked.connect(self.archSystem)
@@ -250,12 +255,15 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 
                 elif self.comboBox.currentText() == "aarch64" or self.comboBox.currentText() == "arm":
                     self.stackedWidget.setCurrentIndex(4)
+
+                elif self.comboBox.currentText() == "sparc":
+                    self.stackedWidget.setCurrentIndex(5)
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
     def vhdMenu(self):
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(6)
 
     def vhdAddingChange(self):
         if self.comboBox_18.currentText() == "Create a new virtual hard drive":
@@ -330,10 +338,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(0)
 
     def vgaNetworkMenu(self):
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(7)
 
     def extBios(self):
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(8)
 
     def extBiosFileLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
@@ -342,10 +350,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.lineEdit_8.setText(filename)
 
     def soundCard(self):
-        self.stackedWidget.setCurrentIndex(8)
+        self.stackedWidget.setCurrentIndex(9)
 
     def linuxVMSpecific(self):
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(10)
 
     def linuxKernelBrowseLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
@@ -360,7 +368,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.lineEdit_5.setText(filename)
 
     def win2kHacker(self):
-        self.stackedWidget.setCurrentIndex(10)
+        self.stackedWidget.setCurrentIndex(11)
 
     def finishCreation(self):
         # This creates your VM in the first place
@@ -396,6 +404,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             machine = self.comboBox_14.currentText()
             cpu = self.comboBox_15.currentText()
             ram = self.spinBox_5.value()
+
+        elif self.comboBox.currentText() == "sparc":
+            machine = self.comboBox_20.currentText()
+            cpu = "Let QEMU decide"
+            ram = self.spinBox_7.value()
 
         if machine == "Let QEMU decide" or machine == "QEMU überlassen":
             machine = "Let QEMU decide"
