@@ -71,6 +71,7 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
         self.gridLayout.addWidget(self.comboBox, 1, 1, 1, 1)
@@ -513,6 +514,41 @@ class Ui_Dialog(object):
         self.gridLayout_11.addWidget(self.comboBox_20, 1, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.page_5)
+        self.page_6 = QWidget()
+        self.page_6.setObjectName(u"page_6")
+        self.gridLayoutWidget_12 = QWidget(self.page_6)
+        self.gridLayoutWidget_12.setObjectName(u"gridLayoutWidget_12")
+        self.gridLayoutWidget_12.setGeometry(QRect(10, 10, 781, 371))
+        self.gridLayout_12 = QGridLayout(self.gridLayoutWidget_12)
+        self.gridLayout_12.setObjectName(u"gridLayout_12")
+        self.gridLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.label_34 = QLabel(self.gridLayoutWidget_12)
+        self.label_34.setObjectName(u"label_34")
+
+        self.gridLayout_12.addWidget(self.label_34, 0, 0, 1, 1)
+
+        self.spinBox_8 = QSpinBox(self.gridLayoutWidget_12)
+        self.spinBox_8.setObjectName(u"spinBox_8")
+        self.spinBox_8.setMaximum(32768)
+
+        self.gridLayout_12.addWidget(self.spinBox_8, 0, 1, 1, 1)
+
+        self.label_35 = QLabel(self.gridLayoutWidget_12)
+        self.label_35.setObjectName(u"label_35")
+
+        self.gridLayout_12.addWidget(self.label_35, 1, 0, 1, 1)
+
+        self.comboBox_21 = QComboBox(self.gridLayoutWidget_12)
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.setObjectName(u"comboBox_21")
+
+        self.gridLayout_12.addWidget(self.comboBox_21, 1, 1, 1, 1)
+
+        self.stackedWidget.addWidget(self.page_6)
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
@@ -898,6 +934,7 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(8, QCoreApplication.translate("Dialog", u"arm", None))
         self.comboBox.setItemText(9, QCoreApplication.translate("Dialog", u"aarch64", None))
         self.comboBox.setItemText(10, QCoreApplication.translate("Dialog", u"sparc", None))
+        self.comboBox.setItemText(11, QCoreApplication.translate("Dialog", u"sparc64", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Dialog", u"General", None))
         self.label_17.setText(QCoreApplication.translate("Dialog", u"CPU", None))
@@ -1164,6 +1201,14 @@ class Ui_Dialog(object):
         self.comboBox_20.setItemText(8, QCoreApplication.translate("Dialog", u"Voyager", None))
         self.comboBox_20.setItemText(9, QCoreApplication.translate("Dialog", u"leon3_generic", None))
         self.comboBox_20.setItemText(10, QCoreApplication.translate("Dialog", u"none", None))
+
+        self.label_34.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_35.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.comboBox_21.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_21.setItemText(1, QCoreApplication.translate("Dialog", u"niagara", None))
+        self.comboBox_21.setItemText(2, QCoreApplication.translate("Dialog", u"sun4u", None))
+        self.comboBox_21.setItemText(3, QCoreApplication.translate("Dialog", u"sun4v", None))
+        self.comboBox_21.setItemText(4, QCoreApplication.translate("Dialog", u"none", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Dialog", u"Machine", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"VHD path", None))

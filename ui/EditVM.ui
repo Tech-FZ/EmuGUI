@@ -134,6 +134,11 @@
           <string>sparc</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>sparc64</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
@@ -1592,6 +1597,70 @@
           <item>
            <property name="text">
             <string>leon3_generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_6">
+      <widget class="QWidget" name="gridLayoutWidget_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>781</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_12">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_34">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="spinBox_8">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_35">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBox_21">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>niagara</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sun4u</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sun4v</string>
            </property>
           </item>
           <item>

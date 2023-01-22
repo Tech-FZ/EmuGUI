@@ -229,6 +229,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         WHERE name = 'qemu-system-sparc';
         """
 
+        qemu_sparc64_bin = """
+        SELECT value FROM settings
+        WHERE name = 'qemu-system-sparc64';
+        """
+
         connection = self.connection
         cursor = connection.cursor()
 
@@ -303,6 +308,13 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             elif self.vmSpecs[1] == "sparc":
                 cursor.execute(qemu_sparc_bin)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
+
+            elif self.vmSpecs[1] == "sparc64":
+                cursor.execute(qemu_sparc64_bin)
                 connection.commit()
                 result = cursor.fetchall()
 

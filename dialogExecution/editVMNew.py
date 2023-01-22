@@ -274,6 +274,21 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             i += 1
 
+    def machineSparc64(self, machine):
+        i = 0
+
+        while i < self.comboBox_21.count():
+            if self.comboBox_21.itemText(i) == "Let QEMU decide" or self.comboBox_21.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_21.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_21.itemText(i) == machine:
+                self.comboBox_21.setCurrentIndex(i)
+                break
+
+            i += 1
+
     def vhdAddingChange(self):
         if self.comboBox_2.currentText() == "Create a new virtual hard drive":
             # For new and existing
@@ -380,6 +395,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         elif self.comboBox.currentText() == "sparc":
             self.stackedWidget.setCurrentIndex(4)
 
+        elif self.comboBox.currentText() == "sparc64":
+            self.stackedWidget.setCurrentIndex(5)
+
     def extBiosFileLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
 
@@ -450,6 +468,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         elif vmSpecs[1] == "sparc":
             self.machineSparc(vmSpecs[2])
             self.spinBox_7.setValue(int(vmSpecs[4]))
+
+        elif vmSpecs[1] == "sparc64":
+            self.machineSparc64(vmSpecs[2])
+            self.spinBox_8.setValue(int(vmSpecs[4]))
 
         if vmSpecs[5] != "NULL":
             self.lineEdit_2.setText(vmSpecs[5])
@@ -611,6 +633,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             machine = self.comboBox_20.currentText()
             cpu = "Let QEMU decide"
             ram = self.spinBox_7.value()
+
+        elif self.comboBox.currentText() == "sparc64":
+            machine = self.comboBox_21.currentText()
+            cpu = "Let QEMU decide"
+            ram = self.spinBox_8.value()
 
         if machine == "Let QEMU decide" or machine == "QEMU überlassen":
             machine = "Let QEMU decide"

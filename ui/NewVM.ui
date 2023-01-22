@@ -138,6 +138,11 @@
           <string>sparc</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>sparc64</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
@@ -1716,6 +1721,91 @@
       </item>
       <item row="3" column="2">
        <widget class="QPushButton" name="pushButton_39">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_13">
+    <widget class="QWidget" name="gridLayoutWidget_13">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_13">
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_40">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_21">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>niagara</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sun4u</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sun4v</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="spinBox_8">
+        <property name="maximum">
+         <number>32768</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_36">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_37">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_41">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_42">
         <property name="text">
          <string>Cancel</string>
         </property>
