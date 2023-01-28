@@ -11,7 +11,7 @@ def translateMainDE(window):
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Allgemein") # General
-    window.tabWidget_2.setTabText(3, "Über EmuGUI") # About EmuGUI
+    window.tabWidget_2.setTabText(2, "Über EmuGUI") # About EmuGUI
 
     # General tab
     window.label_15.setText("Sprache") # Language
@@ -49,6 +49,8 @@ def translateMainDE(window):
     window.label_17.setText("qemu-system-mipsel-Pfad") # qemu-system-mipsel Path
     window.label_18.setText("qemu-system-mips-Pfad") # qemu-system-mips Path
     window.label_19.setText("qemu-system-mips64-Pfad") # qemu-system-mips64 Path
+    window.label_12.setText("qemu-system-sparc-Pfad") # qemu-system-sparc Path
+    window.label_13.setText("qemu-system-sparc64-Pfad") # qemu-system-sparc64 Path
 
     window.pushButton.setText("Durchsuchen") # Browse
     window.pushButton_2.setText("Durchsuchen") # Browse
@@ -61,6 +63,8 @@ def translateMainDE(window):
     window.pushButton_17.setText("Durchsuchen") # Browse
     window.pushButton_18.setText("Durchsuchen") # Browse
     window.pushButton_19.setText("Durchsuchen") # Browse
+    window.pushButton_13.setText("Durchsuchen") # Browse
+    window.pushButton_14.setText("Durchsuchen") # Browse
     window.pushButton_6.setText("Übernehmen") # Apply
 
     # Update tab
@@ -237,6 +241,46 @@ def translateNewVmDE(window):
 
         i += 1
 
+    # Second page (SPARC32 machines)
+    window.label_22.setText("Maschine") # Machine
+    window.label_35.setText("RAM in MB") # RAM in MB
+
+    window.comboBox_20.setPlaceholderText("Bitte wählen Sie eine Maschine") # Please select a machine
+
+    window.pushButton_37.setText("< Zurück") # < Previous
+    window.pushButton_38.setText("Weiter >") # Next >
+    window.pushButton_39.setText("Abbrechen") # Cancel
+
+    # Combo boxes on SPARC32 page
+    i = 0
+
+    while i < window.comboBox_20.count():
+        if window.comboBox_20.itemText(i) == "Let QEMU decide" or window.comboBox_20.itemText(i) == "QEMU überlassen":
+            window.comboBox_20.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
+
+    # Second page (SPARC64 machines)
+    window.label_37.setText("Maschine") # Machine
+    window.label_36.setText("RAM in MB") # RAM in MB
+
+    window.comboBox_21.setPlaceholderText("Bitte wählen Sie eine Maschine") # Please select a machine
+
+    window.pushButton_41.setText("< Zurück") # < Previous
+    window.pushButton_40.setText("Weiter >") # Next >
+    window.pushButton_42.setText("Abbrechen") # Cancel
+
+    # Combo boxes on SPARC64 page
+    i = 0
+
+    while i < window.comboBox_21.count():
+        if window.comboBox_21.itemText(i) == "Let QEMU decide" or window.comboBox_21.itemText(i) == "QEMU überlassen":
+            window.comboBox_21.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
+
     # Third page
     window.label_20.setText("VHD-Nutzung") # VHD usage
 
@@ -295,6 +339,7 @@ def translateNewVmDE(window):
     window.label_16.setText("VGA") # VGA
     window.label_17.setText("Netzwerk") # Network
     window.label_28.setText("Maus") # Mouse
+    window.label_21.setText("Tastaturlayout") # Keyboard layout
 
     window.comboBox_10.setPlaceholderText("(Bitte wählen Sie einen Grafikadapter)") # (Please select a graphics adapter)
     window.comboBox_11.setPlaceholderText("(Bitte wählen Sie einen Netzwerkadapter)") # (Please select a network adapter)

@@ -17,6 +17,7 @@
 - SPARC 64-bit support has been added and the functionality is ready for testing.
 - In the development version 1.0.0.5305_dev, there has been a bug which didn't properly fill the text fields for the QEMU settings. That has been fixed in this development version.
 - The readme was updated with the meaning of the "_b" ending.
+- The translations have been worked on so the new features can be translated now.
 
 # EmuGUI v1.0.0.5306_dev "Adèle Angela"  (based on v1.0.0.5305_dev)
 
