@@ -1,4 +1,4 @@
-# EmuGUI v1.0.0.5307_b1 "Adèle Angela"  (based on v1.0.0.5305_dev)
+# EmuGUI v1.0.0.5307_b1 "Adèle Angela"  (based on v1.0.0.5306_dev)
 
 ## Changes compared to v0.8.0.5206
 
@@ -18,6 +18,7 @@
 - In the development version 1.0.0.5305_dev, there has been a bug which didn't properly fill the text fields for the QEMU settings. That has been fixed in this development version.
 - The readme was updated with the meaning of the "_b" ending.
 - The translations have been worked on so the new features can be translated now.
+- The text colourized logo has been made transparent.
 
 # EmuGUI v1.0.0.5306_dev "Adèle Angela"  (based on v1.0.0.5305_dev)
 
