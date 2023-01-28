@@ -9,7 +9,7 @@ Pre-releases: https://github.com/Tech-FZ/EmuGUI-PreRelease
 
 ## Versioning
 
-Last update: 31st August, 2022 with 0.7.0.5105_rc1
+Last update: 28th January, 2023 with 1.0.0.5307_b1
 
 ### Version number
 
@@ -24,6 +24,8 @@ Micro: becomes 0 with every feature update, else increments by 1 with every bugf
 Nano: is the build number
 
 If "_dev" is added, it's a pre-release not meant for production.
+
+If "_b1" and a number are added, the EmuGUI version is in a state where minor features can still be added, but it starts to focus on stability. Generally, you shouldn't use it for production as it's still a pre-release.
 
 If "_rc" and a number are added, the release is meant to be focused solely on stability and completeness, but still not for productive use.
 

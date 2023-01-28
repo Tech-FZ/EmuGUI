@@ -39,8 +39,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.0.0.5306_dev (pre-release, not for production)\nCodename 'Adèle Angela'")
-        self.setWindowTitle("EmuGUI v1.0.0.5306_dev (Development Release)")
+        self.label_8.setText("EmuGUI v1.0.0.5307_b1 (pre-release, not for production)\nCodename 'Adèle Angela'")
+        self.setWindowTitle("EmuGUI v1.0.0.5307_b1 (Beta 1 Release)")
         self.languageInUse = "system"
 
         try:
