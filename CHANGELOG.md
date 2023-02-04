@@ -23,6 +23,7 @@
 - The contributors list has been updated so there you get credit for the banners you made.
 - If one of your banners is being used, you'll also get credit in the About EmuGUI section.
 - "main.py" has been renamed to "EmuGUI.py"
+- You can now join a Discord server via Readme.
 
 # EmuGUI v1.0.0.5307_b1 "Adèle Angela"  (based on v1.0.0.5306_dev)
 
