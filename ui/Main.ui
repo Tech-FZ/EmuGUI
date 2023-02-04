@@ -432,7 +432,17 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="3" column="0">
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>EmuGUI v0.0.1</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
              <widget class="QLabel" name="label_10">
               <property name="text">
                <string>WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.</string>
@@ -460,7 +470,7 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
+            <item row="4" column="0">
              <widget class="QLabel" name="label_7">
               <property name="text">
                <string>Built on Python and PyQt technology, licensed under GNU General Public License 3.0</string>
@@ -473,10 +483,10 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_8">
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_14">
               <property name="text">
-               <string>EmuGUI v0.0.1</string>
+               <string>Banner made by Tech-FZ</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
