@@ -39,8 +39,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.0.0.5307_b1 (pre-release, not for production)\nCodename 'Adèle Angela'")
-        self.setWindowTitle("EmuGUI v1.0.0.5307_b1 (Beta 1 Release)")
+        self.label_8.setText("EmuGUI v1.0.0.5308_b2 (pre-release, not for production)\nCodename 'Adèle Angela'")
+        self.setWindowTitle("EmuGUI v1.0.0.5308_b2 (Beta 2 Release)")
         self.languageInUse = "system"
 
         try:
@@ -49,7 +49,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5307
+        self.versionCode = 5308
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -126,7 +126,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_15.clicked.connect(self.applyGeneric)
         self.pushButton_13.clicked.connect(self.set_qemu_sparc_path)
         self.pushButton_14.clicked.connect(self.set_qemu_sparc64_path)
-        self.label_6.setPixmap(QtGui.QPixmap("Text colourized.png"))
+        self.label_6.setPixmap(QtGui.QPixmap("banners/AdeleAngela.png"))
 
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:
