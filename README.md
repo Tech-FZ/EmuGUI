@@ -3,9 +3,11 @@ What should I say? I didn't like the existing QEMU interfaces for Windows, so I 
 
 ## Mirrors
 
-Stable: https://github.com/Tech-FZ/EmuGUI
+| Release | Link |
+|---------|------|
+| Stable  | [Link](https://github.com/Tech-FZ/EmuGUI) |
+| Pre-releases | [Link](https://github.com/Tech-FZ/EmuGUI-PreRelease) |
 
-Pre-releases: https://github.com/Tech-FZ/EmuGUI-PreRelease
 
 ## Versioning
 
@@ -14,20 +16,18 @@ Last update: 28th January, 2023 with 1.0.0.5307_b1
 ### Version number
 
 Starting with 0.7, the versioning scheme looks like this:
+| Feature | Content |
+|--------|--------|
+| Major | increments with every first feature update in a year |
+| Minor | becomes 0 when major increments, else it increments with every feature update within a year |
+| Micro | becomes 0 with every feature update, else increments by 1 with every bugfix update |
+| Nano | is the build number |
 
-Major: increments with every first feature update in a year
+If `_dev` is added, it's a pre-release not meant for production.
 
-Minor: becomes 0 when major increments, else it increments with every feature update within a year
+If `_b1` and a number are added, the EmuGUI version is in a state where minor features can still be added, but it starts to focus on stability. Generally, you shouldn't use it for production as it's still a pre-release.
 
-Micro: becomes 0 with every feature update, else increments by 1 with every bugfix update
-
-Nano: is the build number
-
-If "_dev" is added, it's a pre-release not meant for production.
-
-If "_b1" and a number are added, the EmuGUI version is in a state where minor features can still be added, but it starts to focus on stability. Generally, you shouldn't use it for production as it's still a pre-release.
-
-If "_rc" and a number are added, the release is meant to be focused solely on stability and completeness, but still not for productive use.
+If `_rc` and a number are added, the release is meant to be focused solely on stability and completeness, but still not for productive use.
 
 ### Version code
 
@@ -40,19 +40,17 @@ For the update checker, a version code is being used instead of the number. Here
 | Feature update | current version code rounded up to the next hundred (e. g. 4237 becomes 4300) |
 
 ## System requirements
-OS: Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.4, openSUSE Tumbleweed, Fedora 36, RHEL 7, Arch Linux or distributions based on those (x64)
+| Component | Requirement |
+|-------|--------|
+| OS | Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.4, openSUSE Tumbleweed, Fedora 36, RHEL 7, Arch Linux or distributions based on those (x64) |
+| Python | 3.6 or newer |
+| Processor | x64 Dual Core Processor with @2.6 GHz¹ |
+| RAM | 6 GB¹ |
+| HDD | 2 GB¹ |
 
-Python: 3.6 or newer
+*¹ This is the absolute minimum, the required performance depends on the operating system you want to run.*
 
-Processor: x64 Dual Core Processor with @2.6 GHz¹
-
-RAM: 6 GB¹
-
-HDD: 2 GB¹
-
-¹ This is the absolute minimum, the required performance depends on the operating system you want to run.
-
-² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023. However, contributors are already required to use Windows 10/Server 2016 or later due to Qt Creator not being available on those.
+*² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023. However, contributors are already required to use Windows 10/Server 2016 or later due to Qt Creator not being available on those.*
 
 ## Dependencies
 
@@ -65,7 +63,7 @@ HDD: 2 GB¹
 
 ## Installation (Windows)
 
-1. Get QEMU at https://qemu.weilnetz.de/w64/ and install it
+1. Get ]QEMU](https://qemu.weilnetz.de/w64/) and install it
 2. Get EmuGUI and extract it
 3. Run main.exe in the EmuGUI directory.
 4. Set the QEMU paths at the Settings/QEMU tab.
@@ -74,28 +72,28 @@ HDD: 2 GB¹
 ## Installation (Linux)
 
 1. Open your terminal and type in one of the commands to update your system, depending on your distro:
-- Arch: `sudo pacman -Syu`
-- Debian/Ubuntu: `sudo apt-get update && sudo apt-get upgrade`
-- Fedora/RHEL 8: `sudo dnf upgrade --refresh` or `sudo dnf update`
-- Gentoo: `sudo emaint -a sync && sudo emerge --ask --verbose --update --deep --newuse @world`
-- RHEL 7: `sudo yum update`
-- SUSE and openSUSE Leap: `sudo zypper patch && sudo zypper up`
-- openSUSE Tumbleweed: `sudo zypper patch && sudo zypper dup`
+    - Arch: `sudo pacman -Syu`
+    - Debian/Ubuntu: `sudo apt-get update && sudo apt-get upgrade`
+    - Fedora/RHEL 8: `sudo dnf upgrade --refresh` or `sudo dnf update`
+    - Gentoo: `sudo emaint -a sync && sudo emerge --ask --verbose --update --deep --newuse @world`
+    - RHEL 7: `sudo yum update`
+    - SUSE and openSUSE Leap: `sudo zypper patch && sudo zypper up`
+    - openSUSE Tumbleweed: `sudo zypper patch && sudo zypper dup`
 
 2. Open your terminal and type in one of the commands to install QEMU, depending on your distribution:
-- Arch: `sudo pacman -S qemu`
-- Debian/Ubuntu: `sudo apt-get install qemu`
-- Fedora: `sudo dnf install @virtualization`
-- Gentoo: `sudo emerge --ask app-emulation/qemu`
-- RHEL: `sudo yum install qemu-kvm`
-- (open-)SUSE: `sudo zypper install qemu`
+    - Arch: `sudo pacman -S qemu`
+    - Debian/Ubuntu: `sudo apt-get install qemu`
+    - Fedora: `sudo dnf install @virtualization`
+    - Gentoo: `sudo emerge --ask app-emulation/qemu`
+    - RHEL: `sudo yum install qemu-kvm`
+    - (open-)SUSE: `sudo zypper install qemu`
 
 3. Get EmuGUI from this website and extract it.
 4. Run main in the EmuGUI directory (if it fails from file manager, open a terminal inside the directory and type `./main`).
 5. Set the QEMU paths at the Settings/QEMU tab (either `/usr/bin/qemu-system-*` or just `qemu-system-*`).
 6. Create a new virtual machine and start it.
 
-Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additional arguments), you must open a terminal inside the directory and type: `sudo ./main`.
+**Another tip:** If you want a machine to run with KVM (`-enable-kvm` in the additional arguments), you must open a terminal inside the directory and type: `sudo ./main`.
 
 ## Updating EmuGUI
 
@@ -105,12 +103,19 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 4. If you have external BIOS files in the root directory of your old EmuGUI installation, copy these into the root directory of the new one.
 5. Start the new EmuGUI installation. You might need to reinstall some virtual machines.
 
+## Build Contents
+- [Building on Windows (Python Venv, Qt installed via Python)](#building-on-windows-python-venv-qt-installed-via-python)
+- [Building on Windows (Python Venv, Qt installed via official installer)](#building-on-windows-python-venv-qt-installed-via-official-installer)
+- [Building on Windows (Anaconda)](#building-on-windows-anaconda)
+- [Building on Linux](#building-on-linux)
+
+
 ## Building on Windows (Python Venv, Qt installed via Python)
 
-1. Install Python. You can get it from https://www.python.org/
-2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
-3. Install Git. You can get it from https://git-scm.com/downloads
-4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
+1. Install Python. You can get it [here](https://www.python.org/)
+2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
+3. Install Git. You can get it [here](https://git-scm.com/downloads)
+4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
 5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
 6. Open Visual Studio Code in that folder.
 7. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
@@ -126,11 +131,11 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 
 ## Building on Windows (Python Venv, Qt installed via official installer)
 
-1. Install Python. You can get it from https://www.python.org/
-2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
-3. Install Git. You can get it from https://git-scm.com/downloads
-4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
-5. Install Qt from the following site (you need a Qt account for that): https://www.qt.io/download-open-source?__hstc=152220518.4df0e407aa37c96fa5547ca135b274e3.1659787309440.1659787309440.1659787309440.1&__hssc=152220518.1.1659787309441&__hsfp=1951994995&hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5
+1. Install Python. You can get it [here](https://www.python.org)
+2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
+3. Install Git. You can get it [here](https://git-scm.com/downloads)
+4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
+5. Install Qt from the following [site](https://www.qt.io/download-open-source?__hstc=152220518.4df0e407aa37c96fa5547ca135b274e3.1659787309440.1659787309440.1659787309440.1&__hssc=152220518.1.1659787309441&__hsfp=1951994995&hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5) (you need a Qt account for that) 
 6. You only need the Qt Creator.
 7. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
 8. Open Visual Studio Code in that folder.
@@ -147,11 +152,11 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 
 ## Building on Windows (Anaconda)
 
-1. Install Anaconda. You can get it from here: https://www.anaconda.com/
-2. Get QEMU from https://qemu.weilnetz.de/w64/ and install it
-3. Install Git. You can get it from https://git-scm.com/downloads
-4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
-5. Install Qt. You can get it from here: https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5
+1. Install Anaconda. You can get it from [here](https://www.anaconda.com/)
+2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
+3. Install Git. You can get it from [here](https://git-scm.com/downloads)
+4. Install Visual Studio Code. You can get it from [here](https://code.visualstudio.com/download)
+5. Install Qt. You can get it from [here](https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5)
 6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
 7. Open Visual Studio Code in that folder.
 8. Open Anaconda Navigator and create a new virtual environment.
@@ -168,7 +173,7 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 1. Install Python 3. You can either compile the source code or get it from your distribution's repositories.
 2. Install QEMU using one of the commands listed on Installation (Linux).
 3. Install Git using the install command of your distribution.
-4. Install Visual Studio Code. You can get it from https://code.visualstudio.com/download
+4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
 5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
 6. Open Visual Studio Code in that folder.
 7. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic requests`. You can try getting a VENV working but I personally have problems with using Python virtual environments on Linux.
@@ -180,11 +185,15 @@ Another tip: If you want a machine to run with KVM (`-enable-kvm` in the additio
 
 ## Documentation
 
-A documentation of EmuGUI can be found at: https://codeberg.org/lucien-rowan/EmuGUI/wiki
+A documentation of EmuGUI can be found [here](https://codeberg.org/lucien-rowan/EmuGUI/wiki)
 
 ## EmuGUI on Social Media
 
-Discord: https://discord.gg/rTGpYCwF89
+<a href="https://discord.gg/rTGpYCwF89">
+  <img src="https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ=s48-rw" alt="Discord Icon">
+</a>
+
+<!-- Discord: https://discord.gg/rTGpYCwF89 -->
 
 ## Contributing
 
@@ -193,3 +202,8 @@ There are several ways to contribute, including:
 - Testing (operating systems, the program itself etc.)
 - Translation into foreign languages like German or French
 - Documentation
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
