@@ -4,6 +4,8 @@ Nicolas Lucien/Tech-FZ
 
 BasDeGamer
 
+the-amazing-atharva
+
 # Banners
 
 | Version | Author |
