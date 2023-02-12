@@ -30,6 +30,7 @@ import translations.en
 import requests
 import locale
 import glob
+import webbrowser
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -126,6 +127,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_15.clicked.connect(self.applyGeneric)
         self.pushButton_13.clicked.connect(self.set_qemu_sparc_path)
         self.pushButton_14.clicked.connect(self.set_qemu_sparc64_path)
+        self.pushButton_20.clicked.connect(self.toGithub)
+        self.pushButton_21.clicked.connect(self.toDiscord)
         self.label_6.setPixmap(QtGui.QPixmap("banners/AdeleAngela.png"))
 
     def setLanguage(self, langmode):
@@ -977,86 +980,6 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
-        #try:
-        #    cursor.execute(select_update_mirror)
-        #    connection.commit()
-        #    result = cursor.fetchall()
-
-        #    try:
-        #        qemu_img_slot = str(result[0])
-                
-        #        i = 0
-
-        #        while i < self.comboBox.count():
-        #            if self.comboBox.itemText(i) == result[0][1]:
-        #                self.comboBox.setCurrentIndex(i)
-        #                break
-
-        #            i += 1
-
-        #        print("The query was executed successfully. The update mirror slot already is in the database.")
-
-        #    except:
-        #        cursor.execute(insert_update_mirror)
-        #        connection.commit()
-        #        print("The query was executed successfully. The update mirror slot has been created.")
-        
-        #except sqlite3.Error as e:
-        #    print(f"The SQLite module encountered an error: {e}.")
-
-        #try:
-        #    cursor.execute(select_update_freq)
-        #    connection.commit()
-        #    result = cursor.fetchall()
-
-        #    try:
-        #        qemu_img_slot = str(result[0])
-        #        print(result)
-                
-        #        if result[0][1] == "boot":
-        #            self.comboBox_2.setCurrentIndex(0)
-        #            self.checkForUpdates(False)
-
-        #        elif result[0][1] == "never":
-        #            self.comboBox_2.setCurrentIndex(1)
-
-        #        print("The query was executed successfully. The update mirror slot already is in the database.")
-
-        #    except:
-        #        cursor.execute(insert_update_freq)
-        #        connection.commit()
-        #        print("The query was executed successfully. The update mirror slot has been created.")
-        
-        #except sqlite3.Error as e:
-        #    print(f"The SQLite module encountered an error: {e}.")
-
-        #try:
-        #    cursor.execute(select_update_channel)
-        #    connection.commit()
-        #    result = cursor.fetchall()
-
-        #    try:
-        #        qemu_img_slot = str(result[0])
-                
-        #        i = 0
-
-        #        while i < self.comboBox_3.count():
-        #            if self.comboBox_3.itemText(i) == result[0][1]:
-        #                self.comboBox_3.setCurrentIndex(i)
-        #                break
-
-        #            i += 1
-
-        #        print("The query was executed successfully. The update mirror slot already is in the database.")
-
-        #    except:
-        #        cursor.execute(insert_update_channel)
-        #        connection.commit()
-        #        print("The query was executed successfully. The update mirror slot has been created.")
-        
-        #except sqlite3.Error as e:
-        #    print(f"The SQLite module encountered an error: {e}.")
-
         try:
             cursor.execute(select02ColumnsVM)
             connection.commit()
@@ -1800,65 +1723,6 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
-    #def applyChangesUpdate(self):
-    #    updateMirror = self.comboBox.currentText()
-
-    #    if self.comboBox_2.currentText() == "Everytime I run this program":
-    #        updateNotifyFreq = "boot"
-
-    #    elif self.comboBox_2.currentText() == "Jedes Mal, wenn ich dieses Programm ausführe":
-    #        updateNotifyFreq = "boot"
-
-    #    elif self.comboBox_2.currentText() == "Never" or self.comboBox_2.currentText() == "Nie" or self.comboBox_2.currentText() == "Ніколи":
-    #        updateNotifyFreq = "never"
-
-    #    updateChannel = self.comboBox_3.currentText()
-
-    #    mirror_update = f"""
-    #    UPDATE updater
-    #    SET value = '{updateMirror}'
-    #    WHERE name = 'updatemirror';
-    #    """
-
-    #    freq_update = f"""
-    #    UPDATE updater
-    #    SET value = '{updateNotifyFreq}'
-    #    WHERE name = 'updatefreq';
-    #    """
-
-    #    channel_update = f"""
-    #    UPDATE updater
-    #    SET value = '{updateChannel}'
-    #    WHERE name = 'updatechannel';
-    #    """
-
-    #    connection = self.connection
-    #    cursor = connection.cursor()
-
-    #    try:
-    #        cursor.execute(mirror_update)
-    #        connection.commit()
-    #        print("The query was executed successfully.")
-
-    #    except sqlite3.Error as e:
-    #        print(f"The SQLite module encountered an error: {e}.")
-
-    #    try:
-    #        cursor.execute(freq_update)
-    #        connection.commit()
-    #        print("The query was executed successfully.")
-
-    #    except sqlite3.Error as e:
-    #        print(f"The SQLite module encountered an error: {e}.")
-
-    #    try:
-    #        cursor.execute(channel_update)
-    #        connection.commit()
-    #        print("The query was executed successfully.")
-
-    #    except sqlite3.Error as e:
-    #        print(f"The SQLite module encountered an error: {e}.")
-
     def applyGeneric(self):
         language_system = f"""
         UPDATE settings
@@ -2101,122 +1965,6 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog = SettingsRequireEmuGUIReboot(self)
                 dialog.exec()
 
-    #def checkForUpdatesManually(self):
-    #    manually = True
-    #    self.checkForUpdates(manually)
-
-    #def checkForUpdates(self, manually):
-    #    try:
-    #        if platform.system() == "Windows":
-    #            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
-    #    
-    #        else:
-    #            connection = platformSpecific.unixSpecific.setupUnixBackend()
-
-    #        select_update_mirror = """
-    #        SELECT name, value FROM updater
-    #        WHERE name = "updatemirror";
-    #        """
-
-    #        select_update_channel = """
-    #        SELECT name, value FROM updater
-    #        WHERE name = "updatechannel";
-    #        """
-
-    #        cursor = connection.cursor()
-
-    #        try:
-    #            cursor.execute(select_update_mirror)
-    #            connection.commit()
-    #            result = cursor.fetchall()
-
-    #            try:
-    #                qemu_img_slot = str(result[0])
-                
-    #                if result[0][1] == "GitHub":
-    #                    url = "https://raw.githubusercontent.com/Tech-FZ/EmuGUI/main/update.txt"
-                
-    #                elif result[0][1] == "Codeberg":
-    #                    url = "https://codeberg.org/lucien-rowan/EmuGUI/raw/branch/main/update.txt"
-
-    #                print("The query was executed successfully. The update mirror slot already is in the database.")
-
-    #            except:
-    #                print("The query was executed successfully but the mirror couldn't be retrieved. Please check one of the following mirrors:")
-    #                print("https://github.com/Tech-FZ/EmuGUI or")
-    #                print("https://codeberg.org/lucien-rowan/EmuGUI")
-        
-    #        except sqlite3.Error as e:
-    #            print(f"The SQLite module encountered an error: {e}.")
-
-            
-    #        rq = requests.get(url, allow_redirects=True)
-
-    #        if platform.system() == "Windows":
-    #            newVer = open(platformSpecific.windowsSpecific.windowsUpdateFile(), "wb+")
-
-    #        else:
-    #            newVer = open(platformSpecific.unixSpecific.unixUpdateFile(), "wb+")
-            
-    #        newVer.write(rq.content)
-    #        newVer.close()
-    #        latest_versions = []
-
-    #        if platform.system() == "Windows":
-    #            newVer = open(platformSpecific.windowsSpecific.windowsUpdateFile(), "wb+")
-
-    #        else:
-    #            newVer = open(platformSpecific.unixSpecific.unixUpdateFile(), "wb+")
-                
-    #        newVerContent = newVer.readlines()
-
-    #        for line in newVerContent:
-    #            line = line.replace("\n", "")
-    #            latest_version = line.split(" = ")
-    #            latest_versions.append(latest_version)
-
-    #        print(latest_versions)
-
-    #        try:
-    #            cursor.execute(select_update_channel)
-    #            connection.commit()
-    #            result = cursor.fetchall()
-
-    #            try:
-    #                qemu_img_slot = str(result[0])
-                
-    #                if result[0][1] == "pre-release":
-    #                    channel = "pre_release"
-                    
-    #                else:
-    #                    channel = "stable"
-
-    #                print("The query was executed successfully. The update mirror slot already is in the database.")
-
-    #            except:
-    #                print("Using stable channel as desired channel couldn't be determined.")
-        
-    #        except sqlite3.Error as e:
-    #            print(f"The SQLite module encountered an error: {e}.")
-
-    #        for latest_version in latest_versions:
-    #            if latest_version[0] == channel:
-    #                if int(latest_version[1]) > self.versionCode:
-    #                    dialog = UpdateAvailable(self)
-    #                    dialog.exec()
-
-    #                elif manually == True:
-    #                    dialog = NoUpdateAvailable(self)
-    #                    dialog.exec()
-
-    #        self.applyChangesUpdate()
-    #        newVer.close()
-
-    #    except:
-    #        if manually == True:
-    #            dialog = NoUpdateAvailable(self)
-    #            dialog.exec()
-
     # Your VM list will be updated every 10 seconds.
 
     def updateVmList(self):
@@ -2282,6 +2030,12 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+    def toGithub(self):
+        webbrowser.open_new_tab("https://www.github.com/Tech-FZ/EmuGUI")
+    
+    def toDiscord(self):
+        webbrowser.open_new_tab("https://discord.gg/rTGpYCwF89")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

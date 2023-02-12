@@ -67,37 +67,6 @@ def translateMainUK(window):
     window.pushButton_14.setText("Огляд") # Browse
     window.pushButton_6.setText("Застосувати") # Apply
 
-    # Update tab
-    #window.label_12.setText("Update mirror") # Update mirror
-    #window.label_13.setText("Update notify frequency") # Update notify frequency
-    #window.label_14.setText("Update channel") # Update channel
-
-    #window.pushButton_13.setText("Check for updates") # Check for updates
-    #window.pushButton_14.setText("Застосувати") # Apply
-
-    # Combo box for update frequencies
-    #i = 0
-
-    #while i < window.comboBox_2.count():
-    #    if window.comboBox_2.itemText(i) == "Everytime I run this program":
-    #        window.comboBox_2.setItemText(i, "Everytime I run this program") # Everytime I run this program
-    #        break
-
-    #    elif window.comboBox_2.itemText(i) == "Jedes Mal, wenn ich dieses Programm ausführe":
-    #        window.comboBox_2.setItemText(i, "Everytime I run this program") # Everytime I run this program
-    #        break
-
-    #    i += 1
-
-    #i = 0
-
-    #while i < window.comboBox_2.count():
-    #    if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie" or window.comboBox_2.itemText(i) == "Ніколи":
-    #        window.comboBox_2.setItemText(i, "Ніколи") # Never
-    #        break
-
-    #    i += 1
-
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
     window.label_7.setText("Built on Python and PyQt technology, licensed under GNU General Public License 3.0")
@@ -107,6 +76,10 @@ def translateMainUK(window):
         WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.
         """
         ) # WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.
+
+    window.label_14.setText("Banner made by Tech-FZ.") # Banner made by (insert author of current banner here).
+
+    window.label_21.setText("EmuGUI on social media (у English)") # EmuGUI on social media (in English)
 
 def translateNewVmUK(window):
     # First page

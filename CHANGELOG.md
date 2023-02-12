@@ -28,6 +28,8 @@
 - The commands and the documentation thing have been updated on the readme.
 - Also, the-amazing-atharva added a Code of Conduct.
 - The Windows binaries are updated to Python 3.10.10.
+- The obsolete code which has been commented out has been removed.
+- There are now social media links in the About EmuGUI section. However, please note that they are (mostly) in English.
 
 # EmuGUI v1.0.0.5308_b2 "Adèle Angela"  (based on v1.0.0.5307_b1)
 

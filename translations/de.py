@@ -67,37 +67,6 @@ def translateMainDE(window):
     window.pushButton_14.setText("Durchsuchen") # Browse
     window.pushButton_6.setText("Übernehmen") # Apply
 
-    # Update tab
-    #window.label_12.setText("Update-Spiegel") # Update mirror
-    #window.label_13.setText("Häufigkeit der Update-Benachrichtigungen") # Update notify frequency
-    #window.label_14.setText("Update-Kanal") # Update channel
-
-    #window.pushButton_13.setText("Nach Updates suchen") # Check for updates
-    #window.pushButton_14.setText("Übernehmen") # Apply
-
-    # Combo box for update frequencies
-    #i = 0
-
-    #while i < window.comboBox_2.count():
-    #    if window.comboBox_2.itemText(i) == "Everytime I run this program":
-    #        window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe") # Everytime I run this program
-    #        break
-
-    #    elif window.comboBox_2.itemText(i) == "Jedes Mal, wenn ich dieses Programm ausführe":
-    #        window.comboBox_2.setItemText(i, "Jedes Mal, wenn ich dieses Programm ausführe") # Everytime I run this program
-    #        break
-
-    #    i += 1
-
-    #i = 0
-
-    #while i < window.comboBox_2.count():
-    #    if window.comboBox_2.itemText(i) == "Never" or window.comboBox_2.itemText(i) == "Nie" or window.comboBox_2.itemText(i) == "Ніколи":
-    #        window.comboBox_2.setItemText(i, "Nie") # Never
-    #        break
-
-    #    i += 1
-
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
     window.label_7.setText("Basierend auf Python- und PyQt-Technologien, lizenziert unter GNU General Public License 3.0")
@@ -107,6 +76,10 @@ def translateMainDE(window):
         WARNUNG: Das Programm kommt, sofern das Gesetz es zulässt, OHNE JEGLICHE GARANTIE. Bitte sehen Sie für Details die GNU GPL-Lizenz ein.
         """
         ) # WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.
+
+    window.label_14.setText("Banner stammt von Tech-FZ.") # Banner made by (insert author of current banner here).
+
+    window.label_21.setText("EmuGUI in sozialen Medien (auf Englisch)") # EmuGUI on social media (in English)
 
 def translateNewVmDE(window):
     # First page

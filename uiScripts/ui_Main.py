@@ -333,19 +333,6 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.gridLayoutWidget_3)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_3.addWidget(self.label_8, 2, 0, 1, 1)
-
-        self.label_10 = QLabel(self.gridLayoutWidget_3)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setAlignment(Qt.AlignCenter)
-        self.label_10.setWordWrap(True)
-
-        self.gridLayout_3.addWidget(self.label_10, 5, 0, 1, 1)
-
         self.label_6 = QLabel(self.gridLayoutWidget_3)
         self.label_6.setObjectName(u"label_6")
         font = QFont()
@@ -355,6 +342,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_6, 0, 0, 1, 1)
 
+        self.label_10 = QLabel(self.gridLayoutWidget_3)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setAlignment(Qt.AlignCenter)
+        self.label_10.setWordWrap(True)
+
+        self.gridLayout_3.addWidget(self.label_10, 5, 0, 1, 1)
+
+        self.label_14 = QLabel(self.gridLayoutWidget_3)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.label_14, 3, 0, 1, 1)
+
         self.label_7 = QLabel(self.gridLayoutWidget_3)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setAlignment(Qt.AlignCenter)
@@ -362,11 +362,31 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_7, 4, 0, 1, 1)
 
-        self.label_14 = QLabel(self.gridLayoutWidget_3)
-        self.label_14.setObjectName(u"label_14")
-        self.label_14.setAlignment(Qt.AlignCenter)
+        self.label_8 = QLabel(self.gridLayoutWidget_3)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_3.addWidget(self.label_14, 3, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.label_8, 2, 0, 1, 1)
+
+        self.gridLayout_5 = QGridLayout()
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.label_21 = QLabel(self.gridLayoutWidget_3)
+        self.label_21.setObjectName(u"label_21")
+
+        self.gridLayout_5.addWidget(self.label_21, 0, 0, 1, 1)
+
+        self.pushButton_20 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_20.setObjectName(u"pushButton_20")
+
+        self.gridLayout_5.addWidget(self.pushButton_20, 0, 1, 1, 1)
+
+        self.pushButton_21 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_21.setObjectName(u"pushButton_21")
+
+        self.gridLayout_5.addWidget(self.pushButton_21, 0, 2, 1, 1)
+
+
+        self.gridLayout_3.addLayout(self.gridLayout_5, 6, 0, 1, 1)
 
         self.tabWidget_2.addTab(self.tab_4, "")
         self.tabWidget.addTab(self.tab_2, "")
@@ -437,11 +457,14 @@ class Ui_MainWindow(object):
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"qemu-system-sparc64 path", None))
         self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"QEMU", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"EmuGUI v0.0.1", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"EmuGUI", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Banner made by Tech-FZ", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"EmuGUI v0.0.1", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"EmuGUI on social media", None))
+        self.pushButton_20.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
+        self.pushButton_21.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"About EmuGUI", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi

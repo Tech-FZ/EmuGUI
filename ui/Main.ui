@@ -432,10 +432,15 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="2" column="0">
-             <widget class="QLabel" name="label_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <pointsize>21</pointsize>
+               </font>
+              </property>
               <property name="text">
-               <string>EmuGUI v0.0.1</string>
+               <string>EmuGUI</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -455,15 +460,10 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="font">
-               <font>
-                <pointsize>21</pointsize>
-               </font>
-              </property>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_14">
               <property name="text">
-               <string>EmuGUI</string>
+               <string>Banner made by Tech-FZ</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -483,15 +483,40 @@
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="label_14">
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_8">
               <property name="text">
-               <string>Banner made by Tech-FZ</string>
+               <string>EmuGUI v0.0.1</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
              </widget>
+            </item>
+            <item row="6" column="0">
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_21">
+                <property name="text">
+                 <string>EmuGUI on social media</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="pushButton_20">
+                <property name="text">
+                 <string>GitHub</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QPushButton" name="pushButton_21">
+                <property name="text">
+                 <string>Discord</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>
