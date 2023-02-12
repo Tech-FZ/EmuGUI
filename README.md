@@ -63,9 +63,9 @@ For the update checker, a version code is being used instead of the number. Here
 
 ## Installation (Windows)
 
-1. Get ]QEMU](https://qemu.weilnetz.de/w64/) and install it
+1. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
 2. Get EmuGUI and extract it
-3. Run main.exe in the EmuGUI directory.
+3. Run emugui.exe in the EmuGUI directory.
 4. Set the QEMU paths at the Settings/QEMU tab.
 5. Create a new virtual machine and start it.
 
@@ -124,7 +124,7 @@ For the update checker, a version code is being used instead of the number. Here
 10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
 11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic-bin requests`
 12. After this is done, run the main.py script.
-13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
+13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 14. After that is finished, copy the code into the dist folder PyInstaller created.
 15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 16. If it works, have fun! If not, try to start again from number 9.
@@ -145,7 +145,7 @@ For the update checker, a version code is being used instead of the number. Here
 12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
 13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic-bin requests`
 14. After this is done, run the main.py script.
-15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
+15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 16. After that is finished, copy the code into the dist folder PyInstaller created.
 17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 18. If it works, have fun! If not, try to start again from number 9.
@@ -163,7 +163,7 @@ For the update checker, a version code is being used instead of the number. Here
 9. Open the venv in VS Code and try to run a Python script with it.
 10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6 requests`
 11. After this is done, run the main.py script.
-12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\main.py`
+12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 13. After that is finished, copy the code into the dist folder PyInstaller created.
 14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 15. If it works, have fun! If not, try to start again from number 9.
@@ -178,14 +178,14 @@ For the update checker, a version code is being used instead of the number. Here
 6. Open Visual Studio Code in that folder.
 7. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic requests`. You can try getting a VENV working but I personally have problems with using Python virtual environments on Linux.
 8. After this is done, run the main.py script.
-9. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile main.py` (for those who can get a VENV to work) or `python3 -m PyInstaller --onefile main.py`
+9. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile emugui.py` (for those who can get a VENV to work) or `python3 -m PyInstaller --onefile emugui.py`
 10. After that is finished, copy the code into the dist folder PyInstaller created.
 11. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 12. If it works, have fun! If not, try to start again from number 7.
 
 ## Documentation
 
-A documentation of EmuGUI can be found [here](https://codeberg.org/lucien-rowan/EmuGUI/wiki)
+A documentation of EmuGUI can be found [here](https://github.com/Tech-FZ/EmuGUI/wiki)
 
 ## EmuGUI on Social Media
 

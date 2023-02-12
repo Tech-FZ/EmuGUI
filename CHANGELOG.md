@@ -1,3 +1,34 @@
+# EmuGUI v1.0.0.5309_b3 "Adèle Angela"  (based on v1.0.0.5308_b2)
+
+## Changes compared to v0.8.0.5206
+
+- The old feature list has been updated beforehand.
+- The updater has been removed due to some unexpected complications.
+- The database now supports the keyboard layout selection, which hasn't been implemented as of yet.
+- This release is now GitHub-only due to some unexpected complications.
+- You can now select different keyboard layouts.
+- The version string has been moved to the About section and is also shown in the title of the main window.
+- The main window now scales its content when resized.
+- The codename will be shown in the About section as well.
+- The license file has been updated with the copyright information.
+- The readme has been updated so it fits the current circumstances.
+- SPARC 32-bit support has been added and the functionality is ready for testing.
+- The old feature list is updated so it fits the current circumstances.
+- SPARC 64-bit support has been added and the functionality is ready for testing.
+- In the development version 1.0.0.5305_dev, there has been a bug which didn't properly fill the text fields for the QEMU settings. That has been fixed in this development version.
+- The readme was updated with the meaning of the "_b" ending.
+- The translations have been worked on so the new features can be translated now.
+- The text colourized logo has been made transparent.
+- The default banner has been replaced with a new banner fitting the codename of EmuGUI 1.0.
+- The contributors list has been updated so there you get credit for the banners you made.
+- If one of your banners is being used, you'll also get credit in the About EmuGUI section.
+- "main.py" has been renamed to "EmuGUI.py"
+- You can now join a Discord server via Readme.
+- The readme is fancier. Thanks, the-amazing-atharva.
+- The commands and the documentation thing have been updated on the readme.
+- Also, the-amazing-atharva added a Code of Conduct.
+- The Windows binaries are updated to Python 3.10.10.
+
 # EmuGUI v1.0.0.5308_b2 "Adèle Angela"  (based on v1.0.0.5307_b1)
 
 ## Changes compared to v0.8.0.5206
