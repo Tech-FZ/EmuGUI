@@ -42,15 +42,13 @@ For the update checker, a version code is being used instead of the number. Here
 ## System requirements
 | Component | Requirement |
 |-------|--------|
-| OS | Windows 8.1², Windows Server 2012 R2² or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.4, openSUSE Tumbleweed, Fedora 36, RHEL 7, Arch Linux or distributions based on those (x64) |
+| OS | Windows 10, Windows Server 2016 or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.4, openSUSE Tumbleweed, Fedora 36, RHEL 7, Arch Linux or distributions based on those (x64) |
 | Python | 3.6 or newer |
 | Processor | x64 Dual Core Processor with @2.6 GHz¹ |
 | RAM | 6 GB¹ |
 | HDD | 2 GB¹ |
 
 *¹ This is the absolute minimum, the required performance depends on the operating system you want to run.*
-
-*² We try to continue host support on Windows 8.1 and Windows Server 2012 R2 until at least 14th February, 2023. However, contributors are already required to use Windows 10/Server 2016 or later due to Qt Creator not being available on those.*
 
 ## Dependencies
 
@@ -116,7 +114,7 @@ For the update checker, a version code is being used instead of the number. Here
 2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
 3. Install Git. You can get it [here](https://git-scm.com/downloads)
 4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
-5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
+5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
 6. Open Visual Studio Code in that folder.
 7. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
 8. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
@@ -137,7 +135,7 @@ For the update checker, a version code is being used instead of the number. Here
 4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
 5. Install Qt from the following [site](https://www.qt.io/download-open-source?__hstc=152220518.4df0e407aa37c96fa5547ca135b274e3.1659787309440.1659787309440.1659787309440.1&__hssc=152220518.1.1659787309441&__hsfp=1951994995&hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5) (you need a Qt account for that) 
 6. You only need the Qt Creator.
-7. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git` or `git clone https://codeberg.org/lucien-rowan/EmuGUI.git`
+7. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
 8. Open Visual Studio Code in that folder.
 9. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
 10. After that is done, type: `python -m venv your-venv-name`. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.

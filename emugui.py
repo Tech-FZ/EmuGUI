@@ -40,8 +40,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.0.0.5309_b3 (pre-release, not for production)\nCodename 'Adèle Angela'")
-        self.setWindowTitle("EmuGUI v1.0.0.5309_b3 (Beta 3 Release)")
+        self.label_8.setText("EmuGUI v1.0.0.5310\nCodename 'Adèle Angela'")
+        self.setWindowTitle("EmuGUI v1.0.0.5310")
         self.languageInUse = "system"
 
         try:
@@ -50,7 +50,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5309
+        self.versionCode = 5310
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -86,11 +86,12 @@ class Window(QMainWindow, Ui_MainWindow):
 
         if platform.system() == "Windows":
             winvers = sys.getwindowsversion()
-
             if winvers.major <= 6 and winvers.minor <= 3:
                 dialog = Win812012R2NearEOS(self)
                 dialog.exec()
-
+                
+                self.label_8.setText(
+                    f"EmuGUI v1.0.0.5310\nCodename 'Adèle Angela'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)

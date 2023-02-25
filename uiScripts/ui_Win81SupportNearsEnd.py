@@ -51,7 +51,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"Sorry to notify you but Windows 8.1 and Windows Server 2012 R2 are only supported until February 14th, 2023.", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"If you got EmuGUI running on Windows 8.1 or Windows Server 2012 R2, congratulations. Unfortunately, these OSes aren't supported anymore.", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"OK", None))
     # retranslateUi
 
