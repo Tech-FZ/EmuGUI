@@ -924,7 +924,7 @@ class Ui_Dialog(object):
         self.label.setText(QCoreApplication.translate("Dialog", u"Name", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Architecture", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"i386", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"amd64", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"x86_64", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"mips", None))
         self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"mips64", None))
         self.comboBox.setItemText(4, QCoreApplication.translate("Dialog", u"mipsel", None))

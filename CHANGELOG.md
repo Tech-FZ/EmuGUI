@@ -1,3 +1,13 @@
+# EmuGUI v1.0.1.5311 "Adèle Angela" (based on v1.0.0.5310)
+
+## WARNING
+
+Windows 8.1 and Windows Server 2012 R2 are no longer supported as an EmuGUI host as of 14th February, 2023. Even if you are still able to run EmuGUI, you will need at least Windows 10 or Server 2016 to get support.
+
+## Changes compared to v1.0.0.5310
+
+- A bug which didn't let you edit x86_64 VMs directly has been fixed.
+
 # EmuGUI v1.0.0.5310 "Adèle Angela" (based on v1.0.0.5309_b3)
 
 ## WARNING

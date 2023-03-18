@@ -86,7 +86,7 @@
         </item>
         <item>
          <property name="text">
-          <string>amd64</string>
+          <string>x86_64</string>
          </property>
         </item>
         <item>
