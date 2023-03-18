@@ -91,7 +91,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.0.0.5310\nCodename 'Adèle Angela'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.0.1.5311\nCodename 'Adèle Angela'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
