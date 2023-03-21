@@ -12,6 +12,9 @@ else:
 import translations.de
 import translations.uk
 import translations.en
+import translations.fr
+import translations.es
+import translations.ro
 import locale
 import sqlite3
 
@@ -90,6 +93,15 @@ class QemuSysMissing(QDialog, Ui_Dialog):
                 elif result[0][1] == "uk":
                     langmode = "uk"
 
+                elif result[0][1] == "fr":
+                    langmode = "fr"
+
+                elif result[0][1] == "es":
+                    langmode = "es"
+
+                elif result[0][1] == "ro":
+                    langmode = "ro"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -118,6 +130,15 @@ class QemuSysMissing(QDialog, Ui_Dialog):
             elif languageToUse.startswith("uk"):
                 translations.uk.translateQemuSysMissingUK(self, self.vmSpecs[1])
 
+            elif languageToUse.startswith("fr"):
+                translations.fr.translateQemuSysMissingFR(self, self.vmSpecs[1])
+
+            elif languageToUse.startswith("es"):
+                translations.es.translateQemuSysMissingES(self, self.vmSpecs[1])
+
+            elif languageToUse.startswith("ro"):
+                translations.ro.translateQemuSysMissingRO(self, self.vmSpecs[1])
+
             else:
                 translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])
         
@@ -139,6 +160,15 @@ class QemuSysMissing(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("uk"):
                         translations.uk.translateQemuSysMissingUK(self, self.vmSpecs[1])
+
+                    elif languageToUse.startswith("fr"):
+                        translations.fr.translateQemuSysMissingFR(self, self.vmSpecs[1])
+
+                    elif languageToUse.startswith("es"):
+                        translations.es.translateQemuSysMissingES(self, self.vmSpecs[1])
+
+                    elif languageToUse.startswith("ro"):
+                        translations.ro.translateQemuSysMissingRO(self, self.vmSpecs[1])
 
                     else:
                         translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])

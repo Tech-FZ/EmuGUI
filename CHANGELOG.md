@@ -1,3 +1,10 @@
+# EmuGUI v1.1.0.5400_dev "Sara Angeline" (based on v1.0.1.5311)
+
+## Changes compared to v1.0.1.5311
+
+- New feature level, new codename. I decided to call it "Sara Angeline" based on what I want to add so far.
+- Language files for French, Spanish and Romanian have been prepared.
+
 # EmuGUI v1.0.1.5311 "Adèle Angela" (based on v1.0.0.5310)
 
 ## WARNING

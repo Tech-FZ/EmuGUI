@@ -135,6 +135,21 @@
               </item>
               <item>
                <property name="text">
+                <string>Français</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Español</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Românã</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Українська</string>
                </property>
               </item>

@@ -15,6 +15,9 @@ from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 import translations.de
 import translations.uk
 import translations.en
+import translations.fr
+import translations.es
+import translations.ro
 import locale
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
@@ -79,6 +82,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "uk":
                     langmode = "uk"
 
+                elif result[0][1] == "fr":
+                    langmode = "fr"
+
+                elif result[0][1] == "es":
+                    langmode = "es"
+
+                elif result[0][1] == "ro":
+                    langmode = "ro"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -109,6 +121,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("uk"):
                 translations.uk.translateEditVMUK(self)
 
+            elif languageToUse.startswith("fr"):
+                translations.fr.translateEditVMFR(self)
+
+            elif languageToUse.startswith("es"):
+                translations.es.translateEditVMES(self)
+
+            elif languageToUse.startswith("ro"):
+                translations.ro.translateEditVMRO(self)
+
             else:
                 translations.en.translateEditVMEN(self)
         
@@ -130,6 +151,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("uk"):
                         translations.uk.translateEditVMUK(self)
+
+                    elif languageToUse.startswith("fr"):
+                        translations.fr.translateEditVMFR(self)
+
+                    elif languageToUse.startswith("es"):
+                        translations.es.translateEditVMES(self)
+
+                    elif languageToUse.startswith("ro"):
+                        translations.ro.translateEditVMRO(self)
 
                     else:
                         translations.en.translateEditVMEN(self)
