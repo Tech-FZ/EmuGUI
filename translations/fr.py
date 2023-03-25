@@ -555,11 +555,23 @@ def translateEditVMFR(window):
 
         i += 1
 
+        if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
+            window.comboBox_4.setItemText(i, "System default") # System default
+            break
+
+        i += 1
+
     i = 0
 
     while i < window.comboBox_18.count():
         if window.comboBox_18.itemText(i) == "Let QEMU decide" or window.comboBox_18.itemText(i) == "QEMU überlassen":
             window.comboBox_18.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+        if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
+            window.comboBox_4.setItemText(i, "System default") # System default
             break
 
         i += 1

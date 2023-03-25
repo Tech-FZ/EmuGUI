@@ -27,12 +27,24 @@ def translateMainBE(window):
 
         i += 1
 
+        if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
+            window.comboBox_4.setItemText(i, "System default") # System default
+            break
+
+        i += 1
+
     # Combo box for themes
     i = 0
 
     while i < window.comboBox_5.count():
         if window.comboBox_5.itemText(i) == "System default" or window.comboBox_5.itemText(i) == "Systemstandard":
             window.comboBox_5.setItemText(i, "System default") # System default
+            break
+
+        i += 1
+
+        if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
+            window.comboBox_4.setItemText(i, "System default") # System default
             break
 
         i += 1

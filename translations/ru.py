@@ -22,7 +22,13 @@ def translateMainRU(window):
 
     while i < window.comboBox_4.count():
         if window.comboBox_4.itemText(i) == "System default" or window.comboBox_4.itemText(i) == "Systemstandard":
-            window.comboBox_4.setItemText(i, "System default") # System default
+            window.comboBox_4.setItemText(i, "По умолчанию системы") # System default
+            break
+
+        i += 1
+
+        if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
+            window.comboBox_4.setItemText(i, "По умолчанию системы") # System default
             break
 
         i += 1
@@ -32,75 +38,82 @@ def translateMainRU(window):
 
     while i < window.comboBox_5.count():
         if window.comboBox_5.itemText(i) == "System default" or window.comboBox_5.itemText(i) == "Systemstandard":
-            window.comboBox_5.setItemText(i, "System default") # System default
+            window.comboBox_5.setItemText(i, "По умолчанию системы") # System default
+            break
+
+        i += 1
+
+        if window.comboBox_5.itemText(i) == "По умолчанию системы" or window.comboBox_5.itemText(i) == "Па змаўчанні сістэмы":
+            window.comboBox_5.setItemText(i, "По умолчанию системы") # System default
             break
 
         i += 1
 
     # QEMU tab
-    window.label.setText("qemu-img Path") # qemu-img Path
-    window.label_2.setText("qemu-system-i386 Path") # qemu-system-i386 Path
-    window.label_3.setText("qemu-system-x86_64 Path") # qemu-system-x86_64 Path
-    window.label_4.setText("qemu-system-ppc Path") # qemu-system-ppc Path
-    window.label_5.setText("qemu-system-mips64el Path") # qemu-system-mips64el Path
-    window.label_9.setText("qemu-system-aarch64 Path") # qemu-system-aarch64 Path
-    window.label_11.setText("qemu-system-arm Path") # qemu-system-arm Path
-    window.label_16.setText("qemu-system-ppc64 Path") # qemu-system-ppc64 Path
-    window.label_17.setText("qemu-system-mipsel Path") # qemu-system-mipsel Path
-    window.label_18.setText("qemu-system-mips Path") # qemu-system-mips Path
-    window.label_19.setText("qemu-system-mips64 Path") # qemu-system-mips64 Path
-    window.label_12.setText("qemu-system-sparc Path") # qemu-system-sparc Path
-    window.label_13.setText("qemu-system-sparc64 Path") # qemu-system-sparc64 Path
+    window.label.setText("Путь к qemu-img") # qemu-img Path
+    window.label_2.setText("Путь к qemu-system-i386") # qemu-system-i386 Path
+    window.label_3.setText("Путь к qemu-system-x86_64") # qemu-system-x86_64 Path
+    window.label_4.setText("Путь к qemu-system-ppc") # qemu-system-ppc Path
+    window.label_5.setText("Путь к qemu-system-mips64el") # qemu-system-mips64el Path
+    window.label_9.setText("Путь к qemu-system-aarch64") # qemu-system-aarch64 Path
+    window.label_11.setText("Путь к qemu-system-arm") # qemu-system-arm Path
+    window.label_16.setText("Путь к qemu-system-ppc64") # qemu-system-ppc64 Path
+    window.label_17.setText("Путь к qemu-system-mipsel") # qemu-system-mipsel Path
+    window.label_18.setText("Путь к qemu-system-mips") # qemu-system-mips Path
+    window.label_19.setText("Путь к qemu-system-mips64") # qemu-system-mips64 Path
+    window.label_12.setText("Путь к qemu-system-sparc") # qemu-system-sparc Path
+    window.label_13.setText("Путь к qemu-system-sparc64") # qemu-system-sparc64 Path
 
-    window.pushButton.setText("Browse") # Browse
-    window.pushButton_2.setText("Browse") # Browse
-    window.pushButton_3.setText("Browse") # Browse
-    window.pushButton_4.setText("Browse") # Browse
-    window.pushButton_5.setText("Browse") # Browse
-    window.pushButton_7.setText("Browse") # Browse
-    window.pushButton_12.setText("Browse") # Browse
-    window.pushButton_16.setText("Browse") # Browse
-    window.pushButton_17.setText("Browse") # Browse
-    window.pushButton_18.setText("Browse") # Browse
-    window.pushButton_19.setText("Browse") # Browse
-    window.pushButton_13.setText("Browse") # Browse
-    window.pushButton_14.setText("Browse") # Browse
-    window.pushButton_6.setText("Apply") # Apply
+    window.pushButton.setText("Обзор") # Browse
+    window.pushButton_2.setText("Обзор") # Browse
+    window.pushButton_3.setText("Обзор") # Browse
+    window.pushButton_4.setText("Обзор") # Browse
+    window.pushButton_5.setText("Обзор") # Browse
+    window.pushButton_7.setText("Обзор") # Browse
+    window.pushButton_12.setText("Обзор") # Browse
+    window.pushButton_16.setText("Обзор") # Browse
+    window.pushButton_17.setText("Обзор") # Browse
+    window.pushButton_18.setText("Обзор") # Browse
+    window.pushButton_19.setText("Обзор") # Browse
+    window.pushButton_13.setText("Обзор") # Browse
+    window.pushButton_14.setText("Обзор") # Browse
+    window.pushButton_6.setText("Применить") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
-    window.label_7.setText("Built on Python and PyQt technology, licensed under GNU General Public License 3.0")
+    window.label_7.setText("Собрано на Python и технологии PyQt, лицензировано под GNU General Public License 3.0")
 
     window.label_10.setText(
         """
-        WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.
+        ПРЕДУПРЕЖДЕНИЕ: Эта программа поставляется с АБСОЛЮТНО НИКАКИМИ ГАРАНТИЯМИ в соответствии с действующим законодательством.
+        Подробности см. в лицензии GNU GPL.
         """
         ) # WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.
 
-    window.label_14.setText("Banner made by Tech-FZ.") # Banner made by (insert author of current banner here).
+    window.label_14.setText("Баннер сделан Tech-FZ.") # Banner made by (insert author of current banner here).
 
-    window.label_21.setText("EmuGUI on social media (in English)") # EmuGUI on social media (in English)
+    window.label_21.setText("EmuGUI в социальных сетях (на английском языке)") # EmuGUI on social media (in English)
 
 def translateNewVmRU(window):
     # First page
-    window.label.setText("Name") # Name
-    window.label_3.setText("Architecture") # Architecture
-    window.comboBox.setPlaceholderText("Please choose an architecture") # Please choose an architecture
+    window.label.setText("Название") # Name
+    window.label_3.setText("Архитектура") # Architecture
+    window.comboBox.setPlaceholderText("Пожалуйста, выберите архитектуру") # Please choose an architecture
 
-    window.pushButton_3.setText("Next >") # Next >
-    window.pushButton_2.setText("Cancel") # Cancel
+    window.pushButton_3.setText("Дальше >") # Next >
+    window.pushButton_2.setText("Отмена") # Cancel
 
     # Second page (i386/x64 machines)
-    window.label_4.setText("Machine") # Machine
-    window.label_5.setText("CPU") # CPU
-    window.label_6.setText("RAM in MB") # RAM in MB
+    window.label_4.setText("Машина") # Machine
+    window.label_5.setText("Процессор") # CPU
+    window.label_6.setText("ОЗУ в MB") # RAM in MB
 
-    window.comboBox_2.setPlaceholderText("Please select a machine") # Please select a machine
-    window.comboBox_3.setPlaceholderText("Please select a processor") # Please select a processor
+    window.comboBox_2.setPlaceholderText("Пожалуйста выберите машину") # Please select a machine
+    window.comboBox_3.setPlaceholderText("Пожалуйста выберите процессор") # Please select a processor
 
-    window.pushButton_5.setText("< Previous") # < Previous
-    window.pushButton_4.setText("Next >") # Next >
-    window.pushButton_6.setText("Cancel") # Cancel
+    window.pushButton_5.setText("< Назад") # < Previous
+    window.pushButton_4.setText("Дальше >") # Next >
+    window.pushButton_6.setText("Отмена") # Cancel
 
     # Combo boxes on i386/x64 page
     i = 0
@@ -122,16 +135,16 @@ def translateNewVmRU(window):
         i += 1
 
     # Second page (PowerPC machines)
-    window.label_9.setText("Machine") # Machine
-    window.label_8.setText("CPU") # CPU
-    window.label_7.setText("RAM in MB") # RAM in MB
+    window.label_9.setText("Машина") # Machine
+    window.label_8.setText("Процессор") # CPU
+    window.label_7.setText("ОЗУ в MB") # RAM in MB
 
-    window.comboBox_4.setPlaceholderText("Please select a machine") # Please select a machine
-    window.comboBox_5.setPlaceholderText("Please select a processor") # Please select a processor
+    window.comboBox_4.setPlaceholderText("Пожалуйста выберите машину") # Please select a machine
+    window.comboBox_5.setPlaceholderText("Пожалуйста выберите процессор") # Please select a processor
 
-    window.pushButton_7.setText("< Previous") # < Previous
-    window.pushButton_8.setText("Next >") # Next >
-    window.pushButton_9.setText("Cancel") # Cancel
+    window.pushButton_7.setText("< Назад") # < Previous
+    window.pushButton_8.setText("Дальше >") # Next >
+    window.pushButton_9.setText("Отмена") # Cancel
 
     # Combo boxes on PPC page
     i = 0
@@ -153,16 +166,16 @@ def translateNewVmRU(window):
         i += 1
 
     # Second page (MIPSel machines)
-    window.label_12.setText("Machine") # Machine
-    window.label_11.setText("CPU") # CPU
-    window.label_10.setText("RAM in MB") # RAM in MB
+    window.label_12.setText("Машина") # Machine
+    window.label_11.setText("Процессор") # CPU
+    window.label_10.setText("ОЗУ в MB") # RAM in MB
 
-    window.comboBox_6.setPlaceholderText("Please select a machine") # Please select a machine
-    window.comboBox_7.setPlaceholderText("Please select a processor") # Please select a processor
+    window.comboBox_6.setPlaceholderText("Пожалуйста выберите машину") # Please select a machine
+    window.comboBox_7.setPlaceholderText("Пожалуйста выберите процессор") # Please select a processor
 
-    window.pushButton_10.setText("< Previous") # < Previous
-    window.pushButton_11.setText("Next >") # Next >
-    window.pushButton_12.setText("Cancel") # Cancel
+    window.pushButton_10.setText("< Назад") # < Previous
+    window.pushButton_11.setText("Дальше >") # Next >
+    window.pushButton_12.setText("Отмена") # Cancel
 
     # Combo boxes on MIPSel page
     i = 0
@@ -184,16 +197,16 @@ def translateNewVmRU(window):
         i += 1
 
     # Second page (ARM machines)
-    window.label_31.setText("Machine") # Machine
-    window.label_30.setText("CPU") # CPU
-    window.label_29.setText("RAM in MB") # RAM in MB
+    window.label_31.setText("Машина") # Machine
+    window.label_30.setText("Процессор") # CPU
+    window.label_29.setText("ОЗУ в MB") # RAM in MB
 
-    window.comboBox_14.setPlaceholderText("Please select a machine") # Please select a machine
-    window.comboBox_15.setPlaceholderText("Please select a processor") # Please select a processor
+    window.comboBox_14.setPlaceholderText("Пожалуйста выберите машину") # Please select a machine
+    window.comboBox_15.setPlaceholderText("Пожалуйста выберите процессор") # Please select a processor
 
-    window.pushButton_33.setText("< Previous") # < Previous
-    window.pushButton_34.setText("Next >") # Next >
-    window.pushButton_35.setText("Cancel") # Cancel
+    window.pushButton_33.setText("< Назад") # < Previous
+    window.pushButton_34.setText("Дальше >") # Next >
+    window.pushButton_35.setText("Отмена") # Cancel
 
     # Combo boxes on ARM page
     i = 0
@@ -215,14 +228,14 @@ def translateNewVmRU(window):
         i += 1
 
     # Second page (SPARC32 machines)
-    window.label_22.setText("Machine") # Machine
-    window.label_35.setText("RAM in MB") # RAM in MB
+    window.label_22.setText("Машина") # Machine
+    window.label_35.setText("ОЗУ в MB") # RAM in MB
 
-    window.comboBox_20.setPlaceholderText("Please select a machine") # Please select a machine
+    window.comboBox_20.setPlaceholderText("Пожалуйста выберите машину") # Please select a machine
 
-    window.pushButton_37.setText("< Previous") # < Previous
-    window.pushButton_38.setText("Next >") # Next >
-    window.pushButton_39.setText("Cancel") # Cancel
+    window.pushButton_37.setText("< Назад") # < Previous
+    window.pushButton_38.setText("Дальше >") # Next >
+    window.pushButton_39.setText("Отмена") # Cancel
 
     # Combo boxes on SPARC32 page
     i = 0
@@ -235,14 +248,14 @@ def translateNewVmRU(window):
         i += 1
 
     # Second page (SPARC64 machines)
-    window.label_37.setText("Machine") # Machine
-    window.label_36.setText("RAM in MB") # RAM in MB
+    window.label_37.setText("Машина") # Machine
+    window.label_36.setText("ОЗУ в MB") # RAM in MB
 
-    window.comboBox_21.setPlaceholderText("Please select a machine") # Please select a machine
+    window.comboBox_21.setPlaceholderText("Пожалуйста выберите машину") # Please select a machine
 
-    window.pushButton_41.setText("< Previous") # < Previous
-    window.pushButton_40.setText("Next >") # Next >
-    window.pushButton_42.setText("Cancel") # Cancel
+    window.pushButton_41.setText("< Назад") # < Previous
+    window.pushButton_40.setText("Дальше >") # Next >
+    window.pushButton_42.setText("Отмена") # Cancel
 
     # Combo boxes on SPARC64 page
     i = 0
@@ -255,7 +268,7 @@ def translateNewVmRU(window):
         i += 1
 
     # Third page
-    window.label_20.setText("VHD usage") # VHD usage
+    window.label_20.setText("Использование VHD") # VHD usage
 
     # Combobox for VHD usage
     i = 0
@@ -297,50 +310,50 @@ def translateNewVmRU(window):
 
         i += 1
 
-    window.label_13.setText("VHD path") # VHD path
-    window.label_14.setText("VHD file format") # VHD file format
-    window.label_15.setText("Maximum size") # Maximum size
+    window.label_13.setText("Путь к VHD") # VHD path
+    window.label_14.setText("Формат файла VHD") # VHD file format
+    window.label_15.setText("Максимальный размер") # Maximum size
 
-    window.comboBox_8.setPlaceholderText("(Please select a file format)") # (Please select a file format)
+    window.comboBox_8.setPlaceholderText("(Пожалуйста, выберите формат файла)") # (Please select a file format)
 
     window.pushButton_13.setText("Browse") # Browse
-    window.pushButton_16.setText("< Previous") # < Previous
-    window.pushButton_14.setText("Next >") # Next >
-    window.pushButton_15.setText("Cancel") # Cancel
+    window.pushButton_16.setText("< Назад") # < Previous
+    window.pushButton_14.setText("Дальше >") # Next >
+    window.pushButton_15.setText("Отмена") # Cancel
 
     # Fourth page
     window.label_16.setText("VGA") # VGA
-    window.label_17.setText("Network") # Network
-    window.label_28.setText("Mouse") # Mouse
+    window.label_17.setText("Сеть") # Network
+    window.label_28.setText("Мышь") # Mouse
 
-    window.comboBox_10.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
-    window.comboBox_11.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
+    window.comboBox_10.setPlaceholderText("(Пожалуйста выберите графический адаптер)") # (Please select a graphics adapter)
+    window.comboBox_11.setPlaceholderText("(Пожалуйста выберите сетевой адаптер)") # (Please select a network adapter)
 
-    window.pushButton_18.setText("< Previous") # < Previous
-    window.pushButton_17.setText("Next >") # Next >
-    window.pushButton_19.setText("Cancel") # Cancel
+    window.pushButton_18.setText("< Назад") # < Previous
+    window.pushButton_17.setText("Дальше >") # Next >
+    window.pushButton_19.setText("Отмена") # Cancel
 
     # Fifth page
     window.label_19.setText(
-        "Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)"
+        "Расположение внешнего\nфайла BIOS\n(Оставьте пустым, чтобы\nиспользовать BIOS по умолчанию)"
         ) # Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)
 
-    window.label_32.setText("External BIOS file") # External BIOS file
+    window.label_32.setText("Внешний файл BIOS") # External BIOS file
 
     window.pushButton_36.setText("Browse") # Browse
-    window.pushButton_25.setText("< Previous") # < Previous
-    window.pushButton_24.setText("Next >") # Next >
-    window.pushButton_23.setText("Cancel") # Cancel
+    window.pushButton_25.setText("< Назад") # < Previous
+    window.pushButton_24.setText("Дальше >") # Next >
+    window.pushButton_23.setText("Отмена") # Cancel
 
     # Sixth page
-    window.label_23.setText("Sound card") # Sound card
-    window.label_33.setText("CPU cores")# CPU cores
-    window.label_34.setText("Keyboard") # Keyboard
-    window.label_21.setText("Keyboard layout") # Keyboard layout
+    window.label_23.setText("Звуковая карта") # Sound card
+    window.label_33.setText("Ядра процессора")# CPU cores
+    window.label_34.setText("Клавиатура") # Keyboard
+    window.label_21.setText("Раскладка клавиатуры") # Keyboard layout
 
-    window.pushButton_28.setText("< Previous") # < Previous
-    window.pushButton_27.setText("Next >") # Next >
-    window.pushButton_26.setText("Cancel") # Cancel
+    window.pushButton_28.setText("< Назад") # < Previous
+    window.pushButton_27.setText("Дальше >") # Next >
+    window.pushButton_26.setText("Отмена") # Cancel
 
     # Seventh page
     window.label_24.setText("Linux kernel") # Linux kernel
@@ -349,9 +362,9 @@ def translateNewVmRU(window):
 
     window.pushButton.setText("Browse") # Browse
     window.pushButton_32.setText("Browse") # Browse
-    window.pushButton_31.setText("< Previous") # < Previous
-    window.pushButton_30.setText("Next >") # Next >
-    window.pushButton_29.setText("Cancel") # Cancel
+    window.pushButton_31.setText("< Назад") # < Previous
+    window.pushButton_30.setText("Дальше >") # Next >
+    window.pushButton_29.setText("Отмена") # Cancel
 
     # Eighth page
     window.label_2.setText("Additional arguments (if needed)") # Additional arguments (if needed)
@@ -359,9 +372,9 @@ def translateNewVmRU(window):
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
     window.checkBox_3.setText("Add USB support") # Add USB support
 
-    window.pushButton_22.setText("< Previous") # < Previous
+    window.pushButton_22.setText("< Назад") # < Previous
     window.pushButton_20.setText("Finish") # Finish
-    window.pushButton_21.setText("Cancel") # Cancel
+    window.pushButton_21.setText("Отмена") # Cancel
 
 def translateStartVmRU(window):
     window.label_4.setText("Date & Time") # Date & Time
@@ -375,7 +388,7 @@ def translateStartVmRU(window):
     window.pushButton_2.setText("Browse") # Browse
     window.pushButton_5.setText("Set to system") # Set to system
     window.pushButton_3.setText("Start VM") # Start VM
-    window.pushButton_4.setText("Cancel") # Cancel
+    window.pushButton_4.setText("Отмена") # Cancel
 
     # Combo box for boot
     i = 0
