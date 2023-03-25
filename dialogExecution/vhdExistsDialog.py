@@ -16,6 +16,9 @@ import translations.en
 import translations.fr
 import translations.es
 import translations.ro
+import translations.be
+import translations.cz
+import translations.ru
 import locale
 
 class VhdAlreadyExists(QDialog, Ui_Dialog):
@@ -107,6 +110,15 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
                 elif result[0][1] == "ro":
                     langmode = "ro"
 
+                elif result[0][1] == "ru":
+                    langmode = "ru"
+
+                elif result[0][1] == "be":
+                    langmode = "be"
+
+                elif result[0][1] == "cz":
+                    langmode = "cz"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -144,6 +156,15 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
             elif languageToUse.startswith("ro"):
                 translations.ro.translateVhdExistsRO(self)
 
+            elif languageToUse.startswith("ru"):
+                translations.ru.translateVhdExistsRU(self)
+
+            elif languageToUse.startswith("be"):
+                translations.be.translateVhdExistsBE(self)
+
+            elif languageToUse.startswith("cz"):
+                translations.cz.translateVhdExistsCZ(self)
+
             else:
                 translations.en.translateVhdExistsEN(self)
         
@@ -174,6 +195,15 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("ro"):
                         translations.ro.translateVhdExistsRO(self)
+
+                    elif languageToUse.startswith("ru"):
+                        translations.ru.translateVhdExistsRU(self)
+
+                    elif languageToUse.startswith("be"):
+                        translations.be.translateVhdExistsBE(self)
+
+                    elif languageToUse.startswith("cz"):
+                        translations.cz.translateVhdExistsCZ(self)
 
                     else:
                         translations.en.translateVhdExistsEN(self)

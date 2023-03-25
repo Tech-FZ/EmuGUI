@@ -15,6 +15,9 @@ import translations.en
 import translations.fr
 import translations.es
 import translations.ro
+import translations.be
+import translations.cz
+import translations.ru
 import locale
 import sqlite3
 
@@ -82,6 +85,15 @@ class QemuImgMissing(QDialog, Ui_Dialog):
                 elif result[0][1] == "ro":
                     langmode = "ro"
 
+                elif result[0][1] == "ru":
+                    langmode = "ru"
+
+                elif result[0][1] == "be":
+                    langmode = "be"
+
+                elif result[0][1] == "cz":
+                    langmode = "cz"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -119,6 +131,15 @@ class QemuImgMissing(QDialog, Ui_Dialog):
             elif languageToUse.startswith("ro"):
                 translations.ro.translateQemuImgMissingRO(self)
 
+            elif languageToUse.startswith("ru"):
+                translations.ru.translateQemuImgMissingRU(self)
+
+            elif languageToUse.startswith("be"):
+                translations.be.translateQemuImgMissingBE(self)
+
+            elif languageToUse.startswith("cz"):
+                translations.cz.translateQemuImgMissingCZ(self)
+
             else:
                 translations.en.translateQemuImgMissingEN(self)
         
@@ -149,6 +170,15 @@ class QemuImgMissing(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("ro"):
                         translations.ro.translateQemuImgMissingRO(self)
+
+                    elif languageToUse.startswith("ru"):
+                        translations.ru.translateQemuImgMissingRU(self)
+
+                    elif languageToUse.startswith("be"):
+                        translations.be.translateQemuImgMissingBE(self)
+
+                    elif languageToUse.startswith("cz"):
+                        translations.cz.translateQemuImgMissingCZ(self)
 
                     else:
                         translations.en.translateQemuImgMissingEN(self)

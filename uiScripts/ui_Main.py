@@ -93,6 +93,9 @@ class Ui_MainWindow(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
         self.comboBox_4.setObjectName(u"comboBox_4")
 
         self.gridLayout_7.addWidget(self.comboBox_4, 0, 1, 1, 1)
@@ -428,6 +431,9 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(4, QCoreApplication.translate("MainWindow", u"Espa\u00f1ol", None))
         self.comboBox_4.setItemText(5, QCoreApplication.translate("MainWindow", u"Rom\u00e2n\u00e3", None))
         self.comboBox_4.setItemText(6, QCoreApplication.translate("MainWindow", u"\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430", None))
+        self.comboBox_4.setItemText(7, QCoreApplication.translate("MainWindow", u"\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f", None))
+        self.comboBox_4.setItemText(8, QCoreApplication.translate("MainWindow", u"\u0420\u0443\u0441\u0441\u043a\u0438\u0439", None))
+        self.comboBox_4.setItemText(9, QCoreApplication.translate("MainWindow", u"\u010ce\u0161tina", None))
 
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Language", None))

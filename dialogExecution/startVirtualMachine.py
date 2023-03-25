@@ -21,6 +21,9 @@ import translations.en
 import translations.fr
 import translations.es
 import translations.ro
+import translations.be
+import translations.cz
+import translations.ru
 import locale
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
@@ -100,6 +103,15 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "ro":
                     langmode = "ro"
 
+                elif result[0][1] == "ru":
+                    langmode = "ru"
+
+                elif result[0][1] == "be":
+                    langmode = "be"
+
+                elif result[0][1] == "cz":
+                    langmode = "cz"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -137,6 +149,15 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("ro"):
                 translations.ro.translateStartVmRO(self)
 
+            elif languageToUse.startswith("ru"):
+                translations.ru.translateStartVmRU(self)
+
+            elif languageToUse.startswith("be"):
+                translations.be.translateStartVmBE(self)
+
+            elif languageToUse.startswith("cz"):
+                translations.cz.translateStartVmCZ(self)
+
             else:
                 translations.en.translateStartVmEN(self)
         
@@ -167,6 +188,15 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("ro"):
                         translations.ro.translateStartVmRO(self)
+
+                    elif languageToUse.startswith("ru"):
+                        translations.ru.translateStartVmRU(self)
+
+                    elif languageToUse.startswith("be"):
+                        translations.be.translateStartVmBE(self)
+
+                    elif languageToUse.startswith("cz"):
+                        translations.cz.translateStartVmCZ(self)
 
                     else:
                         translations.en.translateStartVmEN(self)

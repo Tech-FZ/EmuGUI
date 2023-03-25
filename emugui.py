@@ -30,6 +30,9 @@ import translations.en
 import translations.fr
 import translations.es
 import translations.ro
+import translations.be
+import translations.cz
+import translations.ru
 import requests
 import locale
 import glob
@@ -43,8 +46,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.1.0.5400_dev\nCodename 'Sara Angeline'")
-        self.setWindowTitle("EmuGUI v1.1.0.5400_dev")
+        self.label_8.setText("EmuGUI v1.1.0.5401_dev\nCodename 'Sara Angeline'")
+        self.setWindowTitle("EmuGUI v1.1.0.5401_dev")
         self.languageInUse = "system"
 
         try:
@@ -53,7 +56,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5400
+        self.versionCode = 5401
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -94,7 +97,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.1.0.5400_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.1.0.5401_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
@@ -172,6 +175,24 @@ class Window(QMainWindow, Ui_MainWindow):
 
             if langmode != "system":
                 self.languageInUse = "ro"
+
+        elif languageToUse.startswith("be"):
+            translations.be.translateMainBE(self)
+
+            if langmode != "system":
+                self.languageInUse = "be"
+
+        elif languageToUse.startswith("cz"):
+            translations.cz.translateMainCZ(self)
+
+            if langmode != "system":
+                self.languageInUse = "cz"
+
+        elif languageToUse.startswith("ru"):
+            translations.ru.translateMainRU(self)
+
+            if langmode != "system":
+                self.languageInUse = "ru"
 
         else:
             translations.en.translateMainEN(self)
@@ -422,6 +443,9 @@ class Window(QMainWindow, Ui_MainWindow):
         # fr: French
         # es: Spanish
         # ro: Romanian
+        # be: Belarusian
+        # cz: Czech
+        # ru: Russian
         insert_language = """
         INSERT INTO settings (
             name, value
@@ -900,6 +924,26 @@ class Window(QMainWindow, Ui_MainWindow):
 
                     langmode = "ro"
 
+                elif result[0][1] == "cz":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Čeština":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "cz"
+
+                elif result[0][1] == "ru":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Русский":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "ru"
+
                 elif result[0][1] == "uk":
                     while i < self.comboBox_4.count():
                         if self.comboBox_4.itemText(i) == "Українська":
@@ -909,6 +953,16 @@ class Window(QMainWindow, Ui_MainWindow):
                         i += 1
 
                     langmode = "uk"
+
+                elif result[0][1] == "be":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Беларуская":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "be"
 
                 if platform.system() == "Windows":
                     langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
@@ -1821,6 +1875,24 @@ class Window(QMainWindow, Ui_MainWindow):
         WHERE name = 'lang';
         """
 
+        language_ru = f"""
+        UPDATE settings
+        SET value = 'ru'
+        WHERE name = 'lang';
+        """
+
+        language_be = f"""
+        UPDATE settings
+        SET value = 'be'
+        WHERE name = 'lang';
+        """
+
+        language_cz = f"""
+        UPDATE settings
+        SET value = 'cz'
+        WHERE name = 'lang';
+        """
+
         theme_default = f"""
         UPDATE settings
         SET value = 'default'
@@ -2032,6 +2104,120 @@ class Window(QMainWindow, Ui_MainWindow):
 
             try:
                 cursor.execute(language_ro)
+                connection.commit()
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
+        elif self.comboBox_4.currentText() == "Беларуская":
+            langmode = "be"
+
+            try:
+                cursor.execute(language_be)
+                connection.commit()
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
+        elif self.comboBox_4.currentText() == "Русский":
+            langmode = "ru"
+
+            try:
+                cursor.execute(language_ru)
+                connection.commit()
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
+        elif self.comboBox_4.currentText() == "Čeština":
+            langmode = "cz"
+
+            try:
+                cursor.execute(language_cz)
                 connection.commit()
 
                 if platform.system() == "Windows":

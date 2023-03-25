@@ -16,6 +16,9 @@ import translations.en
 import translations.fr
 import translations.es
 import translations.ro
+import translations.be
+import translations.cz
+import translations.ru
 import locale
 
 class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
@@ -83,6 +86,15 @@ class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
                 elif result[0][1] == "ro":
                     langmode = "ro"
 
+                elif result[0][1] == "ru":
+                    langmode = "ru"
+
+                elif result[0][1] == "be":
+                    langmode = "be"
+
+                elif result[0][1] == "cz":
+                    langmode = "cz"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -120,6 +132,15 @@ class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
             elif languageToUse.startswith("ro"):
                 translations.ro.translateVmTooNewRO(self)
 
+            elif languageToUse.startswith("ru"):
+                translations.ru.translateVmTooNewRU(self)
+
+            elif languageToUse.startswith("be"):
+                translations.be.translateVmTooNewBE(self)
+
+            elif languageToUse.startswith("cz"):
+                translations.cz.translateVmTooNewCZ(self)
+
             else:
                 translations.en.translateVmTooNewEN(self)
         
@@ -141,6 +162,24 @@ class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("uk"):
                         translations.uk.translateVmTooNewUK(self)
+
+                    elif languageToUse.startswith("fr"):
+                        translations.fr.translateVmTooNewFR(self)
+
+                    elif languageToUse.startswith("es"):
+                        translations.es.translateVmTooNewES(self)
+
+                    elif languageToUse.startswith("ro"):
+                        translations.ro.translateVmTooNewRO(self)
+
+                    elif languageToUse.startswith("ru"):
+                        translations.ru.translateVmTooNewRU(self)
+
+                    elif languageToUse.startswith("be"):
+                        translations.be.translateVmTooNewBE(self)
+
+                    elif languageToUse.startswith("cz"):
+                        translations.cz.translateVmTooNewCZ(self)
 
                     else:
                         translations.en.translateVmTooNewEN(self)

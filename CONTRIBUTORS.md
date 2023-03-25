@@ -6,6 +6,8 @@ BasDeGamer
 
 the-amazing-atharva
 
+Maestro Finch/Danik2343
+
 # Banners
 
 | Version | Author |
