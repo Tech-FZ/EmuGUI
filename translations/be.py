@@ -122,12 +122,20 @@ def translateNewVmBE(window):
             window.comboBox_2.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_2.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_3.count():
         if window.comboBox_3.itemText(i) == "Let QEMU decide" or window.comboBox_3.itemText(i) == "QEMU überlassen":
+            window.comboBox_3.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_3.itemText(i) == "Пусть QEMU решает":
             window.comboBox_3.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -153,12 +161,20 @@ def translateNewVmBE(window):
             window.comboBox_4.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_4.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_4.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_5.count():
         if window.comboBox_5.itemText(i) == "Let QEMU decide" or window.comboBox_5.itemText(i) == "QEMU überlassen":
+            window.comboBox_5.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_5.itemText(i) == "Пусть QEMU решает":
             window.comboBox_5.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -184,12 +200,20 @@ def translateNewVmBE(window):
             window.comboBox_6.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_6.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_6.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_7.count():
         if window.comboBox_7.itemText(i) == "Let QEMU decide" or window.comboBox_7.itemText(i) == "QEMU überlassen":
+            window.comboBox_7.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_7.itemText(i) == "Пусть QEMU решает":
             window.comboBox_7.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -215,12 +239,20 @@ def translateNewVmBE(window):
             window.comboBox_14.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_14.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_14.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_15.count():
         if window.comboBox_15.itemText(i) == "Let QEMU decide" or window.comboBox_15.itemText(i) == "QEMU überlassen":
+            window.comboBox_15.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_15.itemText(i) == "Пусть QEMU решает":
             window.comboBox_15.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -244,6 +276,10 @@ def translateNewVmBE(window):
             window.comboBox_20.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_20.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_20.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     # Second page (SPARC64 machines)
@@ -264,6 +300,10 @@ def translateNewVmBE(window):
             window.comboBox_21.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_21.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_21.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     # Third page
@@ -281,6 +321,10 @@ def translateNewVmBE(window):
             window.comboBox_18.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
             break
 
+        elif window.comboBox_18.itemText(i) == "Создать новый виртуальный жесткий диск":
+            window.comboBox_18.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
         i += 1
 
     i = 0
@@ -294,6 +338,10 @@ def translateNewVmBE(window):
             window.comboBox_18.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
             break
 
+        elif window.comboBox_18.itemText(i) == "Добавить существующий виртуальный жесткий диск":
+            window.comboBox_18.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
         i += 1
 
     i = 0
@@ -304,6 +352,10 @@ def translateNewVmBE(window):
             break
 
         elif window.comboBox_18.itemText(i) == "Keine virtuelle Festplatte anfügen":
+            window.comboBox_18.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        elif window.comboBox_18.itemText(i) == "Не добавлять виртуальный жесткий диск":
             window.comboBox_18.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
             break
 
@@ -394,6 +446,10 @@ def translateStartVmBE(window):
 
     while i < window.comboBox.count():
         if window.comboBox.itemText(i) == "Let QEMU decide" or window.comboBox.itemText(i) == "QEMU überlassen":
+            window.comboBox.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox.itemText(i) == "Пусть QEMU решает":
             window.comboBox.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -496,12 +552,20 @@ def translateEditVMBE(window):
             window.comboBox_11.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_11.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_11.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_12.count():
         if window.comboBox_12.itemText(i) == "Let QEMU decide" or window.comboBox_12.itemText(i) == "QEMU überlassen":
+            window.comboBox_12.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_12.itemText(i) == "Пусть QEMU решает":
             window.comboBox_12.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -519,12 +583,20 @@ def translateEditVMBE(window):
             window.comboBox_13.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_13.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_13.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_14.count():
         if window.comboBox_14.itemText(i) == "Let QEMU decide" or window.comboBox_14.itemText(i) == "QEMU überlassen":
+            window.comboBox_14.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_14.itemText(i) == "Пусть QEMU решает":
             window.comboBox_14.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -542,12 +614,20 @@ def translateEditVMBE(window):
             window.comboBox_15.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_15.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_15.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_16.count():
         if window.comboBox_16.itemText(i) == "Let QEMU decide" or window.comboBox_16.itemText(i) == "QEMU überlassen":
+            window.comboBox_16.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_16.itemText(i) == "Пусть QEMU решает":
             window.comboBox_16.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -565,12 +645,20 @@ def translateEditVMBE(window):
             window.comboBox_17.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
+        elif window.comboBox_17.itemText(i) == "Пусть QEMU решает":
+            window.comboBox_17.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
         i += 1
 
     i = 0
 
     while i < window.comboBox_18.count():
         if window.comboBox_18.itemText(i) == "Let QEMU decide" or window.comboBox_18.itemText(i) == "QEMU überlassen":
+            window.comboBox_18.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        elif window.comboBox_18.itemText(i) == "Пусть QEMU решает":
             window.comboBox_18.setItemText(i, "Let QEMU decide") # Let QEMU decide
             break
 
@@ -595,6 +683,10 @@ def translateEditVMBE(window):
             window.comboBox_2.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
             break
 
+        elif window.comboBox_2.itemText(i) == "Создать новый виртуальный жесткий диск":
+            window.comboBox_2.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
         i += 1
 
     i = 0
@@ -608,6 +700,10 @@ def translateEditVMBE(window):
             window.comboBox_2.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
             break
 
+        elif window.comboBox_2.itemText(i) == "Добавить существующий виртуальный жесткий диск":
+            window.comboBox_2.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
         i += 1
 
     i = 0
@@ -618,6 +714,10 @@ def translateEditVMBE(window):
             break
 
         elif window.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+            window.comboBox_2.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        elif window.comboBox_2.itemText(i) == "Не добавлять виртуальный жесткий диск":
             window.comboBox_2.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
             break
 

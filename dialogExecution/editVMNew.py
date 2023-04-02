@@ -207,6 +207,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     self.comboBox_12.setCurrentIndex(i)
                     break
 
+            elif self.comboBox_12.itemText(i) == "Пусть QEMU решает" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_12.setCurrentIndex(i)
+                    break
+
             elif self.comboBox_12.itemText(i) == machine:
                 self.comboBox_12.setCurrentIndex(i)
                 break
@@ -219,6 +224,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             if self.comboBox_11.itemText(i) == "Let QEMU decide" or self.comboBox_11.itemText(i) == "QEMU überlassen":
                 if cpu == "Let QEMU decide":
                     self.comboBox_11.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_11.itemText(i) == "Пусть QEMU решает" or self.comboBox_11.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_12.setCurrentIndex(i)
                     break
 
             if self.comboBox_11.itemText(i) == "Icelake-Client (depreciated)":
@@ -241,6 +251,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     self.comboBox_14.setCurrentIndex(i)
                     break
 
+            elif self.comboBox_14.itemText(i) == "Пусть QEMU решает" or self.comboBox_14.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_14.setCurrentIndex(i)
+                    break
+
             elif self.comboBox_14.itemText(i) == machine:
                 self.comboBox_14.setCurrentIndex(i)
                 break
@@ -251,6 +266,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         while i < self.comboBox_13.count():
             if self.comboBox_13.itemText(i) == "Let QEMU decide" or self.comboBox_13.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_13.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_13.itemText(i) == "Пусть QEMU решает" or self.comboBox_13.itemText(i) == "QEMU überlassen":
                 if cpu == "Let QEMU decide":
                     self.comboBox_13.setCurrentIndex(i)
                     break
@@ -270,6 +290,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     self.comboBox_16.setCurrentIndex(i)
                     break
 
+            elif self.comboBox_16.itemText(i) == "Пусть QEMU решает" or self.comboBox_16.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_16.setCurrentIndex(i)
+                    break
+
             elif self.comboBox_16.itemText(i) == machine:
                 self.comboBox_16.setCurrentIndex(i)
                 break
@@ -280,6 +305,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         while i < self.comboBox_15.count():
             if self.comboBox_15.itemText(i) == "Let QEMU decide" or self.comboBox_15.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_15.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_15.itemText(i) == "Пусть QEMU решает" or self.comboBox_15.itemText(i) == "QEMU überlassen":
                 if cpu == "Let QEMU decide":
                     self.comboBox_15.setCurrentIndex(i)
                     break
@@ -299,6 +329,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     self.comboBox_17.setCurrentIndex(i)
                     break
 
+            elif self.comboBox_17.itemText(i) == "Пусть QEMU решает" or self.comboBox_17.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_17.setCurrentIndex(i)
+                    break
+
             elif self.comboBox_17.itemText(i) == machine:
                 self.comboBox_17.setCurrentIndex(i)
                 break
@@ -309,6 +344,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         while i < self.comboBox_18.count():
             if self.comboBox_18.itemText(i) == "Let QEMU decide" or self.comboBox_18.itemText(i) == "QEMU überlassen":
+                if cpu == "Let QEMU decide":
+                    self.comboBox_18.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_18.itemText(i) == "Пусть QEMU решает" or self.comboBox_18.itemText(i) == "QEMU überlassen":
                 if cpu == "Let QEMU decide":
                     self.comboBox_18.setCurrentIndex(i)
                     break
@@ -328,6 +368,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     self.comboBox_20.setCurrentIndex(i)
                     break
 
+            elif self.comboBox_20.itemText(i) == "Пусть QEMU решает" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_20.setCurrentIndex(i)
+                    break
+
             elif self.comboBox_20.itemText(i) == machine:
                 self.comboBox_20.setCurrentIndex(i)
                 break
@@ -339,6 +384,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         while i < self.comboBox_21.count():
             if self.comboBox_21.itemText(i) == "Let QEMU decide" or self.comboBox_21.itemText(i) == "QEMU überlassen":
+                if machine == "Let QEMU decide":
+                    self.comboBox_21.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_21.itemText(i) == "Пусть QEMU решает" or self.comboBox_21.itemText(i) == "QEMU überlassen":
                 if machine == "Let QEMU decide":
                     self.comboBox_21.setCurrentIndex(i)
                     break
@@ -424,6 +474,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             if filename:
                 self.lineEdit_2.setText(filename)
 
+        elif self.comboBox_2.currentText() == "Создать новый виртуальный жесткий диск":
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
         elif self.comboBox_2.currentText() == "Add an existing virtual hard drive":
             filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
 
@@ -432,6 +488,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         elif self.comboBox_2.currentText() == "Existierende virtuelle Festplatte anfügen":
             filename, filter = QFileDialog.getOpenFileName(parent=self, caption='VHD-Datei öffnen', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
+        elif self.comboBox_2.currentText() == "Добавить существующий виртуальный жесткий диск":
+            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
 
             if filename:
                 self.lineEdit_2.setText(filename)
@@ -542,6 +604,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                     self.comboBox_2.setCurrentIndex(i)
                     break
 
+                elif self.comboBox_2.itemText(i) == "Добавить существующий виртуальный жесткий диск" or self.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+                    self.comboBox_2.setCurrentIndex(i)
+                    break
+
                 i += 1
 
         else:
@@ -549,6 +615,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             while i < self.comboBox_2.count():
                 if self.comboBox_2.itemText(i) == "Don't add a virtual hard drive" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+                    self.comboBox_2.setCurrentIndex(i)
+                    break
+
+                elif self.comboBox_2.itemText(i) == "Не добавлять виртуальный жесткий диск" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
                     self.comboBox_2.setCurrentIndex(i)
                     break
 
@@ -560,6 +630,11 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         while i < self.comboBox_7.count():
             if self.comboBox_7.itemText(i) == "Let QEMU decide" or self.comboBox_7.itemText(i) == "QEMU überlassen":
+                if vmSpecs[6] == "Let QEMU decide":
+                    self.comboBox_7.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_7.itemText(i) == "Пусть QEMU решает" or self.comboBox_7.itemText(i) == "QEMU überlassen":
                 if vmSpecs[6] == "Let QEMU decide":
                     self.comboBox_7.setCurrentIndex(i)
                     break
@@ -699,10 +774,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             cpu = "Let QEMU decide"
             ram = self.spinBox_8.value()
 
-        if machine == "Let QEMU decide" or machine == "QEMU überlassen":
+        if machine == "Let QEMU decide" or machine == "QEMU überlassen" or machine == "Пусть QEMU решает":
             machine = "Let QEMU decide"
 
-        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen":
+        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen" or cpu == "Пусть QEMU решает":
             cpu = "Let QEMU decide"
 
         if self.lineEdit_2.text() == "" or self.lineEdit_2.isEnabled() == False:
@@ -781,7 +856,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 except:
                     print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")
 
-        if self.comboBox_7.currentText() == "Let QEMU decide" or self.comboBox_7.currentText() == "QEMU überlassen":
+        if self.comboBox_7.currentText() == "Let QEMU decide" or self.comboBox_7.currentText() == "QEMU überlassen" or self.comboBox_7.currentText() == "Пусть QEMU решает":
             vga = "Let QEMU decide"
         
         else:

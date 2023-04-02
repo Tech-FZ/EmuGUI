@@ -344,6 +344,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.spinBox_4.setEnabled(True)
             self.comboBox_9.setEnabled(True)
 
+        elif self.comboBox_18.currentText() == "Создать новый виртуальный жесткий диск":
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(True)
+            self.spinBox_4.setEnabled(True)
+            self.comboBox_9.setEnabled(True)
+
         elif self.comboBox_18.currentText() == "Neue virtuelle Festplatte erstellen":
             # For new and existing
             self.lineEdit_6.setEnabled(True)
@@ -364,6 +374,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.spinBox_4.setEnabled(False)
             self.comboBox_9.setEnabled(False)
 
+        elif self.comboBox_18.currentText() == "Добавить существующий виртуальный жесткий диск":
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
         elif self.comboBox_18.currentText() == "Existierende virtuelle Festplatte anfügen":
             # For new and existing
             self.lineEdit_6.setEnabled(True)
@@ -375,6 +395,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.comboBox_9.setEnabled(False)
 
         elif self.comboBox_18.currentText() == "Don't add a virtual hard drive":
+            # For new and existing
+            self.lineEdit_6.setEnabled(False)
+            self.pushButton_13.setEnabled(False)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        elif self.comboBox_18.currentText() == "Не добавлять виртуальный жесткий диск":
             # For new and existing
             self.lineEdit_6.setEnabled(False)
             self.pushButton_13.setEnabled(False)
@@ -483,10 +513,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = "Let QEMU decide"
             ram = self.spinBox_8.value()
 
-        if machine == "Let QEMU decide" or machine == "QEMU überlassen":
+        if machine == "Let QEMU decide" or machine == "QEMU überlassen" or machine == "Пусть QEMU решает":
             machine = "Let QEMU decide"
 
-        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen":
+        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen" or cpu == "Пусть QEMU решает":
             cpu = "Let QEMU decide"
 
         if self.lineEdit_6.text() == "" or self.lineEdit_6.isEnabled() == False:
@@ -563,7 +593,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 except:
                     print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")
 
-        if self.comboBox_10.currentText() == "Let QEMU decide" or self.comboBox_10.currentText() == "QEMU überlassen":
+        if self.comboBox_10.currentText() == "Let QEMU decide" or self.comboBox_10.currentText() == "QEMU überlassen" or self.comboBox_10.currentText() == "Пусть QEMU решает":
             vga = "Let QEMU decide"
         
         else:

@@ -1079,6 +1079,10 @@ class Window(QMainWindow, Ui_MainWindow):
                             self.comboBox_5.setCurrentIndex(i)
                             break
 
+                        elif self.comboBox_5.itemText(i) == "По умолчанию системы":
+                            self.comboBox_5.setCurrentIndex(i)
+                            break
+
                         i += 1
 
             except:
@@ -1909,6 +1913,45 @@ class Window(QMainWindow, Ui_MainWindow):
         cursor = connection.cursor()
 
         if self.comboBox_4.currentText() == "System default" or self.comboBox_4.currentText() == "Systemstandard":
+            langmode = "system"
+
+            try:
+                cursor.execute(language_system)
+                connection.commit()
+                
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
+        elif self.comboBox_4.currentText() == "По умолчанию системы" or self.comboBox_4.currentText() == "Systemstandard":
             langmode = "system"
 
             try:
