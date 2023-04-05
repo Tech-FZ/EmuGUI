@@ -33,7 +33,7 @@ import translations.ro
 import translations.be
 import translations.cz
 import translations.ru
-import requests
+#import requests
 import locale
 import glob
 import webbrowser
