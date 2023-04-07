@@ -37,6 +37,8 @@ import translations.ru
 import locale
 import glob
 import webbrowser
+import datetime
+import dateutil.easter
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -141,7 +143,22 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_14.clicked.connect(self.set_qemu_sparc64_path)
         self.pushButton_20.clicked.connect(self.toGithub)
         self.pushButton_21.clicked.connect(self.toDiscord)
-        self.label_6.setPixmap(QtGui.QPixmap("banners/AdeleAngela.png"))
+
+        easter_this_year = dateutil.easter.easter(datetime.date.today().year)
+        good_friday_delta = datetime.timedelta(days=-2)
+        good_saturday_delta = datetime.timedelta(days=-1)
+        easter_monday_delta = datetime.timedelta(days=1)
+
+        print(easter_this_year)
+
+        if datetime.date.today() == easter_this_year or datetime.date.today() == easter_this_year + good_friday_delta:
+            self.label_6.setPixmap(QtGui.QPixmap("banners/RobertRabbit.png"))
+
+        elif datetime.date.today() == easter_this_year + easter_monday_delta or datetime.date.today() == easter_this_year + good_saturday_delta:
+            self.label_6.setPixmap(QtGui.QPixmap("banners/RobertRabbit.png"))
+
+        else:
+            self.label_6.setPixmap(QtGui.QPixmap("banners/AdeleAngela.png"))
 
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:
