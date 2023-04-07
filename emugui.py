@@ -41,13 +41,18 @@ import webbrowser
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         # This function initializes and runs EmuGUI
-        super().__init__(parent)
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+        
         self.setupUi(self)
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.1.0.5401_dev\nCodename 'Sara Angeline'")
-        self.setWindowTitle("EmuGUI v1.1.0.5401_dev")
+        self.label_8.setText("EmuGUI v1.1.0.5402_dev\nCodename 'Sara Angeline'")
+        self.setWindowTitle("EmuGUI v1.1.0.5402_dev")
         self.languageInUse = "system"
 
         try:
@@ -56,7 +61,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5401
+        self.versionCode = 5402
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -97,7 +102,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.1.0.5401_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.1.0.5402_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)

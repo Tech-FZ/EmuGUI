@@ -29,7 +29,12 @@ import locale
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
     def __init__(self, parent=None):
-        super().__init__(parent)
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+            
         self.setupUi(self)
         self.connectSignalsSlots()
         self.langDetect()

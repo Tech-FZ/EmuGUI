@@ -4,7 +4,12 @@ from PySide6 import QtGui
 
 class SettingsRequireEmuGUIReboot(QDialog, Ui_Dialog):
     def __init__(self, parent = None):
-        super().__init__(parent)
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+            
         self.setupUi(self)
         self.setWindowTitle("EmuGUI Settings")
         
