@@ -1,0 +1,4 @@
+Let QEMU decide
+QEMU überlassen
+Няхай QEMU вырашае
+Пусть QEMU решает

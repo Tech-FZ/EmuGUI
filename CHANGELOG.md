@@ -1,3 +1,16 @@
+# EmuGUI v1.1.0.5403_dev "Sara Angeline" (based on v1.1.0.5402_dev)
+
+## Changes compared to v1.0.1.5311
+
+- New feature level, new codename. I decided to call it "Sara Angeline" based on what I want to add so far.
+- Language files for French, Spanish, Czech, Russian, Belarusian and Romanian have been prepared.
+- Thanks for translating EmuGUI into Russian and Belarusian, Danik2343.
+- The old feature list has been updated again.
+- The requests list has been commented out.
+- Happy Eastern! A banner just for eastern has been added.
+- For Python 3.10.11 on Windows, there was a bug which prevented EmuGUI from starting up, which is fixed by making a try-except clause for both the Python versions which still require the parent argument in the initialisation and those which crash because of it.
+- As I noticed the code would go confusing, I decided to use text files containing the strings for affected combo boxes instead.
+
 # EmuGUI v1.1.0.5402_dev "Sara Angeline" (based on v1.1.0.5401_dev)
 
 ## Changes compared to v1.0.1.5311

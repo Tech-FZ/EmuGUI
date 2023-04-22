@@ -474,6 +474,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(12)
 
     def finishCreation(self):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideVariants:
+            letQemuDecideVariantsStr = letQemuDecideVariants.read()
+
         # This creates your VM in the first place
 
         if platform.system() == "Windows":
@@ -518,11 +521,17 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             cpu = "Let QEMU decide"
             ram = self.spinBox_8.value()
 
-        if machine == "Let QEMU decide" or machine == "QEMU überlassen" or machine == "Пусть QEMU решает":
+        if letQemuDecideVariantsStr.__contains__(machine):
             machine = "Let QEMU decide"
 
-        if cpu == "Let QEMU decide" or cpu == "QEMU überlassen" or cpu == "Пусть QEMU решает":
+        #if machine == "Let QEMU decide" or machine == "QEMU überlassen" or machine == "Пусть QEMU решает":
+        #    machine = "Let QEMU decide"
+
+        if letQemuDecideVariantsStr.__contains__(cpu):
             cpu = "Let QEMU decide"
+
+        #if cpu == "Let QEMU decide" or cpu == "QEMU überlassen" or cpu == "Пусть QEMU решает":
+        #    cpu = "Let QEMU decide"
 
         if self.lineEdit_6.text() == "" or self.lineEdit_6.isEnabled() == False:
             vhd = "NULL"
@@ -598,8 +607,11 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 except:
                     print("The virtual disk could not be created. Please check if the path and the QEMU settings are correct.")
 
-        if self.comboBox_10.currentText() == "Let QEMU decide" or self.comboBox_10.currentText() == "QEMU überlassen" or self.comboBox_10.currentText() == "Пусть QEMU решает":
+        if letQemuDecideVariantsStr.__contains__(self.comboBox_10.currentText()):
             vga = "Let QEMU decide"
+
+        #if self.comboBox_10.currentText() == "Let QEMU decide" or self.comboBox_10.currentText() == "QEMU überlassen" or self.comboBox_10.currentText() == "Пусть QEMU решает":
+        #    vga = "Let QEMU decide"
         
         else:
             vga = self.comboBox_10.currentText()
