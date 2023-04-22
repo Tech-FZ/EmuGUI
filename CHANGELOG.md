@@ -9,7 +9,7 @@
 - The requests list has been commented out.
 - Happy Eastern! A banner just for eastern has been added.
 - For Python 3.10.11 on Windows, there was a bug which prevented EmuGUI from starting up, which is fixed by making a try-except clause for both the Python versions which still require the parent argument in the initialisation and those which crash because of it.
-- As I noticed the code would go confusing, I decided to use text files containing the strings for affected combo boxes instead.
+- As I noticed the code would go confusing, I decided to use text files containing the strings for affected combo boxes instead. The code which was used before this update has been commented out for now so we can roll back if something is wrong.
 
 # EmuGUI v1.1.0.5402_dev "Sara Angeline" (based on v1.1.0.5401_dev)
 

@@ -1,0 +1,4 @@
+Don't add a virtual hard drive
+Keine virtuelle Festplatte anfügen
+Не дадаваць віртуальны жорсткі дыск
+Не добавлять виртуальный жесткий диск

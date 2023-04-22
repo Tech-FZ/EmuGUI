@@ -1091,19 +1091,26 @@ class Window(QMainWindow, Ui_MainWindow):
                                 print("Style couldn't be applied.")
                 
                 else:
+                    with open("translations/systemdefault.txt", "r+") as sysDefFile:
+                        sysDefContent = sysDefFile.read()
+
                     i = 0
                     while i < self.comboBox_5.count():
-                        if self.comboBox_5.itemText(i) == "System default":
+                        if sysDefContent.__contains__(self.comboBox_5.itemText(i)):
                             self.comboBox_5.setCurrentIndex(i)
                             break
 
-                        elif self.comboBox_5.itemText(i) == "Systemstandard":
-                            self.comboBox_5.setCurrentIndex(i)
-                            break
+                        #if self.comboBox_5.itemText(i) == "System default":
+                        #    self.comboBox_5.setCurrentIndex(i)
+                        #    break
 
-                        elif self.comboBox_5.itemText(i) == "По умолчанию системы":
-                            self.comboBox_5.setCurrentIndex(i)
-                            break
+                        #elif self.comboBox_5.itemText(i) == "Systemstandard":
+                        #    self.comboBox_5.setCurrentIndex(i)
+                        #    break
+
+                        #elif self.comboBox_5.itemText(i) == "По умолчанию системы":
+                        #    self.comboBox_5.setCurrentIndex(i)
+                        #    break
 
                         i += 1
 
@@ -1859,6 +1866,9 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def applyGeneric(self):
+        with open("translations/systemdefault.txt", "r+") as sysDefFile:
+            sysDefContent = sysDefFile.read()
+
         language_system = f"""
         UPDATE settings
         SET value = 'default'
@@ -1934,7 +1944,7 @@ class Window(QMainWindow, Ui_MainWindow):
         connection = self.connection
         cursor = connection.cursor()
 
-        if self.comboBox_4.currentText() == "System default" or self.comboBox_4.currentText() == "Systemstandard":
+        if sysDefContent.__contains__(self.comboBox_4.currentText()): #self.comboBox_4.currentText() == "System default" or self.comboBox_4.currentText() == "Systemstandard":
             langmode = "system"
 
             try:
@@ -1973,44 +1983,45 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog = SettingsRequireEmuGUIReboot(self)
                 dialog.exec()
 
-        elif self.comboBox_4.currentText() == "По умолчанию системы" or self.comboBox_4.currentText() == "Systemstandard":
-            langmode = "system"
+        
+        #elif self.comboBox_4.currentText() == "По умолчанию системы" or self.comboBox_4.currentText() == "Systemstandard":
+        #    langmode = "system"
 
-            try:
-                cursor.execute(language_system)
-                connection.commit()
+        #    try:
+        #        cursor.execute(language_system)
+        #        connection.commit()
                 
 
-                if platform.system() == "Windows":
-                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                #if platform.system() == "Windows":
+                 #   langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
                 
-                else:
-                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+                #else:
+                 #   langfile = platformSpecific.unixSpecific.unixLanguageFile()
 
-                if langmode == "system":
-                    languageToUseLater = locale.getlocale()[0]
-                    languageToUseEvenLater = languageToUseLater.split("_")
-                    languageToUseHere = languageToUseEvenLater[0]
+                #if langmode == "system":
+                 #   languageToUseLater = locale.getlocale()[0]
+                  #  languageToUseEvenLater = languageToUseLater.split("_")
+                   # languageToUseHere = languageToUseEvenLater[0]
 
-                else:
-                    languageToUseHere = langmode
+                #else:
+                 #   languageToUseHere = langmode
                 
-                try:
-                    with open(langfile, "w+") as language:
-                        language.write(languageToUseHere)
+                #try:
+                 #   with open(langfile, "w+") as language:
+                  #      language.write(languageToUseHere)
 
-                except:
-                    print("EmuGUI failed to create a language file. Expect some issues.")
+                #except:
+                 #   print("EmuGUI failed to create a language file. Expect some issues.")
 
-                self.setLanguage(langmode)
-                print("The query was executed successfully.")
+                #self.setLanguage(langmode)
+                #print("The query was executed successfully.")
 
-            except sqlite3.Error as e:
-                print(f"The SQLite module encountered an error: {e}.")
+            #except sqlite3.Error as e:
+             #   print(f"The SQLite module encountered an error: {e}.")
 
-            except:
-                dialog = SettingsRequireEmuGUIReboot(self)
-                dialog.exec()
+            #except:
+             #   dialog = SettingsRequireEmuGUIReboot(self)
+              #  dialog.exec()
 
         elif self.comboBox_4.currentText() == "English":
             langmode = "en"
@@ -2354,7 +2365,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog = SettingsRequireEmuGUIReboot(self)
                 dialog.exec()
 
-        if self.comboBox_5.currentText() == "System default" or self.comboBox_5.currentText() == "Systemstandard":
+        if sysDefContent.__contains__(self.comboBox_5.currentText()): #self.comboBox_5.currentText() == "System default" or self.comboBox_5.currentText() == "Systemstandard":
             try:
                 cursor.execute(theme_default)
                 connection.commit()

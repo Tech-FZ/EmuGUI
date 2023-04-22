@@ -204,18 +204,26 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 translations.en.translateEditVMEN(self)
 
     def machineCpuI386Amd64(self, machine, cpu):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
+
         i = 0
 
         while i < self.comboBox_12.count():
-            if self.comboBox_12.itemText(i) == "Let QEMU decide" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_12.itemText(i)):
                 if machine == "Let QEMU decide":
                     self.comboBox_12.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_12.itemText(i) == "Пусть QEMU решает" or self.comboBox_12.itemText(i) == "QEMU überlassen":
-                if machine == "Let QEMU decide":
-                    self.comboBox_12.setCurrentIndex(i)
-                    break
+            #if self.comboBox_12.itemText(i) == "Let QEMU decide" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_12.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_12.itemText(i) == "Пусть QEMU решает" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_12.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_12.itemText(i) == machine:
                 self.comboBox_12.setCurrentIndex(i)
@@ -226,15 +234,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_11.count():
-            if self.comboBox_11.itemText(i) == "Let QEMU decide" or self.comboBox_11.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_11.itemText(i)):
                 if cpu == "Let QEMU decide":
                     self.comboBox_11.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_11.itemText(i) == "Пусть QEMU решает" or self.comboBox_11.itemText(i) == "QEMU überlassen":
-                if cpu == "Let QEMU decide":
-                    self.comboBox_12.setCurrentIndex(i)
-                    break
+            #if self.comboBox_11.itemText(i) == "Let QEMU decide" or self.comboBox_11.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_11.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_11.itemText(i) == "Пусть QEMU решает" or self.comboBox_11.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_12.setCurrentIndex(i)
+               #     break
 
             if self.comboBox_11.itemText(i) == "Icelake-Client (depreciated)":
                 if cpu == "Icelake-Client":
@@ -248,18 +261,26 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuPpc(self, machine, cpu):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
+
         i = 0
 
         while i < self.comboBox_14.count():
-            if self.comboBox_14.itemText(i) == "Let QEMU decide" or self.comboBox_14.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_14.itemText(i)):
                 if machine == "Let QEMU decide":
                     self.comboBox_14.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_14.itemText(i) == "Пусть QEMU решает" or self.comboBox_14.itemText(i) == "QEMU überlassen":
-                if machine == "Let QEMU decide":
-                    self.comboBox_14.setCurrentIndex(i)
-                    break
+            #if self.comboBox_14.itemText(i) == "Let QEMU decide" or self.comboBox_14.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_14.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_14.itemText(i) == "Пусть QEMU решает" or self.comboBox_14.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_14.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_14.itemText(i) == machine:
                 self.comboBox_14.setCurrentIndex(i)
@@ -270,15 +291,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_13.count():
-            if self.comboBox_13.itemText(i) == "Let QEMU decide" or self.comboBox_13.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_13.itemText(i)):
                 if cpu == "Let QEMU decide":
                     self.comboBox_13.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_13.itemText(i) == "Пусть QEMU решает" or self.comboBox_13.itemText(i) == "QEMU überlassen":
-                if cpu == "Let QEMU decide":
-                    self.comboBox_13.setCurrentIndex(i)
-                    break
+            #if self.comboBox_13.itemText(i) == "Let QEMU decide" or self.comboBox_13.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_13.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_13.itemText(i) == "Пусть QEMU решает" or self.comboBox_13.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_13.setCurrentIndex(i)
+               #     break
 
             if self.comboBox_13.itemText(i) == cpu:
                 self.comboBox_13.setCurrentIndex(i)
@@ -287,18 +313,26 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuMips64el(self, machine, cpu):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
+
         i = 0
 
         while i < self.comboBox_16.count():
-            if self.comboBox_16.itemText(i) == "Let QEMU decide" or self.comboBox_16.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_16.itemText(i)):
                 if machine == "Let QEMU decide":
                     self.comboBox_16.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_16.itemText(i) == "Пусть QEMU решает" or self.comboBox_16.itemText(i) == "QEMU überlassen":
-                if machine == "Let QEMU decide":
-                    self.comboBox_16.setCurrentIndex(i)
-                    break
+            #if self.comboBox_16.itemText(i) == "Let QEMU decide" or self.comboBox_16.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_16.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_16.itemText(i) == "Пусть QEMU решает" or self.comboBox_16.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_16.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_16.itemText(i) == machine:
                 self.comboBox_16.setCurrentIndex(i)
@@ -309,15 +343,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_15.count():
-            if self.comboBox_15.itemText(i) == "Let QEMU decide" or self.comboBox_15.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_15.itemText(i)):
                 if cpu == "Let QEMU decide":
                     self.comboBox_15.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_15.itemText(i) == "Пусть QEMU решает" or self.comboBox_15.itemText(i) == "QEMU überlassen":
-                if cpu == "Let QEMU decide":
-                    self.comboBox_15.setCurrentIndex(i)
-                    break
+            #if self.comboBox_15.itemText(i) == "Let QEMU decide" or self.comboBox_15.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_15.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_15.itemText(i) == "Пусть QEMU решает" or self.comboBox_15.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_15.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_15.itemText(i) == cpu:
                 self.comboBox_15.setCurrentIndex(i)
@@ -326,18 +365,26 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuAarch64(self, machine, cpu):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
+
         i = 0
 
         while i < self.comboBox_17.count():
-            if self.comboBox_17.itemText(i) == "Let QEMU decide" or self.comboBox_17.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_17.itemText(i)):
                 if machine == "Let QEMU decide":
                     self.comboBox_17.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_17.itemText(i) == "Пусть QEMU решает" or self.comboBox_17.itemText(i) == "QEMU überlassen":
-                if machine == "Let QEMU decide":
-                    self.comboBox_17.setCurrentIndex(i)
-                    break
+            #if self.comboBox_17.itemText(i) == "Let QEMU decide" or self.comboBox_17.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_17.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_17.itemText(i) == "Пусть QEMU решает" or self.comboBox_17.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_17.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_17.itemText(i) == machine:
                 self.comboBox_17.setCurrentIndex(i)
@@ -348,15 +395,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_18.count():
-            if self.comboBox_18.itemText(i) == "Let QEMU decide" or self.comboBox_18.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_18.itemText(i)):
                 if cpu == "Let QEMU decide":
                     self.comboBox_18.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_18.itemText(i) == "Пусть QEMU решает" or self.comboBox_18.itemText(i) == "QEMU überlassen":
-                if cpu == "Let QEMU decide":
-                    self.comboBox_18.setCurrentIndex(i)
-                    break
+            #if self.comboBox_18.itemText(i) == "Let QEMU decide" or self.comboBox_18.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_18.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_18.itemText(i) == "Пусть QEMU решает" or self.comboBox_18.itemText(i) == "QEMU überlassen":
+             #   if cpu == "Let QEMU decide":
+              #      self.comboBox_18.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_18.itemText(i) == cpu:
                 self.comboBox_18.setCurrentIndex(i)
@@ -365,18 +417,26 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineSparc(self, machine):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
+
         i = 0
 
         while i < self.comboBox_20.count():
-            if self.comboBox_20.itemText(i) == "Let QEMU decide" or self.comboBox_20.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_20.itemText(i)):
                 if machine == "Let QEMU decide":
                     self.comboBox_20.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_20.itemText(i) == "Пусть QEMU решает" or self.comboBox_12.itemText(i) == "QEMU überlassen":
-                if machine == "Let QEMU decide":
-                    self.comboBox_20.setCurrentIndex(i)
-                    break
+            #if self.comboBox_20.itemText(i) == "Let QEMU decide" or self.comboBox_20.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_20.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_20.itemText(i) == "Пусть QEMU решает" or self.comboBox_12.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_20.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_20.itemText(i) == machine:
                 self.comboBox_20.setCurrentIndex(i)
@@ -385,18 +445,26 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineSparc64(self, machine):
+        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
+
         i = 0
 
         while i < self.comboBox_21.count():
-            if self.comboBox_21.itemText(i) == "Let QEMU decide" or self.comboBox_21.itemText(i) == "QEMU überlassen":
+            if letQemuDecideContent.__contains__(self.comboBox_21.itemText(i)):
                 if machine == "Let QEMU decide":
                     self.comboBox_21.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_21.itemText(i) == "Пусть QEMU решает" or self.comboBox_21.itemText(i) == "QEMU überlassen":
-                if machine == "Let QEMU decide":
-                    self.comboBox_21.setCurrentIndex(i)
-                    break
+            #if self.comboBox_21.itemText(i) == "Let QEMU decide" or self.comboBox_21.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_21.setCurrentIndex(i)
+               #     break
+
+            #elif self.comboBox_21.itemText(i) == "Пусть QEMU решает" or self.comboBox_21.itemText(i) == "QEMU überlassen":
+             #   if machine == "Let QEMU decide":
+              #      self.comboBox_21.setCurrentIndex(i)
+               #     break
 
             elif self.comboBox_21.itemText(i) == machine:
                 self.comboBox_21.setCurrentIndex(i)
@@ -405,6 +473,46 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def vhdAddingChange(self):
+        with open("translations/createnewvhd.txt", "r+") as creNewVhdFile:
+            creNewVhdContent = creNewVhdFile.read()
+
+        with open("translations/addexistingvhd.txt", "r+") as addExistVhdFile:
+            addExistVhdContent = addExistVhdFile.read()
+
+        with open("translations/addnovhd.txt", "r+") as noVhdFile:
+            noVhdContent = noVhdFile.read()
+
+        if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(True)
+            self.spinBox_4.setEnabled(True)
+            self.comboBox_9.setEnabled(True)
+
+        elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        elif noVhdContent.__contains__(self.comboBox_18.currentText()):
+            # For new and existing
+            self.lineEdit_6.setEnabled(False)
+            self.pushButton_13.setEnabled(False)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        """
         if self.comboBox_2.currentText() == "Create a new virtual hard drive":
             # For new and existing
             self.lineEdit_2.setEnabled(True)
@@ -464,6 +572,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.comboBox_3.setEnabled(False)
             self.spinBox.setEnabled(False)
             self.comboBox_4.setEnabled(False)
+        """
 
     def vhdBrowseLocation(self):
         # This code lets you browse the VHD location.
@@ -544,6 +653,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.lineEdit_6.setText(filename)
 
     def readTempVmFile(self):
+        with open("translations/createnewvhd.txt", "r+") as creNewVhdFile:
+            creNewVhdContent = creNewVhdFile.read()
+
+        with open("translations/addexistingvhd.txt", "r+") as addExistVhdFile:
+            addExistVhdContent = addExistVhdFile.read()
+
+        with open("translations/addnovhd.txt", "r+") as noVhdFile:
+            noVhdContent = noVhdFile.read()
+
         # Searching temporary files
         if platform.system() == "Windows":
             tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
@@ -605,13 +723,13 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i = 0
 
             while i < self.comboBox_2.count():
-                if self.comboBox_2.itemText(i) == "Add existing virtual hard drive" or self.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+                if addExistVhdContent.__contains__(self.comboBox_2.itemText(i)): #self.comboBox_2.itemText(i) == "Add existing virtual hard drive" or self.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
                     self.comboBox_2.setCurrentIndex(i)
                     break
 
-                elif self.comboBox_2.itemText(i) == "Добавить существующий виртуальный жесткий диск" or self.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
-                    self.comboBox_2.setCurrentIndex(i)
-                    break
+                #elif self.comboBox_2.itemText(i) == "Добавить существующий виртуальный жесткий диск" or self.comboBox_2.itemText(i) == "Existierende virtuelle Festplatte anfügen":
+                 #   self.comboBox_2.setCurrentIndex(i)
+                  #  break
 
                 i += 1
 
@@ -619,13 +737,13 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i = 0
 
             while i < self.comboBox_2.count():
-                if self.comboBox_2.itemText(i) == "Don't add a virtual hard drive" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+                if noVhdContent.__contains__(self.comboBox_2.itemText(i)): #self.comboBox_2.itemText(i) == "Don't add a virtual hard drive" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
                     self.comboBox_2.setCurrentIndex(i)
                     break
 
-                elif self.comboBox_2.itemText(i) == "Не добавлять виртуальный жесткий диск" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
-                    self.comboBox_2.setCurrentIndex(i)
-                    break
+                #elif self.comboBox_2.itemText(i) == "Не добавлять виртуальный жесткий диск" or self.comboBox_2.itemText(i) == "Keine virtuelle Festplatte anfügen":
+                 #   self.comboBox_2.setCurrentIndex(i)
+                  #  break
 
                 i += 1
 
@@ -732,6 +850,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
     def finishCreation(self):
         with open("translations/letqemudecide.txt", "r+") as letQemuDecideVariants:
             letQemuDecideVariantsStr = letQemuDecideVariants.read()
+
+        with open("translations/systemdefault.txt", "r+") as sysDefFile:
+            sysDefContent = sysDefFile.read()
 
         # This applies the changes to your VM.
         
@@ -910,7 +1031,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         else:
             usb_support = 0
 
-        if self.comboBox_19.currentText() == "System default":
+        #if self.comboBox_19.currentText() == "System default":
+        #    kbdlayout = "en-us"
+
+        if sysDefContent.__contains__(self.comboBox_19.currentText()):
             kbdlayout = "en-us"
 
         else:

@@ -23,7 +23,7 @@ def translateMainRU(window):
     i = 0
 
     while i < window.comboBox_4.count():
-        sysDefSet("System default", window.comboBox_4, i) # System default
+        sysDefSet("По умолчанию системы", window.comboBox_4, i) # System default
         #if window.comboBox_4.itemText(i) == "System default" or window.comboBox_4.itemText(i) == "Systemstandard":
         #    window.comboBox_4.setItemText(i, "По умолчанию системы") # System default
         #    break
@@ -40,7 +40,7 @@ def translateMainRU(window):
     i = 0
 
     while i < window.comboBox_5.count():
-        sysDefSet("System default", window.comboBox_5, i) # System default
+        sysDefSet("По умолчанию системы", window.comboBox_5, i) # System default
         #if window.comboBox_5.itemText(i) == "System default" or window.comboBox_5.itemText(i) == "Systemstandard":
         #    window.comboBox_5.setItemText(i, "По умолчанию системы") # System default
         #    break

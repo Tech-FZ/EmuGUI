@@ -339,6 +339,46 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(7)
 
     def vhdAddingChange(self):
+        with open("translations/createnewvhd.txt", "r+") as creNewVhdFile:
+            creNewVhdContent = creNewVhdFile.read()
+
+        with open("translations/addexistingvhd.txt", "r+") as addExistVhdFile:
+            addExistVhdContent = addExistVhdFile.read()
+
+        with open("translations/addnovhd.txt", "r+") as noVhdFile:
+            noVhdContent = noVhdFile.read()
+
+        if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(True)
+            self.spinBox_4.setEnabled(True)
+            self.comboBox_9.setEnabled(True)
+
+        elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):
+            # For new and existing
+            self.lineEdit_6.setEnabled(True)
+            self.pushButton_13.setEnabled(True)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        elif noVhdContent.__contains__(self.comboBox_18.currentText()):
+            # For new and existing
+            self.lineEdit_6.setEnabled(False)
+            self.pushButton_13.setEnabled(False)
+
+            # For new
+            self.comboBox_8.setEnabled(False)
+            self.spinBox_4.setEnabled(False)
+            self.comboBox_9.setEnabled(False)
+
+        """
         if self.comboBox_18.currentText() == "Create a new virtual hard drive":
             # For new and existing
             self.lineEdit_6.setEnabled(True)
@@ -428,6 +468,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.comboBox_8.setEnabled(False)
             self.spinBox_4.setEnabled(False)
             self.comboBox_9.setEnabled(False)
+        """
 
     def vhdBrowseLocation(self):
         # This code makes it possible to search a location for your VHD.
@@ -476,6 +517,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def finishCreation(self):
         with open("translations/letqemudecide.txt", "r+") as letQemuDecideVariants:
             letQemuDecideVariantsStr = letQemuDecideVariants.read()
+
+        with open("translations/systemdefault.txt", "r+") as sysDefFile:
+            sysDefContent = sysDefFile.read()
 
         # This creates your VM in the first place
 
@@ -647,7 +691,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         else:
             usb_support = 0
 
-        if self.comboBox_19.currentText() == "System default":
+        #if self.comboBox_19.currentText() == "System default":
+        #    kbdlayout = "en-us"
+
+        if sysDefContent.__contains__(self.comboBox_19.currentText()):
             kbdlayout = "en-us"
 
         else:

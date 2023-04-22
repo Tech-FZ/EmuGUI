@@ -1,3 +1,5 @@
+from translations.systemdefaultset import *
+
 def translateMainES(window):
     # Tab group 1
     window.tabWidget.setTabText(0, "Main") # Main
@@ -21,15 +23,16 @@ def translateMainES(window):
     i = 0
 
     while i < window.comboBox_4.count():
-        if window.comboBox_4.itemText(i) == "System default" or window.comboBox_4.itemText(i) == "Systemstandard":
-            window.comboBox_4.setItemText(i, "System default") # System default
-            break
+        sysDefSet("System default", window.comboBox_4, i) # System default
+        #if window.comboBox_4.itemText(i) == "System default" or window.comboBox_4.itemText(i) == "Systemstandard":
+        #    window.comboBox_4.setItemText(i, "System default") # System default
+        #    break
 
-        i += 1
+        #i += 1
 
-        if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
-            window.comboBox_4.setItemText(i, "System default") # System default
-            break
+        #if window.comboBox_4.itemText(i) == "По умолчанию системы" or window.comboBox_4.itemText(i) == "Па змаўчанні сістэмы":
+        #    window.comboBox_4.setItemText(i, "System default") # System default
+        #    break
 
         i += 1
 
@@ -37,15 +40,16 @@ def translateMainES(window):
     i = 0
 
     while i < window.comboBox_5.count():
-        if window.comboBox_5.itemText(i) == "System default" or window.comboBox_5.itemText(i) == "Systemstandard":
-            window.comboBox_5.setItemText(i, "System default") # System default
-            break
+        sysDefSet("System default", window.comboBox_5, i) # System default
+        #if window.comboBox_5.itemText(i) == "System default" or window.comboBox_5.itemText(i) == "Systemstandard":
+        #    window.comboBox_5.setItemText(i, "System default") # System default
+        #    break
 
-        i += 1
+        #i += 1
 
-        if window.comboBox_5.itemText(i) == "По умолчанию системы" or window.comboBox_5.itemText(i) == "Па змаўчанні сістэмы":
-            window.comboBox_5.setItemText(i, "System default") # System default
-            break
+        #if window.comboBox_5.itemText(i) == "По умолчанию системы" or window.comboBox_5.itemText(i) == "Па змаўчанні сістэмы":
+        #    window.comboBox_5.setItemText(i, "System default") # System default
+        #    break
 
         i += 1
 
