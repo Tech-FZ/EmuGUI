@@ -204,7 +204,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 translations.en.translateEditVMEN(self)
 
     def machineCpuI386Amd64(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -261,7 +261,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuPpc(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -313,7 +313,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuMips64el(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -365,7 +365,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuAarch64(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -417,7 +417,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineSparc(self, machine):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -445,7 +445,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineSparc64(self, machine):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideFile:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -473,13 +473,13 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def vhdAddingChange(self):
-        with open("translations/createnewvhd.txt", "r+") as creNewVhdFile:
+        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+") as addExistVhdFile:
+        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
-        with open("translations/addnovhd.txt", "r+") as noVhdFile:
+        with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
         if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
@@ -653,13 +653,13 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.lineEdit_6.setText(filename)
 
     def readTempVmFile(self):
-        with open("translations/createnewvhd.txt", "r+") as creNewVhdFile:
+        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+") as addExistVhdFile:
+        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
-        with open("translations/addnovhd.txt", "r+") as noVhdFile:
+        with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
         # Searching temporary files
@@ -848,10 +848,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         return vmSpecs
 
     def finishCreation(self):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideVariants:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
             letQemuDecideVariantsStr = letQemuDecideVariants.read()
 
-        with open("translations/systemdefault.txt", "r+") as sysDefFile:
+        with open("translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
             sysDefContent = sysDefFile.read()
 
         # This applies the changes to your VM.

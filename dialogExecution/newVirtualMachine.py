@@ -339,13 +339,13 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(7)
 
     def vhdAddingChange(self):
-        with open("translations/createnewvhd.txt", "r+") as creNewVhdFile:
+        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+") as addExistVhdFile:
+        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
-        with open("translations/addnovhd.txt", "r+") as noVhdFile:
+        with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
         if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
@@ -515,10 +515,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(12)
 
     def finishCreation(self):
-        with open("translations/letqemudecide.txt", "r+") as letQemuDecideVariants:
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
             letQemuDecideVariantsStr = letQemuDecideVariants.read()
 
-        with open("translations/systemdefault.txt", "r+") as sysDefFile:
+        with open("translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
             sysDefContent = sysDefFile.read()
 
         # This creates your VM in the first place
