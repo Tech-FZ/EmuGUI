@@ -18,9 +18,9 @@ import translations.en
 import locale
 
 class EditVirtualMachineDialog(QDialog, Ui_Dialog):
-    def __init__(self, parent=None):
+    def __init__(self, arg):
         # This is preparing the dialog required.
-        super().__init__(parent)
+        super().__init__()
         self.setupUi(self)
         self.connectSignalsSlots()
         self.langDetect()

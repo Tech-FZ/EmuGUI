@@ -18,10 +18,10 @@ import translations.en
 import locale
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
-    def __init__(self, parent=None):
+    def __init__(self, arg):
         # Initializing the dialog for creating the VM.
 
-        super().__init__(parent)
+        super().__init__()
         self.setupUi(self)
         self.langDetect()
         self.setWindowTitle("EmuGUI - Create new VM")

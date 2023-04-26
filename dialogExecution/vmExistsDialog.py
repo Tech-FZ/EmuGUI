@@ -16,8 +16,8 @@ import translations.en
 import locale
 
 class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
-    def __init__(self, parent = None):
-        super().__init__(parent)
+    def __init__(self, arg):
+        super().__init__()
         self.setupUi(self)
         self.setWindowTitle("EmuGUI - VM already exists")
         self.langDetect()
