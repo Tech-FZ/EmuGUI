@@ -19,7 +19,12 @@ import locale
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, arg):
-        super().__init__()
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+            
         self.setupUi(self)
         self.connectSignalsSlots()
         self.tabWidget.setCurrentIndex(0)

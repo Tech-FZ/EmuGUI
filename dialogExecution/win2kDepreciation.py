@@ -11,7 +11,12 @@ else:
 
 class Win2KDepreciated(QDialog, Ui_Dialog):
     def __init__(self):
-        super().__init__()
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+            
         self.setupUi(self)
         self.vmSpecs = self.readTempVmFile()
         self.setWindowTitle(f"EmuGUI - {self.vmSpecs[0]} uses a depreciated feature")

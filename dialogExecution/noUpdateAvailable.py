@@ -17,7 +17,12 @@ import locale
 
 class NoUpdateAvailable(QDialog, Ui_Dialog):
     def __init__(self, arg):
-        super().__init__()
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+            
         self.setupUi(self)
         self.setWindowTitle("EmuGUI Update")
         self.langDetect()

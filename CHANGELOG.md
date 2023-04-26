@@ -1,3 +1,15 @@
+# EmuGUI v1.0.2.5312 "Adèle Angela" (based on v1.0.1.5311)
+
+## WARNING
+
+Windows 8.1 and Windows Server 2012 R2 are no longer supported as an EmuGUI host as of 14th February, 2023. Even if you are still able to run EmuGUI, you will need at least Windows 10 or Server 2016 to get support.
+
+Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 8th July, 2023. You would then need at least Ubuntu 22.04 LTS or one of its derivates.
+
+## Changes compared to v1.0.1.5311
+
+- A backport from the pre-release is now making compilation on later versions of Python possible.
+
 # EmuGUI v1.0.1.5311 "Adèle Angela" (based on v1.0.0.5310)
 
 ## WARNING

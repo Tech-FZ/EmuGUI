@@ -27,7 +27,7 @@ from dialogExecution.icelakeClientDepreciation import IcelakeClientCPUDepreciati
 import translations.de
 import translations.uk
 import translations.en
-import requests
+#import requests
 import locale
 import glob
 import webbrowser
@@ -35,13 +35,18 @@ import webbrowser
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self):
         # This function initializes and runs EmuGUI
-        super().__init__()
+        try:
+            super().__init__(parent)
+
+        except:
+            super().__init__()
+
         self.setupUi(self)
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.0.1.5311\nCodename 'Adèle Angela'")
-        self.setWindowTitle("EmuGUI v1.0.1.5311")
+        self.label_8.setText("EmuGUI v1.0.2.5312\nCodename 'Adèle Angela'")
+        self.setWindowTitle("EmuGUI v1.0.2.5312")
         self.languageInUse = "system"
 
         try:
@@ -50,7 +55,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5311
+        self.versionCode = 5312
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
