@@ -33,9 +33,9 @@ import glob
 import webbrowser
 
 class Window(QMainWindow, Ui_MainWindow):
-    def __init__(self, parent=None):
+    def __init__(self):
         # This function initializes and runs EmuGUI
-        super().__init__(parent)
+        super().__init__()
         self.setupUi(self)
         self.connectSignalsSlots()
         self.timer = QTimer()
