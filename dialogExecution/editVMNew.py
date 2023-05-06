@@ -484,33 +484,33 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
             # For new and existing
-            self.lineEdit_6.setEnabled(True)
-            self.pushButton_13.setEnabled(True)
+            self.lineEdit_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
 
             # For new
-            self.comboBox_8.setEnabled(True)
-            self.spinBox_4.setEnabled(True)
-            self.comboBox_9.setEnabled(True)
+            self.comboBox_3.setEnabled(True)
+            self.spinBox.setEnabled(True)
+            self.comboBox_4.setEnabled(True)
 
         elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):
             # For new and existing
-            self.lineEdit_6.setEnabled(True)
-            self.pushButton_13.setEnabled(True)
+            self.lineEdit_2.setEnabled(True)
+            self.pushButton_3.setEnabled(True)
 
             # For new
-            self.comboBox_8.setEnabled(False)
-            self.spinBox_4.setEnabled(False)
-            self.comboBox_9.setEnabled(False)
+            self.comboBox_3.setEnabled(False)
+            self.spinBox.setEnabled(False)
+            self.comboBox_4.setEnabled(False)
 
         elif noVhdContent.__contains__(self.comboBox_18.currentText()):
             # For new and existing
-            self.lineEdit_6.setEnabled(False)
-            self.pushButton_13.setEnabled(False)
+            self.lineEdit_2.setEnabled(False)
+            self.pushButton_3.setEnabled(False)
 
             # For new
-            self.comboBox_8.setEnabled(False)
-            self.spinBox_4.setEnabled(False)
-            self.comboBox_9.setEnabled(False)
+            self.comboBox_3.setEnabled(False)
+            self.spinBox.setEnabled(False)
+            self.comboBox_4.setEnabled(False)
 
         """
         if self.comboBox_2.currentText() == "Create a new virtual hard drive":
@@ -575,42 +575,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         """
 
     def vhdBrowseLocation(self):
-        # This code lets you browse the VHD location.
-        if self.comboBox_2.currentText() == "Create a new virtual hard drive":
-            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save/Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
 
-            if filename:
-                self.lineEdit_2.setText(filename)
-
-        elif self.comboBox_2.currentText() == "Neue virtuelle Festplatte erstellen":
-            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='VHD-Datei speichern', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
-
-            if filename:
-                self.lineEdit_2.setText(filename)
-
-        elif self.comboBox_2.currentText() == "Создать новый виртуальный жесткий диск":
-            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
-
-            if filename:
-                self.lineEdit_2.setText(filename)
-
-        elif self.comboBox_2.currentText() == "Add an existing virtual hard drive":
-            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
-
-            if filename:
-                self.lineEdit_2.setText(filename)
-
-        elif self.comboBox_2.currentText() == "Existierende virtuelle Festplatte anfügen":
-            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='VHD-Datei öffnen', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
-
-            if filename:
-                self.lineEdit_2.setText(filename)
-
-        elif self.comboBox_2.currentText() == "Добавить существующий виртуальный жесткий диск":
-            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
-
-            if filename:
-                self.lineEdit_2.setText(filename)
+        if filename:
+            self.lineEdit_2.setText(filename)
 
     def archChanged(self):
         if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "amd64":

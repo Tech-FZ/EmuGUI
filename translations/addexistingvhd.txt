@@ -2,3 +2,4 @@ Add an existing virtual hard drive
 Existierende virtuelle Festplatte anfügen
 Дадаць існуючы віртуальны жорсткі дыск
 Добавить существующий виртуальный жесткий диск
+Añadir un disco duro virtual existente

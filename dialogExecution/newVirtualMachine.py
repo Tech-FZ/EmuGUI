@@ -473,7 +473,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def vhdBrowseLocation(self):
         # This code makes it possible to search a location for your VHD.
 
-        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save/Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
 
         if filename:
             self.lineEdit_6.setText(filename)

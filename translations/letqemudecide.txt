@@ -2,3 +2,4 @@ Let QEMU decide
 QEMU überlassen
 Няхай QEMU вырашае
 Пусть QEMU решает
+Dejar que QEMU decida

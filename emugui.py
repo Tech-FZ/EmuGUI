@@ -53,8 +53,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.1.0.5403_dev\nCodename 'Sara Angeline'")
-        self.setWindowTitle("EmuGUI v1.1.0.5403_dev")
+        self.label_8.setText("EmuGUI v1.1.0.5404_dev\nCodename 'Sara Angeline'")
+        self.setWindowTitle("EmuGUI v1.1.0.5404_dev")
         self.languageInUse = "system"
 
         try:
@@ -63,7 +63,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5403
+        self.versionCode = 5404
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -104,7 +104,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.1.0.5403_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.1.0.5404_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)

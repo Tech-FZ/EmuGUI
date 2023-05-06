@@ -1,12 +1,14 @@
 # EmuGUI Contributors
 
-Nicolas Lucien/Tech-FZ
+Nicolas Lucien/Tech-FZ (Author, coding, English, German and Ukrainian translation, documentation)
 
-BasDeGamer
+BasDeGamer (Documentation)
 
-the-amazing-atharva
+the-amazing-atharva (Documentation)
 
-Maestro Finch/Danik2343
+Maestro Finch/Danik2343 (Russian and Belarusian translation)
+
+SuperVitu64 (Spanish translation)
 
 # Banners
 

@@ -1,3 +1,23 @@
+# EmuGUI v1.1.0.5404_dev "Sara Angeline" (based on v1.1.0.5403_dev)
+
+## WARNING
+
+Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 8th July, 2023. You would then need at least Ubuntu 22.04 LTS or one of its derivates.
+
+## Changes compared to v1.0.1.5311
+
+- New feature level, new codename. I decided to call it "Sara Angeline" based on what I want to add so far.
+- Language files for French, Spanish, Czech, Russian, Belarusian and Romanian have been prepared.
+- Thanks for translating EmuGUI into Russian and Belarusian, Danik2343.
+- The old feature list has been updated again.
+- The requests list has been commented out.
+- Happy Eastern! A banner just for eastern has been added.
+- For Python 3.10.11 on Windows, there was a bug which prevented EmuGUI from starting up, which is fixed by making a try-except clause for both the Python versions which still require the parent argument in the initialisation and those which crash because of it.
+- As I noticed the code would go confusing, I decided to use text files containing the strings for affected combo boxes instead. The code which was used before this update has been commented out for now so we can roll back if something is wrong.
+- The edit VM dialogue for choosing a VHD has been stripped down to save some time for now.
+- The program has been translated into Spanish. (Thanks, SuperVitu64)
+- In the contributors file, you'll now be credited with what you did, not only that you did something.
+
 # EmuGUI v1.1.0.5403_dev "Sara Angeline" (based on v1.1.0.5402_dev)
 
 ## Changes compared to v1.0.1.5311
@@ -37,6 +57,18 @@
 
 - New feature level, new codename. I decided to call it "Sara Angeline" based on what I want to add so far.
 - Language files for French, Spanish and Romanian have been prepared.
+
+# EmuGUI v1.0.2.5312 "Adèle Angela" (based on v1.0.1.5311)
+
+## WARNING
+
+Windows 8.1 and Windows Server 2012 R2 are no longer supported as an EmuGUI host as of 14th February, 2023. Even if you are still able to run EmuGUI, you will need at least Windows 10 or Server 2016 to get support.
+
+Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 8th July, 2023. You would then need at least Ubuntu 22.04 LTS or one of its derivates.
+
+## Changes compared to v1.0.1.5311
+
+- A backport from the pre-release is now making compilation on later versions of Python possible.
 
 # EmuGUI v1.0.1.5311 "Adèle Angela" (based on v1.0.0.5310)
 

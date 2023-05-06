@@ -2,3 +2,4 @@ System default
 Systemstandard
 По умолчанию системы
 Па змаўчанні сістэмы
+Predeterminado del sistema
