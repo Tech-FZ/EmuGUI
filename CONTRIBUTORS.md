@@ -10,6 +10,8 @@ Maestro Finch/Danik2343 (Russian and Belarusian translation)
 
 SuperVitu64 (Spanish translation)
 
+PurpleVibe32 (Portuguese translation)
+
 # Banners
 
 | Version | Author |

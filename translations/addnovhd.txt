@@ -3,3 +3,4 @@ Keine virtuelle Festplatte anfügen
 Не дадаваць віртуальны жорсткі дыск
 Не добавлять виртуальный жесткий диск
 No añadir un disco duro virtual
+Não adicionar um Disco Virtual

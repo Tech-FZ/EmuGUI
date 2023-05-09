@@ -19,6 +19,7 @@ import translations.ro
 import translations.be
 import translations.cz
 import translations.ru
+import translations.pt
 import locale
 
 class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
@@ -99,6 +100,9 @@ class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "cz":
                     langmode = "cz"
 
+                elif result[0][1] == "pt":
+                    langmode = "pt"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -145,6 +149,9 @@ class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("cz"):
                 translations.cz.translateVmExistsCZ(self)
 
+            elif languageToUse.startswith("pt"):
+                translations.pt.translateVmExistsPT(self)
+
             else:
                 translations.en.translateVmExistsEN(self)
         
@@ -184,6 +191,9 @@ class VmAlreadyExistsDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("cz"):
                         translations.cz.translateVmExistsCZ(self)
+
+                    elif languageToUse.startswith("pt"):
+                        translations.pt.translateVmExistsPT(self)
 
                     else:
                         translations.en.translateVmExistsEN(self)

@@ -3,3 +3,4 @@ Systemstandard
 По умолчанию системы
 Па змаўчанні сістэмы
 Predeterminado del sistema
+Padrão do Sistema
