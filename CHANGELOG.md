@@ -17,6 +17,9 @@ Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 
 - The program has been translated into Spanish. (Thanks, SuperVitu64)
 - In the contributors file, you'll now be credited with what you did, not only that you did something.
 - Portuguese support has been added (Thanks, PurpleVibe32).
+- The New VM UI has been polished and TPM modules are supported by it now.
+- The Edit VM UI also got the TPM tab.
+- TPM functionality for emulated TPM devices is implemented.
 
 # EmuGUI v1.1.0.5404_dev "Sara Angeline" (based on v1.1.0.5403_dev)
 

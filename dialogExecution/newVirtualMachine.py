@@ -23,6 +23,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import locale
+import os
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -130,10 +131,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_32.clicked.connect(self.linuxInitridBrowseLocation)
         self.pushButton_31.clicked.connect(self.soundCard)
         self.pushButton_29.clicked.connect(self.close)
-        self.pushButton_30.clicked.connect(self.win2kHacker)
+        self.pushButton_30.clicked.connect(self.tpmSettings)
 
-        # Page 8 (Additional arguments)
-        self.pushButton_22.clicked.connect(self.linuxVMSpecific)
+        # Page 8 (TPM passthrough for Linux)
+        self.pushButton_81.clicked.connect(self.linuxVMSpecific)
+        self.pushButton_77.clicked.connect(self.win2kHacker)
+        self.pushButton_79.clicked.connect(self.createVirtualTpm)
+        self.pushButton_80.clicked.connect(self.close)
+
+        # Page 9 (Additional arguments)
+        self.pushButton_22.clicked.connect(self.tpmSettings)
         self.pushButton_20.clicked.connect(self.finishCreation)
         self.pushButton_21.clicked.connect(self.close)
 
@@ -521,8 +528,37 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         if filename:
             self.lineEdit_5.setText(filename)
 
-    def win2kHacker(self):
+    def tpmSettings(self):
         self.stackedWidget.setCurrentIndex(12)
+
+    def createVirtualTpm(self):
+        try:
+            os.mkdir(self.lineEdit_14.text())
+        
+        except:
+            print("Could not create the TPM emulator.")
+        
+        """
+        if self.comboBox_44.currentText() == "v1.2":
+            swtpm_cmd = f"swtpm socket --tpmstate dir={self.lineEdit_14.text()} --ctrl type=unixio,path={self.lineEdit_14.text()}/swtpm-sock --log level=20"
+
+        elif self.comboBox_44.currentText() == "v2.0":
+            swtpm_cmd = f"swtpm socket --tpm2 --tpmstate dir={self.lineEdit_14.text()} --ctrl type=unixio,path={self.lineEdit_14.text()}/swtpm-sock --log level=20"
+
+        try:
+            subprocess.Popen(swtpm_cmd)
+        
+        except:
+            try:
+                swtpm_cmd_split = swtpm_cmd.split(" ")
+                subprocess.run(swtpm_cmd_split)
+            
+            except:
+                print("Failed to execute swtpm. Check if it is installed.")
+        """
+
+    def win2kHacker(self):
+        self.stackedWidget.setCurrentIndex(13)
 
     def finishCreation(self):
         with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
@@ -734,7 +770,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             keyboardtype,
             usbsupport,
             usbcontroller,
-            kbdtype
+            kbdtype,
+            tpmtype,
+            tpmdev
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -758,7 +796,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{self.comboBox_16.currentText()}",
             {usb_support},
             "{self.comboBox_17.currentText()}",
-            "{kbdlayout}"
+            "{kbdlayout}",
+            "{self.comboBox_43.currentText()}",
+            "{self.lineEdit_14.text()}"
         );
         """
 

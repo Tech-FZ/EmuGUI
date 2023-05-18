@@ -44,7 +44,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>12</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -85,10 +85,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-      <item row="1" column="1">
+      <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox">
         <property name="placeholderText">
          <string>Please choose an architecture</string>
@@ -145,6 +142,9 @@
         </item>
        </widget>
       </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -159,7 +159,49 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="1">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>CPU</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_2">
         <property name="placeholderText">
          <string>Please select a machine</string>
@@ -196,28 +238,7 @@
         </item>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>RAM in MB</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>CPU</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Machine</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_3">
         <property name="placeholderText">
          <string>Please select a processor</string>
@@ -439,28 +460,7 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_6">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
+      <item row="2" column="1" colspan="2">
        <widget class="QSpinBox" name="spinBox">
         <property name="maximum">
          <number>32768</number>
@@ -484,7 +484,49 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="1">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>CPU</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_4">
         <property name="placeholderText">
          <string>Please select a machine</string>
@@ -566,28 +608,7 @@
         </item>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>RAM in MB</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>CPU</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>Machine</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_5">
         <property name="placeholderText">
          <string>Please select a processor</string>
@@ -969,28 +990,7 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_7">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_8">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_9">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
+      <item row="2" column="1" colspan="2">
        <widget class="QSpinBox" name="spinBox_2">
         <property name="maximum">
          <number>32768</number>
@@ -1011,7 +1011,49 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="1">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>CPU</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_11">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_12">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_6">
         <property name="placeholderText">
          <string>Please select a machine</string>
@@ -1063,28 +1105,7 @@
         </item>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>RAM in MB</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_11">
-        <property name="text">
-         <string>CPU</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_12">
-        <property name="text">
-         <string>Machine</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_7">
         <property name="placeholderText">
          <string>Please select a processor</string>
@@ -1251,28 +1272,7 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_10">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_11">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_12">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
+      <item row="2" column="1" colspan="2">
        <widget class="QSpinBox" name="spinBox_3">
         <property name="maximum">
          <number>32768</number>
@@ -1293,7 +1293,49 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_11">
-      <item row="0" column="1">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_29">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_30">
+        <property name="text">
+         <string>CPU</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_31">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_33">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton_34">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_35">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_14">
         <property name="placeholderText">
          <string>Please select a machine</string>
@@ -1390,28 +1432,7 @@
         </item>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_29">
-        <property name="text">
-         <string>RAM in MB</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_30">
-        <property name="text">
-         <string>CPU</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_31">
-        <property name="text">
-         <string>Machine</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_15">
         <property name="placeholderText">
          <string>Please select a processor</string>
@@ -1583,28 +1604,7 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_33">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_34">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_35">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
+      <item row="2" column="1" colspan="2">
        <widget class="QSpinBox" name="spinBox_5">
         <property name="maximum">
          <number>32768</number>
@@ -1632,7 +1632,35 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>RAM in MB</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>Machine</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_37">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_39">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_20">
         <item>
          <property name="text">
@@ -1691,38 +1719,10 @@
         </item>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="2" column="1" colspan="2">
        <widget class="QSpinBox" name="spinBox_7">
         <property name="maximum">
          <number>32768</number>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_35">
-        <property name="text">
-         <string>RAM in MB</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_22">
-        <property name="text">
-         <string>Machine</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_37">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_39">
-        <property name="text">
-         <string>Cancel</string>
         </property>
        </widget>
       </item>
@@ -1744,42 +1744,6 @@
        <widget class="QPushButton" name="pushButton_40">
         <property name="text">
          <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_21">
-        <item>
-         <property name="text">
-          <string>Let QEMU decide</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>niagara</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>sun4u</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>sun4v</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>none</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QSpinBox" name="spinBox_8">
-        <property name="maximum">
-         <number>32768</number>
         </property>
        </widget>
       </item>
@@ -1811,6 +1775,42 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_21">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>niagara</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sun4u</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sun4v</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QSpinBox" name="spinBox_8">
+        <property name="maximum">
+         <number>32768</number>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -1820,7 +1820,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>381</width>
+       <width>411</width>
        <height>281</height>
       </rect>
      </property>
@@ -1906,7 +1906,33 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>VHD usage</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_18">
+        <item>
+         <property name="text">
+          <string>Create a new virtual hard drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Add an existing virtual hard drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Don't add a virtual hard drive</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_8">
         <property name="placeholderText">
          <string>(Please select a file format)</string>
@@ -1958,32 +1984,6 @@
         </item>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_20">
-        <property name="text">
-         <string>VHD usage</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_18">
-        <item>
-         <property name="text">
-          <string>Create a new virtual hard drive</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Add an existing virtual hard drive</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Don't add a virtual hard drive</string>
-         </property>
-        </item>
-       </widget>
-      </item>
      </layout>
     </widget>
    </widget>
@@ -1993,7 +1993,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>382</width>
+       <width>428</width>
        <height>271</height>
       </rect>
      </property>
@@ -2019,7 +2019,35 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_17">
+        <property name="text">
+         <string>Network</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_18">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_19">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_28">
+        <property name="text">
+         <string>Mouse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_10">
         <property name="placeholderText">
          <string>(Please select a graphics adapter)</string>
@@ -2076,28 +2104,7 @@
         </item>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_17">
-        <property name="text">
-         <string>Network</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_18">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="checkBox">
-        <property name="text">
-         <string>Yes, I want it (depreciated)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="1" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_11">
         <property name="placeholderText">
          <string>(Please select a network adapter)</string>
@@ -2254,21 +2261,7 @@
         </item>
        </widget>
       </item>
-      <item row="4" column="2">
-       <widget class="QPushButton" name="pushButton_19">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_28">
-        <property name="text">
-         <string>Mouse</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
+      <item row="3" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_13">
         <item>
          <property name="text">
@@ -2285,6 +2278,13 @@
           <string>USB Tablet Device</string>
          </property>
         </item>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QCheckBox" name="checkBox">
+        <property name="text">
+         <string>Yes, I want it (depreciated)</string>
+        </property>
        </widget>
       </item>
      </layout>
@@ -2314,9 +2314,6 @@
          <string>Next &gt;</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_3"/>
       </item>
       <item row="2" column="0">
        <widget class="QPushButton" name="pushButton_25">
@@ -2355,6 +2352,9 @@ default BIOS)</string>
         </property>
        </widget>
       </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLineEdit" name="lineEdit_3"/>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -2369,7 +2369,129 @@ default BIOS)</string>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_9">
-      <item row="3" column="1">
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>Keyboard layout</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_27">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_26">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_28">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_33">
+        <property name="text">
+         <string>CPU cores</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_34">
+        <property name="text">
+         <string>Keyboard</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_23">
+        <property name="text">
+         <string>Sound card</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_12">
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sb16</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>pcspk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>intel-hda</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>gus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ES1370</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cs4231a</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>adlib</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>AC97</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QSpinBox" name="spinBox_6">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>8</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_16">
+        <item>
+         <property name="text">
+          <string>PS/2 Keyboard</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USB Keyboard</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_19">
         <item>
          <property name="text">
@@ -2433,128 +2555,6 @@ default BIOS)</string>
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_21">
-        <property name="text">
-         <string>Keyboard layout</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_12">
-        <item>
-         <property name="text">
-          <string>none</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>sb16</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>pcspk</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>intel-hda</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>gus</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>ES1370</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>cs4231a</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>adlib</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>AC97</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="pushButton_27">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QPushButton" name="pushButton_26">
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QComboBox" name="comboBox_16">
-        <item>
-         <property name="text">
-          <string>PS/2 Keyboard</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>USB Keyboard</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_28">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_33">
-        <property name="text">
-         <string>CPU cores</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_34">
-        <property name="text">
-         <string>Keyboard</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_23">
-        <property name="text">
-         <string>Sound card</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QSpinBox" name="spinBox_6">
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>8</number>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </widget>
@@ -2564,7 +2564,7 @@ default BIOS)</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>383</width>
+       <width>381</width>
        <height>281</height>
       </rect>
      </property>
@@ -2639,6 +2639,2737 @@ default BIOS)</string>
         <property name="text">
          <string>Leave empty if these aren't necessary</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_14">
+    <widget class="QStackedWidget" name="stackedWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>120</y>
+       <width>381</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>11</number>
+     </property>
+     <widget class="QWidget" name="page_15">
+      <widget class="QWidget" name="gridLayoutWidget_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_14">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_38">
+          <property name="text">
+           <string>Architecture</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_39">
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="pushButton_43">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButton_44">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_22">
+          <property name="placeholderText">
+           <string>Please choose an architecture</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>i386</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>x86_64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mips64el</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mipsel</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ppc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ppc64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>aarch64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sparc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sparc64</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QLineEdit" name="lineEdit_9"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_16">
+      <widget class="QWidget" name="gridLayoutWidget_15">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_15">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_40">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_41">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_42">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_45">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_46">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="pushButton_47">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_23">
+          <property name="placeholderText">
+           <string>Please select a machine</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>microvm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>q35</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>isapc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_24">
+          <property name="placeholderText">
+           <string>Please select a processor</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>486</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Broadwell</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cascadelake-Server</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Conroe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cooperlake</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Denverton</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dhyana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>EPYC</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>EPYC-Milan</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>EPYC-Rome</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Haswell</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Icelake-Client (depreciated)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Icelake-Server</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>IvyBridge</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>KnightsMill</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nehalem</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Opteron_G1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Opteron_G2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Opteron_G3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Opteron_G4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Opteron_G5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Penryn</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SandyBridge</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Skylake-Client</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Skylake-Server</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Snowridge</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Westmere</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>athlon</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>core2duo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>coreduo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>kvm32</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>kvm64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>n270</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pentium</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pentium2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pentium3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>phenom</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qemu32</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qemu64</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>base</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>max</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>host</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_9">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_17">
+      <widget class="QWidget" name="gridLayoutWidget_16">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_16">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_43">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_44">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_45">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_48">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_49">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="pushButton_50">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_25">
+          <property name="placeholderText">
+           <string>Please select a machine</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>40p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>bamboo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>g3beige</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mac99</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mac99,via=pmu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mac99,via=pmu-adb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8544ds</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pegasos2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ppce500</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ref405ep</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sam460ex</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>taihu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtex-ml507</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_26">
+          <property name="placeholderText">
+           <string>Please select a processor</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>604</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7v</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7v1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7v2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>603e7t</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>740</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>740e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>745</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>755</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cxe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cxr</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750cl</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750l</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>604e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>604r</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7400</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>g2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc603</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>g2hip3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8343</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8349a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e300c1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8343a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347ea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8347ap</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8349ea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8343e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e300</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8379e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8377e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8377</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8378</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8378e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8379</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>740p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750p</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>460ex</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>x2vp7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>x2vp20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>405gp</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>405gpe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>405</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>440ep</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750fx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>750gx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7450</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7451</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7441</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7455</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7445</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7447</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7457</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7457a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7447a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7448</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7410</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8541</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8541e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8540</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e500v1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8555</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8555e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8545e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mpc8560</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_10">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_18">
+      <widget class="QWidget" name="gridLayoutWidget_17">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_17">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_46">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_47">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_48">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_51">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_52">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="pushButton_53">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_27">
+          <property name="placeholderText">
+           <string>Please select a machine</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>boston</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>fuloong2e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>loongson3-virt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>magnum</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>malta</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mipssim</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pica61</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_28">
+          <property name="placeholderText">
+           <string>Please select a processor</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4Km</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEcR1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEmR1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4KEm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24KEc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>24Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>34Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>74Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>M14K</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>M14Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>P5600</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mips32r6-generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>I7200</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>R4000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>VR5432</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5Kf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20Kc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MIPS64R2-generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5KEc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5KEf</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>I6400</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>I6500</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-2E</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-2F</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-3A1000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Loongson-3A4000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mips64dspr2</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_11">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_19">
+      <widget class="QWidget" name="gridLayoutWidget_18">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_18">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_49">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_50">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_51">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_54">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_55">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="pushButton_56">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_29">
+          <property name="placeholderText">
+           <string>Please select a machine</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>akita</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ast2500-evb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>borzoi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>canon-a1100</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cheetah</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>collie</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>connex</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cubieboard</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>highbank</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>imx25-pdk</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>integratorcp</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>kzm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lm3s6965evb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lm3s811evb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>raspi2</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_30">
+          <property name="placeholderText">
+           <string>Please select a processor</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a57</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>a64fx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1026</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1136</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1136-r2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm1176</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm11mpcore</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm926</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>arm946</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a72</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-a8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m33</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m55</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-m7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-r5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cortex-r5f</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>max</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa250</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa255</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa260</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa261</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa262</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pxa270</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sa1100</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sa1110</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ti925t</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_12">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_20">
+      <widget class="QWidget" name="gridLayoutWidget_19">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_19">
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_57">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_52">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_53">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_58">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="pushButton_59">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_31">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SPARCClassic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SPARCbook</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SS-600MP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Voyager</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>leon3_generic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_13">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_21">
+      <widget class="QWidget" name="gridLayoutWidget_20">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_20">
+        <item row="3" column="1">
+         <widget class="QPushButton" name="pushButton_60">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_54">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_55">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="pushButton_61">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="pushButton_62">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_32">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>niagara</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sun4u</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sun4v</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_14">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_22">
+      <widget class="QWidget" name="gridLayoutWidget_21">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>411</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_21">
+        <item row="4" column="0">
+         <widget class="QPushButton" name="pushButton_63">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit_10"/>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="pushButton_64">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSpinBox" name="spinBox_15">
+          <property name="maximum">
+           <number>214748368</number>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_56">
+          <property name="text">
+           <string>VHD path</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_57">
+          <property name="text">
+           <string>Maximum size</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="pushButton_65">
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QComboBox" name="comboBox_33">
+          <item>
+           <property name="text">
+            <string>KB</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MB</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GB</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_66">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_58">
+          <property name="text">
+           <string>VHD file format</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_59">
+          <property name="text">
+           <string>VHD usage</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_34">
+          <item>
+           <property name="text">
+            <string>Create a new virtual hard drive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Add an existing virtual hard drive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Don't add a virtual hard drive</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_35">
+          <property name="placeholderText">
+           <string>(Please select a file format)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>qcow2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qcow</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>raw</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>vdi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>vmdk</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>vpc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>vhdx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>parallels</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>file</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_23">
+      <widget class="QWidget" name="gridLayoutWidget_22">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>428</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_22">
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_67">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_60">
+          <property name="text">
+           <string>VGA</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_61">
+          <property name="text">
+           <string>USB Device Tablet</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_62">
+          <property name="text">
+           <string>Network</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="pushButton_68">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="pushButton_69">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_63">
+          <property name="text">
+           <string>Mouse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_36">
+          <property name="placeholderText">
+           <string>(Please select a graphics adapter)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>std</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>vmware</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>xenfb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qxl</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-gpu-pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cirrus</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cg3</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_37">
+          <property name="placeholderText">
+           <string>(Please select a network adapter)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>e1000</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e1000-82544gc</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e1000-82545em</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>e1000e</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82550</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82551</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82557a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82557b</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82557c</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82558a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82558b</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82559a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82559b</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82559c</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82559er</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82562</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>i82801</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ne2k_pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pcnet</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>rtl8139</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>tulip</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net-device</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net-pci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net-pci-non-transitional</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>virtio-net-pci-transitional</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>vmxnet3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>dp83932</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lance</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_38">
+          <item>
+           <property name="text">
+            <string>PS/2 Mouse</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>USB Mouse</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>USB Tablet Device</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QCheckBox" name="checkBox_4">
+          <property name="text">
+           <string>Yes, I want it (depreciated)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_24">
+      <widget class="QWidget" name="gridLayoutWidget_23">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_23">
+        <item row="2" column="2">
+         <widget class="QPushButton" name="pushButton_70">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButton_71">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="pushButton_72">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_64">
+          <property name="text">
+           <string>External BIOS file</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit_11"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="pushButton_73">
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_65">
+          <property name="text">
+           <string>Location of external
+BIOS file (Leave
+empty to use the
+default BIOS)</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QLineEdit" name="lineEdit_12"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_25">
+      <widget class="QWidget" name="gridLayoutWidget_24">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_24">
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_66">
+          <property name="text">
+           <string>Keyboard layout</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_74">
+          <property name="text">
+           <string>Next &gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="pushButton_75">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="pushButton_76">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_67">
+          <property name="text">
+           <string>CPU cores</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_68">
+          <property name="text">
+           <string>Keyboard</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_69">
+          <property name="text">
+           <string>Sound card</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_39">
+          <item>
+           <property name="text">
+            <string>none</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>sb16</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pcspk</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>intel-hda</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>gus</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ES1370</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>cs4231a</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>adlib</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>AC97</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBox_16">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_40">
+          <item>
+           <property name="text">
+            <string>PS/2 Keyboard</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>USB Keyboard</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_41">
+          <item>
+           <property name="text">
+            <string>en-us</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>en-gb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>de</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>fr</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ja</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ru</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pl</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>is</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>es</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>pt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>fi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>it</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_26"/>
+     <widget class="QWidget" name="page_27"/>
+     <widget class="QWidget" name="page_28">
+      <widget class="QWidget" name="gridLayoutWidget_26">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>381</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_26">
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_82">
+          <property name="text">
+           <string>Finish</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QPushButton" name="pushButton_83">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="checkBox_5">
+          <property name="text">
+           <string>I want to install Windows 2000
+(depreciated)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="pushButton_84">
+          <property name="text">
+           <string>&lt; Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_74">
+          <property name="text">
+           <string>Additional arguments (if needed)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="lineEdit_16"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBox_42">
+          <item>
+           <property name="text">
+            <string>pci-ohci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>piix3-usb-uhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>qemu-xhci</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>usb-ehci</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="checkBox_6">
+          <property name="text">
+           <string>Add USB support</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget_25">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_25">
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_14"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_72">
+        <property name="text">
+         <string>TPM device path</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_81">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_77">
+        <property name="text">
+         <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_80">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_71">
+        <property name="text">
+         <string>Passthrough type</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_43">
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>passthrough</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>emulated</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QLabel" name="label_70">
+        <property name="text">
+         <string>This feature is for Linux only, so skip this if you're on another platform.
+We'll either try to get this on Windows as well or we just let EmuGUI skip this page on those platforms.
+Sorry for the inconvenience.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pushButton_79">
+        <property name="text">
+         <string>Create virtual TPM</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_73">
+        <property name="text">
+         <string>TPM version</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_44">
+        <item>
+         <property name="text">
+          <string>v1.2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>v2.0</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

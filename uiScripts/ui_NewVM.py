@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'NewVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -63,11 +63,6 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.pushButton_3, 2, 1, 1, 1)
 
-        self.lineEdit = QLineEdit(self.gridLayoutWidget)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 1)
-
         self.comboBox = QComboBox(self.gridLayoutWidget)
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -81,7 +76,12 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
-        self.gridLayout.addWidget(self.comboBox, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.comboBox, 1, 1, 1, 2)
+
+        self.lineEdit = QLineEdit(self.gridLayoutWidget)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QWidget()
@@ -92,17 +92,6 @@ class Ui_Dialog(object):
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.comboBox_2 = QComboBox(self.gridLayoutWidget_2)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-
-        self.gridLayout_2.addWidget(self.comboBox_2, 0, 1, 1, 1)
-
         self.label_6 = QLabel(self.gridLayoutWidget_2)
         self.label_6.setObjectName(u"label_6")
 
@@ -117,6 +106,32 @@ class Ui_Dialog(object):
         self.label_4.setObjectName(u"label_4")
 
         self.gridLayout_2.addWidget(self.label_4, 0, 0, 1, 1)
+
+        self.pushButton_5 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+
+        self.gridLayout_2.addWidget(self.pushButton_5, 3, 0, 1, 1)
+
+        self.pushButton_4 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+
+        self.gridLayout_2.addWidget(self.pushButton_4, 3, 1, 1, 1)
+
+        self.pushButton_6 = QPushButton(self.gridLayoutWidget_2)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+
+        self.gridLayout_2.addWidget(self.pushButton_6, 3, 2, 1, 1)
+
+        self.comboBox_2 = QComboBox(self.gridLayoutWidget_2)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+
+        self.gridLayout_2.addWidget(self.comboBox_2, 0, 1, 1, 2)
 
         self.comboBox_3 = QComboBox(self.gridLayoutWidget_2)
         self.comboBox_3.addItem("")
@@ -164,29 +179,14 @@ class Ui_Dialog(object):
         self.comboBox_3.addItem("")
         self.comboBox_3.setObjectName(u"comboBox_3")
 
-        self.gridLayout_2.addWidget(self.comboBox_3, 1, 1, 1, 1)
-
-        self.pushButton_5 = QPushButton(self.gridLayoutWidget_2)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-
-        self.gridLayout_2.addWidget(self.pushButton_5, 3, 0, 1, 1)
-
-        self.pushButton_4 = QPushButton(self.gridLayoutWidget_2)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-
-        self.gridLayout_2.addWidget(self.pushButton_4, 3, 1, 1, 1)
-
-        self.pushButton_6 = QPushButton(self.gridLayoutWidget_2)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-
-        self.gridLayout_2.addWidget(self.pushButton_6, 3, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.comboBox_3, 1, 1, 1, 2)
 
         self.spinBox = QSpinBox(self.gridLayoutWidget_2)
         self.spinBox.setObjectName(u"spinBox")
         self.spinBox.setMaximum(32768)
         self.spinBox.setValue(0)
 
-        self.gridLayout_2.addWidget(self.spinBox, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.spinBox, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QWidget()
@@ -197,6 +197,36 @@ class Ui_Dialog(object):
         self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_7 = QLabel(self.gridLayoutWidget_3)
+        self.label_7.setObjectName(u"label_7")
+
+        self.gridLayout_3.addWidget(self.label_7, 2, 0, 1, 1)
+
+        self.label_8 = QLabel(self.gridLayoutWidget_3)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout_3.addWidget(self.label_8, 1, 0, 1, 1)
+
+        self.label_9 = QLabel(self.gridLayoutWidget_3)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout_3.addWidget(self.label_9, 0, 0, 1, 1)
+
+        self.pushButton_7 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+
+        self.gridLayout_3.addWidget(self.pushButton_7, 3, 0, 1, 1)
+
+        self.pushButton_8 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+
+        self.gridLayout_3.addWidget(self.pushButton_8, 3, 1, 1, 1)
+
+        self.pushButton_9 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+
+        self.gridLayout_3.addWidget(self.pushButton_9, 3, 2, 1, 1)
+
         self.comboBox_4 = QComboBox(self.gridLayoutWidget_3)
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
@@ -215,22 +245,7 @@ class Ui_Dialog(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.setObjectName(u"comboBox_4")
 
-        self.gridLayout_3.addWidget(self.comboBox_4, 0, 1, 1, 1)
-
-        self.label_7 = QLabel(self.gridLayoutWidget_3)
-        self.label_7.setObjectName(u"label_7")
-
-        self.gridLayout_3.addWidget(self.label_7, 2, 0, 1, 1)
-
-        self.label_8 = QLabel(self.gridLayoutWidget_3)
-        self.label_8.setObjectName(u"label_8")
-
-        self.gridLayout_3.addWidget(self.label_8, 1, 0, 1, 1)
-
-        self.label_9 = QLabel(self.gridLayoutWidget_3)
-        self.label_9.setObjectName(u"label_9")
-
-        self.gridLayout_3.addWidget(self.label_9, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.comboBox_4, 0, 1, 1, 2)
 
         self.comboBox_5 = QComboBox(self.gridLayoutWidget_3)
         self.comboBox_5.addItem("")
@@ -310,28 +325,13 @@ class Ui_Dialog(object):
         self.comboBox_5.addItem("")
         self.comboBox_5.setObjectName(u"comboBox_5")
 
-        self.gridLayout_3.addWidget(self.comboBox_5, 1, 1, 1, 1)
-
-        self.pushButton_7 = QPushButton(self.gridLayoutWidget_3)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-
-        self.gridLayout_3.addWidget(self.pushButton_7, 3, 0, 1, 1)
-
-        self.pushButton_8 = QPushButton(self.gridLayoutWidget_3)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-
-        self.gridLayout_3.addWidget(self.pushButton_8, 3, 1, 1, 1)
-
-        self.pushButton_9 = QPushButton(self.gridLayoutWidget_3)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-
-        self.gridLayout_3.addWidget(self.pushButton_9, 3, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.comboBox_5, 1, 1, 1, 2)
 
         self.spinBox_2 = QSpinBox(self.gridLayoutWidget_3)
         self.spinBox_2.setObjectName(u"spinBox_2")
         self.spinBox_2.setMaximum(32768)
 
-        self.gridLayout_3.addWidget(self.spinBox_2, 2, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.spinBox_2, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QWidget()
@@ -342,20 +342,6 @@ class Ui_Dialog(object):
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.comboBox_6 = QComboBox(self.gridLayoutWidget_4)
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
-        self.comboBox_6.setObjectName(u"comboBox_6")
-
-        self.gridLayout_4.addWidget(self.comboBox_6, 0, 1, 1, 1)
-
         self.label_10 = QLabel(self.gridLayoutWidget_4)
         self.label_10.setObjectName(u"label_10")
 
@@ -370,6 +356,35 @@ class Ui_Dialog(object):
         self.label_12.setObjectName(u"label_12")
 
         self.gridLayout_4.addWidget(self.label_12, 0, 0, 1, 1)
+
+        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+
+        self.gridLayout_4.addWidget(self.pushButton_10, 3, 0, 1, 1)
+
+        self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_11.setObjectName(u"pushButton_11")
+
+        self.gridLayout_4.addWidget(self.pushButton_11, 3, 1, 1, 1)
+
+        self.pushButton_12 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_12.setObjectName(u"pushButton_12")
+
+        self.gridLayout_4.addWidget(self.pushButton_12, 3, 2, 1, 1)
+
+        self.comboBox_6 = QComboBox(self.gridLayoutWidget_4)
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.setObjectName(u"comboBox_6")
+
+        self.gridLayout_4.addWidget(self.comboBox_6, 0, 1, 1, 2)
 
         self.comboBox_7 = QComboBox(self.gridLayoutWidget_4)
         self.comboBox_7.addItem("")
@@ -406,28 +421,13 @@ class Ui_Dialog(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
 
-        self.gridLayout_4.addWidget(self.comboBox_7, 1, 1, 1, 1)
-
-        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-
-        self.gridLayout_4.addWidget(self.pushButton_10, 3, 0, 1, 1)
-
-        self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_11.setObjectName(u"pushButton_11")
-
-        self.gridLayout_4.addWidget(self.pushButton_11, 3, 1, 1, 1)
-
-        self.pushButton_12 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_12.setObjectName(u"pushButton_12")
-
-        self.gridLayout_4.addWidget(self.pushButton_12, 3, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.comboBox_7, 1, 1, 1, 2)
 
         self.spinBox_3 = QSpinBox(self.gridLayoutWidget_4)
         self.spinBox_3.setObjectName(u"spinBox_3")
         self.spinBox_3.setMaximum(32768)
 
-        self.gridLayout_4.addWidget(self.spinBox_3, 2, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.spinBox_3, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_4)
         self.page_11 = QWidget()
@@ -438,6 +438,36 @@ class Ui_Dialog(object):
         self.gridLayout_11 = QGridLayout(self.gridLayoutWidget_11)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_29 = QLabel(self.gridLayoutWidget_11)
+        self.label_29.setObjectName(u"label_29")
+
+        self.gridLayout_11.addWidget(self.label_29, 2, 0, 1, 1)
+
+        self.label_30 = QLabel(self.gridLayoutWidget_11)
+        self.label_30.setObjectName(u"label_30")
+
+        self.gridLayout_11.addWidget(self.label_30, 1, 0, 1, 1)
+
+        self.label_31 = QLabel(self.gridLayoutWidget_11)
+        self.label_31.setObjectName(u"label_31")
+
+        self.gridLayout_11.addWidget(self.label_31, 0, 0, 1, 1)
+
+        self.pushButton_33 = QPushButton(self.gridLayoutWidget_11)
+        self.pushButton_33.setObjectName(u"pushButton_33")
+
+        self.gridLayout_11.addWidget(self.pushButton_33, 3, 0, 1, 1)
+
+        self.pushButton_34 = QPushButton(self.gridLayoutWidget_11)
+        self.pushButton_34.setObjectName(u"pushButton_34")
+
+        self.gridLayout_11.addWidget(self.pushButton_34, 3, 1, 1, 1)
+
+        self.pushButton_35 = QPushButton(self.gridLayoutWidget_11)
+        self.pushButton_35.setObjectName(u"pushButton_35")
+
+        self.gridLayout_11.addWidget(self.pushButton_35, 3, 2, 1, 1)
+
         self.comboBox_14 = QComboBox(self.gridLayoutWidget_11)
         self.comboBox_14.addItem("")
         self.comboBox_14.addItem("")
@@ -459,22 +489,7 @@ class Ui_Dialog(object):
         self.comboBox_14.addItem("")
         self.comboBox_14.setObjectName(u"comboBox_14")
 
-        self.gridLayout_11.addWidget(self.comboBox_14, 0, 1, 1, 1)
-
-        self.label_29 = QLabel(self.gridLayoutWidget_11)
-        self.label_29.setObjectName(u"label_29")
-
-        self.gridLayout_11.addWidget(self.label_29, 2, 0, 1, 1)
-
-        self.label_30 = QLabel(self.gridLayoutWidget_11)
-        self.label_30.setObjectName(u"label_30")
-
-        self.gridLayout_11.addWidget(self.label_30, 1, 0, 1, 1)
-
-        self.label_31 = QLabel(self.gridLayoutWidget_11)
-        self.label_31.setObjectName(u"label_31")
-
-        self.gridLayout_11.addWidget(self.label_31, 0, 0, 1, 1)
+        self.gridLayout_11.addWidget(self.comboBox_14, 0, 1, 1, 2)
 
         self.comboBox_15 = QComboBox(self.gridLayoutWidget_11)
         self.comboBox_15.addItem("")
@@ -512,28 +527,13 @@ class Ui_Dialog(object):
         self.comboBox_15.addItem("")
         self.comboBox_15.setObjectName(u"comboBox_15")
 
-        self.gridLayout_11.addWidget(self.comboBox_15, 1, 1, 1, 1)
-
-        self.pushButton_33 = QPushButton(self.gridLayoutWidget_11)
-        self.pushButton_33.setObjectName(u"pushButton_33")
-
-        self.gridLayout_11.addWidget(self.pushButton_33, 3, 0, 1, 1)
-
-        self.pushButton_34 = QPushButton(self.gridLayoutWidget_11)
-        self.pushButton_34.setObjectName(u"pushButton_34")
-
-        self.gridLayout_11.addWidget(self.pushButton_34, 3, 1, 1, 1)
-
-        self.pushButton_35 = QPushButton(self.gridLayoutWidget_11)
-        self.pushButton_35.setObjectName(u"pushButton_35")
-
-        self.gridLayout_11.addWidget(self.pushButton_35, 3, 2, 1, 1)
+        self.gridLayout_11.addWidget(self.comboBox_15, 1, 1, 1, 2)
 
         self.spinBox_5 = QSpinBox(self.gridLayoutWidget_11)
         self.spinBox_5.setObjectName(u"spinBox_5")
         self.spinBox_5.setMaximum(32768)
 
-        self.gridLayout_11.addWidget(self.spinBox_5, 2, 1, 1, 1)
+        self.gridLayout_11.addWidget(self.spinBox_5, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_11)
         self.page_12 = QWidget()
@@ -548,28 +548,6 @@ class Ui_Dialog(object):
         self.pushButton_38.setObjectName(u"pushButton_38")
 
         self.gridLayout_12.addWidget(self.pushButton_38, 3, 1, 1, 1)
-
-        self.comboBox_20 = QComboBox(self.gridLayoutWidget_12)
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.addItem("")
-        self.comboBox_20.setObjectName(u"comboBox_20")
-
-        self.gridLayout_12.addWidget(self.comboBox_20, 0, 1, 1, 1)
-
-        self.spinBox_7 = QSpinBox(self.gridLayoutWidget_12)
-        self.spinBox_7.setObjectName(u"spinBox_7")
-        self.spinBox_7.setMaximum(32768)
-
-        self.gridLayout_12.addWidget(self.spinBox_7, 2, 1, 1, 1)
 
         self.label_35 = QLabel(self.gridLayoutWidget_12)
         self.label_35.setObjectName(u"label_35")
@@ -591,6 +569,28 @@ class Ui_Dialog(object):
 
         self.gridLayout_12.addWidget(self.pushButton_39, 3, 2, 1, 1)
 
+        self.comboBox_20 = QComboBox(self.gridLayoutWidget_12)
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.addItem("")
+        self.comboBox_20.setObjectName(u"comboBox_20")
+
+        self.gridLayout_12.addWidget(self.comboBox_20, 0, 1, 1, 2)
+
+        self.spinBox_7 = QSpinBox(self.gridLayoutWidget_12)
+        self.spinBox_7.setObjectName(u"spinBox_7")
+        self.spinBox_7.setMaximum(32768)
+
+        self.gridLayout_12.addWidget(self.spinBox_7, 2, 1, 1, 2)
+
         self.stackedWidget.addWidget(self.page_12)
         self.page_13 = QWidget()
         self.page_13.setObjectName(u"page_13")
@@ -604,22 +604,6 @@ class Ui_Dialog(object):
         self.pushButton_40.setObjectName(u"pushButton_40")
 
         self.gridLayout_13.addWidget(self.pushButton_40, 3, 1, 1, 1)
-
-        self.comboBox_21 = QComboBox(self.gridLayoutWidget_13)
-        self.comboBox_21.addItem("")
-        self.comboBox_21.addItem("")
-        self.comboBox_21.addItem("")
-        self.comboBox_21.addItem("")
-        self.comboBox_21.addItem("")
-        self.comboBox_21.setObjectName(u"comboBox_21")
-
-        self.gridLayout_13.addWidget(self.comboBox_21, 0, 1, 1, 1)
-
-        self.spinBox_8 = QSpinBox(self.gridLayoutWidget_13)
-        self.spinBox_8.setObjectName(u"spinBox_8")
-        self.spinBox_8.setMaximum(32768)
-
-        self.gridLayout_13.addWidget(self.spinBox_8, 2, 1, 1, 1)
 
         self.label_36 = QLabel(self.gridLayoutWidget_13)
         self.label_36.setObjectName(u"label_36")
@@ -641,12 +625,28 @@ class Ui_Dialog(object):
 
         self.gridLayout_13.addWidget(self.pushButton_42, 3, 2, 1, 1)
 
+        self.comboBox_21 = QComboBox(self.gridLayoutWidget_13)
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.addItem("")
+        self.comboBox_21.setObjectName(u"comboBox_21")
+
+        self.gridLayout_13.addWidget(self.comboBox_21, 0, 1, 1, 2)
+
+        self.spinBox_8 = QSpinBox(self.gridLayoutWidget_13)
+        self.spinBox_8.setObjectName(u"spinBox_8")
+        self.spinBox_8.setMaximum(32768)
+
+        self.gridLayout_13.addWidget(self.spinBox_8, 2, 1, 1, 2)
+
         self.stackedWidget.addWidget(self.page_13)
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
         self.gridLayoutWidget_5 = QWidget(self.page_5)
         self.gridLayoutWidget_5.setObjectName(u"gridLayoutWidget_5")
-        self.gridLayoutWidget_5.setGeometry(QRect(0, 0, 381, 281))
+        self.gridLayoutWidget_5.setGeometry(QRect(0, 0, 411, 281))
         self.gridLayout_5 = QGridLayout(self.gridLayoutWidget_5)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -705,6 +705,19 @@ class Ui_Dialog(object):
 
         self.gridLayout_5.addWidget(self.label_14, 2, 0, 1, 1)
 
+        self.label_20 = QLabel(self.gridLayoutWidget_5)
+        self.label_20.setObjectName(u"label_20")
+
+        self.gridLayout_5.addWidget(self.label_20, 0, 0, 1, 1)
+
+        self.comboBox_18 = QComboBox(self.gridLayoutWidget_5)
+        self.comboBox_18.addItem("")
+        self.comboBox_18.addItem("")
+        self.comboBox_18.addItem("")
+        self.comboBox_18.setObjectName(u"comboBox_18")
+
+        self.gridLayout_5.addWidget(self.comboBox_18, 0, 1, 1, 2)
+
         self.comboBox_8 = QComboBox(self.gridLayoutWidget_5)
         self.comboBox_8.addItem("")
         self.comboBox_8.addItem("")
@@ -717,27 +730,14 @@ class Ui_Dialog(object):
         self.comboBox_8.addItem("")
         self.comboBox_8.setObjectName(u"comboBox_8")
 
-        self.gridLayout_5.addWidget(self.comboBox_8, 2, 1, 1, 1)
-
-        self.label_20 = QLabel(self.gridLayoutWidget_5)
-        self.label_20.setObjectName(u"label_20")
-
-        self.gridLayout_5.addWidget(self.label_20, 0, 0, 1, 1)
-
-        self.comboBox_18 = QComboBox(self.gridLayoutWidget_5)
-        self.comboBox_18.addItem("")
-        self.comboBox_18.addItem("")
-        self.comboBox_18.addItem("")
-        self.comboBox_18.setObjectName(u"comboBox_18")
-
-        self.gridLayout_5.addWidget(self.comboBox_18, 0, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.comboBox_8, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_5)
         self.page_6 = QWidget()
         self.page_6.setObjectName(u"page_6")
         self.gridLayoutWidget_6 = QWidget(self.page_6)
         self.gridLayoutWidget_6.setObjectName(u"gridLayoutWidget_6")
-        self.gridLayoutWidget_6.setGeometry(QRect(0, 0, 382, 271))
+        self.gridLayoutWidget_6.setGeometry(QRect(0, 0, 428, 271))
         self.gridLayout_6 = QGridLayout(self.gridLayoutWidget_6)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -756,6 +756,26 @@ class Ui_Dialog(object):
 
         self.gridLayout_6.addWidget(self.label_18, 2, 0, 1, 1)
 
+        self.label_17 = QLabel(self.gridLayoutWidget_6)
+        self.label_17.setObjectName(u"label_17")
+
+        self.gridLayout_6.addWidget(self.label_17, 1, 0, 1, 1)
+
+        self.pushButton_18 = QPushButton(self.gridLayoutWidget_6)
+        self.pushButton_18.setObjectName(u"pushButton_18")
+
+        self.gridLayout_6.addWidget(self.pushButton_18, 4, 0, 1, 1)
+
+        self.pushButton_19 = QPushButton(self.gridLayoutWidget_6)
+        self.pushButton_19.setObjectName(u"pushButton_19")
+
+        self.gridLayout_6.addWidget(self.pushButton_19, 4, 2, 1, 1)
+
+        self.label_28 = QLabel(self.gridLayoutWidget_6)
+        self.label_28.setObjectName(u"label_28")
+
+        self.gridLayout_6.addWidget(self.label_28, 3, 0, 1, 1)
+
         self.comboBox_10 = QComboBox(self.gridLayoutWidget_6)
         self.comboBox_10.addItem("")
         self.comboBox_10.addItem("")
@@ -769,22 +789,7 @@ class Ui_Dialog(object):
         self.comboBox_10.addItem("")
         self.comboBox_10.setObjectName(u"comboBox_10")
 
-        self.gridLayout_6.addWidget(self.comboBox_10, 0, 1, 1, 1)
-
-        self.label_17 = QLabel(self.gridLayoutWidget_6)
-        self.label_17.setObjectName(u"label_17")
-
-        self.gridLayout_6.addWidget(self.label_17, 1, 0, 1, 1)
-
-        self.pushButton_18 = QPushButton(self.gridLayoutWidget_6)
-        self.pushButton_18.setObjectName(u"pushButton_18")
-
-        self.gridLayout_6.addWidget(self.pushButton_18, 4, 0, 1, 1)
-
-        self.checkBox = QCheckBox(self.gridLayoutWidget_6)
-        self.checkBox.setObjectName(u"checkBox")
-
-        self.gridLayout_6.addWidget(self.checkBox, 2, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.comboBox_10, 0, 1, 1, 2)
 
         self.comboBox_11 = QComboBox(self.gridLayoutWidget_6)
         self.comboBox_11.addItem("")
@@ -819,17 +824,7 @@ class Ui_Dialog(object):
         self.comboBox_11.addItem("")
         self.comboBox_11.setObjectName(u"comboBox_11")
 
-        self.gridLayout_6.addWidget(self.comboBox_11, 1, 1, 1, 1)
-
-        self.pushButton_19 = QPushButton(self.gridLayoutWidget_6)
-        self.pushButton_19.setObjectName(u"pushButton_19")
-
-        self.gridLayout_6.addWidget(self.pushButton_19, 4, 2, 1, 1)
-
-        self.label_28 = QLabel(self.gridLayoutWidget_6)
-        self.label_28.setObjectName(u"label_28")
-
-        self.gridLayout_6.addWidget(self.label_28, 3, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.comboBox_11, 1, 1, 1, 2)
 
         self.comboBox_13 = QComboBox(self.gridLayoutWidget_6)
         self.comboBox_13.addItem("")
@@ -837,7 +832,12 @@ class Ui_Dialog(object):
         self.comboBox_13.addItem("")
         self.comboBox_13.setObjectName(u"comboBox_13")
 
-        self.gridLayout_6.addWidget(self.comboBox_13, 3, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.comboBox_13, 3, 1, 1, 2)
+
+        self.checkBox = QCheckBox(self.gridLayoutWidget_6)
+        self.checkBox.setObjectName(u"checkBox")
+
+        self.gridLayout_6.addWidget(self.checkBox, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_6)
         self.page_8 = QWidget()
@@ -857,11 +857,6 @@ class Ui_Dialog(object):
         self.pushButton_24.setObjectName(u"pushButton_24")
 
         self.gridLayout_8.addWidget(self.pushButton_24, 2, 1, 1, 1)
-
-        self.lineEdit_3 = QLineEdit(self.gridLayoutWidget_8)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-
-        self.gridLayout_8.addWidget(self.lineEdit_3, 0, 1, 1, 1)
 
         self.pushButton_25 = QPushButton(self.gridLayoutWidget_8)
         self.pushButton_25.setObjectName(u"pushButton_25")
@@ -889,6 +884,11 @@ class Ui_Dialog(object):
 
         self.gridLayout_8.addWidget(self.label_19, 0, 0, 1, 1)
 
+        self.lineEdit_3 = QLineEdit(self.gridLayoutWidget_8)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+
+        self.gridLayout_8.addWidget(self.lineEdit_3, 0, 1, 1, 2)
+
         self.stackedWidget.addWidget(self.page_8)
         self.page_9 = QWidget()
         self.page_9.setObjectName(u"page_9")
@@ -898,41 +898,10 @@ class Ui_Dialog(object):
         self.gridLayout_9 = QGridLayout(self.gridLayoutWidget_9)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.gridLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.comboBox_19 = QComboBox(self.gridLayoutWidget_9)
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.addItem("")
-        self.comboBox_19.setObjectName(u"comboBox_19")
-
-        self.gridLayout_9.addWidget(self.comboBox_19, 3, 1, 1, 1)
-
         self.label_21 = QLabel(self.gridLayoutWidget_9)
         self.label_21.setObjectName(u"label_21")
 
         self.gridLayout_9.addWidget(self.label_21, 3, 0, 1, 1)
-
-        self.comboBox_12 = QComboBox(self.gridLayoutWidget_9)
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.setObjectName(u"comboBox_12")
-
-        self.gridLayout_9.addWidget(self.comboBox_12, 0, 1, 1, 1)
 
         self.pushButton_27 = QPushButton(self.gridLayoutWidget_9)
         self.pushButton_27.setObjectName(u"pushButton_27")
@@ -943,13 +912,6 @@ class Ui_Dialog(object):
         self.pushButton_26.setObjectName(u"pushButton_26")
 
         self.gridLayout_9.addWidget(self.pushButton_26, 4, 2, 1, 1)
-
-        self.comboBox_16 = QComboBox(self.gridLayoutWidget_9)
-        self.comboBox_16.addItem("")
-        self.comboBox_16.addItem("")
-        self.comboBox_16.setObjectName(u"comboBox_16")
-
-        self.gridLayout_9.addWidget(self.comboBox_16, 2, 1, 1, 1)
 
         self.pushButton_28 = QPushButton(self.gridLayoutWidget_9)
         self.pushButton_28.setObjectName(u"pushButton_28")
@@ -971,19 +933,57 @@ class Ui_Dialog(object):
 
         self.gridLayout_9.addWidget(self.label_23, 0, 0, 1, 1)
 
+        self.comboBox_12 = QComboBox(self.gridLayoutWidget_9)
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.setObjectName(u"comboBox_12")
+
+        self.gridLayout_9.addWidget(self.comboBox_12, 0, 1, 1, 2)
+
         self.spinBox_6 = QSpinBox(self.gridLayoutWidget_9)
         self.spinBox_6.setObjectName(u"spinBox_6")
         self.spinBox_6.setMinimum(1)
         self.spinBox_6.setMaximum(8)
 
-        self.gridLayout_9.addWidget(self.spinBox_6, 1, 1, 1, 1)
+        self.gridLayout_9.addWidget(self.spinBox_6, 1, 1, 1, 2)
+
+        self.comboBox_16 = QComboBox(self.gridLayoutWidget_9)
+        self.comboBox_16.addItem("")
+        self.comboBox_16.addItem("")
+        self.comboBox_16.setObjectName(u"comboBox_16")
+
+        self.gridLayout_9.addWidget(self.comboBox_16, 2, 1, 1, 2)
+
+        self.comboBox_19 = QComboBox(self.gridLayoutWidget_9)
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.addItem("")
+        self.comboBox_19.setObjectName(u"comboBox_19")
+
+        self.gridLayout_9.addWidget(self.comboBox_19, 3, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_9)
         self.page_10 = QWidget()
         self.page_10.setObjectName(u"page_10")
         self.gridLayoutWidget_10 = QWidget(self.page_10)
         self.gridLayoutWidget_10.setObjectName(u"gridLayoutWidget_10")
-        self.gridLayoutWidget_10.setGeometry(QRect(0, 0, 383, 281))
+        self.gridLayoutWidget_10.setGeometry(QRect(0, 0, 381, 281))
         self.gridLayout_10 = QGridLayout(self.gridLayoutWidget_10)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
         self.gridLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -1044,10 +1044,1089 @@ class Ui_Dialog(object):
 
         self.label_27 = QLabel(self.gridLayoutWidget_10)
         self.label_27.setObjectName(u"label_27")
+        self.label_27.setAlignment(Qt.AlignCenter)
+        self.label_27.setWordWrap(True)
 
         self.gridLayout_10.addWidget(self.label_27, 3, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.page_10)
+        self.page_14 = QWidget()
+        self.page_14.setObjectName(u"page_14")
+        self.stackedWidget_2 = QStackedWidget(self.page_14)
+        self.stackedWidget_2.setObjectName(u"stackedWidget_2")
+        self.stackedWidget_2.setGeometry(QRect(310, 120, 381, 281))
+        self.page_15 = QWidget()
+        self.page_15.setObjectName(u"page_15")
+        self.gridLayoutWidget_14 = QWidget(self.page_15)
+        self.gridLayoutWidget_14.setObjectName(u"gridLayoutWidget_14")
+        self.gridLayoutWidget_14.setGeometry(QRect(0, 0, 381, 281))
+        self.gridLayout_14 = QGridLayout(self.gridLayoutWidget_14)
+        self.gridLayout_14.setObjectName(u"gridLayout_14")
+        self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.label_38 = QLabel(self.gridLayoutWidget_14)
+        self.label_38.setObjectName(u"label_38")
+
+        self.gridLayout_14.addWidget(self.label_38, 1, 0, 1, 1)
+
+        self.label_39 = QLabel(self.gridLayoutWidget_14)
+        self.label_39.setObjectName(u"label_39")
+
+        self.gridLayout_14.addWidget(self.label_39, 0, 0, 1, 1)
+
+        self.pushButton_43 = QPushButton(self.gridLayoutWidget_14)
+        self.pushButton_43.setObjectName(u"pushButton_43")
+
+        self.gridLayout_14.addWidget(self.pushButton_43, 2, 2, 1, 1)
+
+        self.pushButton_44 = QPushButton(self.gridLayoutWidget_14)
+        self.pushButton_44.setObjectName(u"pushButton_44")
+
+        self.gridLayout_14.addWidget(self.pushButton_44, 2, 1, 1, 1)
+
+        self.comboBox_22 = QComboBox(self.gridLayoutWidget_14)
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.setObjectName(u"comboBox_22")
+
+        self.gridLayout_14.addWidget(self.comboBox_22, 1, 1, 1, 2)
+
+        self.lineEdit_9 = QLineEdit(self.gridLayoutWidget_14)
+        self.lineEdit_9.setObjectName(u"lineEdit_9")
+
+        self.gridLayout_14.addWidget(self.lineEdit_9, 0, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_15)
+        self.page_16 = QWidget()
+        self.page_16.setObjectName(u"page_16")
+        self.gridLayoutWidget_15 = QWidget(self.page_16)
+        self.gridLayoutWidget_15.setObjectName(u"gridLayoutWidget_15")
+        self.gridLayoutWidget_15.setGeometry(QRect(0, 0, 381, 271))
+        self.gridLayout_15 = QGridLayout(self.gridLayoutWidget_15)
+        self.gridLayout_15.setObjectName(u"gridLayout_15")
+        self.gridLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.label_40 = QLabel(self.gridLayoutWidget_15)
+        self.label_40.setObjectName(u"label_40")
+
+        self.gridLayout_15.addWidget(self.label_40, 2, 0, 1, 1)
+
+        self.label_41 = QLabel(self.gridLayoutWidget_15)
+        self.label_41.setObjectName(u"label_41")
+
+        self.gridLayout_15.addWidget(self.label_41, 1, 0, 1, 1)
+
+        self.label_42 = QLabel(self.gridLayoutWidget_15)
+        self.label_42.setObjectName(u"label_42")
+
+        self.gridLayout_15.addWidget(self.label_42, 0, 0, 1, 1)
+
+        self.pushButton_45 = QPushButton(self.gridLayoutWidget_15)
+        self.pushButton_45.setObjectName(u"pushButton_45")
+
+        self.gridLayout_15.addWidget(self.pushButton_45, 3, 0, 1, 1)
+
+        self.pushButton_46 = QPushButton(self.gridLayoutWidget_15)
+        self.pushButton_46.setObjectName(u"pushButton_46")
+
+        self.gridLayout_15.addWidget(self.pushButton_46, 3, 1, 1, 1)
+
+        self.pushButton_47 = QPushButton(self.gridLayoutWidget_15)
+        self.pushButton_47.setObjectName(u"pushButton_47")
+
+        self.gridLayout_15.addWidget(self.pushButton_47, 3, 2, 1, 1)
+
+        self.comboBox_23 = QComboBox(self.gridLayoutWidget_15)
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.setObjectName(u"comboBox_23")
+
+        self.gridLayout_15.addWidget(self.comboBox_23, 0, 1, 1, 2)
+
+        self.comboBox_24 = QComboBox(self.gridLayoutWidget_15)
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.addItem("")
+        self.comboBox_24.setObjectName(u"comboBox_24")
+
+        self.gridLayout_15.addWidget(self.comboBox_24, 1, 1, 1, 2)
+
+        self.spinBox_9 = QSpinBox(self.gridLayoutWidget_15)
+        self.spinBox_9.setObjectName(u"spinBox_9")
+        self.spinBox_9.setMaximum(32768)
+        self.spinBox_9.setValue(0)
+
+        self.gridLayout_15.addWidget(self.spinBox_9, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_16)
+        self.page_17 = QWidget()
+        self.page_17.setObjectName(u"page_17")
+        self.gridLayoutWidget_16 = QWidget(self.page_17)
+        self.gridLayoutWidget_16.setObjectName(u"gridLayoutWidget_16")
+        self.gridLayoutWidget_16.setGeometry(QRect(0, 0, 381, 271))
+        self.gridLayout_16 = QGridLayout(self.gridLayoutWidget_16)
+        self.gridLayout_16.setObjectName(u"gridLayout_16")
+        self.gridLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.label_43 = QLabel(self.gridLayoutWidget_16)
+        self.label_43.setObjectName(u"label_43")
+
+        self.gridLayout_16.addWidget(self.label_43, 2, 0, 1, 1)
+
+        self.label_44 = QLabel(self.gridLayoutWidget_16)
+        self.label_44.setObjectName(u"label_44")
+
+        self.gridLayout_16.addWidget(self.label_44, 1, 0, 1, 1)
+
+        self.label_45 = QLabel(self.gridLayoutWidget_16)
+        self.label_45.setObjectName(u"label_45")
+
+        self.gridLayout_16.addWidget(self.label_45, 0, 0, 1, 1)
+
+        self.pushButton_48 = QPushButton(self.gridLayoutWidget_16)
+        self.pushButton_48.setObjectName(u"pushButton_48")
+
+        self.gridLayout_16.addWidget(self.pushButton_48, 3, 0, 1, 1)
+
+        self.pushButton_49 = QPushButton(self.gridLayoutWidget_16)
+        self.pushButton_49.setObjectName(u"pushButton_49")
+
+        self.gridLayout_16.addWidget(self.pushButton_49, 3, 1, 1, 1)
+
+        self.pushButton_50 = QPushButton(self.gridLayoutWidget_16)
+        self.pushButton_50.setObjectName(u"pushButton_50")
+
+        self.gridLayout_16.addWidget(self.pushButton_50, 3, 2, 1, 1)
+
+        self.comboBox_25 = QComboBox(self.gridLayoutWidget_16)
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.addItem("")
+        self.comboBox_25.setObjectName(u"comboBox_25")
+
+        self.gridLayout_16.addWidget(self.comboBox_25, 0, 1, 1, 2)
+
+        self.comboBox_26 = QComboBox(self.gridLayoutWidget_16)
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.addItem("")
+        self.comboBox_26.setObjectName(u"comboBox_26")
+
+        self.gridLayout_16.addWidget(self.comboBox_26, 1, 1, 1, 2)
+
+        self.spinBox_10 = QSpinBox(self.gridLayoutWidget_16)
+        self.spinBox_10.setObjectName(u"spinBox_10")
+        self.spinBox_10.setMaximum(32768)
+
+        self.gridLayout_16.addWidget(self.spinBox_10, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_17)
+        self.page_18 = QWidget()
+        self.page_18.setObjectName(u"page_18")
+        self.gridLayoutWidget_17 = QWidget(self.page_18)
+        self.gridLayoutWidget_17.setObjectName(u"gridLayoutWidget_17")
+        self.gridLayoutWidget_17.setGeometry(QRect(0, 10, 381, 271))
+        self.gridLayout_17 = QGridLayout(self.gridLayoutWidget_17)
+        self.gridLayout_17.setObjectName(u"gridLayout_17")
+        self.gridLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.label_46 = QLabel(self.gridLayoutWidget_17)
+        self.label_46.setObjectName(u"label_46")
+
+        self.gridLayout_17.addWidget(self.label_46, 2, 0, 1, 1)
+
+        self.label_47 = QLabel(self.gridLayoutWidget_17)
+        self.label_47.setObjectName(u"label_47")
+
+        self.gridLayout_17.addWidget(self.label_47, 1, 0, 1, 1)
+
+        self.label_48 = QLabel(self.gridLayoutWidget_17)
+        self.label_48.setObjectName(u"label_48")
+
+        self.gridLayout_17.addWidget(self.label_48, 0, 0, 1, 1)
+
+        self.pushButton_51 = QPushButton(self.gridLayoutWidget_17)
+        self.pushButton_51.setObjectName(u"pushButton_51")
+
+        self.gridLayout_17.addWidget(self.pushButton_51, 3, 0, 1, 1)
+
+        self.pushButton_52 = QPushButton(self.gridLayoutWidget_17)
+        self.pushButton_52.setObjectName(u"pushButton_52")
+
+        self.gridLayout_17.addWidget(self.pushButton_52, 3, 1, 1, 1)
+
+        self.pushButton_53 = QPushButton(self.gridLayoutWidget_17)
+        self.pushButton_53.setObjectName(u"pushButton_53")
+
+        self.gridLayout_17.addWidget(self.pushButton_53, 3, 2, 1, 1)
+
+        self.comboBox_27 = QComboBox(self.gridLayoutWidget_17)
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.addItem("")
+        self.comboBox_27.setObjectName(u"comboBox_27")
+
+        self.gridLayout_17.addWidget(self.comboBox_27, 0, 1, 1, 2)
+
+        self.comboBox_28 = QComboBox(self.gridLayoutWidget_17)
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.addItem("")
+        self.comboBox_28.setObjectName(u"comboBox_28")
+
+        self.gridLayout_17.addWidget(self.comboBox_28, 1, 1, 1, 2)
+
+        self.spinBox_11 = QSpinBox(self.gridLayoutWidget_17)
+        self.spinBox_11.setObjectName(u"spinBox_11")
+        self.spinBox_11.setMaximum(32768)
+
+        self.gridLayout_17.addWidget(self.spinBox_11, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_18)
+        self.page_19 = QWidget()
+        self.page_19.setObjectName(u"page_19")
+        self.gridLayoutWidget_18 = QWidget(self.page_19)
+        self.gridLayoutWidget_18.setObjectName(u"gridLayoutWidget_18")
+        self.gridLayoutWidget_18.setGeometry(QRect(0, 0, 381, 271))
+        self.gridLayout_18 = QGridLayout(self.gridLayoutWidget_18)
+        self.gridLayout_18.setObjectName(u"gridLayout_18")
+        self.gridLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.label_49 = QLabel(self.gridLayoutWidget_18)
+        self.label_49.setObjectName(u"label_49")
+
+        self.gridLayout_18.addWidget(self.label_49, 2, 0, 1, 1)
+
+        self.label_50 = QLabel(self.gridLayoutWidget_18)
+        self.label_50.setObjectName(u"label_50")
+
+        self.gridLayout_18.addWidget(self.label_50, 1, 0, 1, 1)
+
+        self.label_51 = QLabel(self.gridLayoutWidget_18)
+        self.label_51.setObjectName(u"label_51")
+
+        self.gridLayout_18.addWidget(self.label_51, 0, 0, 1, 1)
+
+        self.pushButton_54 = QPushButton(self.gridLayoutWidget_18)
+        self.pushButton_54.setObjectName(u"pushButton_54")
+
+        self.gridLayout_18.addWidget(self.pushButton_54, 3, 0, 1, 1)
+
+        self.pushButton_55 = QPushButton(self.gridLayoutWidget_18)
+        self.pushButton_55.setObjectName(u"pushButton_55")
+
+        self.gridLayout_18.addWidget(self.pushButton_55, 3, 1, 1, 1)
+
+        self.pushButton_56 = QPushButton(self.gridLayoutWidget_18)
+        self.pushButton_56.setObjectName(u"pushButton_56")
+
+        self.gridLayout_18.addWidget(self.pushButton_56, 3, 2, 1, 1)
+
+        self.comboBox_29 = QComboBox(self.gridLayoutWidget_18)
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.setObjectName(u"comboBox_29")
+
+        self.gridLayout_18.addWidget(self.comboBox_29, 0, 1, 1, 2)
+
+        self.comboBox_30 = QComboBox(self.gridLayoutWidget_18)
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.setObjectName(u"comboBox_30")
+
+        self.gridLayout_18.addWidget(self.comboBox_30, 1, 1, 1, 2)
+
+        self.spinBox_12 = QSpinBox(self.gridLayoutWidget_18)
+        self.spinBox_12.setObjectName(u"spinBox_12")
+        self.spinBox_12.setMaximum(32768)
+
+        self.gridLayout_18.addWidget(self.spinBox_12, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_19)
+        self.page_20 = QWidget()
+        self.page_20.setObjectName(u"page_20")
+        self.gridLayoutWidget_19 = QWidget(self.page_20)
+        self.gridLayoutWidget_19.setObjectName(u"gridLayoutWidget_19")
+        self.gridLayoutWidget_19.setGeometry(QRect(0, 0, 381, 271))
+        self.gridLayout_19 = QGridLayout(self.gridLayoutWidget_19)
+        self.gridLayout_19.setObjectName(u"gridLayout_19")
+        self.gridLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_57 = QPushButton(self.gridLayoutWidget_19)
+        self.pushButton_57.setObjectName(u"pushButton_57")
+
+        self.gridLayout_19.addWidget(self.pushButton_57, 3, 1, 1, 1)
+
+        self.label_52 = QLabel(self.gridLayoutWidget_19)
+        self.label_52.setObjectName(u"label_52")
+
+        self.gridLayout_19.addWidget(self.label_52, 2, 0, 1, 1)
+
+        self.label_53 = QLabel(self.gridLayoutWidget_19)
+        self.label_53.setObjectName(u"label_53")
+
+        self.gridLayout_19.addWidget(self.label_53, 0, 0, 1, 1)
+
+        self.pushButton_58 = QPushButton(self.gridLayoutWidget_19)
+        self.pushButton_58.setObjectName(u"pushButton_58")
+
+        self.gridLayout_19.addWidget(self.pushButton_58, 3, 0, 1, 1)
+
+        self.pushButton_59 = QPushButton(self.gridLayoutWidget_19)
+        self.pushButton_59.setObjectName(u"pushButton_59")
+
+        self.gridLayout_19.addWidget(self.pushButton_59, 3, 2, 1, 1)
+
+        self.comboBox_31 = QComboBox(self.gridLayoutWidget_19)
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.addItem("")
+        self.comboBox_31.setObjectName(u"comboBox_31")
+
+        self.gridLayout_19.addWidget(self.comboBox_31, 0, 1, 1, 2)
+
+        self.spinBox_13 = QSpinBox(self.gridLayoutWidget_19)
+        self.spinBox_13.setObjectName(u"spinBox_13")
+        self.spinBox_13.setMaximum(32768)
+
+        self.gridLayout_19.addWidget(self.spinBox_13, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_20)
+        self.page_21 = QWidget()
+        self.page_21.setObjectName(u"page_21")
+        self.gridLayoutWidget_20 = QWidget(self.page_21)
+        self.gridLayoutWidget_20.setObjectName(u"gridLayoutWidget_20")
+        self.gridLayoutWidget_20.setGeometry(QRect(0, 0, 381, 271))
+        self.gridLayout_20 = QGridLayout(self.gridLayoutWidget_20)
+        self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.gridLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_60 = QPushButton(self.gridLayoutWidget_20)
+        self.pushButton_60.setObjectName(u"pushButton_60")
+
+        self.gridLayout_20.addWidget(self.pushButton_60, 3, 1, 1, 1)
+
+        self.label_54 = QLabel(self.gridLayoutWidget_20)
+        self.label_54.setObjectName(u"label_54")
+
+        self.gridLayout_20.addWidget(self.label_54, 2, 0, 1, 1)
+
+        self.label_55 = QLabel(self.gridLayoutWidget_20)
+        self.label_55.setObjectName(u"label_55")
+
+        self.gridLayout_20.addWidget(self.label_55, 0, 0, 1, 1)
+
+        self.pushButton_61 = QPushButton(self.gridLayoutWidget_20)
+        self.pushButton_61.setObjectName(u"pushButton_61")
+
+        self.gridLayout_20.addWidget(self.pushButton_61, 3, 0, 1, 1)
+
+        self.pushButton_62 = QPushButton(self.gridLayoutWidget_20)
+        self.pushButton_62.setObjectName(u"pushButton_62")
+
+        self.gridLayout_20.addWidget(self.pushButton_62, 3, 2, 1, 1)
+
+        self.comboBox_32 = QComboBox(self.gridLayoutWidget_20)
+        self.comboBox_32.addItem("")
+        self.comboBox_32.addItem("")
+        self.comboBox_32.addItem("")
+        self.comboBox_32.addItem("")
+        self.comboBox_32.addItem("")
+        self.comboBox_32.setObjectName(u"comboBox_32")
+
+        self.gridLayout_20.addWidget(self.comboBox_32, 0, 1, 1, 2)
+
+        self.spinBox_14 = QSpinBox(self.gridLayoutWidget_20)
+        self.spinBox_14.setObjectName(u"spinBox_14")
+        self.spinBox_14.setMaximum(32768)
+
+        self.gridLayout_20.addWidget(self.spinBox_14, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_21)
+        self.page_22 = QWidget()
+        self.page_22.setObjectName(u"page_22")
+        self.gridLayoutWidget_21 = QWidget(self.page_22)
+        self.gridLayoutWidget_21.setObjectName(u"gridLayoutWidget_21")
+        self.gridLayoutWidget_21.setGeometry(QRect(0, 0, 411, 281))
+        self.gridLayout_21 = QGridLayout(self.gridLayoutWidget_21)
+        self.gridLayout_21.setObjectName(u"gridLayout_21")
+        self.gridLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_63 = QPushButton(self.gridLayoutWidget_21)
+        self.pushButton_63.setObjectName(u"pushButton_63")
+
+        self.gridLayout_21.addWidget(self.pushButton_63, 4, 0, 1, 1)
+
+        self.lineEdit_10 = QLineEdit(self.gridLayoutWidget_21)
+        self.lineEdit_10.setObjectName(u"lineEdit_10")
+
+        self.gridLayout_21.addWidget(self.lineEdit_10, 1, 1, 1, 1)
+
+        self.pushButton_64 = QPushButton(self.gridLayoutWidget_21)
+        self.pushButton_64.setObjectName(u"pushButton_64")
+
+        self.gridLayout_21.addWidget(self.pushButton_64, 4, 2, 1, 1)
+
+        self.spinBox_15 = QSpinBox(self.gridLayoutWidget_21)
+        self.spinBox_15.setObjectName(u"spinBox_15")
+        self.spinBox_15.setMaximum(214748368)
+        self.spinBox_15.setValue(0)
+
+        self.gridLayout_21.addWidget(self.spinBox_15, 3, 1, 1, 1)
+
+        self.label_56 = QLabel(self.gridLayoutWidget_21)
+        self.label_56.setObjectName(u"label_56")
+
+        self.gridLayout_21.addWidget(self.label_56, 1, 0, 1, 1)
+
+        self.label_57 = QLabel(self.gridLayoutWidget_21)
+        self.label_57.setObjectName(u"label_57")
+
+        self.gridLayout_21.addWidget(self.label_57, 3, 0, 1, 1)
+
+        self.pushButton_65 = QPushButton(self.gridLayoutWidget_21)
+        self.pushButton_65.setObjectName(u"pushButton_65")
+
+        self.gridLayout_21.addWidget(self.pushButton_65, 1, 2, 1, 1)
+
+        self.comboBox_33 = QComboBox(self.gridLayoutWidget_21)
+        self.comboBox_33.addItem("")
+        self.comboBox_33.addItem("")
+        self.comboBox_33.addItem("")
+        self.comboBox_33.setObjectName(u"comboBox_33")
+
+        self.gridLayout_21.addWidget(self.comboBox_33, 3, 2, 1, 1)
+
+        self.pushButton_66 = QPushButton(self.gridLayoutWidget_21)
+        self.pushButton_66.setObjectName(u"pushButton_66")
+
+        self.gridLayout_21.addWidget(self.pushButton_66, 4, 1, 1, 1)
+
+        self.label_58 = QLabel(self.gridLayoutWidget_21)
+        self.label_58.setObjectName(u"label_58")
+
+        self.gridLayout_21.addWidget(self.label_58, 2, 0, 1, 1)
+
+        self.label_59 = QLabel(self.gridLayoutWidget_21)
+        self.label_59.setObjectName(u"label_59")
+
+        self.gridLayout_21.addWidget(self.label_59, 0, 0, 1, 1)
+
+        self.comboBox_34 = QComboBox(self.gridLayoutWidget_21)
+        self.comboBox_34.addItem("")
+        self.comboBox_34.addItem("")
+        self.comboBox_34.addItem("")
+        self.comboBox_34.setObjectName(u"comboBox_34")
+
+        self.gridLayout_21.addWidget(self.comboBox_34, 0, 1, 1, 2)
+
+        self.comboBox_35 = QComboBox(self.gridLayoutWidget_21)
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.addItem("")
+        self.comboBox_35.setObjectName(u"comboBox_35")
+
+        self.gridLayout_21.addWidget(self.comboBox_35, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_22)
+        self.page_23 = QWidget()
+        self.page_23.setObjectName(u"page_23")
+        self.gridLayoutWidget_22 = QWidget(self.page_23)
+        self.gridLayoutWidget_22.setObjectName(u"gridLayoutWidget_22")
+        self.gridLayoutWidget_22.setGeometry(QRect(0, 0, 428, 271))
+        self.gridLayout_22 = QGridLayout(self.gridLayoutWidget_22)
+        self.gridLayout_22.setObjectName(u"gridLayout_22")
+        self.gridLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_67 = QPushButton(self.gridLayoutWidget_22)
+        self.pushButton_67.setObjectName(u"pushButton_67")
+
+        self.gridLayout_22.addWidget(self.pushButton_67, 4, 1, 1, 1)
+
+        self.label_60 = QLabel(self.gridLayoutWidget_22)
+        self.label_60.setObjectName(u"label_60")
+
+        self.gridLayout_22.addWidget(self.label_60, 0, 0, 1, 1)
+
+        self.label_61 = QLabel(self.gridLayoutWidget_22)
+        self.label_61.setObjectName(u"label_61")
+
+        self.gridLayout_22.addWidget(self.label_61, 2, 0, 1, 1)
+
+        self.label_62 = QLabel(self.gridLayoutWidget_22)
+        self.label_62.setObjectName(u"label_62")
+
+        self.gridLayout_22.addWidget(self.label_62, 1, 0, 1, 1)
+
+        self.pushButton_68 = QPushButton(self.gridLayoutWidget_22)
+        self.pushButton_68.setObjectName(u"pushButton_68")
+
+        self.gridLayout_22.addWidget(self.pushButton_68, 4, 0, 1, 1)
+
+        self.pushButton_69 = QPushButton(self.gridLayoutWidget_22)
+        self.pushButton_69.setObjectName(u"pushButton_69")
+
+        self.gridLayout_22.addWidget(self.pushButton_69, 4, 2, 1, 1)
+
+        self.label_63 = QLabel(self.gridLayoutWidget_22)
+        self.label_63.setObjectName(u"label_63")
+
+        self.gridLayout_22.addWidget(self.label_63, 3, 0, 1, 1)
+
+        self.comboBox_36 = QComboBox(self.gridLayoutWidget_22)
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.addItem("")
+        self.comboBox_36.setObjectName(u"comboBox_36")
+
+        self.gridLayout_22.addWidget(self.comboBox_36, 0, 1, 1, 2)
+
+        self.comboBox_37 = QComboBox(self.gridLayoutWidget_22)
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.addItem("")
+        self.comboBox_37.setObjectName(u"comboBox_37")
+
+        self.gridLayout_22.addWidget(self.comboBox_37, 1, 1, 1, 2)
+
+        self.comboBox_38 = QComboBox(self.gridLayoutWidget_22)
+        self.comboBox_38.addItem("")
+        self.comboBox_38.addItem("")
+        self.comboBox_38.addItem("")
+        self.comboBox_38.setObjectName(u"comboBox_38")
+
+        self.gridLayout_22.addWidget(self.comboBox_38, 3, 1, 1, 2)
+
+        self.checkBox_4 = QCheckBox(self.gridLayoutWidget_22)
+        self.checkBox_4.setObjectName(u"checkBox_4")
+
+        self.gridLayout_22.addWidget(self.checkBox_4, 2, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_23)
+        self.page_24 = QWidget()
+        self.page_24.setObjectName(u"page_24")
+        self.gridLayoutWidget_23 = QWidget(self.page_24)
+        self.gridLayoutWidget_23.setObjectName(u"gridLayoutWidget_23")
+        self.gridLayoutWidget_23.setGeometry(QRect(0, 0, 381, 281))
+        self.gridLayout_23 = QGridLayout(self.gridLayoutWidget_23)
+        self.gridLayout_23.setObjectName(u"gridLayout_23")
+        self.gridLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_70 = QPushButton(self.gridLayoutWidget_23)
+        self.pushButton_70.setObjectName(u"pushButton_70")
+
+        self.gridLayout_23.addWidget(self.pushButton_70, 2, 2, 1, 1)
+
+        self.pushButton_71 = QPushButton(self.gridLayoutWidget_23)
+        self.pushButton_71.setObjectName(u"pushButton_71")
+
+        self.gridLayout_23.addWidget(self.pushButton_71, 2, 1, 1, 1)
+
+        self.pushButton_72 = QPushButton(self.gridLayoutWidget_23)
+        self.pushButton_72.setObjectName(u"pushButton_72")
+
+        self.gridLayout_23.addWidget(self.pushButton_72, 2, 0, 1, 1)
+
+        self.label_64 = QLabel(self.gridLayoutWidget_23)
+        self.label_64.setObjectName(u"label_64")
+
+        self.gridLayout_23.addWidget(self.label_64, 1, 0, 1, 1)
+
+        self.lineEdit_11 = QLineEdit(self.gridLayoutWidget_23)
+        self.lineEdit_11.setObjectName(u"lineEdit_11")
+
+        self.gridLayout_23.addWidget(self.lineEdit_11, 1, 1, 1, 1)
+
+        self.pushButton_73 = QPushButton(self.gridLayoutWidget_23)
+        self.pushButton_73.setObjectName(u"pushButton_73")
+
+        self.gridLayout_23.addWidget(self.pushButton_73, 1, 2, 1, 1)
+
+        self.label_65 = QLabel(self.gridLayoutWidget_23)
+        self.label_65.setObjectName(u"label_65")
+        self.label_65.setWordWrap(True)
+
+        self.gridLayout_23.addWidget(self.label_65, 0, 0, 1, 1)
+
+        self.lineEdit_12 = QLineEdit(self.gridLayoutWidget_23)
+        self.lineEdit_12.setObjectName(u"lineEdit_12")
+
+        self.gridLayout_23.addWidget(self.lineEdit_12, 0, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_24)
+        self.page_25 = QWidget()
+        self.page_25.setObjectName(u"page_25")
+        self.gridLayoutWidget_24 = QWidget(self.page_25)
+        self.gridLayoutWidget_24.setObjectName(u"gridLayoutWidget_24")
+        self.gridLayoutWidget_24.setGeometry(QRect(0, 0, 381, 271))
+        self.gridLayout_24 = QGridLayout(self.gridLayoutWidget_24)
+        self.gridLayout_24.setObjectName(u"gridLayout_24")
+        self.gridLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.label_66 = QLabel(self.gridLayoutWidget_24)
+        self.label_66.setObjectName(u"label_66")
+
+        self.gridLayout_24.addWidget(self.label_66, 3, 0, 1, 1)
+
+        self.pushButton_74 = QPushButton(self.gridLayoutWidget_24)
+        self.pushButton_74.setObjectName(u"pushButton_74")
+
+        self.gridLayout_24.addWidget(self.pushButton_74, 4, 1, 1, 1)
+
+        self.pushButton_75 = QPushButton(self.gridLayoutWidget_24)
+        self.pushButton_75.setObjectName(u"pushButton_75")
+
+        self.gridLayout_24.addWidget(self.pushButton_75, 4, 2, 1, 1)
+
+        self.pushButton_76 = QPushButton(self.gridLayoutWidget_24)
+        self.pushButton_76.setObjectName(u"pushButton_76")
+
+        self.gridLayout_24.addWidget(self.pushButton_76, 4, 0, 1, 1)
+
+        self.label_67 = QLabel(self.gridLayoutWidget_24)
+        self.label_67.setObjectName(u"label_67")
+
+        self.gridLayout_24.addWidget(self.label_67, 1, 0, 1, 1)
+
+        self.label_68 = QLabel(self.gridLayoutWidget_24)
+        self.label_68.setObjectName(u"label_68")
+
+        self.gridLayout_24.addWidget(self.label_68, 2, 0, 1, 1)
+
+        self.label_69 = QLabel(self.gridLayoutWidget_24)
+        self.label_69.setObjectName(u"label_69")
+
+        self.gridLayout_24.addWidget(self.label_69, 0, 0, 1, 1)
+
+        self.comboBox_39 = QComboBox(self.gridLayoutWidget_24)
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.addItem("")
+        self.comboBox_39.setObjectName(u"comboBox_39")
+
+        self.gridLayout_24.addWidget(self.comboBox_39, 0, 1, 1, 2)
+
+        self.spinBox_16 = QSpinBox(self.gridLayoutWidget_24)
+        self.spinBox_16.setObjectName(u"spinBox_16")
+        self.spinBox_16.setMinimum(1)
+        self.spinBox_16.setMaximum(8)
+
+        self.gridLayout_24.addWidget(self.spinBox_16, 1, 1, 1, 2)
+
+        self.comboBox_40 = QComboBox(self.gridLayoutWidget_24)
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.setObjectName(u"comboBox_40")
+
+        self.gridLayout_24.addWidget(self.comboBox_40, 2, 1, 1, 2)
+
+        self.comboBox_41 = QComboBox(self.gridLayoutWidget_24)
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.addItem("")
+        self.comboBox_41.setObjectName(u"comboBox_41")
+
+        self.gridLayout_24.addWidget(self.comboBox_41, 3, 1, 1, 2)
+
+        self.stackedWidget_2.addWidget(self.page_25)
+        self.page_26 = QWidget()
+        self.page_26.setObjectName(u"page_26")
+        self.stackedWidget_2.addWidget(self.page_26)
+        self.page_27 = QWidget()
+        self.page_27.setObjectName(u"page_27")
+        self.stackedWidget_2.addWidget(self.page_27)
+        self.page_28 = QWidget()
+        self.page_28.setObjectName(u"page_28")
+        self.gridLayoutWidget_26 = QWidget(self.page_28)
+        self.gridLayoutWidget_26.setObjectName(u"gridLayoutWidget_26")
+        self.gridLayoutWidget_26.setGeometry(QRect(0, 0, 381, 281))
+        self.gridLayout_26 = QGridLayout(self.gridLayoutWidget_26)
+        self.gridLayout_26.setObjectName(u"gridLayout_26")
+        self.gridLayout_26.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_82 = QPushButton(self.gridLayoutWidget_26)
+        self.pushButton_82.setObjectName(u"pushButton_82")
+
+        self.gridLayout_26.addWidget(self.pushButton_82, 4, 1, 1, 1)
+
+        self.pushButton_83 = QPushButton(self.gridLayoutWidget_26)
+        self.pushButton_83.setObjectName(u"pushButton_83")
+
+        self.gridLayout_26.addWidget(self.pushButton_83, 5, 1, 1, 1)
+
+        self.checkBox_5 = QCheckBox(self.gridLayoutWidget_26)
+        self.checkBox_5.setObjectName(u"checkBox_5")
+
+        self.gridLayout_26.addWidget(self.checkBox_5, 1, 0, 1, 1)
+
+        self.pushButton_84 = QPushButton(self.gridLayoutWidget_26)
+        self.pushButton_84.setObjectName(u"pushButton_84")
+
+        self.gridLayout_26.addWidget(self.pushButton_84, 4, 0, 1, 1)
+
+        self.label_74 = QLabel(self.gridLayoutWidget_26)
+        self.label_74.setObjectName(u"label_74")
+
+        self.gridLayout_26.addWidget(self.label_74, 3, 0, 1, 1)
+
+        self.lineEdit_16 = QLineEdit(self.gridLayoutWidget_26)
+        self.lineEdit_16.setObjectName(u"lineEdit_16")
+
+        self.gridLayout_26.addWidget(self.lineEdit_16, 3, 1, 1, 1)
+
+        self.comboBox_42 = QComboBox(self.gridLayoutWidget_26)
+        self.comboBox_42.addItem("")
+        self.comboBox_42.addItem("")
+        self.comboBox_42.addItem("")
+        self.comboBox_42.addItem("")
+        self.comboBox_42.setObjectName(u"comboBox_42")
+
+        self.gridLayout_26.addWidget(self.comboBox_42, 2, 1, 1, 1)
+
+        self.checkBox_6 = QCheckBox(self.gridLayoutWidget_26)
+        self.checkBox_6.setObjectName(u"checkBox_6")
+
+        self.gridLayout_26.addWidget(self.checkBox_6, 2, 0, 1, 1)
+
+        self.stackedWidget_2.addWidget(self.page_28)
+        self.gridLayoutWidget_25 = QWidget(self.page_14)
+        self.gridLayoutWidget_25.setObjectName(u"gridLayoutWidget_25")
+        self.gridLayoutWidget_25.setGeometry(QRect(0, 0, 381, 281))
+        self.gridLayout_25 = QGridLayout(self.gridLayoutWidget_25)
+        self.gridLayout_25.setObjectName(u"gridLayout_25")
+        self.gridLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.lineEdit_14 = QLineEdit(self.gridLayoutWidget_25)
+        self.lineEdit_14.setObjectName(u"lineEdit_14")
+
+        self.gridLayout_25.addWidget(self.lineEdit_14, 2, 1, 1, 1)
+
+        self.label_72 = QLabel(self.gridLayoutWidget_25)
+        self.label_72.setObjectName(u"label_72")
+
+        self.gridLayout_25.addWidget(self.label_72, 2, 0, 1, 1)
+
+        self.pushButton_81 = QPushButton(self.gridLayoutWidget_25)
+        self.pushButton_81.setObjectName(u"pushButton_81")
+
+        self.gridLayout_25.addWidget(self.pushButton_81, 4, 0, 1, 1)
+
+        self.pushButton_77 = QPushButton(self.gridLayoutWidget_25)
+        self.pushButton_77.setObjectName(u"pushButton_77")
+
+        self.gridLayout_25.addWidget(self.pushButton_77, 4, 1, 1, 1)
+
+        self.pushButton_80 = QPushButton(self.gridLayoutWidget_25)
+        self.pushButton_80.setObjectName(u"pushButton_80")
+
+        self.gridLayout_25.addWidget(self.pushButton_80, 4, 2, 1, 1)
+
+        self.label_71 = QLabel(self.gridLayoutWidget_25)
+        self.label_71.setObjectName(u"label_71")
+
+        self.gridLayout_25.addWidget(self.label_71, 1, 0, 1, 1)
+
+        self.comboBox_43 = QComboBox(self.gridLayoutWidget_25)
+        self.comboBox_43.addItem("")
+        self.comboBox_43.addItem("")
+        self.comboBox_43.addItem("")
+        self.comboBox_43.setObjectName(u"comboBox_43")
+
+        self.gridLayout_25.addWidget(self.comboBox_43, 1, 1, 1, 2)
+
+        self.label_70 = QLabel(self.gridLayoutWidget_25)
+        self.label_70.setObjectName(u"label_70")
+        self.label_70.setAlignment(Qt.AlignCenter)
+        self.label_70.setWordWrap(True)
+
+        self.gridLayout_25.addWidget(self.label_70, 0, 0, 1, 3)
+
+        self.pushButton_79 = QPushButton(self.gridLayoutWidget_25)
+        self.pushButton_79.setObjectName(u"pushButton_79")
+
+        self.gridLayout_25.addWidget(self.pushButton_79, 2, 2, 1, 1)
+
+        self.label_73 = QLabel(self.gridLayoutWidget_25)
+        self.label_73.setObjectName(u"label_73")
+
+        self.gridLayout_25.addWidget(self.label_73, 3, 0, 1, 1)
+
+        self.comboBox_44 = QComboBox(self.gridLayoutWidget_25)
+        self.comboBox_44.addItem("")
+        self.comboBox_44.addItem("")
+        self.comboBox_44.setObjectName(u"comboBox_44")
+
+        self.gridLayout_25.addWidget(self.comboBox_44, 3, 1, 1, 2)
+
+        self.stackedWidget.addWidget(self.page_14)
         self.page_7 = QWidget()
         self.page_7.setObjectName(u"page_7")
         self.gridLayoutWidget_7 = QWidget(self.page_7)
@@ -1105,6 +2184,7 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
 
         self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(11)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -1128,6 +2208,12 @@ class Ui_Dialog(object):
         self.comboBox.setItemText(9, QCoreApplication.translate("Dialog", u"sparc64", None))
 
         self.comboBox.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
+        self.label_6.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_5.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_4.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_5.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_4.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_6.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_2.setItemText(1, QCoreApplication.translate("Dialog", u"microvm", None))
         self.comboBox_2.setItemText(2, QCoreApplication.translate("Dialog", u"pc", None))
@@ -1136,9 +2222,6 @@ class Ui_Dialog(object):
         self.comboBox_2.setItemText(5, QCoreApplication.translate("Dialog", u"none", None))
 
         self.comboBox_2.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.label_6.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
-        self.label_5.setText(QCoreApplication.translate("Dialog", u"CPU", None))
-        self.label_4.setText(QCoreApplication.translate("Dialog", u"Machine", None))
         self.comboBox_3.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_3.setItemText(1, QCoreApplication.translate("Dialog", u"486", None))
         self.comboBox_3.setItemText(2, QCoreApplication.translate("Dialog", u"Broadwell", None))
@@ -1184,9 +2267,12 @@ class Ui_Dialog(object):
         self.comboBox_3.setItemText(42, QCoreApplication.translate("Dialog", u"host", None))
 
         self.comboBox_3.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
-        self.pushButton_5.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.pushButton_4.setText(QCoreApplication.translate("Dialog", u"Next >", None))
-        self.pushButton_6.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_7.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_8.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_9.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_7.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_8.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_9.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_4.setItemText(1, QCoreApplication.translate("Dialog", u"40p", None))
         self.comboBox_4.setItemText(2, QCoreApplication.translate("Dialog", u"bamboo", None))
@@ -1204,9 +2290,6 @@ class Ui_Dialog(object):
         self.comboBox_4.setItemText(14, QCoreApplication.translate("Dialog", u"virtex-ml507", None))
 
         self.comboBox_4.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.label_7.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
-        self.label_8.setText(QCoreApplication.translate("Dialog", u"CPU", None))
-        self.label_9.setText(QCoreApplication.translate("Dialog", u"Machine", None))
         self.comboBox_5.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_5.setItemText(1, QCoreApplication.translate("Dialog", u"603", None))
         self.comboBox_5.setItemText(2, QCoreApplication.translate("Dialog", u"604", None))
@@ -1284,9 +2367,12 @@ class Ui_Dialog(object):
         self.comboBox_5.setItemText(74, QCoreApplication.translate("Dialog", u"mpc8560", None))
 
         self.comboBox_5.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
-        self.pushButton_7.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.pushButton_8.setText(QCoreApplication.translate("Dialog", u"Next >", None))
-        self.pushButton_9.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_10.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_11.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_12.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_10.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_11.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_12.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_6.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_6.setItemText(1, QCoreApplication.translate("Dialog", u"boston", None))
         self.comboBox_6.setItemText(2, QCoreApplication.translate("Dialog", u"fuloong2e", None))
@@ -1298,9 +2384,6 @@ class Ui_Dialog(object):
         self.comboBox_6.setItemText(8, QCoreApplication.translate("Dialog", u"pica61", None))
 
         self.comboBox_6.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.label_10.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
-        self.label_11.setText(QCoreApplication.translate("Dialog", u"CPU", None))
-        self.label_12.setText(QCoreApplication.translate("Dialog", u"Machine", None))
         self.comboBox_7.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_7.setItemText(1, QCoreApplication.translate("Dialog", u"4Kc", None))
         self.comboBox_7.setItemText(2, QCoreApplication.translate("Dialog", u"4Km", None))
@@ -1335,9 +2418,12 @@ class Ui_Dialog(object):
         self.comboBox_7.setItemText(31, QCoreApplication.translate("Dialog", u"mips64dspr2", None))
 
         self.comboBox_7.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
-        self.pushButton_10.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.pushButton_11.setText(QCoreApplication.translate("Dialog", u"Next >", None))
-        self.pushButton_12.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_29.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_30.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_31.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_33.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_34.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_35.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_14.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_14.setItemText(1, QCoreApplication.translate("Dialog", u"virt", None))
         self.comboBox_14.setItemText(2, QCoreApplication.translate("Dialog", u"akita", None))
@@ -1358,9 +2444,6 @@ class Ui_Dialog(object):
         self.comboBox_14.setItemText(17, QCoreApplication.translate("Dialog", u"raspi2", None))
 
         self.comboBox_14.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
-        self.label_29.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
-        self.label_30.setText(QCoreApplication.translate("Dialog", u"CPU", None))
-        self.label_31.setText(QCoreApplication.translate("Dialog", u"Machine", None))
         self.comboBox_15.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_15.setItemText(1, QCoreApplication.translate("Dialog", u"cortex-a57", None))
         self.comboBox_15.setItemText(2, QCoreApplication.translate("Dialog", u"cortex-a15", None))
@@ -1396,10 +2479,11 @@ class Ui_Dialog(object):
         self.comboBox_15.setItemText(32, QCoreApplication.translate("Dialog", u"ti925t", None))
 
         self.comboBox_15.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
-        self.pushButton_33.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.pushButton_34.setText(QCoreApplication.translate("Dialog", u"Next >", None))
-        self.pushButton_35.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_38.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.label_35.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_22.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_37.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_39.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_20.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_20.setItemText(1, QCoreApplication.translate("Dialog", u"SPARCClassic", None))
         self.comboBox_20.setItemText(2, QCoreApplication.translate("Dialog", u"SPARCbook", None))
@@ -1412,21 +2496,17 @@ class Ui_Dialog(object):
         self.comboBox_20.setItemText(9, QCoreApplication.translate("Dialog", u"leon3_generic", None))
         self.comboBox_20.setItemText(10, QCoreApplication.translate("Dialog", u"none", None))
 
-        self.label_35.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
-        self.label_22.setText(QCoreApplication.translate("Dialog", u"Machine", None))
-        self.pushButton_37.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.pushButton_39.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_40.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.label_36.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_37.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_41.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_42.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.comboBox_21.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_21.setItemText(1, QCoreApplication.translate("Dialog", u"niagara", None))
         self.comboBox_21.setItemText(2, QCoreApplication.translate("Dialog", u"sun4u", None))
         self.comboBox_21.setItemText(3, QCoreApplication.translate("Dialog", u"sun4v", None))
         self.comboBox_21.setItemText(4, QCoreApplication.translate("Dialog", u"none", None))
 
-        self.label_36.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
-        self.label_37.setText(QCoreApplication.translate("Dialog", u"Machine", None))
-        self.pushButton_41.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.pushButton_42.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_16.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.pushButton_15.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.label_13.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
@@ -1438,6 +2518,11 @@ class Ui_Dialog(object):
 
         self.pushButton_14.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.label_14.setText(QCoreApplication.translate("Dialog", u"VHD file format", None))
+        self.label_20.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
+        self.comboBox_18.setItemText(0, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
+        self.comboBox_18.setItemText(1, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
+        self.comboBox_18.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
+
         self.comboBox_8.setItemText(0, QCoreApplication.translate("Dialog", u"qcow2", None))
         self.comboBox_8.setItemText(1, QCoreApplication.translate("Dialog", u"qcow", None))
         self.comboBox_8.setItemText(2, QCoreApplication.translate("Dialog", u"raw", None))
@@ -1449,14 +2534,13 @@ class Ui_Dialog(object):
         self.comboBox_8.setItemText(8, QCoreApplication.translate("Dialog", u"file", None))
 
         self.comboBox_8.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a file format)", None))
-        self.label_20.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
-        self.comboBox_18.setItemText(0, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
-        self.comboBox_18.setItemText(1, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
-        self.comboBox_18.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
-
         self.pushButton_17.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.label_16.setText(QCoreApplication.translate("Dialog", u"VGA", None))
         self.label_18.setText(QCoreApplication.translate("Dialog", u"USB Device Tablet", None))
+        self.label_17.setText(QCoreApplication.translate("Dialog", u"Network", None))
+        self.pushButton_18.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_19.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_28.setText(QCoreApplication.translate("Dialog", u"Mouse", None))
         self.comboBox_10.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.comboBox_10.setItemText(1, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_10.setItemText(2, QCoreApplication.translate("Dialog", u"std", None))
@@ -1469,9 +2553,6 @@ class Ui_Dialog(object):
         self.comboBox_10.setItemText(9, QCoreApplication.translate("Dialog", u"cg3", None))
 
         self.comboBox_10.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a graphics adapter)", None))
-        self.label_17.setText(QCoreApplication.translate("Dialog", u"Network", None))
-        self.pushButton_18.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Yes, I want it (depreciated)", None))
         self.comboBox_11.setItemText(0, QCoreApplication.translate("Dialog", u"e1000", None))
         self.comboBox_11.setItemText(1, QCoreApplication.translate("Dialog", u"e1000-82544gc", None))
         self.comboBox_11.setItemText(2, QCoreApplication.translate("Dialog", u"e1000-82545em", None))
@@ -1504,12 +2585,11 @@ class Ui_Dialog(object):
         self.comboBox_11.setItemText(29, QCoreApplication.translate("Dialog", u"none", None))
 
         self.comboBox_11.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a network adapter)", None))
-        self.pushButton_19.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
-        self.label_28.setText(QCoreApplication.translate("Dialog", u"Mouse", None))
         self.comboBox_13.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Mouse", None))
         self.comboBox_13.setItemText(1, QCoreApplication.translate("Dialog", u"USB Mouse", None))
         self.comboBox_13.setItemText(2, QCoreApplication.translate("Dialog", u"USB Tablet Device", None))
 
+        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Yes, I want it (depreciated)", None))
         self.pushButton_23.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_24.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.pushButton_25.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
@@ -1519,6 +2599,26 @@ class Ui_Dialog(object):
 "BIOS file (Leave\n"
 "empty to use the\n"
 "default BIOS)", None))
+        self.label_21.setText(QCoreApplication.translate("Dialog", u"Keyboard layout", None))
+        self.pushButton_27.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_26.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.pushButton_28.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.label_33.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
+        self.label_34.setText(QCoreApplication.translate("Dialog", u"Keyboard", None))
+        self.label_23.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
+        self.comboBox_12.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_12.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
+        self.comboBox_12.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
+        self.comboBox_12.setItemText(3, QCoreApplication.translate("Dialog", u"intel-hda", None))
+        self.comboBox_12.setItemText(4, QCoreApplication.translate("Dialog", u"gus", None))
+        self.comboBox_12.setItemText(5, QCoreApplication.translate("Dialog", u"ES1370", None))
+        self.comboBox_12.setItemText(6, QCoreApplication.translate("Dialog", u"cs4231a", None))
+        self.comboBox_12.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
+        self.comboBox_12.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
+
+        self.comboBox_16.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
+        self.comboBox_16.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
+
         self.comboBox_19.setItemText(0, QCoreApplication.translate("Dialog", u"en-us", None))
         self.comboBox_19.setItemText(1, QCoreApplication.translate("Dialog", u"en-gb", None))
         self.comboBox_19.setItemText(2, QCoreApplication.translate("Dialog", u"de", None))
@@ -1532,26 +2632,6 @@ class Ui_Dialog(object):
         self.comboBox_19.setItemText(10, QCoreApplication.translate("Dialog", u"fi", None))
         self.comboBox_19.setItemText(11, QCoreApplication.translate("Dialog", u"it", None))
 
-        self.label_21.setText(QCoreApplication.translate("Dialog", u"Keyboard layout", None))
-        self.comboBox_12.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
-        self.comboBox_12.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
-        self.comboBox_12.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
-        self.comboBox_12.setItemText(3, QCoreApplication.translate("Dialog", u"intel-hda", None))
-        self.comboBox_12.setItemText(4, QCoreApplication.translate("Dialog", u"gus", None))
-        self.comboBox_12.setItemText(5, QCoreApplication.translate("Dialog", u"ES1370", None))
-        self.comboBox_12.setItemText(6, QCoreApplication.translate("Dialog", u"cs4231a", None))
-        self.comboBox_12.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
-        self.comboBox_12.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
-
-        self.pushButton_27.setText(QCoreApplication.translate("Dialog", u"Next >", None))
-        self.pushButton_26.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
-        self.comboBox_16.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
-        self.comboBox_16.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
-
-        self.pushButton_28.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
-        self.label_33.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
-        self.label_34.setText(QCoreApplication.translate("Dialog", u"Keyboard", None))
-        self.label_23.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
         self.pushButton_30.setText(QCoreApplication.translate("Dialog", u"Next >", None))
         self.label_25.setText(QCoreApplication.translate("Dialog", u"Linux initrd image", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Browse", None))
@@ -1561,6 +2641,475 @@ class Ui_Dialog(object):
         self.pushButton_31.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.label_26.setText(QCoreApplication.translate("Dialog", u"Linux cmd args", None))
         self.label_27.setText(QCoreApplication.translate("Dialog", u"Leave empty if these aren't necessary", None))
+        self.label_38.setText(QCoreApplication.translate("Dialog", u"Architecture", None))
+        self.label_39.setText(QCoreApplication.translate("Dialog", u"Name", None))
+        self.pushButton_43.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.pushButton_44.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.comboBox_22.setItemText(0, QCoreApplication.translate("Dialog", u"i386", None))
+        self.comboBox_22.setItemText(1, QCoreApplication.translate("Dialog", u"x86_64", None))
+        self.comboBox_22.setItemText(2, QCoreApplication.translate("Dialog", u"mips64el", None))
+        self.comboBox_22.setItemText(3, QCoreApplication.translate("Dialog", u"mipsel", None))
+        self.comboBox_22.setItemText(4, QCoreApplication.translate("Dialog", u"ppc", None))
+        self.comboBox_22.setItemText(5, QCoreApplication.translate("Dialog", u"ppc64", None))
+        self.comboBox_22.setItemText(6, QCoreApplication.translate("Dialog", u"aarch64", None))
+        self.comboBox_22.setItemText(7, QCoreApplication.translate("Dialog", u"arm", None))
+        self.comboBox_22.setItemText(8, QCoreApplication.translate("Dialog", u"sparc", None))
+        self.comboBox_22.setItemText(9, QCoreApplication.translate("Dialog", u"sparc64", None))
+
+        self.comboBox_22.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
+        self.label_40.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_41.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_42.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_45.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_46.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_47.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.comboBox_23.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_23.setItemText(1, QCoreApplication.translate("Dialog", u"microvm", None))
+        self.comboBox_23.setItemText(2, QCoreApplication.translate("Dialog", u"pc", None))
+        self.comboBox_23.setItemText(3, QCoreApplication.translate("Dialog", u"q35", None))
+        self.comboBox_23.setItemText(4, QCoreApplication.translate("Dialog", u"isapc", None))
+        self.comboBox_23.setItemText(5, QCoreApplication.translate("Dialog", u"none", None))
+
+        self.comboBox_23.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
+        self.comboBox_24.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_24.setItemText(1, QCoreApplication.translate("Dialog", u"486", None))
+        self.comboBox_24.setItemText(2, QCoreApplication.translate("Dialog", u"Broadwell", None))
+        self.comboBox_24.setItemText(3, QCoreApplication.translate("Dialog", u"Cascadelake-Server", None))
+        self.comboBox_24.setItemText(4, QCoreApplication.translate("Dialog", u"Conroe", None))
+        self.comboBox_24.setItemText(5, QCoreApplication.translate("Dialog", u"Cooperlake", None))
+        self.comboBox_24.setItemText(6, QCoreApplication.translate("Dialog", u"Denverton", None))
+        self.comboBox_24.setItemText(7, QCoreApplication.translate("Dialog", u"Dhyana", None))
+        self.comboBox_24.setItemText(8, QCoreApplication.translate("Dialog", u"EPYC", None))
+        self.comboBox_24.setItemText(9, QCoreApplication.translate("Dialog", u"EPYC-Milan", None))
+        self.comboBox_24.setItemText(10, QCoreApplication.translate("Dialog", u"EPYC-Rome", None))
+        self.comboBox_24.setItemText(11, QCoreApplication.translate("Dialog", u"Haswell", None))
+        self.comboBox_24.setItemText(12, QCoreApplication.translate("Dialog", u"Icelake-Client (depreciated)", None))
+        self.comboBox_24.setItemText(13, QCoreApplication.translate("Dialog", u"Icelake-Server", None))
+        self.comboBox_24.setItemText(14, QCoreApplication.translate("Dialog", u"IvyBridge", None))
+        self.comboBox_24.setItemText(15, QCoreApplication.translate("Dialog", u"KnightsMill", None))
+        self.comboBox_24.setItemText(16, QCoreApplication.translate("Dialog", u"Nehalem", None))
+        self.comboBox_24.setItemText(17, QCoreApplication.translate("Dialog", u"Opteron_G1", None))
+        self.comboBox_24.setItemText(18, QCoreApplication.translate("Dialog", u"Opteron_G2", None))
+        self.comboBox_24.setItemText(19, QCoreApplication.translate("Dialog", u"Opteron_G3", None))
+        self.comboBox_24.setItemText(20, QCoreApplication.translate("Dialog", u"Opteron_G4", None))
+        self.comboBox_24.setItemText(21, QCoreApplication.translate("Dialog", u"Opteron_G5", None))
+        self.comboBox_24.setItemText(22, QCoreApplication.translate("Dialog", u"Penryn", None))
+        self.comboBox_24.setItemText(23, QCoreApplication.translate("Dialog", u"SandyBridge", None))
+        self.comboBox_24.setItemText(24, QCoreApplication.translate("Dialog", u"Skylake-Client", None))
+        self.comboBox_24.setItemText(25, QCoreApplication.translate("Dialog", u"Skylake-Server", None))
+        self.comboBox_24.setItemText(26, QCoreApplication.translate("Dialog", u"Snowridge", None))
+        self.comboBox_24.setItemText(27, QCoreApplication.translate("Dialog", u"Westmere", None))
+        self.comboBox_24.setItemText(28, QCoreApplication.translate("Dialog", u"athlon", None))
+        self.comboBox_24.setItemText(29, QCoreApplication.translate("Dialog", u"core2duo", None))
+        self.comboBox_24.setItemText(30, QCoreApplication.translate("Dialog", u"coreduo", None))
+        self.comboBox_24.setItemText(31, QCoreApplication.translate("Dialog", u"kvm32", None))
+        self.comboBox_24.setItemText(32, QCoreApplication.translate("Dialog", u"kvm64", None))
+        self.comboBox_24.setItemText(33, QCoreApplication.translate("Dialog", u"n270", None))
+        self.comboBox_24.setItemText(34, QCoreApplication.translate("Dialog", u"pentium", None))
+        self.comboBox_24.setItemText(35, QCoreApplication.translate("Dialog", u"pentium2", None))
+        self.comboBox_24.setItemText(36, QCoreApplication.translate("Dialog", u"pentium3", None))
+        self.comboBox_24.setItemText(37, QCoreApplication.translate("Dialog", u"phenom", None))
+        self.comboBox_24.setItemText(38, QCoreApplication.translate("Dialog", u"qemu32", None))
+        self.comboBox_24.setItemText(39, QCoreApplication.translate("Dialog", u"qemu64", None))
+        self.comboBox_24.setItemText(40, QCoreApplication.translate("Dialog", u"base", None))
+        self.comboBox_24.setItemText(41, QCoreApplication.translate("Dialog", u"max", None))
+        self.comboBox_24.setItemText(42, QCoreApplication.translate("Dialog", u"host", None))
+
+        self.comboBox_24.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
+        self.label_43.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_44.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_45.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_48.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_49.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_50.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.comboBox_25.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_25.setItemText(1, QCoreApplication.translate("Dialog", u"40p", None))
+        self.comboBox_25.setItemText(2, QCoreApplication.translate("Dialog", u"bamboo", None))
+        self.comboBox_25.setItemText(3, QCoreApplication.translate("Dialog", u"g3beige", None))
+        self.comboBox_25.setItemText(4, QCoreApplication.translate("Dialog", u"mac99", None))
+        self.comboBox_25.setItemText(5, QCoreApplication.translate("Dialog", u"mac99,via=pmu", None))
+        self.comboBox_25.setItemText(6, QCoreApplication.translate("Dialog", u"mac99,via=pmu-adb", None))
+        self.comboBox_25.setItemText(7, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_25.setItemText(8, QCoreApplication.translate("Dialog", u"mpc8544ds", None))
+        self.comboBox_25.setItemText(9, QCoreApplication.translate("Dialog", u"pegasos2", None))
+        self.comboBox_25.setItemText(10, QCoreApplication.translate("Dialog", u"ppce500", None))
+        self.comboBox_25.setItemText(11, QCoreApplication.translate("Dialog", u"ref405ep", None))
+        self.comboBox_25.setItemText(12, QCoreApplication.translate("Dialog", u"sam460ex", None))
+        self.comboBox_25.setItemText(13, QCoreApplication.translate("Dialog", u"taihu", None))
+        self.comboBox_25.setItemText(14, QCoreApplication.translate("Dialog", u"virtex-ml507", None))
+
+        self.comboBox_25.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
+        self.comboBox_26.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_26.setItemText(1, QCoreApplication.translate("Dialog", u"603", None))
+        self.comboBox_26.setItemText(2, QCoreApplication.translate("Dialog", u"604", None))
+        self.comboBox_26.setItemText(3, QCoreApplication.translate("Dialog", u"603e", None))
+        self.comboBox_26.setItemText(4, QCoreApplication.translate("Dialog", u"603p", None))
+        self.comboBox_26.setItemText(5, QCoreApplication.translate("Dialog", u"603e7v", None))
+        self.comboBox_26.setItemText(6, QCoreApplication.translate("Dialog", u"603e7v1", None))
+        self.comboBox_26.setItemText(7, QCoreApplication.translate("Dialog", u"603e7", None))
+        self.comboBox_26.setItemText(8, QCoreApplication.translate("Dialog", u"603e7v2", None))
+        self.comboBox_26.setItemText(9, QCoreApplication.translate("Dialog", u"603e7t", None))
+        self.comboBox_26.setItemText(10, QCoreApplication.translate("Dialog", u"750", None))
+        self.comboBox_26.setItemText(11, QCoreApplication.translate("Dialog", u"740", None))
+        self.comboBox_26.setItemText(12, QCoreApplication.translate("Dialog", u"740e", None))
+        self.comboBox_26.setItemText(13, QCoreApplication.translate("Dialog", u"750e", None))
+        self.comboBox_26.setItemText(14, QCoreApplication.translate("Dialog", u"750cx", None))
+        self.comboBox_26.setItemText(15, QCoreApplication.translate("Dialog", u"745", None))
+        self.comboBox_26.setItemText(16, QCoreApplication.translate("Dialog", u"755", None))
+        self.comboBox_26.setItemText(17, QCoreApplication.translate("Dialog", u"750cxe", None))
+        self.comboBox_26.setItemText(18, QCoreApplication.translate("Dialog", u"750cxr", None))
+        self.comboBox_26.setItemText(19, QCoreApplication.translate("Dialog", u"750cl", None))
+        self.comboBox_26.setItemText(20, QCoreApplication.translate("Dialog", u"750l", None))
+        self.comboBox_26.setItemText(21, QCoreApplication.translate("Dialog", u"604e", None))
+        self.comboBox_26.setItemText(22, QCoreApplication.translate("Dialog", u"604r", None))
+        self.comboBox_26.setItemText(23, QCoreApplication.translate("Dialog", u"7400", None))
+        self.comboBox_26.setItemText(24, QCoreApplication.translate("Dialog", u"g2", None))
+        self.comboBox_26.setItemText(25, QCoreApplication.translate("Dialog", u"mpc603", None))
+        self.comboBox_26.setItemText(26, QCoreApplication.translate("Dialog", u"g2hip3", None))
+        self.comboBox_26.setItemText(27, QCoreApplication.translate("Dialog", u"mpc8343", None))
+        self.comboBox_26.setItemText(28, QCoreApplication.translate("Dialog", u"mpc8349a", None))
+        self.comboBox_26.setItemText(29, QCoreApplication.translate("Dialog", u"mpc8347a", None))
+        self.comboBox_26.setItemText(30, QCoreApplication.translate("Dialog", u"e300c1", None))
+        self.comboBox_26.setItemText(31, QCoreApplication.translate("Dialog", u"mpc8347e", None))
+        self.comboBox_26.setItemText(32, QCoreApplication.translate("Dialog", u"mpc8347", None))
+        self.comboBox_26.setItemText(33, QCoreApplication.translate("Dialog", u"mpc8343a", None))
+        self.comboBox_26.setItemText(34, QCoreApplication.translate("Dialog", u"mpc8347ea", None))
+        self.comboBox_26.setItemText(35, QCoreApplication.translate("Dialog", u"mpc8347ap", None))
+        self.comboBox_26.setItemText(36, QCoreApplication.translate("Dialog", u"mpc8349ea", None))
+        self.comboBox_26.setItemText(37, QCoreApplication.translate("Dialog", u"mpc8343e", None))
+        self.comboBox_26.setItemText(38, QCoreApplication.translate("Dialog", u"e300", None))
+        self.comboBox_26.setItemText(39, QCoreApplication.translate("Dialog", u"mpc8379e", None))
+        self.comboBox_26.setItemText(40, QCoreApplication.translate("Dialog", u"mpc8377e", None))
+        self.comboBox_26.setItemText(41, QCoreApplication.translate("Dialog", u"mpc8377", None))
+        self.comboBox_26.setItemText(42, QCoreApplication.translate("Dialog", u"mpc8378", None))
+        self.comboBox_26.setItemText(43, QCoreApplication.translate("Dialog", u"mpc8378e", None))
+        self.comboBox_26.setItemText(44, QCoreApplication.translate("Dialog", u"mpc8379", None))
+        self.comboBox_26.setItemText(45, QCoreApplication.translate("Dialog", u"740p", None))
+        self.comboBox_26.setItemText(46, QCoreApplication.translate("Dialog", u"750p", None))
+        self.comboBox_26.setItemText(47, QCoreApplication.translate("Dialog", u"460ex", None))
+        self.comboBox_26.setItemText(48, QCoreApplication.translate("Dialog", u"x2vp7", None))
+        self.comboBox_26.setItemText(49, QCoreApplication.translate("Dialog", u"x2vp20", None))
+        self.comboBox_26.setItemText(50, QCoreApplication.translate("Dialog", u"405gp", None))
+        self.comboBox_26.setItemText(51, QCoreApplication.translate("Dialog", u"405gpe", None))
+        self.comboBox_26.setItemText(52, QCoreApplication.translate("Dialog", u"405", None))
+        self.comboBox_26.setItemText(53, QCoreApplication.translate("Dialog", u"440ep", None))
+        self.comboBox_26.setItemText(54, QCoreApplication.translate("Dialog", u"750fx", None))
+        self.comboBox_26.setItemText(55, QCoreApplication.translate("Dialog", u"750gx", None))
+        self.comboBox_26.setItemText(56, QCoreApplication.translate("Dialog", u"7450", None))
+        self.comboBox_26.setItemText(57, QCoreApplication.translate("Dialog", u"7451", None))
+        self.comboBox_26.setItemText(58, QCoreApplication.translate("Dialog", u"7441", None))
+        self.comboBox_26.setItemText(59, QCoreApplication.translate("Dialog", u"7455", None))
+        self.comboBox_26.setItemText(60, QCoreApplication.translate("Dialog", u"7445", None))
+        self.comboBox_26.setItemText(61, QCoreApplication.translate("Dialog", u"7447", None))
+        self.comboBox_26.setItemText(62, QCoreApplication.translate("Dialog", u"7457", None))
+        self.comboBox_26.setItemText(63, QCoreApplication.translate("Dialog", u"7457a", None))
+        self.comboBox_26.setItemText(64, QCoreApplication.translate("Dialog", u"7447a", None))
+        self.comboBox_26.setItemText(65, QCoreApplication.translate("Dialog", u"7448", None))
+        self.comboBox_26.setItemText(66, QCoreApplication.translate("Dialog", u"7410", None))
+        self.comboBox_26.setItemText(67, QCoreApplication.translate("Dialog", u"mpc8541", None))
+        self.comboBox_26.setItemText(68, QCoreApplication.translate("Dialog", u"mpc8541e", None))
+        self.comboBox_26.setItemText(69, QCoreApplication.translate("Dialog", u"mpc8540", None))
+        self.comboBox_26.setItemText(70, QCoreApplication.translate("Dialog", u"e500v1", None))
+        self.comboBox_26.setItemText(71, QCoreApplication.translate("Dialog", u"mpc8555", None))
+        self.comboBox_26.setItemText(72, QCoreApplication.translate("Dialog", u"mpc8555e", None))
+        self.comboBox_26.setItemText(73, QCoreApplication.translate("Dialog", u"mpc8545e", None))
+        self.comboBox_26.setItemText(74, QCoreApplication.translate("Dialog", u"mpc8560", None))
+
+        self.comboBox_26.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
+        self.label_46.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_47.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_48.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_51.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_52.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_53.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.comboBox_27.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_27.setItemText(1, QCoreApplication.translate("Dialog", u"boston", None))
+        self.comboBox_27.setItemText(2, QCoreApplication.translate("Dialog", u"fuloong2e", None))
+        self.comboBox_27.setItemText(3, QCoreApplication.translate("Dialog", u"loongson3-virt", None))
+        self.comboBox_27.setItemText(4, QCoreApplication.translate("Dialog", u"magnum", None))
+        self.comboBox_27.setItemText(5, QCoreApplication.translate("Dialog", u"malta", None))
+        self.comboBox_27.setItemText(6, QCoreApplication.translate("Dialog", u"mipssim", None))
+        self.comboBox_27.setItemText(7, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_27.setItemText(8, QCoreApplication.translate("Dialog", u"pica61", None))
+
+        self.comboBox_27.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
+        self.comboBox_28.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_28.setItemText(1, QCoreApplication.translate("Dialog", u"4Kc", None))
+        self.comboBox_28.setItemText(2, QCoreApplication.translate("Dialog", u"4Km", None))
+        self.comboBox_28.setItemText(3, QCoreApplication.translate("Dialog", u"4KEcR1", None))
+        self.comboBox_28.setItemText(4, QCoreApplication.translate("Dialog", u"4KEmR1", None))
+        self.comboBox_28.setItemText(5, QCoreApplication.translate("Dialog", u"4KEc", None))
+        self.comboBox_28.setItemText(6, QCoreApplication.translate("Dialog", u"4KEm", None))
+        self.comboBox_28.setItemText(7, QCoreApplication.translate("Dialog", u"24Kc", None))
+        self.comboBox_28.setItemText(8, QCoreApplication.translate("Dialog", u"24KEc", None))
+        self.comboBox_28.setItemText(9, QCoreApplication.translate("Dialog", u"24Kf", None))
+        self.comboBox_28.setItemText(10, QCoreApplication.translate("Dialog", u"34Kf", None))
+        self.comboBox_28.setItemText(11, QCoreApplication.translate("Dialog", u"74Kf", None))
+        self.comboBox_28.setItemText(12, QCoreApplication.translate("Dialog", u"M14K", None))
+        self.comboBox_28.setItemText(13, QCoreApplication.translate("Dialog", u"M14Kc", None))
+        self.comboBox_28.setItemText(14, QCoreApplication.translate("Dialog", u"P5600", None))
+        self.comboBox_28.setItemText(15, QCoreApplication.translate("Dialog", u"mips32r6-generic", None))
+        self.comboBox_28.setItemText(16, QCoreApplication.translate("Dialog", u"I7200", None))
+        self.comboBox_28.setItemText(17, QCoreApplication.translate("Dialog", u"R4000", None))
+        self.comboBox_28.setItemText(18, QCoreApplication.translate("Dialog", u"VR5432", None))
+        self.comboBox_28.setItemText(19, QCoreApplication.translate("Dialog", u"5Kc", None))
+        self.comboBox_28.setItemText(20, QCoreApplication.translate("Dialog", u"5Kf", None))
+        self.comboBox_28.setItemText(21, QCoreApplication.translate("Dialog", u"20Kc", None))
+        self.comboBox_28.setItemText(22, QCoreApplication.translate("Dialog", u"MIPS64R2-generic", None))
+        self.comboBox_28.setItemText(23, QCoreApplication.translate("Dialog", u"5KEc", None))
+        self.comboBox_28.setItemText(24, QCoreApplication.translate("Dialog", u"5KEf", None))
+        self.comboBox_28.setItemText(25, QCoreApplication.translate("Dialog", u"I6400", None))
+        self.comboBox_28.setItemText(26, QCoreApplication.translate("Dialog", u"I6500", None))
+        self.comboBox_28.setItemText(27, QCoreApplication.translate("Dialog", u"Loongson-2E", None))
+        self.comboBox_28.setItemText(28, QCoreApplication.translate("Dialog", u"Loongson-2F", None))
+        self.comboBox_28.setItemText(29, QCoreApplication.translate("Dialog", u"Loongson-3A1000", None))
+        self.comboBox_28.setItemText(30, QCoreApplication.translate("Dialog", u"Loongson-3A4000", None))
+        self.comboBox_28.setItemText(31, QCoreApplication.translate("Dialog", u"mips64dspr2", None))
+
+        self.comboBox_28.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
+        self.label_49.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_50.setText(QCoreApplication.translate("Dialog", u"CPU", None))
+        self.label_51.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_54.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_55.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_56.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.comboBox_29.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_29.setItemText(1, QCoreApplication.translate("Dialog", u"virt", None))
+        self.comboBox_29.setItemText(2, QCoreApplication.translate("Dialog", u"akita", None))
+        self.comboBox_29.setItemText(3, QCoreApplication.translate("Dialog", u"ast2500-evb", None))
+        self.comboBox_29.setItemText(4, QCoreApplication.translate("Dialog", u"borzoi", None))
+        self.comboBox_29.setItemText(5, QCoreApplication.translate("Dialog", u"canon-a1100", None))
+        self.comboBox_29.setItemText(6, QCoreApplication.translate("Dialog", u"cheetah", None))
+        self.comboBox_29.setItemText(7, QCoreApplication.translate("Dialog", u"collie", None))
+        self.comboBox_29.setItemText(8, QCoreApplication.translate("Dialog", u"connex", None))
+        self.comboBox_29.setItemText(9, QCoreApplication.translate("Dialog", u"cubieboard", None))
+        self.comboBox_29.setItemText(10, QCoreApplication.translate("Dialog", u"highbank", None))
+        self.comboBox_29.setItemText(11, QCoreApplication.translate("Dialog", u"imx25-pdk", None))
+        self.comboBox_29.setItemText(12, QCoreApplication.translate("Dialog", u"integratorcp", None))
+        self.comboBox_29.setItemText(13, QCoreApplication.translate("Dialog", u"kzm", None))
+        self.comboBox_29.setItemText(14, QCoreApplication.translate("Dialog", u"lm3s6965evb", None))
+        self.comboBox_29.setItemText(15, QCoreApplication.translate("Dialog", u"lm3s811evb", None))
+        self.comboBox_29.setItemText(16, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_29.setItemText(17, QCoreApplication.translate("Dialog", u"raspi2", None))
+
+        self.comboBox_29.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
+        self.comboBox_30.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_30.setItemText(1, QCoreApplication.translate("Dialog", u"cortex-a57", None))
+        self.comboBox_30.setItemText(2, QCoreApplication.translate("Dialog", u"cortex-a15", None))
+        self.comboBox_30.setItemText(3, QCoreApplication.translate("Dialog", u"cortex-a9", None))
+        self.comboBox_30.setItemText(4, QCoreApplication.translate("Dialog", u"a64fx", None))
+        self.comboBox_30.setItemText(5, QCoreApplication.translate("Dialog", u"arm1026", None))
+        self.comboBox_30.setItemText(6, QCoreApplication.translate("Dialog", u"arm1136", None))
+        self.comboBox_30.setItemText(7, QCoreApplication.translate("Dialog", u"arm1136-r2", None))
+        self.comboBox_30.setItemText(8, QCoreApplication.translate("Dialog", u"arm1176", None))
+        self.comboBox_30.setItemText(9, QCoreApplication.translate("Dialog", u"arm11mpcore", None))
+        self.comboBox_30.setItemText(10, QCoreApplication.translate("Dialog", u"arm926", None))
+        self.comboBox_30.setItemText(11, QCoreApplication.translate("Dialog", u"arm946", None))
+        self.comboBox_30.setItemText(12, QCoreApplication.translate("Dialog", u"cortex-a7", None))
+        self.comboBox_30.setItemText(13, QCoreApplication.translate("Dialog", u"cortex-a72", None))
+        self.comboBox_30.setItemText(14, QCoreApplication.translate("Dialog", u"cortex-a8", None))
+        self.comboBox_30.setItemText(15, QCoreApplication.translate("Dialog", u"cortex-m0", None))
+        self.comboBox_30.setItemText(16, QCoreApplication.translate("Dialog", u"cortex-m3", None))
+        self.comboBox_30.setItemText(17, QCoreApplication.translate("Dialog", u"cortex-m33", None))
+        self.comboBox_30.setItemText(18, QCoreApplication.translate("Dialog", u"cortex-m4", None))
+        self.comboBox_30.setItemText(19, QCoreApplication.translate("Dialog", u"cortex-m55", None))
+        self.comboBox_30.setItemText(20, QCoreApplication.translate("Dialog", u"cortex-m7", None))
+        self.comboBox_30.setItemText(21, QCoreApplication.translate("Dialog", u"cortex-r5", None))
+        self.comboBox_30.setItemText(22, QCoreApplication.translate("Dialog", u"cortex-r5f", None))
+        self.comboBox_30.setItemText(23, QCoreApplication.translate("Dialog", u"max", None))
+        self.comboBox_30.setItemText(24, QCoreApplication.translate("Dialog", u"pxa250", None))
+        self.comboBox_30.setItemText(25, QCoreApplication.translate("Dialog", u"pxa255", None))
+        self.comboBox_30.setItemText(26, QCoreApplication.translate("Dialog", u"pxa260", None))
+        self.comboBox_30.setItemText(27, QCoreApplication.translate("Dialog", u"pxa261", None))
+        self.comboBox_30.setItemText(28, QCoreApplication.translate("Dialog", u"pxa262", None))
+        self.comboBox_30.setItemText(29, QCoreApplication.translate("Dialog", u"pxa270", None))
+        self.comboBox_30.setItemText(30, QCoreApplication.translate("Dialog", u"sa1100", None))
+        self.comboBox_30.setItemText(31, QCoreApplication.translate("Dialog", u"sa1110", None))
+        self.comboBox_30.setItemText(32, QCoreApplication.translate("Dialog", u"ti925t", None))
+
+        self.comboBox_30.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a processor", None))
+        self.pushButton_57.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.label_52.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_53.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_58.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_59.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.comboBox_31.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_31.setItemText(1, QCoreApplication.translate("Dialog", u"SPARCClassic", None))
+        self.comboBox_31.setItemText(2, QCoreApplication.translate("Dialog", u"SPARCbook", None))
+        self.comboBox_31.setItemText(3, QCoreApplication.translate("Dialog", u"SS-10", None))
+        self.comboBox_31.setItemText(4, QCoreApplication.translate("Dialog", u"SS-20", None))
+        self.comboBox_31.setItemText(5, QCoreApplication.translate("Dialog", u"SS-4", None))
+        self.comboBox_31.setItemText(6, QCoreApplication.translate("Dialog", u"SS-5", None))
+        self.comboBox_31.setItemText(7, QCoreApplication.translate("Dialog", u"SS-600MP", None))
+        self.comboBox_31.setItemText(8, QCoreApplication.translate("Dialog", u"Voyager", None))
+        self.comboBox_31.setItemText(9, QCoreApplication.translate("Dialog", u"leon3_generic", None))
+        self.comboBox_31.setItemText(10, QCoreApplication.translate("Dialog", u"none", None))
+
+        self.pushButton_60.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.label_54.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
+        self.label_55.setText(QCoreApplication.translate("Dialog", u"Machine", None))
+        self.pushButton_61.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_62.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.comboBox_32.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_32.setItemText(1, QCoreApplication.translate("Dialog", u"niagara", None))
+        self.comboBox_32.setItemText(2, QCoreApplication.translate("Dialog", u"sun4u", None))
+        self.comboBox_32.setItemText(3, QCoreApplication.translate("Dialog", u"sun4v", None))
+        self.comboBox_32.setItemText(4, QCoreApplication.translate("Dialog", u"none", None))
+
+        self.pushButton_63.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_64.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_56.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
+        self.label_57.setText(QCoreApplication.translate("Dialog", u"Maximum size", None))
+        self.pushButton_65.setText(QCoreApplication.translate("Dialog", u"Browse", None))
+        self.comboBox_33.setItemText(0, QCoreApplication.translate("Dialog", u"KB", None))
+        self.comboBox_33.setItemText(1, QCoreApplication.translate("Dialog", u"MB", None))
+        self.comboBox_33.setItemText(2, QCoreApplication.translate("Dialog", u"GB", None))
+
+        self.pushButton_66.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.label_58.setText(QCoreApplication.translate("Dialog", u"VHD file format", None))
+        self.label_59.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
+        self.comboBox_34.setItemText(0, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
+        self.comboBox_34.setItemText(1, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
+        self.comboBox_34.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
+
+        self.comboBox_35.setItemText(0, QCoreApplication.translate("Dialog", u"qcow2", None))
+        self.comboBox_35.setItemText(1, QCoreApplication.translate("Dialog", u"qcow", None))
+        self.comboBox_35.setItemText(2, QCoreApplication.translate("Dialog", u"raw", None))
+        self.comboBox_35.setItemText(3, QCoreApplication.translate("Dialog", u"vdi", None))
+        self.comboBox_35.setItemText(4, QCoreApplication.translate("Dialog", u"vmdk", None))
+        self.comboBox_35.setItemText(5, QCoreApplication.translate("Dialog", u"vpc", None))
+        self.comboBox_35.setItemText(6, QCoreApplication.translate("Dialog", u"vhdx", None))
+        self.comboBox_35.setItemText(7, QCoreApplication.translate("Dialog", u"parallels", None))
+        self.comboBox_35.setItemText(8, QCoreApplication.translate("Dialog", u"file", None))
+
+        self.comboBox_35.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a file format)", None))
+        self.pushButton_67.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.label_60.setText(QCoreApplication.translate("Dialog", u"VGA", None))
+        self.label_61.setText(QCoreApplication.translate("Dialog", u"USB Device Tablet", None))
+        self.label_62.setText(QCoreApplication.translate("Dialog", u"Network", None))
+        self.pushButton_68.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_69.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_63.setText(QCoreApplication.translate("Dialog", u"Mouse", None))
+        self.comboBox_36.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_36.setItemText(1, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_36.setItemText(2, QCoreApplication.translate("Dialog", u"std", None))
+        self.comboBox_36.setItemText(3, QCoreApplication.translate("Dialog", u"vmware", None))
+        self.comboBox_36.setItemText(4, QCoreApplication.translate("Dialog", u"xenfb", None))
+        self.comboBox_36.setItemText(5, QCoreApplication.translate("Dialog", u"qxl", None))
+        self.comboBox_36.setItemText(6, QCoreApplication.translate("Dialog", u"virtio", None))
+        self.comboBox_36.setItemText(7, QCoreApplication.translate("Dialog", u"virtio-gpu-pci", None))
+        self.comboBox_36.setItemText(8, QCoreApplication.translate("Dialog", u"cirrus", None))
+        self.comboBox_36.setItemText(9, QCoreApplication.translate("Dialog", u"cg3", None))
+
+        self.comboBox_36.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a graphics adapter)", None))
+        self.comboBox_37.setItemText(0, QCoreApplication.translate("Dialog", u"e1000", None))
+        self.comboBox_37.setItemText(1, QCoreApplication.translate("Dialog", u"e1000-82544gc", None))
+        self.comboBox_37.setItemText(2, QCoreApplication.translate("Dialog", u"e1000-82545em", None))
+        self.comboBox_37.setItemText(3, QCoreApplication.translate("Dialog", u"e1000e", None))
+        self.comboBox_37.setItemText(4, QCoreApplication.translate("Dialog", u"i82550", None))
+        self.comboBox_37.setItemText(5, QCoreApplication.translate("Dialog", u"i82551", None))
+        self.comboBox_37.setItemText(6, QCoreApplication.translate("Dialog", u"i82557a", None))
+        self.comboBox_37.setItemText(7, QCoreApplication.translate("Dialog", u"i82557b", None))
+        self.comboBox_37.setItemText(8, QCoreApplication.translate("Dialog", u"i82557c", None))
+        self.comboBox_37.setItemText(9, QCoreApplication.translate("Dialog", u"i82558a", None))
+        self.comboBox_37.setItemText(10, QCoreApplication.translate("Dialog", u"i82558b", None))
+        self.comboBox_37.setItemText(11, QCoreApplication.translate("Dialog", u"i82559a", None))
+        self.comboBox_37.setItemText(12, QCoreApplication.translate("Dialog", u"i82559b", None))
+        self.comboBox_37.setItemText(13, QCoreApplication.translate("Dialog", u"i82559c", None))
+        self.comboBox_37.setItemText(14, QCoreApplication.translate("Dialog", u"i82559er", None))
+        self.comboBox_37.setItemText(15, QCoreApplication.translate("Dialog", u"i82562", None))
+        self.comboBox_37.setItemText(16, QCoreApplication.translate("Dialog", u"i82801", None))
+        self.comboBox_37.setItemText(17, QCoreApplication.translate("Dialog", u"ne2k_pci", None))
+        self.comboBox_37.setItemText(18, QCoreApplication.translate("Dialog", u"pcnet", None))
+        self.comboBox_37.setItemText(19, QCoreApplication.translate("Dialog", u"rtl8139", None))
+        self.comboBox_37.setItemText(20, QCoreApplication.translate("Dialog", u"tulip", None))
+        self.comboBox_37.setItemText(21, QCoreApplication.translate("Dialog", u"virtio-net", None))
+        self.comboBox_37.setItemText(22, QCoreApplication.translate("Dialog", u"virtio-net-device", None))
+        self.comboBox_37.setItemText(23, QCoreApplication.translate("Dialog", u"virtio-net-pci", None))
+        self.comboBox_37.setItemText(24, QCoreApplication.translate("Dialog", u"virtio-net-pci-non-transitional", None))
+        self.comboBox_37.setItemText(25, QCoreApplication.translate("Dialog", u"virtio-net-pci-transitional", None))
+        self.comboBox_37.setItemText(26, QCoreApplication.translate("Dialog", u"vmxnet3", None))
+        self.comboBox_37.setItemText(27, QCoreApplication.translate("Dialog", u"dp83932", None))
+        self.comboBox_37.setItemText(28, QCoreApplication.translate("Dialog", u"lance", None))
+        self.comboBox_37.setItemText(29, QCoreApplication.translate("Dialog", u"none", None))
+
+        self.comboBox_37.setPlaceholderText(QCoreApplication.translate("Dialog", u"(Please select a network adapter)", None))
+        self.comboBox_38.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Mouse", None))
+        self.comboBox_38.setItemText(1, QCoreApplication.translate("Dialog", u"USB Mouse", None))
+        self.comboBox_38.setItemText(2, QCoreApplication.translate("Dialog", u"USB Tablet Device", None))
+
+        self.checkBox_4.setText(QCoreApplication.translate("Dialog", u"Yes, I want it (depreciated)", None))
+        self.pushButton_70.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.pushButton_71.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_72.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.label_64.setText(QCoreApplication.translate("Dialog", u"External BIOS file", None))
+        self.pushButton_73.setText(QCoreApplication.translate("Dialog", u"Browse", None))
+        self.label_65.setText(QCoreApplication.translate("Dialog", u"Location of external\n"
+"BIOS file (Leave\n"
+"empty to use the\n"
+"default BIOS)", None))
+        self.label_66.setText(QCoreApplication.translate("Dialog", u"Keyboard layout", None))
+        self.pushButton_74.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_75.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.pushButton_76.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.label_67.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
+        self.label_68.setText(QCoreApplication.translate("Dialog", u"Keyboard", None))
+        self.label_69.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
+        self.comboBox_39.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_39.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
+        self.comboBox_39.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
+        self.comboBox_39.setItemText(3, QCoreApplication.translate("Dialog", u"intel-hda", None))
+        self.comboBox_39.setItemText(4, QCoreApplication.translate("Dialog", u"gus", None))
+        self.comboBox_39.setItemText(5, QCoreApplication.translate("Dialog", u"ES1370", None))
+        self.comboBox_39.setItemText(6, QCoreApplication.translate("Dialog", u"cs4231a", None))
+        self.comboBox_39.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
+        self.comboBox_39.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
+
+        self.comboBox_40.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
+        self.comboBox_40.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
+
+        self.comboBox_41.setItemText(0, QCoreApplication.translate("Dialog", u"en-us", None))
+        self.comboBox_41.setItemText(1, QCoreApplication.translate("Dialog", u"en-gb", None))
+        self.comboBox_41.setItemText(2, QCoreApplication.translate("Dialog", u"de", None))
+        self.comboBox_41.setItemText(3, QCoreApplication.translate("Dialog", u"fr", None))
+        self.comboBox_41.setItemText(4, QCoreApplication.translate("Dialog", u"ja", None))
+        self.comboBox_41.setItemText(5, QCoreApplication.translate("Dialog", u"ru", None))
+        self.comboBox_41.setItemText(6, QCoreApplication.translate("Dialog", u"pl", None))
+        self.comboBox_41.setItemText(7, QCoreApplication.translate("Dialog", u"is", None))
+        self.comboBox_41.setItemText(8, QCoreApplication.translate("Dialog", u"es", None))
+        self.comboBox_41.setItemText(9, QCoreApplication.translate("Dialog", u"pt", None))
+        self.comboBox_41.setItemText(10, QCoreApplication.translate("Dialog", u"fi", None))
+        self.comboBox_41.setItemText(11, QCoreApplication.translate("Dialog", u"it", None))
+
+        self.pushButton_82.setText(QCoreApplication.translate("Dialog", u"Finish", None))
+        self.pushButton_83.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.checkBox_5.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000\n"
+"(depreciated)", None))
+        self.pushButton_84.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.label_74.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if needed)", None))
+        self.comboBox_42.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))
+        self.comboBox_42.setItemText(1, QCoreApplication.translate("Dialog", u"piix3-usb-uhci", None))
+        self.comboBox_42.setItemText(2, QCoreApplication.translate("Dialog", u"qemu-xhci", None))
+        self.comboBox_42.setItemText(3, QCoreApplication.translate("Dialog", u"usb-ehci", None))
+
+        self.checkBox_6.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
+        self.label_72.setText(QCoreApplication.translate("Dialog", u"TPM device path", None))
+        self.pushButton_81.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
+        self.pushButton_77.setText(QCoreApplication.translate("Dialog", u"Next >", None))
+        self.pushButton_80.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
+        self.label_71.setText(QCoreApplication.translate("Dialog", u"Passthrough type", None))
+        self.comboBox_43.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_43.setItemText(1, QCoreApplication.translate("Dialog", u"passthrough", None))
+        self.comboBox_43.setItemText(2, QCoreApplication.translate("Dialog", u"emulated", None))
+
+        self.label_70.setText(QCoreApplication.translate("Dialog", u"This feature is for Linux only, so skip this if you're on another platform.\n"
+"We'll either try to get this on Windows as well or we just let EmuGUI skip this page on those platforms.\n"
+"Sorry for the inconvenience.", None))
+        self.pushButton_79.setText(QCoreApplication.translate("Dialog", u"Create virtual TPM", None))
+        self.label_73.setText(QCoreApplication.translate("Dialog", u"TPM version", None))
+        self.comboBox_44.setItemText(0, QCoreApplication.translate("Dialog", u"v1.2", None))
+        self.comboBox_44.setItemText(1, QCoreApplication.translate("Dialog", u"v2.0", None))
+
         self.pushButton_20.setText(QCoreApplication.translate("Dialog", u"Finish", None))
         self.pushButton_21.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000\n"

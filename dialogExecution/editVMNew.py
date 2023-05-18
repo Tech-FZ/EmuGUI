@@ -23,6 +23,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import locale
+import os
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -53,6 +54,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.pushButton_4.clicked.connect(self.extBiosFileLocation)
         self.pushButton_5.clicked.connect(self.linuxKernelBrowseLocation)
         self.pushButton_6.clicked.connect(self.linuxInitridBrowseLocation)
+        self.pushButton_8.clicked.connect(self.createVirtualTpm)
     
     def langDetect(self):
         select_language = """
@@ -630,6 +632,38 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         if filename:
             self.lineEdit_6.setText(filename)
 
+    def linuxInitridBrowseLocation(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux initrid image', dir='.', filter='IMG files (*.img);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_6.setText(filename)
+
+    def createVirtualTpm(self):
+        try:
+            os.mkdir(self.lineEdit_9.text())
+        
+        except:
+            print("Could not create the TPM emulator.")
+        
+        """
+        if self.comboBox_22.currentText() == "v1.2":
+            swtpm_cmd = f"swtpm socket --tpmstate dir={self.lineEdit_14.text()} --ctrl type=unixio,path={self.lineEdit_14.text()}/swtpm-sock --log level=20"
+
+        elif self.comboBox_22.currentText() == "v2.0":
+            swtpm_cmd = f"swtpm socket --tpm2 --tpmstate dir={self.lineEdit_14.text()} --ctrl type=unixio,path={self.lineEdit_14.text()}/swtpm-sock --log level=20"
+
+        try:
+            subprocess.Popen(swtpm_cmd)
+        
+        except:
+            try:
+                swtpm_cmd_split = swtpm_cmd.split(" ")
+                subprocess.run(swtpm_cmd_split)
+            
+            except:
+                print("Failed to execute swtpm. Check if it is installed.")
+        """
+
     def readTempVmFile(self):
         with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
@@ -639,6 +673,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
+
+        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+            letQemuDecideContent = letQemuDecideFile.read()
 
         # Searching temporary files
         if platform.system() == "Windows":
@@ -730,6 +767,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_7.count():
+            if vmSpecs[6] == "Let QEMU decide":
+                if letQemuDecideContent.__contains__(self.comboBox_7.itemText(i)):
+                    self.comboBox_7.setCurrentIndex(i)
+                    break
+                    
+            """
             if self.comboBox_7.itemText(i) == "Let QEMU decide" or self.comboBox_7.itemText(i) == "QEMU überlassen":
                 if vmSpecs[6] == "Let QEMU decide":
                     self.comboBox_7.setCurrentIndex(i)
@@ -743,6 +786,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             elif self.comboBox_7.itemText(i) == vmSpecs[6]:
                 self.comboBox_7.setCurrentIndex(i)
                 break
+            """
 
             i += 1
 
@@ -822,6 +866,17 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 break
 
             i += 1
+
+        i = 0
+
+        while i < self.comboBox_23.count():
+            if self.comboBox_23.itemText(i) == vmSpecs[23]:
+                self.comboBox_23.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        self.lineEdit_9.setText(vmSpecs[24])
 
         return vmSpecs
 
@@ -1026,7 +1081,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         linuxkernel = "{self.lineEdit_5.text()}", linuxinitrid = "{self.lineEdit_6.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
-        kbdtype = "{kbdlayout}"
+        kbdtype = "{kbdlayout}", tpmtype = "{self.comboBox_23.currentText()}", tpmdev = "{self.lineEdit_9.currentText()}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

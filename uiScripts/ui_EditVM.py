@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -771,6 +771,62 @@ class Ui_Dialog(object):
         self.gridLayout_6.addWidget(self.lineEdit_7, 2, 1, 1, 2)
 
         self.tabWidget.addTab(self.tab_7, "")
+        self.tab_8 = QWidget()
+        self.tab_8.setObjectName(u"tab_8")
+        self.gridLayoutWidget_13 = QWidget(self.tab_8)
+        self.gridLayoutWidget_13.setObjectName(u"gridLayoutWidget_13")
+        self.gridLayoutWidget_13.setGeometry(QRect(10, 10, 781, 371))
+        self.gridLayout_13 = QGridLayout(self.gridLayoutWidget_13)
+        self.gridLayout_13.setObjectName(u"gridLayout_13")
+        self.gridLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.label_38 = QLabel(self.gridLayoutWidget_13)
+        self.label_38.setObjectName(u"label_38")
+        self.label_38.setAlignment(Qt.AlignCenter)
+        self.label_38.setWordWrap(True)
+
+        self.gridLayout_13.addWidget(self.label_38, 3, 0, 1, 3)
+
+        self.comboBox_23 = QComboBox(self.gridLayoutWidget_13)
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.addItem("")
+        self.comboBox_23.setObjectName(u"comboBox_23")
+
+        self.gridLayout_13.addWidget(self.comboBox_23, 0, 1, 1, 2)
+
+        self.lineEdit_9 = QLineEdit(self.gridLayoutWidget_13)
+        self.lineEdit_9.setObjectName(u"lineEdit_9")
+
+        self.gridLayout_13.addWidget(self.lineEdit_9, 1, 1, 1, 1)
+
+        self.label_37 = QLabel(self.gridLayoutWidget_13)
+        self.label_37.setObjectName(u"label_37")
+
+        self.gridLayout_13.addWidget(self.label_37, 0, 0, 1, 1)
+
+        self.label_36 = QLabel(self.gridLayoutWidget_13)
+        self.label_36.setObjectName(u"label_36")
+
+        self.gridLayout_13.addWidget(self.label_36, 1, 0, 1, 1)
+
+        self.pushButton_8 = QPushButton(self.gridLayoutWidget_13)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+
+        self.gridLayout_13.addWidget(self.pushButton_8, 1, 2, 1, 1)
+
+        self.label_39 = QLabel(self.gridLayoutWidget_13)
+        self.label_39.setObjectName(u"label_39")
+
+        self.gridLayout_13.addWidget(self.label_39, 2, 0, 1, 1)
+
+        self.comboBox_22 = QComboBox(self.gridLayoutWidget_13)
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.setObjectName(u"comboBox_22")
+
+        self.gridLayout_13.addWidget(self.comboBox_22, 2, 1, 1, 2)
+
+        self.tabWidget.addTab(self.tab_8, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayoutWidget_4 = QWidget(self.tab_4)
@@ -1270,6 +1326,19 @@ class Ui_Dialog(object):
         self.label_13.setText(QCoreApplication.translate("Dialog", u"Linux kernel", None))
         self.label_15.setText(QCoreApplication.translate("Dialog", u"Linux cmd arguments", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("Dialog", u"Linux", None))
+        self.label_38.setText(QCoreApplication.translate("Dialog", u"This feature is Linux-only, so ignore it on other platforms.", None))
+        self.comboBox_23.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_23.setItemText(1, QCoreApplication.translate("Dialog", u"passthrough", None))
+        self.comboBox_23.setItemText(2, QCoreApplication.translate("Dialog", u"emulated", None))
+
+        self.label_37.setText(QCoreApplication.translate("Dialog", u"Passthrough type", None))
+        self.label_36.setText(QCoreApplication.translate("Dialog", u"TPM device path", None))
+        self.pushButton_8.setText(QCoreApplication.translate("Dialog", u"Create virtual TPM", None))
+        self.label_39.setText(QCoreApplication.translate("Dialog", u"TPM version", None))
+        self.comboBox_22.setItemText(0, QCoreApplication.translate("Dialog", u"v1.2", None))
+        self.comboBox_22.setItemText(1, QCoreApplication.translate("Dialog", u"v2.0", None))
+
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("Dialog", u"TPM", None))
         self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000 (depreciated)", None))
         self.label_16.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
         self.checkBox.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
