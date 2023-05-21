@@ -2064,11 +2064,6 @@ class Ui_Dialog(object):
         self.gridLayout_25 = QGridLayout(self.gridLayoutWidget_25)
         self.gridLayout_25.setObjectName(u"gridLayout_25")
         self.gridLayout_25.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_14 = QLineEdit(self.gridLayoutWidget_25)
-        self.lineEdit_14.setObjectName(u"lineEdit_14")
-
-        self.gridLayout_25.addWidget(self.lineEdit_14, 2, 1, 1, 1)
-
         self.label_72 = QLabel(self.gridLayoutWidget_25)
         self.label_72.setObjectName(u"label_72")
 
@@ -2109,11 +2104,6 @@ class Ui_Dialog(object):
 
         self.gridLayout_25.addWidget(self.label_70, 0, 0, 1, 3)
 
-        self.pushButton_79 = QPushButton(self.gridLayoutWidget_25)
-        self.pushButton_79.setObjectName(u"pushButton_79")
-
-        self.gridLayout_25.addWidget(self.pushButton_79, 2, 2, 1, 1)
-
         self.label_73 = QLabel(self.gridLayoutWidget_25)
         self.label_73.setObjectName(u"label_73")
 
@@ -2125,6 +2115,11 @@ class Ui_Dialog(object):
         self.comboBox_44.setObjectName(u"comboBox_44")
 
         self.gridLayout_25.addWidget(self.comboBox_44, 3, 1, 1, 2)
+
+        self.lineEdit_14 = QLineEdit(self.gridLayoutWidget_25)
+        self.lineEdit_14.setObjectName(u"lineEdit_14")
+
+        self.gridLayout_25.addWidget(self.lineEdit_14, 2, 1, 1, 2)
 
         self.stackedWidget.addWidget(self.page_14)
         self.page_7 = QWidget()
@@ -3105,7 +3100,6 @@ class Ui_Dialog(object):
         self.label_70.setText(QCoreApplication.translate("Dialog", u"This feature is for Linux only, so skip this if you're on another platform.\n"
 "We'll either try to get this on Windows as well or we just let EmuGUI skip this page on those platforms.\n"
 "Sorry for the inconvenience.", None))
-        self.pushButton_79.setText(QCoreApplication.translate("Dialog", u"Create virtual TPM", None))
         self.label_73.setText(QCoreApplication.translate("Dialog", u"TPM version", None))
         self.comboBox_44.setItemText(0, QCoreApplication.translate("Dialog", u"v1.2", None))
         self.comboBox_44.setItemText(1, QCoreApplication.translate("Dialog", u"v2.0", None))

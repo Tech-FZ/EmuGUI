@@ -54,7 +54,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.pushButton_4.clicked.connect(self.extBiosFileLocation)
         self.pushButton_5.clicked.connect(self.linuxKernelBrowseLocation)
         self.pushButton_6.clicked.connect(self.linuxInitridBrowseLocation)
-        self.pushButton_8.clicked.connect(self.createVirtualTpm)
+        #self.pushButton_8.clicked.connect(self.createVirtualTpm)
     
     def langDetect(self):
         select_language = """
@@ -638,12 +638,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         if filename:
             self.lineEdit_6.setText(filename)
 
-    def createVirtualTpm(self):
-        try:
-            os.mkdir(self.lineEdit_9.text())
+    #def createVirtualTpm(self):
+     #   try:
+      #      os.mkdir(self.lineEdit_9.text())
         
-        except:
-            print("Could not create the TPM emulator.")
+       # except:
+        #    print("Could not create the TPM emulator.")
         
         """
         if self.comboBox_22.currentText() == "v1.2":
@@ -867,6 +867,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             i += 1
 
+        """
         i = 0
 
         while i < self.comboBox_23.count():
@@ -877,6 +878,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
         self.lineEdit_9.setText(vmSpecs[24])
+        """
 
         return vmSpecs
 
@@ -1081,7 +1083,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         linuxkernel = "{self.lineEdit_5.text()}", linuxinitrid = "{self.lineEdit_6.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
-        kbdtype = "{kbdlayout}", tpmtype = "{self.comboBox_23.currentText()}", tpmdev = "{self.lineEdit_9.currentText()}"
+        kbdtype = "{kbdlayout}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

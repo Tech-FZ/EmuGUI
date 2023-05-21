@@ -264,9 +264,7 @@ class Window(QMainWindow, Ui_MainWindow):
             keyboardtype TEXT NOT NULL,
             usbsupport INT DEFAULT 0 NOT NULL,
             usbcontroller TEXT DEFAULT "pci-ohci" NOT NULL,
-            kbdtype TEXT DEFAULT "en-us" NOT NULL,
-            tpmtype TEXT DEFAULT "none" NOT NULL,
-            tpmdev TEXT
+            kbdtype TEXT DEFAULT "en-us" NOT NULL
         );
         """
 
@@ -1298,30 +1296,30 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
-        try:
-            cursor.execute(select11ColumnsVM)
-            connection.commit()
-            result = cursor.fetchall()
+        #try:
+        #    cursor.execute(select11ColumnsVM)
+        #    connection.commit()
+        #    result = cursor.fetchall()
 
-            try:
-                qemu_img_slot = str(result[0])
-                print("The query was executed successfully. The v1.1 feature columns already are in the VM table.")
+        #    try:
+        #        qemu_img_slot = str(result[0])
+        #        print("The query was executed successfully. The v1.1 feature columns already are in the VM table.")
 
-            except:
-                pass
+        #    except:
+        #        pass
         
-        except sqlite3.Error as e:
-            try:
-                cursor.execute(insertTpmTypeVM)
-                connection.commit()
+        #except sqlite3.Error as e:
+        #    try:
+        #        cursor.execute(insertTpmTypeVM)
+        #        connection.commit()
 
-                cursor.execute(insertTpmDevVM)
-                connection.commit()
+        #        cursor.execute(insertTpmDevVM)
+        #        connection.commit()
 
-                print("The queries were executed successfully. The missing features have been added to the database.")
+        #        print("The queries were executed successfully. The missing features have been added to the database.")
             
-            except sqlite3.Error as e:
-                print(f"The SQLite module encountered an error: {e}.")
+        #    except sqlite3.Error as e:
+        #        print(f"The SQLite module encountered an error: {e}.")
 
         try:
             cursor.execute(debug_db_settings)
@@ -1389,7 +1387,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, tpmtype, tpmdev
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1422,8 +1420,6 @@ class Window(QMainWindow, Ui_MainWindow):
                 usb_support = result[0][19]
                 usb_controller = result[0][20]
                 kbd_layout = result[0][21]
-                tpm_type = result[0][22]
-                tpm_dev = result[0][23]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1458,8 +1454,6 @@ class Window(QMainWindow, Ui_MainWindow):
                 tempVmDefFile.write(str(usb_support) + "\n")
                 tempVmDefFile.write(usb_controller + "\n")
                 tempVmDefFile.write(kbd_layout + "\n")
-                tempVmDefFile.write(tpm_type + "\n")
-                tempVmDefFile.write(str(tpm_dev) + "\n")
 
             if usbtablet_wanted == 1:
                 dialog3 = UsbTabletDepreciated(self)
@@ -1561,7 +1555,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, tpmtype, tpmdev
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1594,8 +1588,6 @@ class Window(QMainWindow, Ui_MainWindow):
                 usb_support = result[0][19]
                 usb_controller = result[0][20]
                 kbd_layout = result[0][21]
-                tpm_type = result[0][22]
-                tpm_dev = result[0][23]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1630,8 +1622,6 @@ class Window(QMainWindow, Ui_MainWindow):
                 tempVmDefFile.write(str(usb_support) + "\n")
                 tempVmDefFile.write(usb_controller + "\n")
                 tempVmDefFile.write(kbd_layout + "\n")
-                tempVmDefFile.write(tpm_type + "\n")
-                tempVmDefFile.write(str(tpm_dev) + "\n")
 
             i = 0
 

@@ -44,7 +44,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>12</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="gridLayoutWidget">
@@ -5272,9 +5272,6 @@ default BIOS)</string>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_25">
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_14"/>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_72">
         <property name="text">
@@ -5344,13 +5341,6 @@ Sorry for the inconvenience.</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="pushButton_79">
-        <property name="text">
-         <string>Create virtual TPM</string>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_73">
         <property name="text">
@@ -5371,6 +5361,9 @@ Sorry for the inconvenience.</string>
          </property>
         </item>
        </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QLineEdit" name="lineEdit_14"/>
       </item>
      </layout>
     </widget>

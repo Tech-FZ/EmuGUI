@@ -63,6 +63,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_3.clicked.connect(self.start_virtual_machine)
         self.pushButton_4.clicked.connect(self.close)
         self.pushButton_5.clicked.connect(self.set_date_to_system)
+        #self.pushButton_6.clicked.connect(self.create_tpm)
 
     def langDetect(self):
         select_language = """
@@ -256,6 +257,25 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
     def set_date_to_system(self):
         self.dateTimeEdit.setDateTime(QDateTime.currentDateTime())
+
+    """
+    def create_tpm(self):
+        try:
+            os.mkdir(self.lineEdit_3.text())
+
+        except:
+            print("Could not create TPM folder! Let's see if it exists.")
+
+        try:
+            if self.comboBox_2.currentText() == "v1.2":
+                os.spawnl(os.P_NOWAIT, f"swtpm socket --tpmstate dir={self.lineEdit_3.text()} --ctrl type=unixio,path={self.lineEdit_3.text()}/swtpm-sock --log level=20")
+
+            elif self.comboBox_2.currentText() == "v2.0":
+                os.spawnl(os.P_NOWAIT, f"swtpm socket --tpm2 --tpmstate dir={self.lineEdit_3.text()} --ctrl type=unixio,path={self.lineEdit_3.text()}/swtpm-sock --log level=20")
+
+        except:
+            print("TPM creation did not succeed! You must run this VM without it.")
+    """
 
     # Here, it chooses the architecture for your VM and starts the right thing.
 
@@ -634,6 +654,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"
 
+            """
             if self.vmSpecs[23] == "emulated":
                 swtpm_cmd = f"swtpm socket --tpm2 --tpmstate dir={self.lineEdit_14.text()} --ctrl type=unixio,path={self.lineEdit_14.text()}/swtpm-sock --log level=20"
 
@@ -654,7 +675,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 
 
-                """
+                
                 try:
                     subprocess.Popen(swtpm_cmd)
         
@@ -665,10 +686,21 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             
                     except:
                         print("Failed to execute swtpm. Check if it is installed.")
-                """
+                
 
             elif self.vmSpecs[23] == "passthrough":
                 qemu_cmd = qemu_cmd + f" -tpmdev passthrough,id=tpm0,path={self.vmSpecs[24]} -device tpm-tis,tpmdev=tpm0"
+            """
+
+            if self.lineEdit_3.text() != "":
+                if self.vmSpecs[1] == "x86_64":
+                    qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0"
+
+                elif self.vmSpecs[1] == "aarch64":
+                    qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis-device,tpmdev=tpm0"
+
+                elif self.vmSpecs[1] == "ppc64":
+                    qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0"
 
             subprocess.Popen(qemu_cmd)
 

@@ -131,16 +131,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_32.clicked.connect(self.linuxInitridBrowseLocation)
         self.pushButton_31.clicked.connect(self.soundCard)
         self.pushButton_29.clicked.connect(self.close)
-        self.pushButton_30.clicked.connect(self.tpmSettings)
+        self.pushButton_30.clicked.connect(self.win2kHacker)
 
         # Page 8 (TPM passthrough for Linux)
-        self.pushButton_81.clicked.connect(self.linuxVMSpecific)
-        self.pushButton_77.clicked.connect(self.win2kHacker)
-        self.pushButton_79.clicked.connect(self.createVirtualTpm)
-        self.pushButton_80.clicked.connect(self.close)
+        #self.pushButton_81.clicked.connect(self.linuxVMSpecific)
+        #self.pushButton_77.clicked.connect(self.win2kHacker)
+        #self.pushButton_79.clicked.connect(self.createVirtualTpm)
+        #self.pushButton_80.clicked.connect(self.close)
 
         # Page 9 (Additional arguments)
-        self.pushButton_22.clicked.connect(self.tpmSettings)
+        self.pushButton_22.clicked.connect(self.linuxVMSpecific)
         self.pushButton_20.clicked.connect(self.finishCreation)
         self.pushButton_21.clicked.connect(self.close)
 
@@ -531,12 +531,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def tpmSettings(self):
         self.stackedWidget.setCurrentIndex(12)
 
-    def createVirtualTpm(self):
-        try:
-            os.mkdir(self.lineEdit_14.text())
+    #def createVirtualTpm(self):
+     #   try:
+      #      os.mkdir(self.lineEdit_14.text())
         
-        except:
-            print("Could not create the TPM emulator.")
+       # except:
+        #    print("Could not create the TPM emulator.")
         
         """
         if self.comboBox_44.currentText() == "v1.2":
@@ -770,9 +770,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             keyboardtype,
             usbsupport,
             usbcontroller,
-            kbdtype,
-            tpmtype,
-            tpmdev
+            kbdtype
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -796,9 +794,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{self.comboBox_16.currentText()}",
             {usb_support},
             "{self.comboBox_17.currentText()}",
-            "{kbdlayout}",
-            "{self.comboBox_43.currentText()}",
-            "{self.lineEdit_14.text()}"
+            "{kbdlayout}"
         );
         """
 
