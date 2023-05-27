@@ -1,3 +1,26 @@
+# EmuGUI v1.1.0.5406_dev "Sara Angeline" (based on v1.1.0.5405_dev)
+
+## WARNING
+
+Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 8th July, 2023. You would then need at least Ubuntu 22.04 LTS or one of its derivates.
+
+## Changes compared to v1.0.2.5312
+
+- New feature level, new codename. I decided to call it "Sara Angeline" based on what I want to add so far.
+- Language files for French, Spanish, Czech, Russian, Belarusian and Romanian have been prepared.
+- Thanks for translating EmuGUI into Russian and Belarusian, Danik2343.
+- The old feature list has been updated again.
+- The requests list has been commented out.
+- Happy Easter! A banner just for easter has been added.
+- As I noticed the code would go confusing, I decided to use text files containing the strings for affected combo boxes instead. The code which was used before this update has been commented out for now so we can roll back if something is wrong.
+- The edit VM dialogue for choosing a VHD has been stripped down to save some time for now.
+- The program has been translated into Spanish. (Thanks, SuperVitu64)
+- In the contributors file, you'll now be credited with what you did, not only that you did something.
+- Portuguese support has been added (Thanks, PurpleVibe32).
+- The New and Start VM UIs have been polished.
+- TPM functionality for emulated TPM devices is implemented (but you will need a terminal and the feature is for Linux only).
+- Hardware acceleration is now easier to set up. You can choose between no acceleration, TCG, HAXM (unsupported, can't help you), WHPX (can't help you) and KVM.
+
 # EmuGUI v1.1.0.5405_dev "Sara Angeline" (based on v1.1.0.5404_dev)
 
 ## WARNING

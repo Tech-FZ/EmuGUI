@@ -867,19 +867,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             i += 1
 
-        """
         i = 0
 
-        while i < self.comboBox_23.count():
-            if self.comboBox_23.itemText(i) == vmSpecs[23]:
-                self.comboBox_23.setCurrentIndex(i)
+        while i < self.comboBox_22.count():
+            if self.comboBox_22.itemText(i) == vmSpecs[23]:
+                self.comboBox_22.setCurrentIndex(i)
                 break
 
             i += 1
-
-        self.lineEdit_9.setText(vmSpecs[24])
-        """
-
+        
         return vmSpecs
 
     def finishCreation(self):
@@ -1083,7 +1079,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         linuxkernel = "{self.lineEdit_5.text()}", linuxinitrid = "{self.lineEdit_6.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
-        kbdtype = "{kbdlayout}"
+        kbdtype = "{kbdlayout}", acceltype = "{self.comboBox_22.currentText()}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

@@ -1820,7 +1820,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>411</width>
+       <width>381</width>
        <height>281</height>
       </rect>
      </property>
@@ -1993,7 +1993,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>428</width>
+       <width>381</width>
        <height>271</height>
       </rect>
      </property>
@@ -5272,98 +5272,62 @@ default BIOS)</string>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_25">
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_72">
-        <property name="text">
-         <string>TPM device path</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
+      <item row="1" column="0">
        <widget class="QPushButton" name="pushButton_81">
         <property name="text">
          <string>&lt; Previous</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="pushButton_77">
-        <property name="text">
-         <string>Next &gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
+      <item row="1" column="2">
        <widget class="QPushButton" name="pushButton_80">
         <property name="text">
          <string>Cancel</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_71">
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButton_77">
         <property name="text">
-         <string>Passthrough type</string>
+         <string>Next &gt;</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1" colspan="2">
+      <item row="0" column="1" colspan="2">
        <widget class="QComboBox" name="comboBox_43">
         <item>
          <property name="text">
-          <string>none</string>
+          <string>None</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>passthrough</string>
+          <string>TCG</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>emulated</string>
+          <string>HAXM</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WHPX</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>KVM</string>
          </property>
         </item>
        </widget>
       </item>
-      <item row="0" column="0" colspan="3">
-       <widget class="QLabel" name="label_70">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_71">
         <property name="text">
-         <string>This feature is for Linux only, so skip this if you're on another platform.
-We'll either try to get this on Windows as well or we just let EmuGUI skip this page on those platforms.
-Sorry for the inconvenience.</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
+         <string>Acceleration</string>
         </property>
        </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_73">
-        <property name="text">
-         <string>TPM version</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" colspan="2">
-       <widget class="QComboBox" name="comboBox_44">
-        <item>
-         <property name="text">
-          <string>v1.2</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>v2.0</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="1" colspan="2">
-       <widget class="QLineEdit" name="lineEdit_14"/>
       </item>
      </layout>
     </widget>

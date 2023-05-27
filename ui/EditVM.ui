@@ -2091,29 +2091,12 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
-      <item row="5" column="0">
-       <widget class="QCheckBox" name="checkBox_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_9">
         <property name="text">
-         <string>I want to install Windows 2000 (depreciated)</string>
+         <string>VGA</string>
         </property>
        </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_16">
-        <property name="text">
-         <string>Sound card</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QCheckBox" name="checkBox">
-        <property name="text">
-         <string>Add USB support</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QLineEdit" name="lineEdit_8"/>
       </item>
       <item row="1" column="1">
        <widget class="QComboBox" name="comboBox_8">
@@ -2264,17 +2247,27 @@
         </item>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_9">
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEdit_8"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_16">
         <property name="text">
-         <string>VGA</string>
+         <string>Sound card</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_10">
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkBox">
         <property name="text">
-         <string>Network adapter</string>
+         <string>Add USB support</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="checkBox_3">
+        <property name="text">
+         <string>I want to install Windows 2000 (depreciated)</string>
         </property>
        </widget>
       </item>
@@ -2282,6 +2275,86 @@
        <widget class="QLabel" name="label_29">
         <property name="text">
          <string>Additional arguments (if necessary)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_7">
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>std</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-gpu-pci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vmware</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>xenfb</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>qxl</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cirrus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cg3</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="comboBox_9">
+        <item>
+         <property name="text">
+          <string>pci-ohci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>piix3-usb-uhci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>qemu-xhci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>usb-ehci</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Network adapter</string>
         </property>
        </widget>
       </item>
@@ -2334,79 +2407,6 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="comboBox_9">
-        <item>
-         <property name="text">
-          <string>pci-ohci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>piix3-usb-uhci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>qemu-xhci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>usb-ehci</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_7">
-        <item>
-         <property name="text">
-          <string>none</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>std</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>virtio</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>virtio-gpu-pci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>vmware</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>xenfb</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>qxl</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>cirrus</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>cg3</string>
-         </property>
-        </item>
-       </widget>
-      </item>
       <item row="5" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
@@ -2427,6 +2427,42 @@
          </widget>
         </item>
        </layout>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_36">
+        <property name="text">
+         <string>Acceleration</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QComboBox" name="comboBox_22">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TCG</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>HAXM</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WHPX</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>KVM</string>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </widget>

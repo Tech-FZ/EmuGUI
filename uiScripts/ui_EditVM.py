@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.3
+## Created by: Qt User Interface Compiler version 6.5.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -779,25 +779,10 @@ class Ui_Dialog(object):
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.checkBox_3 = QCheckBox(self.gridLayoutWidget_4)
-        self.checkBox_3.setObjectName(u"checkBox_3")
+        self.label_9 = QLabel(self.gridLayoutWidget_4)
+        self.label_9.setObjectName(u"label_9")
 
-        self.gridLayout_4.addWidget(self.checkBox_3, 5, 0, 1, 1)
-
-        self.label_16 = QLabel(self.gridLayoutWidget_4)
-        self.label_16.setObjectName(u"label_16")
-
-        self.gridLayout_4.addWidget(self.label_16, 2, 0, 1, 1)
-
-        self.checkBox = QCheckBox(self.gridLayoutWidget_4)
-        self.checkBox.setObjectName(u"checkBox")
-
-        self.gridLayout_4.addWidget(self.checkBox, 3, 0, 1, 1)
-
-        self.lineEdit_8 = QLineEdit(self.gridLayoutWidget_4)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-
-        self.gridLayout_4.addWidget(self.lineEdit_8, 4, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.label_9, 0, 0, 1, 1)
 
         self.comboBox_8 = QComboBox(self.gridLayoutWidget_4)
         self.comboBox_8.addItem("")
@@ -833,43 +818,30 @@ class Ui_Dialog(object):
 
         self.gridLayout_4.addWidget(self.comboBox_8, 1, 1, 1, 1)
 
-        self.label_9 = QLabel(self.gridLayoutWidget_4)
-        self.label_9.setObjectName(u"label_9")
+        self.lineEdit_8 = QLineEdit(self.gridLayoutWidget_4)
+        self.lineEdit_8.setObjectName(u"lineEdit_8")
 
-        self.gridLayout_4.addWidget(self.label_9, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.lineEdit_8, 4, 1, 1, 1)
 
-        self.label_10 = QLabel(self.gridLayoutWidget_4)
-        self.label_10.setObjectName(u"label_10")
+        self.label_16 = QLabel(self.gridLayoutWidget_4)
+        self.label_16.setObjectName(u"label_16")
 
-        self.gridLayout_4.addWidget(self.label_10, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.label_16, 2, 0, 1, 1)
+
+        self.checkBox = QCheckBox(self.gridLayoutWidget_4)
+        self.checkBox.setObjectName(u"checkBox")
+
+        self.gridLayout_4.addWidget(self.checkBox, 3, 0, 1, 1)
+
+        self.checkBox_3 = QCheckBox(self.gridLayoutWidget_4)
+        self.checkBox_3.setObjectName(u"checkBox_3")
+
+        self.gridLayout_4.addWidget(self.checkBox_3, 5, 0, 1, 1)
 
         self.label_29 = QLabel(self.gridLayoutWidget_4)
         self.label_29.setObjectName(u"label_29")
 
         self.gridLayout_4.addWidget(self.label_29, 4, 0, 1, 1)
-
-        self.comboBox_10 = QComboBox(self.gridLayoutWidget_4)
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.addItem("")
-        self.comboBox_10.setObjectName(u"comboBox_10")
-
-        self.gridLayout_4.addWidget(self.comboBox_10, 2, 1, 1, 1)
-
-        self.comboBox_9 = QComboBox(self.gridLayoutWidget_4)
-        self.comboBox_9.addItem("")
-        self.comboBox_9.addItem("")
-        self.comboBox_9.addItem("")
-        self.comboBox_9.addItem("")
-        self.comboBox_9.setObjectName(u"comboBox_9")
-
-        self.gridLayout_4.addWidget(self.comboBox_9, 3, 1, 1, 1)
 
         self.comboBox_7 = QComboBox(self.gridLayoutWidget_4)
         self.comboBox_7.addItem("")
@@ -884,6 +856,34 @@ class Ui_Dialog(object):
         self.comboBox_7.setObjectName(u"comboBox_7")
 
         self.gridLayout_4.addWidget(self.comboBox_7, 0, 1, 1, 1)
+
+        self.comboBox_9 = QComboBox(self.gridLayoutWidget_4)
+        self.comboBox_9.addItem("")
+        self.comboBox_9.addItem("")
+        self.comboBox_9.addItem("")
+        self.comboBox_9.addItem("")
+        self.comboBox_9.setObjectName(u"comboBox_9")
+
+        self.gridLayout_4.addWidget(self.comboBox_9, 3, 1, 1, 1)
+
+        self.label_10 = QLabel(self.gridLayoutWidget_4)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout_4.addWidget(self.label_10, 1, 0, 1, 1)
+
+        self.comboBox_10 = QComboBox(self.gridLayoutWidget_4)
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.setObjectName(u"comboBox_10")
+
+        self.gridLayout_4.addWidget(self.comboBox_10, 2, 1, 1, 1)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -901,6 +901,21 @@ class Ui_Dialog(object):
 
 
         self.gridLayout_4.addLayout(self.horizontalLayout, 5, 1, 1, 1)
+
+        self.label_36 = QLabel(self.gridLayoutWidget_4)
+        self.label_36.setObjectName(u"label_36")
+
+        self.gridLayout_4.addWidget(self.label_36, 6, 0, 1, 1)
+
+        self.comboBox_22 = QComboBox(self.gridLayoutWidget_4)
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.addItem("")
+        self.comboBox_22.setObjectName(u"comboBox_22")
+
+        self.gridLayout_4.addWidget(self.comboBox_22, 6, 1, 1, 1)
 
         self.tabWidget.addTab(self.tab_4, "")
         self.pushButton = QPushButton(Dialog)
@@ -1270,9 +1285,7 @@ class Ui_Dialog(object):
         self.label_13.setText(QCoreApplication.translate("Dialog", u"Linux kernel", None))
         self.label_15.setText(QCoreApplication.translate("Dialog", u"Linux cmd arguments", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QCoreApplication.translate("Dialog", u"Linux", None))
-        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000 (depreciated)", None))
-        self.label_16.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
-        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
+        self.label_9.setText(QCoreApplication.translate("Dialog", u"VGA", None))
         self.comboBox_8.setItemText(0, QCoreApplication.translate("Dialog", u"e1000", None))
         self.comboBox_8.setItemText(1, QCoreApplication.translate("Dialog", u"e1000-82545em", None))
         self.comboBox_8.setItemText(2, QCoreApplication.translate("Dialog", u"e1000e", None))
@@ -1303,24 +1316,10 @@ class Ui_Dialog(object):
         self.comboBox_8.setItemText(27, QCoreApplication.translate("Dialog", u"lance", None))
         self.comboBox_8.setItemText(28, QCoreApplication.translate("Dialog", u"none", None))
 
-        self.label_9.setText(QCoreApplication.translate("Dialog", u"VGA", None))
-        self.label_10.setText(QCoreApplication.translate("Dialog", u"Network adapter", None))
+        self.label_16.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
+        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
+        self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000 (depreciated)", None))
         self.label_29.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if necessary)", None))
-        self.comboBox_10.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
-        self.comboBox_10.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
-        self.comboBox_10.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
-        self.comboBox_10.setItemText(3, QCoreApplication.translate("Dialog", u"intel-hda", None))
-        self.comboBox_10.setItemText(4, QCoreApplication.translate("Dialog", u"gus", None))
-        self.comboBox_10.setItemText(5, QCoreApplication.translate("Dialog", u"ES1370", None))
-        self.comboBox_10.setItemText(6, QCoreApplication.translate("Dialog", u"cs4231a", None))
-        self.comboBox_10.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
-        self.comboBox_10.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
-
-        self.comboBox_9.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))
-        self.comboBox_9.setItemText(1, QCoreApplication.translate("Dialog", u"piix3-usb-uhci", None))
-        self.comboBox_9.setItemText(2, QCoreApplication.translate("Dialog", u"qemu-xhci", None))
-        self.comboBox_9.setItemText(3, QCoreApplication.translate("Dialog", u"usb-ehci", None))
-
         self.comboBox_7.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_7.setItemText(1, QCoreApplication.translate("Dialog", u"std", None))
         self.comboBox_7.setItemText(2, QCoreApplication.translate("Dialog", u"virtio", None))
@@ -1331,7 +1330,30 @@ class Ui_Dialog(object):
         self.comboBox_7.setItemText(7, QCoreApplication.translate("Dialog", u"cirrus", None))
         self.comboBox_7.setItemText(8, QCoreApplication.translate("Dialog", u"cg3", None))
 
+        self.comboBox_9.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))
+        self.comboBox_9.setItemText(1, QCoreApplication.translate("Dialog", u"piix3-usb-uhci", None))
+        self.comboBox_9.setItemText(2, QCoreApplication.translate("Dialog", u"qemu-xhci", None))
+        self.comboBox_9.setItemText(3, QCoreApplication.translate("Dialog", u"usb-ehci", None))
+
+        self.label_10.setText(QCoreApplication.translate("Dialog", u"Network adapter", None))
+        self.comboBox_10.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_10.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
+        self.comboBox_10.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
+        self.comboBox_10.setItemText(3, QCoreApplication.translate("Dialog", u"intel-hda", None))
+        self.comboBox_10.setItemText(4, QCoreApplication.translate("Dialog", u"gus", None))
+        self.comboBox_10.setItemText(5, QCoreApplication.translate("Dialog", u"ES1370", None))
+        self.comboBox_10.setItemText(6, QCoreApplication.translate("Dialog", u"cs4231a", None))
+        self.comboBox_10.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
+        self.comboBox_10.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
+
         self.label_30.setText(QCoreApplication.translate("Dialog", u"CPU cores", None))
+        self.label_36.setText(QCoreApplication.translate("Dialog", u"Acceleration", None))
+        self.comboBox_22.setItemText(0, QCoreApplication.translate("Dialog", u"None", None))
+        self.comboBox_22.setItemText(1, QCoreApplication.translate("Dialog", u"TCG", None))
+        self.comboBox_22.setItemText(2, QCoreApplication.translate("Dialog", u"HAXM", None))
+        self.comboBox_22.setItemText(3, QCoreApplication.translate("Dialog", u"WHPX", None))
+        self.comboBox_22.setItemText(4, QCoreApplication.translate("Dialog", u"KVM", None))
+
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Dialog", u"Additional components", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"OK", None))

@@ -654,43 +654,17 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"
 
-            """
-            if self.vmSpecs[23] == "emulated":
-                swtpm_cmd = f"swtpm socket --tpm2 --tpmstate dir={self.lineEdit_14.text()} --ctrl type=unixio,path={self.lineEdit_14.text()}/swtpm-sock --log level=20"
+            if self.vmSpecs[23] == "TCG":
+                qemu_cmd = qemu_cmd + " -accel tcg"
 
-                try:
-                    os.spawnl(os.P_DETACH, swtpm_cmd)
+            elif self.vmSpecs[23] == "HAXM":
+                qemu_cmd = qemu_cmd + " -accel hax"
 
-                except:
-                    print("Was not able to execute the TPM emulator. Check if it exists.")
+            elif self.vmSpecs[23] == "WHPX":
+                qemu_cmd = qemu_cmd + " -accel whpx"
 
-                if self.vmSpecs[1] == "x86_64":
-                    qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.vmSpecs[24]}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0"
-            
-                elif self.vmSpecs[1] == "aarch64":
-                    qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.vmSpecs[24]}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis-device,tpmdev=tpm0"
-
-                elif self.vmSpecs[1] == "ppc64":
-                    qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.vmSpecs[24]}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0"
-
-                
-
-                
-                try:
-                    subprocess.Popen(swtpm_cmd)
-        
-                except:
-                    try:
-                        swtpm_cmd_split = swtpm_cmd.split(" ")
-                        subprocess.run(swtpm_cmd_split)
-            
-                    except:
-                        print("Failed to execute swtpm. Check if it is installed.")
-                
-
-            elif self.vmSpecs[23] == "passthrough":
-                qemu_cmd = qemu_cmd + f" -tpmdev passthrough,id=tpm0,path={self.vmSpecs[24]} -device tpm-tis,tpmdev=tpm0"
-            """
+            elif self.vmSpecs[23] == "KVM":
+                qemu_cmd = qemu_cmd + " -enable-kvm"
 
             if self.lineEdit_3.text() != "":
                 if self.vmSpecs[1] == "x86_64":

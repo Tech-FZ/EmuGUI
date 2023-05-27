@@ -54,8 +54,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.1.0.5405_dev\nCodename 'Sara Angeline'")
-        self.setWindowTitle("EmuGUI v1.1.0.5405_dev")
+        self.label_8.setText("EmuGUI v1.1.0.5406_dev\nCodename 'Sara Angeline'")
+        self.setWindowTitle("EmuGUI v1.1.0.5406_dev")
         self.languageInUse = "system"
 
         try:
@@ -64,7 +64,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5405
+        self.versionCode = 5406
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -105,7 +105,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.1.0.5404_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.1.0.5406_dev\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
@@ -264,7 +264,8 @@ class Window(QMainWindow, Ui_MainWindow):
             keyboardtype TEXT NOT NULL,
             usbsupport INT DEFAULT 0 NOT NULL,
             usbcontroller TEXT DEFAULT "pci-ohci" NOT NULL,
-            kbdtype TEXT DEFAULT "en-us" NOT NULL
+            kbdtype TEXT DEFAULT "en-us" NOT NULL,
+            acceltype TEXT DEFAULT "None" NOT NULL
         );
         """
 
@@ -307,7 +308,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
         # The v1.1 feature set
         select11ColumnsVM = """
-        SELECT tpmtype, tpmdev FROM virtualmachines;
+        SELECT acceltype FROM virtualmachines;
         """
 
         insertSoundColVM = """
@@ -365,14 +366,9 @@ class Window(QMainWindow, Ui_MainWindow):
         ADD COLUMN kbdtype TEXT DEFAULT "en-us" NOT NULL;
         """
 
-        insertTpmTypeVM = """
+        insertAccelTypeVM = """
         ALTER TABLE virtualmachines
-        ADD COLUMN tpmtype TEXT DEFAULT "none" NOT NULL;
-        """
-
-        insertTpmDevVM = """
-        ALTER TABLE virtualmachines
-        ADD COLUMN tpmdev TEXT;
+        ADD COLUMN acceltype TEXT DEFAULT "None" NOT NULL;
         """
 
         insert_qemu_img = """
@@ -1296,30 +1292,27 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
-        #try:
-        #    cursor.execute(select11ColumnsVM)
-        #    connection.commit()
-        #    result = cursor.fetchall()
+        try:
+            cursor.execute(select11ColumnsVM)
+            connection.commit()
+            result = cursor.fetchall()
 
-        #    try:
-        #        qemu_img_slot = str(result[0])
-        #        print("The query was executed successfully. The v1.1 feature columns already are in the VM table.")
+            try:
+                qemu_img_slot = str(result[0])
+                print("The query was executed successfully. The v1.1 feature columns already are in the VM table.")
 
-        #    except:
-        #        pass
+            except:
+                pass
         
-        #except sqlite3.Error as e:
-        #    try:
-        #        cursor.execute(insertTpmTypeVM)
-        #        connection.commit()
+        except sqlite3.Error as e:
+            try:
+                cursor.execute(insertAccelTypeVM)
+                connection.commit()
 
-        #        cursor.execute(insertTpmDevVM)
-        #        connection.commit()
-
-        #        print("The queries were executed successfully. The missing features have been added to the database.")
+                print("The queries were executed successfully. The missing features have been added to the database.")
             
-        #    except sqlite3.Error as e:
-        #        print(f"The SQLite module encountered an error: {e}.")
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
 
         try:
             cursor.execute(debug_db_settings)
@@ -1387,7 +1380,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1420,6 +1413,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 usb_support = result[0][19]
                 usb_controller = result[0][20]
                 kbd_layout = result[0][21]
+                accel_type = result[0][22]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1454,6 +1448,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 tempVmDefFile.write(str(usb_support) + "\n")
                 tempVmDefFile.write(usb_controller + "\n")
                 tempVmDefFile.write(kbd_layout + "\n")
+                tempVmDefFile.write(accel_type + "\n")
 
             if usbtablet_wanted == 1:
                 dialog3 = UsbTabletDepreciated(self)
@@ -1555,7 +1550,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
-            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1588,6 +1583,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 usb_support = result[0][19]
                 usb_controller = result[0][20]
                 kbd_layout = result[0][21]
+                accel_type = result[0][22]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1622,6 +1618,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 tempVmDefFile.write(str(usb_support) + "\n")
                 tempVmDefFile.write(usb_controller + "\n")
                 tempVmDefFile.write(kbd_layout + "\n")
+                tempVmDefFile.write(accel_type + "\n")
 
             i = 0
 
