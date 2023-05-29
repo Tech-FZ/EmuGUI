@@ -16,10 +16,12 @@ Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 
 - The edit VM dialogue for choosing a VHD has been stripped down to save some time for now.
 - The program has been translated into Spanish. (Thanks, SuperVitu64)
 - In the contributors file, you'll now be credited with what you did, not only that you did something.
-- Portuguese support has been added (Thanks, PurpleVibe32).
+- Portuguese support has been added (Thanks, PurpleVibe32 and Rafael Magalhães).
 - The New and Start VM UIs have been polished.
 - TPM functionality for emulated TPM devices is implemented (but you will need a terminal and the feature is for Linux only).
 - Hardware acceleration is now easier to set up. You can choose between no acceleration, TCG, HAXM (unsupported, can't help you), WHPX (can't help you) and KVM.
+- The German translation has been updated.
+- The Czech translation has been added (Thanks, ParmanCZ).
 
 # EmuGUI v1.1.0.5405_dev "Sara Angeline" (based on v1.1.0.5404_dev)
 

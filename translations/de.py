@@ -422,6 +422,13 @@ def translateNewVmDE(window):
     window.pushButton_29.setText("Abbrechen") # Cancel
 
     # Eighth page
+    window.label_71.setText("Beschleunigung") # Acceleration
+    
+    window.pushButton_81.setText("< Previous") # < Previous
+    window.pushButton_77.setText("Next >") # Next >
+    window.pushButton_80.setText("Cancel") # Cancel
+
+    # Ninth page
     window.label_2.setText("Zusätzliche Argumente (sofern nötig)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("Ich will Windows 2000 installieren\n(überholt)") # I want to install Windows 2000\n(depreciated)
@@ -434,6 +441,8 @@ def translateNewVmDE(window):
 def translateStartVmDE(window):
     window.label_4.setText("Datum & Zeit") # Date & Time
     window.label_3.setText("Booten von") # Boot from
+    window.label_6.setText("TPM-Pfad (nur für Linux)") # TPM path (Linux only)
+    window.label_7.setText("Bitte erstellen Sie das TPM vom Terminal aus!") # Create the TPM from the terminal!
     
     window.label_5.setText("""
     Notiz: Sollte die VM innerhalb fünf Minuten nicht starten, sollten Sie die Einstellungen von VM und QEMU überprüfen.
@@ -751,3 +760,4 @@ def translateEditVMDE(window):
     window.label_29.setText("Zusätzliche Argumente (falls nötig)") # Additional arguments (if necessary)
     window.label_30.setText("CPU-Kerne") # CPU cores
     window.checkBox.setText("USB-Support hinzufügen") # Add USB support
+    window.label_36.setText("Beschleunigung") # Acceleration

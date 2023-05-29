@@ -422,6 +422,13 @@ def translateNewVmPT(window):
     window.pushButton_29.setText("Cancelar") # Cancel
 
     # Eighth page
+    window.label_71.setText("Acceleration") # Acceleration
+    
+    window.pushButton_81.setText("< Previous") # < Previous
+    window.pushButton_77.setText("Next >") # Next >
+    window.pushButton_80.setText("Cancel") # Cancel
+
+    # Ninth page
     window.label_2.setText("Argumentos Adicionais (Se preciso)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
@@ -434,6 +441,8 @@ def translateNewVmPT(window):
 def translateStartVmPT(window):
     window.label_4.setText("Data & Hora") # Date & Time
     window.label_3.setText("Ligar de") # Boot from
+    window.label_6.setText("Caminho TPM (Somente Linux)") # TPM path (Linux only)
+    window.label_7.setText("Criar TPM do terminal!") # Create the TPM from the terminal!
 
     window.label_5.setText("""
     OBS: Se a Máquina Virtual não iniciar com 5 minutos, então você deve verificar as configurações da Máquina Virtual e do QEMU
@@ -751,3 +760,4 @@ def translateEditVMPT(window):
     window.label_29.setText("Argumentos Adicionais (Se preciso)") # Additional arguments (if necessary)
     window.label_30.setText("Cores da CPU") # CPU cores
     window.checkBox.setText("Adicionar Suporte USB") # Add USB support
+    window.label_36.setText("Acceleration") # Acceleration

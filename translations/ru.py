@@ -423,6 +423,13 @@ def translateNewVmRU(window):
     window.pushButton_29.setText("Отмена") # Cancel
 
     # Eighth page
+    window.label_71.setText("Acceleration") # Acceleration
+    
+    window.pushButton_81.setText("< Previous") # < Previous
+    window.pushButton_77.setText("Next >") # Next >
+    window.pushButton_80.setText("Cancel") # Cancel
+
+    # Ninth page
     window.label_2.setText("Дополнительные аргументы (при необходимости)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
@@ -435,6 +442,8 @@ def translateNewVmRU(window):
 def translateStartVmRU(window):
     window.label_4.setText("Дата и Время") # Date & Time
     window.label_3.setText("Загрузка из") # Boot from
+    window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
+    window.label_7.setText("Create the TPM from the terminal!") # Create the TPM from the terminal!
 
     window.label_5.setText("""
     Примечание: Если ВМ не запускается в течение пяти минут, то необходимо проверить настройки ВМ и QEMU.
@@ -752,3 +761,4 @@ def translateEditVMRU(window):
     window.label_29.setText("Дополнительные аргументы (при необходимости)") # Additional arguments (if necessary)
     window.label_30.setText("Ядра процессора") # CPU cores
     window.checkBox.setText("Add USB support") # Add USB support
+    window.label_36.setText("Acceleration") # Acceleration

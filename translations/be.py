@@ -423,6 +423,13 @@ def translateNewVmBE(window):
     window.pushButton_29.setText("Адмена") # Cancel
 
     # Eighth page
+    window.label_71.setText("Acceleration") # Acceleration
+    
+    window.pushButton_81.setText("< Previous") # < Previous
+    window.pushButton_77.setText("Next >") # Next >
+    window.pushButton_80.setText("Cancel") # Cancel
+
+    # Ninth page
     window.label_2.setText("Дадатковыя аргументы (пры неабходнасці)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
@@ -435,6 +442,8 @@ def translateNewVmBE(window):
 def translateStartVmBE(window):
     window.label_4.setText("Дата і Час") # Date & Time
     window.label_3.setText("Загрузка з") # Boot from
+    window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
+    window.label_7.setText("Create the TPM from the terminal!") # Create the TPM from the terminal!
 
     window.label_5.setText("""
     Заўвага: Калі ВМ не запускаецца на працягу пяці хвілін, то неабходна праверыць наладкі ВМ і QEMU.
@@ -752,3 +761,4 @@ def translateEditVMBE(window):
     window.label_29.setText("Дадатковыя аргументы (пры неабходнасці)") # Additional arguments (if necessary)
     window.label_30.setText("Ядра працэсара") # CPU cores
     window.checkBox.setText("Дадаць падтрымку USB") # Add USB support
+    window.label_36.setText("Acceleration") # Acceleration

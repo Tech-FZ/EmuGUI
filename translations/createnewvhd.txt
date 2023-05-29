@@ -4,3 +4,4 @@ Neue virtuelle Festplatte erstellen
 Создать новый виртуальный жесткий диск
 Crear nuevo disco duro virtual
 Crie um novo disco virtual
+Vytvořte nový virtuální pevný disk

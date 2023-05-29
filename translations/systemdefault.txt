@@ -4,3 +4,4 @@ Systemstandard
 Па змаўчанні сістэмы
 Predeterminado del sistema
 Padrão do Sistema
+Výchozí nastavení systému

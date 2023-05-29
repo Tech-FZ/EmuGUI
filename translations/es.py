@@ -422,6 +422,13 @@ def translateNewVmES(window):
     window.pushButton_29.setText("Cancelar") # Cancel
 
     # Eighth page
+    window.label_71.setText("Acceleration") # Acceleration
+    
+    window.pushButton_81.setText("< Previous") # < Previous
+    window.pushButton_77.setText("Next >") # Next >
+    window.pushButton_80.setText("Cancel") # Cancel
+
+    # Ninth page
     window.label_2.setText("Argumentos adicionales (si son necesarios)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
@@ -434,6 +441,8 @@ def translateNewVmES(window):
 def translateStartVmES(window):
     window.label_4.setText("Fecha y hora") # Date & Time
     window.label_3.setText("Bootear de") # Boot from
+    window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
+    window.label_7.setText("Create the TPM from the terminal!") # Create the TPM from the terminal!
 
     window.label_5.setText("""
     Nota: Si la máquina virtual no inicia despues de 5 minutos, deberías chequear la máquina y las configuraciones de QEMU.
@@ -751,3 +760,4 @@ def translateEditVMES(window):
     window.label_29.setText("Argumentos adicionales (si son necesarios)") # Additional arguments (if necessary)
     window.label_30.setText("Núcleos del CPU") # CPU cores
     window.checkBox.setText("Añadir soporte USB") # Add USB support
+    window.label_36.setText("Acceleration") # Acceleration

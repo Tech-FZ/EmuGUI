@@ -12,6 +12,10 @@ SuperVitu64 (Spanish translation)
 
 PurpleVibe32 (Portuguese translation)
 
+Rafael Magalhães#2781 (Discord tag, Portuguese translation)
+
+ParmanCZ (Czech translation)
+
 # Banners
 
 | Version | Author |

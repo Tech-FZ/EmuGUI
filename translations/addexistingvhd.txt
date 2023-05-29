@@ -4,3 +4,4 @@ Existierende virtuelle Festplatte anfügen
 Добавить существующий виртуальный жесткий диск
 Añadir un disco duro virtual existente
 Adicionar um disco virtual existente
+Přidejte existující virtuální pevný disk

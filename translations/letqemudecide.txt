@@ -4,3 +4,4 @@ QEMU überlassen
 Пусть QEMU решает
 Dejar que QEMU decida
 Deixe o QEMU Decidir
+Ať rozhodne QEMU

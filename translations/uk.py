@@ -422,6 +422,13 @@ def translateNewVmUK(window):
     window.pushButton_29.setText("Скасувати") # Cancel
 
     # Eighth page
+    window.label_71.setText("Acceleration") # Acceleration
+    
+    window.pushButton_81.setText("< Previous") # < Previous
+    window.pushButton_77.setText("Next >") # Next >
+    window.pushButton_80.setText("Cancel") # Cancel
+
+    # Ninth page
     window.label_2.setText("Additional arguments (if needed)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("Я хочу установити Windows 2000\n(Знецінений)") # I want to install Windows 2000\n(depreciated)
@@ -434,6 +441,8 @@ def translateNewVmUK(window):
 def translateStartVmUK(window):
     window.label_4.setText("Дата і час") # Date & Time
     window.label_3.setText("Boot from") # Boot from
+    window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
+    window.label_7.setText("Create the TPM from the terminal!") # Create the TPM from the terminal!
     
     window.label_5.setText("""
     Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
@@ -751,3 +760,4 @@ def translateEditVMUK(window):
     window.label_29.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
     window.label_30.setText("CPU cores") # CPU cores
     window.checkBox.setText("Добавити USB пітримка") # Add USB support
+    window.label_36.setText("Acceleration") # Acceleration
