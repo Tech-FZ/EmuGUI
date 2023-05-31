@@ -20,6 +20,7 @@ import translations.be
 import translations.cz
 import translations.ru
 import translations.pt
+import translations.it
 import locale
 
 class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
@@ -104,6 +105,9 @@ class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
                 elif result[0][1] == "pt":
                     langmode = "pt"
 
+                elif result[0][1] == "it":
+                    langmode = "it"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -153,6 +157,9 @@ class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
             elif languageToUse.startswith("pt"):
                 translations.pt.translateVmTooNewPT(self)
 
+            elif languageToUse.startswith("it"):
+                translations.it.translateVmTooNewIT(self)
+
             else:
                 translations.en.translateVmTooNewEN(self)
         
@@ -195,6 +202,9 @@ class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateVmTooNewPT(self)
+
+                    elif languageToUse.startswith("it"):
+                        translations.it.translateVmTooNewIT(self)
 
                     else:
                         translations.en.translateVmTooNewEN(self)

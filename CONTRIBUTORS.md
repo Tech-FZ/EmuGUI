@@ -16,6 +16,8 @@ Rafael Magalhães#2781 (Discord tag, Portuguese translation)
 
 ParmanCZ (Czech translation)
 
+Vichingo455 (Italian translation)
+
 # Banners
 
 | Version | Author |

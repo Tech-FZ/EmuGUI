@@ -1,4 +1,4 @@
-# EmuGUI v1.1.0.5406_dev "Sara Angeline" (based on v1.1.0.5405_dev)
+# EmuGUI v1.1.0.5406_b1 "Sara Angeline" (based on v1.1.0.5405_dev)
 
 ## WARNING
 
@@ -22,6 +22,7 @@ Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 
 - Hardware acceleration is now easier to set up. You can choose between no acceleration, TCG, HAXM (unsupported, can't help you), WHPX (can't help you) and KVM.
 - The German translation has been updated.
 - The Czech translation has been added (Thanks, ParmanCZ).
+- The Italian translation has been added (Thanks, Vichingo455).
 
 # EmuGUI v1.1.0.5405_dev "Sara Angeline" (based on v1.1.0.5404_dev)
 

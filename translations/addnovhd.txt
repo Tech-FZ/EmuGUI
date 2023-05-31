@@ -5,3 +5,4 @@ Keine virtuelle Festplatte anfügen
 No añadir un disco duro virtual
 Não adicionar um Disco Virtual
 Nepřidávejte virtuální pevný disk
+Non aggiungere un hard disk virtuale

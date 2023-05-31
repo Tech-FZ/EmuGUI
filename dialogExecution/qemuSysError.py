@@ -19,6 +19,7 @@ import translations.be
 import translations.cz
 import translations.ru
 import translations.pt
+import translations.it
 import locale
 import sqlite3
 
@@ -123,6 +124,9 @@ class QemuSysMissing(QDialog, Ui_Dialog):
                 elif result[0][1] == "pt":
                     langmode = "pt"
 
+                elif result[0][1] == "it":
+                    langmode = "it"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -172,6 +176,9 @@ class QemuSysMissing(QDialog, Ui_Dialog):
             elif languageToUse.startswith("pt"):
                 translations.pt.translateQemuSysMissingPT(self, self.vmSpecs[1])
 
+            elif languageToUse.startswith("it"):
+                translations.it.translateQemuSysMissingIT(self, self.vmSpecs[1])
+
             else:
                 translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])
         
@@ -214,6 +221,9 @@ class QemuSysMissing(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateQemuSysMissingPT(self, self.vmSpecs[1])
+
+                    elif languageToUse.startswith("it"):
+                        translations.it.translateQemuSysMissingIT(self, self.vmSpecs[1])
 
                     else:
                         translations.en.translateQemuSysMissingEN(self, self.vmSpecs[1])

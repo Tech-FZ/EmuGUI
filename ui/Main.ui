@@ -173,6 +173,11 @@
                 <string>Português</string>
                </property>
               </item>
+              <item>
+               <property name="text">
+                <string>Italiano</string>
+               </property>
+              </item>
              </widget>
             </item>
             <item row="2" column="1">

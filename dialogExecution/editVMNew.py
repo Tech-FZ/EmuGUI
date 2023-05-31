@@ -22,8 +22,8 @@ import translations.be
 import translations.cz
 import translations.ru
 import translations.pt
+import translations.it
 import locale
-import os
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -114,6 +114,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "pt":
                     langmode = "pt"
 
+                elif result[0][1] == "it":
+                    langmode = "it"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -164,6 +167,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             elif languageToUse.startswith("pt"):
                 translations.pt.translateEditVMPT(self)
+            
+            elif languageToUse.startswith("it"):
+                translations.it.translateEditVMIT(self)
 
             else:
                 translations.en.translateEditVMEN(self)
@@ -207,6 +213,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateEditVMPT(self)
+
+                    elif languageToUse.startswith("it"):
+                        translations.it.translateEditVMIT(self)
 
                     else:
                         translations.en.translateEditVMEN(self)

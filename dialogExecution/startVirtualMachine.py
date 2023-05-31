@@ -25,8 +25,8 @@ import translations.be
 import translations.cz
 import translations.ru
 import translations.pt
+import translations.it
 import locale
-import os
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
@@ -123,6 +123,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "pt":
                     langmode = "pt"
 
+                elif result[0][1] == "it":
+                    langmode = "it"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -172,6 +175,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("pt"):
                 translations.pt.translateStartVmPT(self)
 
+            elif languageToUse.startswith("it"):
+                translations.it.translateStartVmIT(self)
+
             else:
                 translations.en.translateStartVmEN(self)
         
@@ -214,6 +220,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateStartVmPT(self)
+
+                    elif languageToUse.startswith("it"):
+                        translations.it.translateStartVmIT(self)
 
                     else:
                         translations.en.translateStartVmEN(self)

@@ -19,6 +19,7 @@ import translations.be
 import translations.cz
 import translations.ru
 import translations.pt
+import translations.it
 import locale
 import sqlite3
 
@@ -103,6 +104,9 @@ class QemuImgMissing(QDialog, Ui_Dialog):
                 elif result[0][1] == "pt":
                     langmode = "pt"
 
+                elif result[0][1] == "it":
+                    langmode = "it"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -152,6 +156,9 @@ class QemuImgMissing(QDialog, Ui_Dialog):
             elif languageToUse.startswith("pt"):
                 translations.pt.translateQemuImgMissingPT(self)
 
+            elif languageToUse.startswith("it"):
+                translations.it.translateQemuImgMissingIT(self)
+
             else:
                 translations.en.translateQemuImgMissingEN(self)
         
@@ -194,6 +201,9 @@ class QemuImgMissing(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateQemuImgMissingPT(self)
+
+                    elif languageToUse.startswith("it"):
+                        translations.it.translateQemuImgMissingIT(self)
 
                     else:
                         translations.en.translateQemuImgMissingEN(self)
