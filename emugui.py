@@ -511,35 +511,6 @@ class Window(QMainWindow, Ui_MainWindow):
         );
         """
 
-        # The mirrors are GitHub and Codeberg
-        insert_update_mirror = """
-        INSERT INTO updater (
-            name, value
-        ) VALUES (
-            "updatemirror", "GitHub"
-        );
-        """
-
-        # For the frequency, it's as follows:
-        # boot = Everytime I run this program
-        # never = Never
-        insert_update_freq = """
-        INSERT INTO updater (
-            name, value
-        ) VALUES (
-            "updatefreq", "boot"
-        );
-        """
-
-        # stable and pre-release are available
-        insert_update_channel = """
-        INSERT INTO updater (
-            name, value
-        ) VALUES (
-            "updatechannel", "stable"
-        );
-        """
-
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -617,21 +588,6 @@ class Window(QMainWindow, Ui_MainWindow):
         select_theme = """
         SELECT name, value FROM settings
         WHERE name = "theme";
-        """
-
-        select_update_mirror = """
-        SELECT name, value FROM updater
-        WHERE name = "updatemirror";
-        """
-
-        select_update_freq = """
-        SELECT name, value FROM updater
-        WHERE name = "updatefreq";
-        """
-
-        select_update_channel = """
-        SELECT name, value FROM updater
-        WHERE name = "updatechannel";
         """
 
         cursor = connection.cursor()
@@ -1145,18 +1101,6 @@ class Window(QMainWindow, Ui_MainWindow):
                         if sysDefContent.__contains__(self.comboBox_5.itemText(i)):
                             self.comboBox_5.setCurrentIndex(i)
                             break
-
-                        #if self.comboBox_5.itemText(i) == "System default":
-                        #    self.comboBox_5.setCurrentIndex(i)
-                        #    break
-
-                        #elif self.comboBox_5.itemText(i) == "Systemstandard":
-                        #    self.comboBox_5.setCurrentIndex(i)
-                        #    break
-
-                        #elif self.comboBox_5.itemText(i) == "По умолчанию системы":
-                        #    self.comboBox_5.setCurrentIndex(i)
-                        #    break
 
                         i += 1
 
@@ -2066,46 +2010,6 @@ class Window(QMainWindow, Ui_MainWindow):
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
                 dialog.exec()
-
-        
-        #elif self.comboBox_4.currentText() == "По умолчанию системы" or self.comboBox_4.currentText() == "Systemstandard":
-        #    langmode = "system"
-
-        #    try:
-        #        cursor.execute(language_system)
-        #        connection.commit()
-                
-
-                #if platform.system() == "Windows":
-                 #   langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
-                
-                #else:
-                 #   langfile = platformSpecific.unixSpecific.unixLanguageFile()
-
-                #if langmode == "system":
-                 #   languageToUseLater = locale.getlocale()[0]
-                  #  languageToUseEvenLater = languageToUseLater.split("_")
-                   # languageToUseHere = languageToUseEvenLater[0]
-
-                #else:
-                 #   languageToUseHere = langmode
-                
-                #try:
-                 #   with open(langfile, "w+") as language:
-                  #      language.write(languageToUseHere)
-
-                #except:
-                 #   print("EmuGUI failed to create a language file. Expect some issues.")
-
-                #self.setLanguage(langmode)
-                #print("The query was executed successfully.")
-
-            #except sqlite3.Error as e:
-             #   print(f"The SQLite module encountered an error: {e}.")
-
-            #except:
-             #   dialog = SettingsRequireEmuGUIReboot(self)
-              #  dialog.exec()
 
         elif self.comboBox_4.currentText() == "English":
             langmode = "en"

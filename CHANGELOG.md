@@ -25,6 +25,7 @@ Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 
 - The Italian translation has been added (Thanks, Vichingo455).
 - The Main UI has been enhanced a little so it looks better.
 - The readme has been updated.
+- The code has been partially cleaned up.
 
 # EmuGUI v1.1.0.5406_b1 "Sara Angeline" (based on v1.1.0.5405_dev)
 
