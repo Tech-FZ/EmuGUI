@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.4.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QLabel,
     QLineEdit, QListView, QMainWindow, QMenuBar,
     QPushButton, QSizePolicy, QStatusBar, QTabWidget,
-    QWidget)
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -45,30 +45,35 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QGridLayout(self.gridLayoutWidget_4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-
-        self.gridLayout_4.addWidget(self.pushButton_9, 1, 0, 1, 1)
-
-        self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_11.setObjectName(u"pushButton_11")
-
-        self.gridLayout_4.addWidget(self.pushButton_11, 2, 1, 1, 1)
-
-        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-
-        self.gridLayout_4.addWidget(self.pushButton_10, 2, 0, 1, 1)
-
         self.listView = QListView(self.gridLayoutWidget_4)
         self.listView.setObjectName(u"listView")
 
         self.gridLayout_4.addWidget(self.listView, 0, 0, 1, 1)
 
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.pushButton_8 = QPushButton(self.gridLayoutWidget_4)
         self.pushButton_8.setObjectName(u"pushButton_8")
 
-        self.gridLayout_4.addWidget(self.pushButton_8, 0, 1, 1, 1)
+        self.verticalLayout.addWidget(self.pushButton_8)
+
+        self.pushButton_9 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+
+        self.verticalLayout.addWidget(self.pushButton_9)
+
+        self.pushButton_10 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+
+        self.verticalLayout.addWidget(self.pushButton_10)
+
+        self.pushButton_11 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_11.setObjectName(u"pushButton_11")
+
+        self.verticalLayout.addWidget(self.pushButton_11)
+
+
+        self.gridLayout_4.addLayout(self.verticalLayout, 0, 1, 2, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -404,7 +409,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 800, 20))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -421,10 +426,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Start Selected Virtual Machine", None))
-        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
-        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"New Virtual Machine", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Start Selected Virtual Machine", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
+        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
         self.comboBox_4.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
