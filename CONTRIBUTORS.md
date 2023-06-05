@@ -24,3 +24,5 @@ Vichingo455 (Italian translation)
 | ------- | ------ |
 | pre-1.0 | Tech-FZ |
 | 1.0 "Adèle Angela" | Tech-FZ |
+| Easter "Robert Rabbit" | Tech-FZ |
+| 1.1 "Sara Angeline" | Tech-FZ |
