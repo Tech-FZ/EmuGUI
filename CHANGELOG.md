@@ -27,6 +27,7 @@ Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 
 - The readme has been updated.
 - The code has been cleaned up.
 - The banner for Sara Angeline has been added.
+- Two words have been translated into Romanian.
 
 # EmuGUI v1.1.0.5407_b2 "Sara Angeline" (based on v1.1.0.5406_b1)
 
