@@ -1,6 +1,6 @@
 # EmuGUI Contributors
 
-Nicolas Lucien/Tech-FZ (Author, coding, English, German and Ukrainian translation, documentation)
+Nicolas Lucien/Tech-FZ (Author, coding, English, German, Romanian and Ukrainian translation, documentation)
 
 BasDeGamer (Documentation)
 

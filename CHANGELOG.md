@@ -1,4 +1,4 @@
-# EmuGUI v1.1.0.5408_rc1 "Sara Angeline" (based on v1.1.0.5407_b2)
+# EmuGUI v1.1.0.5408 "Sara Angeline" (based on v1.1.0.5407_b2)
 
 ## WARNING
 

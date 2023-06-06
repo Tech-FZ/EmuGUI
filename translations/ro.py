@@ -16,7 +16,7 @@ def translateMainRO(window):
     window.tabWidget_2.setTabText(2, "About EmuGUI") # About EmuGUI
 
     # General tab
-    window.label_15.setText("Language") # Language
+    window.label_15.setText("Limba") # Language
     window.pushButton_15.setText("Apply") # Apply
 
     # Combo box for languages
@@ -81,7 +81,7 @@ def translateMainRO(window):
 
 def translateNewVmRO(window):
     # First page
-    window.label.setText("Name") # Name
+    window.label.setText("Nume") # Name
     window.label_3.setText("Architecture") # Architecture
     window.comboBox.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
@@ -446,7 +446,7 @@ def translateEditVMRO(window):
     window.tabWidget.setTabText(6, "Additional components") # Additional components
 
     # Translations for General tab
-    window.label.setText("Name") # Name
+    window.label.setText("Nume") # Name
     window.label_2.setText("Architecture") # Architecture
 
     # Translations for Machine tab
