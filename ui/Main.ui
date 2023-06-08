@@ -584,6 +584,47 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>listView</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>pushButton_9</tabstop>
+  <tabstop>pushButton_10</tabstop>
+  <tabstop>pushButton_11</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>comboBox_5</tabstop>
+  <tabstop>pushButton_15</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>lineEdit_6</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>lineEdit_7</tabstop>
+  <tabstop>pushButton_12</tabstop>
+  <tabstop>lineEdit_8</tabstop>
+  <tabstop>pushButton_16</tabstop>
+  <tabstop>lineEdit_9</tabstop>
+  <tabstop>pushButton_17</tabstop>
+  <tabstop>lineEdit_10</tabstop>
+  <tabstop>pushButton_18</tabstop>
+  <tabstop>lineEdit_11</tabstop>
+  <tabstop>pushButton_19</tabstop>
+  <tabstop>lineEdit_12</tabstop>
+  <tabstop>pushButton_13</tabstop>
+  <tabstop>lineEdit_13</tabstop>
+  <tabstop>pushButton_14</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_20</tabstop>
+  <tabstop>pushButton_21</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
