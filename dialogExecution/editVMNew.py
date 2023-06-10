@@ -54,6 +54,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.pushButton_4.clicked.connect(self.extBiosFileLocation)
         self.pushButton_5.clicked.connect(self.linuxKernelBrowseLocation)
         self.pushButton_6.clicked.connect(self.linuxInitridBrowseLocation)
+
+        # For new and existing
+        self.lineEdit_2.setEnabled(True)
+        self.pushButton_3.setEnabled(True)
+
+        # For new
+        self.comboBox_3.setEnabled(False)
+        self.spinBox.setEnabled(False)
+        self.comboBox_4.setEnabled(False)
     
     def langDetect(self):
         select_language = """
@@ -583,6 +592,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 if letQemuDecideContent.__contains__(self.comboBox_7.itemText(i)):
                     self.comboBox_7.setCurrentIndex(i)
                     break
+
+            elif self.comboBox_7.itemText(i) == vmSpecs[6]:
+                self.comboBox_7.setCurrentIndex(i)
+                break
 
             i += 1
 

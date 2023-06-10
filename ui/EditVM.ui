@@ -2282,6 +2282,11 @@
        <widget class="QComboBox" name="comboBox_7">
         <item>
          <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>none</string>
          </property>
         </item>

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.4.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -853,6 +853,7 @@ class Ui_Dialog(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
+        self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
 
         self.gridLayout_4.addWidget(self.comboBox_7, 0, 1, 1, 1)
@@ -1320,15 +1321,16 @@ class Ui_Dialog(object):
         self.checkBox.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
         self.checkBox_3.setText(QCoreApplication.translate("Dialog", u"I want to install Windows 2000 (depreciated)", None))
         self.label_29.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if necessary)", None))
-        self.comboBox_7.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
-        self.comboBox_7.setItemText(1, QCoreApplication.translate("Dialog", u"std", None))
-        self.comboBox_7.setItemText(2, QCoreApplication.translate("Dialog", u"virtio", None))
-        self.comboBox_7.setItemText(3, QCoreApplication.translate("Dialog", u"virtio-gpu-pci", None))
-        self.comboBox_7.setItemText(4, QCoreApplication.translate("Dialog", u"vmware", None))
-        self.comboBox_7.setItemText(5, QCoreApplication.translate("Dialog", u"xenfb", None))
-        self.comboBox_7.setItemText(6, QCoreApplication.translate("Dialog", u"qxl", None))
-        self.comboBox_7.setItemText(7, QCoreApplication.translate("Dialog", u"cirrus", None))
-        self.comboBox_7.setItemText(8, QCoreApplication.translate("Dialog", u"cg3", None))
+        self.comboBox_7.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_7.setItemText(1, QCoreApplication.translate("Dialog", u"none", None))
+        self.comboBox_7.setItemText(2, QCoreApplication.translate("Dialog", u"std", None))
+        self.comboBox_7.setItemText(3, QCoreApplication.translate("Dialog", u"virtio", None))
+        self.comboBox_7.setItemText(4, QCoreApplication.translate("Dialog", u"virtio-gpu-pci", None))
+        self.comboBox_7.setItemText(5, QCoreApplication.translate("Dialog", u"vmware", None))
+        self.comboBox_7.setItemText(6, QCoreApplication.translate("Dialog", u"xenfb", None))
+        self.comboBox_7.setItemText(7, QCoreApplication.translate("Dialog", u"qxl", None))
+        self.comboBox_7.setItemText(8, QCoreApplication.translate("Dialog", u"cirrus", None))
+        self.comboBox_7.setItemText(9, QCoreApplication.translate("Dialog", u"cg3", None))
 
         self.comboBox_9.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))
         self.comboBox_9.setItemText(1, QCoreApplication.translate("Dialog", u"piix3-usb-uhci", None))

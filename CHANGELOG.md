@@ -7,6 +7,7 @@ Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 
 ## Changes compared to v1.1.0.5408
 
 - The Tab order has been corrected in the Main and New VM UIs.
+- A critical bug which ruined edited VMs has been fixed.
 
 # EmuGUI v1.1.0.5408 "Sara Angeline" (based on v1.1.0.5407_b2)
 
