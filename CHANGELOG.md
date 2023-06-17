@@ -1,3 +1,14 @@
+# EmuGUI v1.1.2.5410 "Sara Angeline" (based on v1.1.1.5409)
+
+## WARNING
+
+Ubuntu 20.04 LTS and derivates will be no longer supported as EmuGUI hosts from 8th July, 2023. You would then need at least Ubuntu 22.04 LTS or one of its derivates.
+
+## Changes compared to v1.1.1.5409
+
+- The Tab order has been corrected in the Start VM UI.
+- The Boot from combobox in the Start VM UI is now a little wider.
+
 # EmuGUI v1.1.1.5409 "Sara Angeline" (based on v1.1.0.5408)
 
 ## WARNING

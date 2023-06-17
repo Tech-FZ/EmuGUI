@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'StartVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.3
+## Created by: Qt User Interface Compiler version 6.5.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -73,15 +73,6 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.pushButton_2, 2, 2, 1, 1)
 
-        self.comboBox = QComboBox(self.gridLayoutWidget)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-
-        self.gridLayout.addWidget(self.comboBox, 4, 1, 1, 1)
-
         self.label_4 = QLabel(self.gridLayoutWidget)
         self.label_4.setObjectName(u"label_4")
 
@@ -126,6 +117,24 @@ class Ui_Dialog(object):
 
         self.gridLayout.addWidget(self.label_7, 9, 0, 1, 3)
 
+        self.comboBox = QComboBox(self.gridLayoutWidget)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.gridLayout.addWidget(self.comboBox, 4, 1, 1, 2)
+
+        QWidget.setTabOrder(self.lineEdit, self.pushButton)
+        QWidget.setTabOrder(self.pushButton, self.lineEdit_2)
+        QWidget.setTabOrder(self.lineEdit_2, self.pushButton_2)
+        QWidget.setTabOrder(self.pushButton_2, self.comboBox)
+        QWidget.setTabOrder(self.comboBox, self.lineEdit_3)
+        QWidget.setTabOrder(self.lineEdit_3, self.dateTimeEdit)
+        QWidget.setTabOrder(self.dateTimeEdit, self.pushButton_5)
+        QWidget.setTabOrder(self.pushButton_5, self.pushButton_3)
+        QWidget.setTabOrder(self.pushButton_3, self.pushButton_4)
 
         self.retranslateUi(Dialog)
 
@@ -141,16 +150,16 @@ class Ui_Dialog(object):
         self.label_2.setText(QCoreApplication.translate("Dialog", u"cdrom", None))
         self.pushButton_5.setText(QCoreApplication.translate("Dialog", u"Set to system", None))
         self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Browse", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"c", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"a", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"d", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
-
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Date & Time", None))
         self.label.setText(QCoreApplication.translate("Dialog", u"fda", None))
         self.label_5.setText(QCoreApplication.translate("Dialog", u"Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.", None))
         self.label_3.setText(QCoreApplication.translate("Dialog", u"Boot from", None))
         self.pushButton_4.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.label_7.setText(QCoreApplication.translate("Dialog", u"Create the TPM from the terminal!", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"c", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"a", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"d", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+
     # retranslateUi
 

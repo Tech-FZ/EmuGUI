@@ -90,30 +90,6 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="1">
-     <widget class="QComboBox" name="comboBox">
-      <item>
-       <property name="text">
-        <string>c</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>a</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>d</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Let QEMU decide</string>
-       </property>
-      </item>
-     </widget>
-    </item>
     <item row="6" column="0">
      <widget class="QLabel" name="label_4">
       <property name="text">
@@ -174,9 +150,45 @@
       </property>
      </widget>
     </item>
+    <item row="4" column="1" colspan="2">
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>c</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>a</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>d</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Let QEMU decide</string>
+       </property>
+      </item>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>dateTimeEdit</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_4</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
