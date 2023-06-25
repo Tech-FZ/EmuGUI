@@ -2500,6 +2500,56 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_11</tabstop>
+  <tabstop>spinBox_2</tabstop>
+  <tabstop>comboBox_12</tabstop>
+  <tabstop>comboBox_13</tabstop>
+  <tabstop>spinBox_3</tabstop>
+  <tabstop>comboBox_14</tabstop>
+  <tabstop>comboBox_15</tabstop>
+  <tabstop>spinBox_4</tabstop>
+  <tabstop>comboBox_16</tabstop>
+  <tabstop>comboBox_17</tabstop>
+  <tabstop>spinBox_5</tabstop>
+  <tabstop>comboBox_18</tabstop>
+  <tabstop>spinBox_7</tabstop>
+  <tabstop>comboBox_20</tabstop>
+  <tabstop>spinBox_8</tabstop>
+  <tabstop>comboBox_21</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>comboBox_3</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>comboBox_5</tabstop>
+  <tabstop>comboBox_6</tabstop>
+  <tabstop>comboBox_19</tabstop>
+  <tabstop>checkBox_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>lineEdit_6</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>lineEdit_7</tabstop>
+  <tabstop>comboBox_7</tabstop>
+  <tabstop>comboBox_8</tabstop>
+  <tabstop>comboBox_10</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>comboBox_9</tabstop>
+  <tabstop>lineEdit_8</tabstop>
+  <tabstop>checkBox_3</tabstop>
+  <tabstop>spinBox_6</tabstop>
+  <tabstop>comboBox_22</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
