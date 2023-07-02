@@ -1,3 +1,14 @@
+# EmuGUI v1.2.0.5500_dev "Garuka Pula" (based on v1.1.2.5410)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.1.2.5410
+
+- As for the last two feature updates, this one gets another codename: "Garuka Pula".
+- The feature to export VMs has been added.
+
 # EmuGUI v1.1.2.5410 "Sara Angeline" (based on v1.1.1.5409)
 
 ## WARNING

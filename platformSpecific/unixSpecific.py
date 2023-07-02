@@ -93,3 +93,18 @@ def unixUpdateFile():
         fileName = f"/home/{userName}/EmuGUI/update.txt"
 
     return fileName
+
+def unixExportFile():
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())[0]
+
+    if userName == "root":
+        fileName = f"/{userName}/EmuGUI/vmdef.txt"
+
+    else:
+        fileName = f"/home/{userName}/EmuGUI/vmdef.txt"
+        
+    return fileName

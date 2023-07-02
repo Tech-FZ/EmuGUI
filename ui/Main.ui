@@ -82,6 +82,13 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_22">
+              <property name="text">
+               <string>Export selected virtual machine</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
          </layout>

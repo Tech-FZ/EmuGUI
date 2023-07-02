@@ -43,3 +43,8 @@ def windowsUpdateFile():
     userName = os.getlogin()
     fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\update.txt"
     return fileName
+
+def windowsExportFile():
+    userName = os.getlogin()
+    fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\vmdef.txt"
+    return fileName

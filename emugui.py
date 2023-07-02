@@ -1,4 +1,5 @@
 # Importing required modules
+import os
 import platform
 
 if platform.system() == "Windows":
@@ -40,6 +41,7 @@ import glob
 import webbrowser
 import datetime
 import dateutil.easter
+import zipfile
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -54,8 +56,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.1.2.5410\nCodename 'Sara Angeline'")
-        self.setWindowTitle("EmuGUI v1.1.2.5410")
+        self.label_8.setText("EmuGUI v1.2.0.5500_dev\nCodename 'Garuka Pula'")
+        self.setWindowTitle("EmuGUI v1.2.0.5500_dev (Development Release 1)")
         self.languageInUse = "system"
 
         try:
@@ -64,7 +66,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5410
+        self.versionCode = 5500
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -105,7 +107,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.1.2.5410\nCodename 'Sara Angeline'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.2.0.5500_dev\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
@@ -137,6 +139,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_9.clicked.connect(self.startVM)
         self.pushButton_11.clicked.connect(self.deleteVM)
         self.pushButton_10.clicked.connect(self.editVM)
+        self.pushButton_22.clicked.connect(self.exportVM)
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
         self.pushButton_15.clicked.connect(self.applyGeneric)
@@ -1486,6 +1489,111 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 i += 1
         
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def exportVM(self):
+        # This is the code that lets you power your virtual machines in the first place.
+
+        debug_db_settings = """
+        SELECT name, value FROM settings;
+        """
+
+        connection = self.connection
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(debug_db_settings)
+            connection.commit()
+            result_settings = cursor.fetchall()
+
+            print(result_settings)
+
+            selectedVM = self.listView.currentIndex().data()
+            print(selectedVM)
+
+            get_vm_to_start = f"""
+            SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
+            linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype
+            FROM virtualmachines WHERE name = '{selectedVM}'
+            """
+
+            try:
+                cursor.execute(get_vm_to_start)
+                connection.commit()
+                result = cursor.fetchall()
+
+                print(result)
+
+                architecture_of_vm = result[0][0]
+                machine_of_vm = result[0][1]
+                cpu_of_vm = result[0][2]
+                ram_of_vm = result[0][3]
+                hda_of_vm = result[0][4]
+                vga_of_vm = result[0][5]
+                net_of_vm = result[0][6]
+                dir_bios = result[0][9]
+                additional_arguments = result[0][10]
+                sound_card = result[0][11]
+                linux_kernel = result[0][12]
+                linux_initrid = result[0][13]
+                linux_cmd = result[0][14]
+                mouse_type = result[0][15]
+                cpu_cores = result[0][16]
+                file_bios = result[0][17]
+                kbd_type = result[0][18]
+                usb_support = result[0][19]
+                usb_controller = result[0][20]
+                kbd_layout = result[0][21]
+                accel_type = result[0][22]
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                tempVmDef = platformSpecific.windowsSpecific.windowsExportFile()
+        
+            else:
+                tempVmDef = platformSpecific.unixSpecific.unixExportFile()
+
+            with open(tempVmDef, "w+") as vmDefFile:
+                vmDefFile.write("name = " + selectedVM + "\n")
+                vmDefFile.write("arch = " + architecture_of_vm + "\n")
+                vmDefFile.write("machine = " + machine_of_vm + "\n")
+                vmDefFile.write("cpu = " + cpu_of_vm + "\n")
+                vmDefFile.write("ram = " + str(ram_of_vm) + "\n")
+                vmDefFile.write("vga = " + vga_of_vm + "\n")
+                vmDefFile.write("network = " + net_of_vm + "\n")
+                vmDefFile.write("biosdir = " + dir_bios + "\n")
+                vmDefFile.write("additionalargs = " + additional_arguments + "\n")
+                vmDefFile.write("soundcard = " + sound_card + "\n")
+                vmDefFile.write("linuxkernel = " + linux_kernel + "\n")
+                vmDefFile.write("linuxinitrd = " + linux_initrid + "\n")
+                vmDefFile.write("linuxcmd = " + linux_cmd + "\n")
+                vmDefFile.write("mouse = " + mouse_type + "\n")
+                vmDefFile.write("cpucores = " + str(cpu_cores) + "\n")
+                vmDefFile.write("biosfile = " + str(file_bios) + "\n")
+                vmDefFile.write("kbdtype = " + kbd_type + "\n")
+                vmDefFile.write("usbsupport = " + str(usb_support) + "\n")
+                vmDefFile.write("usbcontroller = " + usb_controller + "\n")
+                vmDefFile.write("kbdlayout = " + kbd_layout + "\n")
+                vmDefFile.write("hwaccel = " + accel_type + "\n")
+
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Export VM file', dir='.', filter='ZIP file (*.zip);;All files (*.*)')
+
+            if filename:
+                with zipfile.ZipFile(filename, "w") as vmFile:
+                    vmFile.write(tempVmDef, os.path.basename(tempVmDef))
+
+                    if hda_of_vm != "NULL":
+                        vmFile.write(hda_of_vm, os.path.basename(hda_of_vm))
+
+                if os.path.exists(filename):
+                    print("Export successful!")
+
+                else:
+                    print("Export failed!")
+
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 

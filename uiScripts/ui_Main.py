@@ -72,6 +72,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.pushButton_11)
 
+        self.pushButton_22 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_22.setObjectName(u"pushButton_22")
+
+        self.verticalLayout.addWidget(self.pushButton_22)
+
 
         self.gridLayout_4.addLayout(self.verticalLayout, 0, 1, 2, 1)
 
@@ -468,6 +473,7 @@ class Ui_MainWindow(object):
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Start Selected Virtual Machine", None))
         self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
+        self.pushButton_22.setText(QCoreApplication.translate("MainWindow", u"Export selected virtual machine", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
         self.comboBox_4.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
