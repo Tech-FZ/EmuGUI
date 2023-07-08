@@ -89,6 +89,13 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_23">
+              <property name="text">
+               <string>Import virtual machine</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
          </layout>
@@ -585,7 +592,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

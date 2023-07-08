@@ -42,7 +42,7 @@ For the update checker, a version code is being used instead of the number. Here
 ## System requirements
 | Component | Requirement |
 |-------|--------|
-| OS | Windows 10, Windows Server 2016 or later (x64); Ubuntu 20.04, Debian 10, openSUSE Leap 15.4, openSUSE Tumbleweed, Fedora 36, RHEL 7, Arch Linux or distributions based on those (x64) |
+| OS | Windows 10, Windows Server 2016 or later (x64); The latest (LTS) version of your Linux distribution (x64) |
 | Python | 3.6 or newer |
 | Processor | x64 Dual Core Processor with @2.6 GHz¹ |
 | RAM | 6 GB¹ |

@@ -140,6 +140,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_11.clicked.connect(self.deleteVM)
         self.pushButton_10.clicked.connect(self.editVM)
         self.pushButton_22.clicked.connect(self.exportVM)
+        self.pushButton_23.clicked.connect(self.importVM)
         self.pushButton_7.clicked.connect(self.set_qemu_aarch64_path)
         self.pushButton_12.clicked.connect(self.set_qemu_arm_path)
         self.pushButton_15.clicked.connect(self.applyGeneric)
@@ -1493,8 +1494,6 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def exportVM(self):
-        # This is the code that lets you power your virtual machines in the first place.
-
         debug_db_settings = """
         SELECT name, value FROM settings;
         """
@@ -1594,6 +1593,184 @@ class Window(QMainWindow, Ui_MainWindow):
                 else:
                     print("Export failed!")
 
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+    def importVM(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Import VM file', dir='.', filter='ZIP file (*.zip);;All files (*.*)')
+
+        if filename:
+            zip_vm_file = zipfile.ZipFile(filename)
+            vm_file_names = []
+
+            vhd_file_types = [
+                ".img", ".IMG", ".vhdx", ".VHDX", ".vmdk", ".VMDK", ".qcow", ".QCOW", ".qcow2", ".QCOW2", ".vdi", ".VDI", ".vpc", ".VPC",
+                ".parallels", ".PARALLELS"
+                ]
+            
+            vhd_path = ""
+            
+            for content_name in zip_vm_file.namelist():
+                vm_file_names.append(content_name)
+
+            for content_name in vm_file_names:
+                for filetype in vhd_file_types:
+                    if str(content_name).endswith(filetype):
+                        vhd_filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+
+                        if vhd_filename:
+                            zip_vm_file.extract(content_name, vhd_filename)
+                            vhd_path = vhd_filename + content_name
+
+                        break
+
+            for content_name in vm_file_names:
+                if content_name.endswith(".txt"):
+                    if platform.system() == "Windows":
+                        tempVmDef = platformSpecific.windowsSpecific.windowsExportFile()
+        
+                    else:
+                        tempVmDef = platformSpecific.unixSpecific.unixExportFile()
+
+                    zip_vm_file.extract(content_name, tempVmDef)
+                    vm_data = []
+
+                    with open(tempVmDef + "/vmdef.txt", "r+") as vmDefFile:
+                        vmDefContent = vmDefFile.readlines()
+
+                        for vmDefLine in vmDefContent:
+                            vmDefLineClean = vmDefLine.replace("\n", "")
+
+                            if vmDefLineClean.startswith("name = "):
+                                vm_data.append(vmDefLineClean.replace("name = ", ""))
+
+                            elif vmDefLineClean.startswith("arch = "):
+                                vm_data.append(vmDefLineClean.replace("arch = ", ""))
+
+                            elif vmDefLineClean.startswith("machine = "):
+                                vm_data.append(vmDefLineClean.replace("machine = ", ""))
+
+                            elif vmDefLineClean.startswith("cpu = "):
+                                vm_data.append(vmDefLineClean.replace("cpu = ", ""))
+
+                            elif vmDefLineClean.startswith("ram = "):
+                                vm_data.append(vmDefLineClean.replace("ram = ", ""))
+
+                            elif vmDefLineClean.startswith("vga = "):
+                                vm_data.append(vmDefLineClean.replace("vga = ", ""))
+
+                            elif vmDefLineClean.startswith("network = "):
+                                vm_data.append(vmDefLineClean.replace("network = ", ""))
+
+                            elif vmDefLineClean.startswith("biosdir = "):
+                                vm_data.append(vmDefLineClean.replace("biosdir = ", ""))
+
+                            elif vmDefLineClean.startswith("additionalargs = "):
+                                vm_data.append(vmDefLineClean.replace("additionalargs = ", ""))
+
+                            elif vmDefLineClean.startswith("soundcard = "):
+                                vm_data.append(vmDefLineClean.replace("soundcard = ", ""))
+
+                            elif vmDefLineClean.startswith("linuxkernel = "):
+                                vm_data.append(vmDefLineClean.replace("linuxkernel = ", ""))
+
+                            elif vmDefLineClean.startswith("linuxinitrd = "):
+                                vm_data.append(vmDefLineClean.replace("linuxinitrd = ", ""))
+
+                            elif vmDefLineClean.startswith("linuxcmd = "):
+                                vm_data.append(vmDefLineClean.replace("linuxcmd = ", ""))
+
+                            elif vmDefLineClean.startswith("mouse = "):
+                                vm_data.append(vmDefLineClean.replace("mouse = ", ""))
+
+                            elif vmDefLineClean.startswith("cpucores = "):
+                                vm_data.append(vmDefLineClean.replace("cpucores = ", ""))
+
+                            elif vmDefLineClean.startswith("biosfile = "):
+                                vm_data.append(vmDefLineClean.replace("biosfile = ", ""))
+
+                            elif vmDefLineClean.startswith("kbdtype = "):
+                                vm_data.append(vmDefLineClean.replace("kbdtype = ", ""))
+
+                            elif vmDefLineClean.startswith("usbsupport = "):
+                                vm_data.append(vmDefLineClean.replace("usbsupport = ", ""))
+
+                            elif vmDefLineClean.startswith("usbcontroller = "):
+                                vm_data.append(vmDefLineClean.replace("usbcontroller = ", ""))
+
+                            elif vmDefLineClean.startswith("kbdlayout = "):
+                                vm_data.append(vmDefLineClean.replace("kbdlayout = ", ""))
+
+                            elif vmDefLineClean.startswith("hwaccel = "):
+                                vm_data.append(vmDefLineClean.replace("hwaccel = ", ""))
+
+                    insert_into_vm_database = f"""
+                    INSERT INTO virtualmachines (
+                        name,
+                        architecture,
+                        machine,
+                        cpu,
+                        ram,
+                        hda,
+                        vga,
+                        net,
+                        usbtablet,
+                        win2k,
+                        dirbios,
+                        additionalargs,
+                        sound,
+                        linuxkernel,
+                        linuxinitrid,
+                        linuxcmd,
+                        mousetype,
+                        cores,
+                        filebios,
+                        keyboardtype,
+                        usbsupport,
+                        usbcontroller,
+                        kbdtype,
+                        acceltype
+                    ) VALUES (
+                        "{vm_data[0]}",
+                        "{vm_data[1]}",
+                        "{vm_data[2]}",
+                        "{vm_data[3]}",
+                        {int(vm_data[4])},
+                        "{vhd_path}",
+                        "{vm_data[5]}",
+                        "{vm_data[6]}",
+                        0,
+                        0,
+                        "{vm_data[7]}",
+                        "{vm_data[8]}",
+                        "{vm_data[9]}",
+                        "{vm_data[10]}",
+                        "{vm_data[11]}",
+                        "{vm_data[12]}",
+                        "{vm_data[13]}",
+                        {int(vm_data[14])},
+                        "{vm_data[15]}",
+                        "{vm_data[16]}",
+                        {int(vm_data[17])},
+                        "{vm_data[18]}",
+                        "{vm_data[19]}",
+                        "{vm_data[20]}"
+        );
+        """
+                    
+        if platform.system() == "Windows":
+            connection = platformSpecific.windowsSpecific.setupWindowsBackend()
+        
+        else:
+            connection = platformSpecific.unixSpecific.setupUnixBackend()
+                    
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(insert_into_vm_database)
+            connection.commit()
+            print("The query was executed successfully.")
+        
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 

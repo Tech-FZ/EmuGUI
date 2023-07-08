@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.3
+## Created by: Qt User Interface Compiler version 6.5.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -76,6 +76,11 @@ class Ui_MainWindow(object):
         self.pushButton_22.setObjectName(u"pushButton_22")
 
         self.verticalLayout.addWidget(self.pushButton_22)
+
+        self.pushButton_23 = QPushButton(self.gridLayoutWidget_4)
+        self.pushButton_23.setObjectName(u"pushButton_23")
+
+        self.verticalLayout.addWidget(self.pushButton_23)
 
 
         self.gridLayout_4.addLayout(self.verticalLayout, 0, 1, 2, 1)
@@ -414,7 +419,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 20))
+        self.menubar.setGeometry(QRect(0, 0, 800, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -474,6 +479,7 @@ class Ui_MainWindow(object):
         self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Edit Selected Virtual Machine", None))
         self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"Delete Selected Virtual Machine", None))
         self.pushButton_22.setText(QCoreApplication.translate("MainWindow", u"Export selected virtual machine", None))
+        self.pushButton_23.setText(QCoreApplication.translate("MainWindow", u"Import virtual machine", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("MainWindow", u"System default", None))
         self.comboBox_4.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
