@@ -676,6 +676,19 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             try:
                 qemu_cmd_split = qemu_cmd.split(" ")
                 # Potentially insert fix for datetime issue here
+
+                i = 0
+
+                while i < len(qemu_cmd_split):
+                    if qemu_cmd_split[i] == "-rtc":
+                        qemu_time = qemu_cmd_split[i] + " " + qemu_cmd_split[i + 1]
+                        qemu_cmd_split.insert(i, qemu_time)
+                        del qemu_cmd_split[i + 1]
+                        del qemu_cmd_split[i + 1]
+                        break
+
+                    i += 1
+
                 subprocess.run(qemu_cmd_split)
             
             except:

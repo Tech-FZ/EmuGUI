@@ -1620,7 +1620,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
                         if vhd_filename:
                             zip_vm_file.extract(content_name, vhd_filename)
-                            vhd_path = vhd_filename + content_name
+                            vhd_path = vhd_filename + "/" + content_name
 
                         break
 

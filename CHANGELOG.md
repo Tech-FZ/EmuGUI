@@ -9,6 +9,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - As for the last two feature updates, this one gets another codename: "Garuka Pula".
 - The feature to import and export VMs has been added.
 - The readme has been updated with the new system requirements.
+- I think I might have fixed the issue with subprocess.run on Windows.
 
 # EmuGUI v1.1.2.5410 "Sara Angeline" (based on v1.1.1.5409)
 
