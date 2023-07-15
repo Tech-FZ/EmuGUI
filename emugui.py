@@ -25,6 +25,8 @@ from dialogExecution.win2kDepreciation import Win2KDepreciated
 from dialogExecution.qemuImgError import QemuImgMissing
 from dialogExecution.qemuSysError import QemuSysMissing
 from dialogExecution.icelakeClientDepreciation import IcelakeClientCPUDepreciation
+from dialogExecution.errDialog import ErrDialog
+import errors.errCodes
 import translations.de
 import translations.uk
 import translations.en
@@ -606,6 +608,18 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(create_vm_table)
             connection.commit()
@@ -1049,6 +1063,18 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_theme)
             connection.commit()
@@ -1389,31 +1415,45 @@ class Window(QMainWindow, Ui_MainWindow):
             else:
                 tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
                 
-            with open(tempVmDef, "w+") as tempVmDefFile:
-                tempVmDefFile.write(selectedVM + "\n")
-                tempVmDefFile.write(architecture_of_vm + "\n")
-                tempVmDefFile.write(machine_of_vm + "\n")
-                tempVmDefFile.write(cpu_of_vm + "\n")
-                tempVmDefFile.write(str(ram_of_vm) + "\n")
-                tempVmDefFile.write(hda_of_vm + "\n")
-                tempVmDefFile.write(vga_of_vm + "\n")
-                tempVmDefFile.write(net_of_vm + "\n")
-                tempVmDefFile.write(str(usbtablet_wanted) + "\n")
-                tempVmDefFile.write(str(os_is_win2k) + "\n")
-                tempVmDefFile.write(dir_bios + "\n")
-                tempVmDefFile.write(additional_arguments + "\n")
-                tempVmDefFile.write(sound_card + "\n")
-                tempVmDefFile.write(linux_kernel + "\n")
-                tempVmDefFile.write(linux_initrid + "\n")
-                tempVmDefFile.write(linux_cmd + "\n")
-                tempVmDefFile.write(mouse_type + "\n")
-                tempVmDefFile.write(str(cpu_cores) + "\n")
-                tempVmDefFile.write(str(file_bios) + "\n")
-                tempVmDefFile.write(kbd_type + "\n")
-                tempVmDefFile.write(str(usb_support) + "\n")
-                tempVmDefFile.write(usb_controller + "\n")
-                tempVmDefFile.write(kbd_layout + "\n")
-                tempVmDefFile.write(accel_type + "\n")
+            try:
+                with open(tempVmDef, "w+") as tempVmDefFile:
+                    tempVmDefFile.write(selectedVM + "\n")
+                    tempVmDefFile.write(architecture_of_vm + "\n")
+                    tempVmDefFile.write(machine_of_vm + "\n")
+                    tempVmDefFile.write(cpu_of_vm + "\n")
+                    tempVmDefFile.write(str(ram_of_vm) + "\n")
+                    tempVmDefFile.write(hda_of_vm + "\n")
+                    tempVmDefFile.write(vga_of_vm + "\n")
+                    tempVmDefFile.write(net_of_vm + "\n")
+                    tempVmDefFile.write(str(usbtablet_wanted) + "\n")
+                    tempVmDefFile.write(str(os_is_win2k) + "\n")
+                    tempVmDefFile.write(dir_bios + "\n")
+                    tempVmDefFile.write(additional_arguments + "\n")
+                    tempVmDefFile.write(sound_card + "\n")
+                    tempVmDefFile.write(linux_kernel + "\n")
+                    tempVmDefFile.write(linux_initrid + "\n")
+                    tempVmDefFile.write(linux_cmd + "\n")
+                    tempVmDefFile.write(mouse_type + "\n")
+                    tempVmDefFile.write(str(cpu_cores) + "\n")
+                    tempVmDefFile.write(str(file_bios) + "\n")
+                    tempVmDefFile.write(kbd_type + "\n")
+                    tempVmDefFile.write(str(usb_support) + "\n")
+                    tempVmDefFile.write(usb_controller + "\n")
+                    tempVmDefFile.write(kbd_layout + "\n")
+                    tempVmDefFile.write(accel_type + "\n")
+
+            except:
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             if usbtablet_wanted == 1:
                 dialog3 = UsbTabletDepreciated(self)
@@ -1493,6 +1533,18 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
     def exportVM(self):
         debug_db_settings = """
         SELECT name, value FROM settings;
@@ -1555,28 +1607,42 @@ class Window(QMainWindow, Ui_MainWindow):
             else:
                 tempVmDef = platformSpecific.unixSpecific.unixExportFile()
 
-            with open(tempVmDef, "w+") as vmDefFile:
-                vmDefFile.write("name = " + selectedVM + "\n")
-                vmDefFile.write("arch = " + architecture_of_vm + "\n")
-                vmDefFile.write("machine = " + machine_of_vm + "\n")
-                vmDefFile.write("cpu = " + cpu_of_vm + "\n")
-                vmDefFile.write("ram = " + str(ram_of_vm) + "\n")
-                vmDefFile.write("vga = " + vga_of_vm + "\n")
-                vmDefFile.write("network = " + net_of_vm + "\n")
-                vmDefFile.write("biosdir = " + dir_bios + "\n")
-                vmDefFile.write("additionalargs = " + additional_arguments + "\n")
-                vmDefFile.write("soundcard = " + sound_card + "\n")
-                vmDefFile.write("linuxkernel = " + linux_kernel + "\n")
-                vmDefFile.write("linuxinitrd = " + linux_initrid + "\n")
-                vmDefFile.write("linuxcmd = " + linux_cmd + "\n")
-                vmDefFile.write("mouse = " + mouse_type + "\n")
-                vmDefFile.write("cpucores = " + str(cpu_cores) + "\n")
-                vmDefFile.write("biosfile = " + str(file_bios) + "\n")
-                vmDefFile.write("kbdtype = " + kbd_type + "\n")
-                vmDefFile.write("usbsupport = " + str(usb_support) + "\n")
-                vmDefFile.write("usbcontroller = " + usb_controller + "\n")
-                vmDefFile.write("kbdlayout = " + kbd_layout + "\n")
-                vmDefFile.write("hwaccel = " + accel_type + "\n")
+            try:
+                with open(tempVmDef, "w+") as vmDefFile:
+                    vmDefFile.write("name = " + selectedVM + "\n")
+                    vmDefFile.write("arch = " + architecture_of_vm + "\n")
+                    vmDefFile.write("machine = " + machine_of_vm + "\n")
+                    vmDefFile.write("cpu = " + cpu_of_vm + "\n")
+                    vmDefFile.write("ram = " + str(ram_of_vm) + "\n")
+                    vmDefFile.write("vga = " + vga_of_vm + "\n")
+                    vmDefFile.write("network = " + net_of_vm + "\n")
+                    vmDefFile.write("biosdir = " + dir_bios + "\n")
+                    vmDefFile.write("additionalargs = " + additional_arguments + "\n")
+                    vmDefFile.write("soundcard = " + sound_card + "\n")
+                    vmDefFile.write("linuxkernel = " + linux_kernel + "\n")
+                    vmDefFile.write("linuxinitrd = " + linux_initrid + "\n")
+                    vmDefFile.write("linuxcmd = " + linux_cmd + "\n")
+                    vmDefFile.write("mouse = " + mouse_type + "\n")
+                    vmDefFile.write("cpucores = " + str(cpu_cores) + "\n")
+                    vmDefFile.write("biosfile = " + str(file_bios) + "\n")
+                    vmDefFile.write("kbdtype = " + kbd_type + "\n")
+                    vmDefFile.write("usbsupport = " + str(usb_support) + "\n")
+                    vmDefFile.write("usbcontroller = " + usb_controller + "\n")
+                    vmDefFile.write("kbdlayout = " + kbd_layout + "\n")
+                    vmDefFile.write("hwaccel = " + accel_type + "\n")
+
+            except:
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Export VM file', dir='.', filter='ZIP file (*.zip);;All files (*.*)')
 
@@ -1840,31 +1906,45 @@ class Window(QMainWindow, Ui_MainWindow):
             else:
                 tempVmDef = platformSpecific.unixSpecific.unixTempVmStarterFile()
                 
-            with open(tempVmDef, "w+") as tempVmDefFile:
-                tempVmDefFile.write(selectedVM + "\n")
-                tempVmDefFile.write(architecture_of_vm + "\n")
-                tempVmDefFile.write(machine_of_vm + "\n")
-                tempVmDefFile.write(cpu_of_vm + "\n")
-                tempVmDefFile.write(str(ram_of_vm) + "\n")
-                tempVmDefFile.write(hda_of_vm + "\n")
-                tempVmDefFile.write(vga_of_vm + "\n")
-                tempVmDefFile.write(net_of_vm + "\n")
-                tempVmDefFile.write(str(usbtablet_wanted) + "\n")
-                tempVmDefFile.write(str(os_is_win2k) + "\n")
-                tempVmDefFile.write(dir_bios + "\n")
-                tempVmDefFile.write(additional_arguments + "\n")
-                tempVmDefFile.write(sound_card + "\n")
-                tempVmDefFile.write(linux_kernel + "\n")
-                tempVmDefFile.write(linux_initrid + "\n")
-                tempVmDefFile.write(linux_cmd + "\n")
-                tempVmDefFile.write(mouse_type + "\n")
-                tempVmDefFile.write(str(cpu_cores) + "\n")
-                tempVmDefFile.write(file_bios + "\n")
-                tempVmDefFile.write(kbd_type + "\n")
-                tempVmDefFile.write(str(usb_support) + "\n")
-                tempVmDefFile.write(usb_controller + "\n")
-                tempVmDefFile.write(kbd_layout + "\n")
-                tempVmDefFile.write(accel_type + "\n")
+            try:
+                with open(tempVmDef, "w+") as tempVmDefFile:
+                    tempVmDefFile.write(selectedVM + "\n")
+                    tempVmDefFile.write(architecture_of_vm + "\n")
+                    tempVmDefFile.write(machine_of_vm + "\n")
+                    tempVmDefFile.write(cpu_of_vm + "\n")
+                    tempVmDefFile.write(str(ram_of_vm) + "\n")
+                    tempVmDefFile.write(hda_of_vm + "\n")
+                    tempVmDefFile.write(vga_of_vm + "\n")
+                    tempVmDefFile.write(net_of_vm + "\n")
+                    tempVmDefFile.write(str(usbtablet_wanted) + "\n")
+                    tempVmDefFile.write(str(os_is_win2k) + "\n")
+                    tempVmDefFile.write(dir_bios + "\n")
+                    tempVmDefFile.write(additional_arguments + "\n")
+                    tempVmDefFile.write(sound_card + "\n")
+                    tempVmDefFile.write(linux_kernel + "\n")
+                    tempVmDefFile.write(linux_initrid + "\n")
+                    tempVmDefFile.write(linux_cmd + "\n")
+                    tempVmDefFile.write(mouse_type + "\n")
+                    tempVmDefFile.write(str(cpu_cores) + "\n")
+                    tempVmDefFile.write(str(file_bios) + "\n")
+                    tempVmDefFile.write(kbd_type + "\n")
+                    tempVmDefFile.write(str(usb_support) + "\n")
+                    tempVmDefFile.write(usb_controller + "\n")
+                    tempVmDefFile.write(kbd_layout + "\n")
+                    tempVmDefFile.write(accel_type + "\n")
+
+            except:
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             i = 0
 

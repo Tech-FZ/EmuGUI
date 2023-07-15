@@ -108,3 +108,18 @@ def unixExportFile():
         fileName = f"/home/{userName}/EmuGUI/vmdef.txt"
         
     return fileName
+
+def unixErrorFile():
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())[0]
+
+    if userName == "root":
+        fileName = f"/{userName}/EmuGUI/error.txt"
+
+    else:
+        fileName = f"/home/{userName}/EmuGUI/error.txt"
+        
+    return fileName

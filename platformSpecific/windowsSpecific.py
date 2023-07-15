@@ -48,3 +48,10 @@ def windowsExportFile():
     userName = os.getlogin()
     fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\vmdef.txt"
     return fileName
+
+def windowsErrorFile():
+    userName = os.getlogin()
+
+    fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\error.txt"
+        
+    return fileName

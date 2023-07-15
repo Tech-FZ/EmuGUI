@@ -603,3 +603,24 @@ def translateEditVMPT(window):
     window.label_30.setText("Cores da CPU") # CPU cores
     window.checkBox.setText("Adicionar Suporte USB") # Add USB support
     window.label_36.setText("Acceleration") # Acceleration
+
+def translateErrDialogPT(window, errcode):
+    if errcode.startswith("C"):
+        window.label.setText("EmuGUI encountered a critical error and needs to be closed.")
+
+    elif errcode.startswith("E"):
+        window.label.setText("EmuGUI encountered an error.")
+
+    elif errcode.startswith("W"):
+        window.label.setText("EmuGUI has to warn you.")
+
+    else:
+        window.label.setText("EmuGUI has something to say.")
+
+    window.label_2.setText("Error Code: " + errcode)
+
+    window.label_3.setText(
+        "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
+        )
+    
+    window.pushButton.setText("OK")
