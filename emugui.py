@@ -150,6 +150,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_14.clicked.connect(self.set_qemu_sparc64_path)
         self.pushButton_20.clicked.connect(self.toGithub)
         self.pushButton_21.clicked.connect(self.toDiscord)
+        self.pushButton_24.clicked.connect(self.toYouTube)
+        self.pushButton_25.clicked.connect(self.toOdysee)
 
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
@@ -2914,6 +2916,12 @@ class Window(QMainWindow, Ui_MainWindow):
     
     def toDiscord(self):
         webbrowser.open_new_tab("https://discord.gg/rTGpYCwF89")
+
+    def toYouTube(self):
+        webbrowser.open_new_tab("https://www.youtube.com/@EmuGUI-vr2xd")
+
+    def toOdysee(self):
+        webbrowser.open_new_tab("https://odysee.com/@EmuGUI:0")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

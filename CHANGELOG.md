@@ -12,6 +12,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - I think I might have fixed the issue with subprocess.run on Windows.
 - An error dialog is now there.
 - The fix issued by rzglitch regarding ARM64 VMs has been applied here as well.
+- The YouTube and Odysee channels of EmuGUI have been linked in the readme and in the main window under the About tab.
 
 # EmuGUI v1.2.0.5500_dev "Garuka Pula" (based on v1.1.2.5410)
 

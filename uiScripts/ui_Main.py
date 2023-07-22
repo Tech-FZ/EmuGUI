@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.4.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -398,15 +398,25 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_21, 0, 0, 1, 1)
 
+        self.pushButton_21 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_21.setObjectName(u"pushButton_21")
+
+        self.gridLayout_5.addWidget(self.pushButton_21, 0, 2, 1, 1)
+
         self.pushButton_20 = QPushButton(self.gridLayoutWidget_3)
         self.pushButton_20.setObjectName(u"pushButton_20")
 
         self.gridLayout_5.addWidget(self.pushButton_20, 0, 1, 1, 1)
 
-        self.pushButton_21 = QPushButton(self.gridLayoutWidget_3)
-        self.pushButton_21.setObjectName(u"pushButton_21")
+        self.pushButton_24 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_24.setObjectName(u"pushButton_24")
 
-        self.gridLayout_5.addWidget(self.pushButton_21, 0, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.pushButton_24, 0, 3, 1, 1)
+
+        self.pushButton_25 = QPushButton(self.gridLayoutWidget_3)
+        self.pushButton_25.setObjectName(u"pushButton_25")
+
+        self.gridLayout_5.addWidget(self.pushButton_25, 0, 4, 1, 1)
 
 
         self.gridLayout_3.addLayout(self.gridLayout_5, 6, 0, 1, 1)
@@ -419,7 +429,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 800, 20))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -534,8 +544,10 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Built on Python and PyQt technology, licensed under GNU General Public License 3.0", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"EmuGUI v0.0.1", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"EmuGUI on social media", None))
-        self.pushButton_20.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
         self.pushButton_21.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
+        self.pushButton_20.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
+        self.pushButton_24.setText(QCoreApplication.translate("MainWindow", u"YouTube", None))
+        self.pushButton_25.setText(QCoreApplication.translate("MainWindow", u"Odysee", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"About EmuGUI", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Settings", None))
     # retranslateUi

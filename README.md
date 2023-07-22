@@ -235,6 +235,14 @@ A documentation of EmuGUI can be found [here](https://github.com/Tech-FZ/EmuGUI/
   <img src="https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ=s48-rw" alt="Discord Icon">
 </a>
 
+<a href="https://www.youtube.com/@EmuGUI-vr2xd">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">
+</a>
+
+<a href="https://odysee.com/@EmuGUI:0">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFggUmAjv5TiQcgCt7BW-PKJpyrFvnAQBwYGX2lhU&s" alt="Odysee Icon">
+</a>
+
 <!-- Discord: https://discord.gg/rTGpYCwF89 -->
 
 ## Contributing
