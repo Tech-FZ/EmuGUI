@@ -339,28 +339,28 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         i = 0
 
-        while i < self.comboBox_17.count():
-            if letQemuDecideContent.__contains__(self.comboBox_17.itemText(i)):
+        while i < self.comboBox_18.count():
+            if letQemuDecideContent.__contains__(self.comboBox_18.itemText(i)):
                 if machine == "Let QEMU decide":
-                    self.comboBox_17.setCurrentIndex(i)
+                    self.comboBox_18.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_17.itemText(i) == machine:
-                self.comboBox_17.setCurrentIndex(i)
+            elif self.comboBox_18.itemText(i) == machine:
+                self.comboBox_18.setCurrentIndex(i)
                 break
 
             i += 1
 
         i = 0
 
-        while i < self.comboBox_18.count():
-            if letQemuDecideContent.__contains__(self.comboBox_18.itemText(i)):
+        while i < self.comboBox_17.count():
+            if letQemuDecideContent.__contains__(self.comboBox_17.itemText(i)):
                 if cpu == "Let QEMU decide":
-                    self.comboBox_18.setCurrentIndex(i)
+                    self.comboBox_17.setCurrentIndex(i)
                     break
 
-            elif self.comboBox_18.itemText(i) == cpu:
-                self.comboBox_18.setCurrentIndex(i)
+            elif self.comboBox_17.itemText(i) == cpu:
+                self.comboBox_17.setCurrentIndex(i)
                 break
 
             i += 1
