@@ -18,6 +18,8 @@ ParmanCZ (Czech translation)
 
 Vichingo455 (Italian translation)
 
+rzglitch (Coding)
+
 # Banners
 
 | Version | Author |
