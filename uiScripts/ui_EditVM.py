@@ -558,15 +558,18 @@ class Ui_Dialog(object):
         self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label_4 = QLabel(self.gridLayoutWidget_2)
-        self.label_4.setObjectName(u"label_4")
+        self.comboBox_4 = QComboBox(self.gridLayoutWidget_2)
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.setObjectName(u"comboBox_4")
 
-        self.gridLayout_2.addWidget(self.label_4, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.comboBox_4, 3, 2, 1, 1)
 
-        self.label_3 = QLabel(self.gridLayoutWidget_2)
-        self.label_3.setObjectName(u"label_3")
+        self.label_37 = QLabel(self.gridLayoutWidget_2)
+        self.label_37.setObjectName(u"label_37")
 
-        self.gridLayout_2.addWidget(self.label_3, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_37, 4, 0, 1, 1)
 
         self.lineEdit_2 = QLineEdit(self.gridLayoutWidget_2)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
@@ -577,38 +580,6 @@ class Ui_Dialog(object):
         self.pushButton_3.setObjectName(u"pushButton_3")
 
         self.gridLayout_2.addWidget(self.pushButton_3, 1, 2, 1, 1)
-
-        self.label_5 = QLabel(self.gridLayoutWidget_2)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout_2.addWidget(self.label_5, 2, 0, 1, 1)
-
-        self.label_6 = QLabel(self.gridLayoutWidget_2)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout_2.addWidget(self.label_6, 3, 0, 1, 1)
-
-        self.spinBox = QSpinBox(self.gridLayoutWidget_2)
-        self.spinBox.setObjectName(u"spinBox")
-        self.spinBox.setMaximum(214748368)
-
-        self.gridLayout_2.addWidget(self.spinBox, 3, 1, 1, 1)
-
-        self.comboBox_4 = QComboBox(self.gridLayoutWidget_2)
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.setObjectName(u"comboBox_4")
-
-        self.gridLayout_2.addWidget(self.comboBox_4, 3, 2, 1, 1)
-
-        self.comboBox_2 = QComboBox(self.gridLayoutWidget_2)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-
-        self.gridLayout_2.addWidget(self.comboBox_2, 0, 1, 1, 2)
 
         self.comboBox_3 = QComboBox(self.gridLayoutWidget_2)
         self.comboBox_3.addItem("")
@@ -623,6 +594,63 @@ class Ui_Dialog(object):
         self.comboBox_3.setObjectName(u"comboBox_3")
 
         self.gridLayout_2.addWidget(self.comboBox_3, 2, 1, 1, 2)
+
+        self.spinBox = QSpinBox(self.gridLayoutWidget_2)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setMaximum(214748368)
+
+        self.gridLayout_2.addWidget(self.spinBox, 3, 1, 1, 1)
+
+        self.comboBox_2 = QComboBox(self.gridLayoutWidget_2)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+
+        self.gridLayout_2.addWidget(self.comboBox_2, 0, 1, 1, 2)
+
+        self.label_3 = QLabel(self.gridLayoutWidget_2)
+        self.label_3.setObjectName(u"label_3")
+
+        self.gridLayout_2.addWidget(self.label_3, 0, 0, 1, 1)
+
+        self.label_5 = QLabel(self.gridLayoutWidget_2)
+        self.label_5.setObjectName(u"label_5")
+
+        self.gridLayout_2.addWidget(self.label_5, 2, 0, 1, 1)
+
+        self.label_4 = QLabel(self.gridLayoutWidget_2)
+        self.label_4.setObjectName(u"label_4")
+
+        self.gridLayout_2.addWidget(self.label_4, 1, 0, 1, 1)
+
+        self.label_6 = QLabel(self.gridLayoutWidget_2)
+        self.label_6.setObjectName(u"label_6")
+
+        self.gridLayout_2.addWidget(self.label_6, 3, 0, 1, 1)
+
+        self.label_72 = QLabel(self.gridLayoutWidget_2)
+        self.label_72.setObjectName(u"label_72")
+
+        self.gridLayout_2.addWidget(self.label_72, 5, 0, 1, 1)
+
+        self.comboBox_44 = QComboBox(self.gridLayoutWidget_2)
+        self.comboBox_44.addItem("")
+        self.comboBox_44.addItem("")
+        self.comboBox_44.addItem("")
+        self.comboBox_44.addItem("")
+        self.comboBox_44.setObjectName(u"comboBox_44")
+
+        self.gridLayout_2.addWidget(self.comboBox_44, 4, 1, 1, 2)
+
+        self.comboBox_45 = QComboBox(self.gridLayoutWidget_2)
+        self.comboBox_45.addItem("")
+        self.comboBox_45.addItem("")
+        self.comboBox_45.addItem("")
+        self.comboBox_45.addItem("")
+        self.comboBox_45.setObjectName(u"comboBox_45")
+
+        self.gridLayout_2.addWidget(self.comboBox_45, 5, 1, 1, 2)
 
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_5 = QWidget()
@@ -949,7 +977,9 @@ class Ui_Dialog(object):
         QWidget.setTabOrder(self.pushButton_3, self.comboBox_3)
         QWidget.setTabOrder(self.comboBox_3, self.spinBox)
         QWidget.setTabOrder(self.spinBox, self.comboBox_4)
-        QWidget.setTabOrder(self.comboBox_4, self.comboBox_5)
+        QWidget.setTabOrder(self.comboBox_4, self.comboBox_44)
+        QWidget.setTabOrder(self.comboBox_44, self.comboBox_45)
+        QWidget.setTabOrder(self.comboBox_45, self.comboBox_5)
         QWidget.setTabOrder(self.comboBox_5, self.comboBox_6)
         QWidget.setTabOrder(self.comboBox_6, self.comboBox_19)
         QWidget.setTabOrder(self.comboBox_19, self.checkBox_2)
@@ -1274,19 +1304,12 @@ class Ui_Dialog(object):
         self.comboBox_21.setItemText(4, QCoreApplication.translate("Dialog", u"none", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Dialog", u"Machine", None))
-        self.label_4.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Dialog", u"Browse", None))
-        self.label_5.setText(QCoreApplication.translate("Dialog", u"VHD file format", None))
-        self.label_6.setText(QCoreApplication.translate("Dialog", u"Maximum size", None))
         self.comboBox_4.setItemText(0, QCoreApplication.translate("Dialog", u"KB", None))
         self.comboBox_4.setItemText(1, QCoreApplication.translate("Dialog", u"MB", None))
         self.comboBox_4.setItemText(2, QCoreApplication.translate("Dialog", u"GB", None))
 
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
-        self.comboBox_2.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
-
+        self.label_37.setText(QCoreApplication.translate("Dialog", u"CD controller 1", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Dialog", u"Browse", None))
         self.comboBox_3.setItemText(0, QCoreApplication.translate("Dialog", u"qcow2", None))
         self.comboBox_3.setItemText(1, QCoreApplication.translate("Dialog", u"qcow", None))
         self.comboBox_3.setItemText(2, QCoreApplication.translate("Dialog", u"vdi", None))
@@ -1296,6 +1319,25 @@ class Ui_Dialog(object):
         self.comboBox_3.setItemText(6, QCoreApplication.translate("Dialog", u"vmdk", None))
         self.comboBox_3.setItemText(7, QCoreApplication.translate("Dialog", u"parallels", None))
         self.comboBox_3.setItemText(8, QCoreApplication.translate("Dialog", u"file", None))
+
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("Dialog", u"Add an existing virtual hard drive", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("Dialog", u"Create a new virtual hard drive", None))
+        self.comboBox_2.setItemText(2, QCoreApplication.translate("Dialog", u"Don't add a virtual hard drive", None))
+
+        self.label_3.setText(QCoreApplication.translate("Dialog", u"VHD usage", None))
+        self.label_5.setText(QCoreApplication.translate("Dialog", u"VHD file format", None))
+        self.label_4.setText(QCoreApplication.translate("Dialog", u"VHD path", None))
+        self.label_6.setText(QCoreApplication.translate("Dialog", u"Maximum size", None))
+        self.label_72.setText(QCoreApplication.translate("Dialog", u"CD controller 2", None))
+        self.comboBox_44.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_44.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
+        self.comboBox_44.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
+        self.comboBox_44.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
+
+        self.comboBox_45.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
+        self.comboBox_45.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
+        self.comboBox_45.setItemText(2, QCoreApplication.translate("Dialog", u"SCSI", None))
+        self.comboBox_45.setItemText(3, QCoreApplication.translate("Dialog", u"Virtio", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Dialog", u"Virtual hard disks", None))
         self.checkBox_2.setText(QCoreApplication.translate("Dialog", u"USB Tablet Device (depreciated)", None))

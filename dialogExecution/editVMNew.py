@@ -684,6 +684,34 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 break
 
             i += 1
+
+        i = 0
+
+        while i < self.comboBox_44.count():
+            if vmSpecs[24] == "Let QEMU decide":
+                if letQemuDecideContent.__contains__(self.comboBox_44.itemText(i)):
+                    self.comboBox_44.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_44.itemText(i) == vmSpecs[24]:
+                self.comboBox_44.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.comboBox_45.count():
+            if vmSpecs[25] == "Let QEMU decide":
+                if letQemuDecideContent.__contains__(self.comboBox_45.itemText(i)):
+                    self.comboBox_45.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_45.itemText(i) == vmSpecs[25]:
+                self.comboBox_45.setCurrentIndex(i)
+                break
+
+            i += 1
         
         return vmSpecs
 
@@ -867,6 +895,18 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         else:
             kbdlayout = self.comboBox_19.currentText()
+
+        if letQemuDecideVariantsStr.__contains__(self.comboBox_44.currentText()):
+            cd_control1 = "Let QEMU decide"
+        
+        else:
+            cd_control1 = self.comboBox_44.currentText()
+
+        if letQemuDecideVariantsStr.__contains__(self.comboBox_45.currentText()):
+            cd_control2 = "Let QEMU decide"
+        
+        else:
+            cd_control2 = self.comboBox_45.currentText()
         
         insert_into_vm_database = f"""
         UPDATE virtualmachines
@@ -876,7 +916,8 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         linuxkernel = "{self.lineEdit_5.text()}", linuxinitrid = "{self.lineEdit_6.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
-        kbdtype = "{kbdlayout}", acceltype = "{self.comboBox_22.currentText()}"
+        kbdtype = "{kbdlayout}", acceltype = "{self.comboBox_22.currentText()}", storagecontrollercd1 = "{cd_control1}",
+        storagecontrollercd2 = "{cd_control2}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

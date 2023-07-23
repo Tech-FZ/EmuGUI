@@ -5272,24 +5272,69 @@ default BIOS)</string>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_25">
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_81">
-        <property name="text">
-         <string>&lt; Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
+      <item row="4" column="2">
        <widget class="QPushButton" name="pushButton_80">
         <property name="text">
          <string>Cancel</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="4" column="1">
        <widget class="QPushButton" name="pushButton_77">
         <property name="text">
          <string>Next &gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_81">
+        <property name="text">
+         <string>&lt; Previous</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_72">
+        <property name="text">
+         <string>CD controller 2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_70">
+        <property name="text">
+         <string>CD controller 1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_44">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Virtio</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_71">
+        <property name="text">
+         <string>Acceleration</string>
         </property>
        </widget>
       </item>
@@ -5322,11 +5367,28 @@ default BIOS)</string>
         </item>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_71">
-        <property name="text">
-         <string>Acceleration</string>
-        </property>
+      <item row="2" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_45">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Virtio</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
@@ -5495,6 +5557,8 @@ default BIOS)</string>
   <tabstop>pushButton_30</tabstop>
   <tabstop>pushButton_29</tabstop>
   <tabstop>comboBox_43</tabstop>
+  <tabstop>comboBox_44</tabstop>
+  <tabstop>comboBox_45</tabstop>
   <tabstop>pushButton_81</tabstop>
   <tabstop>pushButton_77</tabstop>
   <tabstop>pushButton_80</tabstop>

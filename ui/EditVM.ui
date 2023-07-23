@@ -1689,51 +1689,6 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>VHD path</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>VHD usage</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_2"/>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>Browse</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>VHD file format</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Maximum size</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QSpinBox" name="spinBox">
-        <property name="maximum">
-         <number>214748368</number>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="2">
        <widget class="QComboBox" name="comboBox_4">
         <item>
@@ -1753,23 +1708,21 @@
         </item>
        </widget>
       </item>
-      <item row="0" column="1" colspan="2">
-       <widget class="QComboBox" name="comboBox_2">
-        <item>
-         <property name="text">
-          <string>Add an existing virtual hard drive</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Create a new virtual hard drive</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Don't add a virtual hard drive</string>
-         </property>
-        </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_37">
+        <property name="text">
+         <string>CD controller 1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_2"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>Browse</string>
+        </property>
        </widget>
       </item>
       <item row="2" column="1" colspan="2">
@@ -1817,6 +1770,115 @@
         <item>
          <property name="text">
           <string>file</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="spinBox">
+        <property name="maximum">
+         <number>214748368</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_2">
+        <item>
+         <property name="text">
+          <string>Add an existing virtual hard drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Create a new virtual hard drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Don't add a virtual hard drive</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>VHD usage</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>VHD file format</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>VHD path</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Maximum size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_72">
+        <property name="text">
+         <string>CD controller 2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_44">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Virtio</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="5" column="1" colspan="2">
+       <widget class="QComboBox" name="comboBox_45">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Virtio</string>
          </property>
         </item>
        </widget>
@@ -2526,6 +2588,8 @@
   <tabstop>comboBox_3</tabstop>
   <tabstop>spinBox</tabstop>
   <tabstop>comboBox_4</tabstop>
+  <tabstop>comboBox_44</tabstop>
+  <tabstop>comboBox_45</tabstop>
   <tabstop>comboBox_5</tabstop>
   <tabstop>comboBox_6</tabstop>
   <tabstop>comboBox_19</tabstop>

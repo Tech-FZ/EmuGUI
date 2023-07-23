@@ -324,6 +324,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
         fda_file = self.lineEdit.text()
         cdrom_file = self.lineEdit_2.text()
+        cdrom_file2 = self.lineEdit_4.text()
         bootfrom = self.comboBox.currentText()
         dateTimeForVM = self.dateTimeEdit.text()
 
@@ -588,10 +589,57 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             if cdrom_file != "":
                 if platform.system() == "Windows":
-                    qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file}\""
+                    if self.vmSpecs[24] == "Let QEMU decide":
+                        qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file}\""
+
+                    elif self.vmSpecs[24] == "IDE":
+                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file}\",if=ide,media=cdrom"
+
+                    elif self.vmSpecs[24] == "SCSI":
+                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file}\",if=scsi,media=cdrom"
+
+                    elif self.vmSpecs[24] == "Virtio":
+                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file}\",if=virtio,media=cdrom"
 
                 else:
-                    qemu_cmd = qemu_cmd + f" -cdrom {cdrom_file}"
+                    if self.vmSpecs[24] == "Let QEMU decide":
+                        qemu_cmd = qemu_cmd + f" -cdrom {cdrom_file}"
+
+                    elif self.vmSpecs[24] == "IDE":
+                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file},if=ide,media=cdrom"
+
+                    elif self.vmSpecs[24] == "SCSI":
+                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file},if=scsi,media=cdrom"
+
+                    elif self.vmSpecs[24] == "Virtio":
+                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file},if=virtio,media=cdrom"
+
+            if cdrom_file2 != "":
+                if platform.system() == "Windows":
+                    if self.vmSpecs[25] == "Let QEMU decide":
+                        qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file2}\""
+
+                    elif self.vmSpecs[25] == "IDE":
+                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file2}\",if=ide,media=cdrom"
+
+                    elif self.vmSpecs[25] == "SCSI":
+                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file2}\",if=scsi,media=cdrom"
+
+                    elif self.vmSpecs[25] == "Virtio":
+                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file2}\",if=virtio,media=cdrom"
+
+                else:
+                    if self.vmSpecs[25] == "Let QEMU decide":
+                        qemu_cmd = qemu_cmd + f" -cdrom {cdrom_file2}"
+
+                    elif self.vmSpecs[25] == "IDE":
+                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file2},if=ide,media=cdrom"
+
+                    elif self.vmSpecs[25] == "SCSI":
+                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file2},if=scsi,media=cdrom"
+
+                    elif self.vmSpecs[25] == "Virtio":
+                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file2},if=virtio,media=cdrom"
 
             if bootfrom == "c" or bootfrom == "a" and fda_file == "" or bootfrom == "d" and cdrom_file == "":
                 qemu_cmd = qemu_cmd + " -boot c"

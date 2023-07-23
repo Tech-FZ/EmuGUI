@@ -38,119 +38,35 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="7" column="1">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>Start VM</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Browse</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QDateTimeEdit" name="dateTimeEdit">
-      <property name="displayFormat">
-       <string>yyyy-MM-ddThh:mm:ss</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_3"/>
-    </item>
     <item row="5" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>TPM path (Linux only)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>cdrom</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>Set to system</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Browse</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Date &amp; Time</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>fda</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0" colspan="3">
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
        <string>Boot from</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="lineEdit_2"/>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>cdrom 1</string>
+      </property>
+     </widget>
     </item>
-    <item row="7" column="2">
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>TPM path (Linux only)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
      <widget class="QPushButton" name="pushButton_4">
       <property name="text">
        <string>Cancel</string>
       </property>
      </widget>
     </item>
-    <item row="9" column="0" colspan="3">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Create the TPM from the terminal!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1" colspan="2">
+    <item row="5" column="1" colspan="2">
      <widget class="QComboBox" name="comboBox">
       <item>
        <property name="text">
@@ -174,6 +90,107 @@
       </item>
      </widget>
     </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Date &amp; Time</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QDateTimeEdit" name="dateTimeEdit">
+      <property name="displayFormat">
+       <string>yyyy-MM-ddThh:mm:ss</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEdit_2"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>fda</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="2">
+     <widget class="QLineEdit" name="lineEdit_3"/>
+    </item>
+    <item row="7" column="2">
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="text">
+       <string>Set to system</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>Start VM</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0" colspan="3">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Create the TPM from the terminal!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>cdrom 2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0" colspan="3">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="lineEdit_4"/>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
@@ -182,6 +199,8 @@
   <tabstop>pushButton</tabstop>
   <tabstop>lineEdit_2</tabstop>
   <tabstop>pushButton_2</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>pushButton_6</tabstop>
   <tabstop>comboBox</tabstop>
   <tabstop>lineEdit_3</tabstop>
   <tabstop>dateTimeEdit</tabstop>
