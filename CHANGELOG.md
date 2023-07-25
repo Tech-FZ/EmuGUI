@@ -1,3 +1,13 @@
+# EmuGUI v1.1.4.5412 "Sara Angeline" (based on v1.1.3.5411)
+
+## WARNING
+
+Ubuntu 20.04 LTS and derivates will no longer receive new features on EmuGUI, now you need the latest (LTS) version of your Linux distribution for anything beyond the EmuGUI 1.1.x line. However, you will still receive bugfixes for the EmuGUI 1.1.x line.
+
+## Changes compared to v1.1.3.5411
+
+- A bug was fixed to address the issue in the Edit VM dialog regarding the creation of other VHDs for existing VMs.
+
 # EmuGUI v1.1.3.5411 "Sara Angeline" (based on v1.1.2.5410)
 
 ## WARNING

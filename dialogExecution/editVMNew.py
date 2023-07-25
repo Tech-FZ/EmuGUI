@@ -411,7 +411,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
-        if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
+        if creNewVhdContent.__contains__(self.comboBox_2.currentText()):
             # For new and existing
             self.lineEdit_2.setEnabled(True)
             self.pushButton_3.setEnabled(True)
@@ -421,7 +421,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.spinBox.setEnabled(True)
             self.comboBox_4.setEnabled(True)
 
-        elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):
+        elif addExistVhdContent.__contains__(self.comboBox_2.currentText()):
             # For new and existing
             self.lineEdit_2.setEnabled(True)
             self.pushButton_3.setEnabled(True)
@@ -431,7 +431,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.spinBox.setEnabled(False)
             self.comboBox_4.setEnabled(False)
 
-        elif noVhdContent.__contains__(self.comboBox_18.currentText()):
+        elif noVhdContent.__contains__(self.comboBox_2.currentText()):
             # For new and existing
             self.lineEdit_2.setEnabled(False)
             self.pushButton_3.setEnabled(False)
