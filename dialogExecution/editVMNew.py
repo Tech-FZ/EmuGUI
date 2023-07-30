@@ -63,6 +63,8 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.comboBox_3.setEnabled(False)
         self.spinBox.setEnabled(False)
         self.comboBox_4.setEnabled(False)
+
+        self.vhdAddingChange()
     
     def langDetect(self):
         select_language = """
@@ -411,7 +413,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
-        if creNewVhdContent.__contains__(self.comboBox_18.currentText()):
+        if creNewVhdContent.__contains__(self.comboBox_2.currentText()):
             # For new and existing
             self.lineEdit_2.setEnabled(True)
             self.pushButton_3.setEnabled(True)
@@ -421,7 +423,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.spinBox.setEnabled(True)
             self.comboBox_4.setEnabled(True)
 
-        elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):
+        elif addExistVhdContent.__contains__(self.comboBox_2.currentText()):
             # For new and existing
             self.lineEdit_2.setEnabled(True)
             self.pushButton_3.setEnabled(True)
@@ -431,7 +433,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.spinBox.setEnabled(False)
             self.comboBox_4.setEnabled(False)
 
-        elif noVhdContent.__contains__(self.comboBox_18.currentText()):
+        elif noVhdContent.__contains__(self.comboBox_2.currentText()):
             # For new and existing
             self.lineEdit_2.setEnabled(False)
             self.pushButton_3.setEnabled(False)
@@ -442,10 +444,23 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.comboBox_4.setEnabled(False)
 
     def vhdBrowseLocation(self):
-        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save/Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+            creNewVhdContent = creNewVhdFile.read()
 
-        if filename:
-            self.lineEdit_2.setText(filename)
+        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+            addExistVhdContent = addExistVhdFile.read()
+
+        if creNewVhdContent.__contains__(self.comboBox_2.currentText()):        
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
+
+        elif addExistVhdContent.__contains__(self.comboBox_2.currentText()):        
+            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_2.setText(filename)
 
     def archChanged(self):
         if self.comboBox.currentText() == "i386" or self.comboBox.currentText() == "amd64":

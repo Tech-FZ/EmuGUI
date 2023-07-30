@@ -15,7 +15,9 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The outdated feature list has been updated.
 - You can now choose the CD controller (IDE, SCSI or Virtio).
 - You can now add two CDs to your VMs (instead of one).
-- There are now bash scripts to start EmuGUI with.
+- There are now bash scripts to start EmuGUI with on Linux.
+- The Open/Save dialogs for VHDs are now correctly separated.
+- A bug regarding VHDs has been fixed.
 
 # EmuGUI v1.2.0.5501_dev "Garuka Pula" (based on v1.2.0.5500_dev)
 

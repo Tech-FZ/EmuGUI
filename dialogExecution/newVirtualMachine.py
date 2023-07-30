@@ -405,11 +405,23 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
     def vhdBrowseLocation(self):
         # This code makes it possible to search a location for your VHD.
+        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+            creNewVhdContent = creNewVhdFile.read()
 
-        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save/Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;All files (*.*)')
+        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+            addExistVhdContent = addExistVhdFile.read()
 
-        if filename:
-            self.lineEdit_6.setText(filename)
+        if creNewVhdContent.__contains__(self.comboBox_18.currentText()):        
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_6.setText(filename)
+
+        elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):        
+            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
+
+            if filename:
+                self.lineEdit_6.setText(filename)
 
     def firstStage(self):
         self.stackedWidget.setCurrentIndex(0)
