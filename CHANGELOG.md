@@ -1,3 +1,22 @@
+# EmuGUI v1.2.0.5502_dev "Garuka Pula" (based on v1.2.0.5501_dev)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.1.4.5411
+
+- As for the last two feature updates, this one gets another codename: "Garuka Pula".
+- The feature to import and export VMs has been added.
+- The readme has been updated with the new system requirements.
+- I think I might have fixed the issue with subprocess.run on Windows.
+- An error dialog is now there.
+- The YouTube and Odysee channels of EmuGUI have been linked in the readme and in the main window under the About tab.
+- The outdated feature list has been updated.
+- You can now choose the CD controller (IDE, SCSI or Virtio).
+- You can now add two CDs to your VMs (instead of one).
+- There are now bash scripts to start EmuGUI with.
+
 # EmuGUI v1.2.0.5501_dev "Garuka Pula" (based on v1.2.0.5500_dev)
 
 ## WARNING
@@ -30,6 +49,16 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The readme has been updated with the new system requirements.
 - I think I might have fixed the issue with subprocess.run on Windows.
 - An error dialog is now there.
+
+# EmuGUI v1.1.4.5412 "Sara Angeline" (based on v1.1.3.5411)
+
+## WARNING
+
+Ubuntu 20.04 LTS and derivates will no longer receive new features on EmuGUI, now you need the latest (LTS) version of your Linux distribution for anything beyond the EmuGUI 1.1.x line. However, you will still receive bugfixes for the EmuGUI 1.1.x line.
+
+## Changes compared to v1.1.3.5411
+
+- A bug was fixed to address the issue in the Edit VM dialog regarding the creation of other VHDs for existing VMs.
 
 # EmuGUI v1.1.3.5411 "Sara Angeline" (based on v1.1.2.5410)
 
