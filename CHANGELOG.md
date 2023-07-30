@@ -18,6 +18,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - There are now bash scripts to start EmuGUI with on Linux.
 - The Open/Save dialogs for VHDs are now correctly separated.
 - A bug regarding VHDs has been fixed.
+- Some more errors are now implemented.
 
 # EmuGUI v1.2.0.5501_dev "Garuka Pula" (based on v1.2.0.5500_dev)
 

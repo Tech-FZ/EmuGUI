@@ -1,19 +1,47 @@
 # Importing required modules
 import os
-import platform
 
-if platform.system() == "Windows":
-    import platformSpecific.windowsSpecific
+try:
+    import platform
 
-else:
-    import platformSpecific.unixSpecific
+    if platform.system() == "Windows":
+        import platformSpecific.windowsSpecific
 
-import sqlite3
-import sys
-from PySide6.QtWidgets import *
-from PySide6 import QtGui
-from PySide6.QtCore import QTimer, QSize
-from uiScripts.ui_Main import Ui_MainWindow
+    else:
+        import platformSpecific.unixSpecific
+
+except:
+    print("EmuGUI encountered a critical error and needs to be closed.")
+    print("Error code: C-07-39KHE")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+    input("Press any key to exit.")
+    exit()
+
+try:
+    import sys
+
+except:
+    print("EmuGUI encountered a critical error and needs to be closed.")
+    print("Error code: C-06-2FZIM")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+    input("Press any key to exit.")
+    exit()
+
+try:
+    from PySide6.QtWidgets import *
+    from PySide6 import QtGui
+    from PySide6.QtCore import QTimer, QSize
+    from uiScripts.ui_Main import Ui_MainWindow
+
+except:
+    print("EmuGUI encountered a critical error and needs to be closed.")
+    print("Error code: C-00-LOVJL")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+    input("Press any key to exit.")
+    exit()
+
+import errors.errCodes
+
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVMNew import EditVMNewDialog
@@ -26,19 +54,36 @@ from dialogExecution.qemuImgError import QemuImgMissing
 from dialogExecution.qemuSysError import QemuSysMissing
 from dialogExecution.icelakeClientDepreciation import IcelakeClientCPUDepreciation
 from dialogExecution.errDialog import ErrDialog
-import errors.errCodes
-import translations.de
-import translations.uk
-import translations.en
-import translations.fr
-import translations.es
-import translations.ro
-import translations.be
-import translations.cz
-import translations.ru
-import translations.pt
-import translations.it
-import locale
+
+try:
+    import translations.de
+    import translations.uk
+    import translations.en
+    import translations.fr
+    import translations.es
+    import translations.ro
+    import translations.be
+    import translations.cz
+    import translations.ru
+    import translations.pt
+    import translations.it
+    import locale
+
+except:
+    print("EmuGUI encountered an error.")
+    print("Error code: E-08-LXG6H")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+
+try:
+    import sqlite3
+
+except:
+    print("EmuGUI encountered a critical error and needs to be closed.")
+    print("Error code: C-03-DR8ZW")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+    input("Press any key to exit.")
+    exit()
+
 import glob
 import webbrowser
 import datetime
