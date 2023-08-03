@@ -20,6 +20,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - A bug regarding VHDs has been fixed.
 - Some more errors are now implemented.
 - You can now choose the HDD controller.
+- A few more errors have been added.
 
 # EmuGUI v1.2.0.5502_dev "Garuka Pula" (based on v1.2.0.5501_dev)
 

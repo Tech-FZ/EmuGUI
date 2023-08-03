@@ -1609,15 +1609,37 @@ class Window(QMainWindow, Ui_MainWindow):
                             break
 
                         else:
-                            dialog = QemuSysMissing(self)
+                            if platform.system() == "Windows":
+                                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                            else:
+                                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                            with open(errorFile, "w+") as errCodeFile:
+                                errCodeFile.write(errors.errCodes.errCodes[17])
+
+                            dialog = ErrDialog(self)
                             dialog.exec()
+                            #dialog = QemuSysMissing(self)
+                            #dialog.exec()
                             break
 
                 elif architecture_of_vm == "ppc" or architecture_of_vm == "aarch64" or architecture_of_vm == "arm":
                     if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
                         if result_settings[i][1] == "":
-                            dialog = QemuSysMissing(self)
+                            if platform.system() == "Windows":
+                                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                            else:
+                                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                            with open(errorFile, "w+") as errCodeFile:
+                                errCodeFile.write(errors.errCodes.errCodes[17])
+
+                            dialog = ErrDialog(self)
                             dialog.exec()
+                            #dialog = QemuSysMissing(self)
+                            #dialog.exec()
                             break
 
                         else:
@@ -1628,8 +1650,19 @@ class Window(QMainWindow, Ui_MainWindow):
                 elif architecture_of_vm == "ppc64" or architecture_of_vm == "mipsel" or architecture_of_vm == "mips":
                     if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
                         if result_settings[i][1] == "":
-                            dialog = QemuSysMissing(self)
+                            if platform.system() == "Windows":
+                                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                            else:
+                                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                            with open(errorFile, "w+") as errCodeFile:
+                                errCodeFile.write(errors.errCodes.errCodes[17])
+
+                            dialog = ErrDialog(self)
                             dialog.exec()
+                            #dialog = QemuSysMissing(self)
+                            #dialog.exec()
                             break
 
                         else:
@@ -1640,8 +1673,19 @@ class Window(QMainWindow, Ui_MainWindow):
                 elif architecture_of_vm == "mips64" or architecture_of_vm == "sparc" or architecture_of_vm == "sparc64":
                     if result_settings[i][0] == f"qemu-system-{architecture_of_vm}":
                         if result_settings[i][1] == "":
-                            dialog = QemuSysMissing(self)
+                            if platform.system() == "Windows":
+                                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                            else:
+                                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                            with open(errorFile, "w+") as errCodeFile:
+                                errCodeFile.write(errors.errCodes.errCodes[17])
+
+                            dialog = ErrDialog(self)
                             dialog.exec()
+                            #dialog = QemuSysMissing(self)
+                            #dialog.exec()
                             break
 
                         else:
@@ -1650,7 +1694,16 @@ class Window(QMainWindow, Ui_MainWindow):
                             break
 
                 else:
-                    dialog = VmIsMadeWithTooYoungEmuGUI(self)
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[32])
+
+                    dialog = ErrDialog(self)
                     dialog.exec()
                     break
 
