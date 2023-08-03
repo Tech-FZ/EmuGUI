@@ -5,5 +5,5 @@ errCodes = [
     "E-05-6KMIV", "E-06-H83GV", "E-05-ZIRBU", "E-05-EXIUG", "W-02-HV8FV",
     "W-02-B2DV5", "W-02-IA8K0", "W-02-33J9X", "W-02-NIHI6", "W-02-I16GC",
     "W-02-R92D2", "W-02-1FPOS", "W-04-XMKJT", "W-09-LQNBZ", "W-09-FQMAL",
-    "N-02-HF2JU", "N-07-NQTUB", "E-02-MXDUW"
+    "N-02-HF2JU", "N-07-NQTUB", "E-02-MXDUW", "E-02-6DN5P", "E-02-YD86J"
     ]
