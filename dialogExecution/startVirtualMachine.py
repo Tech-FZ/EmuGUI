@@ -423,11 +423,33 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                         qemu_cmd = qemu_cmd + f" -drive format=raw,file={self.vmSpecs[5]}"
 
                 else:
-                    if platform.system() == "Windows":
-                        qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
+                    if self.vmSpecs[26] == "Let QEMU decide":
+                        if platform.system() == "Windows":
+                            qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
 
-                    else:
-                        qemu_cmd = qemu_cmd + f" -hda {self.vmSpecs[5]}"
+                        else:
+                            qemu_cmd = qemu_cmd + f" -hda {self.vmSpecs[5]}"
+
+                    elif self.vmSpecs[26] == "IDE":
+                        if platform.system() == "Windows":
+                            qemu_cmd = qemu_cmd + f" -drive file=\"{self.vmSpecs[5]}\",if=ide,media=disk"
+
+                        else:
+                            qemu_cmd = qemu_cmd + f" -drive file={self.vmSpecs[5]},if=ide,media=disk"
+
+                    elif self.vmSpecs[26] == "VirtIO SCSI":
+                        if platform.system() == "Windows":
+                            qemu_cmd = qemu_cmd + f" -device virtio-scsi-pci,id=scsi0 -drive file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0"
+
+                        else:
+                            qemu_cmd = qemu_cmd + f" -device virtio-scsi-pci,id=scsi0 -drive file={self.vmSpecs[5]},if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0"
+
+                    elif self.vmSpecs[26] == "AHCI":
+                        if platform.system() == "Windows":
+                            qemu_cmd = qemu_cmd + f" -drive id=disk,file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
+
+                        else:
+                            qemu_cmd = qemu_cmd + f" -drive id=disk,file={self.vmSpecs[5]},if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
 
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"

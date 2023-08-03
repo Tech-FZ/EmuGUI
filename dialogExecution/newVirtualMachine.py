@@ -647,6 +647,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         
         else:
             cd_control2 = self.comboBox_45.currentText()
+
+        if letQemuDecideVariantsStr.__contains__(self.comboBox_46.currentText()):
+            hda_control = "Let QEMU decide"
+        
+        else:
+            hda_control = self.comboBox_46.currentText()
         
         insert_into_vm_database = f"""
         INSERT INTO virtualmachines (
@@ -675,7 +681,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             kbdtype,
             acceltype,
             storagecontrollercd1,
-            storagecontrollercd2
+            storagecontrollercd2,
+            hdacontrol
         ) VALUES (
             "{self.lineEdit.text()}",
             "{self.comboBox.currentText()}",
@@ -702,7 +709,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{kbdlayout}",
             "{self.comboBox_43.currentText()}",
             "{cd_control1}",
-            "{cd_control2}"
+            "{cd_control2}",
+            "{hda_control}"
         );
         """
 

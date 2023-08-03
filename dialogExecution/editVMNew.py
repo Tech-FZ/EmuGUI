@@ -727,6 +727,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 break
 
             i += 1
+            
+        i = 0
+
+        while i < self.comboBox_46.count():
+            if vmSpecs[26] == "Let QEMU decide":
+                if letQemuDecideContent.__contains__(self.comboBox_46.itemText(i)):
+                    self.comboBox_46.setCurrentIndex(i)
+                    break
+
+            elif self.comboBox_46.itemText(i) == vmSpecs[25]:
+                self.comboBox_46.setCurrentIndex(i)
+                break
+
+            i += 1
         
         return vmSpecs
 
@@ -922,6 +936,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         
         else:
             cd_control2 = self.comboBox_45.currentText()
+
+        if letQemuDecideVariantsStr.__contains__(self.comboBox_46.currentText()):
+            hda_control = "Let QEMU decide"
+        
+        else:
+            hda_control = self.comboBox_46.currentText()
         
         insert_into_vm_database = f"""
         UPDATE virtualmachines
@@ -932,7 +952,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
         kbdtype = "{kbdlayout}", acceltype = "{self.comboBox_22.currentText()}", storagecontrollercd1 = "{cd_control1}",
-        storagecontrollercd2 = "{cd_control2}"
+        storagecontrollercd2 = "{cd_control2}", hdacontrol = "{hda_control}"
         WHERE name = "{self.vmSpecs[0]}";
         """
 

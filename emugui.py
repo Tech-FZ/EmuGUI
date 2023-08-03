@@ -103,8 +103,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.2.0.5502_dev\nCodename 'Garuka Pula'")
-        self.setWindowTitle("EmuGUI v1.2.0.5502_dev (Development Release 3)")
+        self.label_8.setText("EmuGUI v1.2.0.5503_dev\nCodename 'Garuka Pula'")
+        self.setWindowTitle("EmuGUI v1.2.0.5503_dev (Development Release 3)")
         self.languageInUse = "system"
 
         try:
@@ -113,7 +113,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5502
+        self.versionCode = 5503
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -154,7 +154,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.2.0.5502_dev\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.2.0.5503_dev\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
@@ -326,7 +326,8 @@ class Window(QMainWindow, Ui_MainWindow):
             kbdtype TEXT DEFAULT "en-us" NOT NULL,
             acceltype TEXT DEFAULT "None" NOT NULL,
             storagecontrollercd1 TEXT DEFAULT "Let QEMU decide" NOT NULL,
-            storagecontrollercd2 TEXT DEFAULT "Let QEMU decide" NOT NULL
+            storagecontrollercd2 TEXT DEFAULT "Let QEMU decide" NOT NULL,
+            hdacontrol TEXT DEFAULT "Let QEMU decide" NOT NULL
         );
         """
 
@@ -375,6 +376,10 @@ class Window(QMainWindow, Ui_MainWindow):
         # The v1.2 feature set
         select12ColumnsVM = """
         SELECT storagecontrollercd1, storagecontrollercd2 FROM virtualmachines;
+        """
+
+        select12ColumnsVM2 = """
+        SELECT hdacontrol FROM virtualmachines;
         """
 
         insertSoundColVM = """
@@ -445,6 +450,11 @@ class Window(QMainWindow, Ui_MainWindow):
         insertStorageControllerCD2VM = """
         ALTER TABLE virtualmachines
         ADD COLUMN storagecontrollercd2 TEXT DEFAULT "Let QEMU decide" NOT NULL;
+        """
+
+        inserthdaControlVM = """
+        ALTER TABLE virtualmachines
+        ADD COLUMN hdacontrol TEXT DEFAULT "Let QEMU decide" NOT NULL;
         """
 
         insert_qemu_img = """
@@ -1394,6 +1404,27 @@ class Window(QMainWindow, Ui_MainWindow):
                 print(f"The SQLite module encountered an error: {e}.")
 
         try:
+            cursor.execute(select12ColumnsVM2)
+            connection.commit()
+            result = cursor.fetchall()
+
+            try:
+                qemu_img_slot = str(result[0])
+                print("The query was executed successfully. The second v0.3 feature columns already are in the VM table.")
+
+            except:
+                pass
+        
+        except sqlite3.Error as e:
+            try:
+                cursor.execute(inserthdaControlVM)
+                connection.commit()
+                print("The queries were executed successfully. The missing features have been added to the database.")
+            
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+        try:
             cursor.execute(debug_db_settings)
             connection.commit()
             print(cursor.fetchall())
@@ -1460,7 +1491,7 @@ class Window(QMainWindow, Ui_MainWindow):
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
             linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype,
-            storagecontrollercd1, storagecontrollercd2
+            storagecontrollercd1, storagecontrollercd2, hdacontrol
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1496,6 +1527,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 accel_type = result[0][22]
                 cd_control1 = result[0][23]
                 cd_control2 = result[0][24]
+                hda_control = result[0][25]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1534,6 +1566,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(accel_type + "\n")
                     tempVmDefFile.write(cd_control1 + "\n")
                     tempVmDefFile.write(cd_control2 + "\n")
+                    tempVmDefFile.write(hda_control + "\n")
 
             except:
                 if platform.system() == "Windows":
@@ -1659,7 +1692,7 @@ class Window(QMainWindow, Ui_MainWindow):
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
             linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype,
-            storagecontrollercd1, storagecontrollercd2
+            storagecontrollercd1, storagecontrollercd2, hdacontrol
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -1693,6 +1726,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 accel_type = result[0][22]
                 cd_control1 = result[0][23]
                 cd_control2 = result[0][24]
+                hda_control = result[0][25]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -1728,6 +1762,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     vmDefFile.write("hwaccel = " + accel_type + "\n")
                     vmDefFile.write("cdcontrol1 = " + cd_control1 + "\n")
                     vmDefFile.write("cdcontrol2 = " + cd_control2 + "\n")
+                    vmDefFile.write("hdacontrol = " + hda_control + "\n")
 
             except:
                 if platform.system() == "Windows":
@@ -1874,6 +1909,9 @@ class Window(QMainWindow, Ui_MainWindow):
                             elif vmDefLineClean.startswith("cdcontrol2 = "):
                                 vm_data.append(vmDefLineClean.replace("cdcontrol2 = ", ""))
 
+                            elif vmDefLineClean.startswith("hdacontrol = "):
+                                vm_data.append(vmDefLineClean.replace("hdacontrol = ", ""))
+
                     insert_into_vm_database = f"""
                     INSERT INTO virtualmachines (
                         name,
@@ -1901,7 +1939,8 @@ class Window(QMainWindow, Ui_MainWindow):
                         kbdtype,
                         acceltype,
                         storagecontrollercd1,
-                        storagecontrollercd2
+                        storagecontrollercd2,
+                        hdacontrol
                     ) VALUES (
                         "{vm_data[0]}",
                         "{vm_data[1]}",
@@ -1928,7 +1967,8 @@ class Window(QMainWindow, Ui_MainWindow):
                         "{vm_data[19]}",
                         "{vm_data[20]}",
                         "{vm_data[21]}",
-                        "{vm_data[22]}"
+                        "{vm_data[22]}",
+                        "{vm_data[23]}"
         );
         """
                     
@@ -1971,7 +2011,7 @@ class Window(QMainWindow, Ui_MainWindow):
             get_vm_to_start = f"""
             SELECT architecture, machine, cpu, ram, hda, vga, net, usbtablet, win2k, dirbios, additionalargs, sound, linuxkernel,
             linuxinitrid, linuxcmd, mousetype, cores, filebios, keyboardtype, usbsupport, usbcontroller, kbdtype, acceltype,
-            storagecontrollercd1, storagecontrollercd2
+            storagecontrollercd1, storagecontrollercd2, hdacontrol
             FROM virtualmachines WHERE name = '{selectedVM}'
             """
 
@@ -2007,6 +2047,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 accel_type = result[0][22]
                 cd_control1 = result[0][23]
                 cd_control2 = result[0][24]
+                hda_control = result[0][25]
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -2045,6 +2086,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     tempVmDefFile.write(accel_type + "\n")
                     tempVmDefFile.write(cd_control1 + "\n")
                     tempVmDefFile.write(cd_control2 + "\n")
+                    tempVmDefFile.write(hda_control + "\n")
 
             except:
                 if platform.system() == "Windows":
