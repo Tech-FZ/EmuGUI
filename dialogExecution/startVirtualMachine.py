@@ -27,6 +27,8 @@ import translations.ru
 import translations.pt
 import translations.it
 import locale
+import errors.errCodes
+from dialogExecution.errDialog import ErrDialog
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
@@ -40,7 +42,23 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         self.langDetect()
-        self.vmSpecs = self.readTempVmFile()
+
+        try:
+            self.vmSpecs = self.readTempVmFile()
+
+        except:
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[13])
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         print(self.vmSpecs)
         self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
         
@@ -228,7 +246,21 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             
             except:
                 print("Translation can't be figured out. Using English language.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[11])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
                 translations.en.translateStartVmEN(self)
+                
 
     def readTempVmFile(self):
         # Searching temporary files
@@ -480,109 +512,14 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     # generated at runtime. Due to that, the MAC changes every time you
                     # start your virtual machine.
 
+                    mac_possible_chars = "0123456789abcdef"
+
                     mac_gen = []
                     i = 0
 
                     while i < 6:
-                        firstLetter = randint(0, 15)
-                        secondLetter = randint(0, 15)
-
-                        if firstLetter == 0:
-                            firstLetter = "0"
-
-                        elif firstLetter == 1:
-                            firstLetter = "1"
-
-                        elif firstLetter == 2:
-                            firstLetter = "2"
-
-                        elif firstLetter == 3:
-                            firstLetter = "3"
-
-                        elif firstLetter == 4:
-                            firstLetter = "4"
-
-                        elif firstLetter == 5:
-                            firstLetter = "5"
-
-                        elif firstLetter == 6:
-                            firstLetter = "6"
-
-                        elif firstLetter == 7:
-                            firstLetter = "7"
-
-                        elif firstLetter == 8:
-                            firstLetter = "8"
-
-                        elif firstLetter == 9:
-                            firstLetter = "9"
-
-                        elif firstLetter == 10:
-                            firstLetter = "a"
-
-                        elif firstLetter == 11:
-                            firstLetter = "b"
-
-                        elif firstLetter == 12:
-                            firstLetter = "c"
-
-                        elif firstLetter == 13:
-                            firstLetter = "d"
-
-                        elif firstLetter == 14:
-                            firstLetter = "e"
-
-                        elif firstLetter == 15:
-                            firstLetter = "f"
-
-                        if secondLetter == 0:
-                            secondLetter = "0"
-
-                        elif secondLetter == 1:
-                            secondLetter = "1"
-
-                        elif secondLetter == 2:
-                            secondLetter = "2"
-
-                        elif secondLetter == 3:
-                            secondLetter = "3"
-
-                        elif secondLetter == 4:
-                            secondLetter = "4"
-
-                        elif secondLetter == 5:
-                            secondLetter = "5"
-
-                        elif secondLetter == 6:
-                            secondLetter = "6"
-
-                        elif secondLetter == 7:
-                            secondLetter = "7"
-
-                        elif secondLetter == 8:
-                            secondLetter = "8"
-
-                        elif secondLetter == 9:
-                            secondLetter = "9"
-
-                        elif secondLetter == 10:
-                            secondLetter = "a"
-
-                        elif secondLetter == 11:
-                            secondLetter = "b"
-
-                        elif secondLetter == 12:
-                            secondLetter = "c"
-
-                        elif secondLetter == 13:
-                            secondLetter = "d"
-
-                        elif secondLetter == 14:
-                            secondLetter = "e"
-
-                        elif secondLetter == 15:
-                            secondLetter = "f"
-
+                        firstLetter = mac_possible_chars[randint(0, 15)]
+                        secondLetter = mac_possible_chars[randint(0, 15)]
                         mac_part = firstLetter + secondLetter
                         mac_gen.append(mac_part)
                         i += 1

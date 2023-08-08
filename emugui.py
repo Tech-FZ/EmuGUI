@@ -1845,6 +1845,18 @@ class Window(QMainWindow, Ui_MainWindow):
                 else:
                     print("Export failed!")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[33])
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
@@ -1884,8 +1896,22 @@ class Window(QMainWindow, Ui_MainWindow):
                     else:
                         tempVmDef = platformSpecific.unixSpecific.unixExportFile()
 
-                    zip_vm_file.extract(content_name, tempVmDef)
-                    vm_data = []
+                    try:
+                        zip_vm_file.extract(content_name, tempVmDef)
+                        vm_data = []
+
+                    except:
+                        if platform.system() == "Windows":
+                            errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                        else:
+                            errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                        with open(errorFile, "w+") as errCodeFile:
+                            errCodeFile.write(errors.errCodes.errCodes[34])
+
+                        dialog = ErrDialog(self)
+                        dialog.exec()
 
                     with open(tempVmDef + "/vmdef.txt", "r+") as vmDefFile:
                         vmDefContent = vmDefFile.readlines()
@@ -2041,6 +2067,18 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[35])
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
     def editVM(self):
         # Of course, this code prepares the dialog for editing VMs.
 
@@ -2105,6 +2143,18 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
             if platform.system() == "Windows":
                 tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
         
@@ -2149,7 +2199,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     errorFile = platformSpecific.unixSpecific.unixErrorFile()
 
                 with open(errorFile, "w+") as errCodeFile:
-                    errCodeFile.write(errors.errCodes.errCodes[12])
+                    errCodeFile.write(errors.errCodes.errCodes[36])
 
                 dialog = ErrDialog(self)
                 dialog.exec()
