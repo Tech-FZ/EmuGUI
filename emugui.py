@@ -90,6 +90,16 @@ import datetime
 import dateutil.easter
 import zipfile
 
+try:
+    import psutil
+
+except:
+    print("EmuGUI has to warn you.")
+    print("Error code: W-06-NPGOP")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+    input("Press any key to exit.")
+    exit()
+
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         # This function initializes and runs EmuGUI
@@ -103,8 +113,21 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        self.label_8.setText("EmuGUI v1.2.0.5503_dev\nCodename 'Garuka Pula'")
-        self.setWindowTitle("EmuGUI v1.2.0.5503_dev (Development Release 3)")
+        print("EmuGUI 1.2.0.5504_dev")
+
+        print(f"Current date: {datetime.date.today()}")
+
+        print(f"OS: {platform.uname().system} {platform.uname().release}, Version {platform.uname().version}")
+        try:
+            print(f"CPU: {str(os.cpu_count())}x {platform.uname().processor} @{round((psutil.cpu_freq().max / 1024), 2)} GHz ({platform.machine()})")
+            print(f"RAM: {psutil.virtual_memory().total} bytes ({round((psutil.virtual_memory().total / 1024 / 1024 / 1024), 2)} GB)")
+        
+        except:
+            print(f"CPU: {str(os.cpu_count())}x {platform.uname().processor} ({platform.machine()})")
+
+        print(f"Python: {platform.python_version()} {platform.python_branch()}, compiled with {platform.python_compiler()}")
+        self.label_8.setText("EmuGUI v1.2.0.5504_dev\nCodename 'Garuka Pula'")
+        self.setWindowTitle("EmuGUI v1.2.0.5504_dev (Development Release 5)")
         self.languageInUse = "system"
 
         try:
@@ -113,7 +136,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5503
+        self.versionCode = 5504
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -154,7 +177,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.2.0.5503_dev\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI v1.2.0.5504_dev\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
@@ -1454,7 +1477,16 @@ class Window(QMainWindow, Ui_MainWindow):
             while i < len(result):
                 if result[i][0] == "qemu-img":
                     if result[i][1] == "":
-                        dialog = QemuImgMissing(self)
+                        if platform.system() == "Windows":
+                            errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                        else:
+                            errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                        with open(errorFile, "w+") as errCodeFile:
+                            errCodeFile.write(errors.errCodes.errCodes[18])
+
+                        dialog = ErrDialog(self)
                         dialog.exec()
 
                     else:
@@ -1582,16 +1614,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
 
             if usbtablet_wanted == 1:
-                dialog3 = UsbTabletDepreciated(self)
-                dialog3.exec()
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+    
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[30])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             if os_is_win2k == 1:
-                dialog3 = Win2KDepreciated(self)
-                dialog3.exec()
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+    
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[30])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             if cpu_of_vm == "Icelake-Client":
-                dialog3 = IcelakeClientCPUDepreciation(self)
-                dialog3.exec()
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+    
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[30])
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             if selectedVM == "Tic Tac Py":
                 print("Let's respect Tic Tac Py, the first program released to the public by Nicolas Lucien.")
@@ -2209,7 +2268,16 @@ class Window(QMainWindow, Ui_MainWindow):
             while i < len(result_settings):
                 if result_settings[i][0] == "qemu-img":
                     if result_settings[i][1] == "":
-                        dialog = QemuImgMissing(self)
+                        if platform.system() == "Windows":
+                            errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                        else:
+                            errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                        with open(errorFile, "w+") as errCodeFile:
+                            errCodeFile.write(errors.errCodes.errCodes[18])
+
+                        dialog = ErrDialog(self)
                         dialog.exec()
 
                     else:
