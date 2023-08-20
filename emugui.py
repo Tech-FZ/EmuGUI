@@ -89,6 +89,8 @@ import webbrowser
 import datetime
 import dateutil.easter
 import zipfile
+import errors.logman
+import errors.logID
 
 try:
     import psutil
@@ -113,7 +115,12 @@ class Window(QMainWindow, Ui_MainWindow):
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
-        print("EmuGUI 1.2.0.5504_dev")
+        logman = errors.logman.LogMan()
+        logman.generateLogID()
+        logman.logFile = logman.setLogFile()
+        self.version = "1.2.0.5504_dev"
+
+        print(f"EmuGUI {self.version}")
 
         print(f"Current date: {datetime.date.today()}")
 
@@ -126,8 +133,47 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"CPU: {str(os.cpu_count())}x {platform.uname().processor} ({platform.machine()})")
 
         print(f"Python: {platform.python_version()} {platform.python_branch()}, compiled with {platform.python_compiler()}")
-        self.label_8.setText("EmuGUI v1.2.0.5504_dev\nCodename 'Garuka Pula'")
-        self.setWindowTitle("EmuGUI v1.2.0.5504_dev (Development Release 5)")
+
+        logman.writeToLogFile(f"{errors.errCodes.errCodes[38]}: Running EmuGUI {self.version}")
+
+        if self.version.__contains__("_dev") or self.version.__contains__("_rc") or self.version.__contains__("_b"):
+            logman.writeToLogFile(f"{errors.errCodes.errCodes[39]}: This version is a pre-release. Don't use it for production")
+
+        logman.writeToLogFile(
+            f"{errors.errCodes.errCodes[40]}: Device powered by {platform.uname().system} {platform.uname().release}, Version {platform.uname().version}"
+            )
+        
+        logman.writeToLogFile(
+            f"{errors.errCodes.errCodes[41]}: EmuGUI powered by Python {platform.python_version()} {platform.python_branch()}, compiled with {platform.python_compiler()}"
+            )
+        
+        logman.writeToLogFile(
+            f"{errors.errCodes.errCodes[42]}: CPU is {str(os.cpu_count())}x {platform.uname().processor} @{round((psutil.cpu_freq().max / 1024), 2)} GHz ({platform.machine()})"
+            )
+        
+        if os.cpu_count() == 1:
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[43]}: Single-core CPU detected! Proceed at your own risk. Support requests won't be prioritised."
+                )
+            
+        logman.writeToLogFile(
+            f"{errors.errCodes.errCodes[44]}: Device contains {psutil.virtual_memory().total} bytes of RAM"
+            )
+        
+        if round(psutil.virtual_memory().total / (1024 * 3), 2) < 3.84: # Ik, should be 4, but I defined 3.84 GB bc of most PC's habits of taking some RAM away
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[45]}: Less than 4 GB of RAM detected! Proceed at your own risk. Support requests won't be prioritised."
+                )
+            
+        if platform.system() == "Windows":
+            winvers = sys.getwindowsversion()
+            if winvers.build >= 21296 and round(psutil.virtual_memory().total / (1024 * 3), 2) < 5.84:
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[46]}: Less than 6 GB of RAM detected! As you're using Windows 11, proceed at your own risk. Support requests won't be prioritised."
+                    )
+
+        self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Garuka Pula'")
+        self.setWindowTitle(f"EmuGUI {self.version} (Development Release 5)")
         self.languageInUse = "system"
 
         try:
@@ -177,7 +223,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI v1.2.0.5504_dev\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI {self.version}\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
@@ -694,6 +740,8 @@ class Window(QMainWindow, Ui_MainWindow):
         """
 
         cursor = connection.cursor()
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
 
         # If they don't exist yet, the settings and VM tables are created.
 
@@ -714,6 +762,10 @@ class Window(QMainWindow, Ui_MainWindow):
             with open(errorFile, "w+") as errCodeFile:
                 errCodeFile.write(errors.errCodes.errCodes[2])
 
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to create the settings table."
+                )
+
             dialog = ErrDialog(self)
             dialog.exec()
 
@@ -724,6 +776,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to create the VM table."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(create_update_table)
@@ -753,6 +821,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-img slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_i386)
             connection.commit()
@@ -770,6 +854,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-i386 slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(select_qemu_x86_64)
@@ -789,6 +889,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-x86_64 slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_ppc)
             connection.commit()
@@ -806,6 +922,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-ppc slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(select_qemu_ppc64)
@@ -825,6 +957,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-ppc64 slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_mips64el)
             connection.commit()
@@ -842,6 +990,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-mips64el slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(select_qemu_mips64)
@@ -861,6 +1025,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-mips64 slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_mipsel)
             connection.commit()
@@ -878,6 +1058,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-mipsel slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(select_qemu_mips)
@@ -897,6 +1093,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-mips slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_aarch64)
             connection.commit()
@@ -914,6 +1126,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-aarch64 slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(select_qemu_arm)
@@ -933,6 +1161,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-arm slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_sparc)
             connection.commit()
@@ -951,6 +1195,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-sparc slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select_qemu_sparc64)
             connection.commit()
@@ -968,6 +1228,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-sparc64 slot."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(select_language)
@@ -1509,6 +1785,8 @@ class Window(QMainWindow, Ui_MainWindow):
 
         connection = self.connection
         cursor = connection.cursor()
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
 
         try:
             cursor.execute(debug_db_settings)
@@ -1623,6 +1901,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 with open(errorFile, "w+") as errCodeFile:
                     errCodeFile.write(errors.errCodes.errCodes[30])
 
+                logman.writeToLogFile(f"{errors.errCodes.errCodes[30]}: Depreciated feature: USB Tablet Checkbox (replaced by a combobox)")
                 dialog = ErrDialog(self)
                 dialog.exec()
 
@@ -1636,6 +1915,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 with open(errorFile, "w+") as errCodeFile:
                     errCodeFile.write(errors.errCodes.errCodes[30])
 
+                logman.writeToLogFile(f"{errors.errCodes.errCodes[30]}: Depreciated feature: Windows 2000 Hack (became obsolete)")
                 dialog = ErrDialog(self)
                 dialog.exec()
 
@@ -1649,13 +1929,9 @@ class Window(QMainWindow, Ui_MainWindow):
                 with open(errorFile, "w+") as errCodeFile:
                     errCodeFile.write(errors.errCodes.errCodes[30])
 
+                logman.writeToLogFile(f"{errors.errCodes.errCodes[30]}: Depreciated feature: Icelake-Client CPU (absent since QEMU 7.1)")
                 dialog = ErrDialog(self)
                 dialog.exec()
-
-            if selectedVM == "Tic Tac Py":
-                print("Let's respect Tic Tac Py, the first program released to the public by Nicolas Lucien.")
-                print("RIP Tic Tac Py")
-                print("2021-2022")
 
             i = 0
 

@@ -55,3 +55,10 @@ def windowsErrorFile():
     fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\error.txt"
         
     return fileName
+
+def windowsLogFile(logID):
+    userName = os.getlogin()
+
+    fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\log-{logID}.txt"
+        
+    return fileName

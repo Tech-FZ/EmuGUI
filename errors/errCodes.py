@@ -6,5 +6,7 @@ errCodes = [
     "W-02-B2DV5", "W-02-IA8K0", "W-02-33J9X", "W-02-NIHI6", "W-02-I16GC", # 20, 21, 22, 23, 24
     "W-02-R92D2", "W-02-1FPOS", "W-04-XMKJT", "W-09-LQNBZ", "W-09-FQMAL", # 25, 26, 27, 28, 29
     "N-02-HF2JU", "N-07-NQTUB", "E-02-MXDUW", "E-02-6DN5P", "E-02-YD86J", # 30, 31, 32, 33, 34
-    "E-02-HCINV", "E-02-G6YDW", "W-06-NPGOP" # 35, 36, 37
+    "E-02-HCINV", "E-02-G6YDW", "W-06-NPGOP", "G-10-SIYNK", "N-10-CKDQC", # 35, 36, 37, 38, 39
+    "G-07-FI8W5", "G-10-YOHYF", "G-10-2CNMV", "N-10-64SJ5", "G-10-8NHE8", # 40, 41, 42, 43, 44
+    "N-10-Z4PFZ", "N-07-QULXB" # 45, 46
     ]

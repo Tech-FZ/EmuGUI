@@ -123,3 +123,18 @@ def unixErrorFile():
         fileName = f"/home/{userName}/EmuGUI/error.txt"
         
     return fileName
+
+def unixLogFile(logID):
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())[0]
+
+    if userName == "root":
+        fileName = f"/{userName}/EmuGUI/log-{logID}.txt"
+
+    else:
+        fileName = f"/home/{userName}/EmuGUI/log-{logID}.txt"
+        
+    return fileName

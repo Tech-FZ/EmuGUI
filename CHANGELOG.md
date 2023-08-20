@@ -24,6 +24,8 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - System information is now being retrieved.
 - The readme has been updated.
 - The messages in the main script have been updated.
+- I'm now working on a logging system.
+- An easteregg has been removed because it wasn't telling the truth anymore.
 
 # EmuGUI v1.2.0.5503_dev "Garuka Pula" (based on v1.2.0.5502_dev)
 
