@@ -121,7 +121,7 @@ For the update checker, a version code is being used instead of the number. Here
 8. After that is done, type: `python -m venv your-venv-name` OUTSIDE of the code folder. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances.
 9. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic-bin requests python-dateutil`
+11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PyQt6 PyQt6-tools PySide6 python-magic-bin requests python-dateutil psutil`
 12. After this is done, run the main.py script.
 13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 14. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -142,7 +142,7 @@ For the update checker, a version code is being used instead of the number. Here
 10. After that is done, type: `python -m venv your-venv-name`. OUTSIDE of the code folder. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances.
 11. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic-bin requests python-dateutil`
+13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic-bin requests python-dateutil psutil`
 14. After this is done, run the main.py script.
 15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 16. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -160,7 +160,7 @@ For the update checker, a version code is being used instead of the number. Here
 7. Open Visual Studio Code in that folder.
 8. Open Anaconda Navigator and create a new virtual environment.
 9. Open the venv in VS Code and try to run a Python script with it.
-10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6 requests python-dateutil`
+10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6 requests python-dateutil psutil`
 11. After this is done, run the main.py script.
 12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 13. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -179,7 +179,7 @@ For the update checker, a version code is being used instead of the number. Here
 8. After that is done, type: `python3 -m venv your-venv-name`. OUTSIDE of the code folder. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
 9. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil`
+11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil`
 12. After this is done, run the main.py script.
 13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile emugui.py` (for those who can get a VENV to work) or `python3 -m PyInstaller --onefile emugui.py`
 14. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -200,7 +200,7 @@ For the update checker, a version code is being used instead of the number. Here
 10. After that is done, type: `python3 -m venv your-venv-name`. OUTSIDE of the code folder. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
 11. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
 12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil`
+13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil`
 14. After this is done, run the main.py script.
 15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 16. After that is finished, copy the code into the dist folder PyInstaller created.
@@ -218,7 +218,7 @@ For the update checker, a version code is being used instead of the number. Here
 7. Open Visual Studio Code in that folder.
 8. Open Anaconda Navigator and create a new virtual environment.
 9. Open the venv in VS Code and try to run a Python script with it.
-10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic PyQt6 requests python-dateutil`
+10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic PyQt6 requests python-dateutil psutil`
 11. After this is done, run the main.py script.
 12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
 13. After that is finished, copy the code into the dist folder PyInstaller created.

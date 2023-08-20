@@ -22,6 +22,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - You can now choose the HDD controller.
 - The MAC address generator is now taking up a lot less lines of code.
 - System information is now being retrieved.
+- The readme has been updated.
 
 # EmuGUI v1.2.0.5503_dev "Garuka Pula" (based on v1.2.0.5502_dev)
 
