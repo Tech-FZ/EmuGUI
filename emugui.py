@@ -700,7 +700,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(create_settings_table)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The settings table was created successfully.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -720,7 +720,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(create_vm_table)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The VM table was created successfully.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -728,7 +728,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(create_update_table)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The update table was created successfully.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -815,12 +815,12 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 qemu_img_slot = str(result[0])
                 self.lineEdit_8.setText(result[0][1])
-                print("The query was executed successfully. The qemu-system-ppc slot already is in the database.")
+                print("The query was executed successfully. The qemu-system-ppc64 slot already is in the database.")
 
             except:
                 cursor.execute(insert_qemu_ppc64)
                 connection.commit()
-                print("The query was executed successfully. The qemu-system-ppc slot has been created.")
+                print("The query was executed successfully. The qemu-system-ppc64 slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -851,12 +851,12 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 qemu_img_slot = str(result[0])
                 self.lineEdit_11.setText(result[0][1])
-                print("The query was executed successfully. The qemu-system-mips64el slot already is in the database.")
+                print("The query was executed successfully. The qemu-system-mips64 slot already is in the database.")
 
             except:
                 cursor.execute(insert_qemu_mips64)
                 connection.commit()
-                print("The query was executed successfully. The qemu-system-mips64el slot has been created.")
+                print("The query was executed successfully. The qemu-system-mips64 slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -869,12 +869,12 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 qemu_img_slot = str(result[0])
                 self.lineEdit_9.setText(result[0][1])
-                print("The query was executed successfully. The qemu-system-mips64el slot already is in the database.")
+                print("The query was executed successfully. The qemu-system-mipsel slot already is in the database.")
 
             except:
                 cursor.execute(insert_qemu_mipsel)
                 connection.commit()
-                print("The query was executed successfully. The qemu-system-mips64el slot has been created.")
+                print("The query was executed successfully. The qemu-system-mipsel slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -887,12 +887,12 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 qemu_img_slot = str(result[0])
                 self.lineEdit_10.setText(result[0][1])
-                print("The query was executed successfully. The qemu-system-mips64el slot already is in the database.")
+                print("The query was executed successfully. The qemu-system-mips slot already is in the database.")
 
             except:
                 cursor.execute(insert_qemu_mips)
                 connection.commit()
-                print("The query was executed successfully. The qemu-system-mips64el slot has been created.")
+                print("The query was executed successfully. The qemu-system-mips slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -941,12 +941,12 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 qemu_img_slot = str(result[0])
                 self.lineEdit_12.setText(result[0][1])
-                print("The query was executed successfully. The qemu-system-arm slot already is in the database.")
+                print("The query was executed successfully. The qemu-system-sparc slot already is in the database.")
 
             except:
                 cursor.execute(insert_qemu_sparc)
                 connection.commit()
-                print("The query was executed successfully. The qemu-system-arm slot has been created.")
+                print("The query was executed successfully. The qemu-system-sparc slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -959,12 +959,12 @@ class Window(QMainWindow, Ui_MainWindow):
             try:
                 qemu_img_slot = str(result[0])
                 self.lineEdit_13.setText(result[0][1])
-                print("The query was executed successfully. The qemu-system-arm slot already is in the database.")
+                print("The query was executed successfully. The qemu-system-sparc64 slot already is in the database.")
 
             except:
                 cursor.execute(insert_qemu_sparc64)
                 connection.commit()
-                print("The query was executed successfully. The qemu-system-arm slot has been created.")
+                print("The query was executed successfully. The qemu-system-sparc64 slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -1409,7 +1409,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             try:
                 qemu_img_slot = str(result[0])
-                print("The query was executed successfully. The second v0.3 feature columns already are in the VM table.")
+                print("The query was executed successfully. The first v1.2 feature columns already are in the VM table.")
 
             except:
                 pass
@@ -1433,7 +1433,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             try:
                 qemu_img_slot = str(result[0])
-                print("The query was executed successfully. The second v0.3 feature columns already are in the VM table.")
+                print("The query was executed successfully. The second v1.2 feature columns already are in the VM table.")
 
             except:
                 pass
@@ -2471,7 +2471,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_img_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-img slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2479,7 +2479,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_i386_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-i386 slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2487,7 +2487,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_x86_64_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-x86_64 slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2495,7 +2495,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_ppc_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-ppc slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2503,7 +2503,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_ppc64_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-ppc64 slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2511,7 +2511,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_mips64el_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-mips64el slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2519,7 +2519,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_mipsel_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-mipsel slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2527,7 +2527,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_mips64_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-mips64 slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2535,7 +2535,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_mips_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-mips slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2543,7 +2543,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_aarch64_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-aarch64 slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2551,7 +2551,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_arm_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-arm slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2559,7 +2559,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_sparc_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-sparc slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -2567,7 +2567,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(qemu_sparc64_update)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The qemu-system-sparc64 slot was updated successfully.")
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -3197,7 +3197,7 @@ class Window(QMainWindow, Ui_MainWindow):
             while i < len(result):
                 try:
                     entries.append(str(result[i][0]))
-                    print("The query was executed successfully.")
+                    print("The VM list was updated successfully.")
 
                 except:
                     pass
@@ -3229,7 +3229,7 @@ class Window(QMainWindow, Ui_MainWindow):
         try:
             cursor.execute(get_vm_to_start)
             connection.commit()
-            print("The query was executed successfully.")
+            print("The VM was deleted successfully.")
             self.updateVmList()
 
         except sqlite3.Error as e:
