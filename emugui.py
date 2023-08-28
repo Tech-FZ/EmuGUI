@@ -1953,6 +1953,8 @@ class Window(QMainWindow, Ui_MainWindow):
                             with open(errorFile, "w+") as errCodeFile:
                                 errCodeFile.write(errors.errCodes.errCodes[17])
 
+                            logman.writeToLogFile(f"{errors.errCodes.errCodes[17]}: The QEMU emulator for {architecture_of_vm} could not be found.")
+
                             dialog = ErrDialog(self)
                             dialog.exec()
                             #dialog = QemuSysMissing(self)
@@ -1970,6 +1972,8 @@ class Window(QMainWindow, Ui_MainWindow):
 
                             with open(errorFile, "w+") as errCodeFile:
                                 errCodeFile.write(errors.errCodes.errCodes[17])
+
+                            logman.writeToLogFile(f"{errors.errCodes.errCodes[17]}: The QEMU emulator for {architecture_of_vm} could not be found.")
 
                             dialog = ErrDialog(self)
                             dialog.exec()
@@ -1994,6 +1998,8 @@ class Window(QMainWindow, Ui_MainWindow):
                             with open(errorFile, "w+") as errCodeFile:
                                 errCodeFile.write(errors.errCodes.errCodes[17])
 
+                            logman.writeToLogFile(f"{errors.errCodes.errCodes[17]}: The QEMU emulator for {architecture_of_vm} could not be found.")
+                            
                             dialog = ErrDialog(self)
                             dialog.exec()
                             #dialog = QemuSysMissing(self)
@@ -2017,6 +2023,8 @@ class Window(QMainWindow, Ui_MainWindow):
                             with open(errorFile, "w+") as errCodeFile:
                                 errCodeFile.write(errors.errCodes.errCodes[17])
 
+                            logman.writeToLogFile(f"{errors.errCodes.errCodes[17]}: The QEMU emulator for {architecture_of_vm} could not be found.")
+                            
                             dialog = ErrDialog(self)
                             dialog.exec()
                             #dialog = QemuSysMissing(self)
@@ -2038,6 +2046,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     with open(errorFile, "w+") as errCodeFile:
                         errCodeFile.write(errors.errCodes.errCodes[32])
 
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[32]}: This VM is not supported by this version of EmuGUI. Please upgrade to a later version."
+                        )
+
                     dialog = ErrDialog(self)
                     dialog.exec()
                     break
@@ -2056,6 +2068,10 @@ class Window(QMainWindow, Ui_MainWindow):
             with open(errorFile, "w+") as errCodeFile:
                 errCodeFile.write(errors.errCodes.errCodes[12])
 
+            logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[12]}: The database could not be accessed. SQLite describes the error as follows: \"{e}\""
+                        )
+
             dialog = ErrDialog(self)
             dialog.exec()
 
@@ -2066,6 +2082,8 @@ class Window(QMainWindow, Ui_MainWindow):
 
         connection = self.connection
         cursor = connection.cursor()
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
 
         try:
             cursor.execute(debug_db_settings)
@@ -2189,6 +2207,10 @@ class Window(QMainWindow, Ui_MainWindow):
                     with open(errorFile, "w+") as errCodeFile:
                         errCodeFile.write(errors.errCodes.errCodes[33])
 
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[33]}: This VM could not be exported. Please check its settings."
+                        )
+
                     dialog = ErrDialog(self)
                     dialog.exec()
 
@@ -2196,6 +2218,9 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def importVM(self):
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
+
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Import VM file', dir='.', filter='ZIP file (*.zip);;All files (*.*)')
 
         if filename:
@@ -2411,11 +2436,17 @@ class Window(QMainWindow, Ui_MainWindow):
             with open(errorFile, "w+") as errCodeFile:
                 errCodeFile.write(errors.errCodes.errCodes[35])
 
+            logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[35]}: The database could not be accessed, meaning the export failed. SQLite describes the error as follows: \"{e}\""
+                        )
+
             dialog = ErrDialog(self)
             dialog.exec()
 
     def editVM(self):
         # Of course, this code prepares the dialog for editing VMs.
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
 
         debug_db_settings = """
         SELECT name, value FROM settings;
@@ -2487,6 +2518,10 @@ class Window(QMainWindow, Ui_MainWindow):
                 with open(errorFile, "w+") as errCodeFile:
                     errCodeFile.write(errors.errCodes.errCodes[12])
 
+                logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[12]}: The database could not be accessed. SQLite describes the error as follows: \"{e}\""
+                        )
+
                 dialog = ErrDialog(self)
                 dialog.exec()
 
@@ -2535,6 +2570,10 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 with open(errorFile, "w+") as errCodeFile:
                     errCodeFile.write(errors.errCodes.errCodes[36])
+
+                logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[36]}: The temporary VM definition file couldn't be written. Please check the permissions."
+                        )
 
                 dialog = ErrDialog(self)
                 dialog.exec()
