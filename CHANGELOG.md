@@ -1,3 +1,13 @@
+# EmuGUI v1.1.5.5413 "Sara Angeline" (based on v1.1.4.5412)
+
+## WARNING
+
+Ubuntu 20.04 LTS and derivates will no longer receive new features on EmuGUI, now you need the latest (LTS) version of your Linux distribution for anything beyond the EmuGUI 1.1.x line. However, you will still receive bugfixes for the EmuGUI 1.1.x line.
+
+## Changes compared to v1.1.4.5412
+
+- A bug which turned out to let EmuGUI utilise Portuguese when it should utilise Italian has been fixed. Thanks for reporting it, OSBetaEAC.
+
 # EmuGUI v1.1.4.5412 "Sara Angeline" (based on v1.1.3.5411)
 
 ## WARNING
