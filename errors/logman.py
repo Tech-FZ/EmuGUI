@@ -32,6 +32,14 @@ class LogMan:
         return logFile
 
     def writeToLogFile(self, text):
-        with open(self.logFile, "a+") as logger:
-            logger.write(
-                datetime.datetime.now().strftime("%Y-%m-%d, %H:%M:%S") + " " + text + "\n")
+        try:
+            with open(self.logFile, "a+") as logger:
+                logger.write(
+                    datetime.datetime.now().strftime("%Y-%m-%d, %H:%M:%S") + " " + text + "\n")
+                
+        except:
+            if platform.system() == "Windows":
+                platformSpecific.windowsSpecific.windowsCreEmuGUIFolder()
+
+            else:
+                platformSpecific.unixSpecific.unixCreEmuGUIFolder()

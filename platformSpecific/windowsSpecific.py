@@ -13,7 +13,7 @@ def setupWindowsBackend():
         print(f"The SQLite module encountered an error: {e}. Trying to create the file.")
 
         try:
-            os.mkdir(f"C:\\Users\\{userName}\\Documents\\EmuGUI")
+            windowsCreEmuGUIFolder()
             file = open(f"C:\\Users\\{userName}\\Documents\\EmuGUI\\virtual_machines.sqlite", "w+")
             file.close()
         
@@ -62,3 +62,7 @@ def windowsLogFile(logID):
     fileName = f"C:\\Users\\{userName}\\Documents\\EmuGUI\\log-{logID}.txt"
         
     return fileName
+
+def windowsCreEmuGUIFolder():
+    userName = os.getlogin()
+    os.mkdir(f"C:\\Users\\{userName}\\Documents\\EmuGUI")

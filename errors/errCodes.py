@@ -8,5 +8,5 @@ errCodes = [
     "N-02-HF2JU", "N-07-NQTUB", "E-02-MXDUW", "E-02-6DN5P", "E-02-YD86J", # 30, 31, 32, 33, 34
     "E-02-HCINV", "E-02-G6YDW", "W-06-NPGOP", "G-10-SIYNK", "N-10-CKDQC", # 35, 36, 37, 38, 39
     "G-07-FI8W5", "G-10-YOHYF", "G-10-2CNMV", "N-10-64SJ5", "G-10-8NHE8", # 40, 41, 42, 43, 44
-    "N-10-Z4PFZ", "N-07-QULXB" # 45, 46
+    "N-10-Z4PFZ", "N-07-QULXB", "E-02-VU8M1" # 45, 46, 47
     ]

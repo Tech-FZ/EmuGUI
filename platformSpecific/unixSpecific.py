@@ -24,13 +24,13 @@ def setupUnixBackend():
         print(f"The SQLite module encountered an error: {e}. Trying to create the file.")
 
         try:
+            unixCreEmuGUIFolder()
+
             if userName == "root":
-                os.mkdir(f"/{userName}/EmuGUI")
                 file = open(f"/{userName}/EmuGUI/virtual_machines.sqlite", "w+")
                 file.close()
 
             else:
-                os.mkdir(f"/home/{userName}/EmuGUI")
                 file = open(f"/home/{userName}/EmuGUI/virtual_machines.sqlite", "w+")
                 file.close()
         
@@ -138,3 +138,16 @@ def unixLogFile(logID):
         fileName = f"/home/{userName}/EmuGUI/log-{logID}.txt"
         
     return fileName
+
+def unixCreEmuGUIFolder():
+    try:
+        userName = os.getlogin()
+    
+    except:
+        userName = pwd.getpwuid(os.getuid())[0]
+
+    if userName == "root":
+        os.mkdir(f"/root/EmuGUI")
+
+    else:
+        os.mkdir(f"/home/{userName}/EmuGUI")

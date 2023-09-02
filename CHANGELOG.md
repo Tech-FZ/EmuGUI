@@ -31,6 +31,10 @@ You now need the latest version of your Linux distribution or at least Windows 1
 
 - A bug which turned out to let EmuGUI utilise Portuguese when it should utilise Italian has been fixed. Thanks for reporting it, OSBetaEAC.
 
+## Fixes for features coming with EmuGUI 1.2
+
+- The EmuGUI folder issue is now fixed.
+
 # EmuGUI v1.2.0.5504_dev "Garuka Pula" (based on v1.2.0.5503_dev)
 
 ## WARNING
