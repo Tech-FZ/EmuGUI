@@ -26,6 +26,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The messages in the main script have been updated.
 - I'm now working on a logging system.
 - An easteregg has been removed because it wasn't telling the truth anymore.
+- Translations have been updated.
 
 ## Foreported fixes from 1.1.5
 

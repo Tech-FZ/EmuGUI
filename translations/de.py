@@ -10,6 +10,8 @@ def translateMainDE(window):
     window.pushButton_9.setText("Virtuelle Maschine starten") # Start virtual machine
     window.pushButton_10.setText("Ausgewählte virtuelle Maschine bearbeiten") # Edit selected virtual machine
     window.pushButton_11.setText("Ausgewählte virtuelle Maschine löschen") # Delete selected virtual machine
+    window.pushButton_22.setText("Ausgewählte virtuelle Maschine exportieren") # Export selected virtual machine
+    window.pushButton_23.setText("Virtuelle Maschine importieren") # Import virtual machine
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Allgemein") # General
@@ -286,6 +288,16 @@ def translateNewVmDE(window):
     window.label_13.setText("VHD-Ort") # VHD path
     window.label_14.setText("VHD-Dateiformat") # VHD file format
     window.label_15.setText("Maximale Größe") # Maximum size
+    window.label_73.setText("HDD-Controller") # HDD controller
+
+    i = 0
+
+    while i < window.comboBox_46.count():
+        if window.comboBox_46.itemText(i) == "Let QEMU decide" or window.comboBox_46.itemText(i) == "QEMU überlassen":
+            window.comboBox_46.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
 
     window.comboBox_8.setPlaceholderText("(Bitte wählen Sie ein Dateiformat)") # (Please select a file format)
 
@@ -341,10 +353,30 @@ def translateNewVmDE(window):
 
     # Eighth page
     window.label_71.setText("Beschleunigung") # Acceleration
+    window.label_70.setText("CD-Controller 1") # CD controller 1
+    window.label_72.setText("CD-Controller 2") # CD controller 2
+
+    i = 0
+
+    while i < window.comboBox_44.count():
+        if window.comboBox_44.itemText(i) == "Let QEMU decide" or window.comboBox_44.itemText(i) == "QEMU überlassen":
+            window.comboBox_44.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_45.count():
+        if window.comboBox_45.itemText(i) == "Let QEMU decide" or window.comboBox_45.itemText(i) == "QEMU überlassen":
+            window.comboBox_45.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
     
-    window.pushButton_81.setText("< Previous") # < Previous
-    window.pushButton_77.setText("Next >") # Next >
-    window.pushButton_80.setText("Cancel") # Cancel
+    window.pushButton_81.setText("< Zurück") # < Previous
+    window.pushButton_77.setText("Weiter >") # Next >
+    window.pushButton_80.setText("Abbrechen") # Cancel
 
     # Ninth page
     window.label_2.setText("Zusätzliche Argumente (sofern nötig)") # Additional arguments (if needed)
@@ -578,6 +610,38 @@ def translateEditVMDE(window):
         
         i += 1
 
+    window.label_37.setText("CD-Controller 1") # CD controller 1
+    window.label_72.setText("CD-Controller 2") # CD controller 2
+
+    i = 0
+
+    while i < window.comboBox_44.count():
+        if window.comboBox_44.itemText(i) == "Let QEMU decide" or window.comboBox_44.itemText(i) == "QEMU überlassen":
+            window.comboBox_44.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.comboBox_45.count():
+        if window.comboBox_45.itemText(i) == "Let QEMU decide" or window.comboBox_45.itemText(i) == "QEMU überlassen":
+            window.comboBox_45.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
+
+    window.label_73.setText("HDD-Controller") # HDD controller
+
+    i = 0
+
+    while i < window.comboBox_46.count():
+        if window.comboBox_46.itemText(i) == "Let QEMU decide" or window.comboBox_46.itemText(i) == "QEMU überlassen":
+            window.comboBox_46.setItemText(i, "QEMU überlassen") # Let QEMU decide
+            break
+
+        i += 1
+
     # Translations for Peripherals tab
     window.label_7.setText("Maustyp") # Mouse type
     window.label_8.setText("Tastaturtyp") # Keyboard type
@@ -606,21 +670,21 @@ def translateEditVMDE(window):
 
 def translateErrDialogDE(window, errcode):
     if errcode.startswith("C"):
-        window.label.setText("EmuGUI encountered a critical error and needs to be closed.")
+        window.label.setText("Innerhalb von EmuGUI ist ein kritischer Fehler aufgetreten, weshalb das Programm geschlossen werden muss.") # EmuGUI encountered a critical error and needs to be closed.
 
     elif errcode.startswith("E"):
-        window.label.setText("EmuGUI encountered an error.")
+        window.label.setText("Innerhalb von EmuGUI ist ein Fehler aufgetreten.") # EmuGUI encountered an error.
 
     elif errcode.startswith("W"):
-        window.label.setText("EmuGUI has to warn you.")
+        window.label.setText("EmuGUI muss Sie warnen.") # EmuGUI has to warn you.
 
     else:
-        window.label.setText("EmuGUI has something to say.")
+        window.label.setText("EmuGUI muss Ihnen etwas sagen.") # EmuGUI has something to say.
 
-    window.label_2.setText("Error Code: " + errcode)
+    window.label_2.setText("Fehlercode: " + errcode) # Error Code:
 
     window.label_3.setText(
-        "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
-        )
+        "Sollte dieser Fehler mehrmals auftreten, kontaktieren Sie Ihren Administrator und/oder suchen Sie über dem EmuGUI-Discord-Server oder auf der GitHub-Repository nach Rat."
+        ) # If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.
     
-    window.pushButton.setText("OK")
+    window.pushButton.setText("OK") # OK
