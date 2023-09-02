@@ -118,7 +118,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "1.2.0.5504_dev"
+        self.version = "1.2.0.5505_dev"
 
         print(f"EmuGUI {self.version}")
 
@@ -182,7 +182,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5504
+        self.versionCode = 5505
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -3211,7 +3211,7 @@ class Window(QMainWindow, Ui_MainWindow):
             langmode = "it"
 
             try:
-                cursor.execute(language_pt)
+                cursor.execute(language_it)
                 connection.commit()
 
                 if platform.system() == "Windows":
