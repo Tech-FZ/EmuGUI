@@ -124,7 +124,12 @@ class Window(QMainWindow, Ui_MainWindow):
 
         print(f"Current date: {datetime.date.today()}")
 
-        print(f"OS: {platform.uname().system} {platform.uname().release}, Version {platform.uname().version}")
+        if platform.system() == "Windows" and sys.getwindowsversion().build >= 21296:
+            print(f"OS: Windows 11 or later, Version {platform.uname().version}")
+
+        else:
+            print(f"OS: {platform.uname().system} {platform.uname().release}, Version {platform.uname().version}")
+
         try:
             print(f"CPU: {str(os.cpu_count())}x {platform.uname().processor} @{round((psutil.cpu_freq().max / 1024), 2)} GHz ({platform.machine()})")
             print(f"RAM: {psutil.virtual_memory().total} bytes ({round((psutil.virtual_memory().total / 1024 / 1024 / 1024), 2)} GB)")
@@ -139,9 +144,15 @@ class Window(QMainWindow, Ui_MainWindow):
         if self.version.__contains__("_dev") or self.version.__contains__("_rc") or self.version.__contains__("_b"):
             logman.writeToLogFile(f"{errors.errCodes.errCodes[39]}: This version is a pre-release. Don't use it for production")
 
-        logman.writeToLogFile(
-            f"{errors.errCodes.errCodes[40]}: Device powered by {platform.uname().system} {platform.uname().release}, Version {platform.uname().version}"
-            )
+        if platform.system() == "Windows" and sys.getwindowsversion().build >= 21296:
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[40]}: Device powered by Windows 11 or later, Version {platform.uname().version}"
+                )
+            
+        else:
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[40]}: Device powered by {platform.uname().system} {platform.uname().release}, Version {platform.uname().version}"
+                )
         
         logman.writeToLogFile(
             f"{errors.errCodes.errCodes[41]}: EmuGUI powered by Python {platform.python_version()} {platform.python_branch()}, compiled with {platform.python_compiler()}"

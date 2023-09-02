@@ -34,6 +34,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 ## Fixes for features coming with EmuGUI 1.2
 
 - The EmuGUI folder issue is now fixed.
+- As Windows 11 internally identifies itself as Windows 10, this has been circumvented by letting each (potential) Windows 11 identify itself by the build number instead.
 
 # EmuGUI v1.2.0.5504_dev "Garuka Pula" (based on v1.2.0.5503_dev)
 
