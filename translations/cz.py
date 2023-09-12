@@ -10,8 +10,8 @@ def translateMainCZ(window):
     window.pushButton_9.setText("Spustit virtuální počítač") # Start virtual machine
     window.pushButton_10.setText("Upravit vybraný virtuální počítač") # Edit selected virtual machine
     window.pushButton_11.setText("Odstranit vybraný virtuální počítač") # Delete selected virtual machine
-    window.pushButton_22.setText("Export selected virtual machine") # Export selected virtual machine
-    window.pushButton_23.setText("Import virtual machine") # Import virtual machine
+    window.pushButton_22.setText("Exportovat zvolený virtuální PC") # Export selected virtual machine
+    window.pushButton_23.setText("Importovat virtuální PC") # Import virtual machine
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Obecné") # General
@@ -288,7 +288,7 @@ def translateNewVmCZ(window):
     window.label_13.setText("Cesta VHD") # VHD path
     window.label_14.setText("Formát souboru VHD") # VHD file format
     window.label_15.setText("Maximální velikost") # Maximum size
-    window.label_73.setText("HDD controller") # HDD controller
+    window.label_73.setText("Ovladač HDD") # HDD controller
 
     i = 0
 
@@ -353,9 +353,9 @@ def translateNewVmCZ(window):
     window.pushButton_29.setText("Zrušit") # Cancel
 
     # Eighth page
-    window.label_71.setText("Acceleration") # Acceleration
-    window.label_70.setText("CD controller 1") # CD controller 1
-    window.label_72.setText("CD controller 2") # CD controller 2
+    window.label_71.setText("Akcelerace") # Acceleration
+    window.label_70.setText("Ovladač CD 1") # CD controller 1
+    window.label_72.setText("Ovladač CD 2") # CD controller 2
 
     i = 0
 
@@ -611,8 +611,8 @@ def translateEditVMCZ(window):
 
         i += 1
 
-    window.label_37.setText("CD controller 1") # CD controller 1
-    window.label_72.setText("CD controller 2") # CD controller 2
+    window.label_37.setText("Ovladač CD 1") # CD controller 1
+    window.label_72.setText("Ovladač CD 2") # CD controller 2
 
     i = 0
 
@@ -632,7 +632,7 @@ def translateEditVMCZ(window):
 
         i += 1
 
-    window.label_73.setText("HDD controller") # HDD controller
+    window.label_73.setText("Ovladač HDD") # HDD controller
 
     i = 0
 
@@ -667,25 +667,25 @@ def translateEditVMCZ(window):
     window.label_29.setText("Další argumenty (pokud jsou potřeba)") # Additional arguments (if necessary)
     window.label_30.setText("Jádra CPU") # CPU cores
     window.checkBox.setText("Pridat podporu USB") # Add USB support
-    window.label_36.setText("Acceleration") # Acceleration
+    window.label_36.setText("Akcelerace") # Acceleration
 
 def translateErrDialogCZ(window, errcode):
     if errcode.startswith("C"):
-        window.label.setText("EmuGUI encountered a critical error and needs to be closed.") # EmuGUI encountered a critical error and needs to be closed.
+        window.label.setText("EmuGUI narazil na kritickou chybu a musí být uzavřen.") # EmuGUI encountered a critical error and needs to be closed.
 
     elif errcode.startswith("E"):
-        window.label.setText("EmuGUI encountered an error.") # EmuGUI encountered an error.
+        window.label.setText("EmuGUI narazil na chybu.") # EmuGUI encountered an error.
 
     elif errcode.startswith("W"):
-        window.label.setText("EmuGUI has to warn you.") # EmuGUI has to warn you.
+        window.label.setText("EmuGUI vás musí varovat.") # EmuGUI has to warn you.
 
     else:
-        window.label.setText("EmuGUI has something to say.") # EmuGUI has something to say.
+        window.label.setText("EmuGUI musí něco sdělit.") # EmuGUI has something to say.
 
-    window.label_2.setText("Error Code: " + errcode) # Error Code:
+    window.label_2.setText("Kód chyby: " + errcode) # Error Code:
 
     window.label_3.setText(
-        "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
+        "Pokud se tato chyba stane vícekrát, kontaktujte vašeho administrátora a/nebo se zeptejte se o pomoc v EmuGUI Discord serveru nebo na repozitáři GitHub."
         ) # If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.
     
     window.pushButton.setText("OK") # OK

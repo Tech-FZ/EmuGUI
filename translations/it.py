@@ -10,8 +10,8 @@ def translateMainIT(window):
     window.pushButton_9.setText("Avvia macchina virtuale") # Start virtual machine
     window.pushButton_10.setText("Modifica la macchina virtuale selezionata") # Edit selected virtual machine
     window.pushButton_11.setText("Elimina la macchina virtuale selezionata") # Delete selected virtual machine
-    window.pushButton_22.setText("Export selected virtual machine") # Export selected virtual machine
-    window.pushButton_23.setText("Import virtual machine") # Import virtual machine
+    window.pushButton_22.setText("Esporta la macchina virtuale selezionata") # Export selected virtual machine
+    window.pushButton_23.setText("Importa macchina virtuale") # Import virtual machine
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Generale") # General
@@ -306,7 +306,7 @@ def translateNewVmIT(window):
     window.label_13.setText("Percorso Hard Disk Virtuale") # VHD path
     window.label_14.setText("Formato Hard Disk Virtuale") # VHD file format
     window.label_15.setText("Dimensione massima") # Maximum size
-    window.label_73.setText("HDD controller") # HDD controller
+    window.label_73.setText("Controller disco rigido") # HDD controller
 
     i = 0
 
@@ -371,8 +371,8 @@ def translateNewVmIT(window):
 
     # Eighth page
     window.label_71.setText("Accelerazione") # Acceleration
-    window.label_70.setText("CD controller 1") # CD controller 1
-    window.label_72.setText("CD controller 2") # CD controller 2
+    window.label_70.setText("Controller CD 1") # CD controller 1
+    window.label_72.setText("Controller CD 2") # CD controller 2
 
     i = 0
 
@@ -644,8 +644,8 @@ def translateEditVMIT(window):
 
         i += 1
 
-    window.label_37.setText("CD controller 1") # CD controller 1
-    window.label_72.setText("CD controller 2") # CD controller 2
+    window.label_37.setText("Controller CD 1") # CD controller 1
+    window.label_72.setText("Controller CD 2") # CD controller 2
 
     i = 0
 
@@ -665,7 +665,7 @@ def translateEditVMIT(window):
 
         i += 1
 
-    window.label_73.setText("HDD controller") # HDD controller
+    window.label_73.setText("Controller disco rigido") # HDD controller
 
     i = 0
 
@@ -704,21 +704,21 @@ def translateEditVMIT(window):
 
 def translateErrDialogIT(window, errcode):
     if errcode.startswith("C"):
-        window.label.setText("EmuGUI encountered a critical error and needs to be closed.") # EmuGUI encountered a critical error and needs to be closed.
+        window.label.setText("EmuGUI ha riscontrato un errore critico e necessita di essere chiuso.") # EmuGUI encountered a critical error and needs to be closed.
 
     elif errcode.startswith("E"):
-        window.label.setText("EmuGUI encountered an error.") # EmuGUI encountered an error.
+        window.label.setText("EmuGUI ha riscontrato un errore.") # EmuGUI encountered an error.
 
     elif errcode.startswith("W"):
-        window.label.setText("EmuGUI has to warn you.") # EmuGUI has to warn you.
+        window.label.setText("EmuGUI doveva avvisarti.") # EmuGUI has to warn you.
 
     else:
-        window.label.setText("EmuGUI has something to say.") # EmuGUI has something to say.
+        window.label.setText("EmuGUI ha qualcosa da dire.") # EmuGUI has something to say.
 
-    window.label_2.setText("Error Code: " + errcode) # Error Code:
+    window.label_2.setText("Codice errore: " + errcode) # Error Code:
 
     window.label_3.setText(
-        "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
+        "Se riscontri questo errore più volte, contatta il tuo amministratore e/o chiedi aiuto nel server Discord di EmuGUI o sulla sua repository di GitHub."
         ) # If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.
     
     window.pushButton.setText("OK") # OK
