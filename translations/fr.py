@@ -2,8 +2,8 @@ from translations.systemdefaultset import *
 
 def translateMainFR(window):
     # Tab group 1
-    window.tabWidget.setTabText(0, "Main") # Main
-    window.tabWidget.setTabText(1, "Settings") # Settings
+    window.tabWidget.setTabText(0, "Principal") # Main
+    window.tabWidget.setTabText(1, "Paramètres") # Settings
 
     # Main tab
     window.pushButton_8.setText("New virtual machine") # New virtual machine
@@ -14,12 +14,12 @@ def translateMainFR(window):
     window.pushButton_23.setText("Import virtual machine") # Import virtual machine
 
     # Settings tabs
-    window.tabWidget_2.setTabText(0, "General") # General
+    window.tabWidget_2.setTabText(0, "Général") # General
     window.tabWidget_2.setTabText(2, "About EmuGUI") # About EmuGUI
 
     # General tab
-    window.label_15.setText("Language") # Language
-    window.pushButton_15.setText("Apply") # Apply
+    window.label_15.setText("Langue") # Language
+    window.pushButton_15.setText("Appliquer") # Apply
 
     # Combo box for languages
     i = 0
@@ -52,20 +52,20 @@ def translateMainFR(window):
     window.label_12.setText("qemu-system-sparc Path") # qemu-system-sparc Path
     window.label_13.setText("qemu-system-sparc64 Path") # qemu-system-sparc64 Path
 
-    window.pushButton.setText("Browse") # Browse
-    window.pushButton_2.setText("Browse") # Browse
-    window.pushButton_3.setText("Browse") # Browse
-    window.pushButton_4.setText("Browse") # Browse
-    window.pushButton_5.setText("Browse") # Browse
-    window.pushButton_7.setText("Browse") # Browse
-    window.pushButton_12.setText("Browse") # Browse
-    window.pushButton_16.setText("Browse") # Browse
-    window.pushButton_17.setText("Browse") # Browse
-    window.pushButton_18.setText("Browse") # Browse
-    window.pushButton_19.setText("Browse") # Browse
-    window.pushButton_13.setText("Browse") # Browse
-    window.pushButton_14.setText("Browse") # Browse
-    window.pushButton_6.setText("Apply") # Apply
+    window.pushButton.setText("Naviguer") # Browse
+    window.pushButton_2.setText("Naviguer") # Browse
+    window.pushButton_3.setText("Naviguer") # Browse
+    window.pushButton_4.setText("Naviguer") # Browse
+    window.pushButton_5.setText("Naviguer") # Browse
+    window.pushButton_7.setText("Naviguer") # Browse
+    window.pushButton_12.setText("Naviguer") # Browse
+    window.pushButton_16.setText("Naviguer") # Browse
+    window.pushButton_17.setText("Naviguer") # Browse
+    window.pushButton_18.setText("Naviguer") # Browse
+    window.pushButton_19.setText("Naviguer") # Browse
+    window.pushButton_13.setText("Naviguer") # Browse
+    window.pushButton_14.setText("Naviguer") # Browse
+    window.pushButton_6.setText("Appliquer") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
@@ -83,12 +83,12 @@ def translateMainFR(window):
 
 def translateNewVmFR(window):
     # First page
-    window.label.setText("Name") # Name
+    window.label.setText("Nom") # Name
     window.label_3.setText("Architecture") # Architecture
     window.comboBox.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
-    window.pushButton_3.setText("Next >") # Next >
-    window.pushButton_2.setText("Cancel") # Cancel
+    window.pushButton_3.setText("Suivant >") # Next >
+    window.pushButton_2.setText("Annuler") # Cancel
 
     # Second page (i386/x64 machines)
     window.label_4.setText("Machine") # Machine
@@ -98,9 +98,9 @@ def translateNewVmFR(window):
     window.comboBox_2.setPlaceholderText("Please select a machine") # Please select a machine
     window.comboBox_3.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pushButton_5.setText("< Previous") # < Previous
-    window.pushButton_4.setText("Next >") # Next >
-    window.pushButton_6.setText("Cancel") # Cancel
+    window.pushButton_5.setText("< Antérieur") # < Previous
+    window.pushButton_4.setText("Suivant >") # Next >
+    window.pushButton_6.setText("Annuler") # Cancel
 
     # Combo boxes on i386/x64 page
     i = 0
@@ -128,9 +128,9 @@ def translateNewVmFR(window):
     window.comboBox_4.setPlaceholderText("Please select a machine") # Please select a machine
     window.comboBox_5.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pushButton_7.setText("< Previous") # < Previous
-    window.pushButton_8.setText("Next >") # Next >
-    window.pushButton_9.setText("Cancel") # Cancel
+    window.pushButton_7.setText("< Antérieur") # < Previous
+    window.pushButton_8.setText("Suivant >") # Next >
+    window.pushButton_9.setText("Annuler") # Cancel
 
     # Combo boxes on PPC page
     i = 0
@@ -159,9 +159,9 @@ def translateNewVmFR(window):
     window.comboBox_6.setPlaceholderText("Please select a machine") # Please select a machine
     window.comboBox_7.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pushButton_10.setText("< Previous") # < Previous
-    window.pushButton_11.setText("Next >") # Next >
-    window.pushButton_12.setText("Cancel") # Cancel
+    window.pushButton_10.setText("< Antérieur") # < Previous
+    window.pushButton_11.setText("Suivant >") # Next >
+    window.pushButton_12.setText("Annuler") # Cancel
 
     # Combo boxes on MIPSel page
     i = 0
@@ -190,9 +190,9 @@ def translateNewVmFR(window):
     window.comboBox_14.setPlaceholderText("Please select a machine") # Please select a machine
     window.comboBox_15.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pushButton_33.setText("< Previous") # < Previous
-    window.pushButton_34.setText("Next >") # Next >
-    window.pushButton_35.setText("Cancel") # Cancel
+    window.pushButton_33.setText("< Antérieur") # < Previous
+    window.pushButton_34.setText("Suivant >") # Next >
+    window.pushButton_35.setText("Annuler") # Cancel
 
     # Combo boxes on ARM page
     i = 0
@@ -219,9 +219,9 @@ def translateNewVmFR(window):
 
     window.comboBox_20.setPlaceholderText("Please select a machine") # Please select a machine
 
-    window.pushButton_37.setText("< Previous") # < Previous
-    window.pushButton_38.setText("Next >") # Next >
-    window.pushButton_39.setText("Cancel") # Cancel
+    window.pushButton_37.setText("< Antérieur") # < Previous
+    window.pushButton_38.setText("Suivant >") # Next >
+    window.pushButton_39.setText("Annuler") # Cancel
 
     # Combo boxes on SPARC32 page
     i = 0
@@ -239,9 +239,9 @@ def translateNewVmFR(window):
 
     window.comboBox_21.setPlaceholderText("Please select a machine") # Please select a machine
 
-    window.pushButton_41.setText("< Previous") # < Previous
-    window.pushButton_40.setText("Next >") # Next >
-    window.pushButton_42.setText("Cancel") # Cancel
+    window.pushButton_41.setText("< Antérieur") # < Previous
+    window.pushButton_40.setText("Suivant >") # Next >
+    window.pushButton_42.setText("Annuler") # Cancel
 
     # Combo boxes on SPARC64 page
     i = 0
@@ -300,22 +300,22 @@ def translateNewVmFR(window):
 
     window.comboBox_8.setPlaceholderText("(Please select a file format)") # (Please select a file format)
 
-    window.pushButton_13.setText("Browse") # Browse
-    window.pushButton_16.setText("< Previous") # < Previous
-    window.pushButton_14.setText("Next >") # Next >
-    window.pushButton_15.setText("Cancel") # Cancel
+    window.pushButton_13.setText("Naviguer") # Browse
+    window.pushButton_16.setText("< Antérieur") # < Previous
+    window.pushButton_14.setText("Suivant >") # Next >
+    window.pushButton_15.setText("Annuler") # Cancel
 
     # Fourth page
     window.label_16.setText("VGA") # VGA
-    window.label_17.setText("Network") # Network
-    window.label_28.setText("Mouse") # Mouse
+    window.label_17.setText("Réseau") # Network
+    window.label_28.setText("Souris") # Mouse
 
     window.comboBox_10.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
     window.comboBox_11.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
 
-    window.pushButton_18.setText("< Previous") # < Previous
-    window.pushButton_17.setText("Next >") # Next >
-    window.pushButton_19.setText("Cancel") # Cancel
+    window.pushButton_18.setText("< Antérieur") # < Previous
+    window.pushButton_17.setText("Suivant >") # Next >
+    window.pushButton_19.setText("Annuler") # Cancel
 
     # Fifth page
     window.label_19.setText(
@@ -324,34 +324,34 @@ def translateNewVmFR(window):
 
     window.label_32.setText("External BIOS file") # External BIOS file
 
-    window.pushButton_36.setText("Browse") # Browse
-    window.pushButton_25.setText("< Previous") # < Previous
-    window.pushButton_24.setText("Next >") # Next >
-    window.pushButton_23.setText("Cancel") # Cancel
+    window.pushButton_36.setText("Naviguer") # Browse
+    window.pushButton_25.setText("< Antérieur") # < Previous
+    window.pushButton_24.setText("Suivant >") # Next >
+    window.pushButton_23.setText("Annuler") # Cancel
 
     # Sixth page
-    window.label_23.setText("Sound card") # Sound card
+    window.label_23.setText("Carte son") # Sound card
     window.label_33.setText("CPU cores")# CPU cores
-    window.label_34.setText("Keyboard") # Keyboard
+    window.label_34.setText("Clavier") # Keyboard
     window.label_21.setText("Keyboard layout") # Keyboard layout
 
-    window.pushButton_28.setText("< Previous") # < Previous
-    window.pushButton_27.setText("Next >") # Next >
-    window.pushButton_26.setText("Cancel") # Cancel
+    window.pushButton_28.setText("< Antérieur") # < Previous
+    window.pushButton_27.setText("Suivant >") # Next >
+    window.pushButton_26.setText("Annuler") # Cancel
 
     # Seventh page
     window.label_24.setText("Linux kernel") # Linux kernel
     window.label_25.setText("Linux initrd image") # Linux initrd image
     window.label_26.setText("Linux cmd args") # Linux cmd args
 
-    window.pushButton.setText("Browse") # Browse
-    window.pushButton_32.setText("Browse") # Browse
-    window.pushButton_31.setText("< Previous") # < Previous
-    window.pushButton_30.setText("Next >") # Next >
-    window.pushButton_29.setText("Cancel") # Cancel
+    window.pushButton.setText("Naviguer") # Browse
+    window.pushButton_32.setText("Naviguer") # Browse
+    window.pushButton_31.setText("< Antérieur") # < Previous
+    window.pushButton_30.setText("Suivant >") # Next >
+    window.pushButton_29.setText("Annuler") # Cancel
 
     # Eighth page
-    window.label_71.setText("Acceleration") # Acceleration
+    window.label_71.setText("Accélération") # Acceleration
     window.label_70.setText("CD controller 1") # CD controller 1
     window.label_72.setText("CD controller 2") # CD controller 2
 
@@ -373,9 +373,9 @@ def translateNewVmFR(window):
 
         i += 1
     
-    window.pushButton_81.setText("< Previous") # < Previous
-    window.pushButton_77.setText("Next >") # Next >
-    window.pushButton_80.setText("Cancel") # Cancel
+    window.pushButton_81.setText("< Antérieur") # < Previous
+    window.pushButton_77.setText("Suivant >") # Next >
+    window.pushButton_80.setText("Annuler") # Cancel
 
     # Ninth page
     window.label_2.setText("Additional arguments (if needed)") # Additional arguments (if needed)
@@ -383,12 +383,12 @@ def translateNewVmFR(window):
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
     window.checkBox_3.setText("Add USB support") # Add USB support
 
-    window.pushButton_22.setText("< Previous") # < Previous
-    window.pushButton_20.setText("Finish") # Finish
-    window.pushButton_21.setText("Cancel") # Cancel
+    window.pushButton_22.setText("< Antérieur") # < Previous
+    window.pushButton_20.setText("Finir") # Finish
+    window.pushButton_21.setText("Annuler") # Cancel
 
 def translateStartVmFR(window):
-    window.label_4.setText("Date & Time") # Date & Time
+    window.label_4.setText("Date & heure") # Date & Time
     window.label_3.setText("Boot from") # Boot from
     window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
     window.label_7.setText("Create the TPM from the terminal!") # Create the TPM from the terminal!
@@ -397,11 +397,11 @@ def translateStartVmFR(window):
     Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
     """) # Note: If the VM doesn't start within five minutes, then you should check the VM and QEMU settings.
 
-    window.pushButton.setText("Browse") # Browse
-    window.pushButton_2.setText("Browse") # Browse
+    window.pushButton.setText("Naviguer") # Browse
+    window.pushButton_2.setText("Naviguer") # Browse
     window.pushButton_5.setText("Set to system") # Set to system
     window.pushButton_3.setText("Start VM") # Start VM
-    window.pushButton_4.setText("Cancel") # Cancel
+    window.pushButton_4.setText("Annuler") # Cancel
 
     # Combo box for boot
     i = 0
@@ -422,7 +422,7 @@ def translateVmExistsFR(window):
         "Please consider either deleting that VM or thinking of a new name."
         ) # Please consider either deleting that VM or thinking of a new name.
 
-    window.pushButton.setText("OK") # OK
+    window.pushButton.setText("Accord") # OK
 
 def translateVhdExistsFR(window):
     # The dialog which used to use this translation function is no longer in use.
@@ -440,44 +440,44 @@ def translateSettingsPendingFR(window):
     window.label.setText("You didn't setup the QEMU paths.")
     window.label_2.setText("Please go to settings to do that and try again afterwards.")
 
-    window.pushButton.setText("OK") # OK
+    window.pushButton.setText("Accord") # OK
 
 def translateVmTooNewFR(window):
     window.label.setText(
         "This VM is made with a version of EmuGUI that is too new. Please use a later version!"
         ) # This VM is made with a version of EmuGUI that is too new. Please use a later version!
 
-    window.pushButton.setText("OK") # OK
+    window.pushButton.setText("Accord") # OK
 
 def translateQemuSysMissingFR(window, arch):
     window.label.setText(
         f"Sorry but EmuGUI is not configured for using \"qemu-system-{arch}\" yet.\nThis component however is necessary to start this virtual machine.\nPlease go to Settings/QEMU to solve this issue."
         ) # Sorry but EmuGUI is not configured for using \"qemu-system-{arch}\" yet.\nThis component however is necessary to start this virtual machine.\nPlease go to Settings/QEMU to solve this issue.
 
-    window.pushButton.setText("OK") # OK
+    window.pushButton.setText("Accord") # OK
 
 def translateQemuImgMissingFR(window):
     window.label.setText(
         "Sorry but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Settings/QEMU to solve this issue."
         ) # Sorry but EmuGUI is not configured for using \"qemu-img\" yet.\nThis component however is necessary to create or edit virtual machines.\nPlease go to Settings/QEMU to solve this issue.
 
-    window.pushButton.setText("OK") # OK
+    window.pushButton.setText("Accord") # OK
 
 def translateEditVMFR(window):
     # Buttons on all tabs
-    window.pushButton.setText("Cancel") # Cancel
-    window.pushButton_2.setText("OK") # OK
+    window.pushButton.setText("Annuler") # Cancel
+    window.pushButton_2.setText("Accord") # OK
 
     # Tab names
     window.tabWidget.setTabText(0, "General") # General
     window.tabWidget.setTabText(1, "Machine") # Machine
     window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
-    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(3, "Périphériques") # Peripherals
     window.tabWidget.setTabText(4, "BIOS") # BIOS
     window.tabWidget.setTabText(6, "Additional components") # Additional components
 
     # Translations for General tab
-    window.label.setText("Name") # Name
+    window.label.setText("Nom") # Name
     window.label_2.setText("Architecture") # Architecture
 
     # Translations for Machine tab
@@ -579,7 +579,7 @@ def translateEditVMFR(window):
     window.label_4.setText("VHD path") # VHD path
     window.label_5.setText("VHD file format") # VHD file format
     window.label_6.setText("Maximum size") # Maximum size
-    window.pushButton_3.setText("Browse") # Browse
+    window.pushButton_3.setText("Naviguer") # Browse
     
     # Combobox for VHD usage
     i = 0
@@ -649,23 +649,23 @@ def translateEditVMFR(window):
     # Location of external BIOS file (Leave empty to use the default BIOS)
     window.label_11.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
     window.label_12.setText("External BIOS file") # External BIOS file
-    window.pushButton_4.setText("Browse") # Browse
+    window.pushButton_4.setText("Naviguer") # Browse
 
     # Translations for Linux tab
     window.label_13.setText("Linux kernel") # Linux kernel
     window.label_14.setText("Linux initrd image") # Linux initrd image
     window.label_15.setText("Linux cmd arguments") # Linux cmd arguments
-    window.pushButton_5.setText("Browse") # Browse
-    window.pushButton_6.setText("Browse") # Browse
+    window.pushButton_5.setText("Naviguer") # Browse
+    window.pushButton_6.setText("Naviguer") # Browse
 
     # Translations for Additional components tab
     window.label_9.setText("VGA") # VGA
     window.label_10.setText("Network adapter") # Network adapter
-    window.label_16.setText("Sound card") # Sound card
+    window.label_16.setText("Carte son") # Sound card
     window.label_29.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
     window.label_30.setText("CPU cores") # CPU cores
     window.checkBox.setText("Add USB support") # Add USB support
-    window.label_36.setText("Acceleration") # Acceleration
+    window.label_36.setText("Accélération") # Acceleration
 
 def translateErrDialogFR(window, errcode):
     if errcode.startswith("C"):
@@ -686,4 +686,4 @@ def translateErrDialogFR(window, errcode):
         "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
         ) # If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.
     
-    window.pushButton.setText("OK") # OK
+    window.pushButton.setText("Accord") # OK
