@@ -27,6 +27,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - I'm now working on a logging system.
 - An easteregg has been removed because it wasn't telling the truth anymore.
 - Translations have been updated.
+- Thanks to Calibrato, we can now add the Polish translation.
 
 ## Foreported fixes from 1.1.5
 

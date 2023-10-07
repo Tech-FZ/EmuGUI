@@ -23,6 +23,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import translations.it
+import translations.pl
 import locale
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
@@ -201,6 +202,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "pt":
                     langmode = "pt"
 
+                elif result[0][1] == "pl":
+                    langmode = "pl"
+
                 elif result[0][1] == "it":
                     langmode = "it"
 
@@ -253,6 +257,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("pt"):
                 translations.pt.translateNewVmPT(self)
 
+            elif languageToUse.startswith("pl"):
+                translations.pl.translateNewVmPL(self)
+
             elif languageToUse.startswith("it"):
                 translations.it.translateNewVmIT(self)
 
@@ -298,6 +305,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateNewVmPT(self)
+
+                    elif languageToUse.startswith("pl"):
+                        translations.pl.translateNewVmPL(self)
 
                     elif languageToUse.startswith("it"):
                         translations.it.translateNewVmIT(self)

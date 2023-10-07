@@ -6,3 +6,4 @@ Predeterminado del sistema
 Padrão do Sistema
 Výchozí nastavení systému
 Predefinito di sistema
+Systemowe domyślne

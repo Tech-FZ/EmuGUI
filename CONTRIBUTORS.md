@@ -20,6 +20,8 @@ Vichingo455 (Italian translation)
 
 rzglitch (Coding)
 
+Calibrato (Polish translation)
+
 # Banners
 
 | Version | Author |

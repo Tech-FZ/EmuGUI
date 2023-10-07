@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.3
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -101,6 +101,7 @@ class Ui_MainWindow(object):
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
         self.comboBox_4 = QComboBox(self.gridLayoutWidget_6)
+        self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
@@ -429,7 +430,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 20))
+        self.menubar.setGeometry(QRect(0, 0, 800, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -503,6 +504,7 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(9, QCoreApplication.translate("MainWindow", u"\u010ce\u0161tina", None))
         self.comboBox_4.setItemText(10, QCoreApplication.translate("MainWindow", u"Portugu\u00eas", None))
         self.comboBox_4.setItemText(11, QCoreApplication.translate("MainWindow", u"Italiano", None))
+        self.comboBox_4.setItemText(12, QCoreApplication.translate("MainWindow", u"Polski", None))
 
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Language", None))

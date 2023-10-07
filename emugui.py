@@ -67,6 +67,7 @@ try:
     import translations.ru
     import translations.pt
     import translations.it
+    import translations.pl
     import locale
 
 except:
@@ -362,6 +363,12 @@ class Window(QMainWindow, Ui_MainWindow):
             if langmode != "system":
                 self.languageInUse = "it"
 
+        elif languageToUse.startswith("pl"):
+            translations.pl.translateMainPL(self)
+
+            if langmode != "system":
+                self.languageInUse = "pl"
+
         else:
             translations.en.translateMainEN(self)
 
@@ -654,6 +661,7 @@ class Window(QMainWindow, Ui_MainWindow):
         # ru: Russian
         # pt: Portuguese
         # it: Italian
+        # pl: Polish
         insert_language = """
         INSERT INTO settings (
             name, value
@@ -1329,6 +1337,16 @@ class Window(QMainWindow, Ui_MainWindow):
                         i += 1
 
                     langmode = "pt"
+
+                elif result[0][1] == "pl":
+                    while i < self.comboBox_4.count():
+                        if self.comboBox_4.itemText(i) == "Polski":
+                            self.comboBox_4.setCurrentIndex(i)
+                            break
+
+                        i += 1
+
+                    langmode = "pl"
 
                 elif result[0][1] == "it":
                     while i < self.comboBox_4.count():
@@ -2968,6 +2986,12 @@ class Window(QMainWindow, Ui_MainWindow):
         WHERE name = 'lang';
         """
 
+        language_pl = f"""
+        UPDATE settings
+        SET value = 'pl'
+        WHERE name = 'lang';
+        """
+
         language_it = f"""
         UPDATE settings
         SET value = 'it'
@@ -3185,6 +3209,44 @@ class Window(QMainWindow, Ui_MainWindow):
 
             try:
                 cursor.execute(language_pt)
+                connection.commit()
+
+                if platform.system() == "Windows":
+                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                else:
+                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                if langmode == "system":
+                    languageToUseLater = locale.getlocale()[0]
+                    languageToUseEvenLater = languageToUseLater.split("_")
+                    languageToUseHere = languageToUseEvenLater[0]
+
+                else:
+                    languageToUseHere = langmode
+                
+                try:
+                    with open(langfile, "w+") as language:
+                        language.write(languageToUseHere)
+
+                except:
+                    print("EmuGUI failed to create a language file. Expect some issues.")
+
+                self.setLanguage(langmode)
+                print("The query was executed successfully.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+            except:
+                dialog = SettingsRequireEmuGUIReboot(self)
+                dialog.exec()
+
+        elif self.comboBox_4.currentText() == "Polski":
+            langmode = "pl"
+
+            try:
+                cursor.execute(language_pl)
                 connection.commit()
 
                 if platform.system() == "Windows":
