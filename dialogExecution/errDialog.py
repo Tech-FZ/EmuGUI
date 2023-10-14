@@ -20,6 +20,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import translations.it
+import translations.pl
 import locale
 import sqlite3
 
@@ -134,6 +135,9 @@ class ErrDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "it":
                     langmode = "it"
 
+                elif result[0][1] == "pl":
+                    langmode = "pl"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -183,6 +187,9 @@ class ErrDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("pt"):
                 translations.pt.translateErrDialogPT(self, self.vmSpecs[0])
 
+            elif languageToUse.startswith("pl"):
+                translations.pl.translateErrDialogPL(self, self.vmSpecs[0])
+
             elif languageToUse.startswith("it"):
                 translations.it.translateErrDialogIT(self, self.vmSpecs[0])
 
@@ -228,6 +235,9 @@ class ErrDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pt"):
                         translations.pt.translateErrDialogPT(self, self.vmSpecs[0])
+
+                    elif languageToUse.startswith("pl"):
+                        translations.pl.translateErrDialogPL(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("it"):
                         translations.it.translateErrDialogIT(self, self.vmSpecs[0])
