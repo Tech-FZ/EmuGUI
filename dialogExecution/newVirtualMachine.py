@@ -11,6 +11,8 @@ else:
     import platformSpecific.unixSpecific
     
 import subprocess
+import errors.logman
+import errors.logID
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
 import translations.de
 import translations.uk
@@ -29,6 +31,7 @@ import locale
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         # Initializing the dialog for creating the VM.
+        logman = errors.logman.LogMan()
 
         try:
             super().__init__(parent)
