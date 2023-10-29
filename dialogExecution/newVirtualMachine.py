@@ -13,7 +13,9 @@ else:
 import subprocess
 import errors.logman
 import errors.logID
+import errors.errCodes
 from dialogExecution.vmExistsDialog import VmAlreadyExistsDialog
+from dialogExecution.errDialog import ErrDialog
 import translations.de
 import translations.uk
 import translations.en
@@ -31,7 +33,8 @@ import locale
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         # Initializing the dialog for creating the VM.
-        logman = errors.logman.LogMan()
+        self.logman = errors.logman.LogMan()
+        self.logman.logFile = self.logman.setLogFile()
 
         try:
             super().__init__(parent)
@@ -71,6 +74,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         self.firstStage()
         self.vhdAddingChange()
+
+        self.logman.writeToLogFile(
+            f"{errors.errCodes.errCodes[48]}: GUI \"New virtual machine\" opened successfully"
+            )
 
     def connectSignalsSlots(self):
         # Page 1 (Architecture selection)
@@ -214,16 +221,33 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "system":
                     langmode = "system"
 
+                print("Language mode successfully taken from database.")
+
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[49]}: Language \"{langmode}\" taken from database successfully"
+                )
+
                 self.setLanguage(langmode)
-                print("The query was executed successfully. The language slot already is in the database.")
 
             except:
                 langmode = "system"
+
+                print("Language mode not accessable. Trying to use system language.")
+
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[50]}: Language could not be taken from database. Trying to use system language."
+                )
+
                 self.setLanguage(langmode)
-                print("The query was executed successfully. The language slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[50]}: Could not connect to the database to detect the language. Trying to use system language."
+                )
+
+            self.setLanguage("system")
 
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:
@@ -268,8 +292,16 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
             else:
                 translations.en.translateNewVmEN(self)
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
+                )
         
         else:
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[51]}: The language couldn't be set via the locale module or the database. Trying to access temporary files."
+                )
+            
             if platform.system() == "Windows":
                 langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
             
@@ -317,10 +349,30 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     else:
                         translations.en.translateNewVmEN(self)
+
+                    self.logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
+                    )
             
             except:
                 print("Translation can't be figured out. Using English language.")
                 translations.en.translateNewVmEN(self)
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[11])
+
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[11]}: The desired language couldn't be applied and English must be used."
+                )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
     def archSystem(self):
         # Here, it checks the name first, than the architecture.
