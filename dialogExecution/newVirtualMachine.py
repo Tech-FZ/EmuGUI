@@ -397,8 +397,22 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
             try:
                 qemu_img_slot = str(result[0])
-                dialog2 = VmAlreadyExistsDialog(self)
-                dialog2.exec()
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[9])
+
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[9]}: The VM {result[0]} already exists."
+                )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 if self.comboBox.currentText() == "i386":
@@ -424,6 +438,22 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: Could not connect to the database to figure out if the name was already in use."
+            )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
     def vhdMenu(self):
         self.stackedWidget.setCurrentIndex(7)
@@ -788,5 +818,21 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[53])
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[53]}: The VM couldn't be created due to a database issue.."
+            )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         self.close()
