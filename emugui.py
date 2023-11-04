@@ -1429,6 +1429,22 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
 
                 print("The query was executed successfully. The language slot already is in the database.")
@@ -1458,6 +1474,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
+
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
                     
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot has been created.")
@@ -1473,6 +1505,10 @@ class Window(QMainWindow, Ui_MainWindow):
 
             with open(errorFile, "w+") as errCodeFile:
                 errCodeFile.write(errors.errCodes.errCodes[2])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the language settings."
+                )
 
             dialog = ErrDialog(self)
             dialog.exec()
@@ -1544,6 +1580,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: Could not connect to the database to access the theme settings."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(select02ColumnsVM)
             connection.commit()
@@ -1574,6 +1626,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
         try:
             cursor.execute(select03ColumnsVM)
             connection.commit()
@@ -1594,6 +1662,22 @@ class Window(QMainWindow, Ui_MainWindow):
             
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
         try:
             cursor.execute(select03ColumnsVM2)
@@ -1619,6 +1703,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
         try:
             cursor.execute(select04ColumnsVM)
             connection.commit()
@@ -1643,6 +1743,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
         try:
             cursor.execute(select05ColumnsVM)
             connection.commit()
@@ -1663,6 +1779,22 @@ class Window(QMainWindow, Ui_MainWindow):
             
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
         try:
             cursor.execute(select09ColumnsVM)
@@ -1685,6 +1817,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
         try:
             cursor.execute(select11ColumnsVM)
             connection.commit()
@@ -1706,6 +1854,22 @@ class Window(QMainWindow, Ui_MainWindow):
             
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
         try:
             cursor.execute(select12ColumnsVM)
@@ -1731,6 +1895,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
         try:
             cursor.execute(select12ColumnsVM2)
             connection.commit()
@@ -1752,6 +1932,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the VM list."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
         try:
             cursor.execute(debug_db_settings)
             connection.commit()
@@ -1762,6 +1958,9 @@ class Window(QMainWindow, Ui_MainWindow):
             print(f"The SQLite module encountered an error: {e}.")
 
     def createNewVM(self):
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
+
         # This is the code that launches the dialog for creating a VM.
         debug_db_settings = """
         SELECT name, value FROM settings;
@@ -1791,6 +1990,10 @@ class Window(QMainWindow, Ui_MainWindow):
                         with open(errorFile, "w+") as errCodeFile:
                             errCodeFile.write(errors.errCodes.errCodes[18])
 
+                        logman.writeToLogFile(
+                            f"{errors.errCodes.errCodes[18]}: qemu-img is not registered in settings."
+                        )
+
                         dialog = ErrDialog(self)
                         dialog.exec()
 
@@ -1804,6 +2007,22 @@ class Window(QMainWindow, Ui_MainWindow):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: Could not connect to the database to check if qemu-img is there."
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
     def startVM(self):
         # This is the code that lets you power your virtual machines in the first place.
@@ -1871,6 +2090,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: Could not connect to the database to check the VM data."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
             if platform.system() == "Windows":
                 tempVmDef = platformSpecific.windowsSpecific.windowsTempVmStarterFile()
         
@@ -1915,7 +2150,11 @@ class Window(QMainWindow, Ui_MainWindow):
                     errorFile = platformSpecific.unixSpecific.unixErrorFile()
 
                 with open(errorFile, "w+") as errCodeFile:
-                    errCodeFile.write(errors.errCodes.errCodes[12])
+                    errCodeFile.write(errors.errCodes.errCodes[36])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[36]}: Could not write VM data onto temporary definition file."
+                    )
 
                 dialog = ErrDialog(self)
                 dialog.exec()
@@ -2166,6 +2405,22 @@ class Window(QMainWindow, Ui_MainWindow):
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
 
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: Could not connect to the database to check the VM data."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
             if platform.system() == "Windows":
                 tempVmDef = platformSpecific.windowsSpecific.windowsExportFile()
         
@@ -2206,8 +2461,12 @@ class Window(QMainWindow, Ui_MainWindow):
                 else:
                     errorFile = platformSpecific.unixSpecific.unixErrorFile()
 
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[36]}: Could not write VM data onto temporary definition file."
+                    )
+
                 with open(errorFile, "w+") as errCodeFile:
-                    errCodeFile.write(errors.errCodes.errCodes[12])
+                    errCodeFile.write(errors.errCodes.errCodes[36])
 
                 dialog = ErrDialog(self)
                 dialog.exec()
@@ -2717,6 +2976,9 @@ class Window(QMainWindow, Ui_MainWindow):
             self.lineEdit_13.setText(filename)
 
     def applyChangesQemu(self):
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
+
         pathQemuImg = self.lineEdit_5.text()
         pathQemuI386 = self.lineEdit_4.text()
         pathQemuX86_64 = self.lineEdit_3.text()
@@ -2820,6 +3082,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(qemu_i386_update)
             connection.commit()
@@ -2827,6 +3105,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(qemu_x86_64_update)
@@ -2836,6 +3130,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(qemu_ppc_update)
             connection.commit()
@@ -2843,6 +3153,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(qemu_ppc64_update)
@@ -2852,6 +3178,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(qemu_mips64el_update)
             connection.commit()
@@ -2859,6 +3201,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(qemu_mipsel_update)
@@ -2868,6 +3226,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(qemu_mips64_update)
             connection.commit()
@@ -2875,6 +3249,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(qemu_mips_update)
@@ -2884,6 +3274,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(qemu_aarch64_update)
             connection.commit()
@@ -2891,6 +3297,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(qemu_arm_update)
@@ -2900,6 +3322,22 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
         try:
             cursor.execute(qemu_sparc_update)
             connection.commit()
@@ -2907,6 +3345,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         try:
             cursor.execute(qemu_sparc64_update)
@@ -2916,7 +3370,26 @@ class Window(QMainWindow, Ui_MainWindow):
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
 
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
     def applyGeneric(self):
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
+
         with open("translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
             sysDefContent = sysDefFile.read()
 
@@ -3042,11 +3515,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3080,11 +3585,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3118,11 +3655,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3156,11 +3725,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3194,11 +3795,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3232,11 +3865,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3270,11 +3935,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3308,11 +4005,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3346,11 +4075,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3384,11 +4145,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3422,11 +4215,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3460,11 +4285,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3498,11 +4355,43 @@ class Window(QMainWindow, Ui_MainWindow):
                 except:
                     print("EmuGUI failed to create a language file. Expect some issues.")
 
+                    if platform.system() == "Windows":
+                        errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                    else:
+                        errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                    with open(errorFile, "w+") as errCodeFile:
+                        errCodeFile.write(errors.errCodes.errCodes[54])
+
+                    logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                    )
+
+                    dialog = ErrDialog(self)
+                    dialog.exec()
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully.")
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3522,6 +4411,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
@@ -3552,6 +4457,22 @@ class Window(QMainWindow, Ui_MainWindow):
 
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
             except:
                 dialog = SettingsRequireEmuGUIReboot(self)
