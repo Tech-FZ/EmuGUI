@@ -119,7 +119,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "1.2.0.5506_b1"
+        self.version = "1.2.0.5507_b2"
 
         print(f"EmuGUI {self.version}")
 
@@ -185,7 +185,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     )
 
         self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Garuka Pula'")
-        self.setWindowTitle(f"EmuGUI {self.version} (Beta Release 1)")
+        self.setWindowTitle(f"EmuGUI {self.version} (Beta Release 2)")
         self.languageInUse = "system"
 
         try:
@@ -194,7 +194,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5506
+        self.versionCode = 5507
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()

@@ -829,7 +829,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 errCodeFile.write(errors.errCodes.errCodes[53])
 
             self.logman.writeToLogFile(
-                f"{errors.errCodes.errCodes[53]}: The VM couldn't be created due to a database issue.."
+                f"{errors.errCodes.errCodes[53]}: The VM couldn't be created due to a database issue."
             )
 
             dialog = ErrDialog(self)

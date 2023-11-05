@@ -25,6 +25,10 @@ import translations.pt
 import translations.it
 import translations.pl
 import locale
+import errors.logman
+import errors.logID
+import errors.errCodes
+from dialogExecution.errDialog import ErrDialog
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -34,6 +38,8 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         except:
             super().__init__()
             
+        self.logman = errors.logman.LogMan()
+        self.logman.logFile = self.logman.setLogFile()
         self.setupUi(self)
         self.connectSignalsSlots()
         self.tabWidget.setCurrentIndex(0)
@@ -45,6 +51,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         except:
             pass
+
+        self.logman.writeToLogFile(
+            f"{errors.errCodes.errCodes[48]}: GUI \"Edit virtual machine\" opened successfully"
+            )
 
     def connectSignalsSlots(self):
         self.pushButton.clicked.connect(self.close)
@@ -137,13 +147,28 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot already is in the database.")
 
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[49]}: Language \"{langmode}\" taken from database successfully"
+                )
+
             except:
                 langmode = "system"
+
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[50]}: Language could not be taken from database. Trying to use system language."
+                )
+
                 self.setLanguage(langmode)
                 print("The query was executed successfully. The language slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[50]}: Could not connect to the database to detect the language. Trying to use system language."
+                )
+
+            self.setLanguage("system")
 
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:
@@ -190,8 +215,16 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
             else:
                 translations.en.translateEditVMEN(self)
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
+                )
         
         else:
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[51]}: The language couldn't be set via the locale module or the database. Trying to access temporary files."
+                )
+            
             if platform.system() == "Windows":
                 langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
             
@@ -239,10 +272,30 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                     else:
                         translations.en.translateEditVMEN(self)
+
+                    self.logman.writeToLogFile(
+                        f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
+                    )
             
             except:
                 print("Translation can't be figured out. Using English language.")
                 translations.en.translateEditVMEN(self)
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[11])
+
+                self.logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[11]}: The desired language couldn't be applied and English must be used."
+                )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
 
     def machineCpuI386Amd64(self, machine, cpu):
         with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
@@ -975,5 +1028,21 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[53])
+
+            self.logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[53]}: The VM couldn't be edited due to a database issue."
+            )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
 
         self.close()
