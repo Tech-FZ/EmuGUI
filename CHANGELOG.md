@@ -28,6 +28,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - An easteregg has been removed because it wasn't telling the truth anymore.
 - Translations have been updated.
 - Thanks to Calibrato, we can now add the Polish translation.
+- You can now start the VM without passing a specific time and date to it.
 
 ## Changes made compared to 1.2.0.5506_b1
 
