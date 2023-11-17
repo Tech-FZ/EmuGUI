@@ -119,7 +119,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "1.2.0.5507_b2"
+        self.version = "1.2.0.5508_rc1"
 
         print(f"EmuGUI {self.version}")
 
@@ -185,7 +185,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     )
 
         self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Garuka Pula'")
-        self.setWindowTitle(f"EmuGUI {self.version} (Beta Release 2)")
+        self.setWindowTitle(f"EmuGUI {self.version} (Release Candidate 1)")
         self.languageInUse = "system"
 
         try:
@@ -194,7 +194,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5507
+        self.versionCode = 5508
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -1450,31 +1450,52 @@ class Window(QMainWindow, Ui_MainWindow):
                 print("The query was executed successfully. The language slot already is in the database.")
 
             except:
-                cursor.execute(insert_language)
-                connection.commit()
-                langmode = "system"
-
-                if platform.system() == "Windows":
-                    langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
-                
-                else:
-                    langfile = platformSpecific.unixSpecific.unixLanguageFile()
-
-                if langmode == "system":
-                    languageToUseLater = locale.getlocale()[0]
-                    languageToUseEvenLater = languageToUseLater.split("_")
-                    languageToUseHere = languageToUseEvenLater[0]
-
-                else:
-                    languageToUseHere = langmode
-                
                 try:
-                    with open(langfile, "w+") as language:
-                        language.write(languageToUseHere)
+                    cursor.execute(insert_language)
+                    connection.commit()
+                    langmode = "system"
+
+                    if platform.system() == "Windows":
+                        langfile = platformSpecific.windowsSpecific.windowsLanguageFile()
+                
+                    else:
+                        langfile = platformSpecific.unixSpecific.unixLanguageFile()
+
+                    if langmode == "system":
+                        languageToUseLater = locale.getlocale()[0]
+                        languageToUseEvenLater = languageToUseLater.split("_")
+                        languageToUseHere = languageToUseEvenLater[0]
+
+                    else:
+                        languageToUseHere = langmode
+                
+                    try:
+                        with open(langfile, "w+") as language:
+                            language.write(languageToUseHere)
+
+                    except:
+                        print("EmuGUI failed to create a language file. Expect some issues.")
+
+                        if platform.system() == "Windows":
+                            errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                        else:
+                            errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                        with open(errorFile, "w+") as errCodeFile:
+                            errCodeFile.write(errors.errCodes.errCodes[54])
+
+                        logman.writeToLogFile(
+                            f"{errors.errCodes.errCodes[54]}: Could not create the language file. Expect issues."
+                        )
+
+                        dialog = ErrDialog(self)
+                        dialog.exec()
+                    
+                    self.setLanguage(langmode)
+                    print("The query was executed successfully. The language slot has been created.")
 
                 except:
-                    print("EmuGUI failed to create a language file. Expect some issues.")
-
                     if platform.system() == "Windows":
                         errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
         
@@ -1490,9 +1511,8 @@ class Window(QMainWindow, Ui_MainWindow):
 
                     dialog = ErrDialog(self)
                     dialog.exec()
-                    
+
                 self.setLanguage(langmode)
-                print("The query was executed successfully. The language slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
