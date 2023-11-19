@@ -109,7 +109,7 @@ For the update checker, a version code is being used instead of the number. Here
 - [Building on Linux (Python Venv, Qt installed via official installer)](#building-on-linux-python-venv-qt-installed-via-official-installer)
 - [Building on Linux (Anaconda)](#building-on-linux-anaconda)
 
-## Building on Windows (Python Venv, Qt installed via Python)
+## Building on Windows (Python Venv, Qt installed via Python, with PyInstaller)
 
 1. Install Python. You can get it [here](https://www.python.org/)
 2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
@@ -128,7 +128,26 @@ For the update checker, a version code is being used instead of the number. Here
 15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 16. If it works, have fun! If not, try to start again from number 9.
 
-## Building on Windows (Python Venv, Qt installed via official installer)
+## Building on Windows (Python Venv, Qt installed via Python, with cx_Freeze)
+
+1. Install Python. You can get it [here](https://www.python.org/)
+2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
+3. Install Git. You can get it [here](https://git-scm.com/downloads)
+4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
+5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
+6. Open Visual Studio Code in that folder.
+7. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
+8. After that is done, type: `python -m venv your-venv-name` OUTSIDE of the code folder. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances.
+9. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
+10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
+11. Within the terminal VS Code just opened, type: `pip install --upgrade pip cx_Freeze PyQt6 PyQt6-tools PySide6 python-magic-bin requests python-dateutil psutil`
+12. After this is done, run the main.py script.
+13. To compile the program for users who don't have Python installed, type: `cxfreeze -c emugui.py --target-dir dist --icon EmuGUI.ico`
+14. After that is finished, copy the code into the dist folder PyInstaller created.
+15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+16. If it works, have fun! If not, try to start again from number 9.
+
+## Building on Windows (Python Venv, Qt installed via official installer, with PyInstaller)
 
 1. Install Python. You can get it [here](https://www.python.org)
 2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
@@ -149,7 +168,28 @@ For the update checker, a version code is being used instead of the number. Here
 17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 18. If it works, have fun! If not, try to start again from number 9.
 
-## Building on Windows (Anaconda)
+## Building on Windows (Python Venv, Qt installed via official installer, with PyInstaller)
+
+1. Install Python. You can get it [here](https://www.python.org)
+2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
+3. Install Git. You can get it [here](https://git-scm.com/downloads)
+4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
+5. Install Qt from the following [site](https://www.qt.io/download-open-source?__hstc=152220518.4df0e407aa37c96fa5547ca135b274e3.1659787309440.1659787309440.1659787309440.1&__hssc=152220518.1.1659787309441&__hsfp=1951994995&hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5) (you need a Qt account for that) 
+6. You only need the Qt Creator.
+7. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
+8. Open Visual Studio Code in that folder.
+9. Open a terminal WITHIN VS Code and type: `python -m pip install --upgrade pip venv`
+10. After that is done, type: `python -m venv your-venv-name`. OUTSIDE of the code folder. You can call it whatever you want, but don't forget that it is NOT allowed to get into the EmuGUI repository under any circumstances.
+11. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
+12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
+13. Within the terminal VS Code just opened, type: `pip install --upgrade pip cx_Freeze PySide6 python-magic-bin requests python-dateutil psutil`
+14. After this is done, run the main.py script.
+15. To compile the program for users who don't have Python installed, type: `cxfreeze -c emugui.py --target-dir dist --icon EmuGUI.ico`
+16. After that is finished, copy the code into the dist folder PyInstaller created.
+17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+18. If it works, have fun! If not, try to start again from number 9.
+
+## Building on Windows (Anaconda, with PyInstaller)
 
 1. Install Anaconda. You can get it from [here](https://www.anaconda.com/)
 2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
@@ -163,6 +203,24 @@ For the update checker, a version code is being used instead of the number. Here
 10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic-bin PyQt6 requests python-dateutil psutil`
 11. After this is done, run the main.py script.
 12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
+13. After that is finished, copy the code into the dist folder PyInstaller created.
+14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+15. If it works, have fun! If not, try to start again from number 9.
+
+## Building on Windows (Anaconda, with cx_Freeze)
+
+1. Install Anaconda. You can get it from [here](https://www.anaconda.com/)
+2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
+3. Install Git. You can get it from [here](https://git-scm.com/downloads)
+4. Install Visual Studio Code. You can get it from [here](https://code.visualstudio.com/download)
+5. Install Qt. You can get it from [here](https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5)
+6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
+7. Open Visual Studio Code in that folder.
+8. Open Anaconda Navigator and create a new virtual environment.
+9. Open the venv in VS Code and try to run a Python script with it.
+10. Within the VS Code terminal, type: `& pip install --upgrade pip cx_Freeze PySide6 python-magic-bin PyQt6 requests python-dateutil psutil`
+11. After this is done, run the main.py script.
+12. To compile the program for users who don't have Python installed, type: `& cxfreeze -c emugui.py --target-dir dist --icon EmuGUI.ico`
 13. After that is finished, copy the code into the dist folder PyInstaller created.
 14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 15. If it works, have fun! If not, try to start again from number 9.
