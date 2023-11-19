@@ -168,7 +168,7 @@ For the update checker, a version code is being used instead of the number. Here
 17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 18. If it works, have fun! If not, try to start again from number 9.
 
-## Building on Windows (Python Venv, Qt installed via official installer, with PyInstaller)
+## Building on Windows (Python Venv, Qt installed via official installer, with cx_Freeze)
 
 1. Install Python. You can get it [here](https://www.python.org)
 2. Get [QEMU](https://qemu.weilnetz.de/w64/) and install it
