@@ -31,6 +31,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - You can now start the VM without passing a specific time and date to it.
 - The building process for Windows binaries with cx_Freeze is now documented in the readme.
 - Now you can delete the cache with the delcache scripts for your OS.
+- The Garuka Pula banner from lucien-rowan/Tech-FZ has been added.
 
 ## Changes made compared to 1.2.0.5508_rc1
 

@@ -293,7 +293,7 @@ class Window(QMainWindow, Ui_MainWindow):
             self.label_6.setPixmap(QtGui.QPixmap("banners/RobertRabbit.png"))
 
         else:
-            self.label_6.setPixmap(QtGui.QPixmap("banners/SaraAngeline.png"))
+            self.label_6.setPixmap(QtGui.QPixmap("banners/GarukaPula.png"))
 
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:

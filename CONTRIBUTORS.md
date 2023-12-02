@@ -30,3 +30,4 @@ Calibrato (Polish translation)
 | 1.0 "Adèle Angela" | Tech-FZ |
 | Easter "Robert Rabbit" | Tech-FZ |
 | 1.1 "Sara Angeline" | Tech-FZ |
+| 1.2 "Garuka Pula" | Tech-FZ |
