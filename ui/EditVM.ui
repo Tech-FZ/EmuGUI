@@ -1510,6 +1510,11 @@
             <string>raspi2</string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>musicpal</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>

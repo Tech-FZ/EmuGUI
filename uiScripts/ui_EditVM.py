@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -450,6 +450,7 @@ class Ui_Dialog(object):
         self.gridLayout_10.addWidget(self.spinBox_5, 1, 1, 1, 1)
 
         self.comboBox_18 = QComboBox(self.gridLayoutWidget_10)
+        self.comboBox_18.addItem("")
         self.comboBox_18.addItem("")
         self.comboBox_18.addItem("")
         self.comboBox_18.addItem("")
@@ -1294,6 +1295,7 @@ class Ui_Dialog(object):
         self.comboBox_18.setItemText(15, QCoreApplication.translate("Dialog", u"lm3s811evb", None))
         self.comboBox_18.setItemText(16, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_18.setItemText(17, QCoreApplication.translate("Dialog", u"raspi2", None))
+        self.comboBox_18.setItemText(18, QCoreApplication.translate("Dialog", u"musicpal", None))
 
         self.label_33.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))
         self.label_32.setText(QCoreApplication.translate("Dialog", u"Machine", None))

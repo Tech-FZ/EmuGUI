@@ -1430,6 +1430,11 @@
           <string>raspi2</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>musicpal</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="1" column="1" colspan="2">

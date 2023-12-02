@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'NewVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -469,6 +469,7 @@ class Ui_Dialog(object):
         self.gridLayout_11.addWidget(self.pushButton_35, 3, 2, 1, 1)
 
         self.comboBox_14 = QComboBox(self.gridLayoutWidget_11)
+        self.comboBox_14.addItem("")
         self.comboBox_14.addItem("")
         self.comboBox_14.addItem("")
         self.comboBox_14.addItem("")
@@ -2614,6 +2615,7 @@ class Ui_Dialog(object):
         self.comboBox_14.setItemText(15, QCoreApplication.translate("Dialog", u"lm3s811evb", None))
         self.comboBox_14.setItemText(16, QCoreApplication.translate("Dialog", u"none", None))
         self.comboBox_14.setItemText(17, QCoreApplication.translate("Dialog", u"raspi2", None))
+        self.comboBox_14.setItemText(18, QCoreApplication.translate("Dialog", u"musicpal", None))
 
         self.comboBox_14.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please select a machine", None))
         self.comboBox_15.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
