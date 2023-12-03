@@ -43,8 +43,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             super().__init__()
             
         self.setupUi(self)
-        self.langDetect()
+        
         self.setWindowTitle("EmuGUI - Create new VM")
+        self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))

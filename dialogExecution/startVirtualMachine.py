@@ -42,7 +42,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             
         self.setupUi(self)
         self.connectSignalsSlots()
-        self.langDetect()
+        
 
         try:
             self.vmSpecs = self.readTempVmFile()
@@ -62,6 +62,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
         print(self.vmSpecs)
         self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
+        self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -170,40 +171,40 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
         if languageToUse != None:
             if languageToUse.startswith("de"):
-                translations.de.translateStartVmDE(self)
+                translations.de.translateStartVmDE(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("uk"):
-                translations.uk.translateStartVmUK(self)
+                translations.uk.translateStartVmUK(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("fr"):
-                translations.fr.translateStartVmFR(self)
+                translations.fr.translateStartVmFR(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("es"):
-                translations.es.translateStartVmES(self)
+                translations.es.translateStartVmES(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("ro"):
-                translations.ro.translateStartVmRO(self)
+                translations.ro.translateStartVmRO(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("ru"):
-                translations.ru.translateStartVmRU(self)
+                translations.ru.translateStartVmRU(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("be"):
-                translations.be.translateStartVmBE(self)
+                translations.be.translateStartVmBE(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("cz"):
-                translations.cz.translateStartVmCZ(self)
+                translations.cz.translateStartVmCZ(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("pt"):
-                translations.pt.translateStartVmPT(self)
+                translations.pt.translateStartVmPT(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("pl"):
-                translations.pl.translateStartVmPL(self)
+                translations.pl.translateStartVmPL(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("it"):
-                translations.it.translateStartVmIT(self)
+                translations.it.translateStartVmIT(self, self.vmSpecs[0])
 
             else:
-                translations.en.translateStartVmEN(self)
+                translations.en.translateStartVmEN(self, self.vmSpecs[0])
         
         else:
             if platform.system() == "Windows":
@@ -219,40 +220,40 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 
                 if languageToUse != None:
                     if languageToUse.startswith("de"):
-                        translations.de.translateStartVmDE(self)
+                        translations.de.translateStartVmDE(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("uk"):
-                        translations.uk.translateStartVmUK(self)
+                        translations.uk.translateStartVmUK(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("fr"):
-                        translations.fr.translateStartVmFR(self)
+                        translations.fr.translateStartVmFR(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("es"):
-                        translations.es.translateStartVmES(self)
+                        translations.es.translateStartVmES(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("ro"):
-                        translations.ro.translateStartVmRO(self)
+                        translations.ro.translateStartVmRO(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("ru"):
-                        translations.ru.translateStartVmRU(self)
+                        translations.ru.translateStartVmRU(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("be"):
-                        translations.be.translateStartVmBE(self)
+                        translations.be.translateStartVmBE(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("cz"):
-                        translations.cz.translateStartVmCZ(self)
+                        translations.cz.translateStartVmCZ(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("pt"):
-                        translations.pt.translateStartVmPT(self)
+                        translations.pt.translateStartVmPT(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("pl"):
-                        translations.pl.translateStartVmPL(self)
+                        translations.pl.translateStartVmPL(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("it"):
-                        translations.it.translateStartVmIT(self)
+                        translations.it.translateStartVmIT(self, self.vmSpecs[0])
 
                     else:
-                        translations.en.translateStartVmEN(self)
+                        translations.en.translateStartVmEN(self, self.vmSpecs[0])
             
             except:
                 print("Translation can't be figured out. Using English language.")
@@ -269,7 +270,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 dialog = ErrDialog(self)
                 dialog.exec()
 
-                translations.en.translateStartVmEN(self)
+                translations.en.translateStartVmEN(self, self.vmSpecs[0])
                 
 
     def readTempVmFile(self):

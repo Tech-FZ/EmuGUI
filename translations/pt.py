@@ -82,6 +82,8 @@ def translateMainPT(window):
     window.label_21.setText("EmuGUI em redes sociais (em Inglês)") # EmuGUI on social media (in English)
 
 def translateNewVmPT(window):
+    window.setWindowTitle("EmuGUI - Create new VM")
+
     # First page
     window.label.setText("Nome") # Name
     window.label_3.setText("Arquitetura") # Architecture
@@ -388,7 +390,8 @@ def translateNewVmPT(window):
     window.pushButton_20.setText("Finalizar") # Finish
     window.pushButton_21.setText("Cancelar") # Cancel
 
-def translateStartVmPT(window):
+def translateStartVmPT(window, vmname):
+    window.setWindowTitle(f"EmuGUI - Start {vmname}")
     window.label_4.setText("Data & Hora") # Date & Time
     window.label_3.setText("Ligar de") # Boot from
     window.label_6.setText("Caminho TPM (Somente Linux)") # TPM path (Linux only)
@@ -464,7 +467,9 @@ def translateQemuImgMissingPT(window):
 
     window.pushButton.setText("OK") # OK
 
-def translateEditVMPT(window):
+def translateEditVMPT(window, vmname):
+    window.setWindowTitle(f"EmuGUI - Edit {vmname}")
+
     # Buttons on all tabs
     window.pushButton.setText("Cancelar") # Cancel
     window.pushButton_2.setText("OK") # OK
@@ -669,6 +674,8 @@ def translateEditVMPT(window):
     window.label_36.setText("Acceleration") # Acceleration
 
 def translateErrDialogPT(window, errcode):
+    window.setWindowTitle(f"EmuGUI - Error")
+    
     if errcode.startswith("C"):
         window.label.setText("EmuGUI encountered a critical error and needs to be closed.") # EmuGUI encountered a critical error and needs to be closed.
 

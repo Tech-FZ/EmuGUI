@@ -43,8 +43,8 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         self.tabWidget.setCurrentIndex(0)
-        self.langDetect()
         self.vmSpecs = self.readTempVmFile()
+        self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -181,40 +181,40 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         if languageToUse != None:
             if languageToUse.startswith("de"):
-                translations.de.translateEditVMDE(self)
+                translations.de.translateEditVMDE(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("uk"):
-                translations.uk.translateEditVMUK(self)
+                translations.uk.translateEditVMUK(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("fr"):
-                translations.fr.translateEditVMFR(self)
+                translations.fr.translateEditVMFR(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("es"):
-                translations.es.translateEditVMES(self)
+                translations.es.translateEditVMES(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("ro"):
-                translations.ro.translateEditVMRO(self)
+                translations.ro.translateEditVMRO(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("ru"):
-                translations.ru.translateEditVMRU(self)
+                translations.ru.translateEditVMRU(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("be"):
-                translations.be.translateEditVMBE(self)
+                translations.be.translateEditVMBE(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("cz"):
-                translations.cz.translateEditVMCZ(self)
+                translations.cz.translateEditVMCZ(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("pt"):
-                translations.pt.translateEditVMPT(self)
+                translations.pt.translateEditVMPT(self, self.vmSpecs[0])
 
             elif languageToUse.startswith("pl"):
-                translations.pl.translateEditVMPL(self)
+                translations.pl.translateEditVMPL(self, self.vmSpecs[0])
             
             elif languageToUse.startswith("it"):
-                translations.it.translateEditVMIT(self)
+                translations.it.translateEditVMIT(self, self.vmSpecs[0])
 
             else:
-                translations.en.translateEditVMEN(self)
+                translations.en.translateEditVMEN(self, self.vmSpecs[0])
 
             self.logman.writeToLogFile(
                 f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
@@ -238,40 +238,40 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 
                 if languageToUse != None:
                     if languageToUse.startswith("de"):
-                        translations.de.translateEditVMDE(self)
+                        translations.de.translateEditVMDE(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("uk"):
-                        translations.uk.translateEditVMUK(self)
+                        translations.uk.translateEditVMUK(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("fr"):
-                        translations.fr.translateEditVMFR(self)
+                        translations.fr.translateEditVMFR(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("es"):
-                        translations.es.translateEditVMES(self)
+                        translations.es.translateEditVMES(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("ro"):
-                        translations.ro.translateEditVMRO(self)
+                        translations.ro.translateEditVMRO(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("ru"):
-                        translations.ru.translateEditVMRU(self)
+                        translations.ru.translateEditVMRU(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("be"):
-                        translations.be.translateEditVMBE(self)
+                        translations.be.translateEditVMBE(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("cz"):
-                        translations.cz.translateEditVMCZ(self)
+                        translations.cz.translateEditVMCZ(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("pt"):
-                        translations.pt.translateEditVMPT(self)
+                        translations.pt.translateEditVMPT(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("pl"):
-                        translations.pl.translateEditVMPL(self)
+                        translations.pl.translateEditVMPL(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("it"):
-                        translations.it.translateEditVMIT(self)
+                        translations.it.translateEditVMIT(self, self.vmSpecs[0])
 
                     else:
-                        translations.en.translateEditVMEN(self)
+                        translations.en.translateEditVMEN(self, self.vmSpecs[0])
 
                     self.logman.writeToLogFile(
                         f"{errors.errCodes.errCodes[52]}: Language \"{languageToUse}\" set successfully."
@@ -279,7 +279,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             
             except:
                 print("Translation can't be figured out. Using English language.")
-                translations.en.translateEditVMEN(self)
+                translations.en.translateEditVMEN(self, self.vmSpecs[0])
 
                 if platform.system() == "Windows":
                     errorFile = platformSpecific.windowsSpecific.windowsErrorFile()

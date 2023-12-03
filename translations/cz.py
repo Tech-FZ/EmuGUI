@@ -82,6 +82,8 @@ def translateMainCZ(window):
     window.label_21.setText("EmuGUI na sociálních médiích (in English)") # EmuGUI on social media (in English)
 
 def translateNewVmCZ(window):
+    window.setWindowTitle("EmuGUI - Create new VM")
+
     # First page
     window.label.setText("Název") # Name
     window.label_3.setText("Architektura") # Architecture
@@ -389,7 +391,8 @@ def translateNewVmCZ(window):
     window.pushButton_20.setText("Dokončit") # Finish
     window.pushButton_21.setText("Zrušit") # Cancel
 
-def translateStartVmCZ(window):
+def translateStartVmCZ(window, vmname):
+    window.setWindowTitle(f"EmuGUI - Start {vmname}")
     window.label_4.setText("Datum a čas") # Date & Time
     window.label_3.setText("Spustit z") # Boot from
     window.label_6.setText("TPM path (Linux only)") # TPM path (Linux only)
@@ -465,7 +468,9 @@ def translateQemuImgMissingCZ(window):
 
     window.pushButton.setText("OK") # OK
 
-def translateEditVMCZ(window):
+def translateEditVMCZ(window, vmname):
+    window.setWindowTitle(f"EmuGUI - Edit {vmname}")
+
     # Buttons on all tabs
     window.pushButton.setText("Zrušit") # Cancel
     window.pushButton_2.setText("OK") # OK
@@ -670,6 +675,8 @@ def translateEditVMCZ(window):
     window.label_36.setText("Akcelerace") # Acceleration
 
 def translateErrDialogCZ(window, errcode):
+    window.setWindowTitle(f"EmuGUI - Chybu")
+
     if errcode.startswith("C"):
         window.label.setText("EmuGUI narazil na kritickou chybu a musí být uzavřen.") # EmuGUI encountered a critical error and needs to be closed.
 

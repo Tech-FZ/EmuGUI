@@ -33,6 +33,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - Now you can delete the cache with the delcache scripts for your OS.
 - The Garuka Pula banner from lucien-rowan/Tech-FZ has been added.
 - The musicpal machine can now be used for ARM machines.
+- Some window names are now translated as well (at least technically).
 
 ## Changes made compared to 1.2.0.5509_rc2
 
