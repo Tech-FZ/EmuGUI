@@ -34,6 +34,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The Garuka Pula banner from lucien-rowan/Tech-FZ has been added.
 - The musicpal machine can now be used for ARM machines.
 - Some window names are now translated as well (at least technically).
+- An effort in fixing the theme issue on Ubuntu 22.04 LTS has been made.
 
 ## Changes made compared to 1.2.0.5509_rc2
 

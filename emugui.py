@@ -47,6 +47,7 @@ from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVMNew import EditVMNewDialog
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
 from dialogExecution.errDialog import ErrDialog
+from dialogExecution.settingsRequireRestart import *
 
 try:
     import translations.de
@@ -87,14 +88,20 @@ import errors.logman
 import errors.logID
 
 try:
+    import qdarktheme
+
+except:
+    print("EmuGUI has to warn you.")
+    print("Error code: W-11-CLZLM")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+
+try:
     import psutil
 
 except:
     print("EmuGUI has to warn you.")
     print("Error code: W-06-NPGOP")
     print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
-    input("Press any key to exit.")
-    exit()
 
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -1552,6 +1559,22 @@ class Window(QMainWindow, Ui_MainWindow):
                                     i += 1
                             except:
                                 print("Style couldn't be applied.")
+
+                                if platform.system() == "Windows":
+                                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+    
+                                else:
+                                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                                with open(errorFile, "w+") as errCodeFile:
+                                    errCodeFile.write(errors.errCodes.errCodes[55])
+
+                                logman.writeToLogFile(
+                                    f"{errors.errCodes.errCodes[55]}: Could not apply the theme."
+                                    )
+
+                                dialog = ErrDialog(self)
+                                dialog.exec()
                     
                     for userTheme in self.userThemeList:
                         if result[0][1].__contains__(userTheme):
@@ -1572,6 +1595,22 @@ class Window(QMainWindow, Ui_MainWindow):
                                     i += 1
                             except:
                                 print("Style couldn't be applied.")
+
+                                if platform.system() == "Windows":
+                                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+    
+                                else:
+                                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                                with open(errorFile, "w+") as errCodeFile:
+                                    errCodeFile.write(errors.errCodes.errCodes[55])
+
+                                logman.writeToLogFile(
+                                    f"{errors.errCodes.errCodes[55]}: Could not apply the theme."
+                                    )
+
+                                dialog = ErrDialog(self)
+                                dialog.exec()
                 
                 else:
                     with open("translations/systemdefault.txt", "r+") as sysDefFile:
@@ -4571,6 +4610,17 @@ class Window(QMainWindow, Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
+    try:
+        if platform.system() == "Linux":
+            app.setPalette(qdarktheme.load_palette(theme="auto"))
+            app.setStyleSheet(qdarktheme.load_stylesheet(theme="auto"))
+
+    except:
+        print("EmuGUI has something to say.")
+        print("Error code: N-11-6RRJN")
+        print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+
     win = Window()
     win.show()
     sys.exit(app.exec())
