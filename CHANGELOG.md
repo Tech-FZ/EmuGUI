@@ -1,4 +1,4 @@
-# EmuGUI v1.2.0.5509_rc2 "Garuka Pula" (based on v1.2.0.5508_rc1)
+# EmuGUI v1.2.0.5510_rc3 "Garuka Pula" (based on v1.2.0.5509_rc2)
 
 ## WARNING
 
@@ -34,9 +34,45 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The Garuka Pula banner from lucien-rowan/Tech-FZ has been added.
 - The musicpal machine can now be used for ARM machines.
 
-## Changes made compared to 1.2.0.5508_rc1
+## Changes made compared to 1.2.0.5509_rc2
 
+- The readme has been completed to fully support the cx_Freeze way of compiling.
 
+# EmuGUI v1.2.0.5509_rc2 "Garuka Pula" (based on v1.2.0.5508_rc1)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.1.5.5413
+
+- As for the last two feature updates, this one gets another codename: "Garuka Pula".
+- The feature to import and export VMs has been added.
+- The readme has been updated with the new system requirements.
+- I think I might have fixed the issue with subprocess.run on Windows.
+- An error dialog is now there.
+- The YouTube and Odysee channels of EmuGUI have been linked in the readme and in the main window under the About tab.
+- The outdated feature list has been updated.
+- You can now choose the CD controller (IDE, SCSI or Virtio).
+- You can now add two CDs to your VMs (instead of one).
+- There are now bash scripts to start EmuGUI with on Linux.
+- The Open/Save dialogs for VHDs are now correctly separated.
+- A bug regarding VHDs has been fixed.
+- Some more errors are now implemented.
+- You can now choose the HDD controller.
+- The MAC address generator is now taking up a lot less lines of code.
+- System information is now being retrieved.
+- The readme has been updated.
+- The messages in the main script have been updated.
+- I'm now working on a logging system.
+- An easteregg has been removed because it wasn't telling the truth anymore.
+- Translations have been updated.
+- Thanks to Calibrato, we can now add the Polish translation.
+- You can now start the VM without passing a specific time and date to it.
+- The building process for Windows binaries with cx_Freeze is now documented in the readme.
+- Now you can delete the cache with the delcache scripts for your OS.
+- The Garuka Pula banner from lucien-rowan/Tech-FZ has been added.
+- The musicpal machine can now be used for ARM machines.
 
 # EmuGUI v1.2.0.5508_rc1 "Garuka Pula" (based on v1.2.0.5507_b2)
 

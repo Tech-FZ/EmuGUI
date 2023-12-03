@@ -102,9 +102,12 @@ For the update checker, a version code is being used instead of the number. Here
 5. Start the new EmuGUI installation. You might need to reinstall some virtual machines.
 
 ## Build Contents
-- [Building on Windows (Python Venv, Qt installed via Python)](#building-on-windows-python-venv-qt-installed-via-python)
-- [Building on Windows (Python Venv, Qt installed via official installer)](#building-on-windows-python-venv-qt-installed-via-official-installer)
-- [Building on Windows (Anaconda)](#building-on-windows-anaconda)
+- [Building on Windows (Python Venv, Qt installed via Python, with PyInstaller)](#building-on-windows-python-venv-qt-installed-via-python-with-pyinstaller)
+- [Building on Windows (Python Venv, Qt installed via Python, with cx_Freeze)](#building-on-windows-python-venv-qt-installed-via-python-with-cx_freeze)
+- [Building on Windows (Python Venv, Qt installed via official installer, with PyInstaller)](#building-on-windows-python-venv-qt-installed-via-official-installer-with-pyinstaller)
+- [Building on Windows (Python Venv, Qt installed via official installer, with cx_Freeze)](#building-on-windows-python-venv-qt-installed-via-official-installer-with-cx_freeze)
+- [Building on Windows (Anaconda, with PyInstaller)](#building-on-windows-anaconda-with-pyinstaller)
+- [Building on Windows (Anaconda, with cx_Freeze)](#building-on-windows-anaconda-with-cx_Freeze)
 - [Building on Linux (Python Venv, Qt installed via Python)](#building-on-linux-python-venv-qt-installed-via-python)
 - [Building on Linux (Python Venv, Qt installed via official installer)](#building-on-linux-python-venv-qt-installed-via-official-installer)
 - [Building on Linux (Anaconda)](#building-on-linux-anaconda)
@@ -143,7 +146,7 @@ For the update checker, a version code is being used instead of the number. Here
 11. Within the terminal VS Code just opened, type: `pip install --upgrade pip cx_Freeze PyQt6 PyQt6-tools PySide6 python-magic-bin requests python-dateutil psutil`
 12. After this is done, run the main.py script.
 13. To compile the program for users who don't have Python installed, type: `cxfreeze -c emugui.py --target-dir dist --icon EmuGUI.ico`
-14. After that is finished, copy the code into the dist folder PyInstaller created.
+14. After that is finished, copy the code into the dist folder cx_Freeze created.
 15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 16. If it works, have fun! If not, try to start again from number 9.
 
@@ -185,7 +188,7 @@ For the update checker, a version code is being used instead of the number. Here
 13. Within the terminal VS Code just opened, type: `pip install --upgrade pip cx_Freeze PySide6 python-magic-bin requests python-dateutil psutil`
 14. After this is done, run the main.py script.
 15. To compile the program for users who don't have Python installed, type: `cxfreeze -c emugui.py --target-dir dist --icon EmuGUI.ico`
-16. After that is finished, copy the code into the dist folder PyInstaller created.
+16. After that is finished, copy the code into the dist folder cx_Freeze created.
 17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 18. If it works, have fun! If not, try to start again from number 9.
 
@@ -221,7 +224,7 @@ For the update checker, a version code is being used instead of the number. Here
 10. Within the VS Code terminal, type: `& pip install --upgrade pip cx_Freeze PySide6 python-magic-bin PyQt6 requests python-dateutil psutil`
 11. After this is done, run the main.py script.
 12. To compile the program for users who don't have Python installed, type: `& cxfreeze -c emugui.py --target-dir dist --icon EmuGUI.ico`
-13. After that is finished, copy the code into the dist folder PyInstaller created.
+13. After that is finished, copy the code into the dist folder cx_Freeze created.
 14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 15. If it works, have fun! If not, try to start again from number 9.
 
