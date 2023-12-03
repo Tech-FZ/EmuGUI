@@ -45,14 +45,7 @@ import errors.errCodes
 from dialogExecution.newVirtualMachine import NewVirtualMachineDialog
 from dialogExecution.startVirtualMachine import StartVirtualMachineDialog
 from dialogExecution.editVMNew import EditVMNewDialog
-from dialogExecution.usbTabletDepreciation import UsbTabletDepreciated
 from dialogExecution.win81NearEOS import Win812012R2NearEOS
-from dialogExecution.vmTooNew import VmIsMadeWithTooYoungEmuGUI
-from dialogExecution.settingsRequireRestart import SettingsRequireEmuGUIReboot
-from dialogExecution.win2kDepreciation import Win2KDepreciated
-from dialogExecution.qemuImgError import QemuImgMissing
-from dialogExecution.qemuSysError import QemuSysMissing
-from dialogExecution.icelakeClientDepreciation import IcelakeClientCPUDepreciation
 from dialogExecution.errDialog import ErrDialog
 
 try:
