@@ -1,4 +1,4 @@
-# EmuGUI v1.2.0.5510_rc3 "Garuka Pula" (based on v1.2.0.5509_rc2)
+# EmuGUI v1.2.0.5510 "Garuka Pula" (based on v1.2.0.5509_rc2)
 
 ## WARNING
 
