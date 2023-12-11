@@ -39,6 +39,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 ## Changes made compared to 1.2.0.5509_rc2
 
 - The readme has been completed to fully support the cx_Freeze way of compiling.
+- The readme contains the pyqtdarktheme module in its tutorials (for Linux only).
 - Some unnecessary code has been removed.
 
 # EmuGUI v1.2.0.5509_rc2 "Garuka Pula" (based on v1.2.0.5508_rc1)
