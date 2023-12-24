@@ -80,6 +80,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         # This code connects the buttons to their functions
         self.pushButton.clicked.connect(self.set_fda_path)
         self.pushButton_2.clicked.connect(self.set_cdrom_path)
+        self.pushButton_6.clicked.connect(self.set_cdrom2_path)
         self.pushButton_3.clicked.connect(self.start_virtual_machine)
         self.pushButton_4.clicked.connect(self.close)
         self.pushButton_5.clicked.connect(self.set_date_to_system)
@@ -301,10 +302,16 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             self.lineEdit.setText(filename)
 
     def set_cdrom_path(self):
-        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select cdrom file', dir='.', filter='ISO image (*.iso);;All files (*.*)')
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select first cdrom file', dir='.', filter='ISO image (*.iso);;All files (*.*)')
 
         if filename:
             self.lineEdit_2.setText(filename)
+
+    def set_cdrom2_path(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select second cdrom file', dir='.', filter='ISO image (*.iso);;All files (*.*)')
+
+        if filename:
+            self.lineEdit_4.setText(filename)
 
     def set_date_to_system(self):
         self.dateTimeEdit.setDateTime(QDateTime.currentDateTime())

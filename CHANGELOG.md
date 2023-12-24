@@ -1,3 +1,13 @@
+# EmuGUI v1.2.1.5511 "Garuka Pula" (based on v1.2.1.5510)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.2.0.5510
+
+- I forgot to actually assign the second ISO stuff. Now I realised and fixed it.
+
 # EmuGUI v1.2.0.5510 "Garuka Pula" (based on v1.2.0.5509_rc2)
 
 ## WARNING
