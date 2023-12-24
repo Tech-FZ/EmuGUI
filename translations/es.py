@@ -403,9 +403,11 @@ def translateStartVmES(window, vmname):
 
     window.pushButton.setText("Buscar") # Browse
     window.pushButton_2.setText("Buscar") # Browse
+    window.pushButton_6.setText("Buscar") # Browse
     window.pushButton_5.setText("Establecer en el sistema") # Set to system
     window.pushButton_3.setText("Iniciar máquina virtual") # Start VM
     window.pushButton_4.setText("Cancelar") # Cancel
+    window.checkBox.setText("Use RTC option") # Use RTC option
 
     # Combo box for boot
     i = 0

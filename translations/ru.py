@@ -404,9 +404,11 @@ def translateStartVmRU(window, vmname):
 
     window.pushButton.setText("Обзор") # Browse
     window.pushButton_2.setText("Обзор") # Browse
+    window.pushButton_6.setText("Обзор") # Browse
     window.pushButton_5.setText("Установить в систему") # Set to system
     window.pushButton_3.setText("Запустить ВМ") # Start VM
     window.pushButton_4.setText("Отмена") # Cancel
+    window.checkBox.setText("Use RTC option") # Use RTC option
 
     # Combo box for boot
     i = 0

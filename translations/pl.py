@@ -403,9 +403,11 @@ def translateStartVmPL(window, vmname):
 
     window.pushButton.setText("Przeglądaj") # Browse
     window.pushButton_2.setText("Przeglądaj") # Browse
+    window.pushButton_6.setText("Przeglądaj") # Browse
     window.pushButton_5.setText("Ustaw na system") # Set to system
     window.pushButton_3.setText("Włącz maszyne wirtualną") # Start VM
     window.pushButton_4.setText("Anuluj") # Cancel
+    window.checkBox.setText("Use RTC option") # Use RTC option
 
     # Combo box for boot
     i = 0

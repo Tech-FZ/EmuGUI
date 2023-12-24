@@ -404,9 +404,11 @@ def translateStartVmBE(window, vmname):
 
     window.pushButton.setText("Агляд") # Browse
     window.pushButton_2.setText("Агляд") # Browse
+    window.pushButton_6.setText("Агляд") # Browse
     window.pushButton_5.setText("Усталяваць у сістэму") # Set to system
     window.pushButton_3.setText("Запусціць віртуальную машыну") # Start VM
     window.pushButton_4.setText("Адмена") # Cancel
+    window.checkBox.setText("Use RTC option") # Use RTC option
 
     # Combo box for boot
     i = 0

@@ -403,9 +403,11 @@ def translateStartVmDE(window, vmname):
 
     window.pushButton.setText("Durchsuchen") # Browse
     window.pushButton_2.setText("Durchsuchen") # Browse
+    window.pushButton_6.setText("Durchsuchen") # Browse
     window.pushButton_5.setText("Auf Systemzeit setzen") # Set to system
     window.pushButton_3.setText("VM starten") # Start VM
     window.pushButton_4.setText("Abbrechen") # Cancel
+    window.checkBox.setText("RTC-Option nutzen") # Use RTC option
 
     # Combo box for boot
     i = 0

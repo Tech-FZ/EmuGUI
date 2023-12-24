@@ -404,9 +404,11 @@ def translateStartVmCZ(window, vmname):
 
     window.pushButton.setText("Hledat") # Browse
     window.pushButton_2.setText("Hledat") # Browse
+    window.pushButton_6.setText("Hledat") # Browse
     window.pushButton_5.setText("Nastavit do systém") # Set to system
     window.pushButton_3.setText("Spustit virtuální počítač") # Start VM
     window.pushButton_4.setText("Zrušit") # Cancel
+    window.checkBox.setText("Use RTC option") # Use RTC option
 
     # Combo box for boot
     i = 0
