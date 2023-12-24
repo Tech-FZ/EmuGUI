@@ -8,6 +8,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 
 - I forgot to actually assign the second ISO stuff. Now I realised and fixed it.
 - The translations are now more complete too.
+- Also, the RTC checkbox enables and disables the time options in the start VM dialog.
 
 # EmuGUI v1.2.0.5510 "Garuka Pula" (based on v1.2.0.5509_rc2)
 

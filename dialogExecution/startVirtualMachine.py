@@ -63,6 +63,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         print(self.vmSpecs)
         self.setWindowTitle(f"EmuGUI - Start {self.vmSpecs[0]}")
         self.langDetect()
+        self.timeUsageTrigger()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -84,6 +85,16 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.pushButton_3.clicked.connect(self.start_virtual_machine)
         self.pushButton_4.clicked.connect(self.close)
         self.pushButton_5.clicked.connect(self.set_date_to_system)
+        self.checkBox.clicked.connect(self.timeUsageTrigger)
+
+    def timeUsageTrigger(self):
+        if self.checkBox.isChecked():
+            self.dateTimeEdit.setEnabled(True)
+            self.pushButton_5.setEnabled(True)
+
+        else:
+            self.dateTimeEdit.setEnabled(False)
+            self.pushButton_5.setEnabled(False)
 
     def langDetect(self):
         select_language = """
