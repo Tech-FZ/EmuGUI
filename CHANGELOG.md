@@ -7,6 +7,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 ## Changes compared to v1.2.0.5510
 
 - The Polish translation has been worked on by Calibrato.
+- More VHD file endings are now natively supported by EmuGUI.
 
 # EmuGUI v1.2.1.5511 "Garuka Pula" (based on v1.2.0.5510)
 

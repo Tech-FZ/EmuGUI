@@ -508,13 +508,13 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             addExistVhdContent = addExistVhdFile.read()
 
         if creNewVhdContent.__contains__(self.comboBox_18.currentText()):        
-            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
+            filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Save VHD file', dir='.', filter='Hard disk file (*.img);;QCOW2 disk image (*.qcow2);;QCOW disk image (*.qcow);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
 
             if filename:
                 self.lineEdit_6.setText(filename)
 
         elif addExistVhdContent.__contains__(self.comboBox_18.currentText()):        
-            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
+            filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open VHD file', dir='.', filter='Hard disk file (*.img);;QCOW2 disk image (*.qcow2);;QCOW disk image (*.qcow);;VirtualBox disk image (*.vdi);;VMware disk file (*.vmdk);;Virtual hard disk file with extra features (*.vhdx);;Virtual PC hard disks (*.vpc);;All files (*.*)')
 
             if filename:
                 self.lineEdit_6.setText(filename)
