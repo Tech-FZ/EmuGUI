@@ -4,7 +4,7 @@
 
 You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
 
-## Changes compared to v1.2.0.5510
+## Changes compared to v1.2.1.5511
 
 - The Polish translation has been worked on by Calibrato.
 - More VHD file endings are now natively supported by EmuGUI.
