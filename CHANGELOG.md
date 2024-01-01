@@ -1,4 +1,14 @@
-# EmuGUI v1.2.1.5511 "Garuka Pula" (based on v1.2.1.5510)
+# EmuGUI v1.2.2.5512 "Garuka Pula" (based on v1.2.1.5511)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.2.0.5510
+
+- The Polish translation has been worked on by Calibrato.
+
+# EmuGUI v1.2.1.5511 "Garuka Pula" (based on v1.2.0.5510)
 
 ## WARNING
 

@@ -10,8 +10,8 @@ def translateMainPL(window):
     window.pushButton_9.setText("Włącz maszynę wirtualną") # Start virtual machine
     window.pushButton_10.setText("Edytuj wybraną maszynę wirtualną") # Edit selected virtual machine
     window.pushButton_11.setText("Usuń wybraną maszynę wirtualną") # Delete selected virtual machine
-    window.pushButton_22.setText("Export selected virtual machine") # Export selected virtual machine
-    window.pushButton_23.setText("Import virtual machine") # Import virtual machine
+    window.pushButton_22.setText("Exportuj wybraną maszyne wirtualną") # Export selected virtual machine
+    window.pushButton_23.setText("Importuj maszynę wirtualną") # Import virtual machine
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Generalne") # General
@@ -290,7 +290,7 @@ def translateNewVmPL(window):
     window.label_13.setText("Ścieżka VHD") # VHD path
     window.label_14.setText("Format pliku VHD") # VHD file format
     window.label_15.setText("Maksymalny rozmiar") # Maximum size
-    window.label_73.setText("HDD controller") # HDD controller
+    window.label_73.setText("Kontroler HDD") # HDD controller
 
     i = 0
 
@@ -355,8 +355,8 @@ def translateNewVmPL(window):
 
     # Eighth page
     window.label_71.setText("Akceleracja") # Acceleration
-    window.label_70.setText("CD controller 1") # CD controller 1
-    window.label_72.setText("CD controller 2") # CD controller 2
+    window.label_70.setText("Kontroler CD 1") # CD controller 1
+    window.label_72.setText("Kontroler CD 2") # CD controller 2
 
     i = 0
 
@@ -407,7 +407,7 @@ def translateStartVmPL(window, vmname):
     window.pushButton_5.setText("Ustaw na system") # Set to system
     window.pushButton_3.setText("Włącz maszyne wirtualną") # Start VM
     window.pushButton_4.setText("Anuluj") # Cancel
-    window.checkBox.setText("Use RTC option") # Use RTC option
+    window.checkBox.setText("Użyj funkcji RTC") # Use RTC option
 
     # Combo box for boot
     i = 0
@@ -617,8 +617,8 @@ def translateEditVMPL(window, vmname):
 
         i += 1
 
-    window.label_37.setText("CD controller 1") # CD controller 1
-    window.label_72.setText("CD controller 2") # CD controller 2
+    window.label_37.setText("Kontroler CD 1") # CD controller 1
+    window.label_72.setText("Kontroler CD 2") # CD controller 2
 
     i = 0
 
@@ -638,7 +638,7 @@ def translateEditVMPL(window, vmname):
 
         i += 1
 
-    window.label_73.setText("HDD controller") # HDD controller
+    window.label_73.setText("Kontroler HDD") # HDD controller
 
     i = 0
 
