@@ -119,7 +119,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "1.2.2.5512"
+        self.version = "2.0.0.5600"
 
         print(f"EmuGUI {self.version}")
 
@@ -184,7 +184,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     f"{errors.errCodes.errCodes[46]}: Less than 6 GB of RAM detected! As you're using Windows 11, proceed at your own risk. Support requests won't be prioritised."
                     )
 
-        self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Garuka Pula'")
+        self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
         self.setWindowTitle(f"EmuGUI {self.version}")
         self.languageInUse = "system"
 
@@ -235,7 +235,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
                 
                 self.label_8.setText(
-                    f"EmuGUI {self.version}\nCodename 'Garuka Pula'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
+                    f"EmuGUI {self.version}\nCodename 'Ioana Rosa'\nYour OS is no longer supported by EmuGUI. You should upgrade at least to Windows 10. You're currently running Windows {platform.release()}")
     
     def resizeEvent(self, event: QtGui.QResizeEvent):
         super().resizeEvent(event)
