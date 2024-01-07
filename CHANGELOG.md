@@ -8,6 +8,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 
 - As always, EmuGUI 2.0 receives another codename, in this case "Ioana Rosa".
 - An architecture list in the main window and its usage made the number of used initialisation code shrink. The old code has been commented out.
+- The same optimisation efforts have been applied to the code which changes the settings.
 
 # EmuGUI v1.2.2.5512 "Garuka Pula" (based on v1.2.1.5511)
 

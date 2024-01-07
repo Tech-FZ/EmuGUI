@@ -3090,6 +3090,75 @@ class Window(QMainWindow, Ui_MainWindow):
     def applyChangesQemu(self):
         logman = errors.logman.LogMan()
         logman.logFile = logman.setLogFile()
+        pathQemuImg = self.lineEdit_5.text()
+
+        qemu_img_update = f"""
+        UPDATE settings
+        SET value = '{pathQemuImg}'
+        WHERE name = 'qemu-img';
+        """
+
+        connection = self.connection
+        cursor = connection.cursor()
+
+        try:
+            cursor.execute(qemu_img_update)
+            connection.commit()
+            print("The qemu-img slot was updated successfully.")
+
+        except sqlite3.Error as e:
+            print(f"The SQLite module encountered an error: {e}.")
+
+            if platform.system() == "Windows":
+                errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+            else:
+                errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+            with open(errorFile, "w+") as errCodeFile:
+                errCodeFile.write(errors.errCodes.errCodes[12])
+
+            logman.writeToLogFile(
+                f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                )
+
+            dialog = ErrDialog(self)
+            dialog.exec()
+
+        for architecture in self.architectures:
+            upd_query = f"""
+            UPDATE settings
+            SET value = '{architecture[1].text()}'
+            WHERE name = 'qemu-system-{architecture[0]}';
+            """
+
+            try:
+                cursor.execute(upd_query)
+                connection.commit()
+                print(f"The qemu-system-{architecture[0]} slot has been updated.")
+
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[12])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[12]}: The database could not be accessed and the settings are therefore not applied. SQLite describes the error as follows: \"{e}\""
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
+    def applyChangesQemuOld(self):
+        logman = errors.logman.LogMan()
+        logman.logFile = logman.setLogFile()
 
         pathQemuImg = self.lineEdit_5.text()
         pathQemuI386 = self.lineEdit_4.text()
