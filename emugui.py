@@ -120,6 +120,9 @@ class Window(QMainWindow, Ui_MainWindow):
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
         self.version = "2.0.0.5600"
+        self.architetures = [
+            "i386", "x86_64", "ppc", "ppc64", "mips", "mipsel", "mips64", "mips64el", "arm", "aarch64", "sparc", "sparc64"
+        ]
 
         print(f"EmuGUI {self.version}")
 
