@@ -120,8 +120,20 @@ class Window(QMainWindow, Ui_MainWindow):
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
         self.version = "2.0.0.5600"
-        self.architetures = [
-            "i386", "x86_64", "ppc", "ppc64", "mips", "mipsel", "mips64", "mips64el", "arm", "aarch64", "sparc", "sparc64"
+
+        self.architectures = [
+            ["i386", self.lineEdit_4],
+            ["x86_64", self.lineEdit_3],
+            ["ppc", self.lineEdit_2],
+            ["ppc64", self.lineEdit_8],
+            ["mips64el", self.lineEdit],
+            ["mips64", self.lineEdit_11],
+            ["mipsel", self.lineEdit_9],
+            ["mips", self.lineEdit_10],
+            ["aarch64", self.lineEdit_6],
+            ["arm", self.lineEdit_7],
+            ["sparc", self.lineEdit_12],
+            ["sparc64", self.lineEdit_13]
         ]
 
         print(f"EmuGUI {self.version}")
@@ -859,7 +871,52 @@ class Window(QMainWindow, Ui_MainWindow):
             dialog = ErrDialog(self)
             dialog.exec()
 
-        try:
+        for architecture in self.architectures:
+            sel_query = f"""
+            SELECT name, value FROM settings
+            WHERE name = "qemu-system-{architecture[0]}";
+            """
+
+            ins_query = f"""
+            INSERT INTO settings (name)
+            VALUES ("qemu-system-{architecture[0]}");
+            """
+
+            try:
+                cursor.execute(sel_query)
+                connection.commit()
+                result = cursor.fetchall()
+
+                try:
+                    qemu_img_slot = str(result[0])
+                    architecture[1].setText(result[0][1])
+                    print(f"The query was executed successfully. The qemu-system-{architecture[0]} slot already is in the database.")
+
+                except:
+                    cursor.execute(ins_query)
+                    connection.commit()
+                    print(f"The query was executed successfully. The qemu-system-{architecture[0]} slot has been created.")
+        
+            except sqlite3.Error as e:
+                print(f"The SQLite module encountered an error: {e}.")
+
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[2])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[2]}: Could not connect to the database to update the qemu-system-{architecture[0]} slot."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
+        """ try:
             cursor.execute(select_qemu_i386)
             connection.commit()
             result = cursor.fetchall()
@@ -1265,7 +1322,7 @@ class Window(QMainWindow, Ui_MainWindow):
                 )
 
             dialog = ErrDialog(self)
-            dialog.exec()
+            dialog.exec() """
 
         try:
             cursor.execute(select_language)
