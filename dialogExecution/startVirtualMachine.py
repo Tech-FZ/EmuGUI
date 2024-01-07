@@ -43,6 +43,10 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         
+        self.architectures = [
+            "i386", "x86_64", "ppc", "ppc64", "mips64", "mips64el",
+            "mipsel", "mips", "aarch64", "arm", "sparc", "sparc64"
+        ]
 
         try:
             self.vmSpecs = self.readTempVmFile()
@@ -330,56 +334,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Here, it chooses the architecture for your VM and starts the right thing.
 
     def start_virtual_machine(self):
-        qemu_i386_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-i386';
-        """
-
-        qemu_x86_64_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-x86_64';
-        """
-
-        qemu_ppc_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-ppc';
-        """
-
-        qemu_ppc64_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-ppc64';
-        """
-
-        qemu_mips64el_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-mips64el';
-        """
-
-        qemu_mipsel_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-mipsel';
-        """
-
-        qemu_aarch64_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-aarch64';
-        """
-
-        qemu_arm_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-arm';
-        """
-
-        qemu_sparc_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-sparc';
-        """
-
-        qemu_sparc64_bin = """
-        SELECT value FROM settings
-        WHERE name = 'qemu-system-sparc64';
-        """
-
         connection = self.connection
         cursor = connection.cursor()
 
@@ -397,75 +351,18 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         qemu_cmd = ""
 
         try:
-            if self.vmSpecs[1] == "i386":
-                cursor.execute(qemu_i386_bin)
-                connection.commit()
-                result = cursor.fetchall()
+            for architecture in self.architectures:
+                if self.vmSpecs[1] == architecture:
+                    sel_query = f"""
+                    SELECT value FROM settings
+                    WHERE name = 'qemu-system-{architecture}';
+                    """
 
-                print(result)
-
-            elif self.vmSpecs[1] == "x86_64":
-                cursor.execute(qemu_x86_64_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "ppc":
-                cursor.execute(qemu_ppc_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "ppc64":
-                cursor.execute(qemu_ppc64_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-            
-            elif self.vmSpecs[1] == "mips64el":
-                cursor.execute(qemu_mips64el_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "mipsel":
-                cursor.execute(qemu_mipsel_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "aarch64":
-                cursor.execute(qemu_aarch64_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "arm":
-                cursor.execute(qemu_arm_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "sparc":
-                cursor.execute(qemu_sparc_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
-
-            elif self.vmSpecs[1] == "sparc64":
-                cursor.execute(qemu_sparc64_bin)
-                connection.commit()
-                result = cursor.fetchall()
-
-                print(result)
+                    cursor.execute(sel_query)
+                    connection.commit()
+                    result = cursor.fetchall()
+                    print(result)
+                    break
 
             qemu_to_execute = result[0][0]
 
