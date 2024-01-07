@@ -1,0 +1,8 @@
+{
+    "x86_cpus": [
+        "486", "Broadwell", "Cascadelake-Server", "Conroe", "Copperlake", "Denverton", "Dhyana", "EPYC", "EPYC-Genoa", "EPYC-Milan", "EPYC-Rome",
+        "GraniteRapids", "Icelake-Server", "IvyBridge", "KnightsMill", "Nehalem", "Opteron-G1", "Opteron-G2", "Opteron-G3", "Opteron-G4", "Opteron-G5",
+        "Penryn", "SandyBridge", "Skylake-Client", "Skylake-Server", "Snowridge", "Westmere", "athlon", "core2duo", "coreduo", "kvm32", "kvm64",
+        "n270", "pentium", "pentium2", "pentium3", "phenom", "qemu32", "qemu64", "base", "max", "host"
+    ]
+}

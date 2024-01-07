@@ -10,6 +10,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - An architecture list in the main window and its usage made the number of used initialisation code shrink. The old code has been commented out.
 - The same optimisation efforts have been applied to the code which changes the settings and the code which starts VMs.
 - The old feature list has been updated.
+- Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on a plug-in which is planned to be included with EmuGUI anyway.
 
 # EmuGUI v1.2.2.5512 "Garuka Pula" (based on v1.2.1.5511)
 
