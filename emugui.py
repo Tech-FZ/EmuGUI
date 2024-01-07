@@ -2313,7 +2313,55 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog = ErrDialog(self)
                 dialog.exec()
 
-            i = 0
+            arch_supported = False
+
+            for architecture in self.architectures:
+                if architecture[0] == architecture_of_vm:
+                    for res in result_settings:
+                        if res[0] == f"qemu-system-{architecture_of_vm}":
+                            if res[1] != "":
+                                dialog = StartVirtualMachineDialog(self)
+                                dialog.exec()
+                                arch_supported = True
+                                break
+
+                            else:
+                                if platform.system() == "Windows":
+                                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                                else:
+                                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                                with open(errorFile, "w+") as errCodeFile:
+                                    errCodeFile.write(errors.errCodes.errCodes[17])
+
+                                logman.writeToLogFile(f"{errors.errCodes.errCodes[17]}: The QEMU emulator for {architecture_of_vm} could not be found.")
+
+                                dialog = ErrDialog(self)
+                                dialog.exec()
+                                arch_supported = True
+                                break
+
+                    break
+                    
+            if arch_supported == False:
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+        
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[32])
+
+                logman.writeToLogFile(
+                    f"{errors.errCodes.errCodes[32]}: This VM is not supported by this version of EmuGUI. Please upgrade to a later version."
+                    )
+
+                dialog = ErrDialog(self)
+                dialog.exec()
+
+            """ i = 0
 
             while i < len(result_settings):
                 if architecture_of_vm == "i386" or architecture_of_vm == "x86_64" or architecture_of_vm == "mips64el":
@@ -2434,7 +2482,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     dialog.exec()
                     break
 
-                i += 1
+                i += 1 """
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
