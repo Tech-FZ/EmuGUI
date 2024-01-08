@@ -1,3 +1,13 @@
+# EmuGUI v1.2.3.5513 "Garuka Pula" (based on v1.2.2.5512)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.2.2.5512
+
+- SPARC64 VMs didn't have network capabilities under any circumstances. This is now fixed.
+
 # EmuGUI v1.2.2.5512 "Garuka Pula" (based on v1.2.1.5511)
 
 ## WARNING
