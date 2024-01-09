@@ -4,5 +4,8 @@
         "GraniteRapids", "Icelake-Server", "IvyBridge", "KnightsMill", "Nehalem", "Opteron-G1", "Opteron-G2", "Opteron-G3", "Opteron-G4", "Opteron-G5",
         "Penryn", "SandyBridge", "Skylake-Client", "Skylake-Server", "Snowridge", "Westmere", "athlon", "core2duo", "coreduo", "kvm32", "kvm64",
         "n270", "pentium", "pentium2", "pentium3", "phenom", "qemu32", "qemu64", "base", "max", "host"
+    ],
+    "x86_machines": [
+        "pc", "q35", "isapc", "none"
     ]
 }
