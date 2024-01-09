@@ -1,0 +1,18 @@
+{
+    "ppc_cpus": [
+        "603", "604", "603e", "base", "max", "host", "603p", "603e7v", "603e7", "603e7v2", "603e7v1", "603e7t", "740", "740e", "750", "750e", "750cx", "745",
+        "755", "750cxe", "750cxr", "750cl", "750l", "604e", "604r", "7400", "g2", "mpc603", "g2hip3", "e300", "mpc8343ea", "mpc8349e", "mpc8347ep",
+        "mpc8347p", "mpc8347eap", "mpc8349", "mpc8347et", "mpc8347t", "mpc8343a", "mpc8347eat", "mpc8347ap", "mpc8349ea", "mpc8343e", "mpc8379e", "e300c4",
+        "mpc8377e", "mpc8377", "mpc8378", "mpc8379", "mpc8378e", "740p", "750p", "460exb", "460ex", "440epx", "405d2", "x2vp4", "x2vp20", "405gpa", "405gpb",
+        "405cra", "405gpc", "405gpd", "405crb", "405cr", "stb03", "npe4gs3", "npe405h", "npe405h2", "405ez", "npe405l", "stb04", "405", "405lp", "440epa", "440ep",
+        "405gpr", "405ep", "stb25", "750fx", "750fl", "750gl", "750gx", "440-xilinx-w-dfpu", "440-xilinx", "7450", "vger", "7451", "7441", "7455", "7445", "7447",
+        "7457", "7457a", "7447a", "mpc8641d", "mpc8610", "e600", "mpc8641", "7448", "7410", "mpc8560", "mpc8555", "mpc8541", "mpc8555e", "mpc 8541e", "mpc8540",
+        "e500v1", "mpc8540_v10", "mpc8545e", "mpc8547e", "mpc8548", "mpc8545", "mpc8543e", "e500", "mpc8543", "mpc8548e", "mpc8544", "mpc8533e", "mpc8544e",
+        "mpc8567", "mpc8567e", "mpc8568", "mpc8533", "mpc8572e", "mpc8572", "e500mc", "g2h4", "g2hip4", "g2le", "g2gp", "g2legp", "mpc5200b", "mpc5200", "g2legp1",
+        "g2legp3", "e200", "g2ls", "g2lels"
+    ],
+    "ppc_machines": [
+        "none", "40p", "amigaone", "bamboo", "g3beige", "mac99", "mac99,via=pmu", "mac99,via=pmu-adb", "mpc8544ds", "pegasos2", "ppce500", "ref405ep", "sam460ex",
+        "virtex-ml507"
+    ]
+}
