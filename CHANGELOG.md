@@ -12,6 +12,20 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The old feature list has been updated.
 - Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on a plug-in which is planned to be included with EmuGUI anyway.
 
+## Foreported from v1.2.3.5513
+
+- SPARC64 VMs didn't have network capabilities under any circumstances. This is now fixed.
+
+# EmuGUI v1.2.3.5513 "Garuka Pula" (based on v1.2.2.5512)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.2.2.5512
+
+- SPARC64 VMs didn't have network capabilities under any circumstances. This is now fixed.
+
 # EmuGUI v1.2.2.5512 "Garuka Pula" (based on v1.2.1.5511)
 
 ## WARNING
