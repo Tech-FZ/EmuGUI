@@ -1,0 +1,20 @@
+{
+    "arm_cpus": [
+        "base", "max", "host", "arm1026", "arm1136", "arm1136-r2", "arm1176", "arm11mpcore", "arm926", "arm946", "cortex-a15", "cortex-a7", "cortex-a8",
+        "cortex-a9", "cortex-m0", "cortex-m3", "cortex-m33", "cortex-m4", "cortex-m55", "cortex-m7", "cortex-r5", "cortex-r52", "cortex-r5f", "pxa250",
+        "pxa255", "pxa260", "pxa261", "pxa262", "pxa270-a0", "pxa270-a1", "pxa270", "pxa270-b0", "pxa270-b1", "pxa270-c0", "pxa270-c5", "sa1100", "sa1110",
+        "ti925t", "a64fx", "cortex-a35", "cortex-a53", "cortex-a55", "cortex-a57", "cortex-a710", "cortex-a72", "cortex-a76", "neoverse-n1", "neoverse-n2",
+        "neoverse-v1"
+    ],
+    "arm_machines": [
+        "none", "akita", "ast1030-evb", "ast2500-evb", "ast2600-evb", "bletchley-bmc", "borzoi", "bpim2u", "canon-a1100", "cheetah", "collie", "connex",
+        "cubieboard", "emcraft-sf2", "fby35-bmc", "fby35", "fp5280g2-bmc", "fuji-bmc", "g220a-bmc", "highbank", "imx25-pdk", "integratorcp", "kudo-bmc",
+        "kzm", "lm3s6965cvb", "lm3s811evb", "mainstone", "mcimx6ul-evk", "mcimx7d-sabre", "microbit", "midway", "mori-bmc", "mps2-an385", "mps2-an386",
+        "mps-an500", "mps-an505", "mps-an511", "mps-an521", "mps-an524", "mps-an547", "musca-a", "musca-b1", "musicpal", "n800", "n810", "netduino2",
+        "netduinoplus2", "npcm750-evb", "nuri", "olimex-stm32-h405", "orangepi-pc", "palmetto-bmc", "qcom-dc-scm-v1-bmc", "qcom-firework-bmc",
+        "quanta-gbs-bmc", "quanta-gsj", "quanta-q71l-bmc", "rainier-bmc", "raspi0", "raspi1ap", "raspi2b", "realview-eb", "realview-eb-mpcore",
+        "realview-pb-a8", "realview-pbx-a9", "romulus-bmc", "sabrelite", "smdkc210", "sonorapass-bmc", "spitz", "stm32vldiscovery", "supermicro-x11spi-bmc",
+        "sx1", "sx1-v1", "tacoma-bmc", "terrier", "tiogapass-bmc", "tosa", "verdex", "versatileab", "versatilepb", "vexpress-a15", "vexpress-a9", "virt",
+        "witherspoon-bmc", "xilinx-zynq-a9", "yosemitev2-bmc", "z2", "raspi3b", "raspi3ap"
+    ]
+}
