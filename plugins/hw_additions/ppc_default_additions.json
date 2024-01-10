@@ -13,6 +13,6 @@
     ],
     "ppc_machines": [
         "none", "40p", "amigaone", "bamboo", "g3beige", "mac99", "mac99,via=pmu", "mac99,via=pmu-adb", "mpc8544ds", "pegasos2", "ppce500", "ref405ep", "sam460ex",
-        "virtex-ml507"
+        "virtex-ml507", "powernv10", "powernv8", "powernv9", "pseries"
     ]
 }
