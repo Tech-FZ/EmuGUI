@@ -10,7 +10,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - An architecture list in the main window and its usage made the number of used initialisation code shrink. The old code has been commented out.
 - The same optimisation efforts have been applied to the code which changes the settings and the code which starts VMs.
 - The old feature list has been updated.
-- Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on a plug-in which is planned to be included with EmuGUI anyway.
+- Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on JSON plug-ins for x86, PowerPC and ARM machines which are planned to be included with EmuGUI anyway.
 
 ## Foreported from v1.2.3.5513
 
