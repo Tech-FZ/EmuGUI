@@ -11,6 +11,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The same optimisation efforts have been applied to the code which changes the settings and the code which starts VMs.
 - The old feature list has been updated.
 - Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on JSON plug-ins for x86, PowerPC and ARM machines which are planned to be included with EmuGUI anyway.
+- The copyright in the license file has been updated.
 
 ## Foreported from v1.2.3.5513
 
