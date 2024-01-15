@@ -87,7 +87,7 @@ For the update checker, a version code is being used instead of the number. Here
     - (open-)SUSE: `sudo zypper install qemu`
 
 3. Get EmuGUI from this website and extract it.
-4. Run main in the EmuGUI directory (if it fails from file manager, open a terminal inside the directory and type `./emugui`).
+4. Run emugui in the EmuGUI directory (if it fails from file manager, open a terminal inside the directory and type `./emugui`).
 5. Set the QEMU paths at the Settings/QEMU tab (either `/usr/bin/qemu-system-*` or just `qemu-system-*`).
 6. Create a new virtual machine and start it.
 

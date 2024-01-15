@@ -1,3 +1,26 @@
+# EmuGUI v2.0.0.5601_dev "Ioana Rosa" (based on v2.0.0.5600_dev)
+
+## WARNING
+
+You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+
+## Changes compared to v1.2.2.5512
+
+- As always, EmuGUI 2.0 receives another codename, in this case "Ioana Rosa".
+- An architecture list in the main window and its usage made the number of used initialisation code shrink. The old code has been commented out.
+- The same optimisation efforts have been applied to the code which changes the settings and the code which starts VMs.
+- The old feature list has been updated.
+- Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on JSON plug-ins for x86, PowerPC and ARM machines which are planned to be included with EmuGUI anyway.
+- The copyright in the license file has been updated.
+
+## Foreported from v1.2.3.5513
+
+- SPARC64 VMs didn't have network capabilities under any circumstances. This is now fixed.
+
+## Changes compared to v1.2.3.5513 and v2.0.0.5600_dev
+
+- The "Install on Linux" part of the readme has been corrected.
+
 # EmuGUI v2.0.0.5600_dev "Ioana Rosa" (based on v1.2.2.5512)
 
 ## WARNING
