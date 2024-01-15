@@ -5,6 +5,6 @@
         "Loongson-2E", "Loongson-2F", "Loongson-3A1000", "Loongson-3A4000", "mips64dspr2", "Octeon68XX"
     ],
     "mips_machines": [
-        "none", "malta", "mipssim", "magnum", "pica61"
+        "none", "malta", "mipssim", "magnum", "pica61", "boston", "fuloong2e", "loongson3-virt"
     ]
 }
