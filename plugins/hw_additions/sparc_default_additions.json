@@ -1,0 +1,8 @@
+{
+    "sparc_cpus": [
+        "base", "max", "host"
+    ],
+    "sparc_machines": [
+        "none", "LX", "SPARCClassic", "SPARCbook", "SS-10", "SS-20", "SS-4", "SS-5", "SS-600MP", "Voyager", "leon3_generic"
+    ]
+}
