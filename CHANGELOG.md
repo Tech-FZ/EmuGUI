@@ -22,6 +22,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The "Install on Linux" part of the readme has been corrected.
 - I'm now working on what will become the MIPS and SPARC plug-ins.
 - Some plug-ins have been separated.
+- The generic plug-in is in the works.
 
 # EmuGUI v2.0.0.5600_dev "Ioana Rosa" (based on v1.2.2.5512)
 

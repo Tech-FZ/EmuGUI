@@ -1,0 +1,19 @@
+{
+    "usb_controllers": [
+        "ich9-usb-echi1", "ich9-usb-echi2", "ich9-usb-echi3", "ich9-usb-echi4", "ich9-usb-echi5", "ich9-usb-echi6", "nec-usb-xhci", "pci-ohci",
+        "piix3-usb-uchi", "piix4-usb-uhci", "qemu-xhci", "usb-ehci"
+    ],
+    "networking": [
+        "e1000", "e1000-82544gc", "e1000-82545em", "e1000e", "i82550", "i82551", "i82557a", "i82557b", "i82557c", "i82558a", "i82558b", "i82559a", "i82559b",
+        "i82559c", "i82559er", "i82562", "i82801", "igb", "ne2k_isa", "ne2k_pci", "pcnet", "rocker", "rtl8139", "tulip", "usb-net", "virtio-net-device",
+        "virtio-net-pci", "virtio-net-pci-non-transitional", "virtio-net-pci-transitional", "vmxnet3"
+    ],
+    "graphics": [
+        "ati-vga", "bochs-display", "cirrus-vga", "isa-cirrus-vga", "qxl", "qxl-vga", "ramfb", "secondary-vga", "VGA", "virtio-gpu-device",
+        "virtio-gpu-gl-device", "virtio-gpu-gl-pci", "virtio-gpu-pci", "virtio-vga", "virtio-vga-gl", "vmware-svga"
+    ],
+    "sound": [
+        "AC97", "adlib", "cs4231a", "ES1370", "gus", "hda-duplex", "hda-micro", "hda-output", "ich9-intel-hda", "intel-hda", "sb16", "usb-audio",
+        "virtio-sound-device", "virtio-sound-pci"
+    ]
+}
