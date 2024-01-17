@@ -9,8 +9,8 @@
         "virtio-net-pci", "virtio-net-pci-non-transitional", "virtio-net-pci-transitional", "vmxnet3", "spapr-vlan", "sungem"
     ],
     "graphics": [
-        "ati-vga", "bochs-display", "cirrus-vga", "isa-cirrus-vga", "qxl", "qxl-vga", "ramfb", "secondary-vga", "VGA", "virtio-gpu-device",
-        "virtio-gpu-gl-device", "virtio-gpu-gl-pci", "virtio-gpu-pci", "virtio-vga", "virtio-vga-gl", "vmware-svga", "sm501"
+        "ati-vga", "bochs-display", "cirrus-vga", "isa-cirrus-vga", "qxl", "qxl-vga", "ramfb", "secondary-vga", "VGA", "virtio-gpu-device", "std",
+        "virtio-gpu-gl-device", "virtio-gpu-gl-pci", "virtio-gpu-pci", "virtio-vga", "virtio-vga-gl", "vmware-svga", "sm501", "tcx", "cg3", "cirrus"
     ],
     "sound": [
         "AC97", "adlib", "cs4231a", "ES1370", "gus", "hda-duplex", "hda-micro", "hda-output", "ich9-intel-hda", "intel-hda", "sb16", "usb-audio",
