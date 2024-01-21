@@ -25,6 +25,13 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - The generic plug-in is in the works.
 - HAXM is now depreciated on EmuGUI.
 
+## Known issues
+
+- Unfortunately, you might have to run EmuGUI from the terminal on Linux.
+- You will not be notified about any more updates for now as update.txt will not be updated.
+- As for the TPM functionality, you must run `mkdir (insert-path-here)` and `swtpm socket --tpm2 --tpmstate dir=(insert-path-here) --ctrl type=unixio,path=(insert-path-here)/swtpm-sock --log level=20` in a terminal (You can leave the `--tpm2` argument away tho if you plan to use TPM 1.2 instead).
+- The QCOW2 format is prone to not work for some Windows VMs.
+
 # EmuGUI v2.0.0.5600_dev "Ioana Rosa" (based on v1.2.2.5512)
 
 ## WARNING
