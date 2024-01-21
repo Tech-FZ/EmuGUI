@@ -24,6 +24,7 @@ You now need the latest version of your Linux distribution or at least Windows 1
 - Some plug-ins have been separated.
 - The generic plug-in is in the works.
 - HAXM is now depreciated on EmuGUI.
+- A copy of the New VM dialog has been edited.
 
 ## Known issues
 
