@@ -757,9 +757,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         i = 0
 
         while i < self.comboBox_22.count():
-            if self.comboBox_22.itemText(i) == vmSpecs[23]:
-                self.comboBox_22.setCurrentIndex(i)
-                break
+            if vmSpecs[23] == "HAXM":
+                if self.comboBox_22.itemText(i) == "HAXM (depreciated)":
+                    self.comboBox_22.setCurrentIndex(i)
+                    break
+
+            else:
+                if self.comboBox_22.itemText(i) == vmSpecs[23]:
+                    self.comboBox_22.setCurrentIndex(i)
+                    break
 
             i += 1
 
@@ -1005,6 +1011,12 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         
         else:
             hda_control = self.comboBox_46.currentText()
+
+        if self.comboBox_22.currentText() == "HAXM (depreciated)":
+            accelerator = "HAXM"
+
+        else:
+            accelerator = self.comboBox_22.currentText()
         
         insert_into_vm_database = f"""
         UPDATE virtualmachines
@@ -1014,7 +1026,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         linuxkernel = "{self.lineEdit_5.text()}", linuxinitrid = "{self.lineEdit_6.text()}", linuxcmd = "{self.lineEdit_7.text()}",
         mousetype = "{self.comboBox_5.currentText()}", cores = {self.spinBox_6.value()}, filebios = "{self.lineEdit_4.text()}",
         keyboardtype = "{self.comboBox_6.currentText()}", usbsupport = {usb_support}, usbcontroller = "{self.comboBox_9.currentText()}",
-        kbdtype = "{kbdlayout}", acceltype = "{self.comboBox_22.currentText()}", storagecontrollercd1 = "{cd_control1}",
+        kbdtype = "{kbdlayout}", acceltype = "{accelerator}", storagecontrollercd1 = "{cd_control1}",
         storagecontrollercd2 = "{cd_control2}", hdacontrol = "{hda_control}"
         WHERE name = "{self.vmSpecs[0]}";
         """

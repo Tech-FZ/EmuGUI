@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1463,7 +1463,7 @@ class Ui_Dialog(object):
         self.label_36.setText(QCoreApplication.translate("Dialog", u"Acceleration", None))
         self.comboBox_22.setItemText(0, QCoreApplication.translate("Dialog", u"None", None))
         self.comboBox_22.setItemText(1, QCoreApplication.translate("Dialog", u"TCG", None))
-        self.comboBox_22.setItemText(2, QCoreApplication.translate("Dialog", u"HAXM", None))
+        self.comboBox_22.setItemText(2, QCoreApplication.translate("Dialog", u"HAXM (depreciated)", None))
         self.comboBox_22.setItemText(3, QCoreApplication.translate("Dialog", u"WHPX", None))
         self.comboBox_22.setItemText(4, QCoreApplication.translate("Dialog", u"KVM", None))
 

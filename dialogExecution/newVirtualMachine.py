@@ -749,6 +749,12 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         
         else:
             hda_control = self.comboBox_46.currentText()
+
+        if self.comboBox_43.currentText() == "HAXM (depreciated)":
+            accelerator = "HAXM"
+        
+        else:
+            accelerator = self.comboBox_43.currentText()
         
         insert_into_vm_database = f"""
         INSERT INTO virtualmachines (
@@ -803,7 +809,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             {usb_support},
             "{self.comboBox_17.currentText()}",
             "{kbdlayout}",
-            "{self.comboBox_43.currentText()}",
+            "{accelerator}",
             "{cd_control1}",
             "{cd_control2}",
             "{hda_control}"

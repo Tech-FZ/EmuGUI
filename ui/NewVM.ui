@@ -5388,7 +5388,7 @@ default BIOS)</string>
         </item>
         <item>
          <property name="text">
-          <string>HAXM</string>
+          <string>HAXM (depreciated)</string>
          </property>
         </item>
         <item>

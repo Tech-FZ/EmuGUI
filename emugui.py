@@ -2313,6 +2313,20 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog = ErrDialog(self)
                 dialog.exec()
 
+            if accel_type == "HAXM":
+                if platform.system() == "Windows":
+                    errorFile = platformSpecific.windowsSpecific.windowsErrorFile()
+    
+                else:
+                    errorFile = platformSpecific.unixSpecific.unixErrorFile()
+
+                with open(errorFile, "w+") as errCodeFile:
+                    errCodeFile.write(errors.errCodes.errCodes[30])
+
+                logman.writeToLogFile(f"{errors.errCodes.errCodes[30]}: Depreciated feature: HAXM accelerator (absent since QEMU 8.2)")
+                dialog = ErrDialog(self)
+                dialog.exec()
+
             arch_supported = False
 
             for architecture in self.architectures:
