@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>813</width>
+    <height>474</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>813</width>
+    <height>474</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>813</width>
+    <height>474</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>EmuGUI - Edit VM</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>811</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>General</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>791</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="le_name"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_name">
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_arch">
+        <property name="text">
+         <string>Architecture</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="cb_arch">
+        <item>
+         <property name="text">
+          <string>i386</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>x86_64</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mips</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mips64</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mipsel</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>mips64el</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ppc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ppc64</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>arm</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>aarch64</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sparc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sparc64</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Machine</string>
+    </attribute>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>801</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_2">
+      <widget class="QWidget" name="gridLayoutWidget_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>781</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <widget class="QLabel" name="lbl_cpu">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lbl_ram">
+          <property name="text">
+           <string>RAM in MB</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_machine">
+          <property name="text">
+           <string>Machine</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="cb_cpu">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="sb_ram">
+          <property name="maximum">
+           <number>32768</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="cb_machine">
+          <item>
+           <property name="text">
+            <string>Let QEMU decide</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Virtual hard disks</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>781</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_vhdp">
+        <property name="text">
+         <string>VHD path</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lbl_maxsize">
+        <property name="text">
+         <string>Maximum size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="lbl_cdc2">
+        <property name="text">
+         <string>CD controller 2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" colspan="2">
+       <widget class="QComboBox" name="cb_cdc2">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Virtio</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QComboBox" name="cb_vhdu">
+        <item>
+         <property name="text">
+          <string>Add an existing virtual hard drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Create a new virtual hard drive</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Don't add a virtual hard drive</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="lbl_cdc1">
+        <property name="text">
+         <string>CD controller 1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btn_vhdp">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="2">
+       <widget class="QComboBox" name="cb_cdc1">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Virtio</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_vhdu">
+        <property name="text">
+         <string>VHD usage</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="le_vhdp"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_vhdf">
+        <property name="text">
+         <string>VHD file format</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QComboBox" name="cb_maxsize">
+        <item>
+         <property name="text">
+          <string>KB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GB</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="sb_maxsize">
+        <property name="maximum">
+         <number>214748368</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QComboBox" name="cb_vhdf">
+        <item>
+         <property name="text">
+          <string>qcow2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>qcow</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vdi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>raw</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vhdx</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vpc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vmdk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>parallels</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>file</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="lbl_hddc">
+        <property name="text">
+         <string>HDD controller</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1" colspan="2">
+       <widget class="QComboBox" name="cb_hddc">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>IDE</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>VirtIO SCSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>AHCI</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>Peripherals</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>781</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkBox_2">
+        <property name="text">
+         <string>USB Tablet Device (depreciated)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="cb_kbdtype">
+        <item>
+         <property name="text">
+          <string>PS/2 Keyboard</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USB Keyboard</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cb_mouse">
+        <item>
+         <property name="text">
+          <string>PS/2 Mouse</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USB Mouse</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>USB Tablet Device</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_mouse">
+        <property name="text">
+         <string>Mouse type</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_kbdtype">
+        <property name="text">
+         <string>Keyboard type</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_kbdlayout">
+        <property name="text">
+         <string>Keyboard layout</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="cb_kbdlayout">
+        <item>
+         <property name="text">
+          <string>en-us</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>en-gb</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>de</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>fr</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ru</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>pl</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>pt</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>it</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ja</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>es</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>is</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>fi</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>BIOS</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>781</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="le_biosf"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_biosloc">
+        <property name="text">
+         <string>Location of external BIOS file (Leave empty to use the default BIOS)</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_biosf">
+        <property name="text">
+         <string>External BIOS file</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btn_biosf">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLineEdit" name="le_biosloc"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Linux</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>781</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="le_initrd"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="btn_kernel">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="le_kernel"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_initrd">
+        <property name="text">
+         <string>Linux initrd image</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btn_initrd">
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_kernel">
+        <property name="text">
+         <string>Linux kernel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_cmd">
+        <property name="text">
+         <string>Linux cmd arguments</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QLineEdit" name="le_cmd"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Additional components</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>781</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_vga">
+        <property name="text">
+         <string>VGA</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="cb_net">
+        <item>
+         <property name="text">
+          <string>e1000</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>e1000-82545em</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>e1000e</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82550</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82551</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82557a</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82557b</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82557c</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82558a</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82558b</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82559a</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82559b</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82559c</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82559er</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82562</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>i82801</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ne2k_pci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>pcnet</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>rtl8139</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>tulip</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-net</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-net-device</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-net-pci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-net-pci-non-transitional</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-net-pci-transitional</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vmxnet3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>dp83932</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>lance</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="le_addargs"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbl_sound">
+        <property name="text">
+         <string>Sound card</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="chb_usb">
+        <property name="text">
+         <string>Add USB support</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QCheckBox" name="checkBox_3">
+        <property name="text">
+         <string>I want to install Windows 2000 (depreciated)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="lbl_addargs">
+        <property name="text">
+         <string>Additional arguments (if necessary)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cb_vga">
+        <item>
+         <property name="text">
+          <string>Let QEMU decide</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>std</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>virtio-gpu-pci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>vmware</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>xenfb</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>qxl</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cirrus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cg3</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="cb_usb">
+        <item>
+         <property name="text">
+          <string>pci-ohci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>piix3-usb-uhci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>qemu-xhci</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>usb-ehci</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbl_net">
+        <property name="text">
+         <string>Network adapter</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="cb_sound">
+        <item>
+         <property name="text">
+          <string>none</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>sb16</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>pcspk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>intel-hda</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>gus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ES1370</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>cs4231a</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>adlib</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>AC97</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="lbl_cpuc">
+          <property name="text">
+           <string>CPU cores</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="sb_cpuc">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="lbl_accel">
+        <property name="text">
+         <string>Acceleration</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QComboBox" name="cb_accel">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TCG</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>HAXM (depreciated)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WHPX</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>KVM</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_cancel">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>430</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_ok">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>430</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>le_name</tabstop>
+  <tabstop>cb_arch</tabstop>
+  <tabstop>cb_cpu</tabstop>
+  <tabstop>sb_ram</tabstop>
+  <tabstop>cb_machine</tabstop>
+  <tabstop>cb_vhdu</tabstop>
+  <tabstop>le_vhdp</tabstop>
+  <tabstop>btn_vhdp</tabstop>
+  <tabstop>cb_vhdf</tabstop>
+  <tabstop>sb_maxsize</tabstop>
+  <tabstop>cb_maxsize</tabstop>
+  <tabstop>cb_cdc1</tabstop>
+  <tabstop>cb_cdc2</tabstop>
+  <tabstop>cb_mouse</tabstop>
+  <tabstop>cb_kbdtype</tabstop>
+  <tabstop>cb_kbdlayout</tabstop>
+  <tabstop>checkBox_2</tabstop>
+  <tabstop>le_biosloc</tabstop>
+  <tabstop>le_biosf</tabstop>
+  <tabstop>btn_biosf</tabstop>
+  <tabstop>le_kernel</tabstop>
+  <tabstop>btn_kernel</tabstop>
+  <tabstop>le_initrd</tabstop>
+  <tabstop>btn_initrd</tabstop>
+  <tabstop>le_cmd</tabstop>
+  <tabstop>cb_vga</tabstop>
+  <tabstop>cb_net</tabstop>
+  <tabstop>cb_sound</tabstop>
+  <tabstop>chb_usb</tabstop>
+  <tabstop>cb_usb</tabstop>
+  <tabstop>le_addargs</tabstop>
+  <tabstop>checkBox_3</tabstop>
+  <tabstop>sb_cpuc</tabstop>
+  <tabstop>cb_accel</tabstop>
+  <tabstop>btn_ok</tabstop>
+  <tabstop>btn_cancel</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
