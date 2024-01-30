@@ -27,7 +27,7 @@
 
 ## Changes compared to v2.0.0.5601_dev
 
-
+- I'm doing my best to optimise EmuGUI by adapting the New VM dialog.
 
 ## Known issues
 
