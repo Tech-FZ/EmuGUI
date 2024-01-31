@@ -30,6 +30,7 @@
 - I'm doing my best to optimise EmuGUI by adapting the New VM dialog.
 - For that, the plug-in reader has been prepared.
 - The delcache scripts have been updated.
+- However, due to translation issues, the New VM dialog is exclusively in English at this time.
 
 ## Known issues
 
