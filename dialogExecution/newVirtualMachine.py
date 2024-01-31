@@ -28,6 +28,7 @@ import translations.pt
 import translations.it
 import translations.pl
 import locale
+import plugins.pluginmgr.hw_reader as hwpr # HWPR = HardWare Plug-in Reader
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -65,9 +66,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         i = 0
 
-        while i < self.comboBox_18.count():
-            if self.comboBox_18.itemText(i) == "Create a new virtual hard drive":
-                self.comboBox_18.setCurrentIndex(i)
+        while i < self.cb_vhdU.count():
+            if self.cb_vhdU.itemText(i) == "Create a new virtual hard drive":
+                self.cb_vhdU.setCurrentIndex(i)
                 break
 
             i += 1
