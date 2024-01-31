@@ -17,3 +17,7 @@ fi
 if [ -d uiScripts/__pycache__ ]; then
     rm -r uiScripts/__pycache__
 fi
+
+if [ -d plugins/pluginmgr/__pycache__ ]; then
+    rm -r plugins/pluginmgr/__pycache__
+fi

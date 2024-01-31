@@ -75,6 +75,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         self.firstStage()
         self.vhdAddingChange()
+        self.hw_plugins = hwpr.read_hw_plugin()
 
         self.logman.writeToLogFile(
             f"{errors.errCodes.errCodes[48]}: GUI \"New virtual machine\" opened successfully"
@@ -391,29 +392,153 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 dialog.exec()
 
             except:
+                while 1 < self.cb_machine.count():
+                    self.cb_machine.removeItem(1)
+
+                while 1 < self.cb_cpu.count():
+                    self.cb_cpu.removeItem(1)
+
                 if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "x86_64":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["x86_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["x86_cpus"])
+
+                        except:
+                            pass
 
                 elif self.cb_arch.currentText() == "mipsel":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["mipsel_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["mipsel_cpus"])
+
+                        except:
+                            pass
         
                 elif self.cb_arch.currentText() == "ppc" or self.cb_arch.currentText() == "ppc64":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["ppc_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["ppc_cpus"])
+
+                        except:
+                            pass
 
                 elif self.cb_arch.currentText() == "mips64el":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["mips64el_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["mips64el_cpus"])
+
+                        except:
+                            pass
                 
                 elif self.cb_arch.currentText() == "aarch64":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["aarch64_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["aarch64_cpus"])
+
+                        except:
+                            pass
 
                 elif self.cb_arch.currentText() == "arm":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["arm_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["arm_cpus"])
+
+                        except:
+                            pass
 
                 elif self.cb_arch.currentText() == "sparc":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["sparc_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["sparc_cpus"])
+
+                        except:
+                            pass
 
                 elif self.cb_arch.currentText() == "sparc64":
-                    self.stackedWidget.setCurrentIndex(1)
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["sparc64_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["sparc64_cpus"])
+
+                        except:
+                            pass
+
+                elif self.cb_arch.currentText() == "mips":
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["mips_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["mips_cpus"])
+
+                        except:
+                            pass
+
+                elif self.cb_arch.currentText() == "mips64":
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["mips64_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["mips64_cpus"])
+
+                        except:
+                            pass
+
+                self.stackedWidget.setCurrentIndex(1)
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")

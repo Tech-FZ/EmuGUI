@@ -24,3 +24,8 @@ if exist uiScripts\__pycache__\ (
     del uiScripts\__pycache__\*.* /q
     rd uiScripts\__pycache__\ 
 )
+
+if exist plugins\pluginmgr\__pycache__\ (
+    del plugins\pluginmgr\__pycache__\*.* /q
+    rd plugins\pluginmgr\__pycache__\ 
+)
