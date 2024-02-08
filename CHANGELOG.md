@@ -31,6 +31,7 @@
 - For that, the plug-in reader has been prepared.
 - The delcache scripts have been updated.
 - However, due to translation issues, the New VM dialog is exclusively in English at this time.
+- The Edit VM dialog is also to be shrunk in size.
 
 ## Known issues
 
