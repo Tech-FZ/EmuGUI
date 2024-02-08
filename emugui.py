@@ -200,7 +200,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     )
 
         self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
-        self.setWindowTitle(f"EmuGUI {self.version} (Development Release 1)")
+        self.setWindowTitle(f"EmuGUI {self.version} (Development Release 3)")
         self.languageInUse = "system"
 
         try:
