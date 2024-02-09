@@ -29,6 +29,7 @@ import errors.logman
 import errors.logID
 import errors.errCodes
 from dialogExecution.errDialog import ErrDialog
+import plugins.pluginmgr.hw_reader as hwpr # HWPR = HardWare Plug-in Reader
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -43,8 +44,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.connectSignalsSlots()
         self.tabWidget.setCurrentIndex(0)
+        self.hw_plugins = hwpr.read_hw_plugin()
         self.vmSpecs = self.readTempVmFile()
-        self.langDetect()
+        #self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -476,7 +478,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
-        if creNewVhdContent.__contains__(self.comboBox_2.currentText()):
+        if creNewVhdContent.__contains__(self.cb_vhdu.currentText()):
             # For new and existing
             self.le_vhdp.setEnabled(True)
             self.btn_vhdp.setEnabled(True)
@@ -486,7 +488,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.sb_maxsize.setEnabled(True)
             self.cb_hddc.setEnabled(True)
 
-        elif addExistVhdContent.__contains__(self.comboBox_2.currentText()):
+        elif addExistVhdContent.__contains__(self.cb_vhdu.currentText()):
             # For new and existing
             self.le_vhdp.setEnabled(True)
             self.btn_vhdp.setEnabled(True)
@@ -496,7 +498,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.sb_maxsize.setEnabled(False)
             self.cb_hddc.setEnabled(False)
 
-        elif noVhdContent.__contains__(self.comboBox_2.currentText()):
+        elif noVhdContent.__contains__(self.cb_vhdu.currentText()):
             # For new and existing
             self.le_vhdp.setEnabled(False)
             self.btn_vhdp.setEnabled(False)
@@ -526,6 +528,153 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 self.le_vhdp.setText(filename)
 
     def archChanged(self):
+        while 1 < self.cb_machine.count():
+            self.cb_machine.removeItem(1)
+
+        while 1 < self.cb_cpu.count():
+            self.cb_cpu.removeItem(1)
+
+        if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "x86_64":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["x86_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["x86_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "mipsel":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["mipsel_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["mipsel_cpus"])
+
+                except:
+                    pass
+        
+        elif self.cb_arch.currentText() == "ppc" or self.cb_arch.currentText() == "ppc64":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["ppc_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["ppc_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "mips64el":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["mips64el_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["mips64el_cpus"])
+
+                except:
+                    pass
+                
+        elif self.cb_arch.currentText() == "aarch64":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["aarch64_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["aarch64_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "arm":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["arm_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["arm_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "sparc":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["sparc_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["sparc_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "sparc64":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["sparc64_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["sparc64_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "mips":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["mips_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["mips_cpus"])
+
+                except:
+                    pass
+
+        elif self.cb_arch.currentText() == "mips64":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["mips64_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["mips64_cpus"])
+
+                except:
+                    pass
+
+    def archChangedOld(self):
         if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "amd64":
             self.stackedWidget.setCurrentIndex(0)
 
@@ -610,7 +759,37 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         self.archChanged()
 
-        if vmSpecs[1] == "i386" or vmSpecs[1] == "x86_64":
+        i = 0
+
+        while i < self.cb_machine.count():
+            if letQemuDecideContent.__contains__(self.cb_machine.itemText(i)):
+                if vmSpecs[2] == "Let QEMU decide":
+                    self.cb_machine.setCurrentIndex(i)
+                    break
+
+            elif self.cb_machine.itemText(i) == vmSpecs[2]:
+                self.cb_machine.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        i = 0
+
+        while i < self.cb_cpu.count():
+            if letQemuDecideContent.__contains__(self.cb_cpu.itemText(i)):
+                if vmSpecs[3] == "Let QEMU decide":
+                    self.cb_cpu.setCurrentIndex(i)
+                    break
+
+            if self.cb_cpu.itemText(i) == vmSpecs[3]:
+                self.cb_cpu.setCurrentIndex(i)
+                break
+
+            i += 1
+
+        self.sb_ram.setValue(int(vmSpecs[4]))
+
+        """ if vmSpecs[1] == "i386" or vmSpecs[1] == "x86_64":
             self.machineCpuI386Amd64(vmSpecs[2], vmSpecs[3])
             self.sb_ram.setValue(int(vmSpecs[4]))
 
@@ -632,7 +811,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         elif vmSpecs[1] == "sparc64":
             self.machineSparc64(vmSpecs[2])
-            self.sb_ram.setValue(int(vmSpecs[4]))
+            self.sb_ram.setValue(int(vmSpecs[4])) """
 
         if vmSpecs[5] != "NULL":
             self.le_vhdp.setText(vmSpecs[5])
@@ -821,7 +1000,15 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
         cursor = connection.cursor()
 
-        if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "x86_64":
+        machine = self.cb_machine.currentText()
+        cpu = self.cb_cpu.currentText()
+
+        if cpu.startswith("Icelake-Client"):
+            cpu = "Icelake-Client"
+
+        ram = self.sb_ram.value()
+
+        """ if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "x86_64":
             machine = self.comboBox_12.currentText()
             cpu = self.comboBox_11.currentText()
 
@@ -858,7 +1045,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         elif self.cb_arch.currentText() == "sparc64":
             machine = self.cb_machine.currentText()
             cpu = "Let QEMU decide"
-            ram = self.sb_ram.value()
+            ram = self.sb_ram.value() """
 
         if letQemuDecideVariantsStr.__contains__(machine):
             machine = "Let QEMU decide"
