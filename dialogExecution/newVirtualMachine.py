@@ -642,10 +642,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(0)
 
     def vgaNetworkMenu(self):
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(3)
 
     def extBios(self):
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(4)
 
     def extBiosFileLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
@@ -654,10 +654,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.lineEdit_8.setText(filename)
 
     def soundCard(self):
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(5)
 
     def linuxVMSpecific(self):
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(6)
 
     def linuxKernelBrowseLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select Linux kernel', dir='.', filter='All files (*.*)')
@@ -672,10 +672,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             self.le_initrd.setText(filename)
 
     def accelSettings(self):
-        self.stackedWidget.setCurrentIndex(8)
+        self.stackedWidget.setCurrentIndex(7)
 
     def win2kHacker(self):
-        self.stackedWidget.setCurrentIndex(9)
+        self.stackedWidget.setCurrentIndex(8)
 
     def finishCreation(self):
         with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
