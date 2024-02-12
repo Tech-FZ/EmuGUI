@@ -714,6 +714,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         if filename:
             self.le_initrd.setText(filename)
 
+    def setupCB(self):
+        for plugin in self.hw_plugins:
+            try:
+                self.cb_vga.addItems(plugin["graphics"])
+
+            except:
+                pass
+
+            try:
+                self.cb_net.addItems(plugin["networking"])
+
+            except:
+                pass
+
     def readTempVmFile(self):
         with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
@@ -835,6 +849,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 i += 1
 
         self.vhdAddingChange()
+        self.setupCB()
 
         i = 0
 

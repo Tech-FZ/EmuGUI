@@ -32,7 +32,7 @@
 
 ## Changes compared to v2.0.0.5602_dev
 
-- The New VM dialog is being optimised further.
+- The New and Edit VM dialogs are being optimised further.
 - An issue in the New VM dialog which caused the VM creation to be incomplete has been fixed.
 - The Start VM dialog has been adjusted.
 
