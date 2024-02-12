@@ -1,3 +1,46 @@
+# EmuGUI v2.0.0.5603_dev "Ioana Rosa" (based on v2.0.0.5602_dev)
+
+## WARNING
+
+- You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+- This is a pre-release, meaning it's still in development. Don't use this build for production. Evaluation is okay tho.
+
+## Changes compared to v1.2.2.5512
+
+- As always, EmuGUI 2.0 receives another codename, in this case "Ioana Rosa".
+- An architecture list in the main window and its usage made the number of used initialisation code shrink. The old code has been commented out.
+- The same optimisation efforts have been applied to the code which changes the settings and the code which starts VMs.
+- The old feature list has been updated.
+- Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on JSON plug-ins for x86, PowerPC and ARM machines which are planned to be included with EmuGUI anyway.
+- The copyright in the license file has been updated.
+- The "Install on Linux" part of the readme has been corrected.
+- I'm now working on what will become the MIPS and SPARC plug-ins.
+- Some plug-ins have been separated.
+- The generic plug-in is in the works.
+- HAXM is now depreciated on EmuGUI.
+- A copy of the New VM dialog has been edited.
+- A copy of the Edit VM dialog has been edited.
+- I'm doing my best to optimise EmuGUI by adapting the New VM dialog.
+- For that, the plug-in reader has been prepared.
+- The delcache scripts have been updated.
+- However, due to translation issues, the New VM dialog is exclusively in English at this time.
+- The Edit VM dialog is also to be shrunk in size.
+
+## Foreported from v1.2.3.5513
+
+- SPARC64 VMs didn't have network capabilities under any circumstances. This is now fixed.
+
+## Changes compared to v2.0.0.5602_dev
+
+- The New VM dialog is being optimised further.
+
+## Known issues
+
+- Unfortunately, you might have to run EmuGUI from the terminal on Linux.
+- You will not be notified about any more updates for now as update.txt will not be updated.
+- As for the TPM functionality, you must run `mkdir (insert-path-here)` and `swtpm socket --tpm2 --tpmstate dir=(insert-path-here) --ctrl type=unixio,path=(insert-path-here)/swtpm-sock --log level=20` in a terminal (You can leave the `--tpm2` argument away tho if you plan to use TPM 1.2 instead).
+- The QCOW2 format is prone to not work for some Windows VMs.
+
 # EmuGUI v2.0.0.5602_dev "Ioana Rosa" (based on v2.0.0.5601_dev)
 
 ## WARNING

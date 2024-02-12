@@ -45,6 +45,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         
         self.setWindowTitle("EmuGUI - Create new VM")
+        
         #self.langDetect()
         
         try:
@@ -76,6 +77,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.firstStage()
         self.vhdAddingChange()
         self.hw_plugins = hwpr.read_hw_plugin()
+        self.setupCB()
 
         self.logman.writeToLogFile(
             f"{errors.errCodes.errCodes[48]}: GUI \"New virtual machine\" opened successfully"
@@ -130,6 +132,20 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.btn_prev9.clicked.connect(self.accelSettings)
         self.btn_finish.clicked.connect(self.finishCreation)
         self.btn_cancel9.clicked.connect(self.close)
+
+    def setupCB(self):
+        for plugin in self.hw_plugins:
+            try:
+                self.cb_vga.addItems(plugin["graphics"])
+
+            except:
+                pass
+
+            try:
+                self.cb_net.addItems(plugin["networking"])
+
+            except:
+                pass
 
     def langDetect(self):
         select_language = """
