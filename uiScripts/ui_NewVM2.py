@@ -413,14 +413,6 @@ class Ui_Dialog(object):
 
         self.cb_sound = QComboBox(self.gridLayoutWidget_9)
         self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
-        self.cb_sound.addItem("")
         self.cb_sound.setObjectName(u"cb_sound")
 
         self.gridLayout_9.addWidget(self.cb_sound, 0, 1, 1, 2)
@@ -1640,10 +1632,6 @@ class Ui_Dialog(object):
         self.gridLayout_7.addWidget(self.le_addargs, 3, 1, 1, 1)
 
         self.cb_usb = QComboBox(self.gridLayoutWidget_7)
-        self.cb_usb.addItem("")
-        self.cb_usb.addItem("")
-        self.cb_usb.addItem("")
-        self.cb_usb.addItem("")
         self.cb_usb.setObjectName(u"cb_usb")
 
         self.gridLayout_7.addWidget(self.cb_usb, 2, 1, 1, 1)
@@ -1896,14 +1884,6 @@ class Ui_Dialog(object):
         self.lbl_kbd.setText(QCoreApplication.translate("Dialog", u"Keyboard", None))
         self.lbl_sound.setText(QCoreApplication.translate("Dialog", u"Sound card", None))
         self.cb_sound.setItemText(0, QCoreApplication.translate("Dialog", u"none", None))
-        self.cb_sound.setItemText(1, QCoreApplication.translate("Dialog", u"sb16", None))
-        self.cb_sound.setItemText(2, QCoreApplication.translate("Dialog", u"pcspk", None))
-        self.cb_sound.setItemText(3, QCoreApplication.translate("Dialog", u"intel-hda", None))
-        self.cb_sound.setItemText(4, QCoreApplication.translate("Dialog", u"gus", None))
-        self.cb_sound.setItemText(5, QCoreApplication.translate("Dialog", u"ES1370", None))
-        self.cb_sound.setItemText(6, QCoreApplication.translate("Dialog", u"cs4231a", None))
-        self.cb_sound.setItemText(7, QCoreApplication.translate("Dialog", u"adlib", None))
-        self.cb_sound.setItemText(8, QCoreApplication.translate("Dialog", u"AC97", None))
 
         self.cb_kbd.setItemText(0, QCoreApplication.translate("Dialog", u"PS/2 Keyboard", None))
         self.cb_kbd.setItemText(1, QCoreApplication.translate("Dialog", u"USB Keyboard", None))
@@ -2410,11 +2390,6 @@ class Ui_Dialog(object):
 "(depreciated)", None))
         self.btn_prev9.setText(QCoreApplication.translate("Dialog", u"< Previous", None))
         self.lbl_addargs.setText(QCoreApplication.translate("Dialog", u"Additional arguments (if needed)", None))
-        self.cb_usb.setItemText(0, QCoreApplication.translate("Dialog", u"pci-ohci", None))
-        self.cb_usb.setItemText(1, QCoreApplication.translate("Dialog", u"piix3-usb-uhci", None))
-        self.cb_usb.setItemText(2, QCoreApplication.translate("Dialog", u"qemu-xhci", None))
-        self.cb_usb.setItemText(3, QCoreApplication.translate("Dialog", u"usb-ehci", None))
-
         self.chb_usb.setText(QCoreApplication.translate("Dialog", u"Add USB support", None))
     # retranslateUi
 

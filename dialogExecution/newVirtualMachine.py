@@ -147,6 +147,18 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             except:
                 pass
 
+            try:
+                self.cb_sound.addItems(plugin["sound"])
+
+            except:
+                pass
+
+            try:
+                self.cb_usb.addItems(plugin["usb_controllers"])
+
+            except:
+                pass
+
     def langDetect(self):
         select_language = """
         SELECT name, value FROM settings

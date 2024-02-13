@@ -728,6 +728,18 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             except:
                 pass
 
+            try:
+                self.cb_sound.addItems(plugin["sound"])
+
+            except:
+                pass
+
+            try:
+                self.cb_usb.addItems(plugin["usb_controllers"])
+
+            except:
+                pass
+
     def readTempVmFile(self):
         with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()

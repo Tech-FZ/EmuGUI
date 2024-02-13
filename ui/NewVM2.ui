@@ -696,46 +696,6 @@ default BIOS)</string>
           <string>none</string>
          </property>
         </item>
-        <item>
-         <property name="text">
-          <string>sb16</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>pcspk</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>intel-hda</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>gus</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>ES1370</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>cs4231a</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>adlib</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>AC97</string>
-         </property>
-        </item>
        </widget>
       </item>
       <item row="1" column="1" colspan="2">
@@ -3716,28 +3676,7 @@ default BIOS)</string>
        <widget class="QLineEdit" name="le_addargs"/>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="cb_usb">
-        <item>
-         <property name="text">
-          <string>pci-ohci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>piix3-usb-uhci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>qemu-xhci</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>usb-ehci</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QComboBox" name="cb_usb"/>
       </item>
       <item row="2" column="0">
        <widget class="QCheckBox" name="chb_usb">
