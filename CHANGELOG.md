@@ -35,6 +35,8 @@
 - The New and Edit VM dialogs are being optimised further.
 - An issue in the New VM dialog which caused the VM creation to be incomplete has been fixed.
 - The Start VM dialog has been adjusted.
+- The SPARC64 plug-in has been corrected.
+- An Alpha plug-in is in the making.
 
 ## Known issues
 
