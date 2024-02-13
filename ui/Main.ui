@@ -250,21 +250,19 @@
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="3" column="2">
-             <widget class="QLineEdit" name="lineEdit_2"/>
+            <item row="8" column="1">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>qemu-system-arm path</string>
+              </property>
+             </widget>
             </item>
-            <item row="8" column="2">
-             <widget class="QLineEdit" name="lineEdit_7"/>
-            </item>
-            <item row="6" column="3">
-             <widget class="QPushButton" name="pushButton_5">
+            <item row="14" column="3">
+             <widget class="QPushButton" name="pushButton_14">
               <property name="text">
                <string>Browse</string>
               </property>
              </widget>
-            </item>
-            <item row="13" column="2">
-             <widget class="QLineEdit" name="lineEdit_12"/>
             </item>
             <item row="9" column="1">
              <widget class="QLabel" name="label_16">
@@ -273,21 +271,48 @@
               </property>
              </widget>
             </item>
-            <item row="11" column="1">
-             <widget class="QLabel" name="label_18">
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_3">
               <property name="text">
-               <string>qemu-system-mips path</string>
+               <string>qemu-system-x86_64 path</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="2">
-             <widget class="QLineEdit" name="lineEdit_5"/>
-            </item>
-            <item row="7" column="2">
-             <widget class="QLineEdit" name="lineEdit_6"/>
+            <item row="6" column="2">
+             <widget class="QLineEdit" name="lineEdit"/>
             </item>
             <item row="10" column="2">
              <widget class="QLineEdit" name="lineEdit_9"/>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>qemu-system-aarch64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="2">
+             <widget class="QLineEdit" name="lineEdit_10"/>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="12" column="3">
+             <widget class="QPushButton" name="pushButton_19">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>qemu-system-i386 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLineEdit" name="lineEdit_4"/>
             </item>
             <item row="10" column="1">
              <widget class="QLabel" name="label_17">
@@ -296,20 +321,78 @@
               </property>
              </widget>
             </item>
-            <item row="8" column="1">
-             <widget class="QLabel" name="label_11">
+            <item row="13" column="2">
+             <widget class="QLineEdit" name="lineEdit_12"/>
+            </item>
+            <item row="13" column="1">
+             <widget class="QLabel" name="label_12">
               <property name="text">
-               <string>qemu-system-arm path</string>
+               <string>qemu-system-sparc path</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="2">
-             <widget class="QLineEdit" name="lineEdit"/>
+            <item row="0" column="2">
+             <widget class="QLineEdit" name="lineEdit_5"/>
             </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_2">
+            <item row="0" column="1">
+             <widget class="QLabel" name="label">
               <property name="text">
-               <string>qemu-system-i386 path</string>
+               <string>qemu-img Path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="2">
+             <widget class="QLineEdit" name="lineEdit_11"/>
+            </item>
+            <item row="12" column="1">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>qemu-system-mips64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="3">
+             <widget class="QPushButton" name="pushButton_17">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="2">
+             <widget class="QLineEdit" name="lineEdit_13"/>
+            </item>
+            <item row="13" column="3">
+             <widget class="QPushButton" name="pushButton_13">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="3">
+             <widget class="QPushButton" name="pushButton_12">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>qemu-system-ppc path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="1">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>qemu-system-sparc64 path</string>
               </property>
              </widget>
             </item>
@@ -320,17 +403,10 @@
               </property>
              </widget>
             </item>
-            <item row="12" column="3">
-             <widget class="QPushButton" name="pushButton_19">
+            <item row="11" column="1">
+             <widget class="QLabel" name="label_18">
               <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="1">
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>qemu-system-mips64el path</string>
+               <string>qemu-system-mips path</string>
               </property>
              </widget>
             </item>
@@ -344,84 +420,18 @@
             <item row="9" column="2">
              <widget class="QLineEdit" name="lineEdit_8"/>
             </item>
-            <item row="13" column="1">
-             <widget class="QLabel" name="label_12">
+            <item row="3" column="2">
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+            <item row="16" column="3">
+             <widget class="QPushButton" name="pushButton_6">
               <property name="text">
-               <string>qemu-system-sparc path</string>
+               <string>Apply</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="2">
-             <widget class="QLineEdit" name="lineEdit_3"/>
-            </item>
-            <item row="0" column="1">
-             <widget class="QLabel" name="label">
-              <property name="text">
-               <string>qemu-img Path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3">
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <widget class="QLineEdit" name="lineEdit_4"/>
-            </item>
-            <item row="8" column="3">
-             <widget class="QPushButton" name="pushButton_12">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="13" column="3">
-             <widget class="QPushButton" name="pushButton_13">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="12" column="2">
-             <widget class="QLineEdit" name="lineEdit_11"/>
-            </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
-               <string>qemu-system-x86_64 path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QLabel" name="label_4">
-              <property name="text">
-               <string>qemu-system-ppc path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="10" column="3">
-             <widget class="QPushButton" name="pushButton_17">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="12" column="1">
-             <widget class="QLabel" name="label_19">
-              <property name="text">
-               <string>qemu-system-mips64 path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="1">
-             <widget class="QLabel" name="label_9">
-              <property name="text">
-               <string>qemu-system-aarch64 path</string>
-              </property>
-             </widget>
+            <item row="7" column="2">
+             <widget class="QLineEdit" name="lineEdit_6"/>
             </item>
             <item row="7" column="3">
              <widget class="QPushButton" name="pushButton_7">
@@ -430,8 +440,29 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="3">
-             <widget class="QPushButton" name="pushButton_2">
+            <item row="6" column="3">
+             <widget class="QPushButton" name="pushButton_5">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>qemu-system-mips64el path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="3">
+             <widget class="QPushButton" name="pushButton_18">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="pushButton_4">
               <property name="text">
                <string>Browse</string>
               </property>
@@ -444,35 +475,21 @@
               </property>
              </widget>
             </item>
+            <item row="8" column="2">
+             <widget class="QLineEdit" name="lineEdit_7"/>
+            </item>
+            <item row="15" column="1">
+             <widget class="QLabel" name="lbl_alpha">
+              <property name="text">
+               <string>qemu-system-alpha path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="2">
+             <widget class="QLineEdit" name="le_alpha"/>
+            </item>
             <item row="15" column="3">
-             <widget class="QPushButton" name="pushButton_6">
-              <property name="text">
-               <string>Apply</string>
-              </property>
-             </widget>
-            </item>
-            <item row="11" column="2">
-             <widget class="QLineEdit" name="lineEdit_10"/>
-            </item>
-            <item row="11" column="3">
-             <widget class="QPushButton" name="pushButton_18">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="14" column="2">
-             <widget class="QLineEdit" name="lineEdit_13"/>
-            </item>
-            <item row="14" column="1">
-             <widget class="QLabel" name="label_13">
-              <property name="text">
-               <string>qemu-system-sparc64 path</string>
-              </property>
-             </widget>
-            </item>
-            <item row="14" column="3">
-             <widget class="QPushButton" name="pushButton_14">
+             <widget class="QPushButton" name="btn_alpha">
               <property name="text">
                <string>Browse</string>
               </property>

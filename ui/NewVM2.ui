@@ -140,6 +140,11 @@
           <string>sparc64</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>alpha</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="0" column="1" colspan="2">

@@ -468,6 +468,20 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                         except:
                             pass
 
+                elif self.cb_arch.currentText() == "alpha":
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["alpha_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["alpha_cpus"])
+
+                        except:
+                            pass
+
                 elif self.cb_arch.currentText() == "mips64el":
                     for plugin in self.hw_plugins:
                         try:
@@ -941,7 +955,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             "{self.le_kernel.text()}",
             "{self.le_initrd.text()}",
             "{self.le_cmd.text()}",
-            "{self.le_mouse.currentText()}",
+            "{self.cb_mouse.currentText()}",
             {self.sb_cores.value()},
             "{self.le_biosF.text()}",
             "{self.cb_kbd.currentText()}",

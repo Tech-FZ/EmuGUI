@@ -139,6 +139,11 @@
           <string>sparc64</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>alpha</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

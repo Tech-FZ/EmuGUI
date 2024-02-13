@@ -72,6 +72,7 @@ class Ui_Dialog(object):
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
+        self.cb_arch.addItem("")
         self.cb_arch.setObjectName(u"cb_arch")
 
         self.gridLayout.addWidget(self.cb_arch, 1, 1, 1, 1)
@@ -555,6 +556,7 @@ class Ui_Dialog(object):
         self.cb_arch.setItemText(9, QCoreApplication.translate("Dialog", u"aarch64", None))
         self.cb_arch.setItemText(10, QCoreApplication.translate("Dialog", u"sparc", None))
         self.cb_arch.setItemText(11, QCoreApplication.translate("Dialog", u"sparc64", None))
+        self.cb_arch.setItemText(12, QCoreApplication.translate("Dialog", u"alpha", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Dialog", u"General", None))
         self.lbl_cpu.setText(QCoreApplication.translate("Dialog", u"CPU", None))

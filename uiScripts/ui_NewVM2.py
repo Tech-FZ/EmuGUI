@@ -74,6 +74,7 @@ class Ui_Dialog(object):
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
+        self.cb_arch.addItem("")
         self.cb_arch.setObjectName(u"cb_arch")
 
         self.gridLayout.addWidget(self.cb_arch, 1, 1, 1, 2)
@@ -1802,6 +1803,7 @@ class Ui_Dialog(object):
         self.cb_arch.setItemText(7, QCoreApplication.translate("Dialog", u"arm", None))
         self.cb_arch.setItemText(8, QCoreApplication.translate("Dialog", u"sparc", None))
         self.cb_arch.setItemText(9, QCoreApplication.translate("Dialog", u"sparc64", None))
+        self.cb_arch.setItemText(10, QCoreApplication.translate("Dialog", u"alpha", None))
 
         self.cb_arch.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
         self.lbl_ram.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))

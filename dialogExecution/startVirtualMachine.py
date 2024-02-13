@@ -9,6 +9,7 @@ if platform.system() == "Windows":
 
 else:
     import platformSpecific.unixSpecific
+    import shlex
     
 import sqlite3
 import subprocess
@@ -631,9 +632,19 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     i += 1
 
-                subprocess.run(qemu_cmd_split)
+                subprocess.run(shlex.split(qemu_cmd))
             
             except:
-                print("Qemu couldn't be executed. Please check if the settings of your VM and/or the QEMU paths are correct.")
+                print("Qemu couldn't be executed. Trying subprocess.call.")
+
+                try:
+                    if platform.system() == "Windows":
+                        subprocess.call(qemu_cmd)
+
+                    else:
+                        subprocess.call(shlex.split(qemu_cmd))
+
+                except:
+                    print("Qemu couldn't be executed. Please check if the settings of your VM and/or the QEMU paths are correct.")
         
         self.close()

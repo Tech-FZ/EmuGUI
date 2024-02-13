@@ -674,6 +674,20 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 except:
                     pass
 
+        elif self.cb_arch.currentText() == "alpha":
+            for plugin in self.hw_plugins:
+                try:
+                    self.cb_machine.addItems(plugin["alpha_machines"])
+
+                except:
+                    pass
+
+                try:
+                    self.cb_cpu.addItems(plugin["alpha_cpus"])
+
+                except:
+                    pass
+
     def archChangedOld(self):
         if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "amd64":
             self.stackedWidget.setCurrentIndex(0)
