@@ -596,6 +596,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             elif self.vmSpecs[23] == "WHPX":
                 qemu_cmd = qemu_cmd + " -accel whpx"
 
+            elif self.vmSpecs[23] == "WHPX (kernel-irqchip off)":
+                qemu_cmd = qemu_cmd + " -accel whpx,kernel-irqchip=off"
+
             elif self.vmSpecs[23] == "KVM":
                 qemu_cmd = qemu_cmd + " -enable-kvm"
 

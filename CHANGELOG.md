@@ -38,6 +38,7 @@
 - The SPARC64 plug-in has been corrected.
 - An Alpha plug-in is in the making.
 - The Alpha support is mostly there. However, VMs don't seem to run.
+- As suggested by [levelad](https://github.com/levelad), an experimental option to run WHPX with `kernel-irqchip=off` has been added.
 
 ## Known issues
 

@@ -3598,6 +3598,11 @@ default BIOS)</string>
         </item>
         <item>
          <property name="text">
+          <string>WHPX (kernel-irqchip off)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>KVM</string>
          </property>
         </item>

@@ -1580,6 +1580,7 @@ class Ui_Dialog(object):
         self.cb_accel.addItem("")
         self.cb_accel.addItem("")
         self.cb_accel.addItem("")
+        self.cb_accel.addItem("")
         self.cb_accel.setObjectName(u"cb_accel")
 
         self.gridLayout_25.addWidget(self.cb_accel, 0, 1, 1, 2)
@@ -2379,7 +2380,8 @@ class Ui_Dialog(object):
         self.cb_accel.setItemText(1, QCoreApplication.translate("Dialog", u"TCG", None))
         self.cb_accel.setItemText(2, QCoreApplication.translate("Dialog", u"HAXM (depreciated)", None))
         self.cb_accel.setItemText(3, QCoreApplication.translate("Dialog", u"WHPX", None))
-        self.cb_accel.setItemText(4, QCoreApplication.translate("Dialog", u"KVM", None))
+        self.cb_accel.setItemText(4, QCoreApplication.translate("Dialog", u"WHPX (kernel-irqchip off)", None))
+        self.cb_accel.setItemText(5, QCoreApplication.translate("Dialog", u"KVM", None))
 
         self.cb_cdc2.setItemText(0, QCoreApplication.translate("Dialog", u"Let QEMU decide", None))
         self.cb_cdc2.setItemText(1, QCoreApplication.translate("Dialog", u"IDE", None))
