@@ -40,6 +40,8 @@
 - The Alpha support is mostly there. However, VMs don't seem to run.
 - As suggested by [levelad](https://github.com/levelad), an experimental option to run WHPX with `kernel-irqchip=off` has been added.
 - The translation of the main window was updated.
+- I'm working on bringing back translations for the New VM dialog. However, it will take a while until I can actually re-activate them.
+- Some things on the New VM dialog had to be corrected.
 
 ## Known issues
 

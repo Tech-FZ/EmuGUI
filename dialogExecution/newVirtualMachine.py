@@ -817,10 +817,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 print(vhd_size_in_b)
 
                 if platform.system() == "Windows":
-                    vhd_cmd = f"{qemu_binary} create -f {self.comboBox_8.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
+                    vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
 
                 else:
-                    vhd_cmd = f"{qemu_binary} create -f {self.comboBox_8.currentText()} {vhd} {str(vhd_size_in_b)}"
+                    vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} {vhd} {str(vhd_size_in_b)}"
 
                 if vhdAction.startswith("overwrite"):
                     subprocess.Popen(vhd_cmd)
@@ -868,7 +868,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         ext_bios_dir = self.le_biosLoc.text()
 
-        add_args = self.le_biosF.text()
+        add_args = self.le_addargs.text()
 
         if self.chb_usb.isChecked() or self.checkBox.isChecked() or self.cb_mouse.currentText() == "USB Mouse":
             usb_support = 1
