@@ -51,6 +51,7 @@ def translateMainDE(window):
     window.label_19.setText("qemu-system-mips64-Pfad") # qemu-system-mips64 Path
     window.label_12.setText("qemu-system-sparc-Pfad") # qemu-system-sparc Path
     window.label_13.setText("qemu-system-sparc64-Pfad") # qemu-system-sparc64 Path
+    window.le_alpha.setText("qemu-system-alpha-Pfad") # qemu-system-alpha Path
 
     window.pushButton.setText("Durchsuchen") # Browse
     window.pushButton_2.setText("Durchsuchen") # Browse
@@ -65,6 +66,7 @@ def translateMainDE(window):
     window.pushButton_19.setText("Durchsuchen") # Browse
     window.pushButton_13.setText("Durchsuchen") # Browse
     window.pushButton_14.setText("Durchsuchen") # Browse
+    window.btn_alpha.setText("Durchsuchen") # Browse
     window.pushButton_6.setText("Übernehmen") # Apply
 
     # About tab

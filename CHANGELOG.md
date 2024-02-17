@@ -39,6 +39,7 @@
 - An Alpha plug-in is in the making.
 - The Alpha support is mostly there. However, VMs don't seem to run.
 - As suggested by [levelad](https://github.com/levelad), an experimental option to run WHPX with `kernel-irqchip=off` has been added.
+- The translation of the main window was updated.
 
 ## Known issues
 
@@ -46,6 +47,7 @@
 - You will not be notified about any more updates for now as update.txt will not be updated.
 - As for the TPM functionality, you must run `mkdir (insert-path-here)` and `swtpm socket --tpm2 --tpmstate dir=(insert-path-here) --ctrl type=unixio,path=(insert-path-here)/swtpm-sock --log level=20` in a terminal (You can leave the `--tpm2` argument away tho if you plan to use TPM 1.2 instead).
 - The QCOW2 format is prone to not work for some Windows VMs.
+- Due to the massive restructuring of the New and Edit VM dialogs, those will NOT be translated at this time, meaning they are English only. However, I'll be working on fixing that during development.
 
 # EmuGUI v2.0.0.5602_dev "Ioana Rosa" (based on v2.0.0.5601_dev)
 
