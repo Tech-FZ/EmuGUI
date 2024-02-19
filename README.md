@@ -263,7 +263,7 @@ For the update checker, a version code is being used instead of the number. Here
 12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
 13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
 14. After this is done, run the main.py script.
-15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
+15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile .\emugui.py`
 16. After that is finished, copy the code into the dist folder PyInstaller created.
 17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 18. If it works, have fun! If not, try to start again from number 9.
@@ -281,7 +281,7 @@ For the update checker, a version code is being used instead of the number. Here
 9. Open the venv in VS Code and try to run a Python script with it.
 10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic PyQt6 requests python-dateutil psutil pyqtdarktheme`
 11. After this is done, run the main.py script.
-12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile --icon .\EmuGUI.ico .\emugui.py`
+12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile .\emugui.py`
 13. After that is finished, copy the code into the dist folder PyInstaller created.
 14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
 15. If it works, have fun! If not, try to start again from number 9.
