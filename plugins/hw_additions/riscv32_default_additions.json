@@ -1,8 +1,8 @@
 {
     "riscv32_cpus": [
-        "base", "max", "host", "ev4-alpha-cpu", "ev5-alpha-cpu", "ev56-alpha-cpu", "ev6-alpha-cpu", "ev67-alpha-cpu", "ev68-alpha-cpu", "pca56-alpha-cpu"
+        "base", "max", "host", "any", "lowrisc-ibex", "rv32", "sifive-e31", "sifive-e34", "sifive-u34"
     ],
     "riscv32_machines": [
-        "none", "clipper"
+        "none", "opentitan", "sifive_e", "sifive_u", "spike", "virt"
     ]
 }
