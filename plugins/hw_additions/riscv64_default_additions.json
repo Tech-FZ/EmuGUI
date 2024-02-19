@@ -1,0 +1,8 @@
+{
+    "riscv64_cpus": [
+        "base", "max", "host", "any", "shakti-c", "rv64", "sifive-e51", "thead-c906", "sifive-u54", "veyron-v1", "x-rv128"
+    ],
+    "riscv64_machines": [
+        "none", "shakti_c", "sifive_e", "sifive_u", "spike", "virt"
+    ]
+}
