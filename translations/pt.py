@@ -51,7 +51,7 @@ def translateMainPT(window):
     window.label_19.setText("qemu-system-mips64 Caminho") # qemu-system-mips64 Path
     window.label_12.setText("qemu-system-sparc Caminho") # qemu-system-sparc Path
     window.label_13.setText("qemu-system-sparc64 Caminho") # qemu-system-sparc64 Path
-    window.le_alpha.setText("qemu-system-alpha Caminho") # qemu-system-alpha Path
+    window.lbl_alpha.setText("qemu-system-alpha Caminho") # qemu-system-alpha Path
 
     window.pushButton.setText("Procurar") # Browse
     window.pushButton_2.setText("Procurar") # Browse

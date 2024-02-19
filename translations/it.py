@@ -69,7 +69,7 @@ def translateMainIT(window):
     window.label_19.setText("Percorso di qemu-system-mips64") # qemu-system-mips64 Path
     window.label_12.setText("Percorso di qemu-system-sparc") # qemu-system-sparc Path
     window.label_13.setText("Percorso di qemu-system-sparc64") # qemu-system-sparc64 Path
-    window.le_alpha.setText("Percorso di qemu-system-alpha") # qemu-system-alpha Path
+    window.lbl_alpha.setText("Percorso di qemu-system-alpha") # qemu-system-alpha Path
 
     window.pushButton.setText("Sfoglia") # Browse
     window.pushButton_2.setText("Sfoglia") # Browse

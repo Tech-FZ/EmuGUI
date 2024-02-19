@@ -49,7 +49,7 @@ def translateMainUK(window):
     window.label_19.setText("qemu-system-mips64 Path") # qemu-system-mips64 Path
     window.label_12.setText("qemu-system-sparc Path") # qemu-system-sparc Path
     window.label_13.setText("qemu-system-sparc64 Path") # qemu-system-sparc64 Path
-    window.le_alpha.setText("qemu-system-alpha Path") # qemu-system-alpha Path
+    window.lbl_alpha.setText("qemu-system-alpha Path") # qemu-system-alpha Path
 
     window.pushButton.setText("Огляд") # Browse
     window.pushButton_2.setText("Огляд") # Browse

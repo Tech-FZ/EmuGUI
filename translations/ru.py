@@ -51,7 +51,7 @@ def translateMainRU(window):
     window.label_19.setText("Путь к qemu-system-mips64") # qemu-system-mips64 Path
     window.label_12.setText("Путь к qemu-system-sparc") # qemu-system-sparc Path
     window.label_13.setText("Путь к qemu-system-sparc64") # qemu-system-sparc64 Path
-    window.le_alpha.setText("Путь к qemu-system-alpha") # qemu-system-alpha Path
+    window.lbl_alpha.setText("Путь к qemu-system-alpha") # qemu-system-alpha Path
 
     window.pushButton.setText("Обзор") # Browse
     window.pushButton_2.setText("Обзор") # Browse

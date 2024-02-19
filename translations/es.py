@@ -51,7 +51,7 @@ def translateMainES(window):
     window.label_19.setText("Ruta de qemu-system-mips64") # qemu-system-mips64 Path
     window.label_12.setText("Ruta de qemu-system-sparc") # qemu-system-sparc Path
     window.label_13.setText("Ruta de qemu-system-sparc64") # qemu-system-sparc64 Path
-    window.le_alpha.setText("Ruta de qemu-system-alpha") # qemu-system-alpha Path
+    window.lbl_alpha.setText("Ruta de qemu-system-alpha") # qemu-system-alpha Path
 
     window.pushButton.setText("Buscar") # Browse
     window.pushButton_2.setText("Buscar") # Browse
