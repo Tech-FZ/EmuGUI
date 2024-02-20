@@ -105,6 +105,182 @@ def translateNewVmIT(window):
     window.setWindowTitle("EmuGUI - Create new VM")
 
     # First page
+    window.lbl_vmname.setText("Name") # Name
+    window.lbl_arch.setText("Architecture") # Architecture
+    window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
+
+    window.btn_next1.setText("Next >") # Next >
+    window.btn_cancel1.setText("Cancel") # Cancel
+
+    # Second page
+    window.lbl_machine.setText("Machine") # Machine
+    window.lbl_cpu.setText("CPU") # CPU
+    window.lbl_ram.setText("RAM in MB") # RAM in MB
+
+    window.cb_machine.setPlaceholderText("Please select a machine") # Please select a machine
+    window.cb_cpu.setPlaceholderText("Please select a processor") # Please select a processor
+
+    window.pb_prev2.setText("< Previous") # < Previous
+    window.pb_next2.setText("Next >") # Next >
+    window.pb_cancel2.setText("Cancel") # Cancel
+
+    # Combo boxes on second page
+    i = 0
+
+    while i < window.cb_machine.count():
+        if window.cb_machine.itemText(i) == "Let QEMU decide" or window.cb_machine.itemText(i) == "QEMU überlassen":
+            window.cb_machine.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.cb_cpu.count():
+        if window.cb_cpu.itemText(i) == "Let QEMU decide" or window.cb_cpu.itemText(i) == "QEMU überlassen":
+            window.cb_cpu.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    # Third page
+    window.lbl_vhdU.setText("VHD usage") # VHD usage
+
+    # Combobox for VHD usage
+    i = 0
+
+    while i < window.cb_vhdU.count():
+        if window.cb_vhdU.itemText(i) == "Create a new virtual hard drive":
+            window.cb_vhdU.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.cb_vhdU.count():
+        if window.cb_vhdU.itemText(i) == "Add an existing virtual hard drive":
+            window.cb_vhdU.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.cb_vhdU.count():
+        if window.cb_vhdU.itemText(i) == "Don't add a virtual hard drive":
+            window.cb_vhdU.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            break
+
+        i += 1
+
+    window.lbl_vhdP.setText("VHD path") # VHD path
+    window.lbl_vhdF.setText("VHD file format") # VHD file format
+    window.lbl_maxsize.setText("Maximum size") # Maximum size
+    window.lbl_hddC.setText("HDD controller") # HDD controller
+
+    i = 0
+
+    while i < window.cb_hddC.count():
+        if window.cb_hddC.itemText(i) == "Let QEMU decide" or window.cb_hddC.itemText(i) == "QEMU überlassen":
+            window.cb_hddC.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    window.cb_vhdF.setPlaceholderText("(Please select a file format)") # (Please select a file format)
+
+    window.btn_vhdP.setText("Browse") # Browse
+    window.btn_prev3.setText("< Previous") # < Previous
+    window.btn_next3.setText("Next >") # Next >
+    window.btn_cancel3.setText("Cancel") # Cancel
+
+    # Fourth page
+    window.lbl_vga.setText("VGA") # VGA
+    window.lbl_net.setText("Network") # Network
+    window.lbl_mouse.setText("Mouse") # Mouse
+
+    window.cb_vga.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
+    window.cb_net.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
+
+    window.btn_prev4.setText("< Previous") # < Previous
+    window.btn_next4.setText("Next >") # Next >
+    window.btn_cancel4.setText("Cancel") # Cancel
+
+    # Fifth page
+    window.lbl_biosLoc.setText(
+        "Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)"
+        ) # Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)
+
+    window.lbl_biosF.setText("External BIOS file") # External BIOS file
+
+    window.btn_biosF.setText("Browse") # Browse
+    window.btn_prev5.setText("< Previous") # < Previous
+    window.btn_next5.setText("Next >") # Next >
+    window.btn_cancel5.setText("Cancel") # Cancel
+
+    # Sixth page
+    window.lbl_sound.setText("Sound card") # Sound card
+    window.lbl_cores.setText("CPU cores")# CPU cores
+    window.lbl_kbd.setText("Keyboard") # Keyboard
+    window.lbl_kbdlayout.setText("Keyboard layout") # Keyboard layout
+
+    window.btn_prev6.setText("< Previous") # < Previous
+    window.btn_next6.setText("Next >") # Next >
+    window.btn_cancel6.setText("Cancel") # Cancel
+
+    # Seventh page
+    window.lbl_kernel.setText("Linux kernel") # Linux kernel
+    window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
+    window.lbl_cmd.setText("Linux cmd args") # Linux cmd args
+
+    window.btn_kernel.setText("Browse") # Browse
+    window.btn_initrd.setText("Browse") # Browse
+    window.btn_prev7.setText("< Previous") # < Previous
+    window.btn_next7.setText("Next >") # Next >
+    window.btn_cancel7.setText("Cancel") # Cancel
+
+    # Eighth page
+    window.lbl_accel.setText("Acceleration") # Acceleration
+    window.lbl_cdc1.setText("CD controller 1") # CD controller 1
+    window.lbl_cdc2.setText("CD controller 2") # CD controller 2
+
+    i = 0
+
+    while i < window.cb_cdc1.count():
+        if window.cb_cdc1.itemText(i) == "Let QEMU decide" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
+            window.cb_cdc1.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    i = 0
+
+    while i < window.cb_cdc2.count():
+        if window.cb_cdc2.itemText(i) == "Let QEMU decide" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
+            window.cb_cdc2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            break
+
+        i += 1
+
+    window.btn_prev8.setText("< Previous") # < Previous
+    window.btn_next8.setText("Next >") # Next >
+    window.btn_cancel8.setText("Cancel") # Cancel
+
+    # Ninth page
+    window.lbl_addargs.setText("Additional arguments (if needed)") # Additional arguments (if needed)
+
+    window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
+    window.chb_usb.setText("Add USB support") # Add USB support
+
+    window.btn_prev9.setText("< Previous") # < Previous
+    window.btn_finish.setText("Finish") # Finish
+    window.btn_cancel9.setText("Cancel") # Cancel
+
+def translateNewVmITOld(window):
+    window.setWindowTitle("EmuGUI - Create new VM")
+
+    # First page
     window.label.setText("Nome") # Name
     window.label_3.setText("Architettura") # Architecture
     window.comboBox.setPlaceholderText("Scegli un’architettura") # Please choose an architecture

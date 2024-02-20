@@ -87,8 +87,8 @@ def translateNewVmEN(window):
     window.setWindowTitle("EmuGUI - Create new VM")
 
     # First page
-    window.le_name.setText("Name") # Name
-    window.le_arch.setText("Architecture") # Architecture
+    window.lbl_vmname.setText("Name") # Name
+    window.lbl_arch.setText("Architecture") # Architecture
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
     window.btn_next1.setText("Next >") # Next >

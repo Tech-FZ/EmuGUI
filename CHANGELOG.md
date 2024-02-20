@@ -45,6 +45,7 @@
 - The readme had to be corrected again.
 - Work on the RISC-V 32/64 plug-in has begun.
 - The translation files had to be corrected.
+- The New VM dialog is now ready to be translated again.
 
 ## Known issues
 
