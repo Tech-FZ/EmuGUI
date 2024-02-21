@@ -46,7 +46,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         
         self.setWindowTitle("EmuGUI - Create new VM")
         
-        #self.langDetect()
+        self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
@@ -464,6 +464,20 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                         try:
                             self.cb_cpu.addItems(plugin["ppc_cpus"])
+
+                        except:
+                            pass
+
+                elif self.cb_arch.currentText() == "riscv32":
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["riscv32_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["riscv32_cpus"])
 
                         except:
                             pass

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'NewVM2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,7 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(400, 300)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
@@ -64,6 +64,7 @@ class Ui_Dialog(object):
         self.gridLayout.addWidget(self.btn_next1, 2, 1, 1, 1)
 
         self.cb_arch = QComboBox(self.gridLayoutWidget)
+        self.cb_arch.addItem("")
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
@@ -1805,6 +1806,7 @@ class Ui_Dialog(object):
         self.cb_arch.setItemText(8, QCoreApplication.translate("Dialog", u"sparc", None))
         self.cb_arch.setItemText(9, QCoreApplication.translate("Dialog", u"sparc64", None))
         self.cb_arch.setItemText(10, QCoreApplication.translate("Dialog", u"alpha", None))
+        self.cb_arch.setItemText(11, QCoreApplication.translate("Dialog", u"riscv32", None))
 
         self.cb_arch.setPlaceholderText(QCoreApplication.translate("Dialog", u"Please choose an architecture", None))
         self.lbl_ram.setText(QCoreApplication.translate("Dialog", u"RAM in MB", None))

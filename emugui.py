@@ -134,7 +134,8 @@ class Window(QMainWindow, Ui_MainWindow):
             ["arm", self.lineEdit_7],
             ["sparc", self.lineEdit_12],
             ["sparc64", self.lineEdit_13],
-            ["alpha", self.le_alpha]
+            ["alpha", self.le_alpha],
+            ["riscv32", self.le_riscv32]
         ]
 
         print(f"EmuGUI {self.version}")
@@ -280,6 +281,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_18.clicked.connect(self.set_qemu_mips_path)
         self.pushButton_16.clicked.connect(self.set_qemu_ppc64_path)
         self.btn_alpha.clicked.connect(self.set_qemu_alpha_path)
+        self.btn_riscv32.clicked.connect(self.set_qemu_riscv32_path)
         self.pushButton_6.clicked.connect(self.applyChangesQemu)
         self.pushButton_9.clicked.connect(self.startVM)
         self.pushButton_11.clicked.connect(self.deleteVM)
@@ -3107,6 +3109,12 @@ class Window(QMainWindow, Ui_MainWindow):
 
         if filename:
             self.le_alpha.setText(filename)
+
+    def set_qemu_riscv32_path(self):
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-riscv32 executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')
+
+        if filename:
+            self.le_riscv32.setText(filename)
 
     def set_qemu_mips64el_path(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select qemu-system-mips64el executable', dir='.', filter='Windows executables (*.exe);;All files (*.*)')

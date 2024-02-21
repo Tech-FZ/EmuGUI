@@ -47,7 +47,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
         self.architectures = [
             "i386", "x86_64", "ppc", "ppc64", "mips64", "mips64el",
             "mipsel", "mips", "aarch64", "arm", "sparc", "sparc64",
-            "alpha"
+            "alpha", "riscv32"
         ]
 
         try:

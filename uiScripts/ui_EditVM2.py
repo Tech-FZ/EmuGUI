@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'EditVM2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -25,7 +25,7 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(813, 474)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
@@ -60,6 +60,7 @@ class Ui_Dialog(object):
         self.gridLayout.addWidget(self.lbl_arch, 1, 0, 1, 1)
 
         self.cb_arch = QComboBox(self.gridLayoutWidget)
+        self.cb_arch.addItem("")
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
         self.cb_arch.addItem("")
@@ -558,6 +559,7 @@ class Ui_Dialog(object):
         self.cb_arch.setItemText(10, QCoreApplication.translate("Dialog", u"sparc", None))
         self.cb_arch.setItemText(11, QCoreApplication.translate("Dialog", u"sparc64", None))
         self.cb_arch.setItemText(12, QCoreApplication.translate("Dialog", u"alpha", None))
+        self.cb_arch.setItemText(13, QCoreApplication.translate("Dialog", u"riscv32", None))
 
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Dialog", u"General", None))
         self.lbl_cpu.setText(QCoreApplication.translate("Dialog", u"CPU", None))
