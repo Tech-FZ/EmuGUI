@@ -379,6 +379,35 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.label_9, 7, 1, 1, 1)
 
         self.tabWidget_2.addTab(self.tab_3, "")
+        self.tab_5 = QWidget()
+        self.tab_5.setObjectName(u"tab_5")
+        self.gridLayoutWidget_5 = QWidget(self.tab_5)
+        self.gridLayoutWidget_5.setObjectName(u"gridLayoutWidget_5")
+        self.gridLayoutWidget_5.setGeometry(QRect(0, 0, 781, 498))
+        self.gridLayout_6 = QGridLayout(self.gridLayoutWidget_5)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.btn_riscv64 = QPushButton(self.gridLayoutWidget_5)
+        self.btn_riscv64.setObjectName(u"btn_riscv64")
+
+        self.gridLayout_6.addWidget(self.btn_riscv64, 2, 3, 1, 1)
+
+        self.lbl_riscv64 = QLabel(self.gridLayoutWidget_5)
+        self.lbl_riscv64.setObjectName(u"lbl_riscv64")
+
+        self.gridLayout_6.addWidget(self.lbl_riscv64, 2, 1, 1, 1)
+
+        self.btn_apply_qemu2 = QPushButton(self.gridLayoutWidget_5)
+        self.btn_apply_qemu2.setObjectName(u"btn_apply_qemu2")
+
+        self.gridLayout_6.addWidget(self.btn_apply_qemu2, 3, 3, 1, 1)
+
+        self.le_riscv64 = QLineEdit(self.gridLayoutWidget_5)
+        self.le_riscv64.setObjectName(u"le_riscv64")
+
+        self.gridLayout_6.addWidget(self.le_riscv64, 2, 2, 1, 1)
+
+        self.tabWidget_2.addTab(self.tab_5, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
         self.gridLayoutWidget_3 = QWidget(self.tab_4)
@@ -574,6 +603,10 @@ class Ui_MainWindow(object):
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"qemu-system-aarch64 path", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"QEMU (1)", None))
+        self.btn_riscv64.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
+        self.lbl_riscv64.setText(QCoreApplication.translate("MainWindow", u"qemu-system-riscv64 path", None))
+        self.btn_apply_qemu2.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
+        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"QEMU (2)", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"EmuGUI", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"WARNING: This program comes with ABSOLUTELY NO WARRANTY under applicable law. Please see the GNU GPL license for details.", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Banner made by Tech-FZ", None))

@@ -482,6 +482,20 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                         except:
                             pass
 
+                elif self.cb_arch.currentText() == "riscv64":
+                    for plugin in self.hw_plugins:
+                        try:
+                            self.cb_machine.addItems(plugin["riscv64_machines"])
+
+                        except:
+                            pass
+
+                        try:
+                            self.cb_cpu.addItems(plugin["riscv64_cpus"])
+
+                        except:
+                            pass
+
                 elif self.cb_arch.currentText() == "alpha":
                     for plugin in self.hw_plugins:
                         try:

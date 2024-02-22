@@ -515,6 +515,47 @@
            </layout>
           </widget>
          </widget>
+         <widget class="QWidget" name="tab_5">
+          <attribute name="title">
+           <string>QEMU (2)</string>
+          </attribute>
+          <widget class="QWidget" name="gridLayoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>781</width>
+             <height>498</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="2" column="3">
+             <widget class="QPushButton" name="btn_riscv64">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="lbl_riscv64">
+              <property name="text">
+               <string>qemu-system-riscv64 path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="btn_apply_qemu2">
+              <property name="text">
+               <string>Apply</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLineEdit" name="le_riscv64"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
          <widget class="QWidget" name="tab_4">
           <attribute name="title">
            <string>About EmuGUI</string>

@@ -15,7 +15,7 @@ def translateMainBE(window):
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Агульныя") # General
-    window.tabWidget_2.setTabText(2, "Аб EmuGUI") # About EmuGUI
+    window.tabWidget_2.setTabText(3, "Аб EmuGUI") # About EmuGUI
 
     # General tab
     window.label_15.setText("Мова") # Language

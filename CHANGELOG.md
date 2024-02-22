@@ -47,6 +47,7 @@
 - The translation files had to be corrected.
 - The New VM dialog is now ready to be translated again.
 - RISC-V 32-bit support has been added. Sorry, but I have to make a second QEMU page starting with RISC-V 64-bit.
+- RISC-V 64-bit support has been added. From now on, there are two QEMU tabs.
 
 ## Known issues
 

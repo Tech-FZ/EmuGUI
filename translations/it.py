@@ -15,7 +15,7 @@ def translateMainIT(window):
 
     # Settings tabs
     window.tabWidget_2.setTabText(0, "Generale") # General
-    window.tabWidget_2.setTabText(2, "Informazioni su EmuGUI") # About EmuGUI
+    window.tabWidget_2.setTabText(3, "Informazioni su EmuGUI") # About EmuGUI
 
     # General tab
     window.label_15.setText("Lingua") # Language

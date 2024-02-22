@@ -150,6 +150,11 @@
           <string>riscv32</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>riscv64</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="0" column="1" colspan="2">

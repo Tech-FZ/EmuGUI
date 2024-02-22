@@ -149,6 +149,11 @@
           <string>riscv32</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>riscv64</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
