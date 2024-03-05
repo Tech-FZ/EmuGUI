@@ -49,6 +49,7 @@
 ## Changes compared to v2.0.0.5603_dev
 
 - The translations for RISC-V have been added.
+- I'm working on bringing back the translation functionality on the Edit VM dialog.
 
 ## Known issues
 
