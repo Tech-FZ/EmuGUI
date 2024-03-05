@@ -52,6 +52,8 @@ def translateMainPL(window):
     window.label_12.setText("qemu-system-sparc Droga") # qemu-system-sparc Path
     window.label_13.setText("qemu-system-sparc64 Droga") # qemu-system-sparc64 Path
     window.lbl_alpha.setText("qemu-system-alpha Droga") # qemu-system-alpha Path
+    window.lbl_riscv32.setText("qemu-system-riscv32 Droga") # qemu-system-riscv32 Path
+    window.lbl_riscv64.setText("qemu-system-riscv64 Droga") # qemu-system-riscv64 Path
 
     window.pushButton.setText("Przeglądaj") # Browse
     window.pushButton_2.setText("Przeglądaj") # Browse
@@ -67,6 +69,8 @@ def translateMainPL(window):
     window.pushButton_13.setText("Przeglądaj") # Browse
     window.pushButton_14.setText("Przeglądaj") # Browse
     window.btn_alpha.setText("Przeglądaj") # Browse
+    window.btn_riscv32.setText("Przeglądaj") # Browse
+    window.btn_riscv64.setText("Przeglądaj") # Browse
     window.pushButton_6.setText("Zastosuj") # Apply
 
     # About tab

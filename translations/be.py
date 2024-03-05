@@ -52,6 +52,8 @@ def translateMainBE(window):
     window.label_12.setText("Шлях да qemu-system-sparc") # qemu-system-sparc Path
     window.label_13.setText("Шлях да qemu-system-sparc64") # qemu-system-sparc64 Path
     window.lbl_alpha.setText("Шлях да qemu-system-alpha") # qemu-system-alpha Path
+    window.lbl_riscv32.setText("Шлях да qemu-system-riscv32") # qemu-system-riscv32 Path
+    window.lbl_riscv64.setText("Шлях да qemu-system-riscv64") # qemu-system-riscv64 Path
 
     window.pushButton.setText("Агляд") # Browse
     window.pushButton_2.setText("Агляд") # Browse
@@ -67,6 +69,8 @@ def translateMainBE(window):
     window.pushButton_13.setText("Агляд") # Browse
     window.pushButton_14.setText("Агляд") # Browse
     window.btn_alpha.setText("Агляд") # Browse
+    window.btn_riscv32.setText("Агляд") # Browse
+    window.btn_riscv64.setText("Агляд") # Browse
     window.pushButton_6.setText("Ужыць") # Apply
 
     # About tab

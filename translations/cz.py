@@ -52,6 +52,8 @@ def translateMainCZ(window):
     window.label_12.setText("Cesta qemu-system-sparc") # qemu-system-sparc Path
     window.label_13.setText("Cesta qemu-system-sparc64") # qemu-system-sparc64 Path
     window.lbl_alpha.setText("Cesta qemu-system-alpha") # qemu-system-alpha Path
+    window.lbl_riscv32.setText("Cesta qemu-system-riscv32") # qemu-system-riscv32 Path
+    window.lbl_riscv64.setText("Cesta qemu-system-riscv64") # qemu-system-riscv64 Path
 
     window.pushButton.setText("Hledat") # Browse
     window.pushButton_2.setText("Hledat") # Browse
@@ -67,6 +69,8 @@ def translateMainCZ(window):
     window.pushButton_13.setText("Hledat") # Browse
     window.pushButton_14.setText("Hledat") # Browse
     window.btn_alpha.setText("Hledat") # Browse
+    window.btn_riscv32.setText("Hledat") # Browse
+    window.btn_riscv64.setText("Hledat") # Browse
     window.pushButton_6.setText("Aplikovat") # Apply
 
     # About tab

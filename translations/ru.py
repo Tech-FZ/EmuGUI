@@ -52,6 +52,8 @@ def translateMainRU(window):
     window.label_12.setText("Путь к qemu-system-sparc") # qemu-system-sparc Path
     window.label_13.setText("Путь к qemu-system-sparc64") # qemu-system-sparc64 Path
     window.lbl_alpha.setText("Путь к qemu-system-alpha") # qemu-system-alpha Path
+    window.lbl_riscv32.setText("Путь к qemu-system-riscv32") # qemu-system-riscv32 Path
+    window.lbl_riscv64.setText("Путь к qemu-system-riscv64") # qemu-system-riscv64 Path
 
     window.pushButton.setText("Обзор") # Browse
     window.pushButton_2.setText("Обзор") # Browse
@@ -67,6 +69,8 @@ def translateMainRU(window):
     window.pushButton_13.setText("Обзор") # Browse
     window.pushButton_14.setText("Обзор") # Browse
     window.btn_alpha.setText("Обзор") # Browse
+    window.btn_riscv32.setText("Обзор") # Browse
+    window.btn_riscv64.setText("Обзор") # Browse
     window.pushButton_6.setText("Применить") # Apply
 
     # About tab
