@@ -46,7 +46,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.tabWidget.setCurrentIndex(0)
         self.hw_plugins = hwpr.read_hw_plugin()
         self.vmSpecs = self.readTempVmFile()
-        #self.langDetect()
+        self.langDetect()
         
         try:
             self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
