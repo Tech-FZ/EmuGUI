@@ -51,6 +51,22 @@
 - The translations for RISC-V have been added.
 - I'm working on bringing back the translation functionality on the Edit VM dialog.
 
+### Edit VM dialog - Progress
+
+| Language | Status |
+| -------- | ------ |
+| German | Done |
+| Spanish | Pending |
+| French | Pending |
+| Italian | Pending |
+| Polish | Pending |
+| Portuguese | Pending |
+| Romanian | Pending |
+| Russian | Pending |
+| Ukrainian | Pending |
+| Belarusian | Pending |
+| Czech | Pending |
+
 ## Known issues
 
 - Unfortunately, you might have to run EmuGUI from the terminal on Linux.
