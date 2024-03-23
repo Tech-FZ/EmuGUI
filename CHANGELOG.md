@@ -57,7 +57,7 @@
 | -------- | ------ |
 | German | Done |
 | Spanish | Pending |
-| French | Pending |
+| French | In progress |
 | Italian | Pending |
 | Polish | Pending |
 | Portuguese | Pending |
@@ -73,7 +73,7 @@
 | -------- | ------ |
 | German | Done |
 | Spanish | Pending |
-| French | Pending |
+| French | In progress |
 | Italian | Pending |
 | Polish | Pending |
 | Portuguese | Pending |

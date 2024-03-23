@@ -91,24 +91,24 @@ def translateNewVmFR(window):
     window.setWindowTitle("EmuGUI - Create new VM")
 
     # First page
-    window.lbl_vmname.setText("Name") # Name
+    window.lbl_vmname.setText("Nom") # Name
     window.lbl_arch.setText("Architecture") # Architecture
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
-    window.btn_next1.setText("Next >") # Next >
-    window.btn_cancel1.setText("Cancel") # Cancel
+    window.btn_next1.setText("Suivant >") # Next >
+    window.btn_cancel1.setText("Annuler") # Cancel
 
     # Second page
     window.lbl_machine.setText("Machine") # Machine
-    window.lbl_cpu.setText("CPU") # CPU
+    window.lbl_cpu.setText("Unité centrale") # CPU
     window.lbl_ram.setText("RAM in MB") # RAM in MB
 
     window.cb_machine.setPlaceholderText("Please select a machine") # Please select a machine
     window.cb_cpu.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pb_prev2.setText("< Previous") # < Previous
-    window.pb_next2.setText("Next >") # Next >
-    window.pb_cancel2.setText("Cancel") # Cancel
+    window.pb_prev2.setText("< Antérieur") # < Previous
+    window.pb_next2.setText("Suivant >") # Next >
+    window.pb_cancel2.setText("Annuler") # Cancel
 
     # Combo boxes on second page
     i = 0
@@ -176,22 +176,22 @@ def translateNewVmFR(window):
 
     window.cb_vhdF.setPlaceholderText("(Please select a file format)") # (Please select a file format)
 
-    window.btn_vhdP.setText("Browse") # Browse
-    window.btn_prev3.setText("< Previous") # < Previous
-    window.btn_next3.setText("Next >") # Next >
-    window.btn_cancel3.setText("Cancel") # Cancel
+    window.btn_vhdP.setText("Naviguer") # Browse
+    window.btn_prev3.setText("< Antérieur") # < Previous
+    window.btn_next3.setText("Suivant >") # Next >
+    window.btn_cancel3.setText("Annuler") # Cancel
 
     # Fourth page
     window.lbl_vga.setText("VGA") # VGA
-    window.lbl_net.setText("Network") # Network
-    window.lbl_mouse.setText("Mouse") # Mouse
+    window.lbl_net.setText("Réseau") # Network
+    window.lbl_mouse.setText("Souris") # Mouse
 
     window.cb_vga.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
     window.cb_net.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
 
-    window.btn_prev4.setText("< Previous") # < Previous
-    window.btn_next4.setText("Next >") # Next >
-    window.btn_cancel4.setText("Cancel") # Cancel
+    window.btn_prev4.setText("< Antérieur") # < Previous
+    window.btn_next4.setText("Suivant >") # Next >
+    window.btn_cancel4.setText("Annuler") # Cancel
 
     # Fifth page
     window.lbl_biosLoc.setText(
@@ -200,34 +200,34 @@ def translateNewVmFR(window):
 
     window.lbl_biosF.setText("External BIOS file") # External BIOS file
 
-    window.btn_biosF.setText("Browse") # Browse
-    window.btn_prev5.setText("< Previous") # < Previous
-    window.btn_next5.setText("Next >") # Next >
-    window.btn_cancel5.setText("Cancel") # Cancel
+    window.btn_biosF.setText("Naviguer") # Browse
+    window.btn_prev5.setText("< Antérieur") # < Previous
+    window.btn_next5.setText("Suivant >") # Next >
+    window.btn_cancel5.setText("Annuler") # Cancel
 
     # Sixth page
-    window.lbl_sound.setText("Sound card") # Sound card
+    window.lbl_sound.setText("Carte son") # Sound card
     window.lbl_cores.setText("CPU cores")# CPU cores
-    window.lbl_kbd.setText("Keyboard") # Keyboard
+    window.lbl_kbd.setText("Clavier") # Keyboard
     window.lbl_kbdlayout.setText("Keyboard layout") # Keyboard layout
 
-    window.btn_prev6.setText("< Previous") # < Previous
-    window.btn_next6.setText("Next >") # Next >
-    window.btn_cancel6.setText("Cancel") # Cancel
+    window.btn_prev6.setText("< Antérieur") # < Previous
+    window.btn_next6.setText("Suivant >") # Next >
+    window.btn_cancel6.setText("Annuler") # Cancel
 
     # Seventh page
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
     window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd args") # Linux cmd args
 
-    window.btn_kernel.setText("Browse") # Browse
-    window.btn_initrd.setText("Browse") # Browse
-    window.btn_prev7.setText("< Previous") # < Previous
-    window.btn_next7.setText("Next >") # Next >
-    window.btn_cancel7.setText("Cancel") # Cancel
+    window.btn_kernel.setText("Naviguer") # Browse
+    window.btn_initrd.setText("Naviguer") # Browse
+    window.btn_prev7.setText("< Antérieur") # < Previous
+    window.btn_next7.setText("Suivant >") # Next >
+    window.btn_cancel7.setText("Annuler") # Cancel
 
     # Eighth page
-    window.lbl_accel.setText("Acceleration") # Acceleration
+    window.lbl_accel.setText("Accélération") # Acceleration
     window.lbl_cdc1.setText("CD controller 1") # CD controller 1
     window.lbl_cdc2.setText("CD controller 2") # CD controller 2
 
@@ -249,9 +249,9 @@ def translateNewVmFR(window):
 
         i += 1
 
-    window.btn_prev8.setText("< Previous") # < Previous
-    window.btn_next8.setText("Next >") # Next >
-    window.btn_cancel8.setText("Cancel") # Cancel
+    window.btn_prev8.setText("< Antérieur") # < Previous
+    window.btn_next8.setText("Suivant >") # Next >
+    window.btn_cancel8.setText("Annuler") # Cancel
 
     # Ninth page
     window.lbl_addargs.setText("Additional arguments (if needed)") # Additional arguments (if needed)
@@ -259,9 +259,9 @@ def translateNewVmFR(window):
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
     window.chb_usb.setText("Add USB support") # Add USB support
 
-    window.btn_prev9.setText("< Previous") # < Previous
-    window.btn_finish.setText("Finish") # Finish
-    window.btn_cancel9.setText("Cancel") # Cancel
+    window.btn_prev9.setText("< Antérieur") # < Previous
+    window.btn_finish.setText("Finir") # Finish
+    window.btn_cancel9.setText("Annuler") # Cancel
 
 def translateNewVmFROld(window):
     window.setWindowTitle("EmuGUI - Create new VM")
@@ -654,23 +654,23 @@ def translateEditVMFR(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
 
     # Buttons on all tabs
-    window.btn_cancel.setText("Cancel") # Cancel
-    window.btn_ok.setText("OK") # OK
+    window.btn_cancel.setText("Annuler") # Cancel
+    window.btn_ok.setText("Accord") # OK
 
     # Tab names
-    window.tabWidget.setTabText(0, "General") # General
+    window.tabWidget.setTabText(0, "Général") # General
     window.tabWidget.setTabText(1, "Machine") # Machine
     window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
-    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(3, "Périphériques") # Peripherals
     window.tabWidget.setTabText(4, "BIOS") # BIOS
     window.tabWidget.setTabText(6, "Additional components") # Additional components
 
     # Translations for General tab
-    window.lbl_name.setText("Name") # Name
+    window.lbl_name.setText("Nom") # Name
     window.lbl_arch.setText("Architecture") # Architecture
 
     # Translations for Machine tab
-    window.lbl_cpu.setText("CPU") # CPU
+    window.lbl_cpu.setText("Unité centrale") # CPU
     window.lbl_machine.setText("Machine") # Machine
     window.lbl_ram.setText("RAM in MB") # RAM in MB
 
@@ -760,8 +760,8 @@ def translateEditVMFR(window, vmname):
         i += 1
 
     # Translations for Peripherals tab
-    window.lbl_mouse.setText("Mouse type") # Mouse type
-    window.lbl_kbdtype.setText("Keyboard type") # Keyboard type
+    window.lbl_mouse.setText("Souris") # Mouse type
+    window.lbl_kbdtype.setText("Clavier") # Keyboard type
     
     # Translations for BIOS tab
     # Location of external BIOS file (Leave empty to use the default BIOS)
@@ -778,12 +778,12 @@ def translateEditVMFR(window, vmname):
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA
-    window.lbl_net.setText("Network adapter") # Network adapter
-    window.lbl_sound.setText("Sound card") # Sound card
+    window.lbl_net.setText("Réseau") # Network adapter
+    window.lbl_sound.setText("Carte son") # Sound card
     window.lbl_addargs.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
     window.lbl_cpuc.setText("CPU cores") # CPU cores
     window.chb_usb.setText("Add USB support") # Add USB support
-    window.lbl_accel.setText("Acceleration") # Acceleration
+    window.lbl_accel.setText("Accélération") # Acceleration
 
 def translateEditVMFROld(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
