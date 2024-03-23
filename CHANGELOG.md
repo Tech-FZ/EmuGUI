@@ -56,7 +56,7 @@
 | Language | Status |
 | -------- | ------ |
 | German | Done |
-| Spanish | Pending |
+| Spanish | (Mostly) done |
 | French | In progress |
 | Italian | Pending |
 | Polish | Pending |
@@ -72,7 +72,7 @@
 | Language | Status |
 | -------- | ------ |
 | German | Done |
-| Spanish | Pending |
+| Spanish | Done |
 | French | In progress |
 | Italian | Pending |
 | Polish | Pending |
