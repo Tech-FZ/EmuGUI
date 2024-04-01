@@ -30,7 +30,7 @@ except:
 try:
     from PySide6.QtWidgets import *
     from PySide6 import QtGui
-    from PySide6.QtCore import QTimer, QSize
+    from PySide6.QtCore import *
     from uiScripts.ui_Main import Ui_MainWindow
 
 except:
@@ -204,6 +204,11 @@ class Window(QMainWindow, Ui_MainWindow):
 
         self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
         self.setWindowTitle(f"EmuGUI {self.version} (Beta Release 2)")
+
+        if datetime.date.today().day == 1 and datetime.date.today().month == 4:
+            wintitle = self.windowTitle()
+            self.setWindowTitle("".join(reversed(wintitle)))
+
         self.languageInUse = "system"
 
         try:
@@ -316,6 +321,14 @@ class Window(QMainWindow, Ui_MainWindow):
 
         else:
             self.label_6.setPixmap(QtGui.QPixmap("banners/GarukaPula.png"))
+
+        if datetime.date.today().day == 1 and datetime.date.today().month == 4:
+            pixmap = self.label_6.pixmap()
+            self.rotation = 180
+
+            transform = QtGui.QTransform().rotate(self.rotation)
+            pixmap = pixmap.transformed(transform, Qt.FastTransformation)
+            self.label_6.setPixmap(pixmap)
 
     def setLanguage(self, langmode):
         if langmode == "system" or langmode == None:

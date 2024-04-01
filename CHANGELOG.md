@@ -51,6 +51,7 @@
 ## Changes compared to v2.0.0.5605_b1
 
 - This is solely a translation update, I guess.
+- April Fools!
 
 ### Edit VM dialog - Progress
 
