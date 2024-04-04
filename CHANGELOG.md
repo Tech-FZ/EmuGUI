@@ -63,7 +63,7 @@
 | French | In progress |
 | Italian | Pending |
 | Polish | Pending |
-| Portuguese | In progress |
+| Portuguese | Done |
 | Romanian | Pending |
 | Russian | In progress |
 | Ukrainian | Pending |

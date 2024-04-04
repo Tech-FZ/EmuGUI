@@ -655,25 +655,25 @@ def translateEditVMPT(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
 
     # Buttons on all tabs
-    window.btn_cancel.setText("Cancel") # Cancel
+    window.btn_cancel.setText("Cancelar") # Cancel
     window.btn_ok.setText("OK") # OK
 
     # Tab names
-    window.tabWidget.setTabText(0, "General") # General
-    window.tabWidget.setTabText(1, "Machine") # Machine
-    window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
-    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(0, "Geral") # General
+    window.tabWidget.setTabText(1, "Máquina") # Machine
+    window.tabWidget.setTabText(2, "Discos Virtuais") # Virtual hard disks
+    window.tabWidget.setTabText(3, "Perifericos") # Peripherals
     window.tabWidget.setTabText(4, "BIOS") # BIOS
-    window.tabWidget.setTabText(6, "Additional components") # Additional components
+    window.tabWidget.setTabText(6, "Componentes adicionais") # Additional components
 
     # Translations for General tab
-    window.lbl_name.setText("Name") # Name
-    window.lbl_arch.setText("Architecture") # Architecture
+    window.lbl_name.setText("Nome") # Name
+    window.lbl_arch.setText("Arquitetura") # Architecture
 
     # Translations for Machine tab
     window.lbl_cpu.setText("CPU") # CPU
-    window.lbl_machine.setText("Machine") # Machine
-    window.lbl_ram.setText("RAM in MB") # RAM in MB
+    window.lbl_machine.setText("Máquina") # Machine
+    window.lbl_ram.setText("RAM em MB") # RAM in MB
 
     i = 0
 
@@ -694,18 +694,18 @@ def translateEditVMPT(window, vmname):
         i += 1
 
     # Translations for VHD tab
-    window.lbl_vhdu.setText("VHD usage") # VHD usage
-    window.lbl_vhdp.setText("VHD path") # VHD path
-    window.lbl_vhdf.setText("VHD file format") # VHD file format
-    window.lbl_maxsize.setText("Maximum size") # Maximum size
-    window.btn_vhdp.setText("Browse") # Browse
+    window.lbl_vhdu.setText("Uso do VHD") # VHD usage
+    window.lbl_vhdp.setText("Caminho do VHD") # VHD path
+    window.lbl_vhdf.setText("Formato de arquivo VHD") # VHD file format
+    window.lbl_maxsize.setText("Tamanho máximo") # Maximum size
+    window.btn_vhdp.setText("Procurar") # Browse
     
     # Combobox for VHD usage
     i = 0
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Create a new virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            window.cb_vhdu.setItemText(i, "Crie um novo disco virtual") # Create a new virtual hard drive
             break
 
         i += 1
@@ -714,7 +714,7 @@ def translateEditVMPT(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Add an existing virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            window.cb_vhdu.setItemText(i, "Adicionar um disco virtual existente") # Add an existing virtual hard drive
             break
 
         i += 1
@@ -723,13 +723,13 @@ def translateEditVMPT(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Don't add a virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            window.cb_vhdu.setItemText(i, "Não adicionar um disco virtual") # Don't add a virtual hard drive
             break
 
         i += 1
 
-    window.lbl_cdc1.setText("CD controller 1") # CD controller 1
-    window.lbl_cdc2.setText("CD controller 2") # CD controller 2
+    window.lbl_cdc1.setText("Controladora de CD 1") # CD controller 1
+    window.lbl_cdc2.setText("Controladora de CD 2") # CD controller 2
 
     i = 0
 
@@ -749,7 +749,7 @@ def translateEditVMPT(window, vmname):
 
         i += 1
 
-    window.lbl_hddc.setText("HDD controller") # HDD controller
+    window.lbl_hddc.setText("Controladora de HDD") # HDD controller
 
     i = 0
 
@@ -761,30 +761,30 @@ def translateEditVMPT(window, vmname):
         i += 1
 
     # Translations for Peripherals tab
-    window.lbl_mouse.setText("Mouse type") # Mouse type
-    window.lbl_kbdtype.setText("Keyboard type") # Keyboard type
+    window.lbl_mouse.setText("Mouse") # Mouse type
+    window.lbl_kbdtype.setText("Tipo de Teclado") # Keyboard type
     
     # Translations for BIOS tab
     # Location of external BIOS file (Leave empty to use the default BIOS)
-    window.lbl_biosloc.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
-    window.lbl_biosf.setText("External BIOS file") # External BIOS file
-    window.btn_biosf.setText("Browse") # Browse
+    window.lbl_biosloc.setText("Localização do arquivo de BIOS externo (deixe em branco dentro para usar a BIOS padrão)")
+    window.lbl_biosf.setText("Arquivo BIOS externo") # External BIOS file
+    window.btn_biosf.setText("Procurar") # Browse
 
     # Translations for Linux tab
-    window.lbl_kernel.setText("Linux kernel") # Linux kernel
-    window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
+    window.lbl_kernel.setText("Kernel do Linux") # Linux kernel
+    window.lbl_initrd.setText("Imagem initrd do Linux") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd arguments") # Linux cmd arguments
-    window.btn_kernel.setText("Browse") # Browse
-    window.btn_initrd.setText("Browse") # Browse
+    window.btn_kernel.setText("Procurar") # Browse
+    window.btn_initrd.setText("Procurar") # Browse
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA
-    window.lbl_net.setText("Network adapter") # Network adapter
-    window.lbl_sound.setText("Sound card") # Sound card
-    window.lbl_addargs.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
-    window.lbl_cpuc.setText("CPU cores") # CPU cores
-    window.chb_usb.setText("Add USB support") # Add USB support
-    window.lbl_accel.setText("Acceleration") # Acceleration
+    window.lbl_net.setText("Rede") # Network adapter
+    window.lbl_sound.setText("Placa de Som") # Sound card
+    window.lbl_addargs.setText("Argumentos adicionais (Se preciso)") # Additional arguments (if necessary)
+    window.lbl_cpuc.setText("Núcleos de CPU") # CPU cores
+    window.chb_usb.setText("Adicionar suporte USB") # Add USB support
+    window.lbl_accel.setText("Aceleração") # Acceleration
 
 def translateEditVMPTOld(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
