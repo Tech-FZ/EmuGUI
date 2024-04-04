@@ -53,6 +53,7 @@
 
 - Networking should now work on RISC-V and Alpha.
 - Word wrapping is activated in the BIOS thing on the New VM dialog now.
+- Thanks to imwez (Discord username), the Portuguese translation is now more complete.
 
 ### Edit VM dialog - Progress
 

@@ -993,24 +993,24 @@ def translateEditVMPTOld(window, vmname):
     window.label_36.setText("Acceleration") # Acceleration
 
 def translateErrDialogPT(window, errcode):
-    window.setWindowTitle(f"EmuGUI - Error")
+    window.setWindowTitle(f"EmuGUI - Erro")
     
     if errcode.startswith("C"):
         window.label.setText("EmuGUI encountered a critical error and needs to be closed.") # EmuGUI encountered a critical error and needs to be closed.
 
     elif errcode.startswith("E"):
-        window.label.setText("EmuGUI encountered an error.") # EmuGUI encountered an error.
+        window.label.setText("EmuGUI encontrou um erro.") # EmuGUI encountered an error.
 
     elif errcode.startswith("W"):
-        window.label.setText("EmuGUI has to warn you.") # EmuGUI has to warn you.
+        window.label.setText("EmuGUI tem um alerta para você.") # EmuGUI has to warn you.
 
     else:
-        window.label.setText("EmuGUI has something to say.") # EmuGUI has something to say.
+        window.label.setText("EmuGUI tem algo para falar.") # EmuGUI has something to say.
 
-    window.label_2.setText("Error Code: " + errcode) # Error Code:
+    window.label_2.setText("Erro Código: " + errcode) # Error Code:
 
     window.label_3.setText(
-        "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
+        "Se esse erro ocorrer múltiplas vezes, entre em contato com o administrador e/ou peça ajuda no servidor de Discord do EmuGUI ou no repositório do GitHub."
         ) # If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.
     
     window.pushButton.setText("OK") # OK
