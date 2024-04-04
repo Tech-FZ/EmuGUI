@@ -1,3 +1,98 @@
+# EmuGUI v2.0.0.5607_rc1 "Ioana Rosa" (based on v2.0.0.5606_b2)
+
+## WARNING
+
+- You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+- This is a pre-release, meaning it's still in development. Don't use this build for production. Evaluation is okay tho.
+
+## Changes compared to v1.2.2.5512
+
+- As always, EmuGUI 2.0 receives another codename, in this case "Ioana Rosa".
+- An architecture list in the main window and its usage made the number of used initialisation code shrink. The old code has been commented out.
+- The same optimisation efforts have been applied to the code which changes the settings and the code which starts VMs.
+- The old feature list has been updated.
+- Even though the Additional Hardware Selection Plug-In System (AHSPIS) still has to be made, I started working on JSON plug-ins for x86, PowerPC and ARM machines which are planned to be included with EmuGUI anyway.
+- The copyright in the license file has been updated.
+- The "Install on Linux" part of the readme has been corrected.
+- I'm now working on what will become the MIPS and SPARC plug-ins.
+- Some plug-ins have been separated.
+- The generic plug-in is in the works.
+- HAXM is now depreciated on EmuGUI.
+- A copy of the New VM dialog has been edited.
+- A copy of the Edit VM dialog has been edited.
+- I'm doing my best to optimise EmuGUI by adapting the New VM dialog.
+- For that, the plug-in reader has been prepared.
+- The delcache scripts have been updated.
+- However, due to translation issues, the New VM dialog is exclusively in English at this time.
+- The Edit VM dialog is also to be shrunk in size.
+- The New and Edit VM dialogs are being optimised further.
+- An issue in the New VM dialog which caused the VM creation to be incomplete has been fixed.
+- The Start VM dialog has been adjusted.
+- The SPARC64 plug-in has been corrected.
+- An Alpha plug-in is in the making.
+- The Alpha support is mostly there. However, VMs don't seem to run.
+- As suggested by [levelad](https://github.com/levelad), an experimental option to run WHPX with `kernel-irqchip=off` has been added.
+- The translation of the main window was updated.
+- I'm working on bringing back translations for the New VM dialog. However, it will take a while until I can actually re-activate them.
+- Some things on the New VM dialog had to be corrected.
+- The readme had to be corrected again.
+- Work on the RISC-V 32/64 plug-in has begun.
+- The translation files had to be corrected.
+- The New VM dialog is now ready to be translated again.
+- RISC-V 32-bit support has been added. Sorry, but I have to make a second QEMU page starting with RISC-V 64-bit.
+- RISC-V 64-bit support has been added. From now on, there are two QEMU tabs.
+- The translations for RISC-V have been added.
+- I'm working on bringing back the translation functionality on the Edit VM dialog.
+- April Fools! (from 2.0.0.5606_b2)
+
+## Foreported from v1.2.3.5513
+
+- SPARC64 VMs didn't have network capabilities under any circumstances. This is now fixed.
+
+## Changes compared to v2.0.0.5606_b2
+
+- Networking should now work on RISC-V and Alpha.
+
+### Edit VM dialog - Progress
+
+| Language | Status |
+| -------- | ------ |
+| German | Done |
+| Spanish | (Mostly) done |
+| French | In progress |
+| Italian | Pending |
+| Polish | Pending |
+| Portuguese | Pending |
+| Romanian | Pending |
+| Russian | In progress |
+| Ukrainian | Pending |
+| Belarusian | Pending |
+| Czech | Pending |
+
+### New VM dialog - Progress
+
+| Language | Status |
+| -------- | ------ |
+| German | Done |
+| Spanish | Done |
+| French | In progress |
+| Italian | Pending |
+| Polish | Pending |
+| Portuguese | Pending |
+| Romanian | Pending |
+| Russian | In progress |
+| Ukrainian | Pending |
+| Belarusian | Pending |
+| Czech | Pending |
+
+## Known issues
+
+- Unfortunately, you might have to run EmuGUI from the terminal on Linux.
+- You will not be notified about any more updates for now as update.txt will not be updated.
+- As for the TPM functionality, you must run `mkdir (insert-path-here)` and `swtpm socket --tpm2 --tpmstate dir=(insert-path-here) --ctrl type=unixio,path=(insert-path-here)/swtpm-sock --log level=20` in a terminal (You can leave the `--tpm2` argument away tho if you plan to use TPM 1.2 instead).
+- The QCOW2 format is prone to not work for some Windows VMs.
+- Due to the massive restructuring of the New and Edit VM dialogs, those will NOT be translated at this time, meaning they are English only. However, I'll be working on fixing that during development.
+
 # EmuGUI v2.0.0.5606_b2 "Ioana Rosa" (based on v2.0.0.5605_b1)
 
 ## WARNING

@@ -119,7 +119,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "2.0.0.5606_b2"
+        self.version = "2.0.0.5608_rc1"
 
         self.architectures = [
             ["i386", self.lineEdit_4],
@@ -203,7 +203,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     )
 
         self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
-        self.setWindowTitle(f"EmuGUI {self.version} (Beta Release 2)")
+        self.setWindowTitle(f"EmuGUI {self.version} (Release Candidate 1)")
 
         if datetime.date.today().day == 1 and datetime.date.today().month == 4:
             wintitle = self.windowTitle()
@@ -217,7 +217,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5606
+        self.versionCode = 5607
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()

@@ -441,6 +441,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc" or self.vmSpecs[1] == "ppc64" or self.vmSpecs[1] == "sparc" or self.vmSpecs[1] == "sparc64":
                     qemu_cmd = qemu_cmd + f" -net nic,model={self.vmSpecs[7]} -net user"
 
+                if self.vmSpecs[1] == "riscv32" or self.vmSpecs[1] == "riscv64" or self.vmSpecs[1] == "alpha":
+                    qemu_cmd = qemu_cmd + f" -net nic,model={self.vmSpecs[7]} -net user"
+
                 elif self.vmSpecs[1] == "mips64el" or self.vmSpecs[1] == "mipsel":
                     qemu_cmd = qemu_cmd + f" -nic user,model={self.vmSpecs[7]}"
 
