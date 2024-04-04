@@ -22,6 +22,8 @@ rzglitch (Coding)
 
 Calibrato (Polish translation)
 
+imwez (Discord username, Portuguese translation)
+
 # Banners
 
 | Version | Author |

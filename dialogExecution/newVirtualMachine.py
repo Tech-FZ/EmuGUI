@@ -160,6 +160,8 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 pass
 
     def langDetect(self):
+        self.lbl_biosLoc.setWordWrap(True)
+
         select_language = """
         SELECT name, value FROM settings
         WHERE name = "lang";

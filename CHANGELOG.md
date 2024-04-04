@@ -52,6 +52,7 @@
 ## Changes compared to v2.0.0.5606_b2
 
 - Networking should now work on RISC-V and Alpha.
+- Word wrapping is activated in the BIOS thing on the New VM dialog now.
 
 ### Edit VM dialog - Progress
 
@@ -62,7 +63,7 @@
 | French | In progress |
 | Italian | Pending |
 | Polish | Pending |
-| Portuguese | Pending |
+| Portuguese | In progress |
 | Romanian | Pending |
 | Russian | In progress |
 | Ukrainian | Pending |
@@ -78,7 +79,7 @@
 | French | In progress |
 | Italian | Pending |
 | Polish | Pending |
-| Portuguese | Pending |
+| Portuguese | Done |
 | Romanian | Pending |
 | Russian | In progress |
 | Ukrainian | Pending |
