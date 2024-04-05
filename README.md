@@ -297,11 +297,11 @@ A documentation of EmuGUI can be found [here](https://github.com/Tech-FZ/EmuGUI/
 </a>
 
 <a href="https://www.youtube.com/@EmuGUI-vr2xd">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/140px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/70px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">
 </a>
 
 <a href="https://odysee.com/@EmuGUI:0">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFggUmAjv5TiQcgCt7BW-PKJpyrFvnAQBwYGX2lhU&s" alt="Odysee Icon">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFggUmAjv5TiQcgCt7BW-PKJpyrFvnAQBwYGX2lhU&s" alt="Odysee Icon" height="70px">
 </a>
 
 <!-- Discord: https://discord.gg/rTGpYCwF89 -->
