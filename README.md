@@ -297,7 +297,7 @@ A documentation of EmuGUI can be found [here](https://github.com/Tech-FZ/EmuGUI/
 </a>
 
 <a href="https://www.youtube.com/@EmuGUI-vr2xd">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/140px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube Icon">
 </a>
 
 <a href="https://odysee.com/@EmuGUI:0">
