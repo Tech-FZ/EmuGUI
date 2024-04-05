@@ -62,7 +62,7 @@
 | German | Done |
 | Spanish | (Mostly) done |
 | French | In progress |
-| Italian | Pending |
+| Italian | Done |
 | Polish | Pending |
 | Portuguese | Done |
 | Romanian | Pending |
@@ -78,7 +78,7 @@
 | German | Done |
 | Spanish | Done |
 | French | In progress |
-| Italian | Pending |
+| Italian | Done |
 | Polish | Pending |
 | Portuguese | Done |
 | Romanian | Pending |
