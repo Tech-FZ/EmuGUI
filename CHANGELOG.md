@@ -64,7 +64,7 @@
 | Spanish | (Mostly) done |
 | French | In progress |
 | Italian | Done |
-| Polish | Pending |
+| Polish | In progress |
 | Portuguese | Done |
 | Romanian | Pending |
 | Russian | In progress |
@@ -80,7 +80,7 @@
 | Spanish | Done |
 | French | In progress |
 | Italian | Done |
-| Polish | Pending |
+| Polish | Done |
 | Portuguese | Done |
 | Romanian | Pending |
 | Russian | In progress |
