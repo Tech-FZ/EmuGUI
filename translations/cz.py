@@ -660,21 +660,21 @@ def translateEditVMCZ(window, vmname):
     window.btn_ok.setText("OK") # OK
 
     # Tab names
-    window.tabWidget.setTabText(0, "General") # General
-    window.tabWidget.setTabText(1, "Machine") # Machine
-    window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
-    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(0, "Obecné") # General
+    window.tabWidget.setTabText(1, "Stroj") # Machine
+    window.tabWidget.setTabText(2, "Virtuální Pevné disky") # Virtual hard disks
+    window.tabWidget.setTabText(3, "Periférie") # Peripherals
     window.tabWidget.setTabText(4, "BIOS") # BIOS
-    window.tabWidget.setTabText(6, "Additional components") # Additional components
+    window.tabWidget.setTabText(6, "Další komponenty") # Additional components
 
     # Translations for General tab
-    window.lbl_name.setText("Name") # Name
-    window.lbl_arch.setText("Architecture") # Architecture
+    window.lbl_name.setText("Název") # Name
+    window.lbl_arch.setText("Architektura") # Architecture
 
     # Translations for Machine tab
     window.lbl_cpu.setText("CPU") # CPU
-    window.lbl_machine.setText("Machine") # Machine
-    window.lbl_ram.setText("RAM in MB") # RAM in MB
+    window.lbl_machine.setText("Stroj") # Machine
+    window.lbl_ram.setText("RAM v MB") # RAM in MB
 
     i = 0
 
@@ -695,10 +695,10 @@ def translateEditVMCZ(window, vmname):
         i += 1
 
     # Translations for VHD tab
-    window.lbl_vhdu.setText("VHD usage") # VHD usage
-    window.lbl_vhdp.setText("VHD path") # VHD path
-    window.lbl_vhdf.setText("VHD file format") # VHD file format
-    window.lbl_maxsize.setText("Maximum size") # Maximum size
+    window.lbl_vhdu.setText("Využití VHD") # VHD usage
+    window.lbl_vhdp.setText("Cesta VHD") # VHD path
+    window.lbl_vhdf.setText("Formát souboru VHD") # VHD file format
+    window.lbl_maxsize.setText("Maximální velikost") # Maximum size
     window.btn_vhdp.setText("Hledat") # Browse
     
     # Combobox for VHD usage
@@ -706,7 +706,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Create a new virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            window.cb_vhdu.setItemText(i, "Vytvořte nový virtuální pevný disk") # Create a new virtual hard drive
             break
 
         i += 1
@@ -715,7 +715,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Add an existing virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            window.cb_vhdu.setItemText(i, "Přidejte existující virtuální pevný disk") # Add an existing virtual hard drive
             break
 
         i += 1
@@ -724,13 +724,13 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Don't add a virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            window.cb_vhdu.setItemText(i, "Nepřidávejte virtuální pevný disk") # Don't add a virtual hard drive
             break
 
         i += 1
 
-    window.lbl_cdc1.setText("CD controller 1") # CD controller 1
-    window.lbl_cdc2.setText("CD controller 2") # CD controller 2
+    window.lbl_cdc1.setText("Ovladač CD 1") # CD controller 1
+    window.lbl_cdc2.setText("Ovladač CD 2") # CD controller 2
 
     i = 0
 
@@ -750,7 +750,7 @@ def translateEditVMCZ(window, vmname):
 
         i += 1
 
-    window.lbl_hddc.setText("HDD controller") # HDD controller
+    window.lbl_hddc.setText("Ovladač HDD") # HDD controller
 
     i = 0
 
@@ -762,30 +762,30 @@ def translateEditVMCZ(window, vmname):
         i += 1
 
     # Translations for Peripherals tab
-    window.lbl_mouse.setText("Mouse type") # Mouse type
-    window.lbl_kbdtype.setText("Keyboard type") # Keyboard type
+    window.lbl_mouse.setText("Typ myši") # Mouse type
+    window.lbl_kbdtype.setText("Typ klávesnice") # Keyboard type
     
     # Translations for BIOS tab
     # Location of external BIOS file (Leave empty to use the default BIOS)
-    window.lbl_biosloc.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
-    window.lbl_biosf.setText("External BIOS file") # External BIOS file
+    window.lbl_biosloc.setText("Umístění externího souboru BIOS (Chcete-li použít výchozí BIOS, ponechte prázdné)")
+    window.lbl_biosf.setText("Externí Soubor BIOS") # External BIOS file
     window.btn_biosf.setText("Hledat") # Browse
 
     # Translations for Linux tab
-    window.lbl_kernel.setText("Linux kernel") # Linux kernel
-    window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
-    window.lbl_cmd.setText("Linux cmd arguments") # Linux cmd arguments
+    window.lbl_kernel.setText("Linuxové jádro") # Linux kernel
+    window.lbl_initrd.setText("Obraz initrd pro Linux") # Linux initrd image
+    window.lbl_cmd.setText("Linux cmd args") # Linux cmd arguments
     window.btn_kernel.setText("Hledat") # Browse
     window.btn_initrd.setText("Hledat") # Browse
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA
-    window.lbl_net.setText("Network adapter") # Network adapter
-    window.lbl_sound.setText("Sound card") # Sound card
-    window.lbl_addargs.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
-    window.lbl_cpuc.setText("CPU cores") # CPU cores
-    window.chb_usb.setText("Add USB support") # Add USB support
-    window.lbl_accel.setText("Acceleration") # Acceleration
+    window.lbl_net.setText("Síť") # Network adapter
+    window.lbl_sound.setText("Zvuková Karta") # Sound card
+    window.lbl_addargs.setText("Další argumenty (pokud jsou potřeba)") # Additional arguments (if necessary)
+    window.lbl_cpuc.setText("Jádra CPU") # CPU cores
+    window.chb_usb.setText("Pridat podporu USB") # Add USB support
+    window.lbl_accel.setText("Akcelerace") # Acceleration
 
 def translateEditVMCZOld(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
