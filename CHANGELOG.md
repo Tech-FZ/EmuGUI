@@ -64,7 +64,7 @@
 | Spanish | (Mostly) done |
 | French | In progress |
 | Italian | Done |
-| Polish | In progress |
+| Polish | Done |
 | Portuguese | Done |
 | Romanian | Pending |
 | Russian | In progress |
