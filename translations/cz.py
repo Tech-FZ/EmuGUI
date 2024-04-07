@@ -91,31 +91,31 @@ def translateNewVmCZ(window):
     window.setWindowTitle("EmuGUI - Create new VM")
 
     # First page
-    window.lbl_vmname.setText("Name") # Name
-    window.lbl_arch.setText("Architecture") # Architecture
+    window.lbl_vmname.setText("Název") # Name
+    window.lbl_arch.setText("Architektura") # Architecture
     window.cb_arch.setPlaceholderText("Please choose an architecture") # Please choose an architecture
 
-    window.btn_next1.setText("Next >") # Next >
-    window.btn_cancel1.setText("Cancel") # Cancel
+    window.btn_next1.setText("Další >") # Next >
+    window.btn_cancel1.setText("Zrušit") # Cancel
 
     # Second page
-    window.lbl_machine.setText("Machine") # Machine
+    window.lbl_machine.setText("Stroj") # Machine
     window.lbl_cpu.setText("CPU") # CPU
-    window.lbl_ram.setText("RAM in MB") # RAM in MB
+    window.lbl_ram.setText("RAM v MB") # RAM in MB
 
     window.cb_machine.setPlaceholderText("Please select a machine") # Please select a machine
     window.cb_cpu.setPlaceholderText("Please select a processor") # Please select a processor
 
-    window.pb_prev2.setText("< Previous") # < Previous
-    window.pb_next2.setText("Next >") # Next >
-    window.pb_cancel2.setText("Cancel") # Cancel
+    window.pb_prev2.setText("< Předchozí") # < Previous
+    window.pb_next2.setText("Další >") # Next >
+    window.pb_cancel2.setText("Zrušit") # Cancel
 
     # Combo boxes on second page
     i = 0
 
     while i < window.cb_machine.count():
         if window.cb_machine.itemText(i) == "Let QEMU decide" or window.cb_machine.itemText(i) == "QEMU überlassen":
-            window.cb_machine.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_machine.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -124,20 +124,20 @@ def translateNewVmCZ(window):
 
     while i < window.cb_cpu.count():
         if window.cb_cpu.itemText(i) == "Let QEMU decide" or window.cb_cpu.itemText(i) == "QEMU überlassen":
-            window.cb_cpu.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cpu.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
 
     # Third page
-    window.lbl_vhdU.setText("VHD usage") # VHD usage
+    window.lbl_vhdU.setText("Využití VHD") # VHD usage
 
     # Combobox for VHD usage
     i = 0
 
     while i < window.cb_vhdU.count():
         if window.cb_vhdU.itemText(i) == "Create a new virtual hard drive":
-            window.cb_vhdU.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            window.cb_vhdU.setItemText(i, "Vytvořte nový virtuální pevný disk") # Create a new virtual hard drive
             break
 
         i += 1
@@ -146,7 +146,7 @@ def translateNewVmCZ(window):
 
     while i < window.cb_vhdU.count():
         if window.cb_vhdU.itemText(i) == "Add an existing virtual hard drive":
-            window.cb_vhdU.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            window.cb_vhdU.setItemText(i, "Přidejte existující virtuální pevný disk") # Add an existing virtual hard drive
             break
 
         i += 1
@@ -155,87 +155,87 @@ def translateNewVmCZ(window):
 
     while i < window.cb_vhdU.count():
         if window.cb_vhdU.itemText(i) == "Don't add a virtual hard drive":
-            window.cb_vhdU.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            window.cb_vhdU.setItemText(i, "Nepřidávejte virtuální pevný disk") # Don't add a virtual hard drive
             break
 
         i += 1
 
-    window.lbl_vhdP.setText("VHD path") # VHD path
-    window.lbl_vhdF.setText("VHD file format") # VHD file format
-    window.lbl_maxsize.setText("Maximum size") # Maximum size
-    window.lbl_hddC.setText("HDD controller") # HDD controller
+    window.lbl_vhdP.setText("Cesta VHD") # VHD path
+    window.lbl_vhdF.setText("Formát souboru VHD") # VHD file format
+    window.lbl_maxsize.setText("Maximální velikost") # Maximum size
+    window.lbl_hddC.setText("Ovladač HDD") # HDD controller
 
     i = 0
 
     while i < window.cb_hddC.count():
         if window.cb_hddC.itemText(i) == "Let QEMU decide" or window.cb_hddC.itemText(i) == "QEMU überlassen":
-            window.cb_hddC.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_hddC.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
 
     window.cb_vhdF.setPlaceholderText("(Please select a file format)") # (Please select a file format)
 
-    window.btn_vhdP.setText("Browse") # Browse
-    window.btn_prev3.setText("< Previous") # < Previous
-    window.btn_next3.setText("Next >") # Next >
-    window.btn_cancel3.setText("Cancel") # Cancel
+    window.btn_vhdP.setText("Hledat") # Browse
+    window.btn_prev3.setText("< Předchozí") # < Previous
+    window.btn_next3.setText("Další >") # Next >
+    window.btn_cancel3.setText("Zrušit") # Cancel
 
     # Fourth page
     window.lbl_vga.setText("VGA") # VGA
-    window.lbl_net.setText("Network") # Network
-    window.lbl_mouse.setText("Mouse") # Mouse
+    window.lbl_net.setText("Síť") # Network
+    window.lbl_mouse.setText("Myš") # Mouse
 
     window.cb_vga.setPlaceholderText("(Please select a graphics adapter)") # (Please select a graphics adapter)
     window.cb_net.setPlaceholderText("(Please select a network adapter)") # (Please select a network adapter)
 
-    window.btn_prev4.setText("< Previous") # < Previous
-    window.btn_next4.setText("Next >") # Next >
-    window.btn_cancel4.setText("Cancel") # Cancel
+    window.btn_prev4.setText("< Předchozí") # < Previous
+    window.btn_next4.setText("Další >") # Next >
+    window.btn_cancel4.setText("Zrušit") # Cancel
 
     # Fifth page
     window.lbl_biosLoc.setText(
-        "Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)"
+        "Umístění externího souboru BIOS (Chcete-li použít výchozí BIOS, ponechte prázdné)"
         ) # Location of external\nBIOS file (Leave\nempty to use the\ndefault BIOS)
 
-    window.lbl_biosF.setText("External BIOS file") # External BIOS file
+    window.lbl_biosF.setText("Externí Soubor BIOS") # External BIOS file
 
-    window.btn_biosF.setText("Browse") # Browse
-    window.btn_prev5.setText("< Previous") # < Previous
-    window.btn_next5.setText("Next >") # Next >
-    window.btn_cancel5.setText("Cancel") # Cancel
+    window.btn_biosF.setText("Hledat") # Browse
+    window.btn_prev5.setText("< Předchozí") # < Previous
+    window.btn_next5.setText("Další >") # Next >
+    window.btn_cancel5.setText("Zrušit") # Cancel
 
     # Sixth page
-    window.lbl_sound.setText("Sound card") # Sound card
-    window.lbl_cores.setText("CPU cores")# CPU cores
-    window.lbl_kbd.setText("Keyboard") # Keyboard
-    window.lbl_kbdlayout.setText("Keyboard layout") # Keyboard layout
+    window.lbl_sound.setText("Zvuková Karta") # Sound card
+    window.lbl_cores.setText("Jádra CPU")# CPU cores
+    window.lbl_kbd.setText("Klávesnice") # Keyboard
+    window.lbl_kbdlayout.setText("Rozložení klávesnice") # Keyboard layout
 
-    window.btn_prev6.setText("< Previous") # < Previous
-    window.btn_next6.setText("Next >") # Next >
-    window.btn_cancel6.setText("Cancel") # Cancel
+    window.btn_prev6.setText("< Předchozí") # < Previous
+    window.btn_next6.setText("Další >") # Next >
+    window.btn_cancel6.setText("Zrušit") # Cancel
 
     # Seventh page
-    window.lbl_kernel.setText("Linux kernel") # Linux kernel
-    window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
+    window.lbl_kernel.setText("Linuxové jádro") # Linux kernel
+    window.lbl_initrd.setText("Obraz initrd pro Linux") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd args") # Linux cmd args
 
-    window.btn_kernel.setText("Browse") # Browse
-    window.btn_initrd.setText("Browse") # Browse
-    window.btn_prev7.setText("< Previous") # < Previous
-    window.btn_next7.setText("Next >") # Next >
-    window.btn_cancel7.setText("Cancel") # Cancel
+    window.btn_kernel.setText("Hledat") # Browse
+    window.btn_initrd.setText("Hledat") # Browse
+    window.btn_prev7.setText("< Předchozí") # < Previous
+    window.btn_next7.setText("Další >") # Next >
+    window.btn_cancel7.setText("Zrušit") # Cancel
 
     # Eighth page
-    window.lbl_accel.setText("Acceleration") # Acceleration
-    window.lbl_cdc1.setText("CD controller 1") # CD controller 1
-    window.lbl_cdc2.setText("CD controller 2") # CD controller 2
+    window.lbl_accel.setText("Akcelerace") # Acceleration
+    window.lbl_cdc1.setText("Ovladač CD 1") # CD controller 1
+    window.lbl_cdc2.setText("Ovladač CD 2") # CD controller 2
 
     i = 0
 
     while i < window.cb_cdc1.count():
         if window.cb_cdc1.itemText(i) == "Let QEMU decide" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
-            window.cb_cdc1.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cdc1.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -244,24 +244,24 @@ def translateNewVmCZ(window):
 
     while i < window.cb_cdc2.count():
         if window.cb_cdc2.itemText(i) == "Let QEMU decide" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
-            window.cb_cdc2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cdc2.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
 
-    window.btn_prev8.setText("< Previous") # < Previous
-    window.btn_next8.setText("Next >") # Next >
-    window.btn_cancel8.setText("Cancel") # Cancel
+    window.btn_prev8.setText("< Předchozí") # < Previous
+    window.btn_next8.setText("Další >") # Next >
+    window.btn_cancel8.setText("Zrušit") # Cancel
 
     # Ninth page
-    window.lbl_addargs.setText("Additional arguments (if needed)") # Additional arguments (if needed)
+    window.lbl_addargs.setText("Další argumenty (pokud jsou potřeba)") # Additional arguments (if needed)
 
     window.checkBox_2.setText("I want to install Windows 2000\n(depreciated)") # I want to install Windows 2000\n(depreciated)
-    window.chb_usb.setText("Add USB support") # Add USB support
+    window.chb_usb.setText("Pridat podporu USB") # Add USB support
 
-    window.btn_prev9.setText("< Previous") # < Previous
-    window.btn_finish.setText("Finish") # Finish
-    window.btn_cancel9.setText("Cancel") # Cancel
+    window.btn_prev9.setText("< Předchozí") # < Previous
+    window.btn_finish.setText("Dokončit") # Finish
+    window.btn_cancel9.setText("Zrušit") # Cancel
 
 def translateNewVmCZOld(window):
     window.setWindowTitle("EmuGUI - Create new VM")
@@ -656,7 +656,7 @@ def translateEditVMCZ(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
 
     # Buttons on all tabs
-    window.btn_cancel.setText("Cancel") # Cancel
+    window.btn_cancel.setText("Zrušit") # Cancel
     window.btn_ok.setText("OK") # OK
 
     # Tab names
@@ -680,7 +680,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_cpu.count():
         if window.cb_cpu.itemText(i) == "Let QEMU decide" or window.cb_cpu.itemText(i) == "QEMU überlassen":
-            window.cb_cpu.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cpu.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -689,7 +689,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_machine.count():
         if window.cb_machine.itemText(i) == "Let QEMU decide" or window.cb_machine.itemText(i) == "QEMU überlassen":
-            window.cb_machine.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_machine.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -699,7 +699,7 @@ def translateEditVMCZ(window, vmname):
     window.lbl_vhdp.setText("VHD path") # VHD path
     window.lbl_vhdf.setText("VHD file format") # VHD file format
     window.lbl_maxsize.setText("Maximum size") # Maximum size
-    window.btn_vhdp.setText("Browse") # Browse
+    window.btn_vhdp.setText("Hledat") # Browse
     
     # Combobox for VHD usage
     i = 0
@@ -736,7 +736,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_cdc1.count():
         if window.cb_cdc1.itemText(i) == "Let QEMU decide" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
-            window.cb_cdc1.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cdc1.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -745,7 +745,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_cdc2.count():
         if window.cb_cdc2.itemText(i) == "Let QEMU decide" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
-            window.cb_cdc2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cdc2.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -756,7 +756,7 @@ def translateEditVMCZ(window, vmname):
 
     while i < window.cb_hddc.count():
         if window.cb_hddc.itemText(i) == "Let QEMU decide" or window.cb_hddc.itemText(i) == "QEMU überlassen":
-            window.cb_hddc.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_hddc.setItemText(i, "Ať rozhodne QEMU") # Let QEMU decide
             break
 
         i += 1
@@ -769,14 +769,14 @@ def translateEditVMCZ(window, vmname):
     # Location of external BIOS file (Leave empty to use the default BIOS)
     window.lbl_biosloc.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
     window.lbl_biosf.setText("External BIOS file") # External BIOS file
-    window.btn_biosf.setText("Browse") # Browse
+    window.btn_biosf.setText("Hledat") # Browse
 
     # Translations for Linux tab
     window.lbl_kernel.setText("Linux kernel") # Linux kernel
     window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
     window.lbl_cmd.setText("Linux cmd arguments") # Linux cmd arguments
-    window.btn_kernel.setText("Browse") # Browse
-    window.btn_initrd.setText("Browse") # Browse
+    window.btn_kernel.setText("Hledat") # Browse
+    window.btn_initrd.setText("Hledat") # Browse
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA

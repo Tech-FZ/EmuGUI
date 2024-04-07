@@ -70,7 +70,7 @@
 | Russian | In progress |
 | Ukrainian | Pending |
 | Belarusian | Pending |
-| Czech | Pending |
+| Czech | In progress |
 
 ### New VM dialog - Progress
 
@@ -86,7 +86,7 @@
 | Russian | In progress |
 | Ukrainian | Pending |
 | Belarusian | Pending |
-| Czech | Pending |
+| Czech | Done |
 
 ## Known issues
 
