@@ -55,6 +55,7 @@
 - Word wrapping is activated in the BIOS thing on the New VM dialog now.
 - Thanks to imwez (Discord username), the Portuguese translation is now more complete.
 - There are efforts in fixing the readme.
+- The main UI file has been recreated.
 
 ### Edit VM dialog - Progress
 
