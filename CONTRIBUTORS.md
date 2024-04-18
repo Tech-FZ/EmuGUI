@@ -24,6 +24,8 @@ Calibrato (Polish translation)
 
 imwez (Discord username, Portuguese translation)
 
+User0 (Debian packages)
+
 # Banners
 
 | Version | Author |

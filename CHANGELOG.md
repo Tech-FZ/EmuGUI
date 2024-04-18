@@ -56,6 +56,8 @@
 - Thanks to imwez (Discord username), the Portuguese translation is now more complete.
 - There are efforts in fixing the readme.
 - The main UI file has been recreated.
+- User0 is now responsible for the Debian packages. They will come out later than the portable binaries tho.
+- Speaking about portable binaries, Windows executables will be built with Python 3.12 from now on.
 
 ### Edit VM dialog - Progress
 
