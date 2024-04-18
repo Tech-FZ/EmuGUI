@@ -119,7 +119,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "2.0.0.5608_rc1"
+        self.version = "2.0.0.5607_rc1"
 
         self.architectures = [
             ["i386", self.lineEdit_4],
