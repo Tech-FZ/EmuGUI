@@ -686,14 +686,13 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
   <tabstop>listView</tabstop>
   <tabstop>pushButton_8</tabstop>
   <tabstop>pushButton_9</tabstop>
@@ -729,9 +728,21 @@
   <tabstop>pushButton_13</tabstop>
   <tabstop>lineEdit_13</tabstop>
   <tabstop>pushButton_14</tabstop>
+  <tabstop>le_alpha</tabstop>
+  <tabstop>btn_alpha</tabstop>
+  <tabstop>le_riscv32</tabstop>
+  <tabstop>btn_riscv32</tabstop>
   <tabstop>pushButton_6</tabstop>
   <tabstop>pushButton_20</tabstop>
   <tabstop>pushButton_21</tabstop>
+  <tabstop>pushButton_22</tabstop>
+  <tabstop>pushButton_23</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>btn_riscv64</tabstop>
+  <tabstop>btn_apply_qemu2</tabstop>
+  <tabstop>le_riscv64</tabstop>
+  <tabstop>pushButton_24</tabstop>
+  <tabstop>pushButton_25</tabstop>
  </tabstops>
  <resources/>
  <connections/>

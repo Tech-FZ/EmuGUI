@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.0
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -489,12 +489,11 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 800, 21))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        QWidget.setTabOrder(self.tabWidget, self.listView)
         QWidget.setTabOrder(self.listView, self.pushButton_8)
         QWidget.setTabOrder(self.pushButton_8, self.pushButton_9)
         QWidget.setTabOrder(self.pushButton_9, self.pushButton_10)
@@ -529,9 +528,21 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.lineEdit_12, self.pushButton_13)
         QWidget.setTabOrder(self.pushButton_13, self.lineEdit_13)
         QWidget.setTabOrder(self.lineEdit_13, self.pushButton_14)
-        QWidget.setTabOrder(self.pushButton_14, self.pushButton_6)
+        QWidget.setTabOrder(self.pushButton_14, self.le_alpha)
+        QWidget.setTabOrder(self.le_alpha, self.btn_alpha)
+        QWidget.setTabOrder(self.btn_alpha, self.le_riscv32)
+        QWidget.setTabOrder(self.le_riscv32, self.btn_riscv32)
+        QWidget.setTabOrder(self.btn_riscv32, self.pushButton_6)
         QWidget.setTabOrder(self.pushButton_6, self.pushButton_20)
         QWidget.setTabOrder(self.pushButton_20, self.pushButton_21)
+        QWidget.setTabOrder(self.pushButton_21, self.pushButton_22)
+        QWidget.setTabOrder(self.pushButton_22, self.pushButton_23)
+        QWidget.setTabOrder(self.pushButton_23, self.tabWidget)
+        QWidget.setTabOrder(self.tabWidget, self.btn_riscv64)
+        QWidget.setTabOrder(self.btn_riscv64, self.btn_apply_qemu2)
+        QWidget.setTabOrder(self.btn_apply_qemu2, self.le_riscv64)
+        QWidget.setTabOrder(self.le_riscv64, self.pushButton_24)
+        QWidget.setTabOrder(self.pushButton_24, self.pushButton_25)
 
         self.retranslateUi(MainWindow)
 

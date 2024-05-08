@@ -59,6 +59,7 @@
 ## Changes compared to v2.0.0.5607_rc1
 
 - The additional argument for KVM is no longer mentioned in the readme because it is no longer necessary.
+- The tab order in the first QEMU tab has been adjusted.
 
 ### Edit VM dialog - Progress
 
