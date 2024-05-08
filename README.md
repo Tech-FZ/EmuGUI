@@ -91,7 +91,7 @@ For the update checker, a version code is being used instead of the number. Here
 5. Set the QEMU paths at the Settings/QEMU tab (either `/usr/bin/qemu-system-*` or just `qemu-system-*`).
 6. Create a new virtual machine and start it.
 
-**Another tip:** If you want a machine to run with KVM (`-enable-kvm` in the additional arguments), you must open a terminal inside the directory and type: `sudo ./emugui`.
+**Another tip:** If you want a machine to run with KVM, you must open a terminal inside the directory and type: `sudo ./emugui`.
 
 ## Updating EmuGUI
 
