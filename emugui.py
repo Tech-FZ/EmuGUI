@@ -203,7 +203,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     )
 
         self.label_8.setText(f"EmuGUI {self.version}\nCodename 'Ioana Rosa'")
-        self.setWindowTitle(f"EmuGUI {self.version} (Release Candidate 1)")
+        self.setWindowTitle(f"EmuGUI {self.version} (Release Candidate 2)")
 
         if datetime.date.today().day == 1 and datetime.date.today().month == 4:
             wintitle = self.windowTitle()
