@@ -62,6 +62,7 @@
 - The tab order in the first QEMU tab has been adjusted.
 - Welcome to the team, PrelevatedInsider18204.
 - The main window has been translated as far as possible.
+- EmuGUI now has a Guilded server.
 
 ### Edit VM dialog - Progress
 

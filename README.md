@@ -304,6 +304,10 @@ A documentation of EmuGUI can be found [here](https://github.com/Tech-FZ/EmuGUI/
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFggUmAjv5TiQcgCt7BW-PKJpyrFvnAQBwYGX2lhU&s" alt="Odysee Icon" height="70px">
 </a>
 
+<a href="https://www.guilded.gg/i/pBAY6BAk">
+  <img src="https://www.guilded.gg/asset/Logos/logomark/Color/Guilded_Logomark_Color.png?ver=3" alt="Guilded Icon" height="70px">
+</a>
+
 <!-- Discord: https://discord.gg/rTGpYCwF89 -->
 
 ## Contributing

@@ -305,6 +305,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.pushButton_21.clicked.connect(self.toDiscord)
         self.pushButton_24.clicked.connect(self.toYouTube)
         self.pushButton_25.clicked.connect(self.toOdysee)
+        self.btn_guilded.clicked.connect(self.toGuilded)
 
         easter_this_year = dateutil.easter.easter(datetime.date.today().year)
         good_friday_delta = datetime.timedelta(days=-2)
@@ -4835,6 +4836,9 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def toOdysee(self):
         webbrowser.open_new_tab("https://odysee.com/@EmuGUI:0")
+    
+    def toGuilded(self):
+        webbrowser.open_new_tab("https://www.guilded.gg/i/pBAY6BAk")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
