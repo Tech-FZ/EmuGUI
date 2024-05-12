@@ -26,6 +26,8 @@ imwez (Discord username, Portuguese translation)
 
 User0 (Debian packages)
 
+PrelevatedInsider18204 (Arch packages)
+
 # Banners
 
 | Version | Author |
