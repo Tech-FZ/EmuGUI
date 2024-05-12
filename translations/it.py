@@ -90,6 +90,7 @@ def translateMainIT(window):
     window.btn_riscv32.setText("Sfoglia") # Browse
     window.btn_riscv64.setText("Sfoglia") # Browse
     window.pushButton_6.setText("Applica") # Apply
+    window.btn_apply_qemu2.setText("Applica") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0

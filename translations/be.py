@@ -72,6 +72,7 @@ def translateMainBE(window):
     window.btn_riscv32.setText("Агляд") # Browse
     window.btn_riscv64.setText("Агляд") # Browse
     window.pushButton_6.setText("Ужыць") # Apply
+    window.btn_apply_qemu2.setText("Ужыць") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0

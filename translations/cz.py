@@ -72,6 +72,7 @@ def translateMainCZ(window):
     window.btn_riscv32.setText("Hledat") # Browse
     window.btn_riscv64.setText("Hledat") # Browse
     window.pushButton_6.setText("Aplikovat") # Apply
+    window.btn_apply_qemu2.setText("Aplikovat") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0

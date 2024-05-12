@@ -72,6 +72,7 @@ def translateMainRO(window):
     window.btn_riscv32.setText("Browse") # Browse
     window.btn_riscv64.setText("Browse") # Browse
     window.pushButton_6.setText("Apply") # Apply
+    window.btn_apply_qemu2.setText("Apply") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0

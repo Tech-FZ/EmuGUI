@@ -61,6 +61,7 @@
 - The additional argument for KVM is no longer mentioned in the readme because it is no longer necessary.
 - The tab order in the first QEMU tab has been adjusted.
 - Welcome to the team, PrelevatedInsider18204.
+- The main window has been translated as far as possible.
 
 ### Edit VM dialog - Progress
 

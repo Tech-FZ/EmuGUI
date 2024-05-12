@@ -72,6 +72,7 @@ def translateMainPL(window):
     window.btn_riscv32.setText("Przeglądaj") # Browse
     window.btn_riscv64.setText("Przeglądaj") # Browse
     window.pushButton_6.setText("Zastosuj") # Apply
+    window.btn_apply_qemu2.setText("Zastosuj") # Apply
 
     # About tab
     # label_7 = Built on Python and PyQt technology, licensed under GNU General Public License 3.0
