@@ -656,31 +656,31 @@ def translateEditVMBE(window, vmname):
     window.setWindowTitle(f"EmuGUI - Edit {vmname}")
 
     # Buttons on all tabs
-    window.btn_cancel.setText("Cancel") # Cancel
+    window.btn_cancel.setText("Адмена") # Cancel
     window.btn_ok.setText("OK") # OK
 
     # Tab names
-    window.tabWidget.setTabText(0, "General") # General
-    window.tabWidget.setTabText(1, "Machine") # Machine
-    window.tabWidget.setTabText(2, "Virtual hard disks") # Virtual hard disks
-    window.tabWidget.setTabText(3, "Peripherals") # Peripherals
+    window.tabWidget.setTabText(0, "Агульныя") # General
+    window.tabWidget.setTabText(1, "Машына") # Machine
+    window.tabWidget.setTabText(2, "Віртуальныя жорсткія дыскі") # Virtual hard disks
+    window.tabWidget.setTabText(3, "Перыферыйныя прылады") # Peripherals
     window.tabWidget.setTabText(4, "BIOS") # BIOS
-    window.tabWidget.setTabText(6, "Additional components") # Additional components
+    window.tabWidget.setTabText(6, "Дадатковыя кампаненты") # Additional components
 
     # Translations for General tab
-    window.lbl_name.setText("Name") # Name
-    window.lbl_arch.setText("Architecture") # Architecture
+    window.lbl_name.setText("Назва") # Name
+    window.lbl_arch.setText("Архітэктура") # Architecture
 
     # Translations for Machine tab
-    window.lbl_cpu.setText("CPU") # CPU
-    window.lbl_machine.setText("Machine") # Machine
-    window.lbl_ram.setText("RAM in MB") # RAM in MB
+    window.lbl_cpu.setText("Працэсар") # CPU
+    window.lbl_machine.setText("Машына") # Machine
+    window.lbl_ram.setText("АЗП у MB") # RAM in MB
 
     i = 0
 
     while i < window.cb_cpu.count():
         if window.cb_cpu.itemText(i) == "Let QEMU decide" or window.cb_cpu.itemText(i) == "QEMU überlassen":
-            window.cb_cpu.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cpu.setItemText(i, "Няхай QEMU вырашае") # Let QEMU decide
             break
 
         i += 1
@@ -689,24 +689,24 @@ def translateEditVMBE(window, vmname):
 
     while i < window.cb_machine.count():
         if window.cb_machine.itemText(i) == "Let QEMU decide" or window.cb_machine.itemText(i) == "QEMU überlassen":
-            window.cb_machine.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_machine.setItemText(i, "Няхай QEMU вырашае") # Let QEMU decide
             break
 
         i += 1
 
     # Translations for VHD tab
-    window.lbl_vhdu.setText("VHD usage") # VHD usage
-    window.lbl_vhdp.setText("VHD path") # VHD path
-    window.lbl_vhdf.setText("VHD file format") # VHD file format
-    window.lbl_maxsize.setText("Maximum size") # Maximum size
-    window.btn_vhdp.setText("Browse") # Browse
+    window.lbl_vhdu.setText("Выкарыстанне VHD") # VHD usage
+    window.lbl_vhdp.setText("Шлях да VHD") # VHD path
+    window.lbl_vhdf.setText("Фармат файла VHD") # VHD file format
+    window.lbl_maxsize.setText("Максімальны памер") # Maximum size
+    window.btn_vhdp.setText("Агляд") # Browse
     
     # Combobox for VHD usage
     i = 0
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Create a new virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Create a new virtual hard drive") # Create a new virtual hard drive
+            window.cb_vhdu.setItemText(i, "Стварыць новы віртуальны жорсткі дыск") # Create a new virtual hard drive
             break
 
         i += 1
@@ -715,7 +715,7 @@ def translateEditVMBE(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Add an existing virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Add an existing virtual hard drive") # Add an existing virtual hard drive
+            window.cb_vhdu.setItemText(i, "Дадаць існуючы віртуальны жорсткі дыск") # Add an existing virtual hard drive
             break
 
         i += 1
@@ -724,7 +724,7 @@ def translateEditVMBE(window, vmname):
 
     while i < window.cb_vhdu.count():
         if window.cb_vhdu.itemText(i) == "Don't add a virtual hard drive":
-            window.cb_vhdu.setItemText(i, "Don't add a virtual hard drive") # Don't add a virtual hard drive
+            window.cb_vhdu.setItemText(i, "Не дадаваць віртуальны жорсткі дыск") # Don't add a virtual hard drive
             break
 
         i += 1
@@ -736,7 +736,7 @@ def translateEditVMBE(window, vmname):
 
     while i < window.cb_cdc1.count():
         if window.cb_cdc1.itemText(i) == "Let QEMU decide" or window.cb_cdc1.itemText(i) == "QEMU überlassen":
-            window.cb_cdc1.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cdc1.setItemText(i, "Няхай QEMU вырашае") # Let QEMU decide
             break
 
         i += 1
@@ -745,7 +745,7 @@ def translateEditVMBE(window, vmname):
 
     while i < window.cb_cdc2.count():
         if window.cb_cdc2.itemText(i) == "Let QEMU decide" or window.cb_cdc2.itemText(i) == "QEMU überlassen":
-            window.cb_cdc2.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_cdc2.setItemText(i, "Няхай QEMU вырашае") # Let QEMU decide
             break
 
         i += 1
@@ -756,35 +756,35 @@ def translateEditVMBE(window, vmname):
 
     while i < window.cb_hddc.count():
         if window.cb_hddc.itemText(i) == "Let QEMU decide" or window.cb_hddc.itemText(i) == "QEMU überlassen":
-            window.cb_hddc.setItemText(i, "Let QEMU decide") # Let QEMU decide
+            window.cb_hddc.setItemText(i, "Няхай QEMU вырашае") # Let QEMU decide
             break
 
         i += 1
 
     # Translations for Peripherals tab
-    window.lbl_mouse.setText("Mouse type") # Mouse type
-    window.lbl_kbdtype.setText("Keyboard type") # Keyboard type
+    window.lbl_mouse.setText("Тып мышы") # Mouse type
+    window.lbl_kbdtype.setText("Тып клавіятуры") # Keyboard type
     
     # Translations for BIOS tab
     # Location of external BIOS file (Leave empty to use the default BIOS)
-    window.lbl_biosloc.setText("Location of external BIOS file (Leave empty to use the default BIOS)")
-    window.lbl_biosf.setText("External BIOS file") # External BIOS file
-    window.btn_biosf.setText("Browse") # Browse
+    window.lbl_biosloc.setText("Размяшчэнне знешняга файла BIOS (Пакіньце пустым, каб выкарыстоўваць BIOS па змаўчанні)")
+    window.lbl_biosf.setText("Вонкавы файл BIOS") # External BIOS file
+    window.btn_biosf.setText("Агляд") # Browse
 
     # Translations for Linux tab
-    window.lbl_kernel.setText("Linux kernel") # Linux kernel
-    window.lbl_initrd.setText("Linux initrd image") # Linux initrd image
-    window.lbl_cmd.setText("Linux cmd arguments") # Linux cmd arguments
-    window.btn_kernel.setText("Browse") # Browse
-    window.btn_initrd.setText("Browse") # Browse
+    window.lbl_kernel.setText("Ядро Linux") # Linux kernel
+    window.lbl_initrd.setText("Выява initrd Linux") # Linux initrd image
+    window.lbl_cmd.setText("Аргументы Linux cmd") # Linux cmd arguments
+    window.btn_kernel.setText("Агляд") # Browse
+    window.btn_initrd.setText("Агляд") # Browse
 
     # Translations for Additional components tab
     window.lbl_vga.setText("VGA") # VGA
-    window.lbl_net.setText("Network adapter") # Network adapter
-    window.lbl_sound.setText("Sound card") # Sound card
-    window.lbl_addargs.setText("Additional arguments (if necessary)") # Additional arguments (if necessary)
-    window.lbl_cpuc.setText("CPU cores") # CPU cores
-    window.chb_usb.setText("Add USB support") # Add USB support
+    window.lbl_net.setText("Сетка") # Network adapter
+    window.lbl_sound.setText("Гукавая карта") # Sound card
+    window.lbl_addargs.setText("Дадатковыя аргументы (пры неабходнасці)") # Additional arguments (if necessary)
+    window.lbl_cpuc.setText("Ядра працэсара") # CPU cores
+    window.chb_usb.setText("Дадаць падтрымку USB") # Add USB support
     window.lbl_accel.setText("Acceleration") # Acceleration
 
 def translateEditVMBEOld(window, vmname):
