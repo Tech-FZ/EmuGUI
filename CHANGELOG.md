@@ -75,7 +75,7 @@
 | Romanian | Pending |
 | Russian | In progress |
 | Ukrainian | Pending |
-| Belarusian | Pending |
+| Belarusian | In progress |
 | Czech | Done |
 
 ### New VM dialog - Progress
