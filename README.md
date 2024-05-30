@@ -86,10 +86,18 @@ For the update checker, a version code is being used instead of the number. Here
     - RHEL: `sudo yum install qemu-kvm`
     - (open-)SUSE: `sudo zypper install qemu`
 
-3. Get EmuGUI from this website and extract it.
-4. Run emugui in the EmuGUI directory (if it fails from file manager, open a terminal inside the directory and type `./emugui`).
-5. Set the QEMU paths at the Settings/QEMU tab (either `/usr/bin/qemu-system-*` or just `qemu-system-*`).
-6. Create a new virtual machine and start it.
+3. Starting with EmuGUI 2.0, you also need to install (lib)xcb-cursor0 in order for this to work.
+    - Arch: `sudo pacman -S libxcb-cursor`
+    - Debian/Ubuntu: `sudo apt install libxcb-cursor-dev`
+    - Fedora: `sudo dnf install libxcb-cursor`
+    - Gentoo: `sudo emerge -av x11-libs/libxcb-cursor`
+    - RHEL: `sudo yum install libxcb-cursor`
+    - (open-)SUSE: `sudo zypper in libxcb-cursor`
+
+4. Get EmuGUI from this website and extract it.
+5. Run emugui in the EmuGUI directory (if it fails from file manager, open a terminal inside the directory and type `./emugui`).
+6. Set the QEMU paths at the Settings/QEMU tab (either `/usr/bin/qemu-system-*` or just `qemu-system-*`).
+7. Create a new virtual machine and start it.
 
 **Another tip:** If you want a machine to run with KVM, you must open a terminal inside the directory and type: `sudo ./emugui`.
 
@@ -235,17 +243,18 @@ For the update checker, a version code is being used instead of the number. Here
 3. Install Git using the install command of your distribution.
 4. Install Visual Studio Code. You can get it [here](https://code.visualstudio.com/download)
 5. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
-6. Open Visual Studio Code in that folder.
-7. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip venv`
-8. After that is done, type: `python3 -m venv your-venv-name`. OUTSIDE of the code folder. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
-9. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
-10. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-11. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
-12. After this is done, run the main.py script.
-13. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile emugui.py` (for those who can get a VENV to work) or `python3 -m PyInstaller --onefile emugui.py`
-14. After that is finished, copy the code into the dist folder PyInstaller created.
-15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
-16. If it works, have fun! If not, try to start again from number 7.
+6. As you already have the terminal open, install (lib)xcb-cursor0. Commands for that can be found on [Installation (Linux)](#installation-linux).
+7. Open Visual Studio Code in that folder.
+8. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip venv`
+9. After that is done, type: `python3 -m venv your-venv-name`. OUTSIDE of the code folder. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
+10. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
+11. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
+12. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
+13. After this is done, run the main.py script.
+14. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile emugui.py` (for those who can get a VENV to work) or `python3 -m PyInstaller --onefile emugui.py`
+15. After that is finished, copy the code into the dist folder PyInstaller created.
+16. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+17. If it works, have fun! If not, try to start again from number 7.
 
 ## Building on Linux (Python Venv, Qt installed via official installer)
 
@@ -256,17 +265,18 @@ For the update checker, a version code is being used instead of the number. Here
 5. Install Qt from the following [site](https://www.qt.io/download-open-source?__hstc=152220518.4df0e407aa37c96fa5547ca135b274e3.1659787309440.1659787309440.1659787309440.1&__hssc=152220518.1.1659787309441&__hsfp=1951994995&hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5) (you need a Qt account for that) 
 6. You only need the Qt Creator.
 7. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
-8. Open Visual Studio Code in that folder.
-9. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip venv`
-10. After that is done, type: `python3 -m venv your-venv-name`. OUTSIDE of the code folder. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
-11. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
-12. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
-13. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
-14. After this is done, run the main.py script.
-15. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile .\emugui.py`
-16. After that is finished, copy the code into the dist folder PyInstaller created.
-17. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
-18. If it works, have fun! If not, try to start again from number 9.
+8. As you already have the terminal open, install (lib)xcb-cursor0. Commands for that can be found on [Installation (Linux)](#installation-linux).
+9. Open Visual Studio Code in that folder.
+10. Open a terminal WITHIN VS Code and type: `python3 -m pip install --upgrade pip venv`
+11. After that is done, type: `python3 -m venv your-venv-name`. OUTSIDE of the code folder. That's why Git is only going to be used to clone the code, but not to commit - that's to be done manually.
+12. Wait until VS Code notices your venv and select it. You might need to restart the editor for it to recognize your virtual environment after it has been created.
+13. With your virtual environment selected, try to run a Python script. If it throws an error, that's okay. We just need to activate the venv anyway.
+14. Within the terminal VS Code just opened, type: `pip install --upgrade pip PyInstaller PySide6 python-magic requests python-dateutil psutil pyqtdarktheme`
+15. After this is done, run the main.py script.
+16. To compile the program for users who don't have Python installed, type: `PyInstaller --onefile .\emugui.py`
+17. After that is finished, copy the code into the dist folder PyInstaller created.
+18. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+19. If it works, have fun! If not, try to start again from number 9.
 
 ## Building on Linux (Anaconda)
 
@@ -276,15 +286,16 @@ For the update checker, a version code is being used instead of the number. Here
 4. Install Visual Studio Code. You can get it from [here](https://code.visualstudio.com/download)
 5. Install Qt. You can get it from [here](https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5)
 6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
-7. Open Visual Studio Code in that folder.
-8. Open Anaconda Navigator and create a new virtual environment.
-9. Open the venv in VS Code and try to run a Python script with it.
-10. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic PyQt6 requests python-dateutil psutil pyqtdarktheme`
-11. After this is done, run the main.py script.
-12. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile .\emugui.py`
-13. After that is finished, copy the code into the dist folder PyInstaller created.
-14. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
-15. If it works, have fun! If not, try to start again from number 9.
+7. As you already have the terminal open, install (lib)xcb-cursor0. Commands for that can be found on [Installation (Linux)](#installation-linux).
+8. Open Visual Studio Code in that folder.
+9. Open Anaconda Navigator and create a new virtual environment.
+10. Open the venv in VS Code and try to run a Python script with it.
+11. Within the VS Code terminal, type: `& pip install --upgrade pip PyInstaller PySide6 python-magic PyQt6 requests python-dateutil psutil pyqtdarktheme`
+12. After this is done, run the main.py script.
+13. To compile the program for users who don't have Python installed, type: `& PyInstaller --onefile .\emugui.py`
+14. After that is finished, copy the code into the dist folder PyInstaller created.
+15. Run the executable in the dist folder. If your antivirus puts it into quarantine, don't worry as this should be a false positive and restore it.
+16. If it works, have fun! If not, try to start again from number 9.
 
 ## Documentation
 

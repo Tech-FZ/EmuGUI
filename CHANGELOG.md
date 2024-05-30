@@ -64,6 +64,7 @@
 ## Changes compared to v2.0.0.5608_rc2
 
 - The new banner has been introduced.
+- The fact that EmuGUI on Linux now needs (lib)xcb-cursor0 is mentioned in the readme.
 
 ### Edit VM dialog - Progress
 
