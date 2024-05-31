@@ -66,7 +66,8 @@
 
 ## Changes compared to v2.0.0.5609_rc3
 
-- On the Linux building pages, you can now see the exact install commands for Git and binutils.
+- On the Linux building section, you can now see the exact install commands for Git and binutils.
+- Also on the Linux building section, you can now click directly on the installation section where you're told to install QEMU.
 
 ## Known issues
 

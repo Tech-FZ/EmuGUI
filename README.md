@@ -239,7 +239,7 @@ For the update checker, a version code is being used instead of the number. Here
 ## Building on Linux (Python Venv, Qt installed via Python)
 
 1. Install Python 3. You can either compile the source code or get it from your distribution's repositories.
-2. Install QEMU using one of the commands listed on Installation (Linux).
+2. Install QEMU using one of the commands listed on [Installation (Linux)](#installation-linux).
 3. Install Git and binutils using the install command of your distribution.
     - Arch: `sudo pacman -S git binutils`
     - Debian/Ubuntu: `sudo apt install git binutils`
@@ -266,7 +266,7 @@ For the update checker, a version code is being used instead of the number. Here
 ## Building on Linux (Python Venv, Qt installed via official installer)
 
 1. Install Python 3. You can either compile the source code or get it from your distribution's repositories.
-2. Install QEMU using one of the commands listed on Installation (Linux).
+2. Install QEMU using one of the commands listed on [Installation (Linux)](#installation-linux).
 3. Install Git and binutils using the install command of your distribution.
     - Arch: `sudo pacman -S git binutils`
     - Debian/Ubuntu: `sudo apt install git binutils`
@@ -295,7 +295,7 @@ For the update checker, a version code is being used instead of the number. Here
 ## Building on Linux (Anaconda)
 
 1. Install Anaconda. You can get it from [here](https://www.anaconda.com/)
-2. Install QEMU using one of the commands listed on Installation (Linux).
+2. Install QEMU using one of the commands listed on [Installation (Linux)](#installation-linux).
 3. Install Git and binutils using the install command of your distribution.
     - Arch: `sudo pacman -S git binutils`
     - Debian/Ubuntu: `sudo apt install git binutils`
@@ -303,7 +303,7 @@ For the update checker, a version code is being used instead of the number. Here
     - Gentoo: `sudo emerge -ask dev-vcs/git` for Git, `sudo emerge --ask --oneshot sys-devel/binutils` for binutils
     - RHEL: `sudo yum install git binutils`
     - (open-)SUSE: `sudo zypper in git binutils`
-    
+
 4. Install Visual Studio Code. You can get it from [here](https://code.visualstudio.com/download)
 5. Install Qt. You can get it from [here](https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5)
 6. Open a terminal and type: `git clone https://github.com/Tech-FZ/EmuGUI.git`
