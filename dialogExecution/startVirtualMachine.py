@@ -390,32 +390,31 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 else:
                     if self.vmSpecs[26] == "Let QEMU decide":
-                        if platform.system() == "Windows":
+                        qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
+                        qemu_cmd_list.append("-hda")
+                        qemu_cmd_list.append(self.vmSpecs[5])
+
+                        """ if platform.system() == "Windows":
                             qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
 
                         else:
-                            qemu_cmd = qemu_cmd + f" -hda {self.vmSpecs[5]}"
+                            qemu_cmd = qemu_cmd + f" -hda {self.vmSpecs[5]}" """
 
-                    elif self.vmSpecs[26] == "IDE":
-                        if platform.system() == "Windows":
-                            qemu_cmd = qemu_cmd + f" -drive file=\"{self.vmSpecs[5]}\",if=ide,media=disk"
+                    else:
+                        qemu_cmd = qemu_cmd + " -drive"
+                        qemu_cmd_list.append("-drive")
 
-                        else:
-                            qemu_cmd = qemu_cmd + f" -drive file={self.vmSpecs[5]},if=ide,media=disk"
+                        if self.vmSpecs[26] == "IDE":
+                            qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=ide,media=disk"
+                            qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=ide,media=disk")
 
-                    elif self.vmSpecs[26] == "VirtIO SCSI":
-                        if platform.system() == "Windows":
-                            qemu_cmd = qemu_cmd + f" -device virtio-scsi-pci,id=scsi0 -drive file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0"
+                        elif self.vmSpecs[26] == "VirtIO SCSI":
+                            qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0"
+                            qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0")
 
-                        else:
-                            qemu_cmd = qemu_cmd + f" -device virtio-scsi-pci,id=scsi0 -drive file={self.vmSpecs[5]},if=none,discard=unmap,aio=native,cache=none,id=hd1 -device scsi-hd,drive=hd1,bus=scsi0.0"
-
-                    elif self.vmSpecs[26] == "AHCI":
-                        if platform.system() == "Windows":
-                            qemu_cmd = qemu_cmd + f" -drive id=disk,file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
-
-                        else:
-                            qemu_cmd = qemu_cmd + f" -drive id=disk,file={self.vmSpecs[5]},if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
+                        elif self.vmSpecs[26] == "AHCI":
+                            qemu_cmd = qemu_cmd + f" file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0"
+                            qemu_cmd_list.append(f"file=\"{self.vmSpecs[5]}\",if=none -device ahci,id=ahci -device ide-hd,drive=disk,bus=ahci.0")
 
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
@@ -483,140 +482,150 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + " -win2k-hack"
 
             if fda_file != "":
-                if platform.system() == "Windows":
+                qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{fda_file}\",index=0,if=floppy"
+                qemu_cmd_list.append("-drive")
+                qemu_cmd_list.append(f"format=raw,file=\"{fda_file}\",index=0,if=floppy")
+
+                """ if platform.system() == "Windows":
                     qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{fda_file}\",index=0,if=floppy"
 
                 else:
-                    qemu_cmd = qemu_cmd + f" -drive format=raw,file={fda_file},index=0,if=floppy"
+                    qemu_cmd = qemu_cmd + f" -drive format=raw,file={fda_file},index=0,if=floppy" """
 
             if cdrom_file != "":
-                if platform.system() == "Windows":
-                    if self.vmSpecs[24] == "Let QEMU decide":
-                        qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file}\""
+                if self.vmSpecs[24] == "Let QEMU decide":
+                    qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file}\""
+                    qemu_cmd_list.append(f"-cdrom \"{cdrom_file}\"")
 
-                    elif self.vmSpecs[24] == "IDE":
+                else:
+                    if self.vmSpecs[24] == "IDE":
                         qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file}\",if=ide,media=cdrom"
+                        qemu_cmd_list.append(f"-drive file=\"{cdrom_file}\",if=ide,media=cdrom")
 
                     elif self.vmSpecs[24] == "SCSI":
                         qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file}\",if=scsi,media=cdrom"
+                        qemu_cmd_list.append(f"-drive file=\"{cdrom_file}\",if=scsi,media=cdrom")
 
                     elif self.vmSpecs[24] == "Virtio":
                         qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file}\",if=virtio,media=cdrom"
-
-                else:
-                    if self.vmSpecs[24] == "Let QEMU decide":
-                        qemu_cmd = qemu_cmd + f" -cdrom {cdrom_file}"
-
-                    elif self.vmSpecs[24] == "IDE":
-                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file},if=ide,media=cdrom"
-
-                    elif self.vmSpecs[24] == "SCSI":
-                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file},if=scsi,media=cdrom"
-
-                    elif self.vmSpecs[24] == "Virtio":
-                        qemu_cmd = qemu_cmd + f" -drive file={cdrom_file},if=virtio,media=cdrom"
+                        qemu_cmd_list.append(f"-drive file=\"{cdrom_file}\",if=virtio,media=cdrom")
 
             if cdrom_file2 != "":
-                if platform.system() == "Windows":
-                    if self.vmSpecs[25] == "Let QEMU decide":
-                        qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file2}\""
-
-                    elif self.vmSpecs[25] == "IDE":
-                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file2}\",if=ide,media=cdrom"
-
-                    elif self.vmSpecs[25] == "SCSI":
-                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file2}\",if=scsi,media=cdrom"
-
-                    elif self.vmSpecs[25] == "Virtio":
-                        qemu_cmd = qemu_cmd + f" -drive file=\"{cdrom_file2}\",if=virtio,media=cdrom"
+                if self.vmSpecs[25] == "Let QEMU decide":
+                    qemu_cmd = qemu_cmd + f" -cdrom \"{cdrom_file2}\""
+                    qemu_cmd_list.append(f"-cdrom \"{cdrom_file2}\"")
 
                 else:
-                    if self.vmSpecs[25] == "Let QEMU decide":
-                        qemu_cmd = qemu_cmd + f" -cdrom {cdrom_file2}"
-
-                    elif self.vmSpecs[25] == "IDE":
+                    if self.vmSpecs[25] == "IDE":
                         qemu_cmd = qemu_cmd + f" -drive file={cdrom_file2},if=ide,media=cdrom"
+                        qemu_cmd_list.append(f"-drive file=\"{cdrom_file2}\",if=ide,media=cdrom")
 
                     elif self.vmSpecs[25] == "SCSI":
                         qemu_cmd = qemu_cmd + f" -drive file={cdrom_file2},if=scsi,media=cdrom"
+                        qemu_cmd_list.append(f"-drive file=\"{cdrom_file2}\",if=scsi,media=cdrom")
 
                     elif self.vmSpecs[25] == "Virtio":
                         qemu_cmd = qemu_cmd + f" -drive file={cdrom_file2},if=virtio,media=cdrom"
+                        qemu_cmd_list.append(f"-drive file=\"{cdrom_file2}\",if=virtio,media=cdrom")
 
             if bootfrom == "c" or bootfrom == "a" and fda_file == "" or bootfrom == "d" and cdrom_file == "":
                 qemu_cmd = qemu_cmd + " -boot c"
+                qemu_cmd_list.append("-boot c")
 
             elif bootfrom == "a" and fda_file != "":
                 qemu_cmd = qemu_cmd + " -boot a"
+                qemu_cmd_list.append("-boot a")
             
             elif bootfrom == "d" and cdrom_file != "":
                 qemu_cmd = qemu_cmd + " -boot d"
+                qemu_cmd_list.append("-boot d")
 
             if self.vmSpecs[10] != "":
                 qemu_cmd = qemu_cmd + f" -L {self.vmSpecs[10]}"
+                qemu_cmd_list.append(f"-L {self.vmSpecs[10]}")
 
             if self.vmSpecs[12] != "none":
                 qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[12]}"
+                qemu_cmd_list.append(f"-device {self.vmSpecs[12]}")
 
                 if self.vmSpecs[12] == "intel-hda":
                     qemu_cmd = qemu_cmd + " -device hda-duplex"
+                    qemu_cmd_list.append(f"-device hda-duplex")
 
             if self.vmSpecs[13] != "":
                 qemu_cmd = qemu_cmd + f" -kernel \"{self.vmSpecs[13]}\""
+                qemu_cmd_list.append(f"-kernel \"{self.vmSpecs[13]}\"")
 
             if self.vmSpecs[14] != "":
                 qemu_cmd = qemu_cmd + f" -initrd \"{self.vmSpecs[14]}\""
+                qemu_cmd_list.append(f"-initrd \"{self.vmSpecs[14]}\"")
 
             if self.vmSpecs[15] != "":
                 qemu_cmd = qemu_cmd + f" -append \"{self.vmSpecs[15]}\""
+                qemu_cmd_list.append(f"-append \"{self.vmSpecs[15]}\"")
 
             if self.vmSpecs[16] == "USB Mouse" and self.vmSpecs[7] == "0":
                 if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
                     qemu_cmd = qemu_cmd + " -device usb-mouse"
+                    qemu_cmd_list.append("-device usb-mouse")
 
                 else:
                     qemu_cmd = qemu_cmd + " -usbdevice mouse"
+                    qemu_cmd_list.append("-usbdevice mouse")
 
             if self.vmSpecs[16] == "USB Tablet Device" and self.vmSpecs[7] == "0":
                 if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
                     qemu_cmd = qemu_cmd + " -device usb-tablet"
+                    qemu_cmd_list.append("-device usb-tablet")
 
                 else:
                     qemu_cmd = qemu_cmd + " -usbdevice tablet"
+                    qemu_cmd_list.append("-usbdevice tablet")
 
             if self.vmSpecs[18] != "" and self.vmSpecs[18] != None and self.vmSpecs[18] != "None":
                 qemu_cmd = qemu_cmd + f" -bios \"{self.vmSpecs[18]}\""
+                qemu_cmd_list.append(f"-bios \"{self.vmSpecs[18]}\"")
 
             if self.vmSpecs[19] == "USB Keyboard":
                 qemu_cmd = qemu_cmd + " -device usb-kbd"
+                qemu_cmd_list.append("-device usb-kbd")
 
             if self.vmSpecs[11] != "":
                 qemu_cmd = qemu_cmd + f" {self.vmSpecs[11]}"
+                qemu_cmd_list.append(self.vmSpecs[11])
 
             if self.vmSpecs[23] == "TCG":
                 qemu_cmd = qemu_cmd + " -accel tcg"
+                qemu_cmd_list.append("-accel tcg")
 
             elif self.vmSpecs[23] == "HAXM":
                 qemu_cmd = qemu_cmd + " -accel hax"
+                qemu_cmd_list.append("-accel hax")
 
             elif self.vmSpecs[23] == "WHPX":
                 qemu_cmd = qemu_cmd + " -accel whpx"
+                qemu_cmd_list.append("-accel whpx")
 
             elif self.vmSpecs[23] == "WHPX (kernel-irqchip off)":
                 qemu_cmd = qemu_cmd + " -accel whpx,kernel-irqchip=off"
+                qemu_cmd_list.append("-accel whpx,kernel-irqchip=off")
 
             elif self.vmSpecs[23] == "KVM":
                 qemu_cmd = qemu_cmd + " -enable-kvm"
+                qemu_cmd_list.append("-enable-kvm")
 
             if self.lineEdit_3.text() != "":
                 if self.vmSpecs[1] == "x86_64":
                     qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0"
+                    qemu_cmd_list.append(f"-chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0")
 
                 elif self.vmSpecs[1] == "aarch64":
                     qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis-device,tpmdev=tpm0"
+                    qemu_cmd_list.append(f"-chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis-device,tpmdev=tpm0")
 
                 elif self.vmSpecs[1] == "ppc64":
                     qemu_cmd = qemu_cmd + f" -chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0"
+                    qemu_cmd_list.append(f"-chardev socket,id=chrtpm,path={self.lineEdit_3.text()}/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-spapr,tpmdev=tpm0")
 
             subprocess.Popen(qemu_cmd)
 
@@ -627,7 +636,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             print("Qemu couldn't be executed. Trying subprocess.run")
 
             try:
-                qemu_cmd_split = qemu_cmd.split(" ")
+                """ qemu_cmd_split = qemu_cmd.split(" ")
                 # Potentially insert fix for datetime issue here
 
                 i = 0
@@ -640,7 +649,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                         del qemu_cmd_split[i + 1]
                         break
 
-                    i += 1
+                    i += 1 """
 
                 subprocess.run(shlex.split(qemu_cmd))
             
