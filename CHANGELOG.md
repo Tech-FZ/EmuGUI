@@ -68,6 +68,7 @@
 
 - On the Linux building section, you can now see the exact install commands for Git and binutils.
 - Also on the Linux building section, you can now click directly on the installation section where you're told to install QEMU.
+- On Linux, there are efforts to make EmuGUI accept spaces in file paths.
 
 ## Known issues
 

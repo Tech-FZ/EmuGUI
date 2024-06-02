@@ -368,22 +368,25 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             qemu_to_execute = result[0][0]
 
-            if platform.system() == "Windows":
-                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[21]}"
-
-            else:
-                qemu_cmd = f"{qemu_to_execute} -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[21]}"
+            qemu_cmd = f"\"{qemu_to_execute}\" -m {self.vmSpecs[4]} -smp {self.vmSpecs[17]} -k {self.vmSpecs[21]}"
+            qemu_cmd_list = [qemu_to_execute, "-m", self.vmSpecs[4], "-smp", self.vmSpecs[17], "-k", self.vmSpecs[21]]
 
             if self.checkBox.isChecked():
                 qemu_cmd = qemu_cmd + f" -rtc base=\"{dateTimeForVM}\",clock=vm"
+                qemu_cmd_list.append("-rtc")
+                qemu_cmd_list.append(f"base=\"{dateTimeForVM}\",clock=vm")
 
             if self.vmSpecs[5] != "NULL":
                 if magic.from_file(self.vmSpecs[5]) == "block special":
-                    if platform.system() == "Windows":
+                    qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{self.vmSpecs[5]}\""
+                    qemu_cmd_list.append("-drive")
+                    qemu_cmd_list.append(f"format=raw,file=\"{self.vmSpecs[5]}\"")
+
+                    """ if platform.system() == "Windows":
                         qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{self.vmSpecs[5]}\""
                 
                     else:
-                        qemu_cmd = qemu_cmd + f" -drive format=raw,file={self.vmSpecs[5]}"
+                        qemu_cmd = qemu_cmd + f" -drive format=raw,file={self.vmSpecs[5]}" """
 
                 else:
                     if self.vmSpecs[26] == "Let QEMU decide":

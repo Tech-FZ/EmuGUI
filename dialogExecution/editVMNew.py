@@ -1170,11 +1170,13 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                 print(vhd_size_in_b)
 
-                if platform.system() == "Windows":
+                vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
+
+                """ if platform.system() == "Windows":
                     vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdf.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
 
                 else:
-                    vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdf.currentText()} {vhd} {str(vhd_size_in_b)}"
+                    vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdf.currentText()} {vhd} {str(vhd_size_in_b)}" """
 
                 if vhdAction.startswith("overwrite"):
                     subprocess.Popen(vhd_cmd)
@@ -1188,7 +1190,8 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 print(f"The query was executed successfully, but the virtual disk couldn't be created. Trying to use subprocess.run")
 
                 try:
-                    vhd_cmd_split = vhd_cmd.split(" ")
+                    #vhd_cmd_split = vhd_cmd.split(" ")
+                    vhd_cmd_split = [qemu_binary, "create", "-f", self.cb_vhdF.currentText(), vhd, str(vhd_size_in_b)]
 
                     if vhdAction.startswith("overwrite"):
                         subprocess.run(vhd_cmd_split)
