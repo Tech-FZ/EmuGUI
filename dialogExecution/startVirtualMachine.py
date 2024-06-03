@@ -382,23 +382,11 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                     qemu_cmd_list.append("-drive")
                     qemu_cmd_list.append(f"format=raw,file=\"{self.vmSpecs[5]}\"")
 
-                    """ if platform.system() == "Windows":
-                        qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{self.vmSpecs[5]}\""
-                
-                    else:
-                        qemu_cmd = qemu_cmd + f" -drive format=raw,file={self.vmSpecs[5]}" """
-
                 else:
                     if self.vmSpecs[26] == "Let QEMU decide":
                         qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
                         qemu_cmd_list.append("-hda")
                         qemu_cmd_list.append(self.vmSpecs[5])
-
-                        """ if platform.system() == "Windows":
-                            qemu_cmd = qemu_cmd + f" -hda \"{self.vmSpecs[5]}\""
-
-                        else:
-                            qemu_cmd = qemu_cmd + f" -hda {self.vmSpecs[5]}" """
 
                     else:
                         qemu_cmd = qemu_cmd + " -drive"
@@ -428,16 +416,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
                 else:
                     qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]}"
-
-                """ if self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
-                    if self.vmSpecs[6] == "std":
-                        qemu_cmd = qemu_cmd + f" -device VGA -display gtk"
-                    
-                    else:
-                        qemu_cmd = qemu_cmd + f" -device {self.vmSpecs[6]} -display gtk"
-
-                else:
-                    qemu_cmd = qemu_cmd + f" -vga {self.vmSpecs[6]}" """
 
             if self.vmSpecs[7] != "none":
                 if self.vmSpecs[1] == "i386" or self.vmSpecs[1] == "x86_64" or self.vmSpecs[1] == "ppc" or self.vmSpecs[1] == "ppc64" or self.vmSpecs[1] == "sparc" or self.vmSpecs[1] == "sparc64":
@@ -485,12 +463,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{fda_file}\",index=0,if=floppy"
                 qemu_cmd_list.append("-drive")
                 qemu_cmd_list.append(f"format=raw,file=\"{fda_file}\",index=0,if=floppy")
-
-                """ if platform.system() == "Windows":
-                    qemu_cmd = qemu_cmd + f" -drive format=raw,file=\"{fda_file}\",index=0,if=floppy"
-
-                else:
-                    qemu_cmd = qemu_cmd + f" -drive format=raw,file={fda_file},index=0,if=floppy" """
 
             if cdrom_file != "":
                 if self.vmSpecs[24] == "Let QEMU decide":
@@ -636,21 +608,6 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             print("Qemu couldn't be executed. Trying subprocess.run")
 
             try:
-                """ qemu_cmd_split = qemu_cmd.split(" ")
-                # Potentially insert fix for datetime issue here
-
-                i = 0
-
-                while i < len(qemu_cmd_split):
-                    if qemu_cmd_split[i] == "-rtc":
-                        qemu_time = qemu_cmd_split[i] + " " + qemu_cmd_split[i + 1]
-                        qemu_cmd_split.insert(i, qemu_time)
-                        del qemu_cmd_split[i + 1]
-                        del qemu_cmd_split[i + 1]
-                        break
-
-                    i += 1 """
-
                 subprocess.run(shlex.split(qemu_cmd))
             
             except:
