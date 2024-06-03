@@ -67,7 +67,8 @@
 
 ## Changes compared to v2.0.0.5610_rc4
 
-- The redundant code has been removed from the main VM dialog.
+- The redundant code has been removed from the main window.
+- Some old/backup files have been deleted.
 
 ## Known issues
 
