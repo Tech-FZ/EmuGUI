@@ -758,40 +758,6 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
         ram = self.sb_ram.value()
 
-        # if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "x86_64":
-        #     machine = self.comboBox_2.currentText()
-        #     cpu = self.comboBox_3.currentText()
-
-        #     if cpu.startswith("Icelake-Client"):
-        #         cpu = "Icelake-Client"
-
-        #     ram = self.spinBox.value()
-        
-        # elif self.cb_arch.currentText() == "ppc" or self.cb_arch.currentText() == "ppc64":
-        #     machine = self.comboBox_4.currentText()
-        #     cpu = self.comboBox_5.currentText()
-        #     ram = self.spinBox_2.value()
-
-        # elif self.cb_arch.currentText() == "mips64el" or self.cb_arch.currentText() == "mipsel":
-        #     machine = self.comboBox_6.currentText()
-        #     cpu = self.comboBox_7.currentText()
-        #     ram = self.spinBox_3.value()
-
-        # elif self.cb_arch.currentText() == "aarch64" or self.cb_arch.currentText() == "arm":
-        #     machine = self.comboBox_14.currentText()
-        #     cpu = self.comboBox_15.currentText()
-        #     ram = self.spinBox_5.value()
-
-        # elif self.cb_arch.currentText() == "sparc":
-        #     machine = self.comboBox_20.currentText()
-        #     cpu = "Let QEMU decide"
-        #     ram = self.spinBox_7.value()
-
-        # elif self.cb_arch.currentText() == "sparc64":
-        #     machine = self.comboBox_21.currentText()
-        #     cpu = "Let QEMU decide"
-        #     ram = self.spinBox_8.value()
-
         if letQemuDecideVariantsStr.__contains__(machine):
             machine = "Let QEMU decide"
 
@@ -847,12 +813,6 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 print(vhd_size_in_b)
 
                 vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
-
-                """ if platform.system() == "Windows":
-                    vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
-
-                else:
-                    vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} {vhd} {str(vhd_size_in_b)}" """
 
                 if vhdAction.startswith("overwrite"):
                     subprocess.Popen(vhd_cmd)

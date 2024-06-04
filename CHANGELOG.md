@@ -70,6 +70,7 @@
 - The redundant code has been removed from the main window.
 - Some old/backup files have been deleted.
 - Some old code has been removed from the Start VM dialog.
+- Some old code has been removed from the New VM dialog.
 
 ## Known issues
 
