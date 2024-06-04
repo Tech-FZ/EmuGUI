@@ -716,28 +716,6 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 except:
                     pass
 
-    def archChangedOld(self):
-        if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "amd64":
-            self.stackedWidget.setCurrentIndex(0)
-
-        elif self.cb_arch.currentText() == "ppc" or self.cb_arch.currentText() == "ppc64":
-            self.stackedWidget.setCurrentIndex(1)
-
-        elif self.cb_arch.currentText() == "mips" or self.cb_arch.currentText() == "mipsel":
-            self.stackedWidget.setCurrentIndex(2)
-        
-        elif self.cb_arch.currentText() == "mips64" or self.cb_arch.currentText() == "mips64el":
-            self.stackedWidget.setCurrentIndex(2)
-
-        elif self.cb_arch.currentText() == "arm" or self.cb_arch.currentText() == "aarch64":
-            self.stackedWidget.setCurrentIndex(3)
-
-        elif self.cb_arch.currentText() == "sparc":
-            self.stackedWidget.setCurrentIndex(4)
-
-        elif self.cb_arch.currentText() == "sparc64":
-            self.stackedWidget.setCurrentIndex(5)
-
     def extBiosFileLocation(self):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
 
@@ -1076,45 +1054,6 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             cpu = "Icelake-Client"
 
         ram = self.sb_ram.value()
-
-        """ if self.cb_arch.currentText() == "i386" or self.cb_arch.currentText() == "x86_64":
-            machine = self.comboBox_12.currentText()
-            cpu = self.comboBox_11.currentText()
-
-            if cpu.startswith("Icelake-Client"):
-                cpu = "Icelake-Client"
-
-            ram = self.spinBox_2.value()
-        
-        elif self.cb_arch.currentText() == "ppc" or self.cb_arch.currentText() == "ppc64":
-            machine = self.cb_machine.currentText()
-            cpu = self.cb_cpu.currentText()
-            ram = self.sb_ram.value()
-
-        elif self.cb_arch.currentText() == "mips64el" or self.cb_arch.currentText() == "mipsel":
-            machine = self.cb_machine.currentText()
-            cpu = self.cb_cpu.currentText()
-            ram = self.sb_ram.value()
-
-        elif self.cb_arch.currentText() == "mips64" or self.cb_arch.currentText() == "mips":
-            machine = self.cb_machine.currentText()
-            cpu = self.cb_cpu.currentText()
-            ram = self.sb_ram.value()
-
-        elif self.cb_arch.currentText() == "aarch64" or self.cb_arch.currentText() == "arm":
-            machine = self.cb_machine.currentText()
-            cpu = self.cb_cpu.currentText()
-            ram = self.sb_ram.value()
-
-        elif self.cb_arch.currentText() == "sparc":
-            machine = self.cb_machine.currentText()
-            cpu = "Let QEMU decide"
-            ram = self.sb_ram.value()
-
-        elif self.cb_arch.currentText() == "sparc64":
-            machine = self.cb_machine.currentText()
-            cpu = "Let QEMU decide"
-            ram = self.sb_ram.value() """
 
         if letQemuDecideVariantsStr.__contains__(machine):
             machine = "Let QEMU decide"

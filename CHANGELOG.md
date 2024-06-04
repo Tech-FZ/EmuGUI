@@ -71,6 +71,7 @@
 - Some old/backup files have been deleted.
 - Some old code has been removed from the Start VM dialog.
 - Some old code has been removed from the New VM dialog.
+- Some old code has been removed from the Edit VM dialog.
 
 ## Known issues
 
