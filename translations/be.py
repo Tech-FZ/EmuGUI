@@ -478,3 +478,26 @@ def translateEditVMBE(window, vmname):
     window.lbl_cpuc.setText("Ядра працэсара") # CPU cores
     window.chb_usb.setText("Дадаць падтрымку USB") # Add USB support
     window.lbl_accel.setText("Acceleration") # Acceleration
+
+def translateErrDialogBE(window, errcode):
+    window.setWindowTitle(f"EmuGUI - Error")
+
+    if errcode.startswith("C"):
+        window.label.setText("EmuGUI encountered a critical error and needs to be closed.") # EmuGUI encountered a critical error and needs to be closed.
+
+    elif errcode.startswith("E"):
+        window.label.setText("EmuGUI encountered an error.") # EmuGUI encountered an error.
+
+    elif errcode.startswith("W"):
+        window.label.setText("EmuGUI has to warn you.") # EmuGUI has to warn you.
+
+    else:
+        window.label.setText("EmuGUI has something to say.") # EmuGUI has something to say.
+
+    window.label_2.setText("Error Code: " + errcode) # Error Code:
+
+    window.label_3.setText(
+        "If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository."
+        ) # If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.
+    
+    window.pushButton.setText("OK") # OK
