@@ -410,6 +410,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
             if langmode != "system":
                 self.languageInUse = "en"
+
     def prepareDatabase(self, connection):
         # Some SQL statements to initialize EmuGUI
         create_settings_table = """
@@ -640,15 +641,13 @@ class Window(QMainWindow, Ui_MainWindow):
         cursor = connection.cursor()
         logman = errors.logman.LogMan()
         logman.logFile = logman.setLogFile()
-        def databaseUpdate(arg, msg):
-          cursor.execute(arg)
-          connection.commit()
-          if msg:
-            print(f"Action {msg} successfully committed to the database.")
+
         # If they don't exist yet, the settings and VM tables are created.
 
         try:
-            databaseUpdate(create_settings_table, None)
+            cursor.execute(create_settings_table)
+            connection.commit()
+            print("The settings table was created successfully.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -670,8 +669,9 @@ class Window(QMainWindow, Ui_MainWindow):
             dialog.exec()
 
         try:
-            databaseUpdate(create_vm_table, None)
-            
+            cursor.execute(create_vm_table)
+            connection.commit()
+            print("The VM table was created successfully.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -693,7 +693,9 @@ class Window(QMainWindow, Ui_MainWindow):
             dialog.exec()
 
         try:
-            databaseUpdate(create_update_table, None)
+            cursor.execute(create_update_table)
+            connection.commit()
+            print("The update table was created successfully.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -701,7 +703,8 @@ class Window(QMainWindow, Ui_MainWindow):
         # Then, the tables will be checked for completeness.
 
         try:
-            databaseUpdate(select_qemu_img, None)
+            cursor.execute(select_qemu_img)
+            connection.commit()
             result = cursor.fetchall()
 
             try:
@@ -710,7 +713,9 @@ class Window(QMainWindow, Ui_MainWindow):
                 print("The query was executed successfully. The qemu-img slot already is in the database.")
 
             except:
-                databaseUpdate(insert_qemu_img, "create qemu-img slot")
+                cursor.execute(insert_qemu_img)
+                connection.commit()
+                print("The query was executed successfully. The qemu-img slot has been created.")
         
         except sqlite3.Error as e:
             print(f"The SQLite module encountered an error: {e}.")
@@ -743,7 +748,8 @@ class Window(QMainWindow, Ui_MainWindow):
             """
 
             try:
-                databaseUpdate(sel_query, None)
+                cursor.execute(sel_query)
+                connection.commit()
                 result = cursor.fetchall()
 
                 try:
@@ -752,7 +758,9 @@ class Window(QMainWindow, Ui_MainWindow):
                     print(f"The query was executed successfully. The qemu-system-{architecture[0]} slot already is in the database.")
 
                 except:
-                    databaseUpdate(ins_query, f"create gemu-system-architecture[0] slot")
+                    cursor.execute(ins_query)
+                    connection.commit()
+                    print(f"The query was executed successfully. The qemu-system-{architecture[0]} slot has been created.")
         
             except sqlite3.Error as e:
                 print(f"The SQLite module encountered an error: {e}.")
@@ -774,7 +782,8 @@ class Window(QMainWindow, Ui_MainWindow):
                 dialog.exec()
 
         try:
-            databaseUpdate(select_language, None)
+            cursor.execute(select_language)
+            connection.commit()
             result = cursor.fetchall()
 
             # Language modes
