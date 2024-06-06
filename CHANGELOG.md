@@ -72,7 +72,7 @@
 - Some old code has been removed from the Start VM dialog.
 - Some old code has been removed from the New VM dialog.
 - Some old code has been removed from the Edit VM dialog.
-- Old translation code has been removed from the language files for: Belarusian, Czech, German, Spanish, French.
+- Old translation code has been removed from the language files for: Belarusian, Czech, German, Spanish, French, Italian.
 
 ## Known issues
 
