@@ -7,7 +7,8 @@
 
 ## Changes compared to v2.0.0.5611
 
-- In order for instances run by a desktop shortcut to run properly on Windows, a new variable will be used. The Ioana Rosa banner already is shown via that new variable. 
+- In order for instances run by a desktop shortcut to run properly on Windows, a new variable will be used. The Ioana Rosa banner already is shown via that new variable.
+    - The variable is used in the main window now.
 
 ## Known issues
 

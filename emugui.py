@@ -235,17 +235,17 @@ class Window(QMainWindow, Ui_MainWindow):
             self.comboBox_5.addItem(osTheme)
             print(osTheme)
 
-        self.userThemeFileList = glob.glob("themes/*.qss")
+        self.userThemeFileList = glob.glob(f"{self.exec_folder}themes/*.qss")
         self.userThemeList = []
         
         for userThemeFile in self.userThemeFileList:
             userTheme = userThemeFile.replace(".qss", "")
             
             if platform.system() == "Windows":
-                userTheme = userTheme.replace("themes\\", "")
+                userTheme = userTheme.replace(f"{self.exec_folder}themes\\", "")
             
             else:
-                userTheme = userTheme.replace("themes/", "")
+                userTheme = userTheme.replace(f"{self.exec_folder}themes/", "")
             
             self.comboBox_5.addItem(userTheme)
             self.userThemeList.append(userTheme)
@@ -317,10 +317,10 @@ class Window(QMainWindow, Ui_MainWindow):
         print(easter_this_year)
 
         if datetime.date.today() == easter_this_year or datetime.date.today() == easter_this_year + good_friday_delta:
-            self.label_6.setPixmap(QtGui.QPixmap("banners/RobertRabbit.png"))
+            self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/RobertRabbit.png"))
 
         elif datetime.date.today() == easter_this_year + easter_monday_delta or datetime.date.today() == easter_this_year + good_saturday_delta:
-            self.label_6.setPixmap(QtGui.QPixmap("banners/RobertRabbit.png"))
+            self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/RobertRabbit.png"))
 
         else:
             self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/IoanaRosa.png"))
@@ -1099,7 +1099,7 @@ class Window(QMainWindow, Ui_MainWindow):
                         if result[0][1].__contains__(userTheme):
                             try:
                                 print(userTheme)
-                                userThemeFile = "themes/" + userTheme + ".qss"
+                                userThemeFile = f"{self.exec_folder}themes/" + userTheme + ".qss"
 
                                 with open(userThemeFile, "r") as themeFile:
                                     style = themeFile.read()
@@ -1132,7 +1132,7 @@ class Window(QMainWindow, Ui_MainWindow):
                                 dialog.exec()
                 
                 else:
-                    with open("translations/systemdefault.txt", "r+") as sysDefFile:
+                    with open(f"{self.exec_folder}translations/systemdefault.txt", "r+") as sysDefFile:
                         sysDefContent = sysDefFile.read()
 
                     i = 0
