@@ -113,13 +113,15 @@ class Window(QMainWindow, Ui_MainWindow):
             super().__init__()
         
         self.setupUi(self)
+        self.exec_folder = __file__.replace("emugui.py", "").replace("emugui.exe", "").replace("emugui", "")
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "2.0.0.5611"
+        self.version = "2.0.1.5612"
+        print(__file__)
 
         self.architectures = [
             ["i386", self.lineEdit_4],
@@ -217,7 +219,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5611
+        self.versionCode = 5612
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
@@ -321,7 +323,7 @@ class Window(QMainWindow, Ui_MainWindow):
             self.label_6.setPixmap(QtGui.QPixmap("banners/RobertRabbit.png"))
 
         else:
-            self.label_6.setPixmap(QtGui.QPixmap("banners/IoanaRosa.png"))
+            self.label_6.setPixmap(QtGui.QPixmap(f"{self.exec_folder}banners/IoanaRosa.png"))
 
         if datetime.date.today().day == 1 and datetime.date.today().month == 4:
             pixmap = self.label_6.pixmap()

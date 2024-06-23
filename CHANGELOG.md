@@ -1,3 +1,21 @@
+# EmuGUI v2.0.1.5612 "Ioana Rosa" (based on v2.0.0.5611)
+
+## WARNING
+
+- You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this pre-release.
+- This is a pre-release, meaning it's still in development. Don't use this build for production. Evaluation is okay tho.
+
+## Changes compared to v2.0.0.5611
+
+- In order for instances run by a desktop shortcut to run properly on Windows, a new variable will be used. The Ioana Rosa banner already is shown via that new variable. 
+
+## Known issues
+
+- Unfortunately, you might have to run EmuGUI from the terminal on Linux.
+- You will not be notified about any more updates for now as update.txt will not be updated.
+- As for the TPM functionality, you must run `mkdir (insert-path-here)` and `swtpm socket --tpm2 --tpmstate dir=(insert-path-here) --ctrl type=unixio,path=(insert-path-here)/swtpm-sock --log level=20` in a terminal (You can leave the `--tpm2` argument away tho if you plan to use TPM 1.2 instead).
+- The QCOW2 format is prone to not work for some Windows VMs.
+
 # EmuGUI v2.0.0.5611 "Ioana Rosa" (based on v2.0.0.5610_rc4)
 
 ## WARNING
