@@ -1,0 +1,1 @@
+exec_folder = __file__.replace("emugui.py", "").replace("emugui.exe", "").replace("emugui", "")

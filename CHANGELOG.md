@@ -9,6 +9,7 @@
 
 - In order for instances run by a desktop shortcut to run properly on Windows, a new variable will be used. The Ioana Rosa banner already is shown via that new variable.
     - The variable is used in the main window now.
+    - The variable is also in an extra file.
 
 ## Known issues
 
