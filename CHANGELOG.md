@@ -32,6 +32,7 @@
     - Edit VM dialog
     - Pathfinder
 - I try to fix the Pathfinder on compiled binaries on Linux. (30th June, 2024 at 12:45 PM)
+- The pathfinder needed some extra lines for Windows.
 
 ## Known issues
 
