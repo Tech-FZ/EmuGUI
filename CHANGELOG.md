@@ -13,6 +13,7 @@
         - The extra file has been updated to (hopefully) no longer conflict with folder names.
     - Some error codes related to the variable have been added.
     - The new pathfinder is used on the main window now, but doesn't work as expected (30th June, 2024 at 09:55 AM).
+    - The pathfinder has been fixed (30th June, 2024 at 09:58 AM).
 
 ## Known issues
 

@@ -20,16 +20,16 @@ def retrieveExecFolderTest():
 
 def retrieveExecFolder():
     print(__file__)
-    exec_dir = ""
+    exec_dir = re.sub("services/pathfinder.py$", "", __file__)
     
-    if __file__.endswith(".py"):
+    """ if __file__.endswith(".py"):
         exec_dir = re.sub("emugui.py$", "", __file__)
 
     elif __file__.endswith(".exe"):
         exec_dir = re.sub("emugui.exe$", "", __file__)
 
     else:
-        exec_dir = re.sub("emugui$", "", __file__)
+        exec_dir = re.sub("emugui$", "", __file__) """
 
     return exec_dir
 
