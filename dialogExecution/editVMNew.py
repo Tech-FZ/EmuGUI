@@ -51,7 +51,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         self.langDetect()
         
         try:
-            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+            self.setWindowIcon(QtGui.QIcon(f"{self.exec_folder}EmuGUI.png"))
 
         except:
             pass
@@ -302,7 +302,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 dialog.exec()
 
     def machineCpuI386Amd64(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -339,7 +339,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuPpc(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -371,7 +371,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuMips64el(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -403,7 +403,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineCpuAarch64(self, machine, cpu):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -435,7 +435,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineSparc(self, machine):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -453,7 +453,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def machineSparc64(self, machine):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         i = 0
@@ -471,13 +471,13 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             i += 1
 
     def vhdAddingChange(self):
-        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+        with open(f"{self.exec_folder}translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+        with open(f"{self.exec_folder}translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
-        with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
+        with open(f"{self.exec_folder}translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
         if creNewVhdContent.__contains__(self.cb_vhdu.currentText()):
@@ -511,10 +511,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             self.cb_hddc.setEnabled(False)
 
     def vhdBrowseLocation(self):
-        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+        with open(f"{self.exec_folder}translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+        with open(f"{self.exec_folder}translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
         if creNewVhdContent.__contains__(self.comboBox_2.currentText()):        
@@ -763,16 +763,16 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 pass
 
     def readTempVmFile(self):
-        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+        with open(f"{self.exec_folder}translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+        with open(f"{self.exec_folder}translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
-        with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
+        with open(f"{self.exec_folder}translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideFile:
             letQemuDecideContent = letQemuDecideFile.read()
 
         # Searching temporary files
@@ -1033,10 +1033,10 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         return vmSpecs
 
     def finishCreation(self):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
             letQemuDecideVariantsStr = letQemuDecideVariants.read()
 
-        with open("translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
+        with open(f"{self.exec_folder}translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
             sysDefContent = sysDefFile.read()
 
         # This applies the changes to your VM.
