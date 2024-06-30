@@ -23,6 +23,7 @@
         - New VM dialog
         - Error dialog
         - Setting restart dialog
+        - Start VM dialog
 - The delcache scripts have been updated to remove the cache from the services folder as well.
 
 ## Known issues
