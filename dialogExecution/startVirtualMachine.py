@@ -43,6 +43,7 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             super().__init__()
             
         self.setupUi(self)
+        self.exec_folder = pf.retrieveExecFolder()
         self.connectSignalsSlots()
         
         self.architectures = [

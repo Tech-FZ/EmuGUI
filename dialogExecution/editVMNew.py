@@ -42,6 +42,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             
         self.logman = errors.logman.LogMan()
         self.logman.logFile = self.logman.setLogFile()
+        self.exec_folder = pf.retrieveExecFolder()
         self.setupUi(self)
         self.connectSignalsSlots()
         self.tabWidget.setCurrentIndex(0)

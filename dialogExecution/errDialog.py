@@ -34,6 +34,7 @@ class ErrDialog(QDialog, Ui_Dialog):
             super().__init__()
             
         self.setupUi(self)
+        self.exec_folder = pf.retrieveExecFolder()
         self.setWindowTitle("EmuGUI - Error")
         
         try:

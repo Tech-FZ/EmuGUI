@@ -36,6 +36,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         # Initializing the dialog for creating the VM.
         self.logman = errors.logman.LogMan()
         self.logman.logFile = self.logman.setLogFile()
+        self.exec_folder = pf.retrieveExecFolder()
 
         try:
             super().__init__(parent)
