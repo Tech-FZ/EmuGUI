@@ -38,7 +38,7 @@ class ErrDialog(QDialog, Ui_Dialog):
         self.setWindowTitle("EmuGUI - Error")
         
         try:
-            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+            self.setWindowIcon(QtGui.QIcon(f"{self.exec_folder}EmuGUI.png"))
 
         except:
             pass
