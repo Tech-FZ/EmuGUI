@@ -17,6 +17,7 @@
     - The pathfinder has been fixed (30th June, 2024 at 09:58 AM).
     - The pathfinder is now imported in all relevant files.
         - The execution directory has been assigned in those files.
+        - Forgot the HardWare Plug-in Reader (HWPR) initially, so I had to add it there now.
     - So far, the pathfinder is in use in the following modules:
         - Main Window
         - Edit VM dialog
@@ -25,6 +26,7 @@
         - Setting restart dialog
         - Start VM dialog
         - Translation script for "System default".
+        - HWPR/Additional Hardware Selection Plug-In System (AHSPIS)
 - The delcache scripts have been updated to remove the cache from the services folder as well.
 
 ## Known issues
