@@ -103,6 +103,14 @@ except:
     print("Error code: W-06-NPGOP")
     print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
 
+try:
+    import services.pathfinder as pf
+
+except:
+    print("EmuGUI has to warn you.")
+    print("Error code: W-12-JBJM9")
+    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         # This function initializes and runs EmuGUI
@@ -113,7 +121,8 @@ class Window(QMainWindow, Ui_MainWindow):
             super().__init__()
         
         self.setupUi(self)
-        self.exec_folder = __file__.replace("emugui.py", "").replace("emugui.exe", "").replace("emugui", "")
+        self.exec_folder = pf.retrieveExecFolder()
+        print(self.exec_folder)
         self.connectSignalsSlots()
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateVmList)
@@ -121,7 +130,6 @@ class Window(QMainWindow, Ui_MainWindow):
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
         self.version = "2.0.1.5612"
-        print(__file__)
 
         self.architectures = [
             ["i386", self.lineEdit_4],
