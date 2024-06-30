@@ -16,7 +16,7 @@ class SettingsRequireEmuGUIReboot(QDialog, Ui_Dialog):
         self.setWindowTitle("EmuGUI Settings")
         
         try:
-            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+            self.setWindowIcon(QtGui.QIcon(f"{self.exec_folder}EmuGUI.png"))
 
         except:
             pass
