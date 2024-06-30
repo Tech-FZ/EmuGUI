@@ -28,6 +28,8 @@
         - Translation script for "System default".
         - HWPR/Additional Hardware Selection Plug-In System (AHSPIS)
 - The delcache scripts have been updated to remove the cache from the services folder as well.
+- Unnecessary code has been removed from the following modules:
+    - Edit VM dialog
 
 ## Known issues
 
