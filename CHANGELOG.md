@@ -30,6 +30,7 @@
 - The delcache scripts have been updated to remove the cache from the services folder as well.
 - Unnecessary code has been removed from the following modules:
     - Edit VM dialog
+    - Pathfinder
 
 ## Known issues
 
