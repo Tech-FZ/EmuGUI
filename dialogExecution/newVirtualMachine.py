@@ -29,6 +29,7 @@ import translations.it
 import translations.pl
 import locale
 import plugins.pluginmgr.hw_reader as hwpr # HWPR = HardWare Plug-in Reader
+import services.pathfinder as pf
 
 class NewVirtualMachineDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):

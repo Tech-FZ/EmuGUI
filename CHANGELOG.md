@@ -15,6 +15,7 @@
     - Some error codes related to the variable have been added.
     - The new pathfinder is used on the main window now, but doesn't work as expected (30th June, 2024 at 09:55 AM).
     - The pathfinder has been fixed (30th June, 2024 at 09:58 AM).
+    - The pathfinder is now imported in all relevant files.
 - The delcache scripts have been updated to remove the cache from the services folder as well.
 
 ## Known issues

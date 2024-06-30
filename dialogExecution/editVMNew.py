@@ -30,6 +30,7 @@ import errors.logID
 import errors.errCodes
 from dialogExecution.errDialog import ErrDialog
 import plugins.pluginmgr.hw_reader as hwpr # HWPR = HardWare Plug-in Reader
+import services.pathfinder as pf
 
 class EditVMNewDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):

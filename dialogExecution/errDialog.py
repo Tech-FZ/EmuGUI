@@ -23,6 +23,7 @@ import translations.it
 import translations.pl
 import locale
 import sqlite3
+import services.pathfinder as pf
 
 class ErrDialog(QDialog, Ui_Dialog):
     def __init__(self, parent = None):

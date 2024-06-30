@@ -31,6 +31,7 @@ import translations.pl
 import locale
 import errors.errCodes
 from dialogExecution.errDialog import ErrDialog
+import services.pathfinder as pf
 
 class StartVirtualMachineDialog(QDialog, Ui_Dialog):
     # Initializing VM starting
