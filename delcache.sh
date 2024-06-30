@@ -21,3 +21,7 @@ fi
 if [ -d plugins/pluginmgr/__pycache__ ]; then
     rm -r plugins/pluginmgr/__pycache__
 fi
+
+if [ -d services/__pycache__ ]; then
+    rm -r services/__pycache__
+fi

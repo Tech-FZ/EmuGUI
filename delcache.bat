@@ -29,3 +29,8 @@ if exist plugins\pluginmgr\__pycache__\ (
     del plugins\pluginmgr\__pycache__\*.* /q
     rd plugins\pluginmgr\__pycache__\ 
 )
+
+if exist services\__pycache__\ (
+    del services\__pycache__\*.* /q
+    rd services\__pycache__\ 
+)
