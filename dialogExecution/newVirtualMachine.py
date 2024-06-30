@@ -51,7 +51,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.langDetect()
         
         try:
-            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+            self.setWindowIcon(QtGui.QIcon(f"{self.exec_folder}EmuGUI.png"))
 
         except:
             pass
@@ -637,13 +637,13 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(2)
 
     def vhdAddingChange(self):
-        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+        with open(f"{self.exec_folder}translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+        with open(f"{self.exec_folder}translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
-        with open("translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
+        with open(f"{self.exec_folder}translations/addnovhd.txt", "r+", encoding="utf8") as noVhdFile:
             noVhdContent = noVhdFile.read()
 
         if creNewVhdContent.__contains__(self.cb_vhdU.currentText()):
@@ -678,10 +678,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
     def vhdBrowseLocation(self):
         # This code makes it possible to search a location for your VHD.
-        with open("translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
+        with open(f"{self.exec_folder}translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
             creNewVhdContent = creNewVhdFile.read()
 
-        with open("translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
+        with open(f"{self.exec_folder}translations/addexistingvhd.txt", "r+", encoding="utf8") as addExistVhdFile:
             addExistVhdContent = addExistVhdFile.read()
 
         if creNewVhdContent.__contains__(self.cb_vhdU.currentText()):        
@@ -736,10 +736,10 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(8)
 
     def finishCreation(self):
-        with open("translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
+        with open(f"{self.exec_folder}translations/letqemudecide.txt", "r+", encoding="utf8") as letQemuDecideVariants:
             letQemuDecideVariantsStr = letQemuDecideVariants.read()
 
-        with open("translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
+        with open(f"{self.exec_folder}translations/systemdefault.txt", "r+", encoding="utf8") as sysDefFile:
             sysDefContent = sysDefFile.read()
 
         # This creates your VM in the first place

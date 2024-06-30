@@ -17,9 +17,10 @@
     - The pathfinder has been fixed (30th June, 2024 at 09:58 AM).
     - The pathfinder is now imported in all relevant files.
         - The execution directory has been assigned in those files.
-    - So far, the pathfinder is in use in the following dialogs:
+    - So far, the pathfinder is in use in the following modules:
         - Main Window
-        - Edit VM
+        - Edit VM dialog
+        - New VM dialog
 - The delcache scripts have been updated to remove the cache from the services folder as well.
 
 ## Known issues
