@@ -31,6 +31,7 @@
 - Unnecessary code has been removed from the following modules:
     - Edit VM dialog
     - Pathfinder
+- I try to fix the Pathfinder on compiled binaries on Linux. (30th June, 2024 at 12:45 PM)
 
 ## Known issues
 
