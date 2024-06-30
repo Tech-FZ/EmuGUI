@@ -11,6 +11,7 @@
     - The variable is used in the main window now.
     - The variable is also in an extra file.
         - The extra file has been updated to (hopefully) no longer conflict with folder names.
+    - Some error codes related to the variable have been added.
 
 ## Known issues
 
