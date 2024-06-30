@@ -222,7 +222,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.languageInUse = "system"
 
         try:
-            self.setWindowIcon(QtGui.QIcon("EmuGUI.png"))
+            self.setWindowIcon(QtGui.QIcon(f"{self.exec_folder}EmuGUI.png"))
 
         except:
             pass
