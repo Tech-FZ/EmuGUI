@@ -7,6 +7,7 @@
 ## Changes compared to v2.0.1.5612
 
 - The Pathfinder is no longer in use on Linux.
+- The Linux build parts of the readme have been updated to say you should use `--onefile` again.
 
 ## Known issues
 
