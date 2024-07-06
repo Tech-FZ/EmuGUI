@@ -129,7 +129,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "2.0.2.5613"
+        self.version = "2.0.3.5614"
 
         self.architectures = [
             ["i386", self.lineEdit_4],
@@ -227,7 +227,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5613
+        self.versionCode = 5614
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()
