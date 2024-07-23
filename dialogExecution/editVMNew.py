@@ -315,31 +315,31 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             # For new and existing
             self.le_vhdp.setEnabled(True)
             self.btn_vhdp.setEnabled(True)
+            self.cb_hddc.setEnabled(True)
 
             # For new
             self.cb_vhdf.setEnabled(True)
             self.sb_maxsize.setEnabled(True)
-            self.cb_hddc.setEnabled(True)
 
         elif addExistVhdContent.__contains__(self.cb_vhdu.currentText()):
             # For new and existing
             self.le_vhdp.setEnabled(True)
             self.btn_vhdp.setEnabled(True)
+            self.cb_hddc.setEnabled(True)
 
             # For new
             self.cb_vhdf.setEnabled(False)
             self.sb_maxsize.setEnabled(False)
-            self.cb_hddc.setEnabled(False)
 
         elif noVhdContent.__contains__(self.cb_vhdu.currentText()):
             # For new and existing
             self.le_vhdp.setEnabled(False)
             self.btn_vhdp.setEnabled(False)
+            self.cb_hddc.setEnabled(False)
 
             # For new
             self.cb_vhdf.setEnabled(False)
             self.sb_maxsize.setEnabled(False)
-            self.cb_hddc.setEnabled(False)
 
     def vhdBrowseLocation(self):
         with open(f"{self.exec_folder}translations/createnewvhd.txt", "r+", encoding="utf8") as creNewVhdFile:
