@@ -4,7 +4,7 @@
 
 - You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this release.
 
-## Changes compared to v2.0.2.5613
+## Changes compared to v2.0.3.5614
 
 - On Edit VM dialogs, the HDD controller can be changed again.
 - On New VM dialogs, you also have freedom about HDD controllers for existing hard drives now.
