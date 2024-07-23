@@ -7,6 +7,7 @@
 ## Changes compared to v2.0.2.5613
 
 - On Edit VM dialogs, the HDD controller can be changed again.
+- On New VM dialogs, you also have freedom about HDD controllers for existing hard drives now.
 
 ## Known issues
 

@@ -650,31 +650,31 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             # For new and existing
             self.le_vhdP.setEnabled(True)
             self.btn_vhdP.setEnabled(True)
+            self.cb_hddC.setEnabled(True)
 
             # For new
             self.cb_vhdF.setEnabled(True)
             self.sb_maxsize.setEnabled(True)
-            self.cb_maxsize.setEnabled(True)
 
         elif addExistVhdContent.__contains__(self.cb_vhdU.currentText()):
             # For new and existing
             self.le_vhdP.setEnabled(True)
             self.btn_vhdP.setEnabled(True)
+            self.cb_hddC.setEnabled(True)
 
             # For new
             self.cb_vhdF.setEnabled(False)
             self.sb_maxsize.setEnabled(False)
-            self.cb_maxsize.setEnabled(False)
 
         elif noVhdContent.__contains__(self.cb_vhdU.currentText()):
             # For new and existing
             self.le_vhdP.setEnabled(False)
             self.btn_vhdP.setEnabled(False)
+            self.cb_hddC.setEnabled(False)
 
             # For new
             self.cb_vhdF.setEnabled(False)
             self.sb_maxsize.setEnabled(False)
-            self.cb_maxsize.setEnabled(False)
 
     def vhdBrowseLocation(self):
         # This code makes it possible to search a location for your VHD.
