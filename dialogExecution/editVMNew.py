@@ -918,7 +918,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                 print(vhd_size_in_b)
 
-                vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdF.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
+                vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdf.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
 
                 """ if platform.system() == "Windows":
                     vhd_cmd = f"{qemu_binary} create -f {self.cb_vhdf.currentText()} \"{vhd}\" {str(vhd_size_in_b)}"
@@ -939,7 +939,7 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                 try:
                     #vhd_cmd_split = vhd_cmd.split(" ")
-                    vhd_cmd_split = [qemu_binary, "create", "-f", self.cb_vhdF.currentText(), vhd, str(vhd_size_in_b)]
+                    vhd_cmd_split = [qemu_binary, "create", "-f", self.cb_vhdf.currentText(), vhd, str(vhd_size_in_b)]
 
                     if vhdAction.startswith("overwrite"):
                         subprocess.run(vhd_cmd_split)
@@ -954,6 +954,8 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
         
         else:
             vga = self.cb_vga.currentText()
+
+        print(vga)
 
         if self.cb_net.currentText() == "none":
             networkAdapter = "none"
