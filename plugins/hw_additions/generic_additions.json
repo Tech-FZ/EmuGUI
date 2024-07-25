@@ -9,7 +9,7 @@
         "virtio-net-pci", "virtio-net-pci-non-transitional", "virtio-net-pci-transitional", "vmxnet3", "spapr-vlan", "sungem", "sunhme"
     ],
     "graphics": [
-        "ati-vga", "bochs-display", "cirrus-vga", "isa-cirrus-vga", "qxl", "qxl-vga", "ramfb", "secondary-vga", "VGA", "virtio-gpu-device", "std",
+        "ati-vga", "bochs-display", "cirrus-vga", "isa-cirrus-vga", "qxl", "qxl-vga", "ramfb", "secondary-vga", "virtio-gpu-device", "std",
         "virtio-gpu-gl-device", "virtio-gpu-gl-pci", "virtio-gpu-pci", "virtio-vga", "virtio-vga-gl", "vmware-svga", "sm501", "tcx", "cg3", "cirrus"
     ],
     "sound": [

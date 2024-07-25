@@ -7,6 +7,7 @@
 ## Changes compared to v2.0.4.5615
 
 - An error with VHD creation in the Edit VM dialog has been corrected.
+- The "VGA" graphics card had to be removed from EmuGUI temporarily due to a bug in the Edit VM dialog. Use "std" instead.
 
 ## Known issues
 
