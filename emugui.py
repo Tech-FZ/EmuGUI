@@ -10,6 +10,14 @@ try:
     else:
         import platformSpecific.unixSpecific
 
+        try:
+            import qdarktheme
+
+        except:
+            print("EmuGUI has to warn you.")
+            print("Error code: W-11-CLZLM")
+            print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
+
 except:
     print("EmuGUI encountered a critical error and needs to be closed.")
     print("Error code: C-07-39KHE")
@@ -88,14 +96,6 @@ import errors.logman
 import errors.logID
 
 try:
-    import qdarktheme
-
-except:
-    print("EmuGUI has to warn you.")
-    print("Error code: W-11-CLZLM")
-    print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
-
-try:
     import psutil
 
 except:
@@ -129,7 +129,7 @@ class Window(QMainWindow, Ui_MainWindow):
         logman = errors.logman.LogMan()
         logman.generateLogID()
         logman.logFile = logman.setLogFile()
-        self.version = "2.0.5.5616"
+        self.version = "2.0.6.5617"
 
         self.architectures = [
             ["i386", self.lineEdit_4],
@@ -227,7 +227,7 @@ class Window(QMainWindow, Ui_MainWindow):
         except:
             pass
 
-        self.versionCode = 5616
+        self.versionCode = 5617
 
         if platform.system() == "Windows":
             self.connection = platformSpecific.windowsSpecific.setupWindowsBackend()

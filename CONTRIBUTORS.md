@@ -28,6 +28,8 @@ User0 (Debian packages)
 
 PrelevatedInsider18204 (Arch packages)
 
+Mizuki (Coding)
+
 # Banners
 
 | Version | Author |
@@ -37,3 +39,4 @@ PrelevatedInsider18204 (Arch packages)
 | Easter "Robert Rabbit" | Tech-FZ |
 | 1.1 "Sara Angeline" | Tech-FZ |
 | 1.2 "Garuka Pula" | Tech-FZ |
+| 2.0 "Ioana Rosa" | Tech-FZ |
