@@ -709,7 +709,7 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Select BIOS file', dir='.', filter='BIN files (*.bin);;All files (*.*)')
 
         if filename:
-            self.lineEdit_8.setText(filename)
+            self.le_biosF.setText(filename)
 
     def soundCard(self):
         self.stackedWidget.setCurrentIndex(5)
