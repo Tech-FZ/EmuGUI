@@ -409,6 +409,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
             if self.vmSpecs[2] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -M {self.vmSpecs[2]}"
 
+            elif self.vmSpecs[1] == "aarch64" or self.vmSpecs[1] == "arm":
+                qemu_cmd = qemu_cmd + " -M virt"
+
             if self.vmSpecs[3] != "Let QEMU decide":
                 qemu_cmd = qemu_cmd + f" -cpu {self.vmSpecs[3]}"
 
