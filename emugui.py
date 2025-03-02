@@ -34,7 +34,7 @@ except:
     print("If this error occurs multiple times, contact your administrator and/or ask for help on the EmuGUI Discord Server or on its GitHub repository.")
     input("Press any key to exit.")
     exit()
-
+    
 try:
     from PySide6.QtWidgets import *
     from PySide6 import QtGui

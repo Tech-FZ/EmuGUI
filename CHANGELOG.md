@@ -4,7 +4,7 @@
 
 - You now need the latest version of your Linux distribution or at least Windows 10 to get official support for this release.
 
-## Changes compared to v2.0.8.5619
+## Changes compared to v2.0.9.5620
 
 - An issue regarding you not being able to switch VHDs in the edit VM dialogue has been fixed.
 
